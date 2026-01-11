@@ -1,0 +1,374 @@
+// ============================================
+// SABADO - LA ASAMBLEA
+// Patron modular con tunnels
+// ============================================
+
+// Tunnels usados de otros modulos:
+// - escenas/olla.ink: olla_preparar_asamblea, olla_asamblea_inicio,
+//                     olla_asamblea_discusion, olla_asamblea_fin, olla_cerrar_noche
+// - escenas/barrio.ink: barrio_sabado, barrio_plaza
+// - personajes/sofia.ink: sofia_fragmento_asamblea
+// - personajes/elena.ink: elena_consejo
+// - personajes/marcos.ink: marcos_contesta, marcos_encuentro_plaza,
+//                          marcos_revelar_despido, marcos_hablar_precariedad,
+//                          marcos_invitar_asamblea, marcos_en_asamblea, marcos_se_fue,
+//                          marcos_idea_esto_es_lo_que_hay
+
+=== sabado_amanecer ===
+
+~ dia_actual = 6
+~ energia = 4  // Fin de semana, dormiste un poco más
+
+# SABADO
+
+Sábado.
+Antes era descanso.
+Ahora todos los días son iguales.
+
+{ayude_en_olla: Hoy es la asamblea. A las 5 en la olla.}
+
+* [Levantarte] -> sabado_mañana
+
+=== sabado_mañana ===
+
+La mañana de sábado.
+El barrio más tranquilo.
+
+{trauma >= 2: La cabeza sigue dando vueltas. Tres días sin laburo y ya parece una eternidad.}
+
+¿Qué hacés con la mañana?
+
+* [Llamar a alguien] -> sabado_llamar
+* [Salir a caminar] -> sabado_caminar
+* [Quedarte en casa] -> sabado_casa
+
+=== sabado_llamar ===
+
+¿A quién llamás?
+
+* {vinculo == "marcos"} [A Marcos (otra vez)] -> sabado_marcos
+* [A tu vieja / tu viejo] -> sabado_familia
+* [A nadie, mejor no] -> sabado_casa
+
+=== sabado_marcos ===
+
+// Marcos contesta (raro)
+-> marcos_contesta ->
+
+"Dale. En la plaza. En una hora."
+
+* [Ir] -> sabado_marcos_plaza
+
+=== sabado_marcos_plaza ===
+
+// Encuentro en la plaza con Marcos
+-> marcos_encuentro_plaza ->
+
+"Me echaron."
+
+// Marcos revela que tambien lo echaron
+-> marcos_revelar_despido ->
+
+"¿Cómo la llevás?"
+
+// Marcos sobre funcionar
+-> marcos_funcionar ->
+
+// Hablar de la precariedad
+-> marcos_hablar_precariedad ->
+
+// Idea involuntaria al ver a Marcos
+-> marcos_idea_esto_es_lo_que_hay ->
+
+// Invitar a Marcos a la asamblea
+-> marcos_invitar_asamblea ->
+
+* ["Vamos juntos."]
+    "Hace mucho que no voy al barrio."
+    "Por eso. Vamos."
+    Marcos asiente.
+    ~ marcos_estado = "mirando"
+    -> sabado_tarde
+* ["No importa, era por decir."]
+    "Mejor no. No estoy para eso."
+    "Bueno."
+    -> sabado_tarde
+
+=== sabado_familia ===
+
+~ energia -= 1
+
+Llamás a tu familia.
+
+"Hola, má."
+
+Hablás.
+De todo y de nada.
+No le contás lo del laburo.
+O sí, depende.
+
+* [Contarle]
+    ~ conte_a_alguien = true
+    "Má, me echaron."
+    Silencio.
+    "¿Estás bien? ¿Necesitás plata?"
+    "No, no. Tengo la indemnización. Es más que... no sé. Es raro."
+    Ella no sabe qué decir.
+    Pero te escucha.
+    -> sabado_tarde
+* [No contarle]
+    Hablás de otras cosas.
+    El clima. Los vecinos. Boludeces.
+    No querés preocuparla.
+    O no querés tener que explicar.
+    -> sabado_tarde
+
+=== sabado_caminar ===
+
+~ energia -= 1
+
+Salís a caminar.
+
+// Ambiente de sabado
+-> barrio_sabado ->
+
+* [Volver a casa] -> sabado_casa
+* [Pasar por la olla] -> sabado_olla_temprano
+
+=== sabado_olla_temprano ===
+
+Pasás por la olla.
+
+// Preparando asamblea
+-> olla_preparar_asamblea ->
+
+Sofía te ve.
+
+"¿Venís a la asamblea?"
+
+* ["Sí, vengo más tarde."]
+    "Bien. A las 5."
+    -> sabado_tarde
+* ["No sé si puedo."]
+    Sofía asiente.
+    "Bueno. Si podés, acá estamos."
+    -> sabado_tarde
+
+=== sabado_casa ===
+
+~ energia -= 1
+~ bajar_conexion(1)
+
+Te quedás en casa.
+Tele.
+Celular.
+Nada.
+
+Las horas pasan.
+
+* [Ir a la asamblea igual] -> sabado_asamblea
+* [No ir] -> sabado_noche_solo
+
+=== sabado_tarde ===
+
+La tarde.
+
+A las 5 es la asamblea.
+
+{energia >= 1:
+    Podés ir.
+    * [Ir a la asamblea] -> sabado_asamblea
+    * [No ir] -> sabado_noche_solo
+- else:
+    Estás muy cansado.
+    No das más.
+    * [Intentar ir igual]
+        ~ energia = 0
+        Te arrastrás hasta la olla.
+        -> sabado_asamblea
+    * [Quedarte] -> sabado_noche_solo
+}
+
+=== sabado_noche_solo ===
+
+~ bajar_conexion(2)
+~ bajar_llama(1)
+
+No vas.
+
+Te quedás en casa.
+Pensás en que deberías haber ido.
+Pero no fuiste.
+
+La asamblea pasa sin vos.
+No sabés qué decidieron.
+No sabés qué viene.
+
+Estás afuera.
+
+* [Dormir] -> fragmento_sabado_solo
+
+=== sabado_asamblea ===
+
+// Inicio de la asamblea
+-> olla_asamblea_inicio ->
+
+// Discusion de la asamblea
+-> olla_asamblea_discusion ->
+
+// Elena da consejo
+-> elena_consejo ->
+
+// Marcos en la asamblea (si vino)
+-> marcos_en_asamblea ->
+
+¿Qué hacés?
+
+* [Hablar] -> sabado_hablar
+* [Escuchar] -> sabado_escuchar_asamblea
+* [Proponer algo] -> sabado_proponer
+
+=== sabado_escuchar_asamblea ===
+
+Escuchás.
+
+Las ideas van y vienen.
+- Hacer más colectas.
+- Buscar comercios que donen.
+- Pedir al municipio de vuelta.
+- Organizar una feria.
+
+No hay solución mágica.
+Solo ideas.
+Solo gente tratando.
+
+-> sabado_asamblea_fin
+
+=== sabado_hablar ===
+
+~ subir_dignidad(1)
+
+Hablás.
+
+"Yo... hace tres días me quedé sin laburo. No sé bien qué puedo aportar. Pero tengo tiempo ahora. Y quiero ayudar."
+
+Te miran.
+
+Sofía asiente.
+Elena sonríe.
+
+"Eso es lo que necesitamos. Gente."
+
+-> sabado_asamblea_fin
+
+=== sabado_proponer ===
+
+~ subir_dignidad(1)
+~ subir_llama(1)
+
+"¿Y si hacemos algo más grande? Una jornada. Invitamos a todo el barrio. Mostramos lo que hace la olla. Pedimos ayuda abiertamente."
+
+Silencio.
+
+"Es mucho laburo."
+"Pero puede funcionar."
+"Hay que organizarlo."
+
+Sofía:
+"¿Vos te animás a ayudar con eso?"
+
+* ["Sí."]
+    ~ subir_conexion(1)
+    "Sí. Ahora tengo tiempo."
+    Risas nerviosas.
+    Pero es real.
+    Ahora tenés tiempo.
+    -> sabado_asamblea_fin
+* ["No sé si puedo."]
+    "Bueno. La idea queda."
+    -> sabado_asamblea_fin
+
+=== sabado_asamblea_fin ===
+
+// Cierre de la asamblea
+-> olla_asamblea_fin ->
+
+{idea_hay_cosas_juntos == false:
+    # IDEA DISPONIBLE: "HAY COSAS QUE SE HACEN JUNTOS"
+
+    La asamblea te mostró algo.
+    No es que alguien tiene la respuesta.
+    Es que entre todos se busca.
+
+    * [Internalizar]
+        ~ idea_hay_cosas_juntos = true
+        Hay cosas que se hacen juntos.
+        O no se hacen.
+        -> sabado_noche
+    * [Dejar pasar]
+        -> sabado_noche
+- else:
+    -> sabado_noche
+}
+
+=== sabado_noche ===
+
+# SABADO - NOCHE
+
+~ energia = 0
+~ subir_llama(1)
+
+Volvés a casa.
+Cansado pero distinto.
+
+Cuatro días sin laburo.
+Tres meses de colchón.
+La cuenta regresiva sigue.
+
+Pero hoy estuviste en una asamblea.
+Hoy fuiste parte de algo.
+
+No resuelve nada.
+Pero cambia algo.
+
+// Marcos se fue de la asamblea
+-> marcos_se_fue ->
+
+* [Dormir] -> fragmento_sabado
+
+=== fragmento_sabado ===
+
+# MIENTRAS DORMIS
+
+{participe_asamblea: -> fragmento_sabado_asamblea}
+-> fragmento_sabado_solo
+
+=== fragmento_sabado_asamblea ===
+
+// Fragmento de Sofia despues de la asamblea
+-> sofia_fragmento_asamblea ->
+
+Mañana es domingo.
+Día de descanso.
+Día de pensar.
+
+La semana que viene empieza todo de vuelta.
+Pero quizás no igual.
+
+* [Continuar] -> domingo_amanecer
+
+=== fragmento_sabado_solo ===
+
+// Olla cerrada
+-> olla_cerrar_noche ->
+
+Sofía está cansada.
+Pero hay un plan.
+
+Vos no fuiste.
+Pero el barrio sigue.
+
+Mañana es domingo.
+El fin de la primera semana.
+
+* [Continuar] -> domingo_amanecer

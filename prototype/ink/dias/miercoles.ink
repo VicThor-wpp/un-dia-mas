@@ -1,0 +1,475 @@
+// ============================================
+// MIÉRCOLES - EL DESPIDO
+// Routing con tunnels, contenido específico del día
+// ============================================
+
+=== miercoles_amanecer ===
+
+~ dia_actual = 3
+~ energia = 3  // La tensión te afecta
+
+# MIÉRCOLES
+
+// Despertar - contenido específico del miércoles
+No dormiste bien.
+Hoy es la reunión con RRHH.
+
+-> casa_despertar ->
+
+{energia < 4: Te levantás con menos energía que ayer. La tensión se siente en el cuerpo.}
+
+El mate no calienta igual, o vos no sentís el calor igual.
+
+Sabés que algo viene. No sabés qué.
+
+* [Ir al laburo] -> miercoles_laburo
+
+=== miercoles_laburo ===
+
+-> bondi_esperar_parada ->
+
+-> laburo_llegada ->
+
+// Contenido específico: la tensión antes de la reunión
+Llegás. Todo parece normal.
+Los compañeros hacen lo de siempre.
+Pero hay algo en el aire.
+
+El jefe no te mira. Eso es raro.
+
+A las 11 te llaman.
+
+* [Ir a la reunión] -> miercoles_reunion
+
+=== miercoles_reunion ===
+
+# LA REUNIÓN
+
+// El despido - contenido específico del miércoles
+// Usamos el módulo de laburo para la mecánica del despido
+-> laburo_despido ->
+
+// Después del despido, contenido específico
+Alguien te dice "suerte" sin mirarte a los ojos.
+
+Salís.
+
+* [Ir a la calle] -> miercoles_salida
+
+=== miercoles_salida ===
+
+-> laburo_salida_despedido ->
+
+// La idea involuntaria se activa
+{idea_quien_soy:
+    # IDEA: "¿QUIÉN SOY SIN LABURO?"
+
+    No la elegiste. Llegó sola.
+    Como un zumbido en la cabeza que no para.
+
+    La pregunta no tiene respuesta fácil.
+    Pero ahora la tenés.
+}
+
+¿Qué hacés?
+
+* [Ir a casa a procesar] -> miercoles_casa
+* [Caminar sin rumbo] -> miercoles_caminar
+* [Ir al barrio, buscar a alguien] -> miercoles_barrio
+
+=== miercoles_casa ===
+
+~ energia -= 1
+
+-> casa_dia_libre ->
+
+// Contenido específico: la casa vacía a las 12
+Llegás a casa.
+La casa vacía a las 12 del mediodía.
+Nunca la viste así a esta hora.
+
+Te sentás.
+No prendés la tele.
+No hacés nada.
+
+Solo te sentás.
+
+{energia <= 1: Estás destruido. No podés hacer nada más hoy.}
+
+* {energia > 1} [Llamar a alguien] -> miercoles_llamar
+* [Quedarte ahí] -> miercoles_noche
+
+=== miercoles_caminar ===
+
+~ energia -= 1
+
+Caminás.
+No sabés bien a dónde.
+Las calles de siempre pero distintas.
+
+Porque ahora tenés tiempo.
+Demasiado tiempo.
+
+Pasás por la plaza.
+El tipo que duerme en el banco sigue ahí.
+Lo viste mil veces. Hoy lo mirás diferente.
+
+No estás como él. Tenés tres meses.
+Pero la distancia se siente más corta.
+
+* [Seguir caminando] -> miercoles_barrio
+* [Ir a casa] -> miercoles_casa
+
+=== miercoles_barrio ===
+
+El barrio.
+Tu barrio.
+
+A esta hora hay gente.
+Gente que no ves normalmente porque estás laburando.
+
+Sofía está saliendo de su casa.
+Te ve.
+
+* [Acercarte] -> miercoles_sofia
+* [Evitarla, seguir de largo] -> miercoles_evitar
+
+=== miercoles_evitar ===
+
+~ bajar_conexion(1)
+
+Bajás la cabeza.
+Seguís de largo.
+No querés hablar con nadie.
+
+Pero Sofía te vio.
+Y vos la viste ver.
+
+* [Ir a casa] -> miercoles_noche
+
+=== miercoles_sofia ===
+
+"¿Qué hacés acá a esta hora? ¿No tenías laburo?"
+
+La pregunta pega.
+
+* [Contar lo que pasó] -> miercoles_contar
+* [Evadir: "Salí temprano hoy"] -> miercoles_evadir
+
+=== miercoles_evadir ===
+
+"Salí temprano hoy."
+
+Sofía te mira.
+No te cree, pero no insiste.
+
+"Bueno. Si necesitás algo..."
+
+Deja la frase ahí.
+
+~ conte_a_alguien = false
+
+* [Ir a casa] -> miercoles_noche
+
+=== miercoles_contar ===
+
+~ conte_a_alguien = true
+~ subir_conexion(1)
+
+"Me echaron."
+
+Sofía no dice nada por un momento.
+Después:
+
+"Mierda."
+
+"Sí."
+
+"¿Estás bien?"
+
+"No sé."
+
+Se queda un momento.
+No te abraza, no te dice que todo va a estar bien.
+Eso lo agradecés.
+
+"Mirá, la olla anda complicada, pero si querés venir a dar una mano... a veces ayuda hacer algo."
+
+* [Decir que sí] -> miercoles_si_olla
+* [Decir que no sabés] -> miercoles_nosabe_olla
+* [Preguntar qué pasa con la olla] -> miercoles_pregunta_olla
+
+=== miercoles_pregunta_olla ===
+
+"¿Qué pasa con la olla?"
+
+Sofía suspira.
+
+"No tenemos para el viernes. Las donaciones bajaron. Estamos viendo qué hacer."
+
+~ olla_en_crisis = true
+
+Otra cosa que cae.
+Todo cae junto.
+
+* [Ofrecer ayuda] -> miercoles_si_olla
+* [Decir que no sabés si podés] -> miercoles_nosabe_olla
+
+=== miercoles_si_olla ===
+
+~ subir_conexion(1)
+~ subir_llama(1)
+
+"Puedo venir. Ahora tengo tiempo."
+
+Sofía medio sonríe.
+No es una sonrisa feliz.
+Es una sonrisa de "al menos algo".
+
+"Mañana a la tarde estamos. Si te da."
+
+Asiente y se va.
+Tenés algo para mañana.
+No es mucho. Pero es algo.
+
+* [Ir a casa] -> miercoles_noche
+
+=== miercoles_nosabe_olla ===
+
+"No sé si puedo. Tengo que... no sé."
+
+Sofía asiente.
+
+"Obvio. Si necesitás algo, avisá."
+
+Se va.
+
+Te quedás solo.
+
+* [Ir a casa] -> miercoles_noche
+
+=== miercoles_llamar ===
+
+¿A quién llamás?
+
+* {vinculo == "elena"} [A Elena] -> miercoles_llamar_elena
+* {vinculo == "diego"} [A Diego] -> miercoles_llamar_diego
+* {vinculo == "marcos"} [A Marcos] -> miercoles_llamar_marcos
+* [A nadie. Mejor no.] -> miercoles_noche
+
+=== miercoles_llamar_elena ===
+
+~ subir_conexion(1)
+~ conte_a_alguien = true
+
+Elena contesta al segundo ring.
+
+"¿Qué pasó?"
+
+Le contás. Ella escucha.
+Cuando terminás, hay silencio.
+
+"En el 2002 cerraron el frigorífico donde laburaba Raúl."
+
+Raúl era su marido.
+
+"Tres meses estuvo sin laburo. Yo trabajaba limpiando. Los pibes eran chicos. La olla del barrio nos salvó ese invierno."
+
+"No sabía."
+
+"No lo contamos mucho. Pero pasó. Y acá seguimos."
+
+* ["¿Cómo hicieron?"] -> miercoles_elena_como
+* ["Gracias por contarme."] -> miercoles_elena_gracias
+
+=== miercoles_elena_como ===
+
+"¿Cómo hicieron?"
+
+"Juntos. No había otra. La gente se juntó. Los que tenían compartían con los que no. No fue lindo. Pero fue lo que hubo."
+
+~ idea_red_o_nada = true
+
+# IDEA DISPONIBLE: "LA RED O LA NADA"
+
+Es una idea heredada. De Elena. De Raúl. De los que estuvieron antes.
+
+* [Internalizar]
+    ~ idea_red_o_nada = true
+    La internalizás. La red o la nada.
+    No es optimismo. Es lo único que hay.
+    -> miercoles_elena_fin
+* [Dejar pasar]
+    -> miercoles_elena_fin
+
+=== miercoles_elena_gracias ===
+
+"Gracias por contarme."
+
+"Para eso estamos."
+
+-> miercoles_elena_fin
+
+=== miercoles_elena_fin ===
+
+Cortás.
+Te sentís un poco menos solo.
+
+* [Ir a la noche] -> miercoles_noche
+
+=== miercoles_llamar_diego ===
+
+~ subir_conexion(1)
+~ conte_a_alguien = true
+
+Diego contesta.
+
+"¿Hola?"
+
+"Diego, soy yo."
+
+"¿Qué onda? ¿No estás laburando?"
+
+Le contás.
+
+"La puta madre."
+
+"Sí."
+
+"¿Estás bien?"
+
+"No sé."
+
+Hay un silencio.
+
+"Yo tengo miedo de que me pase lo mismo. En el depósito andan raros también."
+
+Diego también tiene miedo.
+No estás solo en eso.
+
+"Si necesitás algo, avisá. No tengo mucho pero..."
+
+"Gracias, Diego."
+
+* [Ir a la noche] -> miercoles_noche
+
+=== miercoles_llamar_marcos ===
+
+Marcos no contesta.
+El teléfono suena y suena.
+
+Bueno.
+No esperabas otra cosa.
+
+* [Ir a la noche] -> miercoles_noche
+
+=== miercoles_noche ===
+
+# MIÉRCOLES - NOCHE
+
+~ energia = 0
+
+-> casa_llegada_noche ->
+
+// Contenido específico de la noche del miércoles
+La noche llega.
+Primer día sin laburo.
+
+Te acostás pero no dormís.
+La cabeza no para.
+
+La tarjeta. El alquiler. La obra social.
+Tenés tres meses. Tres meses para resolver algo.
+
+La cuenta regresiva empezó.
+
+{conte_a_alguien: Al menos alguien sabe. No estás completamente solo.}
+{not conte_a_alguien: No le contaste a nadie. El peso es solo tuyo.}
+
+// Fragmento nocturno
+-> fragmento_miercoles
+
+=== fragmento_miercoles ===
+
+# MIENTRAS DORMÍS (o intentás)
+
+// El fragmento depende de las decisiones del día
+{conte_a_alguien && vinculo == "sofia":
+    -> fragmento_sofia_miercoles
+}
+{conte_a_alguien && vinculo == "diego":
+    -> fragmento_diego_miercoles
+}
+{conte_a_alguien && vinculo == "elena":
+    -> fragmento_elena_miercoles
+}
+// Default
+-> fragmento_diego_miercoles
+
+=== fragmento_sofia_miercoles ===
+
+Sofía tampoco puede dormir.
+
+Está en la cocina, con la calculadora.
+Los números de la olla no cierran.
+Nunca cierran.
+
+Piensa en vos.
+Otro que cayó.
+Pero también: otra persona que puede ayudar.
+
+No es que se alegre de que te echaron.
+Pero hay algo en que no estés solo.
+En que quizás vengas mañana.
+
+Apaga la luz.
+Mañana hay que seguir.
+
+* [Continuar] -> jueves_amanecer
+
+=== fragmento_diego_miercoles ===
+
+Diego está en su pieza.
+Alquilada, chica, con olor a humedad.
+
+Piensa en vos.
+En lo que le contaste.
+En que podría ser él mañana.
+
+Llama a su madre.
+"Sí, má, todo bien."
+Miente.
+
+Cuelga.
+Mira el techo.
+
+No sabe qué hacer.
+Quiere ayudarte pero no sabe cómo.
+Quiere ayudarse pero no sabe cómo.
+
+Mañana te va a buscar.
+No sabe para qué. Pero te va a buscar.
+
+* [Continuar] -> jueves_amanecer
+
+=== fragmento_elena_miercoles ===
+
+Elena no puede dormir.
+
+Piensa en Raúl.
+En el 2002.
+En cómo pensó que no iban a salir.
+Y salieron. Juntos.
+
+Piensa en vos.
+En lo que le contaste.
+En la voz que tenías.
+
+Mañana te va a llamar.
+Va a ver cómo estás.
+Es lo que se hace.
+
+Prende la radio bajito.
+Algo de compañía en la oscuridad.
+
+* [Continuar] -> jueves_amanecer

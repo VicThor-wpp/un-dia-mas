@@ -1,0 +1,29 @@
+# Compiled Ink
+*.json
+!package.json
+
+# Ink editor files
+*.ink.bak
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node (si se usa inkjs)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Build outputs
+dist/
+build/
+out/
+
+# Logs
+*.log
