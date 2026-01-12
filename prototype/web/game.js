@@ -16,14 +16,35 @@
     let contentQueue = [];
     const MAX_PARAGRAPHS_BEFORE_PAUSE = 4;
 
-    // Stat labels and icons
+    // Stat labels and icons (Lucide icon names)
     const STAT_INFO = {
-        energia: { label: 'Energía', icon: '⚡', max: 5 },
-        conexion: { label: 'Conexión', icon: '🤝', max: 10 },
-        dignidad: { label: 'Dignidad', icon: '✊', max: 10 },
-        llama: { label: 'Llama', icon: '🔥', max: 10 },
-        trauma: { label: 'Trauma', icon: '💔', max: 10 }
+        energia: { label: 'Energía', icon: 'zap', max: 5 },
+        conexion: { label: 'Conexión', icon: 'users', max: 10 },
+        dignidad: { label: 'Dignidad', icon: 'shield', max: 10 },
+        llama: { label: 'Llama', icon: 'flame', max: 10 },
+        trauma: { label: 'Trauma', icon: 'heart-crack', max: 10 }
     };
+
+    // Create Lucide icon SVG element
+    function createIcon(name, size = 16) {
+        const icon = document.createElement('i');
+        icon.setAttribute('data-lucide', name);
+        icon.style.width = size + 'px';
+        icon.style.height = size + 'px';
+        return icon;
+    }
+
+    // Render a Lucide icon as HTML string
+    function iconHTML(name, size = 16) {
+        return `<i data-lucide="${name}" style="width:${size}px;height:${size}px;"></i>`;
+    }
+
+    // Initialize Lucide icons in container
+    function refreshIcons() {
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
+    }
 
     // Dice result labels
     const DICE_RESULTS = {
@@ -93,16 +114,17 @@
         const rollDiv = document.createElement('div');
         rollDiv.className = `dice-roll ${resultInfo.class}`;
         rollDiv.innerHTML = `
-            <span class="dice-icon">🎲</span>
+            <span class="dice-icon">${iconHTML('dices', 20)}</span>
             <span class="dice-value">${roll}</span>
             <span class="dice-label">${resultInfo.label}</span>
         `;
 
         // Insert before the last paragraph or at the end
         storyContainer.appendChild(rollDiv);
+        refreshIcons();
 
         // Also show as notification (0 = neutral for simple rolls)
-        showNotification(`🎲 ${roll} - ${resultInfo.label}`, result === 0 ? 0 : (result >= 1 ? 1 : -1), 'dice');
+        showNotification(`${roll} - ${resultInfo.label}`, result === 0 ? 0 : (result >= 1 ? 1 : -1), 'dice');
     }
 
     function checkStatChanges() {
@@ -121,7 +143,7 @@
                 const diff = current[stat] - previousStats[stat];
                 if (diff !== 0) {
                     const info = STAT_INFO[stat];
-                    showNotification(`${info.icon} ${info.label}`, diff, 'stat');
+                    showNotification(info.label, diff, 'stat', info.icon);
                 }
             }
 
@@ -129,27 +151,29 @@
         } catch(e) {}
     }
 
-    function showNotification(label, diff, type = 'stat') {
+    function showNotification(label, diff, type = 'stat', iconName = null) {
         const notif = document.createElement('div');
 
         let className = 'notification';
-        let text = label;
+        let content = '';
 
         if (type === 'stat') {
             className += diff > 0 ? ' positive' : ' negative';
-            text = `${label} ${diff > 0 ? '+' : ''}${diff}`;
+            const icon = iconName ? iconHTML(iconName, 16) : '';
+            content = `${icon} ${label} ${diff > 0 ? '+' : ''}${diff}`;
         } else if (type === 'dice') {
             if (diff === 0) {
                 className += ' dice-neutral';
             } else {
                 className += diff >= 1 ? ' dice-success' : ' dice-fail';
             }
-            text = label;
+            content = `${iconHTML('dices', 16)} ${label}`;
         }
 
         notif.className = className;
-        notif.textContent = text;
+        notif.innerHTML = content;
         notificationContainer.appendChild(notif);
+        refreshIcons();
 
         setTimeout(() => {
             notif.classList.add('fade-out');
@@ -314,18 +338,18 @@
         if (meta.cost > 0) {
             const hasEnergy = (story.variablesState['energia'] ?? 0) >= meta.cost;
             const costClass = hasEnergy ? 'cost-badge' : 'cost-badge cost-insufficient';
-            badges += `<span class="${costClass}">⚡${meta.cost}</span>`;
+            badges += `<span class="${costClass}">${iconHTML('zap', 14)}${meta.cost}</span>`;
         }
 
         if (meta.dice) {
-            let diceLabel = '🎲';
+            let diceContent = iconHTML('dices', 14);
             if (meta.stat) {
                 const statInfo = STAT_INFO[meta.stat];
                 if (statInfo) {
-                    diceLabel = `🎲${statInfo.icon}`;
+                    diceContent = `${iconHTML('dices', 14)}${iconHTML(statInfo.icon, 14)}`;
                 }
             }
-            badges += `<span class="dice-badge">${diceLabel}</span>`;
+            badges += `<span class="dice-badge">${diceContent}</span>`;
         }
 
         // Add effect badges
@@ -336,7 +360,7 @@
             const effectInfo = EFFECT_DISPLAY[modifier];
 
             if (statInfo && effectInfo) {
-                badges += `<span class="effect-badge ${effectInfo.class}">${statInfo.icon}${effectInfo.symbol}</span>`;
+                badges += `<span class="effect-badge ${effectInfo.class}">${iconHTML(statInfo.icon, 14)}${effectInfo.symbol}</span>`;
             }
         }
 
@@ -375,6 +399,7 @@
                 button.addEventListener('click', onChoiceClick);
                 choicesContainer.appendChild(button);
             }
+            refreshIcons();
         }
     }
 
@@ -405,25 +430,26 @@
             <div class="status-row status-main">
                 <span class="status-day">${diaNombre}</span>
                 <span class="status-energia" title="Energía disponible hoy">
-                    <span class="stat-icon">⚡</span>
+                    <span class="stat-icon">${iconHTML('zap', 16)}</span>
                     <span class="stat-bar">${energiaBar}</span>
                 </span>
             </div>
             <div class="status-row status-resources">
                 <span class="status-stat" title="Conexión con el barrio">
-                    <span class="stat-icon">🤝</span>
+                    <span class="stat-icon">${iconHTML('users', 16)}</span>
                     <span class="stat-value">${conexion}</span>
                 </span>
                 <span class="status-stat" title="Tu dignidad">
-                    <span class="stat-icon">✊</span>
+                    <span class="stat-icon">${iconHTML('shield', 16)}</span>
                     <span class="stat-value">${dignidad}</span>
                 </span>
                 <span class="status-stat stat-llama" title="La llama colectiva">
-                    <span class="stat-icon">🔥</span>
+                    <span class="stat-icon">${iconHTML('flame', 16)}</span>
                     <span class="stat-value">${laLlama}</span>
                 </span>
             </div>
         `;
+        refreshIcons();
     }
 
     function onChoiceClick(event) {

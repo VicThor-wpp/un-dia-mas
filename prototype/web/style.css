@@ -8,6 +8,17 @@
     --choice-bg: #2a2a2a;
 }
 
+/* Lucide Icons base styling */
+[data-lucide] {
+    display: inline-block;
+    vertical-align: middle;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -68,8 +79,18 @@ body {
 .status-stat {
     display: inline-flex;
     align-items: center;
-    gap: 4px;
+    gap: 6px;
     cursor: help;
+}
+
+.stat-icon {
+    display: inline-flex;
+    align-items: center;
+}
+
+.stat-icon svg {
+    width: 16px;
+    height: 16px;
 }
 
 .stat-label {
@@ -205,10 +226,17 @@ h2 {
 .dice-badge {
     display: inline-flex;
     align-items: center;
+    gap: 2px;
     padding: 4px 8px;
     border-radius: 4px;
     font-size: 13px;
     font-weight: bold;
+}
+
+.cost-badge svg,
+.dice-badge svg {
+    width: 14px;
+    height: 14px;
 }
 
 .cost-badge {
@@ -233,10 +261,16 @@ h2 {
 .effect-badge {
     display: inline-flex;
     align-items: center;
+    gap: 2px;
     padding: 4px 8px;
     border-radius: 4px;
     font-size: 13px;
     font-weight: bold;
+}
+
+.effect-badge svg {
+    width: 14px;
+    height: 14px;
 }
 
 .effect-badge.effect-up {
@@ -342,12 +376,21 @@ h2 {
 }
 
 .notification {
+    display: flex;
+    align-items: center;
+    gap: 6px;
     padding: 10px 16px;
     border-radius: 4px;
     font-size: 14px;
     font-weight: bold;
     animation: slideIn 0.3s ease;
     box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.notification svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
 }
 
 .notification.positive {
@@ -401,8 +444,14 @@ h2 {
 }
 
 .dice-roll .dice-icon {
-    font-size: 1.5em;
+    display: inline-flex;
+    align-items: center;
     margin-right: 8px;
+}
+
+.dice-roll .dice-icon svg {
+    width: 20px;
+    height: 20px;
 }
 
 .dice-roll .dice-value {
