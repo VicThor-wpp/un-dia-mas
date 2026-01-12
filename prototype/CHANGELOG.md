@@ -2,6 +2,12 @@
 
 ## Session: 2026-01-12
 
+### Deployment (COMPLETED)
+- **GitHub Repository**: https://github.com/VicThor-wpp/un-dia-mas
+- **Live URL**: https://un-dia-mas-game.netlify.app
+- All 6 resources verified loading (HTTP 200)
+- Netlify site configured with security headers
+
 ### BATCH 4: Visual Feedback System (COMPLETED)
 - Added comprehensive dice roll visual feedback:
   - Critical success (gold glow animation)
