@@ -31,10 +31,10 @@ El olor a comida que se siente desde la esquina.
     Funciona.
 }
 
-* [Acercarte a ayudar] -> olla_ofrecer_ayuda
+* [Acercarte a ayudar] # EFECTO:conexion+ -> olla_ofrecer_ayuda
 * [Quedarte mirando] -> olla_observar
-* {olla_en_crisis} [Preguntar qué pasa] -> olla_preguntar_crisis
-* [Irte] -> olla_irse
+* {olla_en_crisis} [Preguntar qué pasa] # EFECTO:conexion? -> olla_preguntar_crisis
+* [Irte] # EFECTO:conexion- -> olla_irse
 
 === olla_irse ===
 
@@ -87,11 +87,11 @@ Marta te mira de arriba abajo.
 
 ¿Qué hacés?
 
-* [Pelar papas] # COSTO:1 # DADOS
+* [Pelar papas] # COSTO:1 # DADOS # EFECTO:conexion+
     -> olla_pelar_papas
-* [Servir] # COSTO:1 # DADOS
+* [Servir] # COSTO:1 # DADOS # EFECTO:conexion+
     -> olla_servir
-* [Limpiar] # COSTO:1 # DADOS # STAT:conexion
+* [Limpiar] # COSTO:1 # DADOS # STAT:conexion # EFECTO:conexion+
     -> olla_limpiar
 * {energia <= 1} [Decir que te vas]
     -> olla_despedirse

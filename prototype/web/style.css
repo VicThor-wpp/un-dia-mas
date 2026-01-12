@@ -101,6 +101,26 @@ body {
     margin-bottom: 1em;
 }
 
+/* Animated text appearance */
+.story-text {
+    animation: fadeInUp 0.4s ease-out;
+}
+
+.story-header {
+    animation: fadeInUp 0.3s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 #story h1,
 .story h1,
 h1 {
@@ -209,6 +229,46 @@ h2 {
     border: 1px solid rgba(156, 39, 176, 0.4);
 }
 
+/* Effect badges for consequence indicators */
+.effect-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.effect-badge.effect-up {
+    background-color: rgba(76, 175, 80, 0.2);
+    color: #81c784;
+    border: 1px solid rgba(76, 175, 80, 0.4);
+}
+
+.effect-badge.effect-down {
+    background-color: rgba(244, 67, 54, 0.2);
+    color: #e57373;
+    border: 1px solid rgba(244, 67, 54, 0.4);
+}
+
+.effect-badge.effect-uncertain {
+    background-color: rgba(255, 152, 0, 0.2);
+    color: #ffb74d;
+    border: 1px solid rgba(255, 152, 0, 0.4);
+}
+
+/* Fake choices - subtle interaction that doesn't change anything */
+.choice-falsa {
+    opacity: 0.85;
+    font-style: italic;
+    border-style: dashed;
+}
+
+.choice-falsa:hover {
+    border-color: var(--muted);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
 .choice-unavailable {
     opacity: 0.6;
 }
@@ -226,12 +286,48 @@ h2 {
     color: var(--muted);
     border: 1px dashed var(--muted);
     background-color: transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.continue-button::before {
+    content: '...';
+    display: inline-block;
+    animation: pulse-dots 1.5s ease-in-out infinite;
 }
 
 .continue-button:hover {
     color: var(--accent);
     border-color: var(--accent);
     background-color: transparent;
+}
+
+.continue-button:hover::before {
+    animation: pulse-dots-active 0.8s ease-in-out infinite;
+}
+
+@keyframes pulse-dots {
+    0%, 100% {
+        opacity: 0.4;
+        letter-spacing: 8px;
+    }
+    50% {
+        opacity: 1;
+        letter-spacing: 12px;
+    }
+}
+
+@keyframes pulse-dots-active {
+    0%, 100% {
+        opacity: 0.8;
+        letter-spacing: 10px;
+        color: var(--accent);
+    }
+    50% {
+        opacity: 1;
+        letter-spacing: 14px;
+        color: var(--accent);
+    }
 }
 
 /* Notifications for stat changes */
@@ -352,6 +448,16 @@ h2 {
     color: #f44336;
 }
 
+.dice-roll.neutral {
+    background-color: rgba(156, 39, 176, 0.15);
+    border-left: 4px solid #9c27b0;
+}
+
+.dice-roll.neutral .dice-value,
+.dice-roll.neutral .dice-label {
+    color: #ce93d8;
+}
+
 .dice-roll.critical-failure {
     background: linear-gradient(135deg, rgba(139, 0, 0, 0.3), rgba(244, 67, 54, 0.2));
     border-left: 4px solid #8b0000;
@@ -373,6 +479,12 @@ h2 {
     background-color: rgba(244, 67, 54, 0.9);
     color: #fff;
     border-left: 4px solid #c62828;
+}
+
+.notification.dice-neutral {
+    background-color: rgba(156, 39, 176, 0.9);
+    color: #fff;
+    border-left: 4px solid #7b1fa2;
 }
 
 @keyframes pulse-gold {

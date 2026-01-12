@@ -27,3 +27,13 @@ out/
 
 # Logs
 *.log
+
+# Local Netlify folder
+.netlify
+
+# Reference clones (not our code)
+atrament-analysis/
+
+# Temp files
+*.zip
+design-system.html

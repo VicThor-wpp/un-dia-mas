@@ -30,9 +30,9 @@ El despertador no sonó porque lo apagaste.
 
 ~ tiene_laburo = false
 
-* [Levantarte igual]
+* [Levantarte igual] # EFECTO:dignidad+
     -> jueves_manana
-* [Quedarte en la cama] # COSTO:1
+* [Quedarte en la cama] # COSTO:1 # EFECTO:dignidad-
     -> jueves_cama
 
 === jueves_cama ===
@@ -81,11 +81,11 @@ Sin saber qué hacer.
 
 ¿Qué hacés hoy?
 
-* [Buscar laburo online] # COSTO:1 # STAT:dignidad
+* [Buscar laburo online] # COSTO:1 # STAT:dignidad # EFECTO:dignidad-
     -> jueves_buscar_laburo
-* [Ir al barrio]
+* [Ir al barrio] # EFECTO:conexion?
     -> jueves_barrio
-* [Quedarte en casa] # COSTO:1 # STAT:conexion
+* [Quedarte en casa] # COSTO:1 # STAT:conexion # EFECTO:conexion-
     -> jueves_quedarse
 
 === jueves_buscar_laburo ===
@@ -137,9 +137,9 @@ Salís.
 -> barrio_caminar_manana ->
 // Continua con opciones del dia
 
-* [Ir a la olla] -> jueves_olla
+* [Ir a la olla] # EFECTO:llama+ -> jueves_olla
 * [Caminar nomás] -> jueves_caminar
-* [Buscar a tu vínculo] -> jueves_buscar_vinculo
+* [Buscar a tu vínculo] # EFECTO:conexion+ -> jueves_buscar_vinculo
 
 === jueves_caminar ===
 
@@ -195,8 +195,8 @@ Y otra gente que no conocés bien.
 
 ¿Querés ayudar?
 
-* [Sí] -> jueves_olla_ayudar
-* [Solo vine a ver] -> jueves_olla_ver
+* [Sí] # EFECTO:conexion+ # EFECTO:llama+ -> jueves_olla_ayudar
+* [Solo vine a ver] # EFECTO:conexion- -> jueves_olla_ver
 
 === jueves_olla_ver ===
 

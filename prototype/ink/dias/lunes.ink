@@ -72,10 +72,10 @@ La parada del bondi.
 
 * [Seguir laburando]
     -> lunes_almuerzo
-* [Preguntarle a Renzo] # STAT:conexion
+* [Preguntarle a Renzo] # STAT:conexion # EFECTO:conexion+
     -> renzo_preguntar_sobre_jefe ->
     -> lunes_almuerzo
-* {energia >= 2} [Hablar con el jefe] # COSTO:1 # DADOS:dignidad
+* {energia >= 2} [Hablar con el jefe] # COSTO:1 # DADOS:dignidad # EFECTO:dignidad?
     -> laburo_hablar_con_jefe ->
     -> lunes_almuerzo
 
@@ -86,13 +86,13 @@ La parada del bondi.
 12:30.
 Hora de comer.
 
-* [Almorzar con Renzo]
+* [Almorzar con Renzo] # EFECTO:conexion+
     -> renzo_almuerzo ->
     -> lunes_tarde
-* [Almorzar solo]
+* [Almorzar solo] # EFECTO:conexion-
     -> laburo_almuerzo_solo ->
     -> lunes_tarde
-* [Saltear el almuerzo]
+* [Saltear el almuerzo] # EFECTO:dignidad-
     -> laburo_almuerzo_saltear ->
     -> lunes_tarde
 
@@ -124,18 +124,18 @@ A las 5, te vas.
 
 El bondi llega al barrio.
 
-* [Ir directo a casa]
+* [Ir directo a casa] # EFECTO:conexion-
     -> lunes_ir_casa
-* {energia >= 2} [Pasar por algún lado] # COSTO:1
+* {energia >= 2} [Pasar por algún lado] # COSTO:1 # EFECTO:conexion?
     -> lunes_pasar
 
 === lunes_pasar ===
 
 ¿A dónde?
 
-* [Por la olla] # COSTO:1
+* [Por la olla] # COSTO:1 # EFECTO:llama+
     -> lunes_olla
-* [Por lo de tu vínculo] # COSTO:1
+* [Por lo de tu vínculo] # COSTO:1 # EFECTO:conexion+
     -> lunes_visita_vinculo
 * [Por el kiosco] # COSTO:1
     -> lunes_kiosco
@@ -173,12 +173,12 @@ Está en la puerta, los pibes adentro.
 
 "¿Todo bien?"
 
-* [Contarle del laburo] # STAT:conexion
+* [Contarle del laburo] # STAT:conexion # EFECTO:conexion+
     ~ subir_conexion(1)
     Le contás. Los rumores. La reunión.
     "En la olla estamos peor", dice. "Pero entiendo."
     -> lunes_ir_casa
-* ["Sí, todo bien."]
+* ["Sí, todo bien."] # EFECTO:conexion-
     "Si necesitás algo..."
     -> lunes_ir_casa
 
@@ -189,12 +189,12 @@ Está tomando mate afuera.
 
 "Vení, sentate."
 
-* [Contarle] # STAT:conexion
+* [Contarle] # STAT:conexion # EFECTO:conexion+
     ~ subir_conexion(1)
     Le contás.
     "En el 2002 Raúl perdió el laburo. Pero salimos. Juntos."
     -> lunes_ir_casa
-* ["Normal."]
+* ["Normal."] # EFECTO:conexion-
     No te cree. Pero no insiste.
     -> lunes_ir_casa
 
@@ -234,7 +234,7 @@ Sofía está adentro.
 * ["Pasaba nomás."]
     "Si alguna vez querés dar una mano..."
     -> lunes_ir_casa
-* ["¿Puedo ayudar?"] # COSTO:1 # STAT:conexion
+* ["¿Puedo ayudar?"] # COSTO:1 # STAT:conexion # EFECTO:conexion+ # EFECTO:llama+
     ~ subir_conexion(1)
     ~ subir_llama(1)
     ~ energia -= 1

@@ -21,7 +21,7 @@
         energia: { label: 'Energía', icon: '⚡', max: 5 },
         conexion: { label: 'Conexión', icon: '🤝', max: 10 },
         dignidad: { label: 'Dignidad', icon: '✊', max: 10 },
-        la_llama: { label: 'La Llama', icon: '🔥', max: 10 },
+        llama: { label: 'Llama', icon: '🔥', max: 10 },
         trauma: { label: 'Trauma', icon: '💔', max: 10 }
     };
 
@@ -29,7 +29,7 @@
     const DICE_RESULTS = {
         2: { label: '¡ÉXITO CRÍTICO!', class: 'critical-success' },
         1: { label: 'Éxito', class: 'success' },
-        0: { label: 'Fallo', class: 'failure' },
+        0: { label: 'Tirada', class: 'neutral' },  // Simple roll, not a skill check
         '-1': { label: '¡FALLO CRÍTICO!', class: 'critical-failure' }
     };
 
@@ -60,7 +60,7 @@
                 energia: story.variablesState['energia'] ?? 4,
                 conexion: story.variablesState['conexion'] ?? 5,
                 dignidad: story.variablesState['dignidad'] ?? 5,
-                la_llama: story.variablesState['la_llama'] ?? 3,
+                llama: story.variablesState['llama'] ?? 3,
                 trauma: story.variablesState['trauma'] ?? 0
             };
             previousDice = {
@@ -101,8 +101,8 @@
         // Insert before the last paragraph or at the end
         storyContainer.appendChild(rollDiv);
 
-        // Also show as notification
-        showNotification(`🎲 ${roll} - ${resultInfo.label}`, result >= 1 ? 1 : -1, 'dice');
+        // Also show as notification (0 = neutral for simple rolls)
+        showNotification(`🎲 ${roll} - ${resultInfo.label}`, result === 0 ? 0 : (result >= 1 ? 1 : -1), 'dice');
     }
 
     function checkStatChanges() {
@@ -113,7 +113,7 @@
                 energia: story.variablesState['energia'] ?? 4,
                 conexion: story.variablesState['conexion'] ?? 5,
                 dignidad: story.variablesState['dignidad'] ?? 5,
-                la_llama: story.variablesState['la_llama'] ?? 3,
+                llama: story.variablesState['llama'] ?? 3,
                 trauma: story.variablesState['trauma'] ?? 0
             };
 
@@ -139,7 +139,11 @@
             className += diff > 0 ? ' positive' : ' negative';
             text = `${label} ${diff > 0 ? '+' : ''}${diff}`;
         } else if (type === 'dice') {
-            className += diff >= 1 ? ' dice-success' : ' dice-fail';
+            if (diff === 0) {
+                className += ' dice-neutral';
+            } else {
+                className += diff >= 1 ? ' dice-success' : ' dice-fail';
+            }
             text = label;
         }
 
@@ -260,7 +264,8 @@
     function showContinueButton() {
         const button = document.createElement('button');
         button.className = 'choice-button continue-button';
-        button.textContent = '...';
+        // Text content is handled by CSS ::before pseudo-element
+        button.textContent = '';
         button.addEventListener('click', function() {
             choicesContainer.innerHTML = '';
             showNextBatch();
@@ -270,7 +275,7 @@
     }
 
     function parseChoiceTags(tags) {
-        const meta = { cost: 0, dice: false, stat: null };
+        const meta = { cost: 0, dice: false, stat: null, effects: [], isFalsa: false };
         if (!tags) return meta;
 
         for (const tag of tags) {
@@ -283,10 +288,25 @@
                 meta.stat = tag.split(':')[1];
             } else if (tag.startsWith('STAT:')) {
                 meta.stat = tag.split(':')[1];
+            } else if (tag.startsWith('EFECTO:')) {
+                // Parse effect tags like EFECTO:conexion+ or EFECTO:dignidad- or EFECTO:llama?
+                const effect = tag.split(':')[1];
+                if (effect) {
+                    meta.effects.push(effect);
+                }
+            } else if (tag === 'FALSA') {
+                meta.isFalsa = true;
             }
         }
         return meta;
     }
+
+    // Map effect suffixes to display
+    const EFFECT_DISPLAY = {
+        '+': { symbol: '↑', class: 'effect-up' },
+        '-': { symbol: '↓', class: 'effect-down' },
+        '?': { symbol: '↑↓', class: 'effect-uncertain' }
+    };
 
     function buildChoiceLabel(text, meta) {
         let badges = '';
@@ -306,6 +326,18 @@
                 }
             }
             badges += `<span class="dice-badge">${diceLabel}</span>`;
+        }
+
+        // Add effect badges
+        for (const effect of meta.effects) {
+            const statName = effect.slice(0, -1); // Remove last char (+, -, ?)
+            const modifier = effect.slice(-1);    // Get last char
+            const statInfo = STAT_INFO[statName];
+            const effectInfo = EFFECT_DISPLAY[modifier];
+
+            if (statInfo && effectInfo) {
+                badges += `<span class="effect-badge ${effectInfo.class}">${statInfo.icon}${effectInfo.symbol}</span>`;
+            }
         }
 
         if (badges) {
@@ -333,6 +365,11 @@
                     }
                 }
 
+                // Mark fake choices with subtle styling
+                if (meta.isFalsa) {
+                    button.classList.add('choice-falsa');
+                }
+
                 button.innerHTML = buildChoiceLabel(choice.text, meta);
                 button.dataset.choiceIndex = i;
                 button.addEventListener('click', onChoiceClick);
@@ -354,7 +391,7 @@
         try {
             energia = story.variablesState['energia'] ?? 4;
             conexion = story.variablesState['conexion'] ?? 5;
-            laLlama = story.variablesState['la_llama'] ?? 3;
+            laLlama = story.variablesState['llama'] ?? 3;
             dignidad = story.variablesState['dignidad'] ?? 5;
             diaActual = story.variablesState['dia_actual'] ?? 1;
         } catch (e) {}

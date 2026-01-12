@@ -85,9 +85,9 @@ En lo que probablemente sea.
 
 A las 5 te vas.
 
-* [Ir a casa]
+* [Ir a casa] # EFECTO:conexion-
     -> martes_casa
-* {energia >= 2} [Buscar a alguien] # COSTO:1 # STAT:conexion
+* {energia >= 2} [Buscar a alguien] # COSTO:1 # STAT:conexion # EFECTO:conexion+
     -> martes_buscar
 
 === martes_buscar ===

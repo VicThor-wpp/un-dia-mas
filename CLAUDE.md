@@ -4,13 +4,29 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-La Llama is a narrative game written in Ink (Inkle Studios' scripting language) about labor precarity and neighborhood solidarity in Uruguay. The story follows a worker who gets fired on Wednesday and must decide whether to connect with community support networks.
+**Un Día Más** is a narrative game written in Ink (Inkle Studios' scripting language) about labor precarity and neighborhood solidarity in Uruguay. The story follows a worker who gets fired on Wednesday and must decide whether to connect with community support networks.
+
+## Directory Structure
+
+**IMPORTANT: Where to make changes**
+
+| Directory | Purpose | Editable? |
+|-----------|---------|-----------|
+| `prototype/` | **Main game project** - all development happens here | ✅ YES |
+| `prototype/ink/` | Ink narrative files (story, mechanics, NPCs) | ✅ YES |
+| `prototype/web/` | Web runtime (HTML, CSS, JS for playing the game) | ✅ YES |
+| `atrament-analysis/` | **Reference only** - git clone of Atrament framework to study patterns | ❌ NO - never edit |
+
+The `atrament-analysis/` folder is a cloned copy of the Atrament web runtime framework. Use it to understand best practices, patterns, and implementation ideas, but **never modify files there**. All improvements should be implemented in `prototype/web/`.
 
 ## Build Commands
 
 ```bash
 # Compile Ink to JSON for web runtime
-inklecate -o la_llama.json prototype/ink/main.ink
+inklecate -o prototype/web/un_dia_mas.json prototype/ink/main.ink
+
+# Create JS wrapper for web (after compiling)
+echo "var storyContent = $(cat prototype/web/un_dia_mas.json);" > prototype/web/un_dia_mas.js
 
 # Test compilation (check for errors)
 inklecate prototype/ink/main.ink
@@ -53,7 +69,7 @@ The codebase uses Ink's tunnel pattern for modularity. Files in `dias/` handle r
 - `tiene_laburo` (bool): False after Wednesday despido
 - `energia` (0-5): Daily action capacity
 - `conexion` (0-10): Community integration
-- `la_llama` (0-10): Collective hope
+- `llama` (0-10): Collective hope ("la llama" - the flame)
 - `vinculo`: Randomly assigned NPC relationship ("sofia", "elena", "diego", "marcos")
 
 ### Dice System

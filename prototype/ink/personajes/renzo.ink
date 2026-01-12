@@ -316,7 +316,9 @@ Eso no ayuda.
 Renzo no puede dormir.
 
 Su novia ya duerme.
-Él mira el techo.
+
+* [Seguir mirando el techo] # FALSA
+    Él mira el techo.
 
 {dia_actual == 1:
     Piensa en el laburo.
@@ -351,9 +353,10 @@ Su novia ya duerme.
 
 "¿Estás bien?", pregunta ella sin abrir los ojos.
 
-"Sí. Dormí."
+* [Mentir] # FALSA
+    "Sí. Dormí."
 
-Miente.
-Todos mienten.
+    Miente.
+    Todos mienten.
 
 ->->

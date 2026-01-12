@@ -43,9 +43,9 @@ La mañana.
 
 ¿Qué hacés hoy?
 
-* [Ir a la olla temprano]
+* [Ir a la olla temprano] # EFECTO:llama+
     -> viernes_olla_temprano
-* [Buscar laburo primero] # COSTO:1 # STAT:dignidad
+* [Buscar laburo primero] # COSTO:1 # STAT:dignidad # EFECTO:dignidad-
     -> viernes_buscar
 * [Ver qué pasa]
     -> viernes_barrio
@@ -144,8 +144,8 @@ Silencio.
 
 ¿Qué se puede hacer?
 
-* [Proponer una colecta rápida] -> viernes_colecta
-* [Proponer pedir a vecinos] -> viernes_vecinos
+* [Proponer una colecta rápida] # EFECTO:dignidad+ # EFECTO:llama+ -> viernes_colecta
+* [Proponer pedir a vecinos] # EFECTO:dignidad+ # EFECTO:llama+ -> viernes_vecinos
 * [Quedarte callado, escuchar] -> viernes_escuchar
 
 === viernes_escuchar ===
@@ -209,9 +209,9 @@ Se dividen.
 
 "¿Vos podés ayudar?", pregunta Sofía.
 
-* [Sí, voy con la colecta] -> viernes_colecta_accion
-* [Sí, voy a pedir a vecinos] -> viernes_vecinos_accion
-* [No puedo, tengo que hacer otra cosa] -> viernes_no_ayudar
+* [Sí, voy con la colecta] # EFECTO:conexion+ # EFECTO:llama+ -> viernes_colecta_accion
+* [Sí, voy a pedir a vecinos] # EFECTO:conexion+ # EFECTO:llama+ -> viernes_vecinos_accion
+* [No puedo, tengo que hacer otra cosa] # EFECTO:conexion- -> viernes_no_ayudar
 
 === viernes_no_ayudar ===
 

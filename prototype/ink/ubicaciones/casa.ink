@@ -21,13 +21,13 @@ El despertador.
     Pero el cuerpo ya tiene el ritmo.
 }
 
-* [Levantarte de una]
+* [Levantarte de una] # EFECTO:dignidad+
     -> casa_levantarse_rapido
-* [Cinco minutos más] # COSTO:1
+* [Cinco minutos más] # COSTO:1 # EFECTO:dignidad?
     -> casa_cinco_mas
-* {tiene_laburo} [Apagar el despertador y quedarte] # COSTO:1
+* {tiene_laburo} [Apagar el despertador y quedarte] # COSTO:1 # EFECTO:dignidad-
     -> casa_quedarse
-* {not tiene_laburo} [Quedarte en la cama] # COSTO:1
+* {not tiene_laburo} [Quedarte en la cama] # COSTO:1 # EFECTO:conexion-
     -> casa_quedarse_sin_laburo
 
 === casa_levantarse_rapido ===
@@ -195,13 +195,13 @@ Llegás a casa.
 {energia == 2: Estás cansado. Pero se puede.}
 {energia >= 3: Todavía tenés algo de energía.}
 
-* {energia >= 2} [Cocinar algo decente] # COSTO:1
+* {energia >= 2} [Cocinar algo decente] # COSTO:1 # EFECTO:dignidad+
     -> casa_cocinar
-* [Comer cualquier cosa]
+* [Comer cualquier cosa] # EFECTO:dignidad-
     -> casa_comer_rapido
-* {energia >= 2} [Llamar a alguien] # COSTO:1 # STAT:conexion
+* {energia >= 2} [Llamar a alguien] # COSTO:1 # STAT:conexion # EFECTO:conexion+
     -> casa_llamar_noche
-* [Tele y a dormir]
+* [Tele y a dormir] # EFECTO:conexion-
     -> casa_tele
 
 === casa_cocinar ===

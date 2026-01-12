@@ -43,11 +43,11 @@ Esperando.
 
 ¿Qué hacés?
 
-* [Quedarte en casa, pensar]
+* [Quedarte en casa, pensar] # EFECTO:conexion-
     -> domingo_pensar
-* [Salir al barrio] # COSTO:1
+* [Salir al barrio] # COSTO:1 # EFECTO:conexion?
     -> domingo_barrio
-* [Llamar a tu vínculo]
+* [Llamar a tu vínculo] # EFECTO:conexion+
     -> domingo_llamar
 
 === domingo_pensar ===
@@ -96,8 +96,8 @@ Pero hay gente afuera igual.
 Hablando.
 Sofía. Elena. Otros.
 
-* [Acercarte] -> domingo_grupo
-* [Seguir de largo] -> domingo_tarde
+* [Acercarte] # EFECTO:conexion+ -> domingo_grupo
+* [Seguir de largo] # EFECTO:conexion- -> domingo_tarde
 
 === domingo_grupo ===
 
@@ -171,8 +171,8 @@ La semana que viene:
 {conexion >= 6: Al menos no estás solo.}
 {conexion < 4: Estás bastante solo. Quizás la semana que viene...}
 
-{la_llama >= 5: Hay algo de esperanza. Pequeña, pero ahí.}
-{la_llama < 3: Todo se ve gris. Pero mañana es otro día.}
+{llama >= 5: Hay algo de esperanza. Pequeña, pero ahí.}
+{llama < 3: Todo se ve gris. Pero mañana es otro día.}
 
 * [Ir a la noche] -> domingo_noche
 
@@ -216,11 +216,11 @@ Por ahora.
 // Evaluamos variables para determinar el final
 // Los finales estan definidos en finales/finales.ink
 
-{conexion >= 7 && la_llama >= 5 && ayude_en_olla:
+{conexion >= 7 && llama >= 5 && ayude_en_olla:
     -> final_red
 }
 
-{conexion <= 3 && la_llama <= 2:
+{conexion <= 3 && llama <= 2:
     -> final_solo
 }
 

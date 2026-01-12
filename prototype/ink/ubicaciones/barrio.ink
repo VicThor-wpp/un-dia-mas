@@ -120,11 +120,11 @@ Madres con cochecitos.
     Ahora tenés todo el tiempo del mundo.
 }
 
-* [Sentarte en un banco] -> barrio_plaza_banco ->
+* [Sentarte en un banco] # EFECTO:dignidad+ -> barrio_plaza_banco ->
     ->->
 * [Caminar por la plaza] -> barrio_plaza_caminar ->
     ->->
-* [Mirar a los pibes jugar] -> barrio_plaza_pibes ->
+* [Mirar a los pibes jugar] # EFECTO:conexion? -> barrio_plaza_pibes ->
     ->->
 * [Irte] ->->
 
@@ -563,7 +563,7 @@ Una vieja camina despacio.
 Con bolsas del super.
 Le cuesta.
 
-* [Ayudarla] # STAT:conexion
+* [Ayudarla] # STAT:conexion # EFECTO:conexion+
     "¿La ayudo?"
     "Ay, sí. Gracias, m'hijo."
 
@@ -573,7 +573,7 @@ Le cuesta.
 
     ~ subir_conexion(1)
     ->->
-* [Seguir]
+* [Seguir] # EFECTO:conexion-
     Seguís caminando.
     Ella sigue caminando.
     Cada uno con lo suyo.

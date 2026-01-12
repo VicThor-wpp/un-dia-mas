@@ -15,7 +15,7 @@ VAR conexion = 5
 VAR dignidad = 5
 
 // LA LLAMA: Capacidad colectiva de esperanza (0-10)
-VAR la_llama = 3
+VAR llama = 3
 
 // ACUMULACIÓN: Complicidad con la lógica del capital (0-10, oculto)
 VAR acumulacion = 0
@@ -33,7 +33,7 @@ VAR dia_actual = 1
 
 // Mostrar estado de recursos (para debug o UI)
 === function mostrar_recursos() ===
-    ~ return "E:{energia} C:{conexion} D:{dignidad} L:{la_llama}"
+    ~ return "E:{energia} C:{conexion} D:{dignidad} L:{llama}"
 
 // Gastar energía con validación
 === function gastar_energia(cantidad) ===
@@ -75,10 +75,10 @@ VAR dia_actual = 1
     ~ ajustar(dignidad, -cantidad, 0, 10)
 
 === function subir_llama(cantidad) ===
-    ~ ajustar(la_llama, cantidad, 0, 10)
+    ~ ajustar(llama, cantidad, 0, 10)
 
 === function bajar_llama(cantidad) ===
-    ~ ajustar(la_llama, -cantidad, 0, 10)
+    ~ ajustar(llama, -cantidad, 0, 10)
 
 === function subir_acumulacion(cantidad) ===
     ~ ajustar(acumulacion, cantidad, 0, 10)
@@ -104,7 +104,7 @@ VAR dia_actual = 1
     ~ return trauma >= 4
 
 === function llama_viva() ===
-    ~ return la_llama >= 5
+    ~ return llama >= 5
 
 === function llama_apagandose() ===
-    ~ return la_llama <= 2
+    ~ return llama <= 2

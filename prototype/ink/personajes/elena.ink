@@ -469,8 +469,9 @@ Pero ayuda escucharlo.
 Elena no duerme mucho.
 Los viejos no duermen.
 
-Se sienta en la cocina.
-Mate. Radio bajita. Las voces de siempre.
+* [Sentarse en la cocina] # FALSA
+    Se sienta en la cocina.
+    Mate. Radio bajita. Las voces de siempre.
 
 {escuche_sobre_2002:
     Piensa en el 2002.
@@ -497,8 +498,9 @@ La radio habla de economía.
 Números que no entiende.
 Palabras que ya escuchó antes.
 
-"Otra vez", murmura.
-"Siempre otra vez."
+* [Murmurar] # FALSA
+    "Otra vez", murmura.
+    "Siempre otra vez."
 
 {elena_relacion >= 4:
     Piensa en vos.

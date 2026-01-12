@@ -450,9 +450,10 @@ Pero es algo.
 Sofía mira a sus hijos dormir.
 Tres cuerpos en dos colchones.
 
-El más chico tiene tos.
-Otra vez.
-No hay plata para el médico.
+* [Seguir mirando] # FALSA
+    El más chico tiene tos.
+    Otra vez.
+    No hay plata para el médico.
 
 {sofia_hijos_enfermos:
     Mañana va a tener que elegir.
@@ -467,7 +468,9 @@ En el almacén que no les quiere fiar.
 ¿Cuánto más puede seguir?
 
 Se acuesta. El colchón es duro.
-Cierra los ojos.
+
+* [Cerrar los ojos] # FALSA
+    Cierra los ojos.
 
 {sofia_estado == "agotada":
     No puede dormir.

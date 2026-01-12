@@ -94,11 +94,11 @@ Mails que podrían ser nada.
 12:30.
 Hora de comer.
 
-* [Almorzar acompañado] # DADOS # STAT:conexion
+* [Almorzar acompañado] # DADOS # STAT:conexion # EFECTO:conexion+
     -> laburo_almuerzo_acompanado
-* [Almorzar solo]
+* [Almorzar solo] # EFECTO:conexion-
     -> laburo_almuerzo_solo
-* [Saltear el almuerzo] # COSTO:1
+* [Saltear el almuerzo] # COSTO:1 # EFECTO:dignidad-
     -> laburo_almuerzo_saltear
 
 === laburo_almuerzo_acompanado ===
@@ -313,12 +313,13 @@ Así que era eso.
 
 "Acá está la liquidación. Tres meses. Podés firmar ahora."
 
-Tres meses. Tres meses de colchón.
-No estás en la calle mañana.
-Pero algo se rompió igual.
+* [Escuchar] # FALSA
+    Tres meses. Tres meses de colchón.
+    No estás en la calle mañana.
+    Pero algo se rompió igual.
 
 * [Firmar] -> laburo_despido_firmar
-* [Preguntar por qué] -> laburo_despido_preguntar
+* [Preguntar por qué] # EFECTO:dignidad? -> laburo_despido_preguntar
 
 === laburo_despido_preguntar ===
 
@@ -375,9 +376,10 @@ La calle está igual que siempre.
 El sol es el mismo sol.
 La gente camina como si nada.
 
-Pero vos estás parado acá con una caja.
-A las 11:30 de la mañana de un miércoles.
-Sin laburo.
+* [Seguir caminando] # FALSA
+    Pero vos estás parado acá con una caja.
+    A las 11:30 de la mañana de un miércoles.
+    Sin laburo.
 
 Tenés tres meses de colchón.
 No te estás muriendo.

@@ -31,7 +31,7 @@ Pero no estás solo.
 
 {idea_red_o_nada: Elena tenía razón. La red o la nada.}
 
-{la_llama >= 7:
+{llama >= 7:
     Y hay algo más.
     Un fuego pequeño.
     Una llama que no se apaga.
@@ -108,7 +108,7 @@ Quizás algo.
 No es esperanza.
 Es posibilidad.
 
-{la_llama >= 4:
+{llama >= 4:
     Y eso, a veces, alcanza.
 }
 

@@ -38,11 +38,11 @@ El barrio más tranquilo.
 
 ¿Qué hacés con la mañana?
 
-* [Llamar a alguien]
+* [Llamar a alguien] # EFECTO:conexion?
     -> sabado_llamar
 * [Salir a caminar] # COSTO:1
     -> sabado_caminar
-* [Quedarte en casa] # COSTO:1 # STAT:conexion
+* [Quedarte en casa] # COSTO:1 # STAT:conexion # EFECTO:conexion-
     -> sabado_casa
 
 === sabado_llamar ===
@@ -88,13 +88,13 @@ El barrio más tranquilo.
 // Invitar a Marcos a la asamblea
 -> marcos_invitar_asamblea ->
 
-* ["Vamos juntos."]
+* ["Vamos juntos."] # EFECTO:conexion+
     "Hace mucho que no voy al barrio."
     "Por eso. Vamos."
     Marcos asiente.
     ~ marcos_estado = "mirando"
     -> sabado_tarde
-* ["No importa, era por decir."]
+* ["No importa, era por decir."] # EFECTO:conexion-
     "Mejor no. No estoy para eso."
     "Bueno."
     -> sabado_tarde
@@ -171,8 +171,8 @@ Nada.
 
 Las horas pasan.
 
-* [Ir a la asamblea igual] -> sabado_asamblea
-* [No ir] -> sabado_noche_solo
+* [Ir a la asamblea igual] # EFECTO:llama+ -> sabado_asamblea
+* [No ir] # EFECTO:conexion- # EFECTO:llama- -> sabado_noche_solo
 
 === sabado_tarde ===
 
@@ -229,11 +229,11 @@ Estás afuera.
 
 ¿Qué hacés?
 
-* [Hablar] # STAT:dignidad
+* [Hablar] # STAT:dignidad # EFECTO:dignidad+
     -> sabado_hablar
 * [Escuchar]
     -> sabado_escuchar_asamblea
-* [Proponer algo] # STAT:dignidad # STAT:la_llama
+* [Proponer algo] # STAT:dignidad # STAT:llama # EFECTO:dignidad+ # EFECTO:llama+
     -> sabado_proponer
 
 === sabado_escuchar_asamblea ===
@@ -285,14 +285,14 @@ Silencio.
 Sofía:
 "¿Vos te animás a ayudar con eso?"
 
-* ["Sí."] # STAT:conexion
+* ["Sí."] # STAT:conexion # EFECTO:conexion+
     ~ subir_conexion(1)
     "Sí. Ahora tengo tiempo."
     Risas nerviosas.
     Pero es real.
     Ahora tenés tiempo.
     -> sabado_asamblea_fin
-* ["No sé si puedo."]
+* ["No sé si puedo."] # EFECTO:conexion-
     "Bueno. La idea queda."
     -> sabado_asamblea_fin
 
