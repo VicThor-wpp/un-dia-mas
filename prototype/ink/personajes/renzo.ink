@@ -11,22 +11,24 @@ Renzo está en el escritorio de al lado.
 Compañero hace tres años.
 El único con el que hablás de verdad acá.
 
-{dia_actual == 1:
-    "Che, ¿viste lo del piso 4?"
-    * ["¿Qué pasó?"] -> renzo_rumor
-    * ["No, ¿qué?"] -> renzo_rumor
-    * ["No quiero saber."] -> renzo_ignorar
-}
-
-{dia_actual == 2:
+{
+- dia_actual == 1:
+    -> renzo_pregunta_piso4
+- dia_actual == 2:
     Te mira.
     "¿Cómo dormiste?"
     "Mal."
     "Yo también."
-    ->->
 }
 
 ->->
+
+=== renzo_pregunta_piso4 ===
+"Che, ¿viste lo del piso 4?"
+
+* ["¿Qué pasó?"] -> renzo_rumor
+* ["No, ¿qué?"] -> renzo_rumor
+* ["No quiero saber."] -> renzo_ignorar
 
 === renzo_rumor ===
 
