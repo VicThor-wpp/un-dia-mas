@@ -1,5 +1,5 @@
 // ============================================
-// LA LLAMA - Prototipo Modular
+// UN DÍA MÁS - Prototipo Modular
 // ============================================
 
 // --- INCLUDES: MECÁNICAS ---
@@ -44,8 +44,7 @@ INCLUDE finales/finales.ink
 
 === inicio ===
 
-# LA LLAMA
-# Un juego sobre pertenecer cuando todo se reorganiza
+# UN DÍA MÁS
 
 La semana empieza como cualquier otra.
 Todavía no sabés lo que viene.
@@ -131,71 +130,65 @@ Pero hay cosas que solo vos sabés.
 
 === elegir_posicion ===
 
-# ¿QUÉ PENSÁS DE "LA LUCHA"?
+# ¿CREÉS QUE LAS COSAS PUEDEN CAMBIAR?
 
-La política, la militancia, eso de organizarse.
-
-* [Nunca fui de eso.]
+* [No.]
     ~ posicion = "ajeno"
-    Siempre te pareció lejano. Cosa de otros.
-    Ahora estás acá, en el barrio, y la política está en todo.
-    No elegiste esto. Pero acá estás.
+    Es lo que hay.
+    Lo aprendiste hace rato.
     -> asignar_vinculo
 
-* [Creía. Ya no.]
-    ~ posicion = "quemado"
-    Militaste, o casi. Creíste en algo.
-    Ahora no. El cinismo vino solo.
-    A veces extrañás creer. A veces te da vergüenza haber creído.
-    -> asignar_vinculo
-
-* [Todavía creo. Pero.]
+* [Quiero creer.]
     ~ posicion = "esperanzado"
-    Seguís pensando que las cosas pueden cambiar.
-    Pero cada vez cuesta más. El "pero" pesa más.
+    A veces cuesta.
+    Pero seguís intentando.
     -> asignar_vinculo
 
-* [No sé qué creo.]
+* [Ya no sé.]
+    ~ posicion = "quemado"
+    Antes sabías.
+    Ahora no.
+    -> asignar_vinculo
+
+* [¿Importa?]
     ~ posicion = "ambiguo"
-    Hay días que sí. Días que no.
-    Alguien dice algo y sentís algo.
-    Las noticias dicen algo y no sentís nada.
-    Estás en el medio. Siempre en el medio.
+    La pregunta queda ahí.
+    Sin respuesta.
     -> asignar_vinculo
 
 === asignar_vinculo ===
 
-// El vínculo se asigna aleatoriamente
-~ temp dado = RANDOM(1, 4)
+# ¿CON QUIÉN TENÉS HISTORIA?
 
-{
-    - dado == 1:
-        ~ vinculo = "sofia"
-        Sofía. La de la olla.
-        Los pibes van a la misma escuela, o iban.
-        Sabés lo que carga. Ella sabe lo que cargás.
-        No hablan de eso. Pero saben.
-    - dado == 2:
-        ~ vinculo = "elena"
-        Elena. La veterana.
-        Conocía a tu familia. O vos la ayudaste una vez.
-        Te mira diferente. Espera algo de vos.
-        No sabés si podés dárselo.
-    - dado == 3:
-        ~ vinculo = "diego"
-        Diego. El nuevo.
-        Llegó hace poco. Le diste una mano con algo.
-        Te busca. Pregunta cosas. Confía en vos.
-        No sabés si merecés esa confianza.
-    - dado == 4:
-        ~ vinculo = "marcos"
-        Marcos. El que se alejó.
-        Antes eran cercanos. Antes de que él se quemara.
-        Ahora se cruzan y es raro.
-        Hay algo ahí que ninguno termina de cerrar.
-}
+En el barrio hay gente. Pero con alguien tenés algo más.
 
--> confirmar_inicio
+* [Sofía. La de la olla.]
+    ~ vinculo = "sofia"
+    Los pibes van a la misma escuela, o iban.
+    Sabés lo que carga. Ella sabe lo que cargás.
+    No hablan de eso. Pero saben.
+    -> confirmar_inicio
+
+* [Elena. La veterana.]
+    ~ vinculo = "elena"
+    Conocía a tu familia. O vos la ayudaste una vez.
+    Te mira diferente. Espera algo de vos.
+    No sabés si podés dárselo.
+    -> confirmar_inicio
+
+* [Diego. El nuevo.]
+    ~ vinculo = "diego"
+    Llegó hace poco. Le diste una mano con algo.
+    Te busca. Pregunta cosas. Confía en vos.
+    No sabés si merecés esa confianza.
+    -> confirmar_inicio
+
+* [Marcos. El que se alejó.]
+    ~ vinculo = "marcos"
+    Antes eran cercanos. Antes de que él se quemara.
+    Ahora se cruzan y es raro.
+    Hay algo ahí que ninguno termina de cerrar.
+    -> confirmar_inicio
 
 === confirmar_inicio ===
 

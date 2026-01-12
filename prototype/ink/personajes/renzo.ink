@@ -5,7 +5,7 @@
 
 // --- ENCUENTRO EN EL LABURO ---
 
-=== renzo_saludo_mañana ===
+=== renzo_saludo_manana ===
 
 Renzo está en el escritorio de al lado.
 Compañero hace tres años.

@@ -121,8 +121,11 @@ Madres con cochecitos.
 }
 
 * [Sentarte en un banco] -> barrio_plaza_banco ->
+    ->->
 * [Caminar por la plaza] -> barrio_plaza_caminar ->
+    ->->
 * [Mirar a los pibes jugar] -> barrio_plaza_pibes ->
+    ->->
 * [Irte] ->->
 
 === barrio_plaza_banco ===
@@ -225,6 +228,7 @@ Un cartel de Coca-Cola de hace 20 años.
 "¿Qué va a ser?"
 
 * [Comprar algo] -> barrio_kiosco_comprar ->
+    ->->
 * [Solo saludar]
     "Nada, pasaba nomás. Buen día."
     Te mira raro pero no dice nada.
@@ -338,7 +342,7 @@ Ropa sucia pero no tanto.
         ~ hable_con_el_del_banco = true
         ~ nombre_del_banco = "Roberto"
 
-        -> barrio_banco_cafe ->
+        -> barrio_banco_cafe
 
     * [Sentarte cerca]
         Te sentás en el otro extremo del banco.
@@ -371,8 +375,8 @@ Ropa sucia pero no tanto.
 
     "Acá. Siempre acá."
 
-    * [Ofrecerle un café] -> barrio_banco_cafe ->
-    * [Sentarte un rato] -> barrio_banco_charla ->
+    * [Ofrecerle un café] -> barrio_banco_cafe
+    * [Sentarte un rato] -> barrio_banco_charla
     * [Irte]
         "Bueno. Nos vemos."
         "Chau."
@@ -479,13 +483,13 @@ Silencio.
 
     "¿Todo bien?"
 
-    * ["Sí, todo bien."]
+    * ["Sí, todo bien."] # STAT:conexion
         "Sí, todo bien."
         "Bueno. Cualquier cosa..."
         "Sí, ya sé."
         ~ subir_conexion(1)
         ->->
-    * ["Más o menos."]
+    * ["Más o menos."] # STAT:conexion
         "Más o menos."
         "Uh. ¿Querés hablar?"
         "Después. Ahora no."
@@ -559,7 +563,7 @@ Una vieja camina despacio.
 Con bolsas del super.
 Le cuesta.
 
-* [Ayudarla]
+* [Ayudarla] # STAT:conexion
     "¿La ayudo?"
     "Ay, sí. Gracias, m'hijo."
 
@@ -743,6 +747,35 @@ Gente saliendo a caminar.
     "¿Qué tal?"
     "Ahí andamos."
     El intercambio de siempre.
+}
+
+->->
+
+// --- CAMINAR DE MANANA ---
+
+=== barrio_caminar_manana ===
+// Tunnel para caminar de mañana
+// Llamar: -> barrio_caminar_manana ->
+
+La mañana en el barrio.
+
+El sol recién saliendo.
+El rocío en los autos.
+
+Gente yendo a trabajar.
+Pibes yendo a la escuela.
+
+{not tiene_laburo:
+    Antes eras uno de ellos.
+    Los que van al laburo.
+    Ahora mirás pasar.
+}
+
+{d6() >= 5:
+    Un vecino te saluda.
+    "¡Buen día!"
+    "Buen día."
+    El saludo de siempre.
 }
 
 ->->

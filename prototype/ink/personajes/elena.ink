@@ -261,7 +261,7 @@ Pero los que nos quedamos acá, no olvidamos."
 
 // --- ELENA PREOCUPADA ---
 
-=== elena_preocupada_olla ===
+=== elena_preocupada_olla_knot ===
 
 ~ elena_preocupada_olla = true
 

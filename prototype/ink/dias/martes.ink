@@ -43,10 +43,10 @@ El jefe no te mira.
 Los de RRHH entran y salen.
 Hay reuniones que no te incluyen.
 
--> laburo_mañana ->
+-> laburo_manana ->
 
 // Encuentro con Renzo
--> renzo_saludo_mañana ->
+-> renzo_saludo_manana ->
 
 // Trabajo de rutina
 -> laburo_trabajo_rutina ->
@@ -85,8 +85,10 @@ En lo que probablemente sea.
 
 A las 5 te vas.
 
-* [Ir a casa] -> martes_casa
-* {energia >= 2} [Buscar a alguien] -> martes_buscar
+* [Ir a casa]
+    -> martes_casa
+* {energia >= 2} [Buscar a alguien] # COSTO:1 # STAT:conexion
+    -> martes_buscar
 
 === martes_buscar ===
 
@@ -200,9 +202,17 @@ Pero algo termina igual.
 
 === fragmento_martes ===
 
-# MIENTRAS (NO) DORMÍS
+# MIENTRAS DORMÍS
 
-// El fragmento de martes es más corto - la tensión es tuya
+// El fragmento de martes muestra la tensión de todos
+
+{vinculo == "sofia": -> fragmento_sofia_martes}
+{vinculo == "elena": -> fragmento_elena_martes}
+{vinculo == "diego": -> fragmento_diego_martes}
+{vinculo == "marcos": -> fragmento_marcos_martes}
+-> fragmento_martes_default
+
+=== fragmento_martes_default ===
 
 La noche pasa despacio.
 El barrio duerme.
@@ -212,13 +222,82 @@ Pensás en el laburo.
 En lo que significa.
 En lo que sos sin él.
 
-No es el dinero.
-Es la identidad.
-El lugar donde vas todos los días.
-La excusa para levantarte.
-
 ¿Quién sos sin eso?
-
 Mañana vas a saber.
+
+* [Continuar] -> miercoles_amanecer
+
+=== fragmento_sofia_martes ===
+
+# SOFÍA
+
+Sofía tampoco duerme bien.
+
+La olla necesita cosas.
+Siempre necesita cosas.
+Y cada vez hay menos.
+
+Piensa en mañana.
+En la comida que hay que conseguir.
+En la gente que viene.
+
+El barrio la necesita.
+Eso la mantiene despierta.
+
+* [Continuar] -> miercoles_amanecer
+
+=== fragmento_elena_martes ===
+
+# ELENA
+
+Elena está con la radio.
+
+Las noticias hablan de ajustes.
+De despidos.
+De lo que viene.
+
+Ella ya vio esto antes.
+Sabe cómo termina.
+Sabe que solo juntos se sale.
+
+Apaga la radio.
+Mañana hay que estar atentos.
+
+* [Continuar] -> miercoles_amanecer
+
+=== fragmento_diego_martes ===
+
+# DIEGO
+
+Diego mira el techo.
+
+El depósito anda raro.
+Hablan de "reestructuración".
+Él sabe qué significa eso.
+
+Piensa en su madre.
+En Venezuela.
+En todo lo que dejó para venir acá.
+
+No puede perder esto también.
+
+* [Continuar] -> miercoles_amanecer
+
+=== fragmento_marcos_martes ===
+
+# MARCOS
+
+Marcos está despierto.
+
+La tele encendida.
+El celular con mensajes sin leer.
+No quiere hablar con nadie.
+
+Antes era diferente.
+Antes tenía ganas.
+Ahora solo funciona.
+
+Mañana será igual.
+Siempre es igual.
 
 * [Continuar] -> miercoles_amanecer

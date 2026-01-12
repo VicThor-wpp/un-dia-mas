@@ -28,9 +28,9 @@ Tenías algo.
 Ahora tenés tres meses de indemnización.
 Y un montón de preguntas.
 
-* [Levantarte] -> domingo_mañana
+* [Levantarte] -> domingo_manana
 
-=== domingo_mañana ===
+=== domingo_manana ===
 
 Domingo.
 El día más lento.
@@ -43,9 +43,12 @@ Esperando.
 
 ¿Qué hacés?
 
-* [Quedarte en casa, pensar] -> domingo_pensar
-* [Salir al barrio] -> domingo_barrio
-* [Llamar a tu vínculo] -> domingo_llamar
+* [Quedarte en casa, pensar]
+    -> domingo_pensar
+* [Salir al barrio] # COSTO:1
+    -> domingo_barrio
+* [Llamar a tu vínculo]
+    -> domingo_llamar
 
 === domingo_pensar ===
 

@@ -41,20 +41,20 @@ La parada del bondi.
 
 -> laburo_llegada ->
 
--> lunes_mañana
+-> lunes_manana
 
 === lunes_llegada_tarde ===
 
 -> laburo_llegada_tarde ->
 
--> lunes_mañana
+-> lunes_manana
 
-=== lunes_mañana ===
+=== lunes_manana ===
 
--> laburo_mañana ->
+-> laburo_manana ->
 
 // Encuentro con Renzo
--> renzo_saludo_mañana ->
+-> renzo_saludo_manana ->
 
 // Trabajo de la mañana
 -> laburo_trabajo_rutina ->
@@ -70,11 +70,12 @@ La parada del bondi.
 
 ¿Qué hacés con la mirada del jefe?
 
-* [Seguir laburando] -> lunes_almuerzo
-* [Preguntarle a Renzo]
+* [Seguir laburando]
+    -> lunes_almuerzo
+* [Preguntarle a Renzo] # STAT:conexion
     -> renzo_preguntar_sobre_jefe ->
     -> lunes_almuerzo
-* {energia >= 2} [Hablar con el jefe]
+* {energia >= 2} [Hablar con el jefe] # COSTO:1 # DADOS:dignidad
     -> laburo_hablar_con_jefe ->
     -> lunes_almuerzo
 
@@ -123,16 +124,21 @@ A las 5, te vas.
 
 El bondi llega al barrio.
 
-* [Ir directo a casa] -> lunes_ir_casa
-* {energia >= 2} [Pasar por algún lado] -> lunes_pasar
+* [Ir directo a casa]
+    -> lunes_ir_casa
+* {energia >= 2} [Pasar por algún lado] # COSTO:1
+    -> lunes_pasar
 
 === lunes_pasar ===
 
 ¿A dónde?
 
-* [Por la olla] -> lunes_olla
-* [Por lo de tu vínculo] -> lunes_visita_vinculo
-* [Por el kiosco] -> lunes_kiosco
+* [Por la olla] # COSTO:1
+    -> lunes_olla
+* [Por lo de tu vínculo] # COSTO:1
+    -> lunes_visita_vinculo
+* [Por el kiosco] # COSTO:1
+    -> lunes_kiosco
 
 === lunes_kiosco ===
 
@@ -167,7 +173,7 @@ Está en la puerta, los pibes adentro.
 
 "¿Todo bien?"
 
-* [Contarle del laburo]
+* [Contarle del laburo] # STAT:conexion
     ~ subir_conexion(1)
     Le contás. Los rumores. La reunión.
     "En la olla estamos peor", dice. "Pero entiendo."
@@ -183,7 +189,7 @@ Está tomando mate afuera.
 
 "Vení, sentate."
 
-* [Contarle]
+* [Contarle] # STAT:conexion
     ~ subir_conexion(1)
     Le contás.
     "En el 2002 Raúl perdió el laburo. Pero salimos. Juntos."
@@ -228,7 +234,7 @@ Sofía está adentro.
 * ["Pasaba nomás."]
     "Si alguna vez querés dar una mano..."
     -> lunes_ir_casa
-* ["¿Puedo ayudar?"]
+* ["¿Puedo ayudar?"] # COSTO:1 # STAT:conexion
     ~ subir_conexion(1)
     ~ subir_llama(1)
     ~ energia -= 1

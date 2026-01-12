@@ -21,10 +21,14 @@ El despertador.
     Pero el cuerpo ya tiene el ritmo.
 }
 
-* [Levantarte de una] -> casa_levantarse_rapido
-* [Cinco minutos más] -> casa_cinco_mas
-* {tiene_laburo} [Apagar el despertador y quedarte] -> casa_quedarse
-* {not tiene_laburo} [Quedarte en la cama] -> casa_quedarse_sin_laburo
+* [Levantarte de una]
+    -> casa_levantarse_rapido
+* [Cinco minutos más] # COSTO:1
+    -> casa_cinco_mas
+* {tiene_laburo} [Apagar el despertador y quedarte] # COSTO:1
+    -> casa_quedarse
+* {not tiene_laburo} [Quedarte en la cama] # COSTO:1
+    -> casa_quedarse_sin_laburo
 
 === casa_levantarse_rapido ===
 
@@ -191,10 +195,14 @@ Llegás a casa.
 {energia == 2: Estás cansado. Pero se puede.}
 {energia >= 3: Todavía tenés algo de energía.}
 
-* {energia >= 2} [Cocinar algo decente] -> casa_cocinar
-* [Comer cualquier cosa] -> casa_comer_rapido
-* {energia >= 2} [Llamar a alguien] -> casa_llamar_noche
-* [Tele y a dormir] -> casa_tele
+* {energia >= 2} [Cocinar algo decente] # COSTO:1
+    -> casa_cocinar
+* [Comer cualquier cosa]
+    -> casa_comer_rapido
+* {energia >= 2} [Llamar a alguien] # COSTO:1 # STAT:conexion
+    -> casa_llamar_noche
+* [Tele y a dormir]
+    -> casa_tele
 
 === casa_cocinar ===
 
@@ -316,8 +324,10 @@ La mañana.
 No hay apuro.
 Pero tampoco hay nada.
 
-* [Quedarte en casa] -> casa_quedarse_dia
-* [Salir] ->->  // El día maneja a dónde
+* [Quedarte en casa] # COSTO:1 # STAT:conexion
+    -> casa_quedarse_dia
+* [Salir]
+    ->->  // El día maneja a dónde
 
 === casa_quedarse_dia ===
 

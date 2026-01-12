@@ -12,9 +12,12 @@ La parada del bondi.
 Hay gente esperando.
 Cada uno en su mundo.
 
-* [Esperar tranquilo] -> bondi_esperar_tranquilo
-* [Mirar el celular] -> bondi_esperar_celular
-* {energia >= 3} [Hablar con alguien] -> bondi_esperar_hablar
+* [Esperar tranquilo] # DADOS
+    -> bondi_esperar_tranquilo
+* [Mirar el celular] # DADOS
+    -> bondi_esperar_celular
+* {energia >= 3} [Hablar con alguien] # COSTO:1 # DADOS:conexion
+    -> bondi_esperar_hablar
 
 === bondi_esperar_tranquilo ===
 
@@ -114,8 +117,10 @@ Corrés.
 
     Mierda.
 
-    * [Esperar el próximo] -> bondi_esperar_otro
-    * [Caminar] -> bondi_caminar_alternativa
+    * [Esperar el próximo] # COSTO:1
+        -> bondi_esperar_otro
+    * [Caminar] # COSTO:1
+        -> bondi_caminar_alternativa
 }
 
 === bondi_esperar_otro ===

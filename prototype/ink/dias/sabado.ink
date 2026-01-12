@@ -27,9 +27,9 @@ Ahora todos los días son iguales.
 
 {ayude_en_olla: Hoy es la asamblea. A las 5 en la olla.}
 
-* [Levantarte] -> sabado_mañana
+* [Levantarte] -> sabado_manana
 
-=== sabado_mañana ===
+=== sabado_manana ===
 
 La mañana de sábado.
 El barrio más tranquilo.
@@ -38,16 +38,21 @@ El barrio más tranquilo.
 
 ¿Qué hacés con la mañana?
 
-* [Llamar a alguien] -> sabado_llamar
-* [Salir a caminar] -> sabado_caminar
-* [Quedarte en casa] -> sabado_casa
+* [Llamar a alguien]
+    -> sabado_llamar
+* [Salir a caminar] # COSTO:1
+    -> sabado_caminar
+* [Quedarte en casa] # COSTO:1 # STAT:conexion
+    -> sabado_casa
 
 === sabado_llamar ===
 
 ¿A quién llamás?
 
-* {vinculo == "marcos"} [A Marcos (otra vez)] -> sabado_marcos
-* [A tu vieja / tu viejo] -> sabado_familia
+* {vinculo == "marcos"} [A Marcos (otra vez)]
+    -> sabado_marcos
+* [A tu vieja / tu viejo] # COSTO:1
+    -> sabado_familia
 * [A nadie, mejor no] -> sabado_casa
 
 === sabado_marcos ===
@@ -206,7 +211,7 @@ No sabés qué viene.
 
 Estás afuera.
 
-* [Dormir] -> fragmento_sabado_solo
+* [Dormir] -> fragmento_sabado
 
 === sabado_asamblea ===
 
@@ -224,9 +229,12 @@ Estás afuera.
 
 ¿Qué hacés?
 
-* [Hablar] -> sabado_hablar
-* [Escuchar] -> sabado_escuchar_asamblea
-* [Proponer algo] -> sabado_proponer
+* [Hablar] # STAT:dignidad
+    -> sabado_hablar
+* [Escuchar]
+    -> sabado_escuchar_asamblea
+* [Proponer algo] # STAT:dignidad # STAT:la_llama
+    -> sabado_proponer
 
 === sabado_escuchar_asamblea ===
 
@@ -277,7 +285,7 @@ Silencio.
 Sofía:
 "¿Vos te animás a ayudar con eso?"
 
-* ["Sí."]
+* ["Sí."] # STAT:conexion
     ~ subir_conexion(1)
     "Sí. Ahora tengo tiempo."
     Risas nerviosas.
@@ -338,37 +346,102 @@ Pero cambia algo.
 
 === fragmento_sabado ===
 
-# MIENTRAS DORMIS
+# MIENTRAS DORMÍS
 
-{participe_asamblea: -> fragmento_sabado_asamblea}
--> fragmento_sabado_solo
+{vinculo == "sofia": -> fragmento_sofia_sabado}
+{vinculo == "elena": -> fragmento_elena_sabado}
+{vinculo == "diego": -> fragmento_diego_sabado}
+{vinculo == "marcos": -> fragmento_marcos_sabado}
+-> fragmento_sabado_default
 
-=== fragmento_sabado_asamblea ===
+=== fragmento_sofia_sabado ===
 
-// Fragmento de Sofia despues de la asamblea
--> sofia_fragmento_asamblea ->
+# SOFÍA
+
+Sofía finalmente duerme.
+
+{participe_asamblea:
+    La asamblea salió bien.
+    Hay un plan.
+    No es mucho, pero es algo.
+- else:
+    La asamblea pasó.
+    Ella siguió sola.
+}
 
 Mañana es domingo.
-Día de descanso.
-Día de pensar.
-
-La semana que viene empieza todo de vuelta.
-Pero quizás no igual.
+Un día para respirar.
+Después sigue la lucha.
 
 * [Continuar] -> domingo_amanecer
 
-=== fragmento_sabado_solo ===
+=== fragmento_elena_sabado ===
 
-// Olla cerrada
--> olla_cerrar_noche ->
+# ELENA
 
-Sofía está cansada.
-Pero hay un plan.
+Elena sueña con Raúl.
 
-Vos no fuiste.
-Pero el barrio sigue.
+Están en el barrio.
+Hace calor.
+Él sonríe.
+
+"¿Viste? Siempre salimos."
+
+Se despierta.
+Es un buen sueño.
+
+* [Continuar] -> domingo_amanecer
+
+=== fragmento_diego_sabado ===
+
+# DIEGO
+
+Diego habló con su madre.
+
+"Estoy bien, má."
+Mentira piadosa.
+O quizás no.
+
+{participe_asamblea:
+    Hoy fue a una asamblea.
+    No entendió todo.
+    Pero sintió algo.
+}
+
+Mañana sigue.
+
+* [Continuar] -> domingo_amanecer
+
+=== fragmento_marcos_sabado ===
+
+# MARCOS
+
+{marcos_estado == "mirando":
+    Marcos fue a la asamblea.
+    Se sentó atrás.
+    No habló.
+    Pero estuvo.
+
+    Es más de lo que hizo en meses.
+- else:
+    Marcos no fue.
+    Como siempre.
+
+    La vida pasa.
+    Él mira.
+}
 
 Mañana es domingo.
-El fin de la primera semana.
+
+* [Continuar] -> domingo_amanecer
+
+=== fragmento_sabado_default ===
+
+El barrio duerme.
+La asamblea pasó.
+Mañana es domingo.
+
+La semana que viene empieza todo de vuelta.
+Pero quizás no igual.
 
 * [Continuar] -> domingo_amanecer

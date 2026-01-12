@@ -73,9 +73,12 @@ Salís.
 
 ¿Qué hacés?
 
-* [Ir a casa a procesar] -> miercoles_casa
-* [Caminar sin rumbo] -> miercoles_caminar
-* [Ir al barrio, buscar a alguien] -> miercoles_barrio
+* [Ir a casa a procesar] # COSTO:1
+    -> miercoles_casa
+* [Caminar sin rumbo] # COSTO:1
+    -> miercoles_caminar
+* [Ir al barrio, buscar a alguien]
+    -> miercoles_barrio
 
 === miercoles_casa ===
 
@@ -131,8 +134,10 @@ Gente que no ves normalmente porque estás laburando.
 Sofía está saliendo de su casa.
 Te ve.
 
-* [Acercarte] -> miercoles_sofia
-* [Evitarla, seguir de largo] -> miercoles_evitar
+* [Acercarte] # STAT:conexion
+    -> miercoles_sofia
+* [Evitarla, seguir de largo]
+    -> miercoles_evitar
 
 === miercoles_evitar ===
 
@@ -153,8 +158,10 @@ Y vos la viste ver.
 
 La pregunta pega.
 
-* [Contar lo que pasó] -> miercoles_contar
-* [Evadir: "Salí temprano hoy"] -> miercoles_evadir
+* [Contar lo que pasó] # STAT:conexion
+    -> miercoles_contar
+* [Evadir: "Salí temprano hoy"]
+    -> miercoles_evadir
 
 === miercoles_evadir ===
 
@@ -195,9 +202,12 @@ Eso lo agradecés.
 
 "Mirá, la olla anda complicada, pero si querés venir a dar una mano... a veces ayuda hacer algo."
 
-* [Decir que sí] -> miercoles_si_olla
-* [Decir que no sabés] -> miercoles_nosabe_olla
-* [Preguntar qué pasa con la olla] -> miercoles_pregunta_olla
+* [Decir que sí] # STAT:conexion
+    -> miercoles_si_olla
+* [Decir que no sabés]
+    -> miercoles_nosabe_olla
+* [Preguntar qué pasa con la olla]
+    -> miercoles_pregunta_olla
 
 === miercoles_pregunta_olla ===
 

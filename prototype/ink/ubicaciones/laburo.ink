@@ -46,7 +46,7 @@ Mierda.
 
 // --- MAÑANA DE TRABAJO ---
 
-=== laburo_mañana ===
+=== laburo_manana ===
 
 # LA MAÑANA
 
@@ -94,11 +94,14 @@ Mails que podrían ser nada.
 12:30.
 Hora de comer.
 
-* [Almorzar acompañado] -> laburo_almuerzo_acompañado
-* [Almorzar solo] -> laburo_almuerzo_solo
-* [Saltear el almuerzo] -> laburo_almuerzo_saltear
+* [Almorzar acompañado] # DADOS # STAT:conexion
+    -> laburo_almuerzo_acompanado
+* [Almorzar solo]
+    -> laburo_almuerzo_solo
+* [Saltear el almuerzo] # COSTO:1
+    -> laburo_almuerzo_saltear
 
-=== laburo_almuerzo_acompañado ===
+=== laburo_almuerzo_acompanado ===
 
 Bajás al comedor.
 Comida de empresa.
@@ -207,11 +210,11 @@ No dicen quién.
 No dicen cuándo.
 Solo que algo viene.
 
-* [Mirar a un compañero] -> laburo_reunion_mirar_compañero
+* [Mirar a un compañero] -> laburo_reunion_mirar_companero
 * [Mirar al piso] -> laburo_reunion_mirar_piso
 * [Mirar al jefe] -> laburo_reunion_mirar_jefe
 
-=== laburo_reunion_mirar_compañero ===
+=== laburo_reunion_mirar_companero ===
 
 Mirás a tu compañero.
 Él te mira.

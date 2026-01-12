@@ -28,9 +28,9 @@ Ahora es solo otro día.
 
 {fui_a_olla_jueves: Sofía dijo que hoy necesitaban resolver algo. La olla está en crisis.}
 
-* [Levantarte] -> viernes_mañana
+* [Levantarte] -> viernes_manana
 
-=== viernes_mañana ===
+=== viernes_manana ===
 
 El mate.
 La mañana.
@@ -43,9 +43,12 @@ La mañana.
 
 ¿Qué hacés hoy?
 
-* [Ir a la olla temprano] -> viernes_olla_temprano
-* [Buscar laburo primero] -> viernes_buscar
-* [Ver qué pasa] -> viernes_barrio
+* [Ir a la olla temprano]
+    -> viernes_olla_temprano
+* [Buscar laburo primero] # COSTO:1 # STAT:dignidad
+    -> viernes_buscar
+* [Ver qué pasa]
+    -> viernes_barrio
 
 === viernes_buscar ===
 
@@ -64,8 +67,9 @@ Pero hay que seguir intentando.
 
 {energia > 1:
     Todavía es temprano. Podés ir a la olla.
-    * [Ir a la olla] -> viernes_olla_temprano
-    * [Quedarte buscando]
+    * [Ir a la olla]
+        -> viernes_olla_temprano
+    * [Quedarte buscando] # COSTO:1
         ~ energia -= 1
         Seguís buscando.
         Las horas pasan.
@@ -111,7 +115,7 @@ Te ven.
 - else:
     Sofía te mira.
     "¿Venís a ayudar o a mirar?"
-    * ["A ayudar."]
+    * ["A ayudar."] # STAT:conexion
         ~ ayude_en_olla = true
         ~ subir_conexion(1)
         "Bien. Porque estamos en el horno."
@@ -330,34 +334,93 @@ Para hablar de la olla, de la situación.
 
 === fragmento_viernes ===
 
-# MIENTRAS DORMIS
+# MIENTRAS DORMÍS
 
-{ayude_en_olla: -> fragmento_viernes_ayudo}
--> fragmento_viernes_no
+{vinculo == "sofia": -> fragmento_sofia_viernes}
+{vinculo == "elena": -> fragmento_elena_viernes}
+{vinculo == "diego": -> fragmento_diego_viernes}
+{vinculo == "marcos": -> fragmento_marcos_viernes}
+-> fragmento_viernes_default
 
-=== fragmento_viernes_ayudo ===
+=== fragmento_sofia_viernes ===
 
-// Fragmento de Sofia despues de ayudar
--> sofia_fragmento_asamblea ->
+# SOFÍA
+
+Sofía está agotada.
+
+{ayude_en_olla:
+    Pero hoy funcionó.
+    Entre todos, funcionó.
+- else:
+    Hoy apenas alcanzó.
+    No sabe si mañana va a dar.
+}
 
 Mañana es la asamblea.
 Hay que hablar de todo.
+De cómo seguir.
 
 * [Continuar] -> sabado_amanecer
 
-=== fragmento_viernes_no ===
+=== fragmento_elena_viernes ===
 
-// Olla cerrada
--> olla_cerrar_noche ->
+# ELENA
 
-Sofía está cansada.
-Pero lo lograron.
+Elena piensa en Raúl.
+
+En el 2002, él tampoco dormía.
+Pero salieron.
+Juntos, salieron.
 
 Mañana hay asamblea.
-Para hablar de cómo seguir.
-De si se puede seguir.
+Ella va a ir.
+Tiene cosas que decir.
+
+* [Continuar] -> sabado_amanecer
+
+=== fragmento_diego_viernes ===
+
+# DIEGO
+
+Diego cuenta la plata.
+
+No alcanza.
+Nunca alcanza.
+Pero hoy comió.
+
+{ayude_en_olla:
+    Y ayudó en algo.
+    Eso se siente diferente.
+}
+
+Mañana sigue.
+
+* [Continuar] -> sabado_amanecer
+
+=== fragmento_marcos_viernes ===
+
+# MARCOS
+
+Marcos vio la asamblea desde lejos.
+
+No entró.
+No quiso.
+O no pudo.
+
+La gente hace cosas.
+Él solo mira.
+
+Quizás mañana.
+Siempre quizás mañana.
+
+* [Continuar] -> sabado_amanecer
+
+=== fragmento_viernes_default ===
 
 El barrio duerme.
 Los problemas siguen.
+
+Mañana hay asamblea.
+Para hablar de cómo seguir.
 
 * [Continuar] -> sabado_amanecer

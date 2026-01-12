@@ -5,7 +5,7 @@
 
 // Tunnels usados de otros modulos:
 // - escenas/olla.ink: olla_llegada, olla_ayudar_cocina, olla_escuchar_crisis
-// - escenas/barrio.ink: barrio_caminar_mañana, barrio_caminar_sin_rumbo
+// - escenas/barrio.ink: barrio_caminar_manana, barrio_caminar_sin_rumbo
 // - personajes/sofia.ink: sofia_primer_encuentro, sofia_invitar_ayudar, sofia_agradecimiento
 // - personajes/elena.ink: elena_historia_2002
 // - personajes/diego.ink: diego_encuentro_barrio, diego_enterarse_despido, diego_caminar_juntos
@@ -30,8 +30,10 @@ El despertador no sonó porque lo apagaste.
 
 ~ tiene_laburo = false
 
-* [Levantarte igual] -> jueves_mañana
-* [Quedarte en la cama] -> jueves_cama
+* [Levantarte igual]
+    -> jueves_manana
+* [Quedarte en la cama] # COSTO:1
+    -> jueves_cama
 
 === jueves_cama ===
 
@@ -50,9 +52,9 @@ La cabeza no para.
 Eventualmente te levantás.
 El cuerpo no aguanta más la cama.
 
--> jueves_mañana_tarde
+-> jueves_manana_tarde
 
-=== jueves_mañana ===
+=== jueves_manana ===
 
 Te levantás.
 El mate.
@@ -63,9 +65,9 @@ Ahora tenés todo el tiempo del mundo.
 
 Demasiado tiempo.
 
--> jueves_mañana_tarde
+-> jueves_manana_tarde
 
-=== jueves_mañana_tarde ===
+=== jueves_manana_tarde ===
 
 Son las 10 de la mañana.
 Normalmente estarías laburando.
@@ -79,9 +81,12 @@ Sin saber qué hacer.
 
 ¿Qué hacés hoy?
 
-* [Buscar laburo online] -> jueves_buscar_laburo
-* [Ir al barrio] -> jueves_barrio
-* [Quedarte en casa] -> jueves_quedarse
+* [Buscar laburo online] # COSTO:1 # STAT:dignidad
+    -> jueves_buscar_laburo
+* [Ir al barrio]
+    -> jueves_barrio
+* [Quedarte en casa] # COSTO:1 # STAT:conexion
+    -> jueves_quedarse
 
 === jueves_buscar_laburo ===
 
@@ -129,7 +134,7 @@ Demasiado fácil.
 
 // Contexto del barrio
 Salís.
--> barrio_caminar_mañana ->
+-> barrio_caminar_manana ->
 // Continua con opciones del dia
 
 * [Ir a la olla] -> jueves_olla
@@ -337,14 +342,35 @@ Vos también.
 
 === fragmento_jueves ===
 
-# MIENTRAS DORMIS
+# MIENTRAS DORMÍS
 
 {vinculo == "sofia": -> fragmento_sofia_jueves}
 {vinculo == "elena": -> fragmento_elena_jueves}
 {vinculo == "diego": -> fragmento_diego_jueves}
+{vinculo == "marcos": -> fragmento_marcos_jueves}
 -> fragmento_olla_jueves
 
+=== fragmento_marcos_jueves ===
+
+# MARCOS
+
+Marcos tampoco duerme.
+
+El departamento vacío.
+La tele encendida sin sonido.
+Los mensajes sin responder.
+
+Pensó en ir a la asamblea.
+No fue.
+Es más fácil no ir.
+
+Mañana es otro día igual.
+
+* [Continuar] -> viernes_amanecer
+
 === fragmento_sofia_jueves ===
+
+# SOFÍA
 
 // Fragmento nocturno de Sofia
 -> sofia_fragmento_noche ->
@@ -358,12 +384,16 @@ Mañana hay que buscar soluciones.
 
 === fragmento_elena_jueves ===
 
+# ELENA
+
 // Fragmento nocturno de Elena
 -> elena_fragmento_noche ->
 
 * [Continuar] -> viernes_amanecer
 
 === fragmento_diego_jueves ===
+
+# DIEGO
 
 // Fragmento nocturno de Diego
 -> diego_fragmento_noche ->

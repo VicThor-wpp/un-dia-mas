@@ -36,6 +36,13 @@ El olor a comida que se siente desde la esquina.
 * {olla_en_crisis} [Preguntar qué pasa] -> olla_preguntar_crisis
 * [Irte] -> olla_irse
 
+=== olla_irse ===
+
+Te vas.
+Todavía no estás listo para esto.
+
+->->
+
 === olla_observar ===
 
 Te quedás mirando desde afuera.
@@ -80,10 +87,14 @@ Marta te mira de arriba abajo.
 
 ¿Qué hacés?
 
-* [Pelar papas] -> olla_pelar_papas
-* [Servir] -> olla_servir
-* [Limpiar] -> olla_limpiar
-* {energia <= 1} [Decir que te vas] -> olla_despedirse
+* [Pelar papas] # COSTO:1 # DADOS
+    -> olla_pelar_papas
+* [Servir] # COSTO:1 # DADOS
+    -> olla_servir
+* [Limpiar] # COSTO:1 # DADOS # STAT:conexion
+    -> olla_limpiar
+* {energia <= 1} [Decir que te vas]
+    -> olla_despedirse
 
 === olla_pelar_papas ===
 
@@ -240,7 +251,7 @@ Marta te mira.
     No es mucho.
     "Gracias."
     ->->
-* [Dar algo más]
+* [Dar algo más] # COSTO:1 # STAT:conexion
     Le das un billete más grande.
     ~ energia -= 1
     "Gracias. En serio."
@@ -347,8 +358,10 @@ Marta está al frente.
 
 ~ participe_asamblea = true
 
-* [Escuchar] -> olla_asamblea_escuchar
-* [Hablar] -> olla_asamblea_hablar
+* [Escuchar]
+    -> olla_asamblea_escuchar
+* [Hablar] # COSTO:1 # STAT:conexion
+    -> olla_asamblea_hablar
 
 === olla_asamblea_escuchar ===
 
