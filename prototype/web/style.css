@@ -122,13 +122,15 @@ body {
     margin-bottom: 1em;
 }
 
-/* Animated text appearance */
+/* Animated text appearance - use GPU-accelerated properties */
 .story-text {
     animation: fadeInUp 0.4s ease-out;
+    will-change: opacity, transform;
 }
 
 .story-header {
     animation: fadeInUp 0.3s ease-out;
+    will-change: opacity, transform;
 }
 
 @keyframes fadeInUp {
@@ -385,6 +387,7 @@ h2 {
     font-weight: bold;
     animation: slideIn 0.3s ease;
     box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    will-change: transform, opacity;
 }
 
 .notification svg {
@@ -469,7 +472,9 @@ h2 {
 .dice-roll.critical-success {
     background: linear-gradient(135deg, rgba(255, 215, 0, 0.3), rgba(255, 107, 53, 0.2));
     border-left: 4px solid #ffd700;
+    box-shadow: 0 0 12px rgba(255, 215, 0, 0.4); /* Static glow instead of animated */
     animation: pulse-gold 0.5s ease;
+    will-change: transform, opacity;
 }
 
 .dice-roll.critical-success .dice-value,
@@ -511,6 +516,7 @@ h2 {
     background: linear-gradient(135deg, rgba(139, 0, 0, 0.3), rgba(244, 67, 54, 0.2));
     border-left: 4px solid #8b0000;
     animation: shake 0.4s ease;
+    will-change: transform;
 }
 
 .dice-roll.critical-failure .dice-value,
@@ -536,9 +542,16 @@ h2 {
     border-left: 4px solid #7b1fa2;
 }
 
+/* Use transform and opacity instead of box-shadow for better GPU performance */
 @keyframes pulse-gold {
-    0%, 100% { box-shadow: 0 0 5px rgba(255, 215, 0, 0.3); }
-    50% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.6); }
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.02);
+        opacity: 0.95;
+    }
 }
 
 @keyframes shake {

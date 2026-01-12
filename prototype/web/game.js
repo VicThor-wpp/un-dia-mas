@@ -16,6 +16,9 @@
     let contentQueue = [];
     const MAX_PARAGRAPHS_BEFORE_PAUSE = 4;
 
+    // Track active choice buttons for proper cleanup
+    let activeChoiceButtons = [];
+
     // Stat labels and icons (Lucide icon names)
     const STAT_INFO = {
         energia: { label: 'Energía', icon: 'zap', max: 5 },
@@ -39,11 +42,19 @@
         return `<i data-lucide="${name}" style="width:${size}px;height:${size}px;"></i>`;
     }
 
-    // Initialize Lucide icons in container
+    // Debounced icon initialization to avoid excessive DOM scanning
+    let iconRefreshScheduled = false;
     function refreshIcons() {
-        if (typeof lucide !== 'undefined') {
-            lucide.createIcons();
-        }
+        if (iconRefreshScheduled) return;
+        iconRefreshScheduled = true;
+
+        // Batch icon initialization using requestAnimationFrame
+        requestAnimationFrame(() => {
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+            iconRefreshScheduled = false;
+        });
     }
 
     // Dice result labels
@@ -175,13 +186,15 @@
         notificationContainer.appendChild(notif);
         refreshIcons();
 
+        // Use single timeout + animationend for cleaner cleanup
         setTimeout(() => {
             notif.classList.add('fade-out');
-            setTimeout(() => notif.remove(), 500);
+            notif.addEventListener('animationend', () => notif.remove(), { once: true });
         }, 2500);
     }
 
     function continueStory() {
+        cleanupChoiceButtons();
         choicesContainer.innerHTML = '';
         contentQueue = [];
 
@@ -282,19 +295,33 @@
             showChoices();
         }
 
-        window.scrollTo(0, 0);
+        // Defer scroll to avoid blocking render
+        requestAnimationFrame(() => {
+            window.scrollTo(0, 0);
+        });
     }
 
     function showContinueButton() {
+        // Clean up previous buttons first
+        cleanupChoiceButtons();
+
         const button = document.createElement('button');
         button.className = 'choice-button continue-button';
         // Text content is handled by CSS ::before pseudo-element
         button.textContent = '';
-        button.addEventListener('click', function() {
+
+        const continueHandler = function() {
+            cleanupChoiceButtons();
             choicesContainer.innerHTML = '';
             showNextBatch();
-            storyContainer.lastElementChild?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        });
+            // Use requestAnimationFrame to avoid blocking the main thread
+            requestAnimationFrame(() => {
+                storyContainer.lastElementChild?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        };
+
+        button.addEventListener('click', continueHandler);
+        activeChoiceButtons.push({ button, handler: continueHandler });
         choicesContainer.appendChild(button);
     }
 
@@ -370,7 +397,17 @@
         return text;
     }
 
+    // Clean up event listeners from previous choice buttons
+    function cleanupChoiceButtons() {
+        for (const { button, handler } of activeChoiceButtons) {
+            button.removeEventListener('click', handler);
+        }
+        activeChoiceButtons = [];
+    }
+
     function showChoices() {
+        // Clean up previous event listeners before clearing
+        cleanupChoiceButtons();
         choicesContainer.innerHTML = '';
 
         if (story.currentChoices.length > 0) {
@@ -397,18 +434,68 @@
                 button.innerHTML = buildChoiceLabel(choice.text, meta);
                 button.dataset.choiceIndex = i;
                 button.addEventListener('click', onChoiceClick);
+                // Track button and handler for cleanup
+                activeChoiceButtons.push({ button, handler: onChoiceClick });
                 choicesContainer.appendChild(button);
             }
             refreshIcons();
         }
     }
 
+    // Cache for status bar element references
+    let statusElements = null;
+    let lastStatusValues = null;
+
+    function initStatusBar() {
+        statusContainer.innerHTML = `
+            <div class="status-row status-main">
+                <span class="status-day" data-stat="dia"></span>
+                <span class="status-energia" title="Energía disponible hoy">
+                    <span class="stat-icon">${iconHTML('zap', 16)}</span>
+                    <span class="stat-bar" data-stat="energia-bar"></span>
+                </span>
+            </div>
+            <div class="status-row status-resources">
+                <span class="status-stat" title="Conexión con el barrio">
+                    <span class="stat-icon">${iconHTML('users', 16)}</span>
+                    <span class="stat-value" data-stat="conexion"></span>
+                </span>
+                <span class="status-stat" title="Tu dignidad">
+                    <span class="stat-icon">${iconHTML('shield', 16)}</span>
+                    <span class="stat-value" data-stat="dignidad"></span>
+                </span>
+                <span class="status-stat stat-llama" title="La llama colectiva">
+                    <span class="stat-icon">${iconHTML('flame', 16)}</span>
+                    <span class="stat-value" data-stat="llama"></span>
+                </span>
+            </div>
+        `;
+        // Cache element references for efficient updates
+        statusElements = {
+            dia: statusContainer.querySelector('[data-stat="dia"]'),
+            energiaBar: statusContainer.querySelector('[data-stat="energia-bar"]'),
+            conexion: statusContainer.querySelector('[data-stat="conexion"]'),
+            dignidad: statusContainer.querySelector('[data-stat="dignidad"]'),
+            llama: statusContainer.querySelector('[data-stat="llama"]')
+        };
+        lastStatusValues = {};
+        refreshIcons();
+    }
+
     function updateStatus() {
         if (!statusContainer) return;
 
         if (!gameStarted) {
-            statusContainer.innerHTML = '<span class="status-phase">CREACIÓN DE PERSONAJE</span>';
+            if (statusContainer.innerHTML !== '<span class="status-phase">CREACIÓN DE PERSONAJE</span>') {
+                statusContainer.innerHTML = '<span class="status-phase">CREACIÓN DE PERSONAJE</span>';
+                statusElements = null;
+            }
             return;
+        }
+
+        // Initialize status bar structure if needed
+        if (!statusElements) {
+            initStatusBar();
         }
 
         let energia = 4, conexion = 5, laLlama = 3, dignidad = 5, diaActual = 1;
@@ -421,35 +508,33 @@
             diaActual = story.variablesState['dia_actual'] ?? 1;
         } catch (e) {}
 
+        // Only update values that have changed (avoid unnecessary DOM writes)
         const diaNombre = DIAS[diaActual] || DIAS[1];
+        if (lastStatusValues.dia !== diaNombre) {
+            statusElements.dia.textContent = diaNombre;
+            lastStatusValues.dia = diaNombre;
+        }
 
-        // Visual bars for stats
         const energiaBar = '●'.repeat(energia) + '○'.repeat(Math.max(0, 5 - energia));
+        if (lastStatusValues.energiaBar !== energiaBar) {
+            statusElements.energiaBar.textContent = energiaBar;
+            lastStatusValues.energiaBar = energiaBar;
+        }
 
-        statusContainer.innerHTML = `
-            <div class="status-row status-main">
-                <span class="status-day">${diaNombre}</span>
-                <span class="status-energia" title="Energía disponible hoy">
-                    <span class="stat-icon">${iconHTML('zap', 16)}</span>
-                    <span class="stat-bar">${energiaBar}</span>
-                </span>
-            </div>
-            <div class="status-row status-resources">
-                <span class="status-stat" title="Conexión con el barrio">
-                    <span class="stat-icon">${iconHTML('users', 16)}</span>
-                    <span class="stat-value">${conexion}</span>
-                </span>
-                <span class="status-stat" title="Tu dignidad">
-                    <span class="stat-icon">${iconHTML('shield', 16)}</span>
-                    <span class="stat-value">${dignidad}</span>
-                </span>
-                <span class="status-stat stat-llama" title="La llama colectiva">
-                    <span class="stat-icon">${iconHTML('flame', 16)}</span>
-                    <span class="stat-value">${laLlama}</span>
-                </span>
-            </div>
-        `;
-        refreshIcons();
+        if (lastStatusValues.conexion !== conexion) {
+            statusElements.conexion.textContent = conexion;
+            lastStatusValues.conexion = conexion;
+        }
+
+        if (lastStatusValues.dignidad !== dignidad) {
+            statusElements.dignidad.textContent = dignidad;
+            lastStatusValues.dignidad = dignidad;
+        }
+
+        if (lastStatusValues.llama !== laLlama) {
+            statusElements.llama.textContent = laLlama;
+            lastStatusValues.llama = laLlama;
+        }
     }
 
     function onChoiceClick(event) {
