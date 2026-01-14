@@ -1,0 +1,1923 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Un Día Más - Diagrama Narrativo</title>
+    <style>
+        :root {
+            --bg-dark: #1a1a2e;
+            --bg-card: #16213e;
+            --bg-light: #0f3460;
+            --accent-red: #e94560;
+            --accent-orange: #ff6b35;
+            --accent-yellow: #f7b731;
+            --accent-green: #26de81;
+            --accent-blue: #4ecdc4;
+            --accent-purple: #a55eea;
+            --text-primary: #eaeaea;
+            --text-secondary: #b8b8b8;
+            --text-muted: #6c6c6c;
+            --border: #2d3561;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--bg-card), var(--bg-light));
+            padding: 2rem;
+            text-align: center;
+            border-bottom: 2px solid var(--accent-red);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(90deg, var(--accent-red), var(--accent-orange));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        nav {
+            background: var(--bg-card);
+            padding: 1rem;
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav button {
+            background: var(--bg-light);
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+
+        nav button:hover, nav button.active {
+            background: var(--accent-red);
+            border-color: var(--accent-red);
+        }
+
+        main {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        section {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Timeline Styles */
+        .timeline {
+            display: flex;
+            gap: 1rem;
+            overflow-x: auto;
+            padding: 2rem 0;
+        }
+
+        .day-card {
+            min-width: 280px;
+            background: var(--bg-card);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .day-header {
+            padding: 1rem;
+            font-weight: bold;
+            font-size: 1.2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .day-1 .day-header { background: var(--accent-blue); }
+        .day-2 .day-header { background: var(--accent-purple); }
+        .day-3 .day-header { background: var(--accent-red); }
+        .day-4 .day-header { background: var(--accent-orange); }
+        .day-5 .day-header { background: var(--accent-yellow); color: #1a1a2e; }
+        .day-6 .day-header { background: var(--accent-green); color: #1a1a2e; }
+        .day-7 .day-header { background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple)); }
+
+        .energy-badge {
+            background: rgba(0,0,0,0.3);
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+        }
+
+        .day-content {
+            padding: 1rem;
+        }
+
+        .event {
+            background: var(--bg-light);
+            padding: 0.8rem;
+            border-radius: 8px;
+            margin-bottom: 0.8rem;
+            border-left: 3px solid var(--accent-blue);
+        }
+
+        .event.critical {
+            border-left-color: var(--accent-red);
+            background: rgba(233, 69, 96, 0.1);
+        }
+
+        .event.choice {
+            border-left-color: var(--accent-yellow);
+        }
+
+        .event.npc {
+            border-left-color: var(--accent-green);
+        }
+
+        .event-title {
+            font-weight: bold;
+            margin-bottom: 0.3rem;
+            font-size: 0.95rem;
+        }
+
+        .event-desc {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .choice-options {
+            margin-top: 0.5rem;
+            padding-left: 1rem;
+            font-size: 0.8rem;
+        }
+
+        .choice-options li {
+            color: var(--accent-yellow);
+            margin: 0.2rem 0;
+        }
+
+        .effect {
+            display: inline-block;
+            font-size: 0.7rem;
+            padding: 0.1rem 0.4rem;
+            border-radius: 4px;
+            margin-left: 0.3rem;
+        }
+
+        .effect.positive { background: rgba(38, 222, 129, 0.2); color: var(--accent-green); }
+        .effect.negative { background: rgba(233, 69, 96, 0.2); color: var(--accent-red); }
+        .effect.neutral { background: rgba(78, 205, 196, 0.2); color: var(--accent-blue); }
+
+        /* Variables Section */
+        .variables-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .var-category {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid var(--border);
+        }
+
+        .var-category h3 {
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .var-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.6rem 0;
+            border-bottom: 1px dashed var(--border);
+        }
+
+        .var-item:last-child {
+            border-bottom: none;
+        }
+
+        .var-name {
+            font-family: 'Consolas', monospace;
+            color: var(--accent-orange);
+        }
+
+        .var-range {
+            background: var(--bg-light);
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+
+        .var-desc {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 0.2rem;
+        }
+
+        /* NPC Section */
+        .npc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .npc-card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+
+        .npc-header {
+            padding: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .npc-sofia .npc-header { background: linear-gradient(135deg, #e94560, #ff6b6b); }
+        .npc-elena .npc-header { background: linear-gradient(135deg, #a55eea, #8854d0); }
+        .npc-diego .npc-header { background: linear-gradient(135deg, #f7b731, #fa8231); }
+        .npc-marcos .npc-header { background: linear-gradient(135deg, #4ecdc4, #26de81); }
+        .npc-renzo .npc-header { background: linear-gradient(135deg, #45aaf2, #2d98da); }
+
+        .npc-avatar {
+            width: 50px;
+            height: 50px;
+            background: rgba(0,0,0,0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .npc-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .npc-role {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .npc-content {
+            padding: 1.2rem;
+        }
+
+        .npc-states {
+            background: var(--bg-light);
+            padding: 0.8rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .npc-states h4 {
+            font-size: 0.9rem;
+            color: var(--accent-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .state-flow {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            font-size: 0.85rem;
+        }
+
+        .state {
+            background: var(--bg-card);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            border: 1px solid var(--border);
+        }
+
+        .state.active {
+            border-color: var(--accent-green);
+            color: var(--accent-green);
+        }
+
+        .state-arrow {
+            color: var(--text-muted);
+        }
+
+        .npc-arc {
+            margin-top: 1rem;
+        }
+
+        .npc-arc h4 {
+            font-size: 0.9rem;
+            color: var(--accent-purple);
+            margin-bottom: 0.5rem;
+        }
+
+        .arc-day {
+            display: flex;
+            gap: 0.8rem;
+            padding: 0.5rem 0;
+            border-bottom: 1px dashed var(--border);
+            font-size: 0.85rem;
+        }
+
+        .arc-day:last-child {
+            border-bottom: none;
+        }
+
+        .arc-day-label {
+            min-width: 60px;
+            color: var(--accent-yellow);
+            font-weight: bold;
+        }
+
+        /* Endings Section */
+        .endings-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .ending-card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 2px solid var(--border);
+            transition: transform 0.3s;
+        }
+
+        .ending-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .ending-best { border-color: var(--accent-green); }
+        .ending-good { border-color: var(--accent-blue); }
+        .ending-neutral { border-color: var(--accent-purple); }
+        .ending-bad { border-color: var(--accent-orange); }
+        .ending-worst { border-color: var(--accent-red); }
+
+        .ending-header {
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .ending-best .ending-header { background: rgba(38, 222, 129, 0.2); }
+        .ending-good .ending-header { background: rgba(78, 205, 196, 0.2); }
+        .ending-neutral .ending-header { background: rgba(165, 94, 234, 0.2); }
+        .ending-bad .ending-header { background: rgba(247, 183, 49, 0.2); }
+        .ending-worst .ending-header { background: rgba(233, 69, 96, 0.2); }
+
+        .ending-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .ending-tier {
+            font-size: 0.8rem;
+            padding: 0.2rem 0.8rem;
+            border-radius: 15px;
+            background: rgba(0,0,0,0.3);
+        }
+
+        .ending-content {
+            padding: 1rem;
+        }
+
+        .ending-conditions {
+            background: var(--bg-light);
+            padding: 0.8rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .ending-conditions h4 {
+            font-size: 0.85rem;
+            color: var(--accent-yellow);
+            margin-bottom: 0.5rem;
+        }
+
+        .condition {
+            font-family: 'Consolas', monospace;
+            font-size: 0.85rem;
+            color: var(--accent-orange);
+            padding: 0.2rem 0;
+        }
+
+        .ending-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        /* Flow Diagram */
+        .flow-container {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 2rem;
+            overflow-x: auto;
+        }
+
+        .flow-diagram {
+            min-width: 1200px;
+        }
+
+        .flow-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1.5rem 0;
+        }
+
+        .flow-node {
+            background: var(--bg-light);
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            border: 2px solid var(--border);
+            text-align: center;
+            min-width: 150px;
+            position: relative;
+        }
+
+        .flow-node.start { border-color: var(--accent-green); background: rgba(38, 222, 129, 0.1); }
+        .flow-node.critical { border-color: var(--accent-red); background: rgba(233, 69, 96, 0.1); }
+        .flow-node.choice { border-color: var(--accent-yellow); background: rgba(247, 183, 49, 0.1); }
+        .flow-node.end { border-color: var(--accent-purple); background: rgba(165, 94, 234, 0.1); }
+
+        .flow-node-title {
+            font-weight: bold;
+            font-size: 0.95rem;
+        }
+
+        .flow-node-sub {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 0.3rem;
+        }
+
+        .flow-connector {
+            color: var(--text-muted);
+            font-size: 1.5rem;
+        }
+
+        .flow-branch {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .branch-label {
+            font-size: 0.75rem;
+            color: var(--accent-yellow);
+            background: rgba(247, 183, 49, 0.1);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+        }
+
+        /* Decision Tree */
+        .decision-tree {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .tree-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--accent-blue);
+        }
+
+        .tree-level {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1rem 0;
+            flex-wrap: wrap;
+        }
+
+        .tree-node {
+            background: var(--bg-light);
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            max-width: 200px;
+            text-align: center;
+        }
+
+        .tree-node.decision {
+            border-color: var(--accent-yellow);
+        }
+
+        .tree-node.outcome {
+            border-color: var(--accent-blue);
+        }
+
+        /* Ideas Section */
+        .ideas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .idea-card {
+            background: var(--bg-card);
+            border-radius: 8px;
+            padding: 1rem;
+            border-left: 4px solid var(--accent-purple);
+        }
+
+        .idea-card.involuntary {
+            border-left-color: var(--accent-red);
+        }
+
+        .idea-name {
+            font-family: 'Consolas', monospace;
+            color: var(--accent-orange);
+            margin-bottom: 0.5rem;
+        }
+
+        .idea-trigger {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .idea-meaning {
+            font-style: italic;
+            margin-top: 0.5rem;
+            padding-top: 0.5rem;
+            border-top: 1px dashed var(--border);
+            font-size: 0.9rem;
+        }
+
+        /* Legend */
+        .legend {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            padding: 1rem;
+            background: var(--bg-card);
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+        }
+
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+        }
+
+        .legend-color.critical { background: var(--accent-red); }
+        .legend-color.choice { background: var(--accent-yellow); }
+        .legend-color.npc { background: var(--accent-green); }
+        .legend-color.normal { background: var(--accent-blue); }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .timeline {
+                flex-direction: column;
+            }
+
+            .day-card {
+                min-width: 100%;
+            }
+
+            nav {
+                gap: 0.5rem;
+            }
+
+            nav button {
+                padding: 0.4rem 1rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Section Headers */
+        .section-header {
+            margin-bottom: 2rem;
+        }
+
+        .section-header h2 {
+            font-size: 1.8rem;
+            color: var(--accent-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+        }
+
+        /* Mechanic Cards */
+        .mechanic-card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid var(--border);
+            margin-bottom: 1rem;
+        }
+
+        .mechanic-card h3 {
+            color: var(--accent-orange);
+            margin-bottom: 1rem;
+        }
+
+        .mechanic-formula {
+            background: var(--bg-light);
+            padding: 0.8rem;
+            border-radius: 8px;
+            font-family: 'Consolas', monospace;
+            font-size: 0.9rem;
+            margin: 0.5rem 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Un Día Más</h1>
+        <p class="subtitle">Diagrama Narrativo Completo — Arcos, Variables y Flujos</p>
+    </header>
+
+    <nav>
+        <button class="active" onclick="showSection('timeline')">Línea Temporal</button>
+        <button onclick="showSection('variables')">Variables</button>
+        <button onclick="showSection('npcs')">Personajes</button>
+        <button onclick="showSection('endings')">Finales</button>
+        <button onclick="showSection('flow')">Flujo General</button>
+        <button onclick="showSection('ideas')">Ideas Internalizadas</button>
+    </nav>
+
+    <main>
+        <!-- TIMELINE SECTION -->
+        <section id="timeline" class="active">
+            <div class="section-header">
+                <h2>Línea Temporal — Día por Día</h2>
+                <p>El juego transcurre en 7 días. El despido ocurre el Miércoles (día 3), partiendo la narrativa en dos fases.</p>
+            </div>
+
+            <div class="legend">
+                <div class="legend-item"><div class="legend-color critical"></div> Evento Crítico</div>
+                <div class="legend-item"><div class="legend-color choice"></div> Decisión del Jugador</div>
+                <div class="legend-item"><div class="legend-color npc"></div> Encuentro con NPC</div>
+                <div class="legend-item"><div class="legend-color normal"></div> Evento Normal</div>
+            </div>
+
+            <div class="timeline">
+                <!-- LUNES -->
+                <div class="day-card day-1">
+                    <div class="day-header">
+                        <span>Lunes — Día 1</span>
+                        <span class="energy-badge">⚡ 4</span>
+                    </div>
+                    <div class="day-content">
+                        <div class="event">
+                            <div class="event-title">🏠 Despertar</div>
+                            <div class="event-desc">Creación del personaje: elegir pérdida, atadura, posición y vínculo especial.</div>
+                        </div>
+                        <div class="event">
+                            <div class="event-title">🚌 Bondi al trabajo</div>
+                            <div class="event-desc">Posible chequeo de dados para llegar a tiempo.</div>
+                        </div>
+                        <div class="event npc">
+                            <div class="event-title">👔 Trabajo - Mañana</div>
+                            <div class="event-desc">Conocer a Renzo (compañero de trabajo).</div>
+                        </div>
+                        <div class="event choice">
+                            <div class="event-title">🍽️ Almuerzo</div>
+                            <ul class="choice-options">
+                                <li>Con Renzo <span class="effect positive">+conexión</span></li>
+                                <li>Solo <span class="effect negative">-conexión</span></li>
+                                <li>Saltar <span class="effect negative">-dignidad</span></li>
+                            </ul>
+                        </div>
+                        <div class="event critical">
+                            <div class="event-title">📢 Reunión General</div>
+                            <div class="event-desc">Se anuncia "reestructuración". La tensión crece.</div>
+                        </div>
+                        <div class="event choice">
+                            <div class="event-title">🌆 Post-trabajo</div>
+                            <ul class="choice-options">
+                                <li>Ir directo a casa</li>
+                                <li>Visitar barrio <span class="effect positive">+conexión posible</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MARTES -->
+                <div class="day-card day-2">
+                    <div class="day-header">
+                        <span>Martes — Día 2</span>
+                        <span class="energy-badge">⚡ 4</span>
+                    </div>
+                    <div class="day-content">
+                        <div class="event">
+                            <div class="event-title">🚌 Bondi</div>
+                            <div class="event-desc">Escuchas sobre despidos en otras empresas.</div>
+                        </div>
+                        <div class="event critical">
+                            <div class="event-title">💼 Trabajo Tenso</div>
+                            <div class="event-desc">El jefe evita contacto visual. Reuniones de RRHH visibles.</div>
+                        </div>
+                        <div class="event critical">
+                            <div class="event-title">📋 Citación</div>
+                            <div class="event-desc">Te citan a reunión con RRHH para mañana.</div>
+                        </div>
+                        <div class="event choice">
+                            <div class="event-title">🌙 Noche</div>
+                            <ul class="choice-options">
+                                <li>Contactar a tu vínculo <span class="effect positive">+conexión</span></li>
+                                <li>Intentar dormir solo</li>
+                            </ul>
+                        </div>
+                        <div class="event">
+                            <div class="event-title">💭 Fragmentos</div>
+                            <div class="event-desc">Todos los NPCs preocupados por lo que viene.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MIÉRCOLES -->
+                <div class="day-card day-3">
+                    <div class="day-header">
+                        <span>Miércoles — Día 3</span>
+                        <span class="energy-badge">⚡ 3</span>
+                    </div>
+                    <div class="day-content">
+                        <div class="event critical">
+                            <div class="event-title">⚠️ EL DESPIDO</div>
+                            <div class="event-desc">11am: Reunión RRHH. Te despiden. Recibes 3 meses de indemnización.</div>
+                        </div>
+                        <div class="event">
+                            <div class="event-title">🧠 Crisis de Identidad</div>
+                            <div class="event-desc"><code>tiene_laburo = false</code><br><code>idea_quien_soy = true</code> (involuntario)</div>
+                        </div>
+                        <div class="event choice">
+                            <div class="event-title">🚶 Post-despido</div>
+                            <ul class="choice-options">
+                                <li>Ir a casa a procesar <span class="effect negative">-conexión</span></li>
+                                <li>Caminar sin rumbo <span class="effect neutral">existencial</span></li>
+                                <li>Ir al barrio <span class="effect positive">+conexión</span></li>
+                            </ul>
+                        </div>
+                        <div class="event npc">
+                            <div class="event-title">Si vas al barrio: Sofía</div>
+                            <div class="event-desc">Ella revela que la olla está en crisis.</div>
+                        </div>
+                        <div class="event choice">
+                            <div class="event-title">📞 Si te quedas en casa</div>
+                            <ul class="choice-options">
+                                <li>Llamar a Elena → Historia del 2002</li>
+                                <li>Llamar a Diego → Solidaridad mutua</li>
+                                <li>Llamar a Marcos → No contesta</li>
+                                <li>No llamar a nadie <span class="effect negative">aislamiento</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- JUEVES -->
+                <div class="day-card day-4">
+                    <div class="day-header">
+                        <span>Jueves — Día 4</span>
+                        <span class="energy-badge">⚡ 3</span>
+                    </div>
+                    <div class="day-content">
+                        <div class="event">
+                            <div class="event-title">☀️ Primer día libre</div>
+                            <div class="event-desc">No hay necesidad de levantarse. La libertad pesa.</div>
+                        </div>
+                        <div class="event choice">
+                            <div class="event-title">🛏️ Mañana</div>
+                            <ul class="choice-options">
+                                <li>Quedarse en cama <span class="effect negative">-dignidad</span></li>
+                                <li>Levantarse <span class="effect positive">+dignidad</span></li>
+                            </ul>
+                        </div>
+                        <div class="event choice">
+                            <div class="event-title">📍 Qué hacer</div>
+                            <ul class="choice-options">
+                                <li>Buscar trabajo online <span class="effect negative">-dignidad</span></li>
+                                <li>Ir al barrio/olla <span class="effect positive">+conexión</span></li>
+                                <li>Quedarse en casa <span class="effect negative">-conexión</span></li>
+                            </ul>
+                        </div>
+                        <div class="event npc">
+                            <div class="event-title">🍲 En la Olla</div>
+                            <div class="event-desc">Sofía te recibe. Puedes ayudar activamente.</div>
+                        </div>
+                        <div class="event choice">
+                            <div class="event-title">¿Ayudas en la cocina?</div>
+                            <ul class="choice-options">
+                                <li>SÍ → <span class="effect positive">+conexión +llama</span> + idea_tengo_tiempo</li>
+                                <li>NO → Solo observar, menos impacto</li>
+                            </ul>
+                        </div>
+                        <div class="event npc">
+                            <div class="event-title">👵 Visitar a Elena</div>
+                            <div class="event-desc">Hace mate, da consejos. Obtener <code>idea_pedir_no_debilidad</code>.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VIERNES -->
+                <div class="day-card day-5">
+                    <div class="day-header">
+                        <span>Viernes — Día 5</span>
+                        <span class="energy-badge">⚡ 4</span>
+                    </div>
+                    <div class="day-content">
+                        <div class="event critical">
+                            <div class="event-title">🔥 CRISIS DE LA OLLA</div>
+                            <div class="event-desc">Hay que alimentar a 30 personas sin dinero ni donaciones.</div>
+                        </div>
+                        <div class="event choice">
+                            <div class="event-title">Decisión matutina</div>
+                            <ul class="choice-options">
+                                <li>Buscar trabajo (hueco) <span class="effect negative">-dignidad</span></li>
+                                <li>Ir a la olla <span class="effect positive">compromiso</span></li>
+                            </ul>
+                        </div>
+                        <div class="event">
+                            <div class="event-title">📋 Reunión de Crisis</div>
+                            <div class="event-desc">Sin donaciones. Sin ayuda municipal. Sin comercio.</div>
+                        </div>
+                        <div class="event choice">
+                            <div class="event-title">Solución propuesta</div>
+                            <ul class="choice-options">
+                                <li>Colecta rápida en la calle</li>
+                                <li>Pedir a vecinos (canasta de Elena)</li>
+                            </ul>
+                        </div>
+                        <div class="event npc">
+                            <div class="event-title">🤝 Trabajar con Diego</div>
+                            <div class="event-desc">Colaborar en la colecta. La cooperación funciona.</div>
+                        </div>
+                        <div class="event">
+                            <div class="event-title">🍽️ 19:00 - Servir comida</div>
+                            <div class="event-desc">La olla sigue abierta. Obtener <code>idea_hay_cosas_juntos</code>.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SÁBADO -->
+                <div class="day-card day-6">
+                    <div class="day-header">
+                        <span>Sábado — Día 6</span>
+                        <span class="energy-badge">⚡ 4</span>
+                    </div>
+                    <div class="day-content">
+                        <div class="event choice">
+                            <div class="event-title">☀️ Mañana</div>
+                            <ul class="choice-options">
+                                <li>Llamar a alguien (quizás Marcos)</li>
+                                <li>Caminar</li>
+                                <li>Quedarse en casa</li>
+                            </ul>
+                        </div>
+                        <div class="event npc">
+                            <div class="event-title">📞 Potencial: Marcos</div>
+                            <div class="event-desc">Si tu vínculo es Marcos, puedes convencerlo de ir contigo.</div>
+                        </div>
+                        <div class="event">
+                            <div class="event-title">🤫 Revelación de Marcos</div>
+                            <div class="event-desc">Él también fue despedido hace 6 meses. <code>marcos_secreto = true</code></div>
+                        </div>
+                        <div class="event critical">
+                            <div class="event-title">📢 LA ASAMBLEA (17:00)</div>
+                            <div class="event-desc">Asamblea del barrio en la olla. Momento clave.</div>
+                        </div>
+                        <div class="event choice">
+                            <div class="event-title">En la asamblea</div>
+                            <ul class="choice-options">
+                                <li>Solo escuchar <span class="effect neutral">pasivo</span></li>
+                                <li>Hablar sobre tu semana <span class="effect positive">+dignidad</span></li>
+                                <li>Proponer un plan grande <span class="effect positive">+dignidad +llama</span></li>
+                            </ul>
+                        </div>
+                        <div class="event choice">
+                            <div class="event-title">¿No ir a la asamblea?</div>
+                            <ul class="choice-options">
+                                <li>Quedarse en casa <span class="effect negative">-2 conexión -1 llama</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DOMINGO -->
+                <div class="day-card day-7">
+                    <div class="day-header">
+                        <span>Domingo — Día 7</span>
+                        <span class="energy-badge">⚡ 5</span>
+                    </div>
+                    <div class="day-content">
+                        <div class="event">
+                            <div class="event-title">🌅 Día de reflexión</div>
+                            <div class="event-desc">El mejor descanso. Momento de introspección.</div>
+                        </div>
+                        <div class="event choice">
+                            <div class="event-title">Mañana</div>
+                            <ul class="choice-options">
+                                <li>Quedarse en casa (introspección) <span class="effect negative">-conexión</span></li>
+                                <li>Salir al barrio <span class="effect positive">+conexión</span></li>
+                            </ul>
+                        </div>
+                        <div class="event npc">
+                            <div class="event-title">📞 Llamar a tu vínculo</div>
+                            <div class="event-desc">Conversación larga, cierre emocional.</div>
+                        </div>
+                        <div class="event">
+                            <div class="event-title">🌙 Noche - Evaluación</div>
+                            <div class="event-desc">Se evalúan todas las variables para determinar el final.</div>
+                        </div>
+                        <div class="event critical">
+                            <div class="event-title">🎭 FINAL</div>
+                            <div class="event-desc">Uno de 6 finales según tus elecciones y recursos acumulados.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VARIABLES SECTION -->
+        <section id="variables">
+            <div class="section-header">
+                <h2>Sistema de Variables</h2>
+                <p>Todas las variables que controlan el estado del juego y determinan los finales.</p>
+            </div>
+
+            <div class="variables-grid">
+                <div class="var-category">
+                    <h3>⚡ Recursos Principales</h3>
+                    <div class="var-item">
+                        <div>
+                            <span class="var-name">energia</span>
+                            <div class="var-desc">Capacidad de acción diaria. Se gasta con cada acción significativa.</div>
+                        </div>
+                        <span class="var-range">0-5 (inicio: 4)</span>
+                    </div>
+                    <div class="var-item">
+                        <div>
+                            <span class="var-name">conexion</span>
+                            <div class="var-desc">Integración en la red comunitaria. Clave para finales positivos.</div>
+                        </div>
+                        <span class="var-range">0-10 (inicio: 5)</span>
+                    </div>
+                    <div class="var-item">
+                        <div>
+                            <span class="var-name">dignidad</span>
+                            <div class="var-desc">Autoestima. Sube ayudando a otros, baja buscando trabajo.</div>
+                        </div>
+                        <span class="var-range">0-10 (inicio: 5)</span>
+                    </div>
+                    <div class="var-item">
+                        <div>
+                            <span class="var-name">llama</span>
+                            <div class="var-desc">"La llama" - Esperanza colectiva. Crece con la comunidad.</div>
+                        </div>
+                        <span class="var-range">0-10 (inicio: 3)</span>
+                    </div>
+                    <div class="var-item">
+                        <div>
+                            <span class="var-name">trauma</span>
+                            <div class="var-desc">Acumula con cada golpe. NUNCA decrece.</div>
+                        </div>
+                        <span class="var-range">0-10 (inicio: 0)</span>
+                    </div>
+                    <div class="var-item">
+                        <div>
+                            <span class="var-name">acumulacion</span>
+                            <div class="var-desc">Desesperación hacia atajos ilegales. Si llega a 5+, final Walter.</div>
+                        </div>
+                        <span class="var-range">0-10 (inicio: 0)</span>
+                    </div>
+                </div>
+
+                <div class="var-category">
+                    <h3>🎭 Creación de Personaje</h3>
+                    <div class="var-item">
+                        <div>
+                            <span class="var-name">perdida</span>
+                            <div class="var-desc">Lo que perdiste antes de que empiece el juego.</div>
+                        </div>
+                        <span class="var-range">familiar | relacion | futuro | vacio</span>
+                    </div>
+                    <div class="var-item">
+                        <div>
+                            <span class="var-name">atadura</span>
+                            <div class="var-desc">Por qué te quedas aquí.</div>
+                        </div>
+                        <span class="var-range">responsabilidad | barrio | inercia | algo</span>
+                    </div>
+                    <div class="var-item">
+                        <div>
+                            <span class="var-name">posicion</span>
+                            <div class="var-desc">Tu postura política/social.</div>
+                        </div>
+                        <span class="var-range">ajeno | quemado | esperanzado | ambiguo</span>
+                    </div>
+                    <div class="var-item">
+                        <div>
+                            <span class="var-name">vinculo</span>
+                            <div class="var-desc">Tu relación especial con un NPC.</div>
+                        </div>
+                        <span class="var-range">sofia | elena | diego | marcos</span>
+                    </div>
+                </div>
+
+                <div class="var-category">
+                    <h3>📊 Estado del Juego</h3>
+                    <div class="var-item">
+                        <div>
+                            <span class="var-name">dia_actual</span>
+                            <div class="var-desc">Día corriente (1=lunes, 7=domingo).</div>
+                        </div>
+                        <span class="var-range">1-7</span>
+                    </div>
+                    <div class="var-item">
+                        <div>
+                            <span class="var-name">tiene_laburo</span>
+                            <div class="var-desc">False después del despido del miércoles.</div>
+                        </div>
+                        <span class="var-range">true | false</span>
+                    </div>
+                    <div class="var-item">
+                        <div>
+                            <span class="var-name">fui_despedido</span>
+                            <div class="var-desc">Se activa al ser despedido.</div>
+                        </div>
+                        <span class="var-range">true | false</span>
+                    </div>
+                    <div class="var-item">
+                        <div>
+                            <span class="var-name">indemnizacion</span>
+                            <div class="var-desc">Meses de severance (3 meses).</div>
+                        </div>
+                        <span class="var-range">int (3)</span>
+                    </div>
+                </div>
+
+                <div class="var-category">
+                    <h3>👥 Relaciones con NPCs</h3>
+                    <div class="var-item">
+                        <div>
+                            <span class="var-name">sofia_relacion</span>
+                            <div class="var-desc">Nivel de relación con Sofía (olla popular).</div>
+                        </div>
+                        <span class="var-range">0-5</span>
+                    </div>
+                    <div class="var-item">
+                        <div>
+                            <span class="var-name">elena_relacion</span>
+                            <div class="var-desc">Nivel de relación con Elena (veterana del barrio).</div>
+                        </div>
+                        <span class="var-range">0-5</span>
+                    </div>
+                    <div class="var-item">
+                        <div>
+                            <span class="var-name">diego_relacion</span>
+                            <div class="var-desc">Nivel de relación con Diego (inmigrante venezolano).</div>
+                        </div>
+                        <span class="var-range">0-5</span>
+                    </div>
+                    <div class="var-item">
+                        <div>
+                            <span class="var-name">marcos_relacion</span>
+                            <div class="var-desc">Nivel de relación con Marcos (activista quemado).</div>
+                        </div>
+                        <span class="var-range">0-5</span>
+                    </div>
+                    <div class="var-item">
+                        <div>
+                            <span class="var-name">renzo_relacion</span>
+                            <div class="var-desc">Nivel de relación con Renzo (compañero de trabajo).</div>
+                        </div>
+                        <span class="var-range">0-5</span>
+                    </div>
+                </div>
+
+                <div class="var-category">
+                    <h3>🏷️ Flags de Progreso</h3>
+                    <div class="var-item">
+                        <div>
+                            <span class="var-name">conte_a_alguien</span>
+                            <div class="var-desc">Si contaste a alguien sobre el despido.</div>
+                        </div>
+                        <span class="var-range">true | false</span>
+                    </div>
+                    <div class="var-item">
+                        <div>
+                            <span class="var-name">ayude_en_olla</span>
+                            <div class="var-desc">Si ayudaste activamente en la olla.</div>
+                        </div>
+                        <span class="var-range">true | false</span>
+                    </div>
+                    <div class="var-item">
+                        <div>
+                            <span class="var-name">participe_asamblea</span>
+                            <div class="var-desc">Si participaste en la asamblea del sábado.</div>
+                        </div>
+                        <span class="var-range">true | false</span>
+                    </div>
+                    <div class="var-item">
+                        <div>
+                            <span class="var-name">olla_en_crisis</span>
+                            <div class="var-desc">Estado de crisis de la olla (viernes).</div>
+                        </div>
+                        <span class="var-range">true | false</span>
+                    </div>
+                    <div class="var-item">
+                        <div>
+                            <span class="var-name">marcos_secreto</span>
+                            <div class="var-desc">Si Marcos reveló que fue despedido.</div>
+                        </div>
+                        <span class="var-range">true | false</span>
+                    </div>
+                </div>
+
+                <div class="var-category">
+                    <h3>🎲 Sistema de Dados</h3>
+                    <div class="var-item">
+                        <div>
+                            <span class="var-name">ultima_tirada</span>
+                            <div class="var-desc">Resultado del último d6.</div>
+                        </div>
+                        <span class="var-range">1-6</span>
+                    </div>
+                    <div class="var-item">
+                        <div>
+                            <span class="var-name">ultimo_chequeo</span>
+                            <div class="var-desc">Resultado: 2=crítico, 1=éxito, 0=fallo, -1=pifia.</div>
+                        </div>
+                        <span class="var-range">-1 a 2</span>
+                    </div>
+                    <div class="mechanic-formula">
+                        chequeo(mod, dif) = d6() + mod >= dif<br>
+                        Tirada 6 = crítico (2)<br>
+                        Tirada 1 = pifia (-1)
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NPCs SECTION -->
+        <section id="npcs">
+            <div class="section-header">
+                <h2>Arcos de Personajes</h2>
+                <p>Cada NPC tiene su propio arco narrativo que se desarrolla a lo largo de la semana.</p>
+            </div>
+
+            <div class="npc-grid">
+                <!-- SOFÍA -->
+                <div class="npc-card npc-sofia">
+                    <div class="npc-header">
+                        <div class="npc-avatar">👩</div>
+                        <div class="npc-info">
+                            <h3>Sofía</h3>
+                            <div class="npc-role">Líder de la olla popular, madre soltera</div>
+                        </div>
+                    </div>
+                    <div class="npc-content">
+                        <div class="npc-states">
+                            <h4>Estados posibles</h4>
+                            <div class="state-flow">
+                                <span class="state active">activa</span>
+                                <span class="state-arrow">→</span>
+                                <span class="state">agotada</span>
+                                <span class="state-arrow">→</span>
+                                <span class="state">quebrando</span>
+                                <span class="state-arrow">→</span>
+                                <span class="state">ausente</span>
+                            </div>
+                        </div>
+                        <div class="npc-arc">
+                            <h4>Arco narrativo</h4>
+                            <div class="arc-day">
+                                <span class="arc-day-label">Lun-Mar</span>
+                                <span>Agotada manejando la olla, preocupada por sus hijos.</span>
+                            </div>
+                            <div class="arc-day">
+                                <span class="arc-day-label">Mié</span>
+                                <span>Si la visitas, revela la crisis de la olla. Te pide ayuda.</span>
+                            </div>
+                            <div class="arc-day">
+                                <span class="arc-day-label">Jue</span>
+                                <span>Si ayudas, ve una posibilidad. Apreciación genuina.</span>
+                            </div>
+                            <div class="arc-day">
+                                <span class="arc-day-label">Vie</span>
+                                <span>Organizando respuesta a crisis. Necesita tu ayuda.</span>
+                            </div>
+                            <div class="arc-day">
+                                <span class="arc-day-label">Sáb</span>
+                                <span>Lidera la asamblea. Te reconoce como parte de la solución.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ELENA -->
+                <div class="npc-card npc-elena">
+                    <div class="npc-header">
+                        <div class="npc-avatar">👵</div>
+                        <div class="npc-info">
+                            <h3>Elena</h3>
+                            <div class="npc-role">Veterana del barrio, 70 años, vivió la crisis del 2002</div>
+                        </div>
+                    </div>
+                    <div class="npc-content">
+                        <div class="npc-states">
+                            <h4>Estados posibles</h4>
+                            <div class="state-flow">
+                                <span class="state active">presente</span>
+                                <span class="state-arrow">→</span>
+                                <span class="state">cansada</span>
+                                <span class="state-arrow">→</span>
+                                <span class="state">enferma</span>
+                                <span class="state-arrow">→</span>
+                                <span class="state">memoria</span>
+                            </div>
+                        </div>
+                        <div class="npc-arc">
+                            <h4>Arco narrativo</h4>
+                            <div class="arc-day">
+                                <span class="arc-day-label">Lun-Mar</span>
+                                <span>Disponible si la buscas. Fuente de sabiduría.</span>
+                            </div>
+                            <div class="arc-day">
+                                <span class="arc-day-label">Mié</span>
+                                <span>Si la llamas, cuenta la historia del 2002. Introduce <code>idea_red_o_nada</code>.</span>
+                            </div>
+                            <div class="arc-day">
+                                <span class="arc-day-label">Jue</span>
+                                <span>Visita personal. Hace mate, da consejos. <code>idea_pedir_no_debilidad</code>.</span>
+                            </div>
+                            <div class="arc-day">
+                                <span class="arc-day-label">Vie</span>
+                                <span>Propone sistema de canastas del 2002. Su estrategia funciona.</span>
+                            </div>
+                            <div class="arc-day">
+                                <span class="arc-day-label">Sáb</span>
+                                <span>Habla en la asamblea. Valida la acción colectiva.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DIEGO -->
+                <div class="npc-card npc-diego">
+                    <div class="npc-header">
+                        <div class="npc-avatar">👨</div>
+                        <div class="npc-info">
+                            <h3>Diego</h3>
+                            <div class="npc-role">Inmigrante venezolano, trabajo precario</div>
+                        </div>
+                    </div>
+                    <div class="npc-content">
+                        <div class="npc-states">
+                            <h4>Estados posibles</h4>
+                            <div class="state-flow">
+                                <span class="state active">luchando</span>
+                                <span class="state-arrow">→</span>
+                                <span class="state">agotado</span>
+                                <span class="state-arrow">→</span>
+                                <span class="state">desesperado</span>
+                                <span class="state-arrow">→</span>
+                                <span class="state">esperanzado</span>
+                            </div>
+                        </div>
+                        <div class="npc-arc">
+                            <h4>Arco narrativo</h4>
+                            <div class="arc-day">
+                                <span class="arc-day-label">Lun-Mar</span>
+                                <span>Amistad cautelosa. Ambos preocupados por el trabajo.</span>
+                            </div>
+                            <div class="arc-day">
+                                <span class="arc-day-label">Mié</span>
+                                <span>Si le cuentas, ofrece solidaridad. Entiende la precariedad.</span>
+                            </div>
+                            <div class="arc-day">
+                                <span class="arc-day-label">Jue</span>
+                                <span>Pueden caminar juntos. Construye conexión.</span>
+                            </div>
+                            <div class="arc-day">
+                                <span class="arc-day-label">Vie</span>
+                                <span>Participa en la colecta. Se siente útil.</span>
+                            </div>
+                            <div class="arc-day">
+                                <span class="arc-day-label">Sáb-Dom</span>
+                                <span>Presente pero más callado. Esperanzado si ayudaste.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MARCOS -->
+                <div class="npc-card npc-marcos">
+                    <div class="npc-header">
+                        <div class="npc-avatar">🧔</div>
+                        <div class="npc-info">
+                            <h3>Marcos</h3>
+                            <div class="npc-role">Ex-activista quemado, aislado</div>
+                        </div>
+                    </div>
+                    <div class="npc-content">
+                        <div class="npc-states">
+                            <h4>Estados posibles</h4>
+                            <div class="state-flow">
+                                <span class="state active">aislado</span>
+                                <span class="state-arrow">→</span>
+                                <span class="state">mirando</span>
+                                <span class="state-arrow">→</span>
+                                <span class="state">reconectando</span>
+                                <span class="state-arrow">→</span>
+                                <span class="state">ausente</span>
+                            </div>
+                        </div>
+                        <div class="npc-arc">
+                            <h4>Arco narrativo (el más difícil)</h4>
+                            <div class="arc-day">
+                                <span class="arc-day-label">Lun-Vie</span>
+                                <span>Aislado. No responde llamadas ni mensajes.</span>
+                            </div>
+                            <div class="arc-day">
+                                <span class="arc-day-label">Sáb</span>
+                                <span>SOLO si vinculo==marcos: Puedes convencerlo de ir.</span>
+                            </div>
+                            <div class="arc-day">
+                                <span class="arc-day-label">Revelación</span>
+                                <span>Él también fue despedido hace 6 meses. <code>marcos_secreto = true</code></span>
+                            </div>
+                            <div class="arc-day">
+                                <span class="arc-day-label">Asamblea</span>
+                                <span>Se sienta atrás, solo observa. Primer paso fuera del aislamiento.</span>
+                            </div>
+                            <div class="arc-day">
+                                <span class="arc-day-label">Dom</span>
+                                <span>Más receptivo, menos distante. Introduce <code>idea_esto_es_lo_que_hay</code>.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RENZO -->
+                <div class="npc-card npc-renzo">
+                    <div class="npc-header">
+                        <div class="npc-avatar">👔</div>
+                        <div class="npc-info">
+                            <h3>Renzo</h3>
+                            <div class="npc-role">Compañero de trabajo (secundario)</div>
+                        </div>
+                    </div>
+                    <div class="npc-content">
+                        <div class="npc-arc">
+                            <h4>Arco narrativo</h4>
+                            <div class="arc-day">
+                                <span class="arc-day-label">Lun-Mar</span>
+                                <span>Colega preocupado por la seguridad laboral.</span>
+                            </div>
+                            <div class="arc-day">
+                                <span class="arc-day-label">Mié</span>
+                                <span>Te despiden. Él se queda en el trabajo.</span>
+                            </div>
+                            <div class="arc-day">
+                                <span class="arc-day-label">Jue-Dom</span>
+                                <span>Trabaja, no puede verte mucho. Representa la vida que dejaste.</span>
+                            </div>
+                            <div class="arc-day">
+                                <span class="arc-day-label">Tema</span>
+                                <span>Recordatorio de la precariedad que todos enfrentan.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ENDINGS SECTION -->
+        <section id="endings">
+            <div class="section-header">
+                <h2>Los 6 Finales Posibles</h2>
+                <p>El final se determina el domingo por la noche según las variables acumuladas durante la semana.</p>
+            </div>
+
+            <div class="endings-container">
+                <!-- FINAL_RED -->
+                <div class="ending-card ending-best">
+                    <div class="ending-header">
+                        <span class="ending-name">🌟 FINAL_RED</span>
+                        <span class="ending-tier">MEJOR</span>
+                    </div>
+                    <div class="ending-content">
+                        <div class="ending-conditions">
+                            <h4>Condiciones</h4>
+                            <div class="condition">conexion >= 7</div>
+                            <div class="condition">llama >= 5</div>
+                            <div class="condition">ayude_en_olla == true</div>
+                        </div>
+                        <p class="ending-desc">"No estás solo. La olla, Sofía, el barrio te espera. No es una solución mágica, pero es una red. Durante 3 meses, algo puede surgir. Pero no estás aislado."</p>
+                    </div>
+                </div>
+
+                <!-- FINAL_QUIZÁS -->
+                <div class="ending-card ending-good">
+                    <div class="ending-header">
+                        <span class="ending-name">💫 FINAL_QUIZÁS</span>
+                        <span class="ending-tier">BUENO</span>
+                    </div>
+                    <div class="ending-content">
+                        <div class="ending-conditions">
+                            <h4>Condiciones</h4>
+                            <div class="condition">conexion >= 5</div>
+                            <div class="condition">(no cumple condiciones de RED)</div>
+                        </div>
+                        <p class="ending-desc">"Conociste gente. Algo se movió. No es suficiente todavía. Pero hay un 'quizás' que antes no estaba. Posibilidad, no esperanza."</p>
+                    </div>
+                </div>
+
+                <!-- FINAL_INCIERTO -->
+                <div class="ending-card ending-neutral">
+                    <div class="ending-header">
+                        <span class="ending-name">❓ FINAL_INCIERTO</span>
+                        <span class="ending-tier">NEUTRAL</span>
+                    </div>
+                    <div class="ending-content">
+                        <div class="ending-conditions">
+                            <h4>Condiciones</h4>
+                            <div class="condition">conexion < 5</div>
+                            <div class="condition">(ninguna otra condición)</div>
+                        </div>
+                        <p class="ending-desc">"No sabés qué tenés. La semana fue rara. Algo pasó, nada pasó. Estás vivo. ¿Es suficiente?"</p>
+                    </div>
+                </div>
+
+                <!-- FINAL_GRIS -->
+                <div class="ending-card ending-bad">
+                    <div class="ending-header">
+                        <span class="ending-name">🌫️ FINAL_GRIS</span>
+                        <span class="ending-tier">MALO</span>
+                    </div>
+                    <div class="ending-content">
+                        <div class="ending-conditions">
+                            <h4>Condiciones</h4>
+                            <div class="condition">trauma >= 4</div>
+                            <div class="condition">conexion <= 4</div>
+                        </div>
+                        <p class="ending-desc">"Todo pesa. El despido, la soledad, las preguntas. No hay final feliz, no hay final trágico. Solo días siguiendo días. Entumecimiento."</p>
+                    </div>
+                </div>
+
+                <!-- FINAL_SOLO -->
+                <div class="ending-card ending-worst">
+                    <div class="ending-header">
+                        <span class="ending-name">🚶 FINAL_SOLO</span>
+                        <span class="ending-tier">PEOR</span>
+                    </div>
+                    <div class="ending-content">
+                        <div class="ending-conditions">
+                            <h4>Condiciones</h4>
+                            <div class="condition">conexion <= 3</div>
+                            <div class="condition">llama <= 2</div>
+                        </div>
+                        <p class="ending-desc">"Te quedaste aislado toda la semana. El barrio sigue pero sin vos. Vas a buscar trabajo, vas a sobrevivir quizás, pero estás solo. Todo gris."</p>
+                    </div>
+                </div>
+
+                <!-- FINAL_WALTER -->
+                <div class="ending-card ending-worst">
+                    <div class="ending-header">
+                        <span class="ending-name">💀 FINAL_WALTER</span>
+                        <span class="ending-tier">COMPROMISO MORAL</span>
+                    </div>
+                    <div class="ending-content">
+                        <div class="ending-conditions">
+                            <h4>Condiciones</h4>
+                            <div class="condition">acumulacion >= 5</div>
+                        </div>
+                        <p class="ending-desc">"Te acordás de Walter, el tipo que ofrecía 'trabajo fácil'. No dijiste que sí. Pero lo estás pensando. La desesperación es real. La tentación está ahí."</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ending Flow Chart -->
+            <div class="decision-tree">
+                <h3 class="tree-title">📊 Árbol de Decisión de Finales</h3>
+                <div class="flow-container">
+                    <div class="flow-diagram">
+                        <div class="flow-row">
+                            <div class="flow-node start">
+                                <div class="flow-node-title">domingo_noche</div>
+                                <div class="flow-node-sub">Evaluación final</div>
+                            </div>
+                        </div>
+                        <div class="flow-row">
+                            <div class="flow-connector">↓</div>
+                        </div>
+                        <div class="flow-row">
+                            <div class="flow-branch">
+                                <div class="branch-label">acumulacion >= 5</div>
+                                <div class="flow-node critical">
+                                    <div class="flow-node-title">FINAL_WALTER</div>
+                                    <div class="flow-node-sub">Compromiso moral</div>
+                                </div>
+                            </div>
+                            <div class="flow-connector">|</div>
+                            <div class="flow-branch">
+                                <div class="branch-label">conexion >= 7 & llama >= 5 & ayude</div>
+                                <div class="flow-node end">
+                                    <div class="flow-node-title">FINAL_RED</div>
+                                    <div class="flow-node-sub">La red te sostiene</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flow-row">
+                            <div class="flow-connector">↓</div>
+                        </div>
+                        <div class="flow-row">
+                            <div class="flow-branch">
+                                <div class="branch-label">conexion <= 3 & llama <= 2</div>
+                                <div class="flow-node critical">
+                                    <div class="flow-node-title">FINAL_SOLO</div>
+                                    <div class="flow-node-sub">Aislamiento total</div>
+                                </div>
+                            </div>
+                            <div class="flow-connector">|</div>
+                            <div class="flow-branch">
+                                <div class="branch-label">trauma >= 4 & conexion <= 4</div>
+                                <div class="flow-node choice">
+                                    <div class="flow-node-title">FINAL_GRIS</div>
+                                    <div class="flow-node-sub">Entumecimiento</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flow-row">
+                            <div class="flow-connector">↓</div>
+                        </div>
+                        <div class="flow-row">
+                            <div class="flow-branch">
+                                <div class="branch-label">conexion >= 5</div>
+                                <div class="flow-node">
+                                    <div class="flow-node-title">FINAL_QUIZÁS</div>
+                                    <div class="flow-node-sub">Hay posibilidad</div>
+                                </div>
+                            </div>
+                            <div class="flow-connector">|</div>
+                            <div class="flow-branch">
+                                <div class="branch-label">else</div>
+                                <div class="flow-node">
+                                    <div class="flow-node-title">FINAL_INCIERTO</div>
+                                    <div class="flow-node-sub">Default</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FLOW SECTION -->
+        <section id="flow">
+            <div class="section-header">
+                <h2>Flujo General del Juego</h2>
+                <p>Diagrama del flujo narrativo principal mostrando los momentos críticos y bifurcaciones.</p>
+            </div>
+
+            <div class="flow-container">
+                <div class="flow-diagram">
+                    <!-- FASE 1: Antes del despido -->
+                    <div class="flow-row">
+                        <div class="flow-node start">
+                            <div class="flow-node-title">🎮 INICIO</div>
+                            <div class="flow-node-sub">Creación personaje</div>
+                        </div>
+                        <div class="flow-connector">→</div>
+                        <div class="flow-node">
+                            <div class="flow-node-title">Lunes</div>
+                            <div class="flow-node-sub">Status quo, ansiedad</div>
+                        </div>
+                        <div class="flow-connector">→</div>
+                        <div class="flow-node">
+                            <div class="flow-node-title">Martes</div>
+                            <div class="flow-node-sub">Tensión, citación</div>
+                        </div>
+                        <div class="flow-connector">→</div>
+                        <div class="flow-node critical">
+                            <div class="flow-node-title">⚠️ Miércoles</div>
+                            <div class="flow-node-sub">EL DESPIDO</div>
+                        </div>
+                    </div>
+
+                    <!-- BIFURCACIÓN POST-DESPIDO -->
+                    <div class="flow-row" style="margin-top: 2rem;">
+                        <div class="flow-node choice" style="min-width: 300px;">
+                            <div class="flow-node-title">🔀 BIFURCACIÓN CRÍTICA</div>
+                            <div class="flow-node-sub">¿Qué haces después del despido?</div>
+                        </div>
+                    </div>
+
+                    <div class="flow-row">
+                        <div class="flow-branch">
+                            <div class="branch-label">Ir a casa</div>
+                            <div class="flow-node">
+                                <div class="flow-node-title">Aislamiento</div>
+                                <div class="flow-node-sub">-conexión</div>
+                            </div>
+                        </div>
+                        <div class="flow-branch">
+                            <div class="branch-label">Caminar</div>
+                            <div class="flow-node">
+                                <div class="flow-node-title">Existencial</div>
+                                <div class="flow-node-sub">neutral</div>
+                            </div>
+                        </div>
+                        <div class="flow-branch">
+                            <div class="branch-label">Ir al barrio</div>
+                            <div class="flow-node">
+                                <div class="flow-node-title">Comunidad</div>
+                                <div class="flow-node-sub">+conexión</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FASE 2: Después del despido -->
+                    <div class="flow-row" style="margin-top: 2rem;">
+                        <div class="flow-node">
+                            <div class="flow-node-title">Jueves</div>
+                            <div class="flow-node-sub">Primer día libre</div>
+                        </div>
+                        <div class="flow-connector">→</div>
+                        <div class="flow-node choice">
+                            <div class="flow-node-title">🔀 ¿Ayudar en olla?</div>
+                            <div class="flow-node-sub">Decisión clave</div>
+                        </div>
+                    </div>
+
+                    <div class="flow-row">
+                        <div class="flow-branch">
+                            <div class="branch-label">SÍ ayudar</div>
+                            <div class="flow-node">
+                                <div class="flow-node-title">+conexión +llama</div>
+                                <div class="flow-node-sub">idea_tengo_tiempo</div>
+                            </div>
+                        </div>
+                        <div class="flow-connector">|</div>
+                        <div class="flow-branch">
+                            <div class="branch-label">NO ayudar</div>
+                            <div class="flow-node">
+                                <div class="flow-node-title">Observar</div>
+                                <div class="flow-node-sub">menos impacto</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- VIERNES CRISIS -->
+                    <div class="flow-row" style="margin-top: 2rem;">
+                        <div class="flow-node critical">
+                            <div class="flow-node-title">🔥 Viernes</div>
+                            <div class="flow-node-sub">CRISIS DE LA OLLA</div>
+                        </div>
+                        <div class="flow-connector">→</div>
+                        <div class="flow-node choice">
+                            <div class="flow-node-title">🔀 ¿Participar?</div>
+                            <div class="flow-node-sub">Prueba de compromiso</div>
+                        </div>
+                    </div>
+
+                    <!-- SÁBADO ASAMBLEA -->
+                    <div class="flow-row" style="margin-top: 2rem;">
+                        <div class="flow-node critical">
+                            <div class="flow-node-title">📢 Sábado</div>
+                            <div class="flow-node-sub">LA ASAMBLEA</div>
+                        </div>
+                        <div class="flow-connector">→</div>
+                        <div class="flow-node choice">
+                            <div class="flow-node-title">🔀 ¿Asistir?</div>
+                            <div class="flow-node-sub">Momento clave</div>
+                        </div>
+                    </div>
+
+                    <div class="flow-row">
+                        <div class="flow-branch">
+                            <div class="branch-label">Ir y escuchar</div>
+                            <div class="flow-node">
+                                <div class="flow-node-title">Pasivo</div>
+                                <div class="flow-node-sub">+1 conexión</div>
+                            </div>
+                        </div>
+                        <div class="flow-branch">
+                            <div class="branch-label">Ir y hablar</div>
+                            <div class="flow-node">
+                                <div class="flow-node-title">Activo</div>
+                                <div class="flow-node-sub">+dignidad</div>
+                            </div>
+                        </div>
+                        <div class="flow-branch">
+                            <div class="branch-label">Proponer plan</div>
+                            <div class="flow-node">
+                                <div class="flow-node-title">Liderazgo</div>
+                                <div class="flow-node-sub">+dignidad +llama</div>
+                            </div>
+                        </div>
+                        <div class="flow-branch">
+                            <div class="branch-label">No ir</div>
+                            <div class="flow-node critical">
+                                <div class="flow-node-title">Regresión</div>
+                                <div class="flow-node-sub">-2 conexión -1 llama</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DOMINGO FINAL -->
+                    <div class="flow-row" style="margin-top: 2rem;">
+                        <div class="flow-node">
+                            <div class="flow-node-title">Domingo</div>
+                            <div class="flow-node-sub">Reflexión</div>
+                        </div>
+                        <div class="flow-connector">→</div>
+                        <div class="flow-node end">
+                            <div class="flow-node-title">🎭 FINAL</div>
+                            <div class="flow-node-sub">1 de 6 finales</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mecánicas de Recursos -->
+            <div class="mechanic-card" style="margin-top: 2rem;">
+                <h3>⚙️ Cómo Cambian los Recursos</h3>
+                <div class="variables-grid">
+                    <div class="var-category">
+                        <h3 style="color: var(--accent-green);">📈 Sube Conexión</h3>
+                        <ul style="padding-left: 1.2rem; color: var(--text-secondary);">
+                            <li>Almorzar con Renzo (+1)</li>
+                            <li>Visitar barrio (+1)</li>
+                            <li>Contar a alguien sobre despido (+1)</li>
+                            <li>Ayudar en olla (+2)</li>
+                            <li>Participar en asamblea (+1)</li>
+                            <li>Salir el domingo (+1)</li>
+                        </ul>
+                    </div>
+                    <div class="var-category">
+                        <h3 style="color: var(--accent-red);">📉 Baja Conexión</h3>
+                        <ul style="padding-left: 1.2rem; color: var(--text-secondary);">
+                            <li>Almorzar solo (-1)</li>
+                            <li>Ir directo a casa (-1)</li>
+                            <li>No llamar a nadie (-1)</li>
+                            <li>Quedarse en casa jueves (-1)</li>
+                            <li>No ir a asamblea (-2)</li>
+                            <li>Quedarse en casa domingo (-1)</li>
+                        </ul>
+                    </div>
+                    <div class="var-category">
+                        <h3 style="color: var(--accent-yellow);">🔥 Sube Llama</h3>
+                        <ul style="padding-left: 1.2rem; color: var(--text-secondary);">
+                            <li>Ayudar en olla (+1)</li>
+                            <li>Participar en crisis viernes (+1)</li>
+                            <li>Asistir a asamblea (+1)</li>
+                            <li>Proponer plan grande (+1)</li>
+                            <li>Resolución exitosa de crisis (+1)</li>
+                        </ul>
+                    </div>
+                    <div class="var-category">
+                        <h3 style="color: var(--accent-orange);">💔 Sube Trauma</h3>
+                        <ul style="padding-left: 1.2rem; color: var(--text-secondary);">
+                            <li>Malos encuentros en trabajo (+1)</li>
+                            <li>Momentos de desesperación (+1)</li>
+                            <li>Ver gente sin hogar (+1)</li>
+                            <li><strong>NUNCA decrece</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- IDEAS SECTION -->
+        <section id="ideas">
+            <div class="section-header">
+                <h2>Ideas Internalizadas</h2>
+                <p>Pensamientos que el personaje puede adoptar durante el juego. Afectan diálogos y finales.</p>
+            </div>
+
+            <h3 style="color: var(--accent-purple); margin-bottom: 1rem;">💡 Ideas Elegibles (el jugador elige adoptarlas)</h3>
+            <div class="ideas-grid">
+                <div class="idea-card">
+                    <div class="idea-name">idea_red_o_nada</div>
+                    <div class="idea-trigger"><strong>Trigger:</strong> Escuchar la historia del 2002 de Elena (miércoles)</div>
+                    <div class="idea-meaning">"La red o nada" — Verdad estructural: la solución siempre fue colectiva.</div>
+                </div>
+                <div class="idea-card">
+                    <div class="idea-name">idea_tengo_tiempo</div>
+                    <div class="idea-trigger"><strong>Trigger:</strong> Ayudar activamente en la olla (jueves)</div>
+                    <div class="idea-meaning">"Ahora tengo tiempo para esto" — Reencuadrar el despido como oportunidad.</div>
+                </div>
+                <div class="idea-card">
+                    <div class="idea-name">idea_pedir_no_debilidad</div>
+                    <div class="idea-trigger"><strong>Trigger:</strong> Visitar a Elena en su casa (jueves)</div>
+                    <div class="idea-meaning">"Pedir ayuda no es debilidad" — Lección sobre vulnerabilidad y comunidad.</div>
+                </div>
+                <div class="idea-card">
+                    <div class="idea-name">idea_hay_cosas_juntos</div>
+                    <div class="idea-trigger"><strong>Trigger:</strong> Participar en asamblea o resolver crisis (viernes/sábado)</div>
+                    <div class="idea-meaning">"Hay cosas que se hacen juntos" — Insight sobre acción colectiva.</div>
+                </div>
+            </div>
+
+            <h3 style="color: var(--accent-red); margin: 2rem 0 1rem;">⚠️ Ideas Involuntarias (se activan automáticamente)</h3>
+            <div class="ideas-grid">
+                <div class="idea-card involuntary">
+                    <div class="idea-name">idea_quien_soy</div>
+                    <div class="idea-trigger"><strong>Trigger:</strong> Ser despedido (miércoles, automático)</div>
+                    <div class="idea-meaning">"¿Quién soy sin trabajo?" — Crisis de identidad involuntaria.</div>
+                </div>
+                <div class="idea-card involuntary">
+                    <div class="idea-name">idea_esto_es_lo_que_hay</div>
+                    <div class="idea-trigger"><strong>Trigger:</strong> Marcos revela su situación (sábado, si vinculo==marcos)</div>
+                    <div class="idea-meaning">"Esto es lo que hay" — Aceptación amarga. Espejo de la desesperación de Marcos.</div>
+                </div>
+            </div>
+
+            <div class="mechanic-card" style="margin-top: 2rem;">
+                <h3>🧠 Cómo Funcionan las Ideas</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1rem;">Las ideas afectan:</p>
+                <ul style="padding-left: 1.5rem; color: var(--text-secondary);">
+                    <li><strong>Opciones de diálogo:</strong> Algunas respuestas solo aparecen si tienes la idea correspondiente.</li>
+                    <li><strong>Texto de finales:</strong> Los finales referencian las ideas internalizadas.</li>
+                    <li><strong>Estado psicológico:</strong> Modifican cómo el narrador describe tus pensamientos.</li>
+                    <li><strong>NPCs:</strong> Algunos NPCs responden diferente si mostrás ciertas ideas.</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Show target section
+            document.getElementById(sectionId).classList.add('active');
+
+            // Update nav buttons
+            document.querySelectorAll('nav button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
