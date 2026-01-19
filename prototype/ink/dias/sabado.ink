@@ -214,6 +214,59 @@ Estás afuera.
 
 * [Dormir] -> fragmento_sabado
 
+=== sabado_asamblea_post_cierre ===
+// Consecuencias del cierre de la olla el viernes
+
+El aire está raro.
+Ayer la olla cerró.
+Primera vez en meses.
+
+Sofía está callada.
+Elena tiene cara de preocupación.
+
+"Bueno... tenemos que hablar de lo de ayer."
+
+Sofía suspira.
+
+"Ayer cerramos. Lo saben.
+La pregunta es: ¿qué hacemos para que no pase de nuevo?"
+
+{vos_propusiste_cerrar:
+    Te miran.
+    Vos propusiste cerrar.
+    Ahora te toca proponer qué sigue.
+
+    * [Proponer sistema de reserva de emergencia]
+        "Necesitamos un fondo. Aunque sea chico. Para días así."
+        Sofía asiente. "Tiene sentido."
+        La discusión sigue.
+        -> sabado_asamblea_continua
+
+    * [Proponer red de donantes fijos]
+        "Necesitamos gente que se comprometa a dar todos los meses."
+        Elena: "En el 2002 así empezamos."
+        La idea prende.
+        -> sabado_asamblea_continua
+
+    * [Quedarte callado]
+        No decís nada.
+        Sofía te mira. Esperaba más.
+        ~ bajar_dignidad(1)
+        -> sabado_asamblea_continua
+- else:
+    La discusión sigue sin que nadie te mire especialmente.
+    -> sabado_asamblea_continua
+}
+
+=== sabado_asamblea_continua ===
+// Continúa después de resolver el tema del cierre
+
+La conversación se amplía.
+No es solo lo de ayer.
+Es todo.
+
+* [Seguir] -> sabado_asamblea_discusion_normal
+
 === sabado_asamblea ===
 
 // Ecos: los NPCs recuerdan tus acciones pasadas
@@ -222,6 +275,16 @@ Estás afuera.
 
 // Inicio de la asamblea
 -> olla_asamblea_inicio ->
+
+// Si la olla cerró ayer, eso domina la conversación
+{olla_cerro_viernes:
+    -> sabado_asamblea_post_cierre
+}
+
+-> sabado_asamblea_discusion_normal
+
+=== sabado_asamblea_discusion_normal ===
+// Discusión normal de la asamblea (sin cierre previo)
 
 // Discusion de la asamblea
 -> olla_asamblea_discusion ->
