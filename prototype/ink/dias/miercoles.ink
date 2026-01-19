@@ -60,6 +60,8 @@ Salís.
 
 -> laburo_salida_despedido ->
 
+-> miercoles_flashback ->
+
 // La idea involuntaria se activa
 {idea_quien_soy:
     # IDEA: "¿QUIÉN SOY SIN LABURO?"
@@ -79,6 +81,58 @@ Salís.
     -> miercoles_caminar
 * [Ir al barrio, buscar a alguien] # EFECTO:conexion+
     -> miercoles_barrio
+
+=== miercoles_flashback ===
+
+Salís del edificio.
+El sol pega.
+Es mediodía.
+
+{perdida == "familiar":
+    Por un segundo, ves a tu vieja en la calle.
+    No es ella. No puede ser.
+    Pero por un segundo...
+
+    Recordás cuando te dijo:
+    "Mientras tengas laburo, estás bien."
+
+    Ya no tenés laburo.
+
+    El fantasma se desvanece.
+}
+
+{perdida == "relacion":
+    Pensás en llamar a alguien.
+    Por un segundo, tu dedo va al contacto.
+    Todavía está ahí.
+    No lo borraste.
+
+    No llamás.
+
+    Pero por un segundo, quisiste.
+}
+
+{perdida == "futuro":
+    Recordás cuando tenías un plan.
+    Ibas a ser algo.
+    Tenías una forma.
+
+    Ahora no hay forma.
+    Solo hay esto.
+    Un mediodía, sin laburo.
+}
+
+{perdida == "vacio":
+    Hay algo.
+    No sabés qué.
+    Ese vacío que siempre estuvo.
+    Ahora más grande.
+
+    O quizás siempre fue así de grande.
+    Y recién ahora lo ves.
+}
+
+->->
 
 === miercoles_casa ===
 
