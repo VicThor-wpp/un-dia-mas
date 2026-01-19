@@ -251,6 +251,11 @@ const GameEngine = (function() {
 
         const batch = contentQueue.shift();
 
+        // If batch starts with a header, clear the screen for fresh start
+        if (batch.length > 0 && batch[0].type === 'header') {
+            storyContainer.innerHTML = '';
+        }
+
         for (const item of batch) {
             const el = document.createElement(item.type === 'header' ? 'h1' : 'div');
 
