@@ -833,7 +833,7 @@ El juego usa `d6()` para rolls de 1-6. Los chequeos son **mayormente ocultos** -
 
 | Variable | Tipo | Valores | Uso |
 |----------|------|---------|-----|
-| `vinculo` | string | sofia/elena/diego/marcos | NPC primario |
+| `vinculo` | string | sofia/elena/diego | NPC primario (Marcos no es opción inicial) |
 | `conte_a_alguien` | bool | - | Rompiste aislamiento Miércoles |
 | `ayude_en_olla` | bool | - | **CRÍTICO** - Bloquea final LA RED |
 | `fui_a_olla_jueves` | bool | - | Primera visita olla |
@@ -1614,7 +1614,7 @@ prototype/ink/
 │   └── fragmentos.ink     # NPC perspectives
 │
 └── finales/               # Endings
-    └── finales.ink       # 5 finales + evaluación
+    └── finales.ink       # 6 finales + evaluación
 ```
 
 ---
@@ -1808,7 +1808,7 @@ Resultado: No cumple criterios otros finales
 | Variable | Tipo | Crítico? | Razón |
 |----------|------|----------|-------|
 | `ayude_en_olla` | bool | ⚠️ SÍ | Bloquea final LA RED si false |
-| `conexion` | int | ⚠️ SÍ | Determina 4 de 5 finales |
+| `conexion` | int | ⚠️ SÍ | Determina 4 de 6 finales |
 | `llama` | int | ⚠️ SÍ | Determina tono + acceso LA RED |
 | `salud_mental` | int | ⚠️ SÍ | Trigger final GRIS |
 | `conte_a_alguien` | bool | ⚠️ SÍ | Afecta toda semana |

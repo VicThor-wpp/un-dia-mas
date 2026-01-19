@@ -12,7 +12,7 @@ Documentación completa del juego narrativo **Un Día Más**.
 **Contiene:**
 - ✅ Estructura de la semana (timeline ASCII)
 - ✅ Decisiones críticas resumidas
-- ✅ 5 finales con requisitos
+- ✅ 6 finales con requisitos
 - ✅ Variables clave explicadas
 - ✅ NPCs resumidos
 - ✅ Economía de recursos (tablas)
@@ -36,7 +36,7 @@ Documentación completa del juego narrativo **Un Día Más**.
 **Contiene:**
 - ✅ Estructura detallada de los 7 días
 - ✅ Todas las decisiones críticas y sus impactos
-- ✅ Sistema de finales (5 endings)
+- ✅ Sistema de finales (6 endings)
 - ✅ NPCs y sus arcos narrativos
 - ✅ Mecánicas de dados, recursos y energía
 - ✅ Sistema de ideas (6 ideas desbloqueables)
@@ -124,7 +124,7 @@ Pregunta...                     → Buscar en...
 1. **Visión General** - Intro y mecánicas core
 2. **Estructura 7 Días** - Detalle día por día
 3. **Flowchart Rutas Críticas** - Mermaid de rutas principales
-4. **Todos los Finales** - 5 endings con triggers
+4. **Todos los Finales** - 6 endings con triggers
 5. **Sistema de Dados** - d6() y chequeo()
 6. **Variables de Estado** - Gameplay + tracking
 7. **NPCs y Relaciones** - 5 NPCs con escenas
@@ -204,7 +204,7 @@ Pregunta...                     → Buscar en...
 | Puntos de decisión críticos | 15+ |
 | NPCs con arco | 5 |
 | Variables de estado | 30+ |
-| Finales posibles | 5 |
+| Finales posibles | 6 |
 | Ideas desbloqueables | 6 |
 | Dice rolls explícitos | 7 |
 | Horas juego (1st playthrough) | 1.5-2 |

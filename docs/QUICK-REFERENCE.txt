@@ -47,10 +47,21 @@
 
 
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                                 ENDINGS                                      │
+│                                 ENDINGS (6)                                  │
 └─────────────────────────────────────────────────────────────────────────────┘
 
-  ⭐ LA RED (Best)
+  🔥 LA LLAMA (Hidden - Best)
+     ├─ conexion >= 9
+     ├─ llama >= 8
+     ├─ veces_que_ayude >= 3
+     ├─ participe_asamblea = TRUE
+     ├─ marcos_vino_a_asamblea = TRUE
+     ├─ sofia_relacion >= 4
+     ├─ elena_relacion >= 4
+     └─ tiene_todas_ideas() = TRUE
+     Result: "Y la llama no se apaga. Prendimos fuego."
+
+  ⭐ LA RED (Best Normal)
      ├─ conexion >= 7
      ├─ llama >= 5
      └─ ayude_en_olla = TRUE
@@ -82,7 +93,7 @@
   CRITICAL (Affect Endings)
   ─────────────────────────
   ayude_en_olla          bool     🚫 Gates LA RED if false
-  conexion               0-10     🔑 Determines 4 of 5 endings
+  conexion               0-10     🔑 Determines 5 of 6 endings
   llama                  0-10     🔑 Community hope, affects endings
   salud_mental           0-5      🔑 Triggers GRIS if <= 2
   conte_a_alguien        bool     Affects whole week
@@ -93,7 +104,7 @@
   tiene_laburo           bool     false after Wed 11 AM
   energia                0-5      Actions per day
   dignidad               0-10     Self-worth
-  vinculo                string   sofia/elena/diego/marcos
+  vinculo                string   sofia/elena/diego
 
   TRACKING
   ────────
