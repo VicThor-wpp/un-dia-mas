@@ -21,8 +21,8 @@ VAR llama = 3
 VAR acumulacion = 0
 
 // SALUD MENTAL: Baja con eventos difíciles (0-5)
-// Empezamos en 5, va bajando con el estrés
-VAR salud_mental = 5
+// Empezamos en 3, ya venimos con desgaste de la vida
+VAR salud_mental = 3
 
 // --- SITUACIÓN MATERIAL ---
 

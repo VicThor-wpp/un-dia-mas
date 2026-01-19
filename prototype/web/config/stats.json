@@ -45,7 +45,7 @@
       "label": "Salud Mental",
       "icon": "heart-pulse",
       "max": 5,
-      "default": 5,
+      "default": 3,
       "color": "#4fc3f7",
       "visible": true,
       "showInHeader": true,
