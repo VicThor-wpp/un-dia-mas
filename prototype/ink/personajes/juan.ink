@@ -183,6 +183,8 @@ No hay más que decir.
 
 === renzo_bar ===
 
+~ fue_al_bar_con_juan = true
+
 Van al bar de la esquina.
 Dos cervezas.
 

@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual - Un Día Más</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='24' font-size='24'>🔥</text></svg>">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --text: #e0e0e0;
+            --accent: #ff6b35;
+            --accent2: #4caf50;
+            --muted: #666;
+            --card-bg: #1a1a1a;
+            --border: #333;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        h1 .icon { margin-right: 0.5rem; }
+
+        .subtitle {
+            color: var(--muted);
+            font-size: 1.1rem;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent);
+            text-decoration: none;
+            margin-bottom: 2rem;
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--accent);
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+
+        .back-link:hover {
+            background: var(--accent);
+            color: var(--bg);
+        }
+
+        section {
+            margin-bottom: 3rem;
+        }
+
+        h2 {
+            color: var(--accent);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        h3 {
+            color: var(--accent2);
+            font-size: 1.2rem;
+            margin: 1.5rem 0 0.75rem;
+        }
+
+        p { margin-bottom: 1rem; }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            font-weight: bold;
+        }
+
+        .stat-icon {
+            width: 24px;
+            height: 24px;
+        }
+
+        .stat-energia { color: #ffc107; }
+        .stat-conexion { color: #4caf50; }
+        .stat-dignidad { color: #2196f3; }
+        .stat-llama { color: #ff6b35; }
+        .stat-salud { color: #4fc3f7; }
+
+        .range {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        th, td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            color: var(--accent);
+            font-weight: normal;
+        }
+
+        .character-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .character-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1rem;
+        }
+
+        .character-name {
+            color: var(--accent);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .character-role {
+            color: var(--muted);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .dice-examples {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 1rem 0;
+        }
+
+        .dice-result {
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            text-align: center;
+            min-width: 120px;
+        }
+
+        .dice-critical-success {
+            background: rgba(76, 175, 80, 0.2);
+            border: 1px solid #4caf50;
+            color: #4caf50;
+        }
+
+        .dice-success {
+            background: rgba(33, 150, 243, 0.2);
+            border: 1px solid #2196f3;
+            color: #2196f3;
+        }
+
+        .dice-failure {
+            background: rgba(255, 152, 0, 0.2);
+            border: 1px solid #ff9800;
+            color: #ff9800;
+        }
+
+        .dice-critical-failure {
+            background: rgba(244, 67, 54, 0.2);
+            border: 1px solid #f44336;
+            color: #f44336;
+        }
+
+        .tip {
+            background: rgba(255, 107, 53, 0.1);
+            border-left: 3px solid var(--accent);
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+
+        .tip-label {
+            color: var(--accent);
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        li { margin-bottom: 0.5rem; }
+
+        .keyboard {
+            display: inline-block;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 0.2rem 0.5rem;
+            font-size: 0.85rem;
+        }
+
+        footer {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+        }
+
+        footer a {
+            color: var(--accent);
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-link">
+        <i data-lucide="arrow-left"></i>
+        Volver al juego
+    </a>
+
+    <header>
+        <h1><span class="icon">🔥</span>Un Día Más</h1>
+        <p class="subtitle">Manual del juego</p>
+    </header>
+
+    <section id="sinopsis">
+        <h2><i data-lucide="book-open"></i> Sinopsis</h2>
+        <p>Sos un trabajador de treinta y algo en un barrio de Montevideo. El miércoles te despiden. Los tres meses de indemnización son tu único colchón.</p>
+        <p>Esta semana vas a descubrir si tenés una red que te sostenga o si estás solo.</p>
+    </section>
+
+    <section id="estructura">
+        <h2><i data-lucide="calendar"></i> Estructura</h2>
+        <p>El juego transcurre en una semana:</p>
+        <table>
+            <tr><th>Día</th><th>Descripción</th></tr>
+            <tr><td>Lunes-Martes</td><td>Vida normal, rumores en el trabajo</td></tr>
+            <tr><td>Miércoles</td><td>El despido (punto de quiebre)</td></tr>
+            <tr><td>Jueves-Viernes</td><td>Primer contacto con la olla, crisis comunitaria</td></tr>
+            <tr><td>Sábado</td><td>La asamblea (clímax colectivo)</td></tr>
+            <tr><td>Domingo</td><td>Reflexión y cierre</td></tr>
+        </table>
+    </section>
+
+    <section id="recursos">
+        <h2><i data-lucide="bar-chart-2"></i> Recursos</h2>
+        <p>Tu personaje tiene varios recursos que cambian según tus decisiones:</p>
+
+        <div class="card">
+            <div class="card-header">
+                <i data-lucide="zap" class="stat-icon stat-energia"></i>
+                <span>Energía</span>
+                <span class="range">(0-5, empieza en 4)</span>
+            </div>
+            <p>Tu capacidad de hacer cosas hoy. Cada acción importante consume energía. Se restaura cada mañana.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <i data-lucide="users" class="stat-icon stat-conexion"></i>
+                <span>Conexión</span>
+                <span class="range">(0-10, empieza en 5)</span>
+            </div>
+            <p>Tu lugar en el tejido del barrio. Sube cuando te conectás con otros, baja cuando te aislás.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <i data-lucide="shield" class="stat-icon stat-dignidad"></i>
+                <span>Dignidad</span>
+                <span class="range">(0-10, empieza en 5)</span>
+            </div>
+            <p>Tu sentido de valor propio. El sistema y las circunstancias te la van sacando de a poco.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <i data-lucide="flame" class="stat-icon stat-llama"></i>
+                <span>La Llama</span>
+                <span class="range">(0-10, empieza en 3)</span>
+            </div>
+            <p>La esperanza colectiva. No es solo tuya - es de todos los que luchan por algo mejor.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <i data-lucide="heart-pulse" class="stat-icon stat-salud"></i>
+                <span>Salud Mental</span>
+                <span class="range">(0-5, empieza en 5)</span>
+            </div>
+            <p>Tu bienestar psicológico. Baja con el estrés, las malas noticias y las situaciones difíciles.</p>
+        </div>
+
+        <div class="tip">
+            <div class="tip-label">Alertas</div>
+            <p>Cuando un recurso llega a niveles críticos, verás una alerta en el header. Por ejemplo, "Salud mental baja" o "Sin esperanza".</p>
+        </div>
+    </section>
+
+    <section id="dados">
+        <h2><i data-lucide="dices"></i> Sistema de Dados</h2>
+        <p>Algunas situaciones requieren una tirada de dados para determinar el resultado:</p>
+
+        <div class="dice-examples">
+            <div class="dice-result dice-critical-success">
+                <strong>6</strong><br>
+                Éxito Crítico
+            </div>
+            <div class="dice-result dice-success">
+                <strong>4-5</strong><br>
+                Éxito
+            </div>
+            <div class="dice-result dice-failure">
+                <strong>2-3</strong><br>
+                Fallo
+            </div>
+            <div class="dice-result dice-critical-failure">
+                <strong>1</strong><br>
+                Fallo Crítico
+            </div>
+        </div>
+
+        <p>Los chequeos comparan tu tirada + modificador contra una dificultad. Un 6 natural siempre es éxito crítico, y un 1 natural siempre es fallo crítico.</p>
+    </section>
+
+    <section id="personajes">
+        <h2><i data-lucide="users"></i> Personajes</h2>
+
+        <h3>Tu Personaje</h3>
+        <p>Al inicio del juego, definís tu historia a través de tres elecciones:</p>
+        <ul>
+            <li><strong>Pérdida:</strong> Algo que perdiste (familiar, relación, futuro, vacío)</li>
+            <li><strong>Atadura:</strong> Lo que te mantiene acá (responsabilidad, barrio, inercia, algo)</li>
+            <li><strong>Posición:</strong> Tu relación con la política (ajeno, quemado, esperanzado, ambiguo)</li>
+        </ul>
+
+        <h3>El Vínculo</h3>
+        <p>Al inicio se asigna aleatoriamente uno de los personajes de la olla como tu "vínculo" - alguien con quien ya tenés historia. Esta persona será especialmente importante en tu semana.</p>
+
+        <h3>Personajes Principales</h3>
+        <div class="character-grid">
+            <div class="character-card">
+                <div class="character-name">Juan</div>
+                <div class="character-role">Compañero de trabajo</div>
+                <p>Tu único amigo real en la oficina. Comparten el miedo a los despidos.</p>
+            </div>
+            <div class="character-card">
+                <div class="character-name">Sofía</div>
+                <div class="character-role">Líder de la olla</div>
+                <p>Madre soltera que sostiene la olla popular. Siempre cansada, siempre presente.</p>
+            </div>
+            <div class="character-card">
+                <div class="character-name">Elena</div>
+                <div class="character-role">Veterana del barrio</div>
+                <p>Vivió la crisis del 2002. Tiene la memoria de lo que el barrio puede ser.</p>
+            </div>
+            <div class="character-card">
+                <div class="character-name">Diego</div>
+                <div class="character-role">Venezolano recién llegado</div>
+                <p>Busca pertenecer. Trabaja duro, extraña su país, construye comunidad.</p>
+            </div>
+            <div class="character-card">
+                <div class="character-name">Marcos</div>
+                <div class="character-role">El que se alejó</div>
+                <p>Ex-militante quemado. Se apartó de todo pero tal vez no esté tan lejos.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="opciones">
+        <h2><i data-lucide="mouse-pointer-click"></i> Entendiendo las Opciones</h2>
+        <p>Las opciones de diálogo pueden mostrar información adicional:</p>
+
+        <table>
+            <tr><th>Indicador</th><th>Significado</th></tr>
+            <tr><td><span style="color:#ffc107">-1</span></td><td>Esta acción consume 1 de energía</td></tr>
+            <tr><td><span style="color:#4caf50">conexion+</span></td><td>Esta acción puede aumentar tu conexión</td></tr>
+            <tr><td><span style="color:#f44336">dignidad-</span></td><td>Esta acción puede reducir tu dignidad</td></tr>
+            <tr><td><span style="color:#2196f3">[DADOS]</span></td><td>El resultado depende de una tirada de dados</td></tr>
+        </table>
+
+        <div class="tip">
+            <div class="tip-label">Opciones Bloqueadas</div>
+            <p>Algunas opciones aparecen tachadas porque no tenés suficiente energía u otro requisito. Planeá tus acciones considerando tu energía disponible.</p>
+        </div>
+    </section>
+
+    <section id="guardado">
+        <h2><i data-lucide="save"></i> Guardar y Cargar</h2>
+        <p>Podés guardar tu progreso en cualquier momento:</p>
+        <ul>
+            <li>Hacé click en el ícono <i data-lucide="save" style="width:16px;height:16px;vertical-align:middle;"></i> en el header</li>
+            <li>Tenés 3 slots de guardado disponibles</li>
+            <li>Las partidas se guardan en tu navegador (localStorage)</li>
+            <li>Si limpiás los datos del navegador, perdés las partidas guardadas</li>
+        </ul>
+    </section>
+
+    <section id="finales">
+        <h2><i data-lucide="flag"></i> Finales</h2>
+        <p>El juego tiene múltiples finales posibles basados en tus decisiones:</p>
+        <ul>
+            <li><strong>La Red:</strong> Encontraste tu lugar en la comunidad</li>
+            <li><strong>Solo:</strong> El aislamiento ganó</li>
+            <li><strong>Quizás:</strong> Hay una posibilidad, pero es incierta</li>
+            <li><strong>Gris:</strong> El agotamiento emocional te superó</li>
+            <li><strong>El Trato:</strong> Elegiste otro camino...</li>
+        </ul>
+        <p>No hay finales "buenos" o "malos" - cada uno cuenta una historia válida sobre cómo enfrentamos las crisis.</p>
+    </section>
+
+    <section id="contexto">
+        <h2><i data-lucide="map-pin"></i> Contexto</h2>
+        <p>El juego está ambientado en Uruguay y usa vocabulario local:</p>
+        <table>
+            <tr><th>Palabra</th><th>Significado</th></tr>
+            <tr><td>Bondi</td><td>Autobús/colectivo</td></tr>
+            <tr><td>Olla popular</td><td>Comedor comunitario autogestionado</td></tr>
+            <tr><td>Laburo</td><td>Trabajo</td></tr>
+            <tr><td>Pibe/a</td><td>Chico/a</td></tr>
+        </table>
+        <p>La referencia al "2002" alude a la crisis económica uruguaya de ese año, cuando las ollas populares y las redes de solidaridad florecieron.</p>
+    </section>
+
+    <footer>
+        <p><strong>Un Día Más</strong> - Un juego narrativo sobre pertenecer cuando todo se reorganiza.</p>
+        <p><a href="index.html">Jugar</a></p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

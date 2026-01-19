@@ -1,4 +1,4 @@
-# Arquitectura Técnica - La Llama
+# Arquitectura Técnica - Un Día Más
 
 ## Visión General
 

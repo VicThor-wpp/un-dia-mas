@@ -134,9 +134,14 @@ const StatsPanel = (function() {
             container.innerHTML = `
                 <div class="header-bar">
                     <span class="phase-label">CREACIÓN DE PERSONAJE</span>
-                    <button class="header-btn" onclick="SaveSystem.showModal()" title="Guardar/Cargar">
-                        ${iconHTML('save', 18)}
-                    </button>
+                    <div class="actions-section">
+                        <a href="manual.html" class="header-btn" title="Manual" target="_blank">
+                            ${iconHTML('book-open', 18)}
+                        </a>
+                        <button class="header-btn" onclick="SaveSystem.showModal()" title="Guardar/Cargar">
+                            ${iconHTML('save', 18)}
+                        </button>
+                    </div>
                 </div>
             `;
             refreshIcons();
@@ -198,6 +203,9 @@ const StatsPanel = (function() {
                     <button class="header-btn" onclick="StatsPanel.showFullInfo()" title="Ver todo">
                         ${iconHTML('info', 18)}
                     </button>
+                    <a href="manual.html" class="header-btn" title="Manual" target="_blank">
+                        ${iconHTML('book-open', 18)}
+                    </a>
                     <button class="header-btn" onclick="SaveSystem.showModal()" title="Guardar/Cargar">
                         ${iconHTML('save', 18)}
                     </button>

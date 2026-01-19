@@ -1,4 +1,4 @@
-# La Llama - Prototipo Narrativo
+# Un Día Más - Prototipo Narrativo
 
 Un juego narrativo sobre pertenecer cuando todo se reorganiza.
 
@@ -24,14 +24,14 @@ Sos un trabajador de treinta y algo en un barrio de Montevideo. El miércoles te
 
 ### Sistema de Recursos
 
-| Recurso | Descripción | Rango |
-|---------|-------------|-------|
-| **Energía** | Capacidad de hacer cosas hoy | 0-5 |
-| **Conexión** | Tu lugar en el tejido del barrio | 0-10 |
-| **Dignidad** | Lo que el sistema te saca de a poco | 0-10 |
-| **La Llama** | Esperanza colectiva | 0-10 |
-| **Trauma** | Se acumula, nunca baja | 0-10 |
-| **Acumulación** | Complicidad con la lógica del capital (oculto) | 0-10 |
+| Recurso | Descripción | Rango | Inicio |
+|---------|-------------|-------|--------|
+| **Energía** | Capacidad de hacer cosas hoy | 0-5 | 4 |
+| **Conexión** | Tu lugar en el tejido del barrio | 0-10 | 5 |
+| **Dignidad** | Lo que el sistema te saca de a poco | 0-10 | 5 |
+| **La Llama** | Esperanza colectiva | 0-10 | 3 |
+| **Salud Mental** | Bienestar psicológico (baja con estrés) | 0-5 | 5 |
+| **Acumulación** | Complicidad con la lógica del capital (oculto) | 0-10 | 0 |
 
 ### Sistema de Dados
 
@@ -70,7 +70,7 @@ El juego tiene 6 finales posibles basados en tus decisiones:
 2. **Solo** (conexión baja + la_llama baja): Aislamiento
 3. **Quizás** (conexión media): Posibilidad abierta
 4. **Incierto** (default): Todo es confuso
-5. **Gris** (trauma alto): Agotamiento emocional
+5. **Gris** (salud mental baja): Agotamiento emocional
 6. **El Trato** (acumulación alta): Tentación de Walter
 
 ## Estructura Técnica
@@ -126,39 +126,62 @@ Los módulos usan el patrón de tunnels de Ink para reutilización:
 ## Tecnología
 
 - **Lenguaje**: [Ink](https://www.inklestudios.com/ink/) (Inkle Studios)
-- **Runtime sugerido**: [inkjs](https://github.com/y-lohse/inkjs) para web
+- **Runtime Web**: Custom con [inkjs](https://github.com/y-lohse/inkjs)
 - **Compilador**: inklecate
+- **Icons**: [Lucide](https://lucide.dev/)
+- **Deploy**: Netlify
+
+### Runtime Web
+
+El proyecto incluye un runtime web modular en `web/`:
+
+```
+web/
+├── index.html           # Entry point
+├── style.css            # Estilos del juego
+├── game.js              # Motor principal del juego
+├── modules/
+│   ├── config-manager.js    # Gestión de configuración
+│   ├── dice-display.js      # Visualización de tiradas
+│   ├── portraits.js         # Sistema de retratos de NPCs
+│   ├── relationships-panel.js # Panel de relaciones
+│   ├── save-system.js       # Guardado/carga de partidas
+│   └── stats-panel.js       # Panel de stats siempre visible
+├── config/
+│   ├── game.json            # Config general, días, dados
+│   ├── stats.json           # Stats y thresholds
+│   └── characters.json      # NPCs y relaciones
+└── assets/
+    └── portraits/           # Retratos de personajes
+```
+
+#### Características del Runtime
+
+- **Stats siempre visibles**: Header fijo con energía, salud mental, conexión, etc.
+- **Sistema de dados visual**: Muestra tiradas con resultado y descripción
+- **Guardado/carga**: LocalStorage con múltiples slots
+- **Alertas de threshold**: Aviso visual cuando stats llegan a niveles críticos
+- **Retratos dinámicos**: Cambio de expresión según estado del NPC
+- **Config-driven**: Comportamiento configurable vía JSON
 
 ### Compilación
 
 ```bash
-# Compilar a JSON para inkjs
-inklecate -o la_llama.json ink/main.ink
+# Compilar Ink a JSON
+inklecate -o web/un_dia_mas.json ink/main.ink
+
+# Crear wrapper JS para el runtime
+echo "var storyContent = $(cat web/un_dia_mas.json);" > web/un_dia_mas.js
 ```
 
-### Integración Web (ejemplo básico)
+### Desarrollo Local
 
-```javascript
-import { Story } from 'inkjs';
+Abrir `web/index.html` en un navegador o usar un servidor local:
 
-const story = new Story(storyContent);
-
-function continueStory() {
-    while (story.canContinue) {
-        const text = story.Continue();
-        // Mostrar texto
-    }
-
-    // Mostrar opciones
-    story.currentChoices.forEach((choice, i) => {
-        // Crear botón para choice.text
-    });
-}
-
-function choose(index) {
-    story.ChooseChoiceIndex(index);
-    continueStory();
-}
+```bash
+cd web && python -m http.server 8000
+# o
+npx serve web
 ```
 
 ## Contexto Cultural
@@ -189,18 +212,21 @@ Durante el juego, el protagonista puede "internalizar" ideas que afectan su pers
 - "Hay cosas que se hacen juntos"
 - "La red o la nada"
 
-**Involuntarias (por trauma):**
+**Involuntarias (por estrés/baja salud mental):**
 - "¿Quién soy sin laburo?"
 - "Esto es lo que hay"
 
 ## Estado del Proyecto
 
-**Prototipo funcional** - Una semana completa jugable con:
-- Sistema de dados integrado
-- 5 NPCs con arcos propios
-- 6 finales diferentes
-- Sistema de recursos balanceado
+**Prototipo funcional v2** - Una semana completa jugable con:
+- Runtime web custom con UI completa
+- Sistema de dados visual con feedback claro
+- Sistema de guardado/carga con múltiples slots
+- 5 NPCs con arcos y retratos dinámicos
+- 6 finales diferentes basados en decisiones
+- Sistema de recursos balanceado con alertas visuales
 - ~3000 líneas de narrativa modular
+- Deploy automático en Netlify
 
 ## Licencia
 

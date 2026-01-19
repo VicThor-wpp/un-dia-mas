@@ -78,6 +78,7 @@ VAR renzo_estado = "compañero"        // compañero, distante, despedido, perdi
 VAR renzo_relacion = 3                // 0-5
 VAR almorzamos_juntos = false
 VAR hable_con_renzo_sobre_rumores = false
+VAR fue_al_bar_con_juan = false
 VAR renzo_sabe_de_mi_despido = false
 VAR yo_se_de_renzo = false
 

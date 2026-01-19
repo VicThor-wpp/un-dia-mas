@@ -110,6 +110,11 @@ A las 4, el jefe llama a una reunión.
 
 -> renzo_post_reunion ->
 
+// Si fueron al bar, ya se despidieron ahí - ir directo al bondi
+{fue_al_bar_con_juan:
+    -> lunes_bondi_vuelta
+}
+
 A las 5, te vas.
 
 -> laburo_salida ->
