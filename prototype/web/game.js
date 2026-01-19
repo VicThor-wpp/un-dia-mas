@@ -112,28 +112,30 @@ const GameEngine = (function() {
     }
 
     /**
-     * Show dice roll in story - prominent display
+     * Show dice roll in story - blocking display that requires user interaction
      * @param {number} roll - Dice value
      * @param {number} result - Result code
      */
     function showDiceRoll(roll, result) {
         const resultInfo = ConfigManager.getDiceResult(result);
+        const description = resultInfo.description || '';
 
         const rollDiv = document.createElement('div');
         rollDiv.className = `dice-roll-box ${resultInfo.class}`;
         rollDiv.innerHTML = `
-            <div class="dice-roll-inner">
-                <span class="dice-icon">${iconHTML('dices', 24)}</span>
+            <div class="dice-roll-header">
+                <span class="dice-icon">${iconHTML('dices', 28)}</span>
+                <span class="dice-title">TIRADA DE DADOS</span>
+            </div>
+            <div class="dice-roll-result">
                 <span class="dice-value">${roll}</span>
             </div>
-            <span class="dice-label">${resultInfo.label}</span>
+            <div class="dice-roll-label">${resultInfo.label}</div>
+            <div class="dice-roll-desc">${description}</div>
         `;
 
         storyContainer.appendChild(rollDiv);
         refreshIcons();
-
-        // Show notification too
-        NotificationSystem.showDiceRoll(roll, result);
     }
 
     /**

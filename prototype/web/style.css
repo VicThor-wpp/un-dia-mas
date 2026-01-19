@@ -232,91 +232,107 @@ h2 {
 }
 
 /* ==========================================
-   DICE ROLLS - Prominent Display
+   DICE ROLLS - Prominent Card Display
    ========================================== */
 
 .dice-roll-box {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 15px;
+    text-align: center;
     background: var(--bg-light);
-    border-left: 4px solid var(--accent);
-    padding: 15px 20px;
-    margin: 20px 0;
-    border-radius: 0 8px 8px 0;
-    animation: diceAppear 0.4s ease;
+    border: 2px solid var(--accent);
+    padding: 25px 30px;
+    margin: 25px auto;
+    max-width: 320px;
+    border-radius: 12px;
+    animation: diceAppear 0.5s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
-.dice-roll-inner {
+.dice-roll-header {
     display: flex;
     align-items: center;
     gap: 10px;
+    margin-bottom: 15px;
+    opacity: 0.7;
 }
 
-.dice-roll-box .dice-icon {
-    opacity: 0.8;
+.dice-roll-title {
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+.dice-roll-result {
+    margin: 10px 0;
 }
 
 .dice-roll-box .dice-value {
-    font-size: 2em;
+    font-size: 4em;
     font-weight: bold;
-    min-width: 50px;
-    text-align: center;
+    line-height: 1;
 }
 
-.dice-roll-box .dice-label {
-    font-size: 1em;
+.dice-roll-label {
+    font-size: 1.2em;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     font-weight: bold;
+    margin: 10px 0;
+}
+
+.dice-roll-desc {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-top: 10px;
+    line-height: 1.4;
 }
 
 /* Dice result colors */
 .dice-roll-box.critical-success {
-    background: linear-gradient(90deg, rgba(255, 215, 0, 0.2), var(--bg-light));
-    border-left-color: gold;
+    border-color: gold;
+    background: linear-gradient(180deg, rgba(255, 215, 0, 0.15), var(--bg-light));
 }
 .dice-roll-box.critical-success .dice-value,
-.dice-roll-box.critical-success .dice-label { color: gold; }
+.dice-roll-box.critical-success .dice-roll-label { color: gold; }
+.dice-roll-box.critical-success .dice-roll-header { color: gold; }
 
 .dice-roll-box.success {
-    background: linear-gradient(90deg, rgba(76, 175, 80, 0.2), var(--bg-light));
-    border-left-color: var(--success);
+    border-color: var(--success);
+    background: linear-gradient(180deg, rgba(76, 175, 80, 0.15), var(--bg-light));
 }
 .dice-roll-box.success .dice-value,
-.dice-roll-box.success .dice-label { color: var(--success); }
+.dice-roll-box.success .dice-roll-label { color: var(--success); }
+.dice-roll-box.success .dice-roll-header { color: var(--success); }
 
 .dice-roll-box.failure {
-    background: linear-gradient(90deg, rgba(244, 67, 54, 0.15), var(--bg-light));
-    border-left-color: var(--danger);
+    border-color: var(--danger);
+    background: linear-gradient(180deg, rgba(244, 67, 54, 0.15), var(--bg-light));
 }
 .dice-roll-box.failure .dice-value,
-.dice-roll-box.failure .dice-label { color: var(--danger); }
-
-.dice-roll-box.neutral {
-    background: linear-gradient(90deg, rgba(156, 39, 176, 0.15), var(--bg-light));
-    border-left-color: #9c27b0;
-}
-.dice-roll-box.neutral .dice-value,
-.dice-roll-box.neutral .dice-label { color: #ce93d8; }
+.dice-roll-box.failure .dice-roll-label { color: var(--danger); }
+.dice-roll-box.failure .dice-roll-header { color: var(--danger); }
 
 .dice-roll-box.critical-failure {
-    background: linear-gradient(90deg, rgba(139, 0, 0, 0.25), var(--bg-light));
-    border-left-color: #8b0000;
-    animation: diceAppear 0.4s ease, shake 0.4s ease;
+    border-color: #8b0000;
+    background: linear-gradient(180deg, rgba(139, 0, 0, 0.2), var(--bg-light));
+    animation: diceAppear 0.5s ease, shake 0.5s ease;
 }
 .dice-roll-box.critical-failure .dice-value,
-.dice-roll-box.critical-failure .dice-label { color: #ff4444; }
+.dice-roll-box.critical-failure .dice-roll-label { color: #ff4444; }
+.dice-roll-box.critical-failure .dice-roll-header { color: #ff4444; }
 
 @keyframes diceAppear {
-    from { opacity: 0; transform: translateX(-20px); }
-    to { opacity: 1; transform: translateX(0); }
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
 }
 
 @keyframes shake {
-    0%, 100% { transform: translateX(0); }
-    25% { transform: translateX(-5px); }
-    75% { transform: translateX(5px); }
+    0%, 100% { transform: scale(1); }
+    10%, 30%, 50%, 70%, 90% { transform: scale(1) translateX(-3px); }
+    20%, 40%, 60%, 80% { transform: scale(1) translateX(3px); }
 }
 
 /* ==========================================

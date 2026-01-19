@@ -52,10 +52,26 @@
   },
   "dice": {
     "results": {
-      "2": { "label": "¡ÉXITO CRÍTICO!", "class": "critical-success" },
-      "1": { "label": "Éxito", "class": "success" },
-      "0": { "label": "Tirada", "class": "neutral" },
-      "-1": { "label": "¡FALLO CRÍTICO!", "class": "critical-failure" }
+      "2": {
+        "label": "¡ÉXITO CRÍTICO!",
+        "class": "critical-success",
+        "description": "Todo sale mejor de lo esperado. Algo bueno extra puede pasar."
+      },
+      "1": {
+        "label": "Éxito",
+        "class": "success",
+        "description": "Lo lograste. Las cosas salen como querías."
+      },
+      "0": {
+        "label": "Fallo",
+        "class": "failure",
+        "description": "No salió como esperabas. Puede haber consecuencias."
+      },
+      "-1": {
+        "label": "¡FALLO CRÍTICO!",
+        "class": "critical-failure",
+        "description": "Todo sale mal. Algo negativo extra puede pasar."
+      }
     },
     "trackingVars": {
       "lastRoll": "ultima_tirada",
