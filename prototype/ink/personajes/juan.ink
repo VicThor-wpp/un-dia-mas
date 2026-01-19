@@ -5,7 +5,7 @@
 
 // --- ENCUENTRO EN EL LABURO ---
 
-=== renzo_saludo_manana ===
+=== juan_saludo_manana ===
 
 Juan está en el escritorio de al lado.
 Compañero hace tres años.
@@ -13,7 +13,7 @@ El único con el que hablás de verdad acá.
 
 {
 - dia_actual == 1:
-    -> renzo_pregunta_piso4
+    -> juan_pregunta_piso4
 - dia_actual == 2:
     Te mira.
     "¿Cómo dormiste?"
@@ -23,14 +23,14 @@ El único con el que hablás de verdad acá.
 
 ->->
 
-=== renzo_pregunta_piso4 ===
+=== juan_pregunta_piso4 ===
 "Che, ¿viste lo del piso 4?"
 
-* ["¿Qué pasó?"] -> renzo_rumor
-* ["No, ¿qué?"] -> renzo_rumor
-* ["No quiero saber."] -> renzo_ignorar
+* ["¿Qué pasó?"] -> juan_rumor
+* ["No, ¿qué?"] -> juan_rumor
+* ["No quiero saber."] -> juan_ignorar
 
-=== renzo_rumor ===
+=== juan_rumor ===
 
 Juan baja la voz.
 
@@ -44,27 +44,27 @@ Mira para los costados.
 
 "Los de RRHH andan raros. Reuniones todo el tiempo. Algo pasa."
 
-~ hable_con_renzo_sobre_rumores = true
+~ hable_con_juan_sobre_rumores = true
 
-* ["¿Creés que nos toca?"] -> renzo_preocupacion
-* ["Siempre hay rumores."] -> renzo_minimizar
-* ["Hay que cuidarse."] -> renzo_cuidarse
+* ["¿Creés que nos toca?"] -> juan_preocupacion
+* ["Siempre hay rumores."] -> juan_minimizar
+* ["Hay que cuidarse."] -> juan_cuidarse
 
-=== renzo_ignorar ===
+=== juan_ignorar ===
 
 "Como quieras."
 
 Juan vuelve a su pantalla.
 Un poco ofendido.
 
-~ renzo_relacion -= 1
+~ juan_relacion -= 1
 
 Mejor no saber.
 O no.
 
 ->->
 
-=== renzo_preocupacion ===
+=== juan_preocupacion ===
 
 "No sé. Espero que no. Pero..."
 
@@ -78,13 +78,13 @@ Un momento de honestidad.
 Los dos saben que son descartables.
 Todos lo son.
 
-~ renzo_relacion += 1
+~ juan_relacion += 1
 
 "Bueno. A laburar. Que nos vean laburando."
 
 ->->
 
-=== renzo_minimizar ===
+=== juan_minimizar ===
 
 "Siempre hay rumores, Juan. Todos los meses dicen que van a echar gente."
 
@@ -98,7 +98,7 @@ Pero hay que seguir.
 
 ->->
 
-=== renzo_cuidarse ===
+=== juan_cuidarse ===
 
 "Hay que cuidarse. No llegar tarde, no bardear, hacer lo que piden."
 
@@ -115,10 +115,10 @@ No importa lo que hagas.
 
 // --- ALMUERZO CON JUAN ---
 
-=== renzo_almuerzo ===
+=== juan_almuerzo ===
 
 ~ almorzamos_juntos = true
-~ renzo_relacion += 1
+~ juan_relacion += 1
 
 Bajan juntos.
 El comedor de la empresa.
@@ -152,7 +152,7 @@ Pero el pacto está.
 
 // --- DESPUÉS DE LA REUNIÓN ---
 
-=== renzo_post_reunion ===
+=== juan_post_reunion ===
 
 Juan se acerca.
 
@@ -162,10 +162,10 @@ Juan se acerca.
 
 No hay más que decir.
 
-* [Preguntarle si quiere ir al bar] -> renzo_invitar_bar
+* [Preguntarle si quiere ir al bar] -> juan_invitar_bar
 * [Irte] ->->
 
-=== renzo_invitar_bar ===
+=== juan_invitar_bar ===
 
 "Che, Juan. ¿Vamos a tomar algo?"
 
@@ -173,7 +173,7 @@ No hay más que decir.
 
 {ultima_tirada >= 3:
     "Dale. Una cerveza no viene mal."
-    -> renzo_bar
+    -> juan_bar
 - else:
     "No puedo, tengo cosas. Otro día."
     "Dale. Otro día."
@@ -181,7 +181,7 @@ No hay más que decir.
     ->->
 }
 
-=== renzo_bar ===
+=== juan_bar ===
 
 ~ fue_al_bar_con_juan = true
 
@@ -189,7 +189,7 @@ Van al bar de la esquina.
 Dos cervezas.
 
 ~ energia -= 1
-~ renzo_relacion += 1
+~ juan_relacion += 1
 ~ subir_conexion(1)
 
 "¿Vos qué harías si te echan?", pregunta Juan.
@@ -199,20 +199,20 @@ Dos cervezas.
     "Está difícil."
     Se quedan en silencio.
     Dos tipos con miedo compartido.
-    -> renzo_bar_fin
+    -> juan_bar_fin
 * ["Tengo algo de ahorros. Aguantaría unos meses."]
     "Yo no. Si me echan, cago fuego."
     "Algo aparece, Juan."
     "Ojalá."
-    -> renzo_bar_fin
+    -> juan_bar_fin
 * ["Hay otros laburos. Hay otras cosas."]
     Juan te mira.
     "¿Cómo qué?"
     "No sé. Pero el mundo no se acaba."
     No suena convincente. Pero es algo.
-    -> renzo_bar_fin
+    -> juan_bar_fin
 
-=== renzo_bar_fin ===
+=== juan_bar_fin ===
 
 Terminan las cervezas.
 Se despiden.
@@ -222,9 +222,9 @@ Se despiden.
 
 ->->
 
-// --- PREGUNTAR A RENZO ---
+// --- PREGUNTAR A JUAN ---
 
-=== renzo_preguntar_sobre_jefe ===
+=== juan_preguntar_sobre_jefe ===
 
 "Che, Juan. ¿Viste cómo me miró el jefe?"
 
@@ -242,12 +242,12 @@ Eso no ayuda.
 
 // --- DESPUÉS DEL DESPIDO ---
 
-=== renzo_enterarse_despido ===
+=== juan_enterarse_despido ===
 // Cuando Juan se entera de que te echaron
 
-~ renzo_sabe_de_mi_despido = true
+~ juan_sabe_de_mi_despido = true
 
-{renzo_relacion >= 3:
+{juan_relacion >= 3:
     Juan te busca.
     "Che, me enteré. La puta madre."
     "Sí."
@@ -270,7 +270,7 @@ Eso no ayuda.
 
 ->->
 
-=== renzo_despues_despido ===
+=== juan_despues_despido ===
 // Intentar contactar a Juan después de perder el laburo
 
 {dia_actual <= 5:
@@ -284,7 +284,7 @@ Eso no ayuda.
         "Ahí. ¿Y vos? ¿Cómo está todo?"
         "Igual. Raro sin vos acá."
 
-        {renzo_relacion >= 4:
+        {juan_relacion >= 4:
             "Che, tendríamos que juntarnos. Un día de estos."
             "Dale. Avisame."
         }
@@ -307,13 +307,13 @@ Eso no ayuda.
     Ya no comparten nada.
     Solo compartían el laburo.
 
-    ~ renzo_estado = "distante"
+    ~ juan_estado = "distante"
     ->->
 }
 
-// --- FRAGMENTO NOCTURNO DE RENZO ---
+// --- FRAGMENTO NOCTURNO DE JUAN ---
 
-=== renzo_fragmento_noche ===
+=== juan_fragmento_noche ===
 
 Juan no puede dormir.
 
@@ -347,7 +347,7 @@ Su novia ya duerme.
     En que te echaron.
     En que podría ser él mañana.
 
-    {renzo_relacion >= 4:
+    {juan_relacion >= 4:
         Tendría que llamarte.
         Pero no sabe qué decir.
     }
@@ -360,5 +360,188 @@ Su novia ya duerme.
 
     Miente.
     Todos mienten.
+
+->->
+
+// --- ENCUENTRO DEL VIERNES ---
+// Hook: si tenés buena relación con Juan, te llama el viernes
+
+=== juan_llamado_viernes ===
+// Llamar solo si juan_relacion >= 4
+
+El teléfono vibra.
+Juan.
+
+"Che, ¿estás? ¿Podemos vernos un rato?"
+
+* ["Sí, dale. ¿Dónde?"]
+    "En el bar de la otra vez. Media hora."
+    -> juan_encuentro_viernes
+* ["No puedo ahora."]
+    "Dale, entiendo. Otro día."
+    Cortás.
+    Algo en su voz te quedó.
+    ->->
+
+=== juan_encuentro_viernes ===
+
+~ energia -= 1
+
+El bar de la esquina.
+Mismo lugar que el lunes.
+Parece hace mil años.
+
+Juan ya está.
+Pide dos cervezas antes de que te sientes.
+
+Está raro.
+Nervioso.
+O algo.
+
+"¿Todo bien?", preguntás.
+
+{llama >= 5 || conexion >= 5:
+    -> juan_noticia_buena
+- else:
+    -> juan_noticia_mala
+}
+
+=== juan_noticia_buena ===
+
+Juan respira.
+
+"Sí. Mirá, te quería contar algo."
+
+Toma un trago.
+
+"Mi cuñado tiene un taller. Arregla electrodomésticos, esas cosas."
+
+"¿Y?"
+
+"Necesita alguien. No es fijo, son changas. Pero paga."
+
+Te mira.
+
+"Pensé en vos. Si te interesa, le digo."
+
+* ["Sí, pasale mi número."]
+    ~ subir_conexion(1)
+    ~ subir_dignidad(1)
+    ~ juan_ofrecio_changa = true
+    "Dale, le digo. Capaz te llama la semana que viene."
+
+    No es un laburo.
+    Es una posibilidad.
+    Pero viniendo de Juan, significa algo.
+
+    "Gracias, Juan."
+    "Para eso estamos."
+    -> juan_encuentro_fin
+
+* ["Dejame pensarlo."]
+    "Dale, sin presión. Avisame."
+
+    No sabés si querés eso.
+    Pero que Juan haya pensado en vos...
+
+    ~ subir_conexion(1)
+    -> juan_encuentro_fin
+
+* ["No, gracias. Voy a buscar otra cosa."]
+    "Como quieras."
+
+    Juan parece un poco dolido.
+    Pero entiende.
+
+    -> juan_encuentro_fin
+
+=== juan_noticia_mala ===
+
+~ juan_tambien_despedido = true
+~ juan_estado = "despedido"
+
+Juan no te mira.
+Toma un trago largo.
+
+"A mí también me echaron."
+
+Silencio.
+
+"¿Cuándo?"
+
+"Ayer. Mismo discurso. Reestructuración."
+
+Unipersonal también.
+Sin nada.
+Como vos.
+
+"La puta madre, Juan."
+
+"Sí."
+
+Se queda mirando la cerveza.
+
+"Tres años. Facturando como pelotudo. Creyendo que era distinto."
+
+* ["No sos pelotudo. Nos cagaron a todos."]
+    ~ subir_conexion(2)
+    ~ bajar_salud_mental(1)
+
+    "Es el sistema, Juan. Así funciona."
+
+    "Ya sé. Pero igual duele."
+
+    Toman en silencio.
+    Dos tipos sin laburo.
+    Pero juntos en esto.
+
+    -> juan_encuentro_fin
+
+* ["¿Y ahora qué vas a hacer?"]
+    ~ subir_conexion(1)
+    ~ bajar_salud_mental(1)
+
+    "No sé. Buscar. Lo que sea."
+
+    "Si escucho algo, te aviso."
+
+    "Gracias."
+
+    Es raro.
+    Antes él era el que tenía todo armado.
+    Ahora están igual.
+
+    -> juan_encuentro_fin
+
+* [Quedarte callado]
+    ~ bajar_salud_mental(1)
+
+    No sabés qué decir.
+    ¿Qué se dice?
+
+    Toman en silencio.
+
+    -> juan_encuentro_fin
+
+=== juan_encuentro_fin ===
+
+Terminan las cervezas.
+No piden otra.
+
+"Bueno. Nos vemos."
+
+"Nos vemos, Juan."
+
+Se dan un abrazo torpe.
+De esos que no se daban antes.
+
+{juan_relacion >= 4:
+    ~ juan_relacion += 1
+}
+
+Volvés a casa.
+Con algo más.
+O algo menos.
+Depende cómo lo mires.
 
 ->->

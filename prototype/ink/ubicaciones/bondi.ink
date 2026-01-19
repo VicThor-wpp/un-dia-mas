@@ -282,7 +282,7 @@ La ciudad de tarde.
 
 Pensás en el día.
 
-{dia_actual == 1 && hable_con_renzo_sobre_rumores:
+{dia_actual == 1 && hable_con_juan_sobre_rumores:
     En lo que dijo Juan.
     En los despidos.
     En la reunión.
@@ -290,8 +290,8 @@ Pensás en el día.
 
 {not tiene_laburo:
     En que no tenés laburo.
-    En los tres meses que quedan.
-    En lo que viene.
+    En que no hay colchón. Nada.
+    Unipersonal. Sin derechos.
 }
 
 El bondi llega al barrio.

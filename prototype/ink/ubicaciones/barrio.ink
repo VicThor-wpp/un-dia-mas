@@ -299,8 +299,8 @@ Con sus bolsas, sus cartones, su mundo.
 {not tiene_laburo:
     Ahora lo mirás distinto.
     ¿Cuántos pasos hay entre vos y él?
-    Tres meses de indemnización.
-    Después...
+    Unipersonal. Sin indemnización. Sin seguro.
+    Muy pocos pasos.
 }
 
 * [Acercarte] -> barrio_banco_acercarse

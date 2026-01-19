@@ -311,14 +311,15 @@ Ah.
 
 Así que era eso.
 
-"Acá está la liquidación. Tres meses. Podés firmar ahora."
+"Dejamos de necesitar tus servicios. Gracias por tu colaboración."
 
 * [Escuchar] # FALSA
-    Tres meses. Tres meses de colchón.
-    No estás en la calle mañana.
-    Pero algo se rompió igual.
+    No hay liquidación. No hay indemnización.
+    Sos unipersonal. Facturás. "Independiente."
+    Así te contrataron hace tres años.
+    Así te echan hoy.
 
-* [Firmar] -> laburo_despido_firmar
+* [Aceptar] -> laburo_despido_firmar
 * [Preguntar por qué] # EFECTO:dignidad? -> laburo_despido_preguntar
 
 === laburo_despido_preguntar ===
@@ -329,14 +330,20 @@ Se miran entre ellos.
 
 "No es personal. Es reestructuración."
 
-Claro. Nunca es personal.
+"Pero trabajo acá hace tres años."
+
+"Trabajás con nosotros. Facturás. Es diferente."
+
+Claro. Siempre fue diferente cuando les convenía.
+Nunca es personal.
 Es el sistema funcionando como fue diseñado.
 
-* [Firmar] -> laburo_despido_firmar
+* [Irte] -> laburo_despido_firmar
 
 === laburo_despido_firmar ===
 
-Firmás.
+No hay nada que firmar.
+Sos unipersonal. Simplemente dejás de facturar.
 
 Te dan una caja para tus cosas.
 No tenés muchas cosas.
@@ -345,7 +352,6 @@ El escritorio se vacía rápido.
 
 ~ fui_despedido = true
 ~ tiene_laburo = false
-~ indemnizacion = 3
 ~ bajar_salud_mental(1)
 
 ->->

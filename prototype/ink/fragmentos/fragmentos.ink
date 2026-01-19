@@ -77,42 +77,6 @@ Mundos distintos.
 -> DONE
 
 // ============================================
-// FRAGMENTOS DE WALTER (el tentador)
-// ============================================
-
-=== fragmento_walter_aparece ===
-
-// Walter aparece si el jugador está muy desesperado
-
-Walter está en su auto.
-No es un auto caro, pero es auto.
-
-Mira el barrio.
-Busca gente.
-Gente desesperada.
-Gente que necesita.
-
-Él ofrece cosas.
-Trabajitos.
-Nada grande.
-Nada limpio tampoco.
-
-No es malo, Walter.
-Solo hace lo que el sistema le enseñó.
-Buscar oportunidades.
-Aprovecharlas.
-
-Mañana va a buscar al nuevo.
-Al que echaron.
-Esos siempre son buenos.
-Desesperados pero no destruidos.
-Todavía útiles.
-
-~ walter_aparecio = true
-
--> DONE
-
-// ============================================
 // NOTAS DE DISEÑO
 // ============================================
 
