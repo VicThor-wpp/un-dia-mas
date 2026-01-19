@@ -464,26 +464,25 @@ h2 {
 /* Continue button */
 .continue-button {
     text-align: center;
-    font-size: 24px;
-    letter-spacing: 8px;
+    font-size: 1rem;
+    letter-spacing: 2px;
     color: var(--text-muted);
-    border: 1px dashed var(--text-muted);
+    border: 1px solid var(--border);
     background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
 }
 
-.continue-button::before {
-    content: '...';
-    animation: pulseDots 1.5s ease-in-out infinite;
+.continue-button::after {
+    content: 'Continuar →';
 }
 
 .continue-button:hover {
     color: var(--accent);
     border-color: var(--accent);
-}
-
-@keyframes pulseDots {
-    0%, 100% { opacity: 0.4; }
-    50% { opacity: 1; }
+    background: rgba(255, 107, 53, 0.1);
 }
 
 /* ==========================================
