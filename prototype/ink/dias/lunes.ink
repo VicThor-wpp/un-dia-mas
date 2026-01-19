@@ -26,8 +26,6 @@
 
 === lunes_parada_bondi ===
 
-La parada del bondi.
-
 -> bondi_esperar_parada ->
 
 // Después del bondi, verificar si llegó tarde
