@@ -7,6 +7,7 @@
 // --- ENCUENTRO CASUAL EN EL BARRIO ---
 
 === elena_encuentro_casual ===
+# PORTRAIT:elena,neutral,right
 
 Elena está sentada en el banco de la plaza.
 Siempre el mismo banco. Siempre la misma hora.
@@ -30,7 +31,7 @@ Un momento de paz en el quilombo.
 
 "¿Cómo andás, m'hijo?"
 
-Su voz es ronca. Años de mate y cigarros.
+Su voz es ronca. Años de café fuerte y cigarros.
 
 * ["Ahí ando, Elena."] -> elena_ahi_ando
 * ["Mal. Todo mal."] -> elena_todo_mal
@@ -39,6 +40,7 @@ Su voz es ronca. Años de mate y cigarros.
 === elena_ahi_ando ===
 
 "Ahí andamos todos."
+# PORTRAIT:elena,remembering,right
 
 Mira hacia la calle.
 
@@ -54,6 +56,7 @@ El silencio de Elena nunca es incómodo.
 ->->
 
 === elena_todo_mal ===
+# PORTRAIT:elena,wise,right
 
 "Mal es relativo, m'hijo."
 
@@ -174,12 +177,12 @@ El trabajo sigue.
 La casa de Elena es chica.
 Fotos en las paredes. Gente que ya no está.
 
-"Sentate. Voy a hacer mate."
+"Sentate. Voy a hacer café en la prensa francesa."
 
 No aceptás un no.
 Los viejos del barrio no aceptan un no.
 
-El mate llega. Amargo. Fuerte.
+El café llega. Negro. Fuerte.
 
 "¿Qué te pasa, m'hijo? Te veo raro."
 
@@ -193,7 +196,7 @@ Le contás. Todo.
 El laburo. La plata. El miedo.
 
 Ella escucha. No interrumpe.
-Cuando terminás, toma mate. Piensa.
+Cuando terminás, toma café. Piensa.
 
 "¿Sabés qué aprendí en setenta años?"
 
@@ -220,7 +223,7 @@ No pensés en mañana. Pensá en hoy."
 
 "Mentira. Pero está bien. Cuando quieras hablar, acá estoy."
 
-Toman mate.
+Toman café.
 No hace falta hablar.
 A veces la compañía alcanza.
 
@@ -244,7 +247,7 @@ Los bancos cerrados. Todo cerrado."
 
 "Juntos. No había otra."
 
-Toma mate.
+Toma café.
 
 "Las ollas, el trueque, las asambleas.
 La gente se organizó porque el Estado no existía."
@@ -262,6 +265,7 @@ Pero los que nos quedamos acá, no olvidamos."
 // --- ELENA PREOCUPADA ---
 
 === elena_preocupada_olla_knot ===
+# PORTRAIT:elena,worried,right
 
 ~ elena_preocupada_olla = true
 
@@ -471,7 +475,7 @@ Los viejos no duermen.
 
 * [Sentarse en la cocina] # FALSA
     Se sienta en la cocina.
-    Mate. Radio bajita. Las voces de siempre.
+    Café recalentado. Radio bajita. Las voces de siempre.
 
 {escuche_sobre_2002:
     Piensa en el 2002.

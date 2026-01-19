@@ -32,8 +32,10 @@ Ahora es solo otro día.
 
 === viernes_manana ===
 
-El mate.
+El café.
 La mañana.
+
+El sostén energético más honesto: algo caliente y amargo que te hace funcionar.
 
 {olla_en_crisis:
     Pensás en la olla.

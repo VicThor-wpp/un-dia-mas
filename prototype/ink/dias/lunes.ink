@@ -53,13 +53,13 @@ La parada del bondi.
 
 -> laburo_manana ->
 
-// Encuentro con Renzo
+// Encuentro con Juan
 -> renzo_saludo_manana ->
 
 // Trabajo de la mañana
 -> laburo_trabajo_rutina ->
 
-// Verificar si hay escena adicional con Renzo
+// Verificar si hay escena adicional con Juan
 {hable_con_renzo_sobre_rumores:
     -> lunes_pre_almuerzo_decision
 - else:
@@ -72,7 +72,7 @@ La parada del bondi.
 
 * [Seguir laburando]
     -> lunes_almuerzo
-* [Preguntarle a Renzo] # STAT:conexion # EFECTO:conexion+
+* [Preguntarle a Juan] # STAT:conexion # EFECTO:conexion+
     -> renzo_preguntar_sobre_jefe ->
     -> lunes_almuerzo
 * {energia >= 2} [Hablar con el jefe] # COSTO:1 # DADOS:dignidad # EFECTO:dignidad?
@@ -86,7 +86,7 @@ La parada del bondi.
 12:30.
 Hora de comer.
 
-* [Almorzar con Renzo] # EFECTO:conexion+
+* [Almorzar con Juan] # EFECTO:conexion+
     -> renzo_almuerzo ->
     -> lunes_tarde
 * [Almorzar solo] # EFECTO:conexion-
@@ -185,7 +185,7 @@ Está en la puerta, los pibes adentro.
 === lunes_visita_elena ===
 
 Pasás por lo de Elena.
-Está tomando mate afuera.
+Está tomando café afuera, en un vaso térmico.
 
 "Vení, sentate."
 

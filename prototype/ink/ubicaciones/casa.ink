@@ -110,12 +110,13 @@ Eventualmente, el cuerpo pide moverse.
 
 === casa_mate ===
 
-# EL MATE
+# EL CAFÉ
 
-El mate de la mañana.
-El ritual que te despierta.
+El café de especialidad en la prensa francesa.
+El ritual que te despierta y te sostiene.
 
-El agua, la yerba, el tiempo.
+Agua caliente. Molienda. Cuatro minutos.
+Un vaso térmico para llevarte el resto.
 {tiene_laburo: Cinco minutos de paz antes de salir.}
 {not tiene_laburo: Todo el tiempo del mundo. Demasiado tiempo.}
 
@@ -126,17 +127,21 @@ El agua, la yerba, el tiempo.
 }
 
 {posicion == "quemado":
-    Antes el mate era para pensar en cosas.
+    Antes el café era para pensar en cosas.
     Ahora es para no pensar.
 }
 
-El mate se termina.
+No es gusto.
+Es sostén energético.
+Una forma de sobrevivir a la mañana.
+
+El café se termina.
 
 ->->
 
 === casa_mate_apurado ===
 
-No hay tiempo para mate.
+No hay tiempo para café.
 Un vaso de agua y listo.
 
 El día empieza mal.

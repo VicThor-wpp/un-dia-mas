@@ -1,5 +1,124 @@
 # CHANGELOG - Un Día Más Implementation
 
+## Session: 2026-01-19
+
+### MAJOR REFACTOR: Modular Architecture (COMPLETED)
+
+Complete refactoring of the web runtime into a modular, config-driven architecture.
+
+#### New Architecture
+```
+prototype/web/
+├── game.js                    # Main orchestrator (~400 lines, down from 467)
+├── modules/
+│   ├── config-manager.js      # JSON config loading and access
+│   ├── notification-system.js # Visual notifications for stat changes
+│   ├── stats-panel.js         # Expandable stats display
+│   ├── relationships-panel.js # NPC relationships visualization
+│   ├── portrait-system.js     # Character portrait display (prepared)
+│   ├── save-system.js         # Save/Load with versioning
+│   └── choice-parser.js       # Choice tag parsing
+├── config/
+│   ├── game.json              # Game metadata and dice config
+│   ├── stats.json             # Stats definitions with thresholds
+│   ├── characters.json        # NPC definitions with relationships
+│   └── ui.json                # UI/theme configuration
+└── assets/
+    └── portraits/             # Character portrait directories (prepared)
+```
+
+#### Features Implemented
+
+**1. ConfigManager (config-manager.js)**
+- Loads JSON configuration files asynchronously
+- Dot notation access (`ConfigManager.get('stats.energia.max')`)
+- Helper methods for stats, characters, thresholds, dice results
+- Fallback defaults if fetch fails (file:// protocol support)
+
+**2. StatsPanel (stats-panel.js)**
+- Expandable/collapsible stats display
+- Click to toggle between minimal and full view
+- Threshold indicators ("Traumatizado", "Aislado", "Sin esperanza")
+- "Más info" modal with complete game state
+- Body class effects for threshold states
+
+**3. RelationshipsPanel (relationships-panel.js)**
+- NPC relationship visualization (heart icons)
+- Character state display (activa, agotada, etc.)
+- Vinculo special highlight
+- Character cards with descriptions
+
+**4. SaveSystem (save-system.js)**
+- 3 manual save slots + 1 auto-save
+- Auto-save every 30 seconds
+- Save versioning with migration support
+- Preview info (day, stats, vinculo)
+- Export/Import functionality
+- Modal UI for save management
+
+**5. PortraitSystem (portrait-system.js)**
+- Prepared for character portraits during dialogues
+- Tag processing: PORTRAIT:char,expression,position
+- Multiple positions (left, right, center)
+- Speaking/inactive states
+- Mobile-aware (hide on small screens)
+
+**6. NotificationSystem (notification-system.js)**
+- Extracted from game.js
+- Supports stat changes, dice rolls, generic messages
+- Configurable duration and fade
+
+**7. ChoiceParser (choice-parser.js)**
+- Extracted tag parsing logic
+- Supports: COSTO, DADOS, STAT, EFECTO, FALSA, TOOLTIP
+- Builds choice buttons with badges
+
+#### Configuration System
+- Stats configurable: label, icon, max, color, visibility, thresholds
+- Characters configurable: name, role, color, states, expressions
+- UI configurable: colors, layout, feature toggles
+- Adding a new stat = edit stats.json (no code changes)
+
+#### CSS Additions (~700 lines)
+- Stats panel expanded styles
+- Modal system (overlay, content, header, body)
+- Save/Load modal specific styles
+- Character cards and relationship display
+- Portrait container and animations
+- Threshold body effects (trauma-high, llama-low, conexion-low)
+- Button styles (primary, secondary, danger)
+- Mobile responsive adjustments
+
+#### Files Created
+- `modules/config-manager.js`
+- `modules/notification-system.js`
+- `modules/stats-panel.js`
+- `modules/relationships-panel.js`
+- `modules/portrait-system.js`
+- `modules/save-system.js`
+- `modules/choice-parser.js`
+- `config/game.json`
+- `config/stats.json`
+- `config/characters.json`
+- `config/ui.json`
+- `game.backup.js` (backup of original)
+
+#### Files Modified
+- `game.js` - Refactored to use modules
+- `index.html` - Added module script tags
+- `style.css` - Added ~700 lines for new components
+
+#### Breaking Changes
+- None. All existing functionality preserved.
+- Game plays identically to before refactor.
+
+#### Future Ready
+- Portrait system ready (needs images)
+- Save system includes migration path for future versions
+- Config files documented and extensible
+
+---
+
 ## Session: 2026-01-12
 
 ### Deployment (COMPLETED)
@@ -126,13 +245,13 @@
 - `ink/ubicaciones/laburo.ink` - Fixed ñ in identifiers
 - `ink/ubicaciones/barrio.ink` - Fixed loose ends, added manana tunnel
 - `ink/ubicaciones/olla.ink` - Added olla_irse knot
-- `ink/personajes/renzo.ink` - Fixed ñ in identifiers
+- `ink/personajes/juan.ink` - Fixed ñ in identifiers
 - `ink/personajes/elena.ink` - Renamed conflicting knot
 - `ink/dias/*.ink` - Fixed ñ in all day files
 
 ### Project Status
 - Game content: 7 days complete (Lunes-Domingo)
-- NPCs: 5 characters (Sofia, Elena, Diego, Marcos, Renzo)
+- NPCs: 5 characters (Sofia, Elena, Diego, Marcos, Juan)
 - Locations: 5 modules (casa, bondi, laburo, barrio, olla)
 - Endings: 6 different finales
 - Web export: Ready for testing

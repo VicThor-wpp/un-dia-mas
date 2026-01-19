@@ -677,7 +677,7 @@ Se cuenta lo que hay.
 La olla se prepara para la asamblea.
 
 Sillas en círculo.
-Termo de mate.
+Termo de café.
 Papeles con números.
 
 Hoy se habla de todo.
@@ -702,7 +702,7 @@ Sofía abre.
 "Bueno. Estamos todos los que estamos."
 "Gracias por venir."
 
-Elena sirve mate.
+Elena sirve café.
 Alguien trae bizcochos.
 
 "Hay que hablar de cómo seguimos."

@@ -96,7 +96,7 @@ Se eligió **Atrament Web UI** como framework base para la interfaz de testing y
 
 ### Justificación
 - Tema oscuro: reduce fatiga visual en sesiones largas
-- Colores cálidos: reflejan el barrio uruguayo (luz de farol, mate)
+- Colores cálidos: reflejan el barrio (luz de farol, café)
 - Verde esperanza: la conexión comunitaria como aspecto positivo
 - Cada personaje con color único para reconocimiento instantáneo
 

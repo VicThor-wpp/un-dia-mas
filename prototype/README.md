@@ -53,7 +53,7 @@ Definido por tres elecciones iniciales:
 
 | Personaje | Rol | Arco |
 |-----------|-----|------|
-| **Renzo** | Compañero de trabajo | Se pierde el contacto tras el despido |
+| **Juan** | Compañero de trabajo | Se pierde el contacto tras el despido |
 | **Sofía** | Líder de la olla | Madre soltera, sostiene todo |
 | **Elena** | Veterana del barrio | Memoria del 2002, sabiduría |
 | **Diego** | Venezolano nuevo | Buscando pertenecer |
@@ -89,7 +89,7 @@ ink/
 │   ├── barrio.ink          # Caminatas y encuentros
 │   └── olla.ink            # La olla popular
 ├── personajes/
-│   ├── renzo.ink           # Compañero de trabajo
+│   ├── juan.ink            # Compañero de trabajo
 │   ├── sofia.ink           # Líder de la olla
 │   ├── elena.ink           # Veterana
 │   ├── diego.ink           # Venezolano
@@ -168,7 +168,7 @@ El juego está ambientado en Uruguay y usa vocabulario local:
 - **Olla popular**: Comedor comunitario autogestionado
 - **Laburo**: Trabajo
 - **Pibe/a**: Chico/a
-- **Mate**: Infusión tradicional
+- **Café de especialidad en prensa francesa**: Ritual cotidiano y sostén energético
 
 La referencia al "2002" alude a la crisis económica uruguaya de ese año, momento de proliferación de ollas populares y redes de solidaridad.
 

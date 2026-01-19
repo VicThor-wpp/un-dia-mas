@@ -1,13 +1,13 @@
 // ============================================
-// PERSONAJE: RENZO
-// Compañero de trabajo
+// PERSONAJE: JUAN
+// Compañero de trabajo (Juan)
 // ============================================
 
 // --- ENCUENTRO EN EL LABURO ---
 
 === renzo_saludo_manana ===
 
-Renzo está en el escritorio de al lado.
+Juan está en el escritorio de al lado.
 Compañero hace tres años.
 El único con el que hablás de verdad acá.
 
@@ -32,7 +32,7 @@ El único con el que hablás de verdad acá.
 
 === renzo_rumor ===
 
-Renzo baja la voz.
+Juan baja la voz.
 
 "Echaron a tres. El viernes. Sin aviso."
 
@@ -54,7 +54,7 @@ Mira para los costados.
 
 "Como quieras."
 
-Renzo vuelve a su pantalla.
+Juan vuelve a su pantalla.
 Un poco ofendido.
 
 ~ renzo_relacion -= 1
@@ -86,13 +86,13 @@ Todos lo son.
 
 === renzo_minimizar ===
 
-"Siempre hay rumores, Renzo. Todos los meses dicen que van a echar gente."
+"Siempre hay rumores, Juan. Todos los meses dicen que van a echar gente."
 
 "Sí, pero esta vez..."
 
 "Esta vez también. Tranqui."
 
-Renzo no parece convencido.
+Juan no parece convencido.
 Vos tampoco.
 Pero hay que seguir.
 
@@ -106,14 +106,14 @@ Pero hay que seguir.
 
 "No sé. Pero peor es no hacer nada."
 
-Renzo asiente.
+Juan asiente.
 Los dos saben que es mentira.
 Cuando quieren echarte, te echan.
 No importa lo que hagas.
 
 ->->
 
-// --- ALMUERZO CON RENZO ---
+// --- ALMUERZO CON JUAN ---
 
 === renzo_almuerzo ===
 
@@ -133,7 +133,7 @@ El comedor de la empresa.
 Se sientan.
 Comen.
 
-Renzo habla de su novia, de las vacaciones que quieren hacer, del partido del domingo.
+Juan habla de su novia, de las vacaciones que quieren hacer, del partido del domingo.
 Cosas normales.
 Cosas de gente normal.
 
@@ -154,7 +154,7 @@ Pero el pacto está.
 
 === renzo_post_reunion ===
 
-Renzo se acerca.
+Juan se acerca.
 
 "Esta semana va a ser jodida."
 
@@ -167,7 +167,7 @@ No hay más que decir.
 
 === renzo_invitar_bar ===
 
-"Che, Renzo. ¿Vamos a tomar algo?"
+"Che, Juan. ¿Vamos a tomar algo?"
 
 ~ ultima_tirada = d6()
 
@@ -190,7 +190,7 @@ Dos cervezas.
 ~ renzo_relacion += 1
 ~ subir_conexion(1)
 
-"¿Vos qué harías si te echan?", pregunta Renzo.
+"¿Vos qué harías si te echan?", pregunta Juan.
 
 * ["No sé. Buscar otra cosa."]
     "Sí, yo también. Pero está difícil."
@@ -200,11 +200,11 @@ Dos cervezas.
     -> renzo_bar_fin
 * ["Tengo algo de ahorros. Aguantaría unos meses."]
     "Yo no. Si me echan, cago fuego."
-    "Algo aparece, Renzo."
+    "Algo aparece, Juan."
     "Ojalá."
     -> renzo_bar_fin
 * ["Hay otros laburos. Hay otras cosas."]
-    Renzo te mira.
+    Juan te mira.
     "¿Cómo qué?"
     "No sé. Pero el mundo no se acaba."
     No suena convincente. Pero es algo.
@@ -224,7 +224,7 @@ Se despiden.
 
 === renzo_preguntar_sobre_jefe ===
 
-"Che, Renzo. ¿Viste cómo me miró el jefe?"
+"Che, Juan. ¿Viste cómo me miró el jefe?"
 
 "Sí. Raro."
 
@@ -241,12 +241,12 @@ Eso no ayuda.
 // --- DESPUÉS DEL DESPIDO ---
 
 === renzo_enterarse_despido ===
-// Cuando Renzo se entera de que te echaron
+// Cuando Juan se entera de que te echaron
 
 ~ renzo_sabe_de_mi_despido = true
 
 {renzo_relacion >= 3:
-    Renzo te busca.
+    Juan te busca.
     "Che, me enteré. La puta madre."
     "Sí."
     "¿Estás bien?"
@@ -261,7 +261,7 @@ Eso no ayuda.
 
     ~ subir_conexion(1)
 - else:
-    Renzo te manda un mensaje.
+    Juan te manda un mensaje.
     "Me enteré. Qué bajón."
     No respondés.
 }
@@ -269,10 +269,10 @@ Eso no ayuda.
 ->->
 
 === renzo_despues_despido ===
-// Intentar contactar a Renzo después de perder el laburo
+// Intentar contactar a Juan después de perder el laburo
 
 {dia_actual <= 5:
-    Llamás a Renzo.
+    Llamás a Juan.
 
     ~ ultima_tirada = d6()
 
@@ -300,7 +300,7 @@ Eso no ayuda.
 }
 
 {dia_actual > 5:
-    Pensás en llamar a Renzo.
+    Pensás en llamar a Juan.
     Pero... ¿para qué?
     Ya no comparten nada.
     Solo compartían el laburo.
@@ -313,7 +313,7 @@ Eso no ayuda.
 
 === renzo_fragmento_noche ===
 
-Renzo no puede dormir.
+Juan no puede dormir.
 
 Su novia ya duerme.
 

@@ -57,10 +57,15 @@ El cuerpo no aguanta más la cama.
 === jueves_manana ===
 
 Te levantás.
-El mate.
+El café.
 La rutina, pero vacía.
 
-Antes el mate era apurado, entre ducharte y salir.
+Moler.
+Agua caliente.
+Prensa francesa.
+El único mecanismo de supervivencia que hoy parece confiable.
+
+Antes el café era apurado, entre ducharte y salir.
 Ahora tenés todo el tiempo del mundo.
 
 Demasiado tiempo.

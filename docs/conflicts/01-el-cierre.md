@@ -646,7 +646,7 @@ Pero a veces, de noche, te acordás de la asamblea. De la voz del delegado. De D
 **Descripción:**
 La planta cerró igual. Pero durante tres días fue nuestra.
 
-Hubo desalojo, hubo gas, hubo gritos. Algunos pasaron la noche en la seccional. Pero también hubo mate a las 4 AM, hubo historias que nadie había contado, hubo gente que se miró a los ojos por primera vez en años.
+Hubo desalojo, hubo gas, hubo gritos. Algunos pasaron la noche en la seccional. Pero también hubo café a las 4 AM, hubo historias que nadie había contado, hubo gente que se miró a los ojos por primera vez en años.
 
 La empresa no cambió de opinión. El Estado no apareció. Pero algo se grabó en la memoria del barrio. Elena dice que esto va a servir para lo que viene. No sabemos qué viene. Pero ya no estamos solos.
 

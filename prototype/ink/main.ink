@@ -17,7 +17,7 @@ INCLUDE ubicaciones/barrio.ink
 INCLUDE ubicaciones/olla.ink
 
 // --- INCLUDES: PERSONAJES ---
-INCLUDE personajes/renzo.ink
+INCLUDE personajes/juan.ink
 INCLUDE personajes/sofia.ink
 INCLUDE personajes/elena.ink
 INCLUDE personajes/diego.ink

@@ -15,8 +15,21 @@
         <main id="storyContainer" class="story"></main>
         <nav id="choicesContainer" class="choices"></nav>
     </div>
+
+    <!-- Ink Runtime -->
     <script src="ink.js"></script>
     <script src="un_dia_mas.js"></script>
+
+    <!-- Modules (order matters) -->
+    <script src="modules/config-manager.js"></script>
+    <script src="modules/notification-system.js"></script>
+    <script src="modules/stats-panel.js"></script>
+    <script src="modules/relationships-panel.js"></script>
+    <script src="modules/portrait-system.js"></script>
+    <script src="modules/save-system.js"></script>
+    <script src="modules/choice-parser.js"></script>
+
+    <!-- Main Game Engine -->
     <script src="game.js"></script>
 </body>
 </html>

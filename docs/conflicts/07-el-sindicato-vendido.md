@@ -48,7 +48,7 @@ Pero eso fue hace tiempo. Ahora la central tiene edificio, tiene personería jur
 
 ### Dirigencias que se perpetúan
 
-Los delegados de base rotan (cuando hay). Pero los dirigentes de rama, los de la mesa representativa, esos no rotan. Se conocen entre ellos, toman mate juntos, van a los mismos congresos. Algunos hace treinta años que están. Conocen todo: los códigos, los contactos, los acuerdos implícitos.
+Los delegados de base rotan (cuando hay). Pero los dirigentes de rama, los de la mesa representativa, esos no rotan. Se conocen entre ellos, toman café juntos, van a los mismos congresos. Algunos hace treinta años que están. Conocen todo: los códigos, los contactos, los acuerdos implícitos.
 
 Cuando alguien nuevo quiere subir, tiene que pasar por ellos. Y si es muy combativo, "no está maduro todavía", "le falta experiencia", "hay que cuidar la unidad".
 
@@ -761,7 +761,7 @@ Lo importante no es el resultado. Es lo que quedó. Un grupo de gente que ahora 
 No ganaron. Pero tampoco perdieron. Y eso, en este mundo, ya es algo.
 
 **Fragmento final:**
-*Marcos volvió a una asamblea. No de las oficiales. De las otras. Las que se hacen en la vereda, con mate y sin micrófono. Elena estaba ahí, por primera vez en años. Y Diego, que ahora entiende un poco más de qué se trata todo esto.*
+*Marcos volvió a una asamblea. No de las oficiales. De las otras. Las que se hacen en la vereda, con café y sin micrófono. Elena estaba ahí, por primera vez en años. Y Diego, que ahora entiende un poco más de qué se trata todo esto.*
 
 *No es una victoria. Es un comienzo. Frágil, pequeño, pero propio.*
 

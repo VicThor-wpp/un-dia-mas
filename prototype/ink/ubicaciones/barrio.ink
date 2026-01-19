@@ -646,7 +646,7 @@ Los negocios cerrados.
 Poca gente en la calle.
 
 Alguien pasea un perro.
-Un viejo toma mate en la vereda.
+Un viejo toma café en un vaso térmico en la vereda.
 
 {d6() >= 5:
     El olor a asado viene de algún lado.
@@ -666,7 +666,7 @@ El grupo de la olla.
 Sofía, Elena, otros.
 
 Hablando en la vereda.
-Tomando mate.
+Tomando café.
 
 "¿Todo bien?", te preguntan.
 

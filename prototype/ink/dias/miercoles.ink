@@ -18,7 +18,7 @@ Hoy es la reunión con RRHH.
 
 {energia < 4: Te levantás con menos energía que ayer. La tensión se siente en el cuerpo.}
 
-El mate no calienta igual, o vos no sentís el calor igual.
+El café no calienta igual, o vos no sentís el calor igual.
 
 Sabés que algo viene. No sabés qué.
 

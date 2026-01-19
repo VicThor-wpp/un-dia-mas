@@ -250,7 +250,7 @@ Tenés un día. Podés hacer UNA de estas cosas bien:
 
 ### LUNES: "El día que cambia todo"
 
-**Mañana:** Te levantás para ir a laburar. Rutina. El mate, el bondi, el fichaje.
+**Mañana:** Te levantás para ir a laburar. Rutina. El café (prensa francesa), el bondi, el fichaje.
 
 **Mediodía:** Te llaman a "una reunión". Sabés antes de entrar. Lo ves en la cara del que te busca.
 

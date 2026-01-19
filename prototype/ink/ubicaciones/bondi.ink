@@ -283,7 +283,7 @@ La ciudad de tarde.
 Pensás en el día.
 
 {dia_actual == 1 && hable_con_renzo_sobre_rumores:
-    En lo que dijo Renzo.
+    En lo que dijo Juan.
     En los despidos.
     En la reunión.
 }

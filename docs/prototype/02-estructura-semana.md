@@ -43,7 +43,7 @@ CONEXIÓN: 3
 
 ### Texto de Contexto
 
-> Lunes. El despertador suena como siempre, cinco minutos antes de que sea necesario. Afuera está nublado pero no llueve. El mate ya está preparado porque anoche lo dejaste listo. Todo funciona. Todo está en su lugar.
+> Lunes. El despertador suena como siempre, cinco minutos antes de que sea necesario. Afuera está nublado pero no llueve. El café ya está pensado: dejaste la prensa francesa armada y el café molido listo. Todo funciona. Todo está en su lugar.
 >
 > Otra semana de laburo. Reuniones, mails, el almuerzo apurado. Lo de siempre.
 >
@@ -118,7 +118,7 @@ No hay elección esta mañana. El día empieza normal.
 
 > Te acostás pensando en el mail de RRHH. En la cara de Sofía.
 >
-> Pero tenés laburo mañana. La alarma está puesta. El mate preparado.
+> Pero tenés laburo mañana. La alarma está puesta. La prensa francesa preparada.
 >
 > Lo de Sofía... bueno, si necesita algo, lo dice. Vos tenés lo tuyo.
 >
@@ -163,7 +163,7 @@ CONEXIÓN: 3-5 (según decisiones)
 
 > Martes. Dormiste mal. Soñaste algo que no recordás pero te dejó una sensación de peso en el pecho.
 >
-> El mate está frío porque te quedaste mirando la pared más de lo que creías.
+> El café está frío porque te quedaste mirando la pared más de lo que creías.
 >
 > Hoy hay que ir a laburar. Mañana es la reunión.
 
@@ -288,7 +288,7 @@ CONEXIÓN: variable
 
 > Miércoles. El día que no querés que llegue pero llegó.
 >
-> Te levantás antes del despertador. No desayunás bien. El mate queda por la mitad.
+> Te levantás antes del despertador. No desayunás bien. El café queda por la mitad.
 >
 > A las 10 tenés reunión con RRHH.
 >
@@ -374,7 +374,7 @@ No hay opciones aquí. El despido es un hecho. El jugador no tiene agencia en es
 
 | Opción | Efecto |
 |--------|--------|
-| **Elena** | Te escucha. No juzga. Te da mate. "Tres meses es tiempo", dice. "No es poco." |
+| **Elena** | Te escucha. No juzga. Te da café. "Tres meses es tiempo", dice. "No es poco." |
 | **Sofía** | Está ocupada con la olla, pero te ve mal y para. Te enterás de la crisis en detalle. Cuando le contás, asiente: "Estamos todos igual, de alguna forma." |
 | **Diego** | No sabe qué decir, pero se queda. A veces eso alcanza. |
 
@@ -551,7 +551,7 @@ CONEXIÓN: variable
 
 **RAMA: Quedarte procesando**
 
-> No salís hasta el mediodía. La caja sigue ahí. El mate quedó sin tomar.
+> No salís hasta el mediodía. La caja sigue ahí. El café quedó sin tomar.
 >
 > A la una te obligás a comer algo. A las dos mirás el techo.
 >

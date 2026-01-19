@@ -864,7 +864,7 @@ Elena es:
 > ELENA: (aparece donde el jugador esta)
 > "Me entere."
 > (Pausa)
-> "Toma." (le da algo: mate, comida, lo que sea)
+> "Toma." (le da algo: café, comida, lo que sea)
 > "No tengo nada que decir que sirva. Pero estoy aca."
 
 **Si el jugador quiere hablar:**
@@ -2322,7 +2322,7 @@ YULIMAR: (al jugador) "Che."
 
 JUGADOR: "¿Mm?"
 
-YULIMAR: (le da algo: comida, mate, lo que sea)
+YULIMAR: (le da algo: comida, café, lo que sea)
 "Toma."
 
 JUGADOR: "No tenés por qué..."

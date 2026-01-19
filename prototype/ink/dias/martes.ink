@@ -45,7 +45,7 @@ Hay reuniones que no te incluyen.
 
 -> laburo_manana ->
 
-// Encuentro con Renzo
+// Encuentro con Juan
 -> renzo_saludo_manana ->
 
 // Trabajo de rutina

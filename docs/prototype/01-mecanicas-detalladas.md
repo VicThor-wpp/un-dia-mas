@@ -24,7 +24,7 @@ Al despertar cada día, tirás dados para determinar cuánta ENERGIA tenés:
 | Día de crisis (Miércoles) | 3 dados | Despido reciente: -1 dado |
 | Día bueno (raro) | 5 dados | LA LLAMA >= 7: +1 dado |
 | DIGNIDAD <= 3 | - | -1 dado |
-| CONEXION >= 8 | - | +1 dado (alguien te trae mate) |
+| CONEXION >= 8 | - | +1 dado (alguien te trae café) |
 
 **Mínimo absoluto:** 2 dados (siempre podés hacer algo mínimo)
 **Máximo absoluto:** 6 dados (días excepcionales)
