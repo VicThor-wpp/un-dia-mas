@@ -130,6 +130,28 @@ body {
     background: rgba(255, 255, 255, 0.2);
 }
 
+/* Compact bar for larger stat ranges */
+.compact-bar {
+    width: 40px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.compact-bar-fill {
+    height: 100%;
+    border-radius: 3px;
+    transition: width 0.3s ease;
+}
+
+.stat-num-small {
+    font-size: 12px;
+    min-width: 16px;
+    text-align: center;
+    opacity: 0.9;
+}
+
 .actions-section {
     display: flex;
     gap: 8px;
@@ -337,6 +359,36 @@ h2 {
     0%, 100% { transform: scale(1); }
     10%, 30%, 50%, 70%, 90% { transform: scale(1) translateX(-3px); }
     20%, 40%, 60%, 80% { transform: scale(1) translateX(3px); }
+}
+
+/* Simple dice roll (inline) */
+.dice-roll-box.dice-simple {
+    background: transparent;
+    border: 1px solid var(--border);
+    padding: 10px 15px;
+    max-width: none;
+    margin: 15px 0;
+    box-shadow: none;
+}
+
+.dice-roll-inline {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.dice-value-inline {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--accent);
+    background: rgba(255, 107, 53, 0.15);
+    padding: 5px 12px;
+    border-radius: 6px;
+}
+
+.dice-label-inline {
+    color: var(--text-muted);
+    font-size: 14px;
 }
 
 /* ==========================================

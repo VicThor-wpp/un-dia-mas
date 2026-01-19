@@ -110,17 +110,30 @@ const StatsPanel = (function() {
     }
 
     /**
-     * Create mini bar for stats
+     * Create mini bar for stats (dots for small ranges, compact bar for larger)
      */
     function createMiniBar(value, max, color) {
         const filled = Math.min(value, max);
-        let dots = '';
-        for (let i = 0; i < max; i++) {
-            dots += i < filled
-                ? `<span class="dot filled" style="background:${color}"></span>`
-                : `<span class="dot empty"></span>`;
+
+        // For small ranges (≤5), use dots
+        if (max <= 5) {
+            let dots = '';
+            for (let i = 0; i < max; i++) {
+                dots += i < filled
+                    ? `<span class="dot filled" style="background:${color}"></span>`
+                    : `<span class="dot empty"></span>`;
+            }
+            return `<span class="mini-bar">${dots}</span>`;
         }
-        return `<span class="mini-bar">${dots}</span>`;
+
+        // For larger ranges, use compact bar with number
+        const percent = (value / max) * 100;
+        return `
+            <span class="compact-bar">
+                <span class="compact-bar-fill" style="width:${percent}%;background:${color}"></span>
+            </span>
+            <span class="stat-num-small">${value}</span>
+        `;
     }
 
     /**
@@ -183,19 +196,19 @@ const StatsPanel = (function() {
                     </div>
                     <div class="stat-item" title="Conexión: lazos con el barrio">
                         ${iconHTML('users', 14)}
-                        <span class="stat-num">${conexion}</span>
+                        ${createMiniBar(conexion, conexionMax, '#4caf50')}
                     </div>
                     <div class="stat-item stat-llama" title="La Llama: esperanza colectiva">
                         ${iconHTML('flame', 14)}
-                        <span class="stat-num">${llama}</span>
+                        ${createMiniBar(llama, llamaMax, '#ff6b35')}
                     </div>
                     <div class="stat-item" title="Dignidad: respeto propio">
                         ${iconHTML('shield', 14)}
-                        <span class="stat-num">${dignidad}</span>
+                        ${createMiniBar(dignidad, dignidadMax, '#2196f3')}
                     </div>
                     <div class="stat-item stat-salud" title="Salud Mental: bienestar psicológico">
                         ${iconHTML('heart-pulse', 14)}
-                        <span class="stat-num">${saludMental}</span>
+                        ${createMiniBar(saludMental, 5, '#4fc3f7')}
                     </div>
                 </div>
 

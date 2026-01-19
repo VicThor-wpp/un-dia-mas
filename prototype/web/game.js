@@ -89,17 +89,25 @@ const GameEngine = (function() {
     }
 
     /**
-     * Check for dice roll changes
+     * Check for dice roll changes and return dice data if found
+     * @returns {object|null} Dice roll data or null
      */
     function checkDiceRoll() {
-        if (!ConfigManager.isFeatureEnabled('diceRolls')) return;
+        if (!ConfigManager.isFeatureEnabled('diceRolls')) return null;
 
         try {
             const currentTirada = story.variablesState['ultima_tirada'] ?? 0;
             const currentResultado = story.variablesState['ultimo_resultado'] ?? 0;
 
             if (currentTirada !== previousDice.ultima_tirada && currentTirada !== 0) {
-                showDiceRoll(currentTirada, currentResultado);
+                const diceData = { roll: currentTirada, result: currentResultado };
+
+                previousDice = {
+                    ultima_tirada: currentTirada,
+                    ultimo_resultado: currentResultado
+                };
+
+                return diceData;
             }
 
             previousDice = {
@@ -109,33 +117,49 @@ const GameEngine = (function() {
         } catch (e) {
             console.warn('Error checking dice roll:', e);
         }
+        return null;
     }
 
     /**
-     * Show dice roll in story - blocking display that requires user interaction
+     * Create dice roll element
      * @param {number} roll - Dice value
-     * @param {number} result - Result code
+     * @param {number} result - Result code (0 = simple roll, 1/-1/2 = chequeo result)
+     * @returns {HTMLElement}
      */
-    function showDiceRoll(roll, result) {
-        const resultInfo = ConfigManager.getDiceResult(result);
-        const description = resultInfo.description || '';
-
+    function createDiceElement(roll, result) {
         const rollDiv = document.createElement('div');
-        rollDiv.className = `dice-roll-box ${resultInfo.class}`;
-        rollDiv.innerHTML = `
-            <div class="dice-roll-header">
-                <span class="dice-icon">${iconHTML('dices', 28)}</span>
-                <span class="dice-title">TIRADA DE DADOS</span>
-            </div>
-            <div class="dice-roll-result">
-                <span class="dice-value">${roll}</span>
-            </div>
-            <div class="dice-roll-label">${resultInfo.label}</div>
-            <div class="dice-roll-desc">${description}</div>
-        `;
 
-        storyContainer.appendChild(rollDiv);
+        // For simple rolls (result=0), show just the number
+        if (result === 0) {
+            rollDiv.className = 'dice-roll-box dice-simple';
+            rollDiv.innerHTML = `
+                <div class="dice-roll-inline">
+                    <span class="dice-icon">${iconHTML('dices', 20)}</span>
+                    <span class="dice-value-inline">${roll}</span>
+                    <span class="dice-label-inline">Tirada: ${roll}</span>
+                </div>
+            `;
+        } else {
+            // For chequeo results, show full card
+            const resultInfo = ConfigManager.getDiceResult(result);
+            const description = resultInfo.description || '';
+
+            rollDiv.className = `dice-roll-box ${resultInfo.class}`;
+            rollDiv.innerHTML = `
+                <div class="dice-roll-header">
+                    <span class="dice-icon">${iconHTML('dices', 28)}</span>
+                    <span class="dice-title">TIRADA DE DADOS</span>
+                </div>
+                <div class="dice-roll-result">
+                    <span class="dice-value">${roll}</span>
+                </div>
+                <div class="dice-roll-label">${resultInfo.label}</div>
+                <div class="dice-roll-desc">${description}</div>
+            `;
+        }
+
         refreshIcons();
+        return rollDiv;
     }
 
     /**
@@ -176,8 +200,11 @@ const GameEngine = (function() {
             const text = story.Continue();
             const tags = story.currentTags || [];
 
-            // Check for dice roll
-            checkDiceRoll();
+            // Check for dice roll and add to batch if found
+            const diceData = checkDiceRoll();
+            if (diceData) {
+                currentBatch.push({ type: 'dice', roll: diceData.roll, result: diceData.result });
+            }
 
             // Process portrait tags
             PortraitSystem.processTags(tags);
@@ -257,6 +284,13 @@ const GameEngine = (function() {
         }
 
         for (const item of batch) {
+            if (item.type === 'dice') {
+                // Render dice roll
+                const rollDiv = createDiceElement(item.roll, item.result);
+                storyContainer.appendChild(rollDiv);
+                continue;
+            }
+
             const el = document.createElement(item.type === 'header' ? 'h1' : 'div');
 
             switch (item.type) {
@@ -283,7 +317,6 @@ const GameEngine = (function() {
 
         // Check for changes after content
         checkStatChanges();
-        checkDiceRoll();
         saveCurrentState();
         StatsPanel.update();
 
