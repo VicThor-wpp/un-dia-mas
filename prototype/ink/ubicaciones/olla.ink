@@ -235,8 +235,8 @@ Mira las ollas casi vacías.
 === olla_ofrecer_plata ===
 
 {not tiene_laburo:
-    Tenés tres meses de indemnización.
-    No sobra.
+    No tenés nada. Sin indemnización.
+    Lo poco que tenés es lo que juntaste.
     Pero...
 }
 
@@ -765,5 +765,26 @@ Sofía es la última en irse.
 Siempre.
 
 Mañana hay que volver a empezar.
+
+->->
+
+// --- ECO: ELENA RECUERDA ---
+
+=== viernes_olla_elena_eco ===
+// Tunnel: Elena recuerda si te conto su historia
+// Llamar: -> viernes_olla_elena_eco ->
+
+{elena_conto_historia:
+    Elena te ve llegar.
+
+    "Viniste."
+
+    No es sorpresa.
+    Es algo más.
+    Como si hubiera esperado que vinieras.
+    Como si la historia del 2002 hubiera funcionado.
+
+    ~ elena_relacion += 1
+}
 
 ->->

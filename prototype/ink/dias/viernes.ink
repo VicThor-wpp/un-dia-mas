@@ -102,6 +102,9 @@ Hay movimiento.
 // Llegada a la olla
 -> olla_llegada ->
 
+// Eco: Elena recuerda si le contaste tu historia
+-> viernes_olla_elena_eco ->
+
 // Ambiente de crisis
 -> olla_ambiente_crisis ->
 
@@ -308,8 +311,6 @@ Pero algo falta.
 
 # VIERNES - NOCHE
 
-~ energia = 0
-
 {ayude_en_olla:
     Estás destruido.
     Pero hiciste algo.
@@ -324,6 +325,13 @@ Pero algo falta.
     No sabés cómo les fue.
     Quizás deberías haber ido.
 }
+
+// Hook de Juan: si tenés buena relación, te llama
+{juan_relacion >= 4 && energia >= 1:
+    -> juan_llamado_viernes ->
+}
+
+~ energia = 0
 
 Mañana es sábado.
 Hay una asamblea en el barrio.

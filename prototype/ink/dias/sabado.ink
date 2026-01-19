@@ -117,9 +117,10 @@ O sí, depende.
     "Má, me echaron."
     Silencio.
     "¿Estás bien? ¿Necesitás plata?"
-    "No, no. Tengo la indemnización. Es más que... no sé. Es raro."
-    Ella no sabe qué decir.
-    Pero te escucha.
+    "No sé. Era unipersonal. No hay indemnización. No hay nada."
+    "¿Cómo que no hay nada?"
+    "Así me contrataron. Facturaba. Como si fuera mi propia empresa."
+    Ella no entiende. Pero te escucha.
     -> sabado_tarde
 * [No contarle]
     Hablás de otras cosas.
@@ -214,6 +215,10 @@ Estás afuera.
 * [Dormir] -> fragmento_sabado
 
 === sabado_asamblea ===
+
+// Ecos: los NPCs recuerdan tus acciones pasadas
+-> sabado_ver_sofia ->
+-> sabado_ver_diego ->
 
 // Inicio de la asamblea
 -> olla_asamblea_inicio ->
@@ -434,6 +439,61 @@ Mañana sigue.
 Mañana es domingo.
 
 * [Continuar] -> domingo_amanecer
+
+// --- ECOS: NPCs RECUERDAN TUS ACCIONES ---
+
+=== sabado_ver_sofia ===
+// Tunnel: Sofia recuerda si ayudaste en la olla
+
+Sofía te ve llegar.
+
+{ayude_en_olla && veces_que_ayude >= 2:
+    "Che, gracias por el viernes. No sé cómo hubiéramos hecho sin vos."
+
+    Alguien notó.
+    Alguien se acuerda.
+
+    ~ sofia_relacion += 1
+}
+{ayude_en_olla && veces_que_ayude == 1:
+    "Qué bueno que viniste."
+
+    Un reconocimiento simple.
+    Pero real.
+}
+{not ayude_en_olla:
+    "Hola."
+
+    Nada más.
+    No hay mucho que decir.
+}
+
+->->
+
+=== sabado_ver_diego ===
+// Tunnel: Diego recuerda si hablaste con el
+
+Diego está en la asamblea.
+
+{hable_con_diego_profundo:
+    Te ve y se acerca.
+
+    "Che, lo que hablamos el otro día... me quedó dando vueltas.
+    Creo que tenías razón."
+
+    ~ diego_relacion += 1
+}
+{conte_a_alguien && vinculo == "diego":
+    Diego asiente cuando te ve.
+
+    Hay algo compartido ahí.
+    Un secreto. Tu despido.
+    Él sabe. Y vos sabés que él sabe.
+}
+
+->->
+
+// --- FRAGMENTOS DE NOCHE ---
 
 === fragmento_sabado_default ===
 
