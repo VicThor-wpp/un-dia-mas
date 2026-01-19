@@ -46,7 +46,7 @@ Hay reuniones que no te incluyen.
 -> laburo_manana ->
 
 // Encuentro con Juan
--> renzo_saludo_manana ->
+-> juan_saludo_manana ->
 
 // Trabajo de rutina
 -> laburo_trabajo_rutina ->
@@ -194,9 +194,9 @@ Pensás en mañana.
 En la reunión.
 En lo que viene.
 
-Tres meses de indemnización si te echan.
-No es el fin del mundo.
-Pero algo termina igual.
+Si te echan, no hay nada.
+Unipersonal. Sin indemnización. Sin seguro.
+Tres años facturando para esto.
 
 * [Intentar dormir] -> fragmento_martes
 
@@ -225,7 +225,7 @@ En lo que sos sin él.
 ¿Quién sos sin eso?
 Mañana vas a saber.
 
-* [Continuar] -> miercoles_amanecer
+* [Continuar] -> martes_cliffhanger
 
 === fragmento_sofia_martes ===
 
@@ -244,7 +244,7 @@ En la gente que viene.
 El barrio la necesita.
 Eso la mantiene despierta.
 
-* [Continuar] -> miercoles_amanecer
+* [Continuar] -> martes_cliffhanger
 
 === fragmento_elena_martes ===
 
@@ -263,7 +263,7 @@ Sabe que solo juntos se sale.
 Apaga la radio.
 Mañana hay que estar atentos.
 
-* [Continuar] -> miercoles_amanecer
+* [Continuar] -> martes_cliffhanger
 
 === fragmento_diego_martes ===
 
@@ -281,7 +281,7 @@ En todo lo que dejó para venir acá.
 
 No puede perder esto también.
 
-* [Continuar] -> miercoles_amanecer
+* [Continuar] -> martes_cliffhanger
 
 === fragmento_marcos_martes ===
 
@@ -300,4 +300,17 @@ Ahora solo funciona.
 Mañana será igual.
 Siempre es igual.
 
-* [Continuar] -> miercoles_amanecer
+* [Continuar] -> martes_cliffhanger
+
+=== martes_cliffhanger ===
+
+El celular vibra.
+
+Es de RRHH.
+
+"Confirmamos reunión mañana 11 AM. Sala 3."
+
+No dice más.
+Pero sabés que no es bueno.
+
+* [Intentar dormir] -> miercoles_amanecer

@@ -371,7 +371,7 @@ Es más fácil no ir.
 
 Mañana es otro día igual.
 
-* [Continuar] -> viernes_amanecer
+* [Continuar] -> jueves_cliffhanger
 
 === fragmento_sofia_jueves ===
 
@@ -385,7 +385,7 @@ Mañana es otro día igual.
 
 Mañana hay que buscar soluciones.
 
-* [Continuar] -> viernes_amanecer
+* [Continuar] -> jueves_cliffhanger
 
 === fragmento_elena_jueves ===
 
@@ -394,7 +394,7 @@ Mañana hay que buscar soluciones.
 // Fragmento nocturno de Elena
 -> elena_fragmento_noche ->
 
-* [Continuar] -> viernes_amanecer
+* [Continuar] -> jueves_cliffhanger
 
 === fragmento_diego_jueves ===
 
@@ -403,7 +403,7 @@ Mañana hay que buscar soluciones.
 // Fragmento nocturno de Diego
 -> diego_fragmento_noche ->
 
-* [Continuar] -> viernes_amanecer
+* [Continuar] -> jueves_cliffhanger
 
 === fragmento_olla_jueves ===
 
@@ -413,4 +413,22 @@ Mañana hay que buscar soluciones.
 El barrio duerme.
 Los problemas no.
 
-* [Continuar] -> viernes_amanecer
+* [Continuar] -> jueves_cliffhanger
+
+=== jueves_cliffhanger ===
+
+{conte_a_alguien && vinculo != "marcos":
+    El celular vibra.
+
+    {vinculo == "sofia":
+        Sofía: "Mañana necesito hablar. Es sobre la olla. Urgente."
+    }
+    {vinculo == "elena":
+        Elena: "Mañana te llamo temprano. Hay algo."
+    }
+    {vinculo == "diego":
+        Diego: "Che, mañana te busco. Tengo una idea."
+    }
+}
+
+* [Dormir] -> viernes_amanecer

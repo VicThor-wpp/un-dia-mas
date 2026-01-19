@@ -52,13 +52,13 @@
 -> laburo_manana ->
 
 // Encuentro con Juan
--> renzo_saludo_manana ->
+-> juan_saludo_manana ->
 
 // Trabajo de la mañana
 -> laburo_trabajo_rutina ->
 
 // Verificar si hay escena adicional con Juan
-{hable_con_renzo_sobre_rumores:
+{hable_con_juan_sobre_rumores:
     -> lunes_pre_almuerzo_decision
 - else:
     -> lunes_almuerzo
@@ -71,7 +71,7 @@
 * [Seguir laburando]
     -> lunes_almuerzo
 * [Preguntarle a Juan] # STAT:conexion # EFECTO:conexion+
-    -> renzo_preguntar_sobre_jefe ->
+    -> juan_preguntar_sobre_jefe ->
     -> lunes_almuerzo
 * {energia >= 2} [Hablar con el jefe] # COSTO:1 # DADOS:dignidad # EFECTO:dignidad?
     -> laburo_hablar_con_jefe ->
@@ -85,7 +85,7 @@
 Hora de comer.
 
 * [Almorzar con Juan] # EFECTO:conexion+
-    -> renzo_almuerzo ->
+    -> juan_almuerzo ->
     -> lunes_tarde
 * [Almorzar solo] # EFECTO:conexion-
     -> laburo_almuerzo_solo ->
@@ -108,7 +108,7 @@ A las 4, el jefe llama a una reunión.
 
 -> laburo_reunion_general ->
 
--> renzo_post_reunion ->
+-> juan_post_reunion ->
 
 // Si fueron al bar, ya se despidieron ahí - ir directo al bondi
 {fue_al_bar_con_juan:
@@ -259,14 +259,14 @@ Sofía está adentro.
 
 # MIENTRAS DORMÍS
 
--> renzo_fragmento_noche ->
+-> juan_fragmento_noche ->
 
 // Fragmento del vínculo
 {vinculo == "sofia": -> fragmento_sofia_lunes}
 {vinculo == "elena": -> fragmento_elena_lunes}
 {vinculo == "diego": -> fragmento_diego_lunes}
 {vinculo == "marcos": -> fragmento_marcos_lunes}
--> martes_amanecer
+-> lunes_cliffhanger
 
 === fragmento_sofia_lunes ===
 
@@ -277,7 +277,7 @@ Hace tres meses que no cierran.
 
 Mañana hay que seguir.
 
-* [Continuar] -> martes_amanecer
+* [Continuar] -> lunes_cliffhanger
 
 === fragmento_elena_lunes ===
 
@@ -288,7 +288,7 @@ La radio dice cosas.
 
 Apaga la radio.
 
-* [Continuar] -> martes_amanecer
+* [Continuar] -> lunes_cliffhanger
 
 === fragmento_diego_lunes ===
 
@@ -298,7 +298,7 @@ Piensa en su madre.
 En Venezuela.
 En todo lo que dejó.
 
-* [Continuar] -> martes_amanecer
+* [Continuar] -> lunes_cliffhanger
 
 === fragmento_marcos_lunes ===
 
@@ -308,4 +308,16 @@ Como siempre.
 No es felicidad.
 Es funcionar.
 
-* [Continuar] -> martes_amanecer
+* [Continuar] -> lunes_cliffhanger
+
+=== lunes_cliffhanger ===
+
+El celular vibra.
+
+Un mensaje de grupo del laburo.
+
+"Mañana reunión de área. Obligatoria."
+
+No dice más.
+
+* [Dormir inquieto] -> martes_amanecer
