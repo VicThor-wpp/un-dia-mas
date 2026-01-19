@@ -110,30 +110,10 @@ const StatsPanel = (function() {
     }
 
     /**
-     * Create mini bar for stats (dots for small ranges, compact bar for larger)
+     * Create stat display with number
      */
-    function createMiniBar(value, max, color) {
-        const filled = Math.min(value, max);
-
-        // For small ranges (≤5), use dots
-        if (max <= 5) {
-            let dots = '';
-            for (let i = 0; i < max; i++) {
-                dots += i < filled
-                    ? `<span class="dot filled" style="background:${color}"></span>`
-                    : `<span class="dot empty"></span>`;
-            }
-            return `<span class="mini-bar">${dots}</span>`;
-        }
-
-        // For larger ranges, use compact bar with number
-        const percent = (value / max) * 100;
-        return `
-            <span class="compact-bar">
-                <span class="compact-bar-fill" style="width:${percent}%;background:${color}"></span>
-            </span>
-            <span class="stat-num-small">${value}</span>
-        `;
+    function createStatDisplay(value, max, color) {
+        return `<span class="stat-num" style="color:${color}">${value}/${max}</span>`;
     }
 
     /**
@@ -192,23 +172,23 @@ const StatsPanel = (function() {
                 <div class="stats-section">
                     <div class="stat-item" title="Energía: acciones disponibles hoy">
                         ${iconHTML('zap', 14)}
-                        ${createMiniBar(energia, energiaMax, '#ffc107')}
+                        ${createStatDisplay(energia, energiaMax, '#ffc107')}
                     </div>
                     <div class="stat-item" title="Conexión: lazos con el barrio">
                         ${iconHTML('users', 14)}
-                        ${createMiniBar(conexion, conexionMax, '#4caf50')}
+                        ${createStatDisplay(conexion, conexionMax, '#4caf50')}
                     </div>
                     <div class="stat-item stat-llama" title="La Llama: esperanza colectiva">
                         ${iconHTML('flame', 14)}
-                        ${createMiniBar(llama, llamaMax, '#ff6b35')}
+                        ${createStatDisplay(llama, llamaMax, '#ff6b35')}
                     </div>
                     <div class="stat-item" title="Dignidad: respeto propio">
                         ${iconHTML('shield', 14)}
-                        ${createMiniBar(dignidad, dignidadMax, '#2196f3')}
+                        ${createStatDisplay(dignidad, dignidadMax, '#2196f3')}
                     </div>
                     <div class="stat-item stat-salud" title="Salud Mental: bienestar psicológico">
                         ${iconHTML('heart-pulse', 14)}
-                        ${createMiniBar(saludMental, 5, '#4fc3f7')}
+                        ${createStatDisplay(saludMental, 5, '#4fc3f7')}
                     </div>
                 </div>
 
@@ -292,6 +272,11 @@ const StatsPanel = (function() {
                         </div>
                     </section>
                     ` : ''}
+
+                    <section class="info-section">
+                        <h3>${iconHTML('scroll', 16)} Registro de Eventos</h3>
+                        <div id="decisionLogContainer" class="decision-log-container"></div>
+                    </section>
                 </div>
             </div>
         `;
@@ -302,6 +287,12 @@ const StatsPanel = (function() {
         const relGrid = modal.querySelector('#relGrid');
         if (typeof RelationshipsPanel !== 'undefined') {
             relGrid.innerHTML = RelationshipsPanel.renderAll();
+        }
+
+        // Fill decision log
+        const logContainer = modal.querySelector('#decisionLogContainer');
+        if (logContainer && typeof DecisionLog !== 'undefined') {
+            logContainer.innerHTML = DecisionLog.renderHTML();
         }
 
         refreshIcons();

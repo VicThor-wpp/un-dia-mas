@@ -102,6 +102,11 @@ const GameEngine = (function() {
             if (currentTirada !== previousDice.ultima_tirada && currentTirada !== 0) {
                 const diceData = { roll: currentTirada, result: currentResultado };
 
+                // Log the dice roll
+                if (typeof DecisionLog !== 'undefined') {
+                    DecisionLog.logDice(currentTirada, currentResultado);
+                }
+
                 previousDice = {
                     ultima_tirada: currentTirada,
                     ultimo_resultado: currentResultado
@@ -178,6 +183,10 @@ const GameEngine = (function() {
 
                 if (diff !== 0) {
                     NotificationSystem.showStatChange(statId, diff);
+                    // Log the stat change
+                    if (typeof DecisionLog !== 'undefined') {
+                        DecisionLog.logStatChange(statId, previous, current);
+                    }
                 }
             }
         } catch (e) {
@@ -370,6 +379,12 @@ const GameEngine = (function() {
         if (!button) return;
 
         const choiceIndex = parseInt(button.dataset.choiceIndex, 10);
+
+        // Log the choice before making it
+        if (typeof DecisionLog !== 'undefined' && story.currentChoices[choiceIndex]) {
+            DecisionLog.logChoice(story.currentChoices[choiceIndex].text);
+        }
+
         story.ChooseChoiceIndex(choiceIndex);
         continueStory();
     }

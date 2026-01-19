@@ -730,6 +730,80 @@ h2 {
     font-size: 14px;
 }
 
+/* Decision Log */
+.decision-log-container {
+    max-height: 250px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.decision-log {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.log-day {
+    margin-bottom: 12px;
+}
+
+.log-day h4 {
+    font-size: 11px;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    opacity: 0.8;
+}
+
+.log-entry {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 10px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 4px;
+    font-size: 12px;
+    border-left: 2px solid transparent;
+}
+
+.log-entry.log-success,
+.log-entry.log-positive { border-left-color: var(--success); }
+.log-entry.log-fail,
+.log-entry.log-negative { border-left-color: var(--danger); }
+.log-entry.log-neutral { border-left-color: var(--text-muted); }
+
+.log-dice .log-value {
+    font-weight: bold;
+    font-size: 14px;
+    min-width: 20px;
+}
+
+.log-stat .log-change {
+    font-weight: bold;
+}
+
+.log-stat .log-values {
+    color: var(--text-muted);
+    font-size: 11px;
+}
+
+.log-choice {
+    border-left-color: var(--info);
+}
+
+.log-choice .log-text {
+    font-style: italic;
+    color: var(--text-muted);
+}
+
+.log-empty {
+    color: var(--text-muted);
+    font-style: italic;
+    text-align: center;
+    padding: 20px;
+}
+
 .profile-list strong {
     color: var(--text-muted);
 }
