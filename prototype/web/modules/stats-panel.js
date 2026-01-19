@@ -155,6 +155,7 @@ const StatsPanel = (function() {
         const llamaMax = ConfigManager.getStat('llama')?.max || 10;
         const dignidad = getStatValue('dignidad');
         const dignidadMax = ConfigManager.getStat('dignidad')?.max || 10;
+        const trauma = getStatValue('trauma');
 
         // Get thresholds
         const indicators = getActiveIndicators();
@@ -186,6 +187,10 @@ const StatsPanel = (function() {
                     <div class="stat-item" title="Dignidad: respeto propio">
                         ${iconHTML('shield', 14)}
                         <span class="stat-num">${dignidad}</span>
+                    </div>
+                    <div class="stat-item stat-trauma" title="Trauma: heridas acumuladas">
+                        ${iconHTML('brain', 14)}
+                        <span class="stat-num">${trauma}</span>
                     </div>
                 </div>
 

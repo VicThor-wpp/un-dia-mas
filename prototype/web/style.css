@@ -103,6 +103,10 @@ body {
     color: var(--accent);
 }
 
+.stat-item.stat-trauma {
+    color: #b388ff;
+}
+
 .stat-num {
     font-weight: bold;
     min-width: 20px;

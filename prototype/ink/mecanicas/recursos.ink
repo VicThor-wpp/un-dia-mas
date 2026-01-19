@@ -21,7 +21,8 @@ VAR llama = 3
 VAR acumulacion = 0
 
 // TRAUMA: Se acumula, nunca baja (0-10)
-VAR trauma = 0
+// Empezamos en 2 porque nadie llega a los 30 sin un poco de trauma
+VAR trauma = 2
 
 // --- SITUACIÓN MATERIAL ---
 
