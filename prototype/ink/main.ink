@@ -183,13 +183,6 @@ En el barrio hay gente. Pero con alguien tenés algo más.
     No sabés si merecés esa confianza.
     -> confirmar_inicio
 
-* [Marcos. El que se alejó.]
-    ~ vinculo = "marcos"
-    Antes eran cercanos. Antes de que él se quemara.
-    Ahora se cruzan y es raro.
-    Hay algo ahí que ninguno termina de cerrar.
-    -> confirmar_inicio
-
 === confirmar_inicio ===
 
 # LISTO
@@ -209,7 +202,7 @@ En el barrio hay gente. Pero con alguien tenés algo más.
 {posicion == "esperanzado": Todavía creés. Pero.}
 {posicion == "ambiguo": No sabés qué creés.}
 
-Tu historia está con {vinculo == "sofia": Sofía}{vinculo == "elena": Elena}{vinculo == "diego": Diego}{vinculo == "marcos": Marcos}.
+Tu historia está con {vinculo == "sofia": Sofía}{vinculo == "elena": Elena}{vinculo == "diego": Diego}.
 
 La semana empieza.
 Todavía no sabés lo que viene.

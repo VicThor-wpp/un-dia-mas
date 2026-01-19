@@ -94,7 +94,7 @@ VAR yulimar_estado = "trabajando"     // trabajando, ayudando
 VAR perdida = ""      // familiar, relacion, futuro, vacio
 VAR atadura = ""      // responsabilidad, barrio, inercia, algo
 VAR posicion = ""     // ajeno, quemado, esperanzado, ambiguo
-VAR vinculo = ""      // sofia, elena, diego, marcos
+VAR vinculo = ""      // sofia, elena, diego
 
 // --- TRACKING DE EVENTOS ---
 
