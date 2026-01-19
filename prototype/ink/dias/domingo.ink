@@ -5,7 +5,7 @@
 // ============================================
 
 // Tunnels usados de otros modulos:
-// - escenas/barrio.ink: barrio_domingo, barrio_grupo_olla
+// - ubicaciones/barrio.ink: barrio_domingo, barrio_grupo_olla
 // - personajes/sofia.ink: sofia_llamar, sofia_conversacion_telefono
 // - personajes/elena.ink: elena_llamar, elena_conversacion_telefono
 // - personajes/diego.ink: diego_llamar, diego_conversacion_telefono
@@ -187,6 +187,9 @@ Pero tampoco te llaman.
 {vinculo == "elena": -> domingo_llamar_elena}
 {vinculo == "diego": -> domingo_llamar_diego}
 {vinculo == "marcos": -> domingo_llamar_marcos}
+
+// Fallback (should never reach)
+-> domingo_tarde
 
 === domingo_llamar_sofia ===
 
