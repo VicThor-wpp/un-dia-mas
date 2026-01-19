@@ -151,6 +151,7 @@ Silencio.
 
 * [Proponer una colecta rápida] # EFECTO:dignidad+ # EFECTO:llama+ -> viernes_colecta
 * [Proponer pedir a vecinos] # EFECTO:dignidad+ # EFECTO:llama+ -> viernes_vecinos
+* [Proponer cancelar por hoy] # EFECTO:llama- # EFECTO:dignidad+ -> viernes_cancelar_olla
 * [Quedarte callado, escuchar] -> viernes_escuchar
 
 === viernes_escuchar ===
@@ -201,6 +202,74 @@ Sofía lo piensa.
 ~ idea_hay_cosas_juntos = true
 
 -> viernes_plan
+
+=== viernes_cancelar_olla ===
+
+"Capaz que... capaz que hoy no."
+
+Silencio.
+
+Sofía te mira.
+
+"¿Cancelar?"
+
+"No podemos dar lo que no tenemos. Mejor cerrar hoy que... que improvisar mal."
+
+~ bajar_llama(2)
+~ subir_dignidad(1)
+~ vos_propusiste_cerrar = true
+
+Elena suspira.
+"Tiene razón. Una vez cerramos en el 2002. Fue un día. Volvimos al otro."
+
+Sofía se sienta.
+Tiene la cara de alguien que no durmió.
+
+"Okay. Cerramos."
+
+~ olla_cerro_viernes = true
+
+Diego no dice nada.
+Nadie dice nada.
+
+El silencio pesa.
+
+* [Quedarte con ellos] -> viernes_quedarse_cerrado
+* [Irte] -> viernes_irte_cerrado
+
+=== viernes_quedarse_cerrado ===
+
+Te quedás.
+No hay mucho que hacer.
+Pero te quedás.
+
+Sofía hace café.
+Elena mira por la ventana.
+Diego ordena sillas vacías.
+
+Es raro estar acá cuando no hay comida.
+Cuando no hay gente.
+
+Pero estás.
+
+~ subir_conexion(1)
+
+* [Pasar la tarde] -> viernes_noche
+
+=== viernes_irte_cerrado ===
+
+Te vas.
+No hay nada que hacer acá.
+
+Caminás por el barrio.
+Pasás por la plaza.
+El tipo del banco sigue ahí.
+
+Hoy no hay olla.
+Mañana capaz que sí.
+Capaz que no.
+
+* [Ir a casa] -> viernes_noche
 
 === viernes_plan ===
 

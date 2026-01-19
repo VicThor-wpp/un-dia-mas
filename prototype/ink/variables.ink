@@ -1,5 +1,5 @@
 // ============================================
-// VARIABLES GLOBALES - LA LLAMA
+// VARIABLES GLOBALES - UN DÍA MÁS
 // Todas las variables del juego consolidadas
 // ============================================
 
@@ -23,6 +23,8 @@ VAR ayude_en_olla = false
 VAR veces_que_ayude = 0
 VAR conozco_a_marta = false
 VAR participe_asamblea = false
+VAR olla_cerro_viernes = false
+VAR vos_propusiste_cerrar = false
 
 // --- ESTADO DEL BARRIO ---
 
@@ -66,27 +68,26 @@ VAR diego_viene_a_olla = false
 VAR marcos_estado = "aislado"         // aislado, mirando, reconectando, ausente
 VAR marcos_relacion = 1               // 0-5
 VAR marcos_secreto = false            // Si sabemos que también lo echaron
-VAR marcos_me_conto_historia = false
 VAR marcos_vino_a_asamblea = false
 VAR hable_con_marcos_profundo = false
 VAR marcos_era_militante = false
 VAR intente_contactar_marcos = false
 
-// --- ESTADO DE RENZO ---
+// --- ESTADO DE JUAN ---
+// Compañero de trabajo - el que comparte tu situación de unipersonal
 
-VAR renzo_estado = "compañero"        // compañero, distante, despedido, perdido
-VAR renzo_relacion = 3                // 0-5
+VAR juan_estado = "compañero"        // compañero, distante, despedido, perdido
+VAR juan_relacion = 3                // 0-5
 VAR almorzamos_juntos = false
-VAR hable_con_renzo_sobre_rumores = false
+VAR hable_con_juan_sobre_rumores = false
 VAR fue_al_bar_con_juan = false
-VAR renzo_sabe_de_mi_despido = false
-VAR yo_se_de_renzo = false
+VAR juan_sabe_de_mi_despido = false
+VAR juan_tambien_despedido = false   // Hook viernes: si lo echaron
+VAR juan_ofrecio_changa = false      // Hook viernes: si ofreció contacto
 
 // --- OTROS NPCs ---
 
 VAR yulimar_estado = "trabajando"     // trabajando, ayudando
-VAR walter_aparecio = false
-VAR acepte_walter = false
 
 // --- ELECCIONES DEL JUGADOR ---
 
