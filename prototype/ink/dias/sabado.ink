@@ -34,7 +34,7 @@ Ahora todos los días son iguales.
 La mañana de sábado.
 El barrio más tranquilo.
 
-{trauma >= 2: La cabeza sigue dando vueltas. Tres días sin laburo y ya parece una eternidad.}
+{salud_mental <= 4: La cabeza sigue dando vueltas. Tres días sin laburo y ya parece una eternidad.}
 
 ¿Qué hacés con la mañana?
 

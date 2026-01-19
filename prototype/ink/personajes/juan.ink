@@ -234,7 +234,7 @@ Se despiden.
 
 Eso no ayuda.
 
-~ subir_trauma(1)
+~ bajar_salud_mental(1)
 
 ->->
 

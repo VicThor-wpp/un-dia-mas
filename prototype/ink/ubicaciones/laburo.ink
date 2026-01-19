@@ -40,7 +40,7 @@ Anota algo.
 
 Mierda.
 
-~ subir_trauma(1)
+~ bajar_salud_mental(1)
 
 ->->
 
@@ -80,7 +80,7 @@ Mails que podrían ser nada.
     Sigue.
 
     ¿Qué mierda fue eso?
-    ~ subir_trauma(1)
+    ~ bajar_salud_mental(1)
 }
 
 ->->
@@ -259,7 +259,7 @@ La reunión termina.
 Todos vuelven a sus puestos.
 Nadie habla.
 
-~ subir_trauma(1)
+~ bajar_salud_mental(1)
 
 ->->
 
@@ -286,7 +286,7 @@ No dicen para qué.
 
 === laburo_citacion_fin ===
 
-~ subir_trauma(1)
+~ bajar_salud_mental(1)
 
 Aunque ya sabés.
 O creés saber.
@@ -346,7 +346,7 @@ El escritorio se vacía rápido.
 ~ fui_despedido = true
 ~ tiene_laburo = false
 ~ indemnizacion = 3
-~ subir_trauma(1)
+~ bajar_salud_mental(1)
 
 ->->
 
@@ -435,6 +435,6 @@ Te mira.
 
     Salís.
     Peor que antes.
-    ~ subir_trauma(1)
+    ~ bajar_salud_mental(1)
     ->->
 }

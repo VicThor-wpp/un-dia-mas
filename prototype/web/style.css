@@ -103,8 +103,8 @@ body {
     color: var(--accent);
 }
 
-.stat-item.stat-trauma {
-    color: #b388ff;
+.stat-item.stat-salud {
+    color: #4fc3f7;
 }
 
 .stat-num {
@@ -970,11 +970,11 @@ h2 {
    THRESHOLD EFFECTS
    ========================================== */
 
-body.trauma-high {
+body.salud-baja {
     filter: saturate(0.7);
 }
 
-body.trauma-high::after {
+body.salud-baja::after {
     content: '';
     position: fixed;
     inset: 0;

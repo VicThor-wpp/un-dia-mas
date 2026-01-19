@@ -20,9 +20,9 @@ VAR llama = 3
 // ACUMULACIÓN: Complicidad con la lógica del capital (0-10, oculto)
 VAR acumulacion = 0
 
-// TRAUMA: Se acumula, nunca baja (0-10)
-// Empezamos en 2 porque nadie llega a los 30 sin un poco de trauma
-VAR trauma = 2
+// SALUD MENTAL: Baja con eventos difíciles (0-5)
+// Empezamos en 5, va bajando con el estrés
+VAR salud_mental = 5
 
 // --- SITUACIÓN MATERIAL ---
 
@@ -84,8 +84,9 @@ VAR dia_actual = 1
 === function subir_acumulacion(cantidad) ===
     ~ ajustar(acumulacion, cantidad, 0, 10)
 
-=== function subir_trauma(cantidad) ===
-    ~ ajustar(trauma, cantidad, 0, 10)
+=== function bajar_salud_mental(cantidad) ===
+    ~ salud_mental = salud_mental - cantidad
+    ~ salud_mental = (salud_mental < 0) ? 0 : salud_mental
 
 // --- CHEQUEOS DE ESTADO ---
 
@@ -101,8 +102,8 @@ VAR dia_actual = 1
 === function esta_aislado() ===
     ~ return conexion <= 3
 
-=== function esta_traumatizado() ===
-    ~ return trauma >= 4
+=== function salud_mental_baja() ===
+    ~ return salud_mental <= 2
 
 === function llama_viva() ===
     ~ return llama >= 5

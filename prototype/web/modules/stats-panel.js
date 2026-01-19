@@ -96,7 +96,7 @@ const StatsPanel = (function() {
      * Apply threshold effects to body
      */
     function applyThresholdEffects() {
-        document.body.classList.remove('trauma-high', 'llama-low', 'conexion-low');
+        document.body.classList.remove('salud-baja', 'llama-low', 'conexion-low');
         getActiveIndicators().forEach(ind => {
             if (ind.class) document.body.classList.add(ind.class);
         });
@@ -155,7 +155,7 @@ const StatsPanel = (function() {
         const llamaMax = ConfigManager.getStat('llama')?.max || 10;
         const dignidad = getStatValue('dignidad');
         const dignidadMax = ConfigManager.getStat('dignidad')?.max || 10;
-        const trauma = getStatValue('trauma');
+        const saludMental = getStatValue('salud_mental');
 
         // Get thresholds
         const indicators = getActiveIndicators();
@@ -188,9 +188,9 @@ const StatsPanel = (function() {
                         ${iconHTML('shield', 14)}
                         <span class="stat-num">${dignidad}</span>
                     </div>
-                    <div class="stat-item stat-trauma" title="Trauma: heridas acumuladas">
-                        ${iconHTML('brain', 14)}
-                        <span class="stat-num">${trauma}</span>
+                    <div class="stat-item stat-salud" title="Salud Mental: bienestar psicológico">
+                        ${iconHTML('heart-pulse', 14)}
+                        <span class="stat-num">${saludMental}</span>
                     </div>
                 </div>
 
@@ -227,7 +227,6 @@ const StatsPanel = (function() {
         const atadura = story?.variablesState['atadura'] || '';
         const posicion = story?.variablesState['posicion'] || '';
         const vinculo = story?.variablesState['vinculo'] || '';
-        const trauma = getStatValue('trauma');
 
         const modal = document.createElement('div');
         modal.className = 'modal-overlay';
@@ -252,7 +251,7 @@ const StatsPanel = (function() {
                             ${renderFullStat('conexion')}
                             ${renderFullStat('dignidad')}
                             ${renderFullStat('llama')}
-                            ${trauma > 0 ? renderFullStat('trauma') : ''}
+                            ${renderFullStat('salud_mental')}
                         </div>
                     </section>
 

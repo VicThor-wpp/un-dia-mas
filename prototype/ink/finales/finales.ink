@@ -154,8 +154,8 @@ El cuerpo.
 La cabeza.
 Todo.
 
-{trauma >= 5:
-    El trauma se acumuló.
+{salud_mental <= 1:
+    La salud mental se desgastó.
     No es una cosa.
     Son muchas.
     El despido.

@@ -58,7 +58,7 @@ Pensás.
 La semana que pasó.
 Lo que viene.
 
-{trauma >= 2:
+{salud_mental <= 4:
     La cabeza no para.
     ¿Quién sos ahora?
     ¿Qué hacés?
@@ -228,7 +228,7 @@ Por ahora.
     -> final_walter
 }
 
-{trauma >= 4 && conexion <= 4:
+{salud_mental <= 2 && conexion <= 4:
     -> final_gris
 }
 

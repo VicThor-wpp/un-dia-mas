@@ -535,7 +535,7 @@ Pasás de largo.
     "¡¿Qué mirás?!"
     "Nada."
     Seguís caminando.
-    ~ subir_trauma(1)
+    ~ bajar_salud_mental(1)
 }
 
 ->->

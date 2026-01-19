@@ -11,7 +11,7 @@ VAR idea_pedir_no_debilidad = false // "Pedir ayuda no es debilidad"
 VAR idea_hay_cosas_juntos = false   // "Hay cosas que se hacen juntos"
 VAR idea_red_o_nada = false         // "La red o la nada" (de Elena)
 
-// Ideas involuntarias (aparecen por trauma o eventos)
+// Ideas involuntarias (aparecen por estrés o eventos)
 VAR idea_quien_soy = false          // "¿Quién soy sin laburo?"
 VAR idea_esto_es_lo_que_hay = false // "Esto es lo que hay"
 

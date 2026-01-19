@@ -98,7 +98,7 @@ El techo.
 El silencio.
 Los pensamientos.
 
-{trauma >= 2:
+{salud_mental <= 4:
     ¿Quién sos ahora?
     ¿Qué hacés?
     ¿Para qué te levantás?
@@ -351,7 +351,7 @@ No hablás con nadie.
 Es fácil quedarse.
 Demasiado fácil.
 
-{trauma >= 2:
+{salud_mental <= 4:
     Los pensamientos vienen solos.
     ¿Para qué?
     ¿Quién sos?
