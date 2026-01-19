@@ -38,7 +38,9 @@ La disciplina del cuerpo que ya no pregunta.
 {tiene_laburo: Años de lo mismo. El cuerpo sabe.}
 {not tiene_laburo: El cuerpo todavía no sabe que ya no hace falta.}
 
--> casa_mate
+~ pequenas_victorias += 1
+
+-> casa_banarse
 
 === casa_cinco_mas ===
 
@@ -63,7 +65,7 @@ Son diez.
 {not tiene_laburo:
     No importa.
     No hay a dónde llegar.
-    * [Levantarte] -> casa_mate
+    * [Levantarte] -> casa_banarse
 }
 
 === casa_quedarse ===
@@ -106,7 +108,40 @@ Los pensamientos.
 
 Eventualmente, el cuerpo pide moverse.
 
-* [Levantarte] -> casa_mate
+* [Levantarte] -> casa_banarse
+
+=== casa_banarse ===
+
+* [Bañarte]
+    -> casa_ducha
+* [Lavarte la cara y salir] # COSTO:1
+    -> casa_lavarse
+
+=== casa_ducha ===
+
+Te bañás.
+El agua caliente.
+Unos minutos de paz.
+
+{tiene_laburo: El cuerpo despierta.}
+{not tiene_laburo: No hay apuro. Podés tomarte tu tiempo.}
+
+Te secás.
+Te vestís.
+
+~ pequenas_victorias += 1
+
+-> casa_mate
+
+=== casa_lavarse ===
+
+Un lavado de cara.
+Salís rápido.
+
+{tiene_laburo: Estás apurado.}
+{not tiene_laburo: No tenés ganas de nada elaborado.}
+
+-> casa_mate
 
 === casa_mate ===
 
@@ -223,6 +258,8 @@ Mientras cocinás, pensás.
 
 Comés.
 No está mal.
+
+~ pequenas_victorias += 1
 
 -> casa_noche_final
 

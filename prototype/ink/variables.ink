@@ -101,3 +101,4 @@ VAR vinculo = ""      // sofia, elena, diego, marcos
 VAR fui_despedido = false
 VAR conte_a_alguien = false
 VAR fui_a_olla_jueves = false
+VAR pequenas_victorias = 0

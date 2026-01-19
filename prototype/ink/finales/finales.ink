@@ -52,6 +52,18 @@ Los tres meses empiezan.
 No sabés qué viene.
 Pero sabés con quién vas.
 
+{pequenas_victorias >= 8:
+    No salvaste el mundo.
+    No cambiaste el sistema.
+
+    Pero te levantaste.
+    Te bañaste.
+    Cocinaste.
+    Saliste.
+
+    Eso, a veces, es todo.
+}
+
 # FIN - "Prendimos fuego"
 
 -> END
@@ -96,6 +108,18 @@ Pero no estás solo.
 Esto no termina.
 Es el principio de otra cosa.
 
+{pequenas_victorias >= 8:
+    No salvaste el mundo.
+    No cambiaste el sistema.
+
+    Pero te levantaste.
+    Te bañaste.
+    Cocinaste.
+    Saliste.
+
+    Eso, a veces, es todo.
+}
+
 # FIN
 
 -> END
@@ -132,6 +156,18 @@ Todo gris.
 
 {idea_quien_soy: ¿Quién sos sin laburo? Todavía no sabés.}
 
+{pequenas_victorias >= 8:
+    No salvaste el mundo.
+    No cambiaste el sistema.
+
+    Pero te levantaste.
+    Te bañaste.
+    Cocinaste.
+    Saliste.
+
+    Eso, a veces, es todo.
+}
+
 # FIN
 
 -> END
@@ -166,6 +202,18 @@ Es posibilidad.
     Y eso, a veces, alcanza.
 }
 
+{pequenas_victorias >= 8:
+    No salvaste el mundo.
+    No cambiaste el sistema.
+
+    Pero te levantaste.
+    Te bañaste.
+    Cocinaste.
+    Saliste.
+
+    Eso, a veces, es todo.
+}
+
 # FIN
 
 -> END
@@ -192,6 +240,18 @@ No sabés nada.
 Pero estás vivo.
 Eso es algo.
 ¿No?
+
+{pequenas_victorias >= 8:
+    No salvaste el mundo.
+    No cambiaste el sistema.
+
+    Pero te levantaste.
+    Te bañaste.
+    Cocinaste.
+    Saliste.
+
+    Eso, a veces, es todo.
+}
 
 # FIN
 
@@ -232,6 +292,18 @@ Hasta que algo cambie.
 O no.
 
 {idea_esto_es_lo_que_hay: Esto es lo que hay. Por ahora.}
+
+{pequenas_victorias >= 8:
+    No salvaste el mundo.
+    No cambiaste el sistema.
+
+    Pero te levantaste.
+    Te bañaste.
+    Cocinaste.
+    Saliste.
+
+    Eso, a veces, es todo.
+}
 
 # FIN
 
