@@ -1,0 +1,347 @@
+═══════════════════════════════════════════════════════════════════════════════
+                            UN DÍA MÁS - QUICK REFERENCE
+                              Narrative Structure at a Glance
+═══════════════════════════════════════════════════════════════════════════════
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                              WEEK STRUCTURE                                  │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+    LUNES        MARTES      MIÉRCOLES     JUEVES       VIERNES      SÁBADO      DOMINGO
+  ══════════   ══════════   ═══════════   ══════════   ══════════   ══════════   ═══════
+  Trabajo      Tensión      💥 DESPIDO    Sin          Crisis       Asamblea     Final
+  Normal       Crece        11:00 AM      Trabajo      Olla         Colectiva    Evalúa
+
+  ├─Almuerzo   ├─Buscar     ├─Casa sola   ├─Olla?      ├─Ayudar?    ├─Marcos?    ├─Reflexión
+  ├─Barrio?    │ vínculo    ├─Caminar     ├─Buscar?    ├─Proponer   ├─Ir?        └─→ FINALES
+  └─Olla?      └─RRHH       └─Barrio      └─Casa       └─Colecta    └─Proponer
+
+  Energía: 4   Energía: 4   Energía: 3    Energía: 3   Energía: 4   Energía: 4   Energía: 5
+
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                            CRITICAL DECISIONS                                │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+  🔴 MIÉRCOLES POST-DESPIDO (Most Important)
+     ├─ Casa sola → conte_a_alguien = false → Aislamiento
+     ├─ Caminar → Contemplación
+     └─ Barrio + Contar a Sofía → conte_a_alguien = true → +2 conexion ✓
+
+  🔴 JUEVES: AYUDAR EN OLLA (Gates LA RED ending)
+     ├─ SÍ AYUDAR → ayude_en_olla = TRUE → +2 conexion, +1 llama ✓
+     └─ NO AYUDAR → ayude_en_olla = FALSE → 🚫 BLOQUEA FINAL LA RED
+
+  🔴 VIERNES: CRISIS OLLA
+     ├─ Ayudar colecta/vecinos → +conexion, +llama, veces_que_ayude++
+     └─ No ayudar → -conexion, olla sufre
+
+  🔴 SÁBADO: LLAMAR MARCOS (Única oportunidad)
+     ├─ Llamar → 💥 Revela: "Me echaron" → Invitar asamblea
+     └─ No llamar → Pierdes única chance de reconexión
+
+  🔴 SÁBADO: ASAMBLEA
+     ├─ No ir → -2 conexion, -1 llama → 🚫 BLOQUEA LA RED y QUIZÁS
+     ├─ Ir + Escuchar → neutral
+     └─ Ir + Proponer → +dignidad, +llama ✓
+
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                                 ENDINGS                                      │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+  ⭐ LA RED (Best)
+     ├─ conexion >= 7
+     ├─ llama >= 5
+     └─ ayude_en_olla = TRUE
+     Result: "No estás solo. Sofía te espera. Hay una red."
+
+  💀 SOLO (Worst)
+     ├─ conexion <= 3
+     └─ llama <= 2
+     Result: "La semana pasó. No hablaste con nadie. Como antes, como siempre."
+
+  🌫️ GRIS (Burnout)
+     ├─ salud_mental <= 2
+     └─ conexion <= 4
+     Result: "Todo pesa. Un día más. Otro más. Y otro."
+
+  ✨ QUIZÁS (Hope)
+     └─ conexion >= 5 (but not LA RED requirements)
+     Result: "La semana cambió cosas. Ya no estás tan solo. Quizás."
+
+  ❓ INCIERTO (Ambiguous)
+     └─ Default fallback
+     Result: "Hiciste... algo. Estás vivo. Eso es algo. ¿No?"
+
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                              KEY VARIABLES                                   │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+  CRITICAL (Affect Endings)
+  ─────────────────────────
+  ayude_en_olla          bool     🚫 Gates LA RED if false
+  conexion               0-10     🔑 Determines 4 of 5 endings
+  llama                  0-10     🔑 Community hope, affects endings
+  salud_mental           0-5      🔑 Triggers GRIS if <= 2
+  conte_a_alguien        bool     Affects whole week
+
+  GAMEPLAY
+  ────────
+  dia_actual             1-7      Current day
+  tiene_laburo           bool     false after Wed 11 AM
+  energia                0-5      Actions per day
+  dignidad               0-10     Self-worth
+  vinculo                string   sofia/elena/diego/marcos
+
+  TRACKING
+  ────────
+  fui_a_olla_jueves      bool     First olla visit
+  olla_en_crisis         bool     Know about crisis
+  participe_asamblea     bool     Assembly attendance
+  veces_que_ayude        int      Help counter
+
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                                  IDEAS                                       │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+  💡 idea_tengo_tiempo              Unlock: Jueves ayudar olla
+     "Ahora tengo tiempo para esto"
+
+  💡 idea_pedir_no_debilidad        Unlock: Jueves charla Elena
+     "Pedir ayuda no es debilidad"
+
+  💡 idea_hay_cosas_juntos          Unlock: Viernes colecta OR Sábado proponer
+     "Hay cosas que se hacen juntos"
+
+  💡 idea_red_o_nada                Unlock: Miércoles llamar Elena
+     "La red o la nada"
+
+  💡 idea_quien_soy                 Trigger: Aislamiento + estrés (involuntaria)
+     "¿Quién soy sin el laburo?"
+
+  💡 idea_esto_es_lo_que_hay        Trigger: Sábado Marcos OR dificultad (involuntaria)
+     "Esto es lo que hay"
+
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                                   NPCs                                       │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+  SOFÍA (Olla Manager)
+  ───────────────────
+  relacion: 2 → 10      estado: activa/agotada/quebrando/ausente
+  Key scenes: Lunes olla, Miércoles barrio, Jueves ayudar, Viernes crisis,
+              Sábado asamblea
+  Arc: Cansada → Agradecida (if help) OR Quemada (if not)
+
+  ELENA (2002 Veteran)
+  ────────────────────
+  relacion: 2 → 10      estado: presente/cansada/enferma/memoria
+  Key scenes: Miércoles call (2002 story), Jueves casa, Viernes vecinos
+  Arc: Mentora que valida lucha, enseña "pedir no es debilidad"
+  Special: Unlock idea_red_o_nada
+
+  DIEGO (Migrant Worker)
+  ──────────────────────
+  relacion: 1 → 10      estado: luchando/agotado/desesperado/esperanzado
+  Key scenes: Lunes calle, Miércoles call, Jueves walk, Viernes colecta
+  Arc: Precariedad doble (económica + separación familiar Venezuela)
+  Special: Joins colecta if you help
+
+  MARCOS (Burned-out Militant)
+  ────────────────────────────
+  relacion: 1 → 6       estado: aislado → mirando (if reconnect)
+  Key scenes: SÁBADO ÚNICA VEZ contesta
+  Arc: Totalmente aislado L-V → Sábado reveal "Me echaron" → Puede ir asamblea
+  Special: Mirror de aislamiento, shock reveal sábado
+
+  JUAN (Coworker)
+  ───────────────
+  relacion: 3 → 7       estado: compañero/distante/despedido
+  Key scenes: Lunes-Martes trabajo, Viernes call (if relacion >= 4)
+  Arc: Compañero → Diverge (él se queda, vos no) → Posible reconexión viernes
+  Special: Representa "el que se quedó"
+
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                            RESOURCE ECONOMY                                  │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+  ENERGÍA POR DÍA
+  ───────────────
+  Lunes:      4/5  (semana normal)
+  Martes:     4/5  (tensión)
+  Miércoles:  3/5  (estrés pre-despido)
+  Jueves:     3/5  (dormiste mal)
+  Viernes:    4/5  (recuperando)
+  Sábado:     4/5  (fin de semana)
+  Domingo:    5/5  (recuperación completa)
+
+  CONEXIÓN
+  ────────
+  Start: 3
+  Gains:  Almorzar Juan +1, Visitar vínculo +1, Ayudar olla +1-2,
+          Contar verdad +2, Asamblea +1-2
+  Losses: Almorzar solo -1, Casa directo -1, Esconder -1, Saltear asamblea -2
+
+  Thresholds:
+    0-3:  Aislado → SOLO
+    4-6:  Conectado → Medios
+    7-10: Integrado → LA RED
+
+  LLAMA (Esperanza Colectiva)
+  ───────────────────────────
+  Start: 5
+  Gains:  Olla +1, Colecta exitosa +1, Asamblea +1-2
+  Losses: Olla colapsa -2, No ayudar crisis -1, Saltear asamblea -1
+
+  Thresholds:
+    0-2:  Muerta → SOLO
+    3-4:  Frágil → Medios
+    5-6:  Presente → LA RED
+    7-10: Ardiendo → Bonus en finales
+
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                           ROUTES TO ENDINGS                                  │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+  FOR LA RED ⭐
+  ────────────
+  ✓ Lunes: Comer con Juan, ir a olla
+  ✓ Martes: Buscar vínculo
+  ✓ Miércoles: Ir a barrio, contar a Sofía
+  ✓ Jueves: Ir a olla, AYUDAR (crítico)
+  ✓ Viernes: Ir temprano, AYUDAR colecta/vecinos
+  ✓ Sábado: Asistir asamblea, PROPONER
+  ✓ Domingo: Llamar vínculo, unirte grupo
+  Result: conexion 9-10, llama 7-8, ayude_en_olla=true
+
+  FOR SOLO 💀
+  ───────────
+  ✗ Lunes: Comer solo, ir directo casa
+  ✗ Martes: No buscar a nadie
+  ✗ Miércoles: Ir a casa, no llamar a nadie
+  ✗ Jueves: Quedarse en cama, no salir
+  ✗ Viernes: No ir a olla
+  ✗ Sábado: No ir a asamblea
+  ✗ Domingo: Quedarse en casa
+  Result: conexion 0-2, llama 1-2
+
+  FOR GRIS 🌫️
+  ───────────
+  ✗ Miércoles: No contar a nadie
+  ✗ Jueves: Quedarse en cama (-salud_mental)
+  ✗ Ver tele malas noticias (-salud_mental)
+  ✗ Aislamiento sostenido
+  ✓ Alguna conexión mínima (3-4)
+  Result: salud_mental 1-2, conexion 3-4
+
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                              DICE MECHANICS                                  │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+  d6() - Rolls 1-6, used for random outcomes (mostly hidden from player)
+
+  Lunes:    Bondi d6()==1 → Llegás tarde
+  Lunes:    Llamar Sofia d6()>=4 → Atiende
+  Jueves:   Tele d6()<=3 → Apagás
+  Jueves:   Pelar d6()>=4 → Elena habla
+  Viernes:  Colecta d6()>=4 → Exitosa (+llama)
+  Sábado:   Propuesta d6()>=4 → Aceptada
+
+  chequeo(mod, diff) - Returns: 2=crit, 1=success, 0=fail, -1=fumble
+  Currently minimal use in game
+
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                              FILE STRUCTURE                                  │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+  prototype/ink/
+  ├── main.ink                    Entry point, character creation
+  ├── variables.ink               ALL VAR declarations (centralized)
+  │
+  ├── dias/                       Daily routing
+  │   ├── lunes.ink              Day 1
+  │   ├── martes.ink             Day 2
+  │   ├── miercoles.ink          Day 3 (DESPIDO)
+  │   ├── jueves.ink             Day 4
+  │   ├── viernes.ink            Day 5
+  │   ├── sabado.ink             Day 6
+  │   └── domingo.ink            Day 7 → finales
+  │
+  ├── ubicaciones/               Reusable scenes by location
+  │   ├── casa.ink              Home routines
+  │   ├── bondi.ink             Bus commute
+  │   ├── laburo.ink            Work scenes (L-M only)
+  │   ├── olla.ink              Community hub (major)
+  │   └── barrio.ink            Street encounters
+  │
+  ├── personajes/               NPC interactions
+  │   ├── juan.ink             Coworker (L-M)
+  │   ├── sofia.ink            Olla manager
+  │   ├── elena.ink            2002 veteran mentor
+  │   ├── diego.ink            Migrant worker
+  │   └── marcos.ink           Burned-out militant
+  │
+  ├── mecanicas/               Game systems
+  │   ├── dados.ink           d6(), chequeo()
+  │   └── recursos.ink        subir_conexion(), gastar_energia()
+  │
+  ├── fragmentos/             Night scenes (NPC perspectives)
+  │   └── fragmentos.ink
+  │
+  └── finales/               Endings
+      └── finales.ink       5 finales + evaluación
+
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                            TESTING CHECKLIST                                 │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+  □ Final LA RED
+    - Almorzar Juan (L), Olla (L), Buscar vínculo (M)
+    - Contar a Sofía (W), AYUDAR olla (Th)
+    - AYUDAR colecta (F), Asamblea PROPONER (S)
+    - Expect: conexion >= 7, llama >= 5, ayude_en_olla = true
+
+  □ Final SOLO
+    - Comer solo (L), Casa directo (L-M)
+    - No contar a nadie (W), Quedarse casa (Th-F)
+    - No asamblea (S), Casa solo (D)
+    - Expect: conexion <= 3, llama <= 2
+
+  □ Final GRIS
+    - Aislamiento mínimo (W-Th)
+    - Quedarse en cama, malas noticias, no ayudar
+    - Expect: salud_mental <= 2, conexion <= 4
+
+  □ Marcos Complete Arc
+    - No contesta L-V
+    - Llamar S mañana → Plaza → Reveal "Me echaron"
+    - Invitar asamblea → Asistir → Marcos aparece
+    - Expect: marcos_estado = "mirando"
+
+  □ All 6 Ideas
+    - idea_red_o_nada: Miércoles llamar Elena
+    - idea_tengo_tiempo: Jueves ayudar olla
+    - idea_pedir_no_debilidad: Jueves Elena casa
+    - idea_hay_cosas_juntos: Viernes colecta OR Sábado proponer
+    - idea_quien_soy: Triggered aislamiento
+    - idea_esto_es_lo_que_hay: Sábado Marcos
+
+  □ Dice Rolls Functional
+    - Lunes bondi late (1/6 chance)
+    - Viernes colecta success (4/6 chance)
+
+
+═══════════════════════════════════════════════════════════════════════════════
+                              END QUICK REFERENCE
+                         See docs/NARRATIVE-MAP.md for full details
+                         See docs/FLOWCHARTS.md for visual diagrams
+═══════════════════════════════════════════════════════════════════════════════

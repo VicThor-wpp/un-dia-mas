@@ -15,9 +15,52 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 | `prototype/` | **Main game project** - all development happens here | ✅ YES |
 | `prototype/ink/` | Ink narrative files (story, mechanics, NPCs) | ✅ YES |
 | `prototype/web/` | Web runtime (HTML, CSS, JS for playing the game) | ✅ YES |
-| `atrament-analysis/` | **Reference only** - git clone of Atrament framework to study patterns | ❌ NO - never edit |
+| `prototype/web/modules/` | Custom modular framework (UI, saves, stats, etc.) | ✅ YES |
+| `docs/` | **Game documentation** - narrative maps, flowcharts, references | 📖 REFERENCE |
 
-The `atrament-analysis/` folder is a cloned copy of the Atrament web runtime framework. Use it to understand best practices, patterns, and implementation ideas, but **never modify files there**. All improvements should be implemented in `prototype/web/`.
+### Documentation
+
+The `docs/` folder contains comprehensive documentation of the game's narrative structure:
+
+- **[docs/README.md](docs/README.md)** - Documentation index and quick reference guide
+- **[docs/NARRATIVE-MAP.md](docs/NARRATIVE-MAP.md)** - Complete narrative structure analysis
+  - All 7 days detailed breakdown
+  - Decision trees and critical choices
+  - 5 endings with triggers
+  - NPCs arcs and relationships
+  - Resource economy (energy, conexion, llama)
+  - Ideas system (6 unlockable ideas)
+  - Variables reference
+- **[docs/FLOWCHARTS.md](docs/FLOWCHARTS.md)** - Visual Mermaid flowcharts
+  - Critical routes to endings
+  - Week timeline
+  - NPCs narrative arcs
+  - Decision impact visualization
+  - Resource flow diagrams
+
+**When to consult docs:**
+- Before modifying game structure or flow
+- When adding new NPCs or mechanics
+- To understand variable dependencies
+- For testing specific narrative paths
+- When balancing resources or endings
+
+### Web Runtime Architecture
+
+The game uses a custom modular framework built on top of Ink's official runtime:
+
+**Core Stack:**
+- `ink.js` - Official Ink runtime from Inkle Studios
+- `game.js` - Main game engine that orchestrates all modules
+- `modules/` - Custom subsystems:
+  - `config-manager.js` - Configuration loading and access
+  - `notification-system.js` - Visual notifications and feedback
+  - `decision-log.js` - Player decision history
+  - `stats-panel.js` - Stats display with threshold effects
+  - `relationships-panel.js` - NPC relationship tracking
+  - `portrait-system.js` - Character portrait display
+  - `save-system.js` - Save/load functionality
+  - `choice-parser.js` - Choice tag parsing and enhancement
 
 ## Build Commands
 
