@@ -60,31 +60,11 @@ const GameEngine = (function() {
             onLoad: handleLoad
         });
 
-        // Add save button to header
-        addSaveButton();
-
         // Save initial state
         saveCurrentState();
 
         // Start the story
         continueStory();
-    }
-
-    /**
-     * Add save button to the UI
-     */
-    function addSaveButton() {
-        const saveBtn = document.createElement('button');
-        saveBtn.className = 'btn-icon save-btn';
-        saveBtn.innerHTML = '<i data-lucide="save" style="width:18px;height:18px;"></i>';
-        saveBtn.title = 'Guardar / Cargar';
-        saveBtn.onclick = () => SaveSystem.showModal();
-
-        // Insert before status container
-        const game = document.getElementById('game');
-        game.insertBefore(saveBtn, game.firstChild);
-
-        refreshIcons();
     }
 
     /**
@@ -132,7 +112,7 @@ const GameEngine = (function() {
     }
 
     /**
-     * Show dice roll in story
+     * Show dice roll in story - prominent display
      * @param {number} roll - Dice value
      * @param {number} result - Result code
      */
@@ -140,17 +120,19 @@ const GameEngine = (function() {
         const resultInfo = ConfigManager.getDiceResult(result);
 
         const rollDiv = document.createElement('div');
-        rollDiv.className = `dice-roll ${resultInfo.class}`;
+        rollDiv.className = `dice-roll-box ${resultInfo.class}`;
         rollDiv.innerHTML = `
-            <span class="dice-icon">${iconHTML('dices', 20)}</span>
-            <span class="dice-value">${roll}</span>
+            <div class="dice-roll-inner">
+                <span class="dice-icon">${iconHTML('dices', 24)}</span>
+                <span class="dice-value">${roll}</span>
+            </div>
             <span class="dice-label">${resultInfo.label}</span>
         `;
 
         storyContainer.appendChild(rollDiv);
         refreshIcons();
 
-        // Show notification
+        // Show notification too
         NotificationSystem.showDiceRoll(roll, result);
     }
 
