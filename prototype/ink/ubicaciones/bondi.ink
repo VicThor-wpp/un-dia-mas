@@ -155,7 +155,7 @@ Pero llegás.
 
 El bondi lleno.
 Cuerpos apretados.
-Olor a gente, a perfume barato, a mañana.
+Olor a cuerpos, a sudor de madrugada, a cansancio acumulado.
 
 Conseguís un lugar donde agarrarte.
 

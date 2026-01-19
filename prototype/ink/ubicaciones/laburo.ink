@@ -104,18 +104,17 @@ Hora de comer.
 === laburo_almuerzo_acompanado ===
 
 Bajás al comedor.
-Comida de empresa.
+Sacás el tupper de la mochila.
 
-"¿Qué hay hoy?"
+Lo que trajiste de casa.
+Lo que pudiste armar anoche.
 
 ~ ultima_tirada = d6()
-{ultima_tirada <= 2: "Guiso."}
-{ultima_tirada == 3 || ultima_tirada == 4: "Milanesa con puré."}
-{ultima_tirada >= 5: "Pollo con ensalada."}
+{ultima_tirada <= 2: Arroz con huevo. Otra vez.}
+{ultima_tirada == 3 || ultima_tirada == 4: Fideos con tuco de ayer.}
+{ultima_tirada >= 5: Milanesa fría. Lujo.}
 
-"Podría ser peor."
-
-Comés con alguien.
+Te sentás con alguien.
 Hablás de cosas.
 {d6() >= 4: Por un rato, te olvidás de los problemas.|Pero los problemas siguen ahí.}
 
@@ -127,16 +126,17 @@ Hablás de cosas.
 
 Comés solo.
 En un rincón del comedor.
+El tupper sobre la mesa.
 
 A veces está bien.
 El silencio.
 No tener que hablar.
 
 Mirás a los demás.
-Todos comiendo.
+Cada uno con su vianda.
 Algunos solos, otros en grupo.
 
-¿Cuántos están pensando lo mismo que vos?
+¿Cuántos estiran la comida como vos?
 
 ->->
 
