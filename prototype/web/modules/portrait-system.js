@@ -52,15 +52,15 @@ const PortraitSystem = (function() {
      */
     function getPortraitPath(charId, expression = 'neutral') {
         const char = ConfigManager.getCharacter(charId);
-        if (!char || !char.portrait) return 'assets/portraits/placeholder.svg';
+        if (!char || !char.portrait) return 'assets/portraits/placeholder.png';
 
         // Check if expression exists for character
         if (char.expressions && char.expressions.includes(expression)) {
-            return `${char.portrait}/${expression}.svg`;
+            return `${char.portrait}/${expression}.png`;
         }
 
         // Fallback to neutral
-        return `${char.portrait}/neutral.svg`;
+        return `${char.portrait}/neutral.png`;
     }
 
     /**
@@ -84,7 +84,7 @@ const PortraitSystem = (function() {
             portrait.className = 'portrait';
             portrait.dataset.char = charId;
             portrait.innerHTML = `
-                <img src="${getPortraitPath(charId, expression)}" alt="${char.name}" onerror="this.src='assets/portraits/placeholder.svg'">
+                <img src="${getPortraitPath(charId, expression)}" alt="${char.name}" onerror="this.src='assets/portraits/placeholder.png'">
                 <span class="portrait-name" style="color: ${char.color}">${char.name}</span>
             `;
             container.appendChild(portrait);

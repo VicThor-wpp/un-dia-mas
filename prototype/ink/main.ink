@@ -211,7 +211,9 @@ En el barrio hay gente. Pero con alguien tenés algo más.
 
 Tu historia está con {vinculo == "sofia": Sofía}{vinculo == "elena": Elena}{vinculo == "diego": Diego}{vinculo == "marcos": Marcos}.
 
-La semana empieza el lunes.
+# LUNES
+
+La semana empieza.
 Todavía no sabés lo que viene.
 
 * [Empezar la semana] -> lunes_amanecer
