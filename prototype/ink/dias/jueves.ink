@@ -266,34 +266,169 @@ Son las 3 de la tarde.
 
 === jueves_elena ===
 
-// Encuentro en casa de Elena
--> elena_en_casa ->
+// Ir a buscar a Elena lleva a la olla donde está ayudando
+Buscás a Elena.
+No está en la plaza. No está en su casa.
 
-// Historia del 2002
--> elena_historia_2002 ->
+Probás en la olla.
 
-{idea_pedir_no_debilidad == false:
-    # IDEA DISPONIBLE: "PEDIR AYUDA NO ES DEBILIDAD"
+# LA OLLA
 
-    Elena lo dice como si fuera obvio.
-    Quizás lo es.
+Ahí está.
+Sentada en un banquito.
+Pelando papas.
 
-    * [Internalizar]
-        ~ idea_pedir_no_debilidad = true
-        Pedir ayuda no es debilidad.
-        Es lo que se hace.
+"Ah, m'hijo. Vos acá."
+
+* [Sentarte a pelar con ella]
+    -> jueves_charla_elena
+* [Solo saludar y mirar]
+    "Solo pasaba a saludar."
+    "Bueno. Cuando quieras, agarrá un cuchillo."
+    -> jueves_noche
+
+=== jueves_charla_elena ===
+
+~ ayude_en_olla = true
+
+Te sentás a su lado.
+Agarrás un cuchillo.
+Un balde de papas entre los dos.
+
+Estás en la cocina de la olla.
+Elena pela papas a tu lado.
+
+// Preparar el chequeo de dados
+~ temp modificador = 0
+
+{elena_relacion >= 3:
+    ~ modificador = 1
+}
+
+{escuche_sobre_2002:
+    ~ modificador = modificador + 1
+}
+
+~ temp resultado = chequeo(modificador, 4)
+
+{
+- resultado == 2:  // Crítico
+    # PORTRAIT:elena,remembering,right
+
+    Pelás en silencio un rato.
+
+    Elena para de pelar.
+    Te mira.
+
+    "Vos me hacés acordar a Raúl."
+
+    Pausa larga.
+
+    "Él también se sentaba así. Pelando. Sin decir nada.
+    Pero estando."
+
+    Se le humedecen los ojos.
+    No dice más.
+    No hace falta.
+
+    ~ elena_relacion += 2
+    ~ subir_conexion(1)
+
+    {idea_pedir_no_debilidad == false:
+        # IDEA DISPONIBLE: "PEDIR AYUDA NO ES DEBILIDAD"
+
+        Hay algo en el silencio compartido.
+        En estar sin tener que explicar.
+        En ayudar sin que te lo pidan.
+
+        * [Internalizar la idea]
+            ~ idea_pedir_no_debilidad = true
+
+            # IDEA: "PEDIR AYUDA NO ES DEBILIDAD"
+
+            Pedir ayuda no es debilidad.
+            Estar para alguien no es caridad.
+            Es lo que se hace.
+            -> jueves_elena_fin
+        * [Dejar pasar]
+            -> jueves_elena_fin
+    - else:
         -> jueves_elena_fin
-    * [Dejar pasar]
-        -> jueves_elena_fin
-- else:
+    }
+
+- resultado == 1:  // Éxito
+    # PORTRAIT:elena,wise,right
+
+    Elena te cuenta cosas.
+    De cómo era el barrio antes.
+    De los que ya no están.
+
+    -> elena_historia_2002 ->
+
+    Hay algo cómodo en el silencio compartido.
+    Las manos ocupadas. La mente quieta.
+
+    ~ elena_relacion += 1
+    ~ subir_conexion(1)
+
+    -> jueves_elena_fin
+
+- resultado == -1:  // Fumble
+    # PORTRAIT:elena,worried,right
+
+    Pelás apurado.
+    Sin concentrarte.
+
+    Te cortás el dedo con el cuchillo.
+
+    "¡Pará, pará!"
+
+    Elena deja todo.
+    Te cura con alcohol.
+    Duele.
+
+    "Despacio, pibe. Esto no es carrera."
+
+    Te venda el dedo con un trapo limpio.
+
+    Es un momento íntimo.
+    Raro. Pero íntimo.
+
+    Como si fueras su hijo.
+    Como si ella fuera tu abuela.
+
+    ~ elena_relacion += 1
+
+    -> jueves_elena_fin
+
+- else:  // Fallo normal
+    # PORTRAIT:elena,neutral,right
+
+    Pelás en silencio.
+    Elena también.
+
+    El trabajo fluye.
+    Sin palabras.
+
+    No está mal.
+    A veces el silencio es suficiente.
+
+    Las papas se acumulan.
+    El tiempo pasa.
+
+    // En el fallo normal, Elena habla del barrio
+    -> elena_hablar_barrio ->
+
     -> jueves_elena_fin
 }
 
 === jueves_elena_fin ===
 
-Te quedás un rato.
-// Elena habla del barrio
--> elena_hablar_barrio ->
+Terminás de ayudar.
+Las manos mojadas. El olor a papa.
+
+Elena asiente.
+"Gracias por la mano, m'hijo."
 
 * [Irte] -> jueves_noche
 
