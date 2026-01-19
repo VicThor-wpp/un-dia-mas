@@ -364,6 +364,110 @@ Sofía:
     "Bueno. La idea queda."
     -> sabado_asamblea_fin
 
+=== sabado_asamblea_proponer ===
+Te levantás.
+Todos te miran.
+
+~ temp modificador = 0
+{ veces_que_ayude >= 2:
+    ~ modificador = 1  // Tenés credibilidad
+}
+{ participe_asamblea:
+    ~ modificador = modificador + 1
+}
+{ sofia_relacion >= 4:
+    ~ modificador = modificador + 1
+}
+
+~ temp resultado = chequeo(modificador, 5)
+
+{
+- resultado == 2:  // Crítico
+    Las palabras salen.
+    No sabés de dónde.
+    Pero salen.
+
+    Hablás de la semana.
+    De lo que perdiste.
+    De lo que encontraste.
+
+    Cuando terminás, hay silencio.
+    Después, aplausos.
+
+    Sofía tiene lágrimas.
+
+    ~ subir_llama(2)
+    ~ subir_conexion(2)
+    ~ subir_dignidad(1)
+
+    -> asamblea_exito_total
+
+- resultado == 1:  // Éxito
+    Proponés algo.
+    Un sistema de turnos.
+    Una red de ayuda.
+    Algo.
+
+    La gente asiente.
+    No es revolución.
+    Pero es algo.
+
+    ~ subir_llama(1)
+    ~ subir_conexion(1)
+
+    -> asamblea_exito
+
+- resultado == 0:  // Fallo
+    Empezás a hablar.
+    Te trabás.
+
+    Sofía interviene, suave.
+    "Gracias. ¿Alguien más?"
+
+    Te sentás.
+    No estuvo mal.
+    Pero tampoco estuvo bien.
+
+    -> asamblea_continua
+
+- else:  // Fumble
+    Te levantás.
+    Abrís la boca.
+
+    Nada sale.
+
+    Te sentás de nuevo.
+    Nadie dice nada.
+
+    ~ bajar_dignidad(1)
+
+    -> asamblea_continua
+}
+
+=== asamblea_exito_total ===
+// Stub: Consecuencias de éxito crítico en propuesta
+
+El resto de la asamblea fluye diferente.
+Tu intervención cambió algo.
+
+-> sabado_asamblea_fin
+
+=== asamblea_exito ===
+// Stub: Consecuencias de éxito en propuesta
+
+La asamblea continúa.
+Tu idea se suma a las demás.
+
+-> sabado_asamblea_fin
+
+=== asamblea_continua ===
+// Stub: La asamblea sigue sin mayor impacto de tu intervención
+
+La asamblea sigue.
+Otras voces hablan.
+
+-> sabado_asamblea_fin
+
 === sabado_asamblea_fin ===
 
 // Cierre de la asamblea
