@@ -302,7 +302,7 @@ Es todo.
 * [Escuchar]
     -> sabado_escuchar_asamblea
 * [Proponer algo] # STAT:dignidad # STAT:llama # EFECTO:dignidad+ # EFECTO:llama+
-    -> sabado_proponer
+    -> sabado_asamblea_proponer
 
 === sabado_escuchar_asamblea ===
 
@@ -337,6 +337,9 @@ Elena sonríe.
 
 -> sabado_asamblea_fin
 
+// DEPRECATED: Replaced by sabado_asamblea_proponer (dice-based version)
+// This knot is no longer called and kept only for reference
+/*
 === sabado_proponer ===
 
 ~ subir_dignidad(1)
@@ -363,6 +366,7 @@ Sofía:
 * ["No sé si puedo."] # EFECTO:conexion-
     "Bueno. La idea queda."
     -> sabado_asamblea_fin
+*/
 
 === sabado_asamblea_proponer ===
 Te levantás.
