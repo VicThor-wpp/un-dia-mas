@@ -25,8 +25,8 @@ Tenías laburo.
 Tenías rutina.
 Tenías algo.
 
-Ahora tenés tres meses de indemnización.
-Y un montón de preguntas.
+Ahora no tenés nada. Unipersonal.
+Sin derechos. Sin colchón. Sin respuestas.
 
 * [Levantarte] -> domingo_manana
 
@@ -89,22 +89,97 @@ Salís.
 // Ambiente de domingo
 -> barrio_domingo ->
 
+-> domingo_encuentro_grupo
+
+=== domingo_encuentro_grupo ===
+
 Pasás por la olla.
-Cerrada. Domingos no abre.
+No hay reunión hoy. Pero hay gente.
 
-Pero hay gente afuera igual.
-Hablando.
-Sofía. Elena. Otros.
+{participe_asamblea && ayude_en_olla:
+    Sofía está afuera.
+    Elena toma mate en la vereda.
+    Diego ordena cosas.
+    {marcos_vino_a_asamblea: Marcos está parado lejos, pero ahí.}
 
-* [Acercarte] # EFECTO:conexion+ -> domingo_grupo
-* [Seguir de largo] # EFECTO:conexion- -> domingo_tarde
+    Te ven.
 
-=== domingo_grupo ===
+    * [Acercarte]
+        -> domingo_cierre_red
+    * [Saludar de lejos y seguir]
+        -> domingo_cierre_distante
+}
+{participe_asamblea && not ayude_en_olla:
+    Hay gente.
+    Te miran.
+    Saludan, pero...
+    Hay algo raro.
+    No sos parte. No del todo.
 
-// Grupo de la olla en el barrio
--> barrio_grupo_olla ->
+    * [Acercarte igual] -> domingo_cierre_intento
+    * [Seguir de largo] -> domingo_cierre_distante
+}
+{not participe_asamblea:
+    La olla está cerrada.
+    No hay nadie.
+    O quizás hay, pero no te ven.
+    O no te buscan.
 
--> domingo_tarde
+    * [Seguir] -> domingo_tarde
+}
+
+=== domingo_cierre_red ===
+
+Te acercás.
+
+Sofía te pasa un mate.
+Elena te hace lugar en el banco.
+Diego asiente.
+
+{marcos_vino_a_asamblea:
+    Marcos te mira desde lejos.
+    Levanta la mano.
+    Es un gesto mínimo.
+    Pero es algo.
+}
+
+Nadie dice nada importante.
+Pero están.
+Y vos estás.
+
+Esto es algo.
+
+~ subir_conexion(1)
+
+* [Quedarte un rato] -> domingo_tarde
+
+=== domingo_cierre_distante ===
+
+Saludás de lejos.
+Seguís caminando.
+
+Hay distancia.
+Elegiste que la haya.
+O la distancia te eligió.
+
+* [Seguir] -> domingo_tarde
+
+=== domingo_cierre_intento ===
+
+Te acercás.
+
+Sofía te mira.
+Elena asiente.
+Diego dice algo.
+
+Pero no estás. No del todo.
+Faltó algo. Ayudar, quizás.
+O solo estar más.
+
+No te rechazan.
+Pero tampoco te llaman.
+
+* [Quedarte un poco] -> domingo_tarde
 
 === domingo_llamar ===
 
@@ -222,10 +297,6 @@ Por ahora.
 
 {conexion <= 3 && llama <= 2:
     -> final_solo
-}
-
-{acumulacion >= 5:
-    -> final_walter
 }
 
 {salud_mental <= 2 && conexion <= 4:
