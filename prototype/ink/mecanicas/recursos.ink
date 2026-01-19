@@ -86,7 +86,9 @@ VAR dia_actual = 1
 
 === function bajar_salud_mental(cantidad) ===
     ~ salud_mental = salud_mental - cantidad
-    ~ salud_mental = (salud_mental < 0) ? 0 : salud_mental
+    {salud_mental < 0:
+        ~ salud_mental = 0
+    }
 
 // --- CHEQUEOS DE ESTADO ---
 
