@@ -152,3 +152,6 @@ VAR dia_actual = 1
 
 === function llama_apagandose() ===
     ~ return llama <= 2
+
+=== function tiene_todas_ideas() ===
+    ~ return idea_tengo_tiempo && idea_pedir_no_debilidad && idea_hay_cosas_juntos && idea_red_o_nada

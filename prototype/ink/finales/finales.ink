@@ -2,6 +2,60 @@
 // FINALES
 // ============================================
 
+=== final_la_llama ===
+
+# FINAL: LA LLAMA
+
+El lunes llega.
+
+No tenés laburo.
+Pero tenés algo que pocos tienen.
+
+La olla no solo sobrevivió.
+Creció.
+
+La asamblea no fue solo un evento.
+Fue el principio.
+
+Sofía te mira diferente ahora.
+"Sos parte del equipo."
+
+Elena te dijo: "Raúl estaría orgulloso."
+
+Diego ya no se siente tan solo.
+"Gracias por bancarme."
+
+{marcos_vino_a_asamblea:
+    Marcos volvió.
+    De a poco. Pero volvió.
+    "Capaz que hay algo," dijo ayer.
+    Capaz.
+}
+
+Y hay una llama.
+
+No es esperanza ingenua.
+No es ilusión.
+
+Es conocimiento.
+De que juntos, hay algo.
+
+El sistema no cambió.
+No va a cambiar mañana.
+Quizás nunca.
+
+Pero ustedes sí cambiaron.
+
+Y la llama no se apaga.
+
+Los tres meses empiezan.
+No sabés qué viene.
+Pero sabés con quién vas.
+
+# FIN - "Prendimos fuego"
+
+-> END
+
 === final_red ===
 
 # FINAL: LA RED
@@ -178,42 +232,6 @@ Hasta que algo cambie.
 O no.
 
 {idea_esto_es_lo_que_hay: Esto es lo que hay. Por ahora.}
-
-# FIN
-
--> END
-
-=== final_walter ===
-
-# FINAL: EL TRATO
-
-// Este final es para versiones futuras donde Walter aparece
-// Por ahora, redirect al final por defecto
-
-{acumulacion >= 5:
-    Te acordás de Walter.
-    El tipo que te ofreció algo.
-    Trabajo fácil.
-    Plata rápida.
-
-    No dijiste que sí.
-    Pero tampoco dijiste que no.
-
-    Quizás la semana que viene...
-
-    No.
-    ¿O sí?
-
-    La tentación está ahí.
-    La desesperación también.
-}
-
-Los tres meses corren.
-Y vos estás pensando en atajos.
-
-Eso dice algo.
-No es bueno.
-Pero es honesto.
 
 # FIN
 

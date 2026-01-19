@@ -294,6 +294,11 @@ Por ahora.
 // Evaluamos variables para determinar el final
 // Los finales estan definidos en finales/finales.ink
 
+// FINAL OCULTO - Requiere perfección
+{conexion >= 9 && llama >= 8 && veces_que_ayude >= 3 && participe_asamblea && marcos_vino_a_asamblea && sofia_relacion >= 4 && elena_relacion >= 4 && tiene_todas_ideas():
+    -> final_la_llama
+}
+
 {conexion >= 7 && llama >= 5 && ayude_en_olla:
     -> final_red
 }
