@@ -1,6 +1,7 @@
 # Compiled Ink
 *.json
 !package.json
+!prototype/web/config/*.json
 
 # Ink editor files
 *.ink.bak

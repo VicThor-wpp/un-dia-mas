@@ -1,0 +1,101 @@
+{
+  "stats": {
+    "energia": {
+      "label": "Energía",
+      "icon": "zap",
+      "max": 5,
+      "default": 4,
+      "color": "#ffc107",
+      "visible": true,
+      "showInHeader": true,
+      "description": "Capacidad de acción diaria. Se restaura cada mañana."
+    },
+    "conexion": {
+      "label": "Conexión",
+      "icon": "users",
+      "max": 10,
+      "default": 5,
+      "color": "#4caf50",
+      "visible": true,
+      "showInHeader": false,
+      "description": "Tu integración con el barrio y la comunidad."
+    },
+    "dignidad": {
+      "label": "Dignidad",
+      "icon": "shield",
+      "max": 10,
+      "default": 5,
+      "color": "#2196f3",
+      "visible": true,
+      "showInHeader": false,
+      "description": "Tu sentido de valor propio y respeto."
+    },
+    "llama": {
+      "label": "Llama",
+      "icon": "flame",
+      "max": 10,
+      "default": 3,
+      "color": "#ff6b35",
+      "visible": true,
+      "showInHeader": false,
+      "isSpecial": true,
+      "description": "La esperanza colectiva. No es solo tuya."
+    },
+    "trauma": {
+      "label": "Trauma",
+      "icon": "heart-crack",
+      "max": 10,
+      "default": 0,
+      "color": "#9c27b0",
+      "visible": false,
+      "showWhenPositive": true,
+      "effectsOnly": true,
+      "description": "El peso acumulado. Afecta tu percepción."
+    },
+    "acumulacion": {
+      "label": "Acumulación",
+      "icon": "trending-up",
+      "max": 10,
+      "default": 0,
+      "color": "#607d8b",
+      "visible": false,
+      "hiddenStat": true,
+      "showInFinal": true,
+      "description": "Decisiones que priorizan lo individual sobre lo colectivo."
+    }
+  },
+  "thresholds": {
+    "trauma": {
+      "high": 4,
+      "effects": {
+        "bodyClass": "trauma-high",
+        "indicator": "Traumatizado"
+      }
+    },
+    "llama": {
+      "low": 2,
+      "effects": {
+        "bodyClass": "llama-low",
+        "indicator": "Sin esperanza"
+      }
+    },
+    "conexion": {
+      "low": 3,
+      "effects": {
+        "bodyClass": "conexion-low",
+        "indicator": "Aislado"
+      }
+    },
+    "acumulacion": {
+      "high": 5,
+      "effects": {
+        "indicator": "Camino individual"
+      }
+    }
+  },
+  "display": {
+    "headerStats": ["energia"],
+    "panelStats": ["conexion", "dignidad", "llama"],
+    "modalStats": ["trauma", "acumulacion"]
+  }
+}

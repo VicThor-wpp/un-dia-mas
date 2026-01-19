@@ -1,0 +1,87 @@
+{
+  "characters": {
+    "sofia": {
+      "name": "Sofía",
+      "role": "La de la olla",
+      "description": "Sostiene todo. Demasiado.",
+      "color": "#e89b7b",
+      "relationVar": "sofia_relacion",
+      "stateVar": "sofia_estado",
+      "states": {
+        "activa": { "label": "Activa", "color": "#4caf50" },
+        "agotada": { "label": "Agotada", "color": "#ff9800" },
+        "quebrando": { "label": "Quebrando", "color": "#f44336" },
+        "ausente": { "label": "Ausente", "color": "#9e9e9e" }
+      },
+      "portrait": "assets/portraits/sofia",
+      "expressions": ["neutral", "happy", "sad", "worried", "tired"]
+    },
+    "elena": {
+      "name": "Elena",
+      "role": "La que recuerda",
+      "description": "Vio el 2002. Sabe qué viene.",
+      "color": "#98b89e",
+      "relationVar": "elena_relacion",
+      "stateVar": "elena_estado",
+      "states": {
+        "presente": { "label": "Presente", "color": "#4caf50" },
+        "recordando": { "label": "Recordando", "color": "#2196f3" },
+        "preocupada": { "label": "Preocupada", "color": "#ff9800" }
+      },
+      "portrait": "assets/portraits/elena",
+      "expressions": ["neutral", "wise", "worried", "remembering"]
+    },
+    "diego": {
+      "name": "Diego",
+      "role": "El que llegó",
+      "description": "Migrante. Ojo fresco sobre todo.",
+      "color": "#d4a574",
+      "relationVar": "diego_relacion",
+      "stateVar": "diego_estado",
+      "states": {
+        "adaptandose": { "label": "Adaptándose", "color": "#2196f3" },
+        "integrado": { "label": "Integrado", "color": "#4caf50" },
+        "precario": { "label": "Precario", "color": "#f44336" }
+      },
+      "portrait": "assets/portraits/diego",
+      "expressions": ["neutral", "curious", "hopeful", "worried"]
+    },
+    "marcos": {
+      "name": "Marcos",
+      "role": "El quemado",
+      "description": "Sabe lo que es perder. Se alejó.",
+      "color": "#7ba3c7",
+      "relationVar": "marcos_relacion",
+      "stateVar": "marcos_estado",
+      "states": {
+        "aislado": { "label": "Aislado", "color": "#9e9e9e" },
+        "reconectando": { "label": "Reconectando", "color": "#2196f3" },
+        "presente": { "label": "Presente", "color": "#4caf50" }
+      },
+      "portrait": "assets/portraits/marcos",
+      "expressions": ["neutral", "distant", "opening", "bitter"]
+    },
+    "juan": {
+      "name": "Juan",
+      "role": "El compañero",
+      "description": "Del laburo. Miedo a perder lo poco.",
+      "color": "#8b7b7b",
+      "relationVar": "juan_relacion",
+      "stateVar": "juan_estado",
+      "states": {
+        "compañero": { "label": "Compañero", "color": "#4caf50" },
+        "distante": { "label": "Distante", "color": "#ff9800" },
+        "perdido": { "label": "Perdido", "color": "#9e9e9e" }
+      },
+      "portrait": "assets/portraits/juan",
+      "expressions": ["neutral", "friendly", "worried", "distant"]
+    }
+  },
+  "display": {
+    "maxRelation": 5,
+    "relationIcons": {
+      "full": "heart",
+      "empty": "heart"
+    }
+  }
+}

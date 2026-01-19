@@ -1,0 +1,65 @@
+{
+  "meta": {
+    "title": "Un Día Más",
+    "version": "1.0.0",
+    "author": "VicThor",
+    "description": "Juego narrativo sobre precariedad laboral y solidaridad barrial"
+  },
+  "story": {
+    "source": "un_dia_mas.js",
+    "totalDays": 7,
+    "startingDay": 1
+  },
+  "player": {
+    "profileVars": {
+      "perdida": {
+        "label": "Pérdida",
+        "description": "Lo que perdiste",
+        "values": {
+          "familiar": "Alguien de la familia",
+          "relacion": "Una relación",
+          "futuro": "Un plan de futuro",
+          "vacio": "Nunca tuviste nada que perder"
+        }
+      },
+      "atadura": {
+        "label": "Atadura",
+        "description": "Lo que te ancla",
+        "values": {
+          "barrio": "El barrio",
+          "persona": "Una persona",
+          "costumbre": "La costumbre",
+          "nada": "Nada en particular"
+        }
+      },
+      "posicion": {
+        "label": "Posición",
+        "description": "Tu mirada sobre lo colectivo",
+        "values": {
+          "ajeno": "Ajeno - No es lo tuyo",
+          "quemado": "Quemado - Ya diste todo una vez",
+          "esperanzado": "Esperanzado - Creés que puede cambiar",
+          "ambiguo": "Ambiguo - No sabés qué pensar"
+        }
+      }
+    },
+    "vinculoVar": "vinculo"
+  },
+  "ideas": {
+    "trackingPrefix": "idea_",
+    "displayOnTrigger": true,
+    "fadeDelay": 3000
+  },
+  "dice": {
+    "results": {
+      "2": { "label": "¡ÉXITO CRÍTICO!", "class": "critical-success" },
+      "1": { "label": "Éxito", "class": "success" },
+      "0": { "label": "Tirada", "class": "neutral" },
+      "-1": { "label": "¡FALLO CRÍTICO!", "class": "critical-failure" }
+    },
+    "trackingVars": {
+      "lastRoll": "ultima_tirada",
+      "lastResult": "ultimo_resultado"
+    }
+  }
+}
