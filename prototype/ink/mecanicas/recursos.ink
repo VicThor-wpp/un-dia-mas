@@ -97,10 +97,32 @@ VAR dia_actual = 1
     ~ ajustar(dignidad, -cantidad, 0, 10)
 
 === function subir_llama(cantidad) ===
+    ~ temp llama_antes = llama
     ~ ajustar(llama, cantidad, 0, 10)
+    // Feedback narrativo en thresholds
+    {
+    - llama >= 7 && llama_antes < 7:
+        # STAT_THRESHOLD
+        La llama arde.
+        No es solo esperanza.
+        Es algo más. Algo colectivo.
+    - llama >= 5 && llama_antes < 5:
+        # STAT_THRESHOLD
+        Hay una llama.
+        Pequeña. Pero viva.
+    }
 
 === function bajar_llama(cantidad) ===
+    ~ temp llama_antes = llama
     ~ ajustar(llama, -cantidad, 0, 10)
+    // Feedback narrativo en thresholds críticos
+    {
+    - llama <= 2 && llama_antes > 2:
+        # STAT_THRESHOLD
+        La llama se apaga.
+        El frío entra.
+        Es difícil creer en algo.
+    }
 
 === function bajar_salud_mental(cantidad) ===
     ~ salud_mental = salud_mental - cantidad
