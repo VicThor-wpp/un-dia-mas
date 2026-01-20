@@ -23,6 +23,9 @@ Por un segundo, pensás que tenés que ir a laburar.
 
 Después te acordás.
 
+* [...]
+-
+
 Ya no tenés laburo.
 
 El despertador no sonó porque lo apagaste.
@@ -63,10 +66,17 @@ La rutina, pero vacía.
 Moler.
 Agua caliente.
 Prensa francesa.
+
+* [...]
+-
+
 El único mecanismo de supervivencia que hoy parece confiable.
 
 Antes el café era apurado, entre ducharte y salir.
 Ahora tenés todo el tiempo del mundo.
+
+* [...]
+-
 
 Demasiado tiempo.
 
@@ -101,9 +111,15 @@ Abrís las páginas de empleo.
 Hay ofertas.
 Pocas que sirvan.
 
+* [...]
+-
+
 "Se busca. Experiencia mínima 5 años."
 "Se busca. Hasta 25 años."
 "Se busca. Disponibilidad full time. Pago por productividad."
+
+* [...]
+-
 
 Mandás algunos CVs.
 No esperás respuesta.
@@ -155,6 +171,9 @@ Salís.
 El tipo que duerme en la plaza sigue ahí.
 Lo viste mil veces.
 Hoy lo mirás diferente.
+
+* [...]
+-
 
 No sos él.
 Tenés tres meses.
@@ -297,6 +316,9 @@ Un balde de papas entre los dos.
 
 Estás en la cocina de la olla.
 Elena pela papas a tu lado.
+
+* [...]
+-
 
 // Preparar el chequeo de dados
 ~ temp modificador = 0
@@ -464,6 +486,9 @@ Primer día completo sin laburo.
 
 Te acostás temprano.
 ¿Para qué quedarse despierto?
+
+* [...]
+-
 
 La cabeza sigue dando vueltas.
 Tres meses.

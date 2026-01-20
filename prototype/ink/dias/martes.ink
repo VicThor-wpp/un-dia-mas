@@ -190,9 +190,16 @@ Llegás a casa.
 La noche es larga.
 
 No dormís bien.
+
+* [...]
+-
+
 Pensás en mañana.
 En la reunión.
 En lo que viene.
+
+* [...]
+-
 
 Si te echan, no hay nada.
 Unipersonal. Sin indemnización. Sin seguro.
@@ -218,9 +225,15 @@ La noche pasa despacio.
 El barrio duerme.
 Vos no.
 
+* [...]
+-
+
 Pensás en el laburo.
 En lo que significa.
 En lo que sos sin él.
+
+* [...]
+-
 
 ¿Quién sos sin eso?
 Mañana vas a saber.
@@ -237,9 +250,15 @@ La olla necesita cosas.
 Siempre necesita cosas.
 Y cada vez hay menos.
 
+* [...]
+-
+
 Piensa en mañana.
 En la comida que hay que conseguir.
 En la gente que viene.
+
+* [...]
+-
 
 El barrio la necesita.
 Eso la mantiene despierta.

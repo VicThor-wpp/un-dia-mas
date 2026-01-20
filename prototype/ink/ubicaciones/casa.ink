@@ -112,14 +112,18 @@ Eventualmente, el cuerpo pide moverse.
 
 === casa_banarse ===
 
-* [Bañarte]
+{dias_sin_ducha == 1: Ayer no te duchaste.}
+{dias_sin_ducha == 2: Hace dos días que no te duchás.}
+{dias_sin_ducha >= 3: Hace {dias_sin_ducha} días que no te duchás. Se nota.}
+
+* [Ducharte]
     -> casa_ducha
-* [Lavarte la cara y salir] # COSTO:1
+* [Lavarte la cara nomás]
     -> casa_lavarse
 
 === casa_ducha ===
 
-Te bañás.
+Te duchás.
 El agua caliente.
 Unos minutos de paz.
 
@@ -129,19 +133,29 @@ Unos minutos de paz.
 Te secás.
 Te vestís.
 
+~ dias_sin_ducha = 0
 ~ pequenas_victorias += 1
 
--> casa_mate
+-> casa_desayuno
 
 === casa_lavarse ===
 
 Un lavado de cara.
-Salís rápido.
+El agua fría te despeja un poco.
 
-{tiene_laburo: Estás apurado.}
+{tiene_laburo: No hay tiempo para más.}
 {not tiene_laburo: No tenés ganas de nada elaborado.}
 
--> casa_mate
+~ dias_sin_ducha += 1
+
+-> casa_desayuno
+
+=== casa_desayuno ===
+
+* [Hacer café]
+    -> casa_mate
+* [Salir de una]
+    -> casa_sin_cafe
 
 === casa_mate ===
 
@@ -149,6 +163,9 @@ Salís rápido.
 
 El café de especialidad en la prensa francesa.
 El ritual que te despierta y te sostiene.
+
+* [...]
+-
 
 Agua caliente. Molienda. Cuatro minutos.
 Un vaso térmico para llevarte el resto.
@@ -166,6 +183,9 @@ Un vaso térmico para llevarte el resto.
     Ahora es para no pensar.
 }
 
+* [...]
+-
+
 No es gusto.
 Es sostén energético.
 Una forma de sobrevivir a la mañana.
@@ -181,6 +201,16 @@ Un vaso de agua y listo.
 
 El día empieza mal.
 Pero empieza.
+
+->->
+
+=== casa_sin_cafe ===
+
+Sin café.
+Un vaso de agua y a la calle.
+
+{tiene_laburo: El café se toma en el bondi. O no se toma.}
+{not tiene_laburo: Total, ¿para qué apurarse?}
 
 ->->
 
@@ -315,6 +345,9 @@ Llamás a alguien.
 Prendés la tele.
 Canales.
 Noticias.
+
+* [...]
+-
 
 "La situación económica..."
 "Despidos en el sector..."

@@ -11,11 +11,17 @@ El lunes llega.
 No tenés laburo.
 Pero tenés algo que pocos tienen.
 
+* [...]
+-
+
 La olla no solo sobrevivió.
 Creció.
 
 La asamblea no fue solo un evento.
 Fue el principio.
+
+* [...]
+-
 
 Sofía te mira diferente ahora.
 "Sos parte del equipo."
@@ -37,14 +43,23 @@ Y hay una llama.
 No es esperanza ingenua.
 No es ilusión.
 
+* [...]
+-
+
 Es conocimiento.
 De que juntos, hay algo.
+
+* [...]
+-
 
 El sistema no cambió.
 No va a cambiar mañana.
 Quizás nunca.
 
 Pero ustedes sí cambiaron.
+
+* [...]
+-
 
 Y la llama no se apaga.
 
@@ -76,18 +91,30 @@ El lunes llega.
 No tenés laburo.
 Pero tenés algo.
 
+* [...]
+-
+
 La olla te espera.
 Sofía te espera.
 El barrio te espera.
+
+* [...]
+-
 
 No es solución.
 No hay trabajo mágico.
 No hay plata que aparece.
 
+* [...]
+-
+
 Pero hay una red.
 Gente que te conoce.
 Gente que sabe que existís.
 Gente con la que hacés cosas.
+
+* [...]
+-
 
 Los tres meses van a pasar.
 Quizás consigas algo.
@@ -101,6 +128,10 @@ Pero no estás solo.
     Y hay algo más.
     Un fuego pequeño.
     Una llama que no se apaga.
+
+    * [...]
+    -
+
     La esperanza de que las cosas pueden ser diferentes.
     No mejor. Diferentes.
 }
@@ -132,23 +163,38 @@ El lunes llega.
 No tenés laburo.
 No tenés mucho.
 
+* [...]
+-
+
 La semana pasó.
 No conectaste.
 No ayudaste.
 No estuviste.
 
+* [...]
+-
+
 El barrio sigue.
 La olla sigue.
 Pero sin vos.
+
+* [...]
+-
 
 Los tres meses van a pasar.
 Vas a buscar laburo.
 Quizás consigas.
 Quizás no.
 
+* [...]
+-
+
 Pero vas a estar solo.
 Como antes.
 Como siempre.
+
+* [...]
+-
 
 No es el fin del mundo.
 Solo es gris.
@@ -180,16 +226,28 @@ El lunes llega.
 No tenés laburo.
 Pero pasaron cosas.
 
+* [...]
+-
+
 Conociste gente.
 O reconectaste.
 Algo se movió.
 
+* [...]
+-
+
 No es suficiente todavía.
 Pero es algo.
+
+* [...]
+-
 
 Los tres meses van a pasar.
 No sabés qué viene.
 Pero hay un "quizás" que antes no había.
+
+* [...]
+-
 
 Quizás la olla.
 Quizás el barrio.
@@ -226,16 +284,28 @@ El lunes llega.
 No tenés laburo.
 No sabés qué tenés.
 
+* [...]
+-
+
 La semana fue rara.
 Pasaron cosas.
 No pasó nada.
 
+* [...]
+-
+
 Los tres meses empiezan a correr.
 La cuenta regresiva.
+
+* [...]
+-
 
 No sabés qué viene.
 No sabés quién sos.
 No sabés nada.
+
+* [...]
+-
 
 Pero estás vivo.
 Eso es algo.
@@ -268,10 +338,17 @@ El cuerpo.
 La cabeza.
 Todo.
 
+* [...]
+-
+
 {salud_mental <= 1:
     La salud mental se desgastó.
     No es una cosa.
     Son muchas.
+
+    * [...]
+    -
+
     El despido.
     La soledad.
     Las preguntas sin respuesta.
@@ -281,11 +358,17 @@ Los tres meses están ahí.
 Pero no los sentís como colchón.
 Los sentís como cuenta regresiva.
 
+* [...]
+-
+
 No hay final feliz.
 No hay final triste.
 Solo hay mañana.
 Y pasado.
 Y el otro día.
+
+* [...]
+-
 
 Uno atrás del otro.
 Hasta que algo cambie.

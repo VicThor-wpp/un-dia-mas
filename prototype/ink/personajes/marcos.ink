@@ -173,6 +173,9 @@ Barba de días.
 
 "Te dije que venía."
 
+* [...]
+-
+
 Se sientan.
 Silencio largo.
 
@@ -194,6 +197,9 @@ Te mira. Ojos cansados.
 
 "Mal. No duermo. No salgo. No hago nada."
 
+* [...]
+-
+
 Pausa.
 
 "Estoy podrido de todo."
@@ -211,6 +217,9 @@ Silencio largo.
 "Porque me quemé."
 
 "¿Cómo?"
+
+* [...]
+-
 
 "Diez años en la militancia. Asambleas, marchas, colectas.
 Y al final... nada cambió."
@@ -324,11 +333,17 @@ De pronto, Marcos dice:
 
 "Hace seis meses. No se lo conté a nadie."
 
+* [...]
+-
+
 Ah.
 Por eso estaba tan ausente.
 Por eso se aisló.
 
 "¿Por qué no dijiste nada?"
+
+* [...]
+-
 
 "Vergüenza. Orgullo. No sé.
 Después de todo lo que hablaba sobre dignidad del trabajador...

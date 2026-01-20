@@ -46,141 +46,173 @@ INCLUDE finales/finales.ink
 
 # UN DÍA MÁS
 
-La semana empieza como cualquier otra.
+Suena el despertador. Todavía está oscuro afuera.
+El colchón tiene un hundimiento que ya tiene la forma de tu cuerpo.
+En la cocina, la canilla gotea. Siempre gotea.
+
+Otra semana que empieza. Otra semana como todas.
 Todavía no sabés lo que viene.
 
-* [Empezar] -> creacion_personaje
+* [Levantarse] -> creacion_personaje
 
 === creacion_personaje ===
 
 # ANTES DE EMPEZAR
 
-Algunas cosas sobre vos:
+Te mirás en el espejo del baño. El vidrio tiene una rajadura en la esquina.
+Treinta y algo. Ojeras que ya son parte de tu cara.
 
-Tenés treinta y algo.
+* [...]
+-
+
 Laburás. Pagás las cuentas. Más o menos.
-Vivís en el barrio o cerca.
+A veces llegás justo. A veces no llegás.
+
+* [...]
+-
+
+Vivís en el barrio.
 Conocés a la gente de vista, de cruce, de historia compartida.
+El almacenero que te fía. La vecina que barre la vereda a las siete.
+El perro que ladra siempre en la misma esquina.
+
+* [...]
+-
 
 Pero hay cosas que solo vos sabés.
+Cosas que cargás cuando caminás por la calle.
+Cosas que no se ven.
 
 -> elegir_perdida
 
 === elegir_perdida ===
 
-# ¿QUÉ PERDISTE?
+# ALGO FALTA.
 
-* [Mi vieja. O mi viejo.]
+* [Un plato que nadie más usa en la alacena.]
     ~ perdida = "familiar"
-    Murió. Hace poco o hace mucho, pero el hueco sigue ahí.
-    A veces pasás por lugares y te acordás.
-    Heredaste algo: un objeto, una deuda, una promesa.
+    La última vez que lo vi estaba en la cama del hospital, flaco como nunca.
+    Me apretó la mano. No dijo nada. No hacía falta.
+    Me dejó cosas: una caja de fotos, una deuda con el banco, la costumbre de mirar el teléfono a las ocho.
     -> elegir_atadura
 
-* [Una relación.]
+* [Una taza de café que sobra todas las mañanas.]
     ~ perdida = "relacion"
-    Se fue. O te fuiste. O se pudrió de a poco.
-    A veces la cruzás en el barrio. A veces evitás las calles.
-    No terminó. Se disolvió.
+    Se fue un martes. O un jueves. Ya no importa el día.
+    Dejó un cepillo de dientes que tardé meses en tirar.
+    A veces la veo en el almacén de la vuelta. Nos saludamos como desconocidos.
+    El barrio quedó partido al medio.
     -> elegir_atadura
 
-* [Un futuro que imaginabas.]
+* [Un diploma que junta polvo arriba del ropero.]
     ~ perdida = "futuro"
-    Ibas a ser algo. Estudiaste, o casi.
-    La vida tenía una forma. Ahora no tiene ninguna.
-    A veces pensás en el vos que no fuiste.
+    Me acuerdo del día que rendí el último examen.
+    Pensé: "Ahora empieza todo". Todavía estoy esperando.
+    A veces agarro el cartón, le saco el polvo. Lo vuelvo a guardar.
+    El pibe que lo consiguió ya no existe.
     -> elegir_atadura
 
-* [Algo que no sé nombrar.]
+* [Una foto donde no reconozco mi propia sonrisa.]
     ~ perdida = "vacio"
-    No hubo evento. No hubo momento.
-    Solo un día te diste cuenta de que algo faltaba.
-    Seguís buscando qué es.
+    No sé cuándo pasó. No hubo un día, un momento.
+    Solo a veces me miro al espejo y veo a alguien cansado.
+    Algo se fue. O capaz nunca estuvo.
+    Sigo buscando.
     -> elegir_atadura
 
 === elegir_atadura ===
 
-# ¿POR QUÉ SEGUÍS ACÁ?
+# PERO NO TE VAS.
 
-* [Responsabilidad.]
+* [Una alarma en el celular que dice "llamar a mamá".]
     ~ atadura = "responsabilidad"
-    Alguien depende de vos. Tu vieja, tu viejo, alguien.
-    No es cadena. Es peso. ¿Hay diferencia?
+    Suena todos los días a las ocho. A veces la ignoro. Después me siento mal.
+    Vive sola desde que murió mi viejo. No me pide nada. Pero sé que espera.
+    Hay días que pienso en irme lejos. Después pienso en ella sola en esa casa.
     -> elegir_posicion
 
-* [El barrio.]
+* [La marca de mi altura en el marco de la puerta.]
     ~ atadura = "barrio"
-    Luchaste por estar acá. Años de historia.
-    Irte es traicionar algo. No sabés bien qué.
+    Crecí en estas calles. Conozco cada baldosa floja, cada perro que ladra.
+    Mi viejo pintó esta casa. Mi abuelo plantó el árbol de la vereda.
+    Irme sería como arrancarme un pedazo. No sé cuál.
     -> elegir_posicion
 
-* [Inercia.]
+* [Una valija que armé hace dos años y nunca abrí.]
     ~ atadura = "inercia"
-    No hay razón. No hay plan.
-    Podrías irte. No te vas.
-    A veces eso se siente como elección. A veces como trampa.
+    Está debajo de la cama, juntando polvo.
+    A veces la miro. Pienso: mañana. Pasado.
+    Pero mañana llega y yo sigo acá, mirando la valija.
     -> elegir_posicion
 
-* [Algo que queda.]
+* [El olor a pan de la panadería de la esquina.]
     ~ atadura = "algo"
-    Hay algo acá. En el barrio, en la gente.
-    No sabés si es esperanza o costumbre.
-    Pero todavía hay algo.
+    No sé explicarlo. Hay algo en este lugar.
+    El saludo del almacenero. La vecina que siempre tiene yerba de más.
+    Pequeñas cosas. Casi nada. Pero algo.
     -> elegir_posicion
 
 === elegir_posicion ===
 
-# ¿CREÉS QUE LAS COSAS PUEDEN CAMBIAR?
+# ¿Y MAÑANA?
 
-* [No.]
+* [El mismo camino al laburo, las mismas baldosas flojas.]
     ~ posicion = "ajeno"
-    Es lo que hay.
-    Lo aprendiste hace rato.
+    Mañana va a ser igual que hoy. Y pasado igual que mañana.
+    No es queja. Es lo que hay.
+    Algunos le dicen resignación. Yo le digo realismo.
     -> asignar_vinculo
 
-* [Quiero creer.]
+* [Una planta que riego todas las mañanas.]
     ~ posicion = "esperanzado"
-    A veces cuesta.
-    Pero seguís intentando.
+    La compré cuando me mudé. Casi se me muere dos veces.
+    Pero ahí sigue. Cada tanto le sale una hoja nueva.
+    Pequeñas cosas. Capaz que con todo es así.
     -> asignar_vinculo
 
-* [Ya no sé.]
+* [Un mensaje de grupo que tengo silenciado.]
     ~ posicion = "quemado"
-    Antes sabías.
-    Ahora no.
+    Antes opinaba. Discutía. Me calentaba.
+    Ahora leo por arriba y sigo de largo.
+    Ya vi esta película. Sé cómo termina.
     -> asignar_vinculo
 
-* [¿Importa?]
+* [La gotera del techo que nunca arreglo.]
     ~ posicion = "ambiguo"
-    La pregunta queda ahí.
-    Sin respuesta.
+    Pongo el balde. Se llena. Lo vacío.
+    Podría arreglarlo. Podría no arreglarlo.
+    A veces me pregunto si importa.
     -> asignar_vinculo
 
 === asignar_vinculo ===
 
-# ¿CON QUIÉN TENÉS HISTORIA?
+# HAY ALGUIEN.
 
-En el barrio hay gente. Pero con alguien tenés algo más.
+En el barrio hay gente. Saludos, caras conocidas, nombres que recordás a medias.
+Pero con alguien tenés algo más.
 
 * [Sofía. La de la olla.]
     ~ vinculo = "sofia"
-    Los pibes van a la misma escuela, o iban.
-    Sabés lo que carga. Ella sabe lo que cargás.
-    No hablan de eso. Pero saben.
+    Un día no tenía nada en la heladera. Ella se dio cuenta sin que dijera nada.
+    Me trajo un tupper con guiso. "Sobró", me dijo. Mentira.
+    Nunca hablamos de eso. Pero desde entonces nos miramos distinto.
+    Sus pibes me saludan por la calle. Ella sabe que estoy ahí.
     -> confirmar_inicio
 
 * [Elena. La veterana.]
     ~ vinculo = "elena"
-    Conocía a tu familia. O vos la ayudaste una vez.
-    Te mira diferente. Espera algo de vos.
-    No sabés si podés dárselo.
+    Me conoce desde que era pibe. Conoció a mi viejo antes que yo.
+    Siempre está en el banco de la plaza, mirando pasar la gente.
+    Cada vez que paso me dice "mirá qué grande estás". Como si el tiempo no pasara para ella.
+    A veces me da consejos que no pedí. A veces los necesito.
     -> confirmar_inicio
 
-* [Diego. El nuevo.]
+* [Diego. El que llegó de afuera.]
     ~ vinculo = "diego"
-    Llegó hace poco. Le diste una mano con algo.
-    Te busca. Pregunta cosas. Confía en vos.
-    No sabés si merecés esa confianza.
+    Venezolano. Llegó hace unos meses con una mochila y poco más.
+    Trabaja más horas que nadie. Siempre camina rápido.
+    Un día le convidé un mate en la parada del bondi. Ahora me saluda de lejos.
+    Me pregunta cosas del barrio. Confía en mí. No sé si lo merezco.
     -> confirmar_inicio
 
 === confirmar_inicio ===

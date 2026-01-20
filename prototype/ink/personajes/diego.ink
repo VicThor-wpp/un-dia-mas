@@ -133,6 +133,9 @@ Nunca pensé que iba a estar del otro lado."
 
 "Sí. Cambian."
 
+* [...]
+-
+
 ~ diego_relacion += 1
 
 Sofía le sirve. Porción grande.
@@ -150,6 +153,9 @@ Baja la voz.
 Primer mes en ocho que no mando."
 
 ~ diego_familia_en_venezuela = true
+
+* [...]
+-
 
 Su mamá. Su hermana. Allá.
 Esperando.
@@ -225,6 +231,9 @@ De Colombia a Ecuador. De Ecuador a Perú."
 
 Pausa.
 
+* [...]
+-
+
 "En Perú estuve seis meses. Vendiendo café en la calle.
 Después me vine para acá. Un amigo me dijo que había trabajo."
 
@@ -232,12 +241,18 @@ Después me vine para acá. Un amigo me dijo que había trabajo."
 
 "Más o menos. El depósito paga poco. Pero paga."
 
+* [...]
+-
+
 Tira el cigarrillo.
 
 "Dejé a mi mamá, a mi hermana. Mi vida entera.
 Allá no se puede vivir. Pero acá..."
 
 No termina la frase.
+
+* [...]
+-
 
 "Acá tampoco es fácil."
 
@@ -257,6 +272,9 @@ Lo que para vos es crisis, para él es progreso.
 
 Fuma.
 
+* [...]
+-
+
 "Pero ustedes no saben lo que es jodido de verdad.
 Cuando la luz se va diez horas. Cuando no hay agua.
 Cuando un kilo de arroz cuesta un sueldo."
@@ -264,6 +282,9 @@ Cuando un kilo de arroz cuesta un sueldo."
 "¿Y esto?"
 
 "Esto es difícil. Pero no es Venezuela."
+
+* [...]
+-
 
 Pausa.
 
@@ -330,11 +351,17 @@ Medio día. Debería estar trabajando.
 
 Corto. Seco.
 
+* [...]
+-
+
 "¿Cuándo?"
 
 "Ayer. Sin aviso. 'Ya no te necesitamos'."
 
 Mira el piso.
+
+* [...]
+-
 
 "Ocho meses. Nunca falté. Nunca llegué tarde.
 Y me echaron como si nada."

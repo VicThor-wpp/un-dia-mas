@@ -152,6 +152,9 @@ Comprás algo. Un alfajor. Una coca.
 
 El kiosquero te conoce de vista.
 
+* [...]
+-
+
 "¿Qué tal? Cara de cansado hoy."
 
 "Día largo."

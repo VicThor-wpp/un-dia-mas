@@ -25,6 +25,9 @@ Tenías laburo.
 Tenías rutina.
 Tenías algo.
 
+* [...]
+-
+
 Ahora no tenés nada. Unipersonal.
 Sin derechos. Sin colchón. Sin respuestas.
 
@@ -96,10 +99,17 @@ Salís.
 Pasás por la olla.
 No hay reunión hoy. Pero hay gente.
 
+* [...]
+-
+
 {participe_asamblea && ayude_en_olla:
     Sofía está afuera.
     Elena toma mate en la vereda.
     Diego ordena cosas.
+
+    * [...]
+    -
+
     {marcos_vino_a_asamblea: Marcos está parado lejos, pero ahí.}
 
     Te ven.
@@ -136,12 +146,18 @@ Sofía te pasa un mate.
 Elena te hace lugar en el banco.
 Diego asiente.
 
+* [...]
+-
+
 {marcos_vino_a_asamblea:
     Marcos te mira desde lejos.
     Levanta la mano.
     Es un gesto mínimo.
     Pero es algo.
 }
+
+* [...]
+-
 
 Nadie dice nada importante.
 Pero están.
@@ -241,6 +257,9 @@ El sol baja.
 Mañana es lunes.
 Pero no hay laburo al que ir.
 
+* [...]
+-
+
 La semana que viene:
 - Hay que buscar laburo.
 - Hay que ver qué pasa con la olla.
@@ -263,11 +282,17 @@ El final de la semana.
 Te sentás.
 Pensás en todo.
 
+* [...]
+-
+
 Una semana.
 {fui_despedido: Te echaron.}
 {ayude_en_olla: Ayudaste en la olla.}
 {participe_asamblea: Fuiste a una asamblea.}
 {conte_a_alguien: Le contaste a alguien.}
+
+* [...]
+-
 
 {not conte_a_alguien && not ayude_en_olla: Estuviste bastante solo esta semana.}
 

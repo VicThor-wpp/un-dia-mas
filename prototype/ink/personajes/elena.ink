@@ -48,6 +48,9 @@ Mira hacia la calle.
 En el 2002 todo el mundo andaba 'ahí'.
 Pero seguíamos."
 
+* [...]
+-
+
 ~ elena_relacion += 1
 
 Silencio.
@@ -141,10 +144,16 @@ Ella habla cuando quiere. Nunca antes.
 
 Sigue pelando. No mira.
 
+* [...]
+-
+
 "No teníamos nada. Ollas prestadas. Verduras de descarte.
 Cocinábamos en la calle porque no había salón."
 
 "¿Cuántos venían?"
+
+* [...]
+-
 
 "Al principio, veinte. Después cien. Después doscientos."
 
@@ -179,6 +188,9 @@ Fotos en las paredes. Gente que ya no está.
 
 "Sentate. Voy a hacer café en la prensa francesa."
 
+* [...]
+-
+
 No aceptás un no.
 Los viejos del barrio no aceptan un no.
 
@@ -198,6 +210,9 @@ El laburo. La plata. El miedo.
 Ella escucha. No interrumpe.
 Cuando terminás, toma café. Piensa.
 
+* [...]
+-
+
 "¿Sabés qué aprendí en setenta años?"
 
 "¿Qué?"
@@ -205,6 +220,9 @@ Cuando terminás, toma café. Piensa.
 "Que todo pasa. Lo bueno y lo malo.
 El problema es que cuando estás en lo malo,
 parece que no va a terminar nunca."
+
+* [...]
+-
 
 "¿Y qué hago?"
 
@@ -239,6 +257,9 @@ A veces la compañía alcanza.
 
 Suspira. Los ojos se van lejos.
 
+* [...]
+-
+
 "Fue peor que esto. Mucho peor.
 La gente no tenía para comer. Literal.
 Los bancos cerrados. Todo cerrado."
@@ -246,6 +267,9 @@ Los bancos cerrados. Todo cerrado."
 "¿Cómo sobrevivieron?"
 
 "Juntos. No había otra."
+
+* [...]
+-
 
 Toma café.
 
@@ -275,6 +299,9 @@ Ella nunca busca a nadie.
 "Che. Necesito hablar."
 
 "¿Qué pasa?"
+
+* [...]
+-
 
 "La olla. Sofía está quemada.
 Si ella cae, cae todo."
@@ -326,10 +353,16 @@ Carpintero. Hizo la mitad de los muebles del barrio."
 
 "¿Qué le pasó?"
 
+* [...]
+-
+
 "Se murió en el 2003. El corazón.
 La crisis lo mató. Como a muchos."
 
 Señala otra casa.
+
+* [...]
+-
 
 "Ahí vivían los Fernández. Cinco hijos.
 Se fueron a España en el 2002. Nunca volvieron."

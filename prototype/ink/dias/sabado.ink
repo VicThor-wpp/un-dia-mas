@@ -25,6 +25,9 @@ Sábado.
 Antes era descanso.
 Ahora todos los días son iguales.
 
+* [...]
+-
+
 {ayude_en_olla: Hoy es la asamblea. A las 5 en la olla.}
 
 * [Levantarte] -> sabado_manana
@@ -109,6 +112,10 @@ Llamás a tu familia.
 
 Hablás.
 De todo y de nada.
+
+* [...]
+-
+
 No le contás lo del laburo.
 O sí, depende.
 
@@ -206,6 +213,9 @@ Te quedás en casa.
 Pensás en que deberías haber ido.
 Pero no fuiste.
 
+* [...]
+-
+
 La asamblea pasa sin vos.
 No sabés qué decidieron.
 No sabés qué viene.
@@ -221,10 +231,16 @@ El aire está raro.
 Ayer la olla cerró.
 Primera vez en meses.
 
+* [...]
+-
+
 Sofía está callada.
 Elena tiene cara de preocupación.
 
 "Bueno... tenemos que hablar de lo de ayer."
+
+* [...]
+-
 
 Sofía suspira.
 
@@ -329,6 +345,9 @@ Hablás.
 "Yo... hace tres días me quedé sin laburo. No sé bien qué puedo aportar. Pero tengo tiempo ahora. Y quiero ayudar."
 
 Te miran.
+
+* [...]
+-
 
 Sofía asiente.
 Elena sonríe.
@@ -508,6 +527,9 @@ Cansado pero distinto.
 Cuatro días sin laburo.
 Tres meses de colchón.
 La cuenta regresiva sigue.
+
+* [...]
+-
 
 Pero hoy estuviste en una asamblea.
 Hoy fuiste parte de algo.

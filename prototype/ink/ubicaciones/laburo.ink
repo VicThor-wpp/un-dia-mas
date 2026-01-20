@@ -17,6 +17,9 @@ El edificio de siempre.
 La puerta de siempre.
 El ascensor de siempre.
 
+* [...]
+-
+
 "Buen día."
 "Buen día."
 "Buen día."
@@ -70,6 +73,10 @@ Las horas pasan.
 
 Mails.
 Planillas.
+
+* [...]
+-
+
 Reuniones que podrían ser mails.
 Mails que podrían ser nada.
 
@@ -132,6 +139,9 @@ A veces está bien.
 El silencio.
 No tener que hablar.
 
+* [...]
+-
+
 Mirás a los demás.
 Cada uno con su vianda.
 Algunos solos, otros en grupo.
@@ -150,6 +160,9 @@ Seguís laburando.
 El estómago protesta pero la cabeza dice que hay que demostrar compromiso.
 Que te vean.
 Que sepan que sos valioso.
+
+* [...]
+-
 
 ...
 
@@ -195,6 +208,9 @@ Toda la oficina.
 
 El jefe y alguien de RRHH al frente.
 
+* [...]
+-
+
 "Buenas tardes. Queríamos informarles..."
 
 El aire se tensa.
@@ -202,6 +218,9 @@ El aire se tensa.
 "...que la empresa está atravesando un proceso de reestructuración."
 
 Ahí está.
+
+* [...]
+-
 
 "No podemos dar detalles todavía, pero habrá cambios en las próximas semanas. Les pedimos paciencia y compromiso."
 
@@ -307,6 +326,9 @@ Un papel sobre la mesa.
 
 Ah.
 
+* [...]
+-
+
 "Tu puesto fue afectado."
 
 Así que era eso.
@@ -332,6 +354,9 @@ Se miran entre ellos.
 
 "Pero trabajo acá hace tres años."
 
+* [...]
+-
+
 "Trabajás con nosotros. Facturás. Es diferente."
 
 Claro. Siempre fue diferente cuando les convenía.
@@ -347,6 +372,9 @@ Sos unipersonal. Simplemente dejás de facturar.
 
 Te dan una caja para tus cosas.
 No tenés muchas cosas.
+
+* [...]
+-
 
 El escritorio se vacía rápido.
 
@@ -387,11 +415,17 @@ La gente camina como si nada.
     A las 11:30 de la mañana de un miércoles.
     Sin laburo.
 
+* [...]
+-
+
 Tenés tres meses de colchón.
 No te estás muriendo.
 Pero algo murió.
 
 ¿Quién sos ahora que no tenés laburo?
+
+* [...]
+-
 
 ~ idea_quien_soy = true
 

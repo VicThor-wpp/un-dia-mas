@@ -105,6 +105,10 @@ Una vecina te saluda.
 La plaza del barrio.
 
 Un par de bancos, algunos árboles, los juegos oxidados.
+
+* [...]
+-
+
 Pibes jugando a la pelota.
 Viejos sentados.
 Madres con cochecitos.
@@ -135,6 +139,9 @@ Te sentás en un banco.
 El sol.
 El ruido de los pibes.
 El viento.
+
+* [...]
+-
 
 Por un rato, no pensás en nada.
 
@@ -213,6 +220,10 @@ Peleas por goles.
 El kiosco de la esquina.
 
 Esas viejas, caramelos, cigarrillos.
+
+* [...]
+-
+
 Revistas que nadie compra.
 Un cartel de Coca-Cola de hace 20 años.
 
@@ -290,15 +301,25 @@ El tipo que duerme en el banco.
 Siempre está ahí.
 Con sus bolsas, sus cartones, su mundo.
 
+* [...]
+-
+
 {not hable_con_el_del_banco:
     Nunca le hablaste.
     Nadie le habla.
     Pasa la gente y no lo mira.
 }
 
+* [...]
+-
+
 {not tiene_laburo:
     Ahora lo mirás distinto.
     ¿Cuántos pasos hay entre vos y él?
+
+    * [...]
+    -
+
     Unipersonal. Sin indemnización. Sin seguro.
     Muy pocos pasos.
 }
@@ -315,6 +336,9 @@ Te acercás.
 
 Está despierto.
 Te mira.
+
+* [...]
+-
 
 Ojos cansados.
 Barba de días.
@@ -391,15 +415,24 @@ Le traés un café del kiosco.
 
 Toma.
 
+* [...]
+-
+
 {d6() >= 4:
     "Yo laburaba, ¿sabés? En una fábrica. Hace años."
 
     No preguntaste.
     Pero te cuenta.
 
+    * [...]
+    -
+
     "Después cerró. Y bueno. Una cosa lleva a la otra."
 
     Toma el café.
+
+    * [...]
+    -
 
     "Pero no estoy mal. Tengo mis cosas. Conozco gente. Vivo."
 
@@ -587,12 +620,18 @@ No hay gente.
 No hay autos.
 No hay nada.
 
+* [...]
+-
+
 Solo vos y el barrio.
 
 {not tiene_laburo:
     ¿Esto es la vida ahora?
     ¿Caminar por el barrio sin rumbo?
 }
+
+* [...]
+-
 
 El momento pasa.
 Un auto pasa.
@@ -612,12 +651,22 @@ El barrio de noche.
 
 Pocas luces.
 Perros ladrando.
+
+* [...]
+-
+
 La televisión prendida en las casas.
+
+* [...]
+-
 
 {d6() <= 2:
     Hay un grupo de pibes en la esquina.
     Fumando.
     Hablando.
+
+    * [...]
+    -
 
     Te miran cuando pasás.
     Seguís caminando.
@@ -642,8 +691,14 @@ La televisión prendida en las casas.
 Domingo.
 El barrio más tranquilo que nunca.
 
+* [...]
+-
+
 Los negocios cerrados.
 Poca gente en la calle.
+
+* [...]
+-
 
 Alguien pasea un perro.
 Un viejo toma café en un vaso térmico en la vereda.
@@ -668,6 +723,9 @@ Sofía, Elena, otros.
 Hablando en la vereda.
 Tomando café.
 
+* [...]
+-
+
 "¿Todo bien?", te preguntan.
 
 Te quedás un rato.
@@ -689,14 +747,23 @@ Caminás sin rumbo.
 No hay a donde ir.
 No hay a donde volver.
 
+* [...]
+-
+
 El barrio te conoce.
 Pero hoy te siente distinto.
+
+* [...]
+-
 
 {not tiene_laburo:
     Sin laburo, las calles son diferentes.
     Antes eran camino al trabajo.
     Ahora son solo calles.
 }
+
+* [...]
+-
 
 Las horas pasan.
 Caminando.
@@ -714,6 +781,9 @@ Pensando.
 
 Sábado.
 El barrio más relajado.
+
+* [...]
+-
 
 La gente hace compras.
 Los pibes juegan en la calle.
@@ -739,6 +809,9 @@ La tarde en el barrio.
 El sol bajando.
 Las sombras largas.
 
+* [...]
+-
+
 Gente volviendo de trabajar.
 Gente saliendo a caminar.
 
@@ -761,6 +834,9 @@ La mañana en el barrio.
 
 El sol recién saliendo.
 El rocío en los autos.
+
+* [...]
+-
 
 Gente yendo a trabajar.
 Pibes yendo a la escuela.

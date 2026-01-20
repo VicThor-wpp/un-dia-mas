@@ -107,12 +107,18 @@ Pelás.
 
 Hay una señora al lado tuyo. Elena, se llama. No la Sofía del barrio, otra Elena.
 
+* [...]
+-
+
 {d6() >= 4:
     "¿Vos sos nuevo?"
     "Sí. Primera vez."
     "Ah. Está bien. Siempre hace falta gente."
 
     Pelás papas en silencio un rato.
+
+    * [...]
+    -
 
     "Yo venía a comer. Ahora ayudo. Es mejor que hacer la cola."
 
@@ -139,6 +145,9 @@ Cucharón en mano.
 
 La cola avanza.
 Platos, platos, platos.
+
+* [...]
+-
 
 {d6() <= 2:
     Una nena te mira.
@@ -178,6 +187,9 @@ Mesas, ollas, pisos.
 El trabajo físico te vacía la cabeza.
 Por un rato no pensás en nada.
 Solo en la mugre y en sacarla.
+
+* [...]
+-
 
 {d6() >= 5:
     Marta se acerca.
@@ -220,6 +232,9 @@ El olor a comida te sigue un rato.
 Marta suspira.
 
 "No hay donaciones. La municipalidad nos clavó. El super que nos daba las verduras cerró."
+
+* [...]
+-
 
 Mira las ollas casi vacías.
 
@@ -295,11 +310,17 @@ Está cerrada.
 Un cartel en la puerta:
 "HOY NO HAY COMIDA. MAÑANA INTENTAMOS."
 
+* [...]
+-
+
 ~ olla_en_crisis = true
 
 Hay gente parada afuera.
 Mirando el cartel.
 Sin saber qué hacer.
+
+* [...]
+-
 
 Una señora con un nene.
 Un viejo con bastón.
@@ -325,10 +346,16 @@ No sabés para qué.
 Marta sale del galpón.
 Tiene los ojos rojos.
 
+* [...]
+-
+
 "Mañana capaz que conseguimos algo. Hoy no hay."
 
 La gente se va de a poco.
 Vos te quedás.
+
+* [...]
+-
 
 "¿Querés ayudar de verdad?"
 
@@ -352,6 +379,9 @@ No solo los que ayudan.
 Vecinos.
 Gente del barrio que nunca viste.
 
+* [...]
+-
+
 Marta está al frente.
 
 "Bueno, gracias por venir. Esto es de todos. Hablamos todos."
@@ -372,6 +402,9 @@ Una señora: "Mi marido perdió el laburo. Somos cuatro. No llegamos."
 Un tipo: "El kiosco de la esquina cerró. ¿Quién nos va a donar ahora?"
 
 Otra señora: "La municipalidad no responde. Llamé veinte veces."
+
+* [...]
+-
 
 Un pibe joven: "Hay que hacer algo. No podemos quedarnos esperando."
 
@@ -394,6 +427,9 @@ Levantás la mano.
 
 "Yo... hace poco perdí el laburo. No estoy en la misma que ustedes, todavía. Pero quiero ayudar."
 
+* [...]
+-
+
 La gente te mira.
 
 Marta asiente.
@@ -412,6 +448,9 @@ Se discuten propuestas.
 "Hay que ir a la municipalidad."
 "Hay que hablar con los comercios que quedan."
 "Hay que organizarse mejor."
+
+* [...]
+-
 
 {d6() >= 4:
     Al final, algo se decide.
@@ -467,11 +506,17 @@ Atrás, un viejo solo.
 
 Nadie habla.
 
+* [...]
+-
+
 {not tiene_laburo:
     ¿Es esto tu futuro?
     Tres meses de colchón.
     Después, ¿esto?
 }
+
+* [...]
+-
 
 Te toca.
 Te dan un plato.
@@ -488,12 +533,18 @@ Comida de verdad.
 Te sentás en una mesa larga.
 Comés.
 
+* [...]
+-
+
 {d6() >= 4:
     Alguien al lado tuyo te habla.
     "¿Primera vez?"
     "Sí."
     "Está bien la comida."
     "Sí."
+
+    * [...]
+    -
 
     No dicen más.
     Pero es algo.
@@ -533,6 +584,9 @@ Pelás papas.
 Cortás verduras.
 Revolvés la olla.
 
+* [...]
+-
+
 No es difícil.
 Pero es necesario.
 
@@ -553,11 +607,17 @@ Pero es necesario.
 Sofía lo dice bajito.
 Pero todos escuchan.
 
+* [...]
+-
+
 "Las donaciones no llegan."
 "El municipio no contesta."
 "Los comercios ya no dan."
 
 ~ olla_en_crisis = true
+
+* [...]
+-
 
 Silencio.
 ¿Qué se hace?
@@ -601,10 +661,16 @@ Pararte en una esquina.
 Explicar.
 Pedir.
 
+* [...]
+-
+
 ~ energia -= 1
 ~ subir_dignidad(-1)
 
 Pero lo hacés.
+
+* [...]
+-
 
 Algunos dan.
 La mayoría no.
@@ -702,6 +768,9 @@ Sofía abre.
 "Bueno. Estamos todos los que estamos."
 "Gracias por venir."
 
+* [...]
+-
+
 Elena sirve café.
 Alguien trae bizcochos.
 
@@ -723,6 +792,9 @@ Ideas van y vienen:
 - "Ir al municipio de vuelta."
 - "Organizar una feria."
 
+* [...]
+-
+
 Nadie tiene la respuesta.
 Pero todos buscan.
 
@@ -739,6 +811,9 @@ La asamblea termina.
 No hay solución mágica.
 Pero hay un plan.
 Más o menos.
+
+* [...]
+-
 
 La gente se va yendo.
 Algunos se quedan a limpiar.
@@ -761,6 +836,9 @@ Las ollas vacías.
 Las mesas limpias.
 Las luces se apagan.
 
+* [...]
+-
+
 Sofía es la última en irse.
 Siempre.
 
@@ -778,6 +856,9 @@ Mañana hay que volver a empezar.
     Elena te ve llegar.
 
     "Viniste."
+
+    * [...]
+    -
 
     No es sorpresa.
     Es algo más.

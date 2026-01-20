@@ -76,11 +76,17 @@ Nunca hablaste con ella.
 
 "Buen día."
 
+* [...]
+-
+
 "Buen día." Te mira sorprendida. "¿Todo bien?"
 
 "Sí, sí. Esperando el bondi nomás."
 
 "Como todos."
+
+* [...]
+-
 
 ~ ultima_tirada = d6()
 
@@ -88,6 +94,9 @@ Nunca hablaste con ella.
     "Yo trabajo acá cerca hace 20 años. Antes el bondi venía cada 10 minutos. Ahora..."
     Se encoge de hombros.
     "Todo empeora de a poco. Uno se acostumbra."
+
+    * [...]
+    -
 
     No es una conversación feliz.
     Pero es una conversación.
@@ -157,6 +166,9 @@ El bondi lleno.
 Cuerpos apretados.
 Olor a cuerpos, a sudor de madrugada, a cansancio acumulado.
 
+* [...]
+-
+
 Conseguís un lugar donde agarrarte.
 
 * [Mirar por la ventana] -> bondi_ventana
@@ -181,6 +193,10 @@ Te sentás.
 La ciudad pasa.
 Los edificios.
 La gente en las veredas.
+
+* [...]
+-
+
 Los carteles de "Se alquila", "Se vende", "Cerrado".
 
 {dia_actual == 1: Cada vez más carteles de esos.}
@@ -194,9 +210,15 @@ Cerrás los ojos.
 El ruido del bondi.
 El movimiento.
 
+* [...]
+-
+
 Por un segundo, casi te dormís.
 
 ...
+
+* [...]
+-
 
 {d6() >= 4:
     Tu parada. Justo a tiempo.
@@ -218,6 +240,9 @@ Dos personas atrás hablan:
     "Está jodida la cosa."
     "Está jodidísima."
 
+    * [...]
+    -
+
     {tiene_laburo: Las palabras quedan. Podrías ser vos.}
     {not tiene_laburo: Ya sos vos.}
 }
@@ -226,12 +251,19 @@ Dos personas atrás hablan:
     "Es una mierda."
     "Es lo que hay."
 
+    * [...]
+    -
+
     Problemas de todos.
 }
 {ultima_tirada >= 5:
     "...y entonces le dije que no, que así no..."
     Se ríen.
     Una conversación normal.
+
+    * [...]
+    -
+
     Eso también existe.
 }
 
@@ -262,6 +294,10 @@ El bondi de vuelta.
 Menos lleno que a la mañana.
 
 Te sentás.
+
+* [...]
+-
+
 Mirás por la ventana.
 La ciudad de tarde.
 
@@ -288,6 +324,9 @@ Pensás en el día.
     En la reunión.
 }
 
+* [...]
+-
+
 {not tiene_laburo:
     En que no tenés laburo.
     En que no hay colchón. Nada.
@@ -303,6 +342,10 @@ El bondi llega al barrio.
 Desconectás.
 Música en los auriculares.
 O nada.
+
+* [...]
+-
+
 Solo el ruido del bondi.
 
 Por un rato, no pensás.
@@ -318,6 +361,9 @@ Mirás a la gente.
 Un viejo con bolsas.
 Una mina con uniforme de trabajo.
 Un pibe con la mochila del colegio.
+
+* [...]
+-
 
 Todos volviendo a algún lado.
 Todos con sus cosas.

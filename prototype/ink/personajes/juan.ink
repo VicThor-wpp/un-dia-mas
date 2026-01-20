@@ -40,6 +40,9 @@ Juan baja la voz.
 
 "Reestructuración, dijeron. Pero mirá..."
 
+* [...]
+-
+
 Mira para los costados.
 
 "Los de RRHH andan raros. Reuniones todo el tiempo. Algo pasa."
@@ -73,6 +76,9 @@ Se encoge de hombros.
 "Yo tengo el alquiler, la cuota del auto... Si me echan, cago fuego."
 
 "Yo también."
+
+* [...]
+-
 
 Un momento de honestidad.
 Los dos saben que son descartables.
@@ -136,6 +142,9 @@ Comen.
 Juan habla de su novia, de las vacaciones que quieren hacer, del partido del domingo.
 Cosas normales.
 Cosas de gente normal.
+
+* [...]
+-
 
 Por un rato, te olvidás de los rumores.
 
@@ -414,11 +423,17 @@ Juan respira.
 
 Toma un trago.
 
+* [...]
+-
+
 "Mi cuñado tiene un taller. Arregla electrodomésticos, esas cosas."
 
 "¿Y?"
 
 "Necesita alguien. No es fijo, son changas. Pero paga."
+
+* [...]
+-
 
 Te mira.
 
@@ -467,6 +482,9 @@ Toma un trago largo.
 
 Silencio.
 
+* [...]
+-
+
 "¿Cuándo?"
 
 "Ayer. Mismo discurso. Reestructuración."
@@ -474,6 +492,9 @@ Silencio.
 Unipersonal también.
 Sin nada.
 Como vos.
+
+* [...]
+-
 
 "La puta madre, Juan."
 

@@ -105,6 +105,9 @@ Trabajás en silencio.
 El ruido de los cuchillos, el burbujeo de la olla.
 Un ritmo.
 
+* [...]
+-
+
 Sofía habla mientras revuelve.
 
 "Mi vieja hacía esto. En el 2002. Cuando no había nada."
@@ -114,6 +117,9 @@ Sofía habla mientras revuelve.
 "Ella y la necesidad."
 
 ~ subir_conexion(1)
+
+* [...]
+-
 
 Llegan los primeros. Viejos, niños, familias enteras.
 Caras conocidas del barrio.
@@ -150,6 +156,9 @@ Sofía limpia. Sola.
 
 "Ya casi termino."
 
+* [...]
+-
+
 Pero aceptás un trapo igual.
 Secan los platos juntos.
 
@@ -168,6 +177,9 @@ Silencio.
 "Cuando llegué al barrio, no tenía nada. Un bolso y los gurises.
 La olla me salvó. Elena me salvó."
 
+* [...]
+-
+
 "¿Y ahora vos salvás a otros?"
 
 "No sé si salvo a nadie. Pero intento que nadie tenga que
@@ -184,6 +196,9 @@ pasar lo que pasé yo."
 
 "No soy fuerte. Estoy cansada todo el tiempo.
 Pero no tengo opción."
+
+* [...]
+-
 
 Sigue secando.
 
@@ -218,10 +233,16 @@ Me dejó con la ropa que teníamos puesta y deudas."
 
 Aprieta el trapo.
 
+* [...]
+-
+
 "Llegué al barrio porque una prima me prestó una pieza.
 No conocía a nadie. No tenía trabajo."
 
 "¿Y la olla?"
+
+* [...]
+-
 
 "Elena me encontró en la plaza. Los gurises llorando de hambre.
 Me trajo acá. Me dio un plato. Y después otro."
@@ -246,12 +267,18 @@ Sofía te busca. Cosa rara.
 
 "¿Qué pasa?"
 
+* [...]
+-
+
 "La olla. No nos da. Tenemos deudas con el almacén.
 Si no pagamos, no nos fían más."
 
 "¿Cuánto es?"
 
 "Tres mil pesos. Para ayer."
+
+* [...]
+-
 
 Tres mil pesos.
 No los tenés. O sí, pero son para el alquiler.
@@ -285,6 +312,9 @@ No son tres mil. Pero es algo.
 "No puedo aceptar esto."
 
 "Aceptalo. Después veo cómo hago."
+
+* [...]
+-
 
 ~ sofia_relacion += 2
 ~ subir_conexion(2)

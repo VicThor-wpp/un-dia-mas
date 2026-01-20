@@ -24,6 +24,9 @@ Se siente más largo.
 El viernes antes era el mejor día.
 Fin de semana, descanso, algo de plata.
 
+* [...]
+-
+
 Ahora es solo otro día.
 
 {fui_a_olla_jueves: Sofía dijo que hoy necesitaban resolver algo. La olla está en crisis.}
@@ -141,6 +144,9 @@ No hay plata para la comida de hoy.
 Vienen 30 personas a comer.
 No tienen qué darles.
 
+* [...]
+-
+
 "Las donaciones no llegaron."
 "El municipio no contesta."
 "Los comercios ya dijeron que no."
@@ -225,6 +231,9 @@ Elena suspira.
 Sofía se sienta.
 Tiene la cara de alguien que no durmió.
 
+* [...]
+-
+
 "Okay. Cerramos."
 
 ~ olla_cerro_viernes = true
@@ -246,6 +255,9 @@ Pero te quedás.
 Sofía hace café.
 Elena mira por la ventana.
 Diego ordena sillas vacías.
+
+* [...]
+-
 
 Es raro estar acá cuando no hay comida.
 Cuando no hay gente.
@@ -278,6 +290,9 @@ Capaz que no.
 Deciden hacer las dos cosas:
 - Pedir comida directa a vecinos
 - Colecta rápida en la zona
+
+* [...]
+-
 
 Se dividen.
 
