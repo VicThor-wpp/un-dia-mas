@@ -493,10 +493,9 @@ Pero ahora están solos juntos, aunque sea por teléfono.
 Diego mira el techo del cuarto.
 Paredes finas. Se escucha todo.
 
-* [Seguir mirando] # FALSA
-    Un cuarto compartido con otro venezolano.
-    Seis metros cuadrados.
-    Casa. Por ahora.
+Un cuarto compartido con otro venezolano.
+Seis metros cuadrados.
+Casa. Por ahora.
 
 {diego_perdio_laburo:
     Mañana tiene que buscar trabajo.
@@ -545,10 +544,9 @@ Paredes finas. Se escucha todo.
 Afuera, la ciudad duerme.
 Él no.
 
-* [Calcular] # FALSA
-    Los inmigrantes no duermen.
-    Calculan.
-    Planean.
-    Sobreviven.
+Los inmigrantes no duermen.
+Calculan.
+Planean.
+Sobreviven.
 
 ->->
