@@ -287,6 +287,10 @@ const GameEngine = (function() {
 
         const batch = contentQueue.shift();
 
+        // Check if we're appending to existing content (not a fresh scene)
+        const isAppending = storyContainer.children.length > 0 &&
+                           !(batch.length > 0 && batch[0].type === 'header');
+
         // If batch starts with a header, clear the screen for fresh start
         if (batch.length > 0 && batch[0].type === 'header') {
             storyContainer.innerHTML = '';
@@ -309,7 +313,8 @@ const GameEngine = (function() {
                     break;
                 case 'text':
                     el.innerHTML = item.content;
-                    el.className = 'story-text';
+                    // Add appended-text class only when continuing, not on fresh scenes
+                    el.className = isAppending ? 'story-text appended-text' : 'story-text';
                     break;
                 case 'idea':
                     el.textContent = item.content;

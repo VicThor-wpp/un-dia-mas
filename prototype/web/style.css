@@ -233,18 +233,18 @@ body {
     animation: fadeIn 0.6s ease;
 }
 
-/* Texto nuevo más visible */
-.story-text:last-of-type {
-    animation: slideInNew 0.5s ease;
+/* Texto nuevo al continuar (no en escenas nuevas) */
+.story-text.appended-text {
+    animation: slideInAppended 0.7s ease;
     border-left: 2px solid var(--accent);
     padding-left: 12px;
     margin-left: -14px;
 }
 
-@keyframes slideInNew {
+@keyframes slideInAppended {
     from {
         opacity: 0;
-        transform: translateX(-10px);
+        transform: translateX(-8px);
         border-left-color: transparent;
     }
     to {
