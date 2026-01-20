@@ -561,10 +561,9 @@ Marcos mira la tele.
 Sin sonido.
 Las imágenes pasan.
 
-* [Seguir mirando] # FALSA
-    Su departamento es chico. Desordenado.
-    Platos sucios. Ropa en el piso.
-    La entropía de la depresión.
+Su departamento es chico. Desordenado.
+Platos sucios. Ropa en el piso.
+La entropía de la depresión.
 
 {marcos_secreto:
     Piensa en el laburo que perdió.
@@ -601,9 +600,8 @@ Las imágenes pasan.
     Pero agradece.
 }
 
-* [Apagar la tele] # FALSA
-    A las tres de la mañana apaga la tele.
-    Se acuesta sin desvestirse.
+A las tres de la mañana apaga la tele.
+Se acuesta sin desvestirse.
 
 Mañana es otro día.
 Igual que hoy.

@@ -48,7 +48,7 @@ En que quizás el domingo...
 Se duerme.
 Mañana hay que madrugar.
 
--> DONE
+->->
 
 // ============================================
 // FRAGMENTOS DE LA CIUDAD
@@ -74,7 +74,7 @@ Todo ignora.
 La misma ciudad.
 Mundos distintos.
 
--> DONE
+->->
 
 // ============================================
 // NOTAS DE DISEÑO
