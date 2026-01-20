@@ -314,6 +314,16 @@ Por ahora.
 // Evaluamos variables para determinar el final
 // Los finales estan definidos en finales/finales.ink
 
+// FINAL MÁS DURO - Colapso mental individual
+{salud_mental <= 0:
+    -> final_apagado
+}
+
+// FINAL DESTRUCCIÓN TEJIDO SOCIAL - Colapso colectivo
+{llama <= 0:
+    -> final_sin_llama
+}
+
 // FINAL OCULTO - Requiere perfección
 {conexion >= 9 && llama >= 8 && veces_que_ayude >= 3 && participe_asamblea && marcos_vino_a_asamblea && sofia_relacion >= 4 && elena_relacion >= 4 && tiene_todas_ideas():
     -> final_la_llama

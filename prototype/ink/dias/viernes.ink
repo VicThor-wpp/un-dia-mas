@@ -438,6 +438,47 @@ Para hablar de la olla, de la situación.
 
 === fragmento_sofia_viernes ===
 
+{dignidad <= 2:
+    // FRAGMENTO OSCURO - Dignidad destruida
+    Sofía está destruida.
+
+    Hoy vio gente rota pidiendo comida.
+    Vos entre ellos.
+
+    "Todos terminan así", piensa.
+
+    La olla no salva a nadie.
+    Solo alarga la caída.
+    Un plato de comida.
+    Y mañana otra vez.
+
+    Hasta que no hay mañana.
+
+    ~ bajar_salud_mental(1)
+    * [Continuar] -> transicion_viernes_sabado
+}
+
+{conexion <= 1:
+    // FRAGMENTO OSCURO - Aislamiento total
+    Sofía mira la olla vacía.
+
+    Hoy vino menos gente.
+    Mañana va a venir menos.
+
+    "Se termina", piensa.
+
+    El barrio se dispersa.
+    Cada uno solo.
+    La olla va a cerrar.
+
+    No hay tejido que sostenga esto.
+    Ya no hay nada.
+
+    ~ bajar_llama(1)
+    * [Continuar] -> transicion_viernes_sabado
+}
+
+// FRAGMENTO NORMAL
 # SOFÍA
 
 Sofía está agotada.
@@ -454,10 +495,54 @@ Mañana es la asamblea.
 Hay que hablar de todo.
 De cómo seguir.
 
-* [Continuar] -> sabado_amanecer
+* [Continuar] -> transicion_viernes_sabado
 
 === fragmento_elena_viernes ===
 
+{dignidad <= 2:
+    // FRAGMENTO OSCURO - Dignidad destruida
+    Elena piensa en Raúl.
+
+    En cómo el 2002 lo rompió.
+    Nunca se recuperó del todo.
+
+    Piensa en vos.
+    "Ya está roto", piensa.
+
+    El mismo proceso.
+    Primero la humillación.
+    Después la nada.
+
+    Raúl murió un poco roto.
+    Vos también vas a morir roto.
+    Todos mueren rotos.
+
+    ~ bajar_salud_mental(1)
+    * [Continuar] -> transicion_viernes_sabado
+}
+
+{conexion <= 1:
+    // FRAGMENTO OSCURO - Aislamiento total
+    Elena está sola.
+
+    Raúl murió.
+    Los hijos lejos.
+    Los vecinos ya ni saludan.
+
+    "Nos convertimos en extraños", piensa.
+
+    El barrio murió.
+    La red se cortó.
+    Ahora es cada uno solo.
+
+    Hasta el final.
+    Siempre solo.
+
+    ~ bajar_llama(1)
+    * [Continuar] -> transicion_viernes_sabado
+}
+
+// FRAGMENTO NORMAL
 # ELENA
 
 Elena piensa en Raúl.
@@ -470,10 +555,56 @@ Mañana hay asamblea.
 Ella va a ir.
 Tiene cosas que decir.
 
-* [Continuar] -> sabado_amanecer
+* [Continuar] -> transicion_viernes_sabado
 
 === fragmento_diego_viernes ===
 
+{dignidad <= 2:
+    // FRAGMENTO OSCURO - Dignidad destruida
+    Diego cuenta la plata.
+
+    No alcanza.
+
+    Piensa en su madre.
+    En cómo le miente.
+    "Estoy bien, má."
+
+    No está bien.
+
+    Dejó Venezuela para esto.
+    Para ver cómo te destruyen en otro país.
+    En otro idioma.
+
+    Pero la destrucción es igual.
+    Siempre igual.
+
+    ~ bajar_salud_mental(1)
+    * [Continuar] -> transicion_viernes_sabado
+}
+
+{conexion <= 1:
+    // FRAGMENTO OSCURO - Aislamiento total
+    Diego está solo en su pieza.
+
+    Tres contactos en el celular.
+    Su familia en Venezuela.
+
+    "Crucé el continente para estar solo", piensa.
+
+    La olla.
+    El barrio.
+    Todo le queda lejos.
+
+    En Venezuela estaba solo.
+    Acá está solo.
+
+    No hay diferencia.
+
+    ~ bajar_llama(1)
+    * [Continuar] -> transicion_viernes_sabado
+}
+
+// FRAGMENTO NORMAL
 # DIEGO
 
 Diego cuenta la plata.
@@ -489,10 +620,56 @@ Pero hoy comió.
 
 Mañana sigue.
 
-* [Continuar] -> sabado_amanecer
+* [Continuar] -> transicion_viernes_sabado
 
 === fragmento_marcos_viernes ===
 
+{dignidad <= 2:
+    // FRAGMENTO OSCURO - Dignidad destruida
+    Marcos piensa en vos.
+
+    Ahora entendés.
+    Ahora sabés lo que es.
+
+    No hay dignidad.
+    Nunca la hubo.
+    Solo hay funcionar.
+
+    Aceptar.
+    Agachar la cabeza.
+    Sobrevivir.
+
+    "Bienvenido", piensa.
+
+    Ya sos como él.
+    Ya no queda nada más.
+
+    ~ bajar_salud_mental(1)
+    * [Continuar] -> transicion_viernes_sabado
+}
+
+{conexion <= 1:
+    // FRAGMENTO OSCURO - Aislamiento total
+    Marcos mira desde lejos.
+
+    La gente se junta.
+    Hablan de cambiar cosas.
+
+    "No van a cambiar nada", piensa.
+
+    Nunca cambió nada.
+    La gente no tiene poder.
+    Nunca lo tuvo.
+
+    Mejor solo.
+    Mejor apagado.
+    Mejor no intentar.
+
+    ~ bajar_llama(1)
+    * [Continuar] -> transicion_viernes_sabado
+}
+
+// FRAGMENTO NORMAL
 # MARCOS
 
 Marcos vio la asamblea desde lejos.
@@ -507,7 +684,7 @@ La gente hace cosas.
 Quizás mañana.
 Siempre quizás mañana.
 
-* [Continuar] -> sabado_amanecer
+* [Continuar] -> transicion_viernes_sabado
 
 === fragmento_viernes_default ===
 
@@ -517,4 +694,17 @@ Los problemas siguen.
 Mañana hay asamblea.
 Para hablar de cómo seguir.
 
-* [Continuar] -> sabado_amanecer
+* [Continuar] -> transicion_viernes_sabado
+
+=== transicion_viernes_sabado ===
+// Chequeo de colapso mental antes de continuar
+{salud_mental <= 0:
+    -> final_apagado
+}
+
+// Chequeo de destrucción del tejido social
+{llama <= 0:
+    -> final_sin_llama
+}
+
+-> sabado_amanecer

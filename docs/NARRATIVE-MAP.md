@@ -35,13 +35,15 @@ Normal       Laboral        11 AM           Día Sin      Olla           Colecti
 
 ### Mecánicas Core
 
-| Mecánica | Rango | Impacto |
-|----------|-------|---------|
-| **Energía** | 0-5 | Limita acciones diarias |
-| **Conexión** | 0-10 | Integración comunitaria, acceso a finales |
-| **Llama** | 0-10 | Esperanza colectiva, tono de finales |
-| **Dignidad** | 0-10 | Autoestima, resistencia a humillación |
-| **Salud Mental** | 0-5 | Estado psicológico, trigger final GRIS |
+| Mecánica | Rango | Impacto | Game Over |
+|----------|-------|---------|-----------|
+| **Energía** | 0-5 | Limita acciones diarias | ❌ No |
+| **Conexión** | 0-10 | Integración comunitaria, acceso a finales, **death spiral si <= 1** | ⚠️ Indirecto (vía llama) |
+| **Llama** | 0-10 | Esperanza colectiva, tono de finales | ✅ **Sí (= 0)** → final SIN LLAMA |
+| **Dignidad** | 0-10 | Autoestima, resistencia a humillación, **death spiral si <= 2** | ⚠️ Indirecto (vía salud_mental) |
+| **Salud Mental** | 0-5 | Estado psicológico, **NUNCA SUBE, SOLO BAJA** | ✅ **Sí (= 0)** → final APAGADO |
+
+**⚠️ IMPORTANTE**: El juego ahora puede terminar ANTES del domingo si salud_mental o llama llegan a 0.
 
 ---
 
@@ -521,40 +523,230 @@ graph TD
 
 ## Todos los Finales
 
+### ⚠️ GAME OVER TEMPRANO (Lunes-Sábado)
+
+**IMPORTANTE**: El juego ahora puede terminar ANTES del domingo si se cumplen condiciones críticas.
+
+#### Chequeos en Cada Transición Nocturna
+
+Al final de **cada día** (lunes→martes, martes→miércoles, etc.), el juego verifica:
+
+```ink
+=== transicion_XXX_YYY ===
+
+// 1. COLAPSO MENTAL INDIVIDUAL (prioridad máxima)
+{salud_mental <= 0:
+    -> final_apagado
+}
+
+// 2. DESTRUCCIÓN TEJIDO SOCIAL (colapso colectivo)
+{llama <= 0:
+    -> final_sin_llama
+}
+
+// Si no se cumple, continúa al siguiente día
+-> siguiente_dia_amanecer
+```
+
 ### Evaluación Final (domingo_tarde)
 
-El juego evalúa en **orden de prioridad**:
+**Si llegaste al domingo**, el juego evalúa en **orden de prioridad**:
 
 ```ink
 === evaluar_final ===
 
-// 1. MEJOR FINAL (requiere todo)
-{conexion >= 7 && llama >= 5 && ayude_en_olla:
-    -> final_la_red
+// 1. COLAPSO MENTAL (por si llegaste al domingo con salud_mental = 0)
+{salud_mental <= 0:
+    -> final_apagado
 }
 
-// 2. PEOR FINAL (aislamiento total)
+// 2. COLAPSO COLECTIVO (por si llegaste al domingo con llama = 0)
+{llama <= 0:
+    -> final_sin_llama
+}
+
+// 3. FINAL OCULTO (requiere perfección)
+{conexion >= 9 && llama >= 8 && veces_que_ayude >= 3 && participe_asamblea && marcos_vino_a_asamblea && sofia_relacion >= 4 && elena_relacion >= 4 && tiene_todas_ideas():
+    -> final_la_llama
+}
+
+// 4. MEJOR FINAL (requiere mucho pero no perfección)
+{conexion >= 7 && llama >= 5 && ayude_en_olla:
+    -> final_red
+}
+
+// 5. PEOR FINAL (aislamiento total)
 {conexion <= 3 && llama <= 2:
     -> final_solo
 }
 
-// 3. BURNOUT (salud mental crítica)
+// 6. BURNOUT (salud mental crítica)
 {salud_mental <= 2 && conexion <= 4:
     -> final_gris
 }
 
-// 4. ESPERANZA (conexión suficiente)
+// 7. ESPERANZA (conexión suficiente)
 {conexion >= 5:
     -> final_quizas
 }
 
-// 5. DEFAULT (ambiguo)
+// 8. DEFAULT (ambiguo)
 -> final_incierto
 ```
 
 ---
 
-### ⭐ FINAL 1: LA RED (The Network)
+### 💀 FINAL 0A: APAGADO (Game Over Temprano - Colapso Mental)
+
+**Tipo**: GAME OVER TEMPRANO (puede pasar lunes-sábado)
+
+**Triggers**:
+- `salud_mental <= 0` al final de cualquier día
+
+**Narrativa Fisher**:
+```
+Pantalla negra. 3:47 AM.
+
+El antidepresivo en el cajón.
+"Tomar con alimentos."
+No comiste nada.
+
+Lo que no te dicen es que el problema no está en tu cabeza.
+El problema está en que no podés pagar el alquiler trabajando 60 horas.
+El problema está en que "flexibilidad laboral" significa que no sabés si comés el jueves.
+El problema está en que "resiliencia" es la palabra que usan cuando quieren que aguantes lo inaguantable.
+
+No estás enfermo.
+El sistema está enfermo.
+
+Pero ellos te venden la pastilla.
+Y vos te la tomás.
+Porque mañana hay que levantarse igual.
+
+# FIN - "El realismo capitalista"
+```
+
+**Tono**: Crítica estructural. Mark Fisher. Depresión como síntoma del capitalismo tardío, no falla química individual.
+
+**Cómo llegar**:
+- Salud mental inicial: 3/5
+- Necesitas perder 4 puntos
+- Triggers: despido (-1), llegada tarde (-1), reunión RRHH (-1), encuentros con Juan (-1 cada uno)
+- **No hay forma de recuperarla** - espiral descendente inevitable
+- Run pesimista: Martes puede llevarte a 0 (reunión + citación + conversación Juan)
+
+**Logro**: "Realismo Capitalista" - Alcanzar salud_mental = 0
+
+---
+
+### 🔥 FINAL 0B: SIN LLAMA (Game Over Temprano - Destrucción Tejido Social)
+
+**Tipo**: GAME OVER TEMPRANO (puede pasar lunes-sábado)
+
+**Triggers**:
+- `llama <= 0` al final de cualquier día
+
+**Narrativa**:
+```
+El barrio está en silencio.
+No el silencio de la noche.
+El silencio de la rendición.
+
+La olla cerró.
+Sofía se rindió: "¿Para qué?"
+Elena ya no habla del 2002: "Era otra época."
+Diego dejó de buscar: "No hay nada que hacer."
+
+Marcos tenía razón desde el principio.
+No hay llama. Nunca la hubo.
+
+El tejido social no se rompe de golpe.
+Se deshilacha.
+Persona por persona.
+Día por día.
+
+Hasta que no queda nada.
+
+Y reconstruirlo toma generaciones.
+No días. No semanas.
+Generaciones.
+
+{idea_red_o_nada:
+    La red o la nada.
+    Elegiste la nada.
+    Sin querer. Sin darte cuenta.
+    Pero la elegiste.
+}
+
+# FIN - "El tejido social se destruyó"
+```
+
+**Tono**: Colapso colectivo irreversible. No es depresión individual, es muerte comunitaria.
+
+**Cómo llegar**:
+- Llama inicial: 5/10
+- Necesitas perder 6 puntos
+- Triggers: olla colapsa (-2), saltear asamblea (-1), fragmentos oscuros de conexion <= 1 (-1 por noche)
+- Run aislacionista extrema: No ir a olla, no ayudar, no participar en asamblea
+- Fragmentos oscuros aceleran la caída
+
+**Diferencia con SOLO**: SOLO es aislamiento personal (llegás al domingo, sobrevivís). SIN LLAMA es destrucción de la comunidad (el barrio se destruye, game over).
+
+**Logro**: "El Tejido se Rompió" - Alcanzar llama = 0
+
+---
+
+### ⭐ FINAL 1: LA LLAMA (The Flame - Final Oculto)
+
+**Tipo**: Final dominical (si llegaste al domingo)
+
+**Triggers** (REQUIERE PERFECCIÓN):
+- `conexion >= 9`
+- `llama >= 8`
+- `veces_que_ayude >= 3`
+- `participe_asamblea = true`
+- `marcos_vino_a_asamblea = true`
+- `sofia_relacion >= 4`
+- `elena_relacion >= 4`
+- `tiene_todas_ideas() = true` (las 6 ideas desbloqueadas)
+
+**Narrativa**:
+```
+El lunes llega.
+No tenés laburo.
+Pero tenés algo que pocos tienen.
+
+La olla no solo sobrevivió. Creció.
+La asamblea no fue solo un evento. Fue el principio.
+
+Sofía te mira diferente: "Sos parte del equipo."
+Elena: "Raúl estaría orgulloso."
+Diego ya no se siente tan solo.
+Marcos volvió. De a poco. "Capaz que hay algo."
+
+Y hay una llama.
+No es esperanza ingenua.
+Es conocimiento.
+De que juntos, hay algo.
+
+El sistema no cambió.
+No va a cambiar mañana.
+Quizás nunca.
+
+Pero ustedes sí cambiaron.
+
+Y la llama no se apaga.
+
+# FIN - "Prendimos fuego"
+```
+
+**Tono**: Esperanza colectiva radical. No es ingenuidad, es construcción consciente de poder comunitario.
+
+**Logro**: "La Llama Arde" - Alcanzar el final oculto
+
+---
+
+### ⭐ FINAL 2: LA RED (The Network)
 
 **Triggers**:
 - `conexion >= 7`
@@ -1376,15 +1568,102 @@ Vos.
 
 | Evento | Impacto Salud Mental |
 |--------|----------------------|
-| Despido | -1 (automático) |
-| No contar a nadie | -1 |
-| Quedarse en cama | -1 |
-| Aislamiento sostenido | -1 por día |
-| Malas noticias TV | -1 |
+| Llegar tarde al laburo | -1 |
+| Reunión de área (martes) | -1 (automático) |
+| Esperar citación de RRHH | -1 (automático) |
+| Despido (miércoles) | -1 (automático) |
+| Conversaciones con Juan | -1 por opción negativa |
+| Buscar referencias y recibir tibia | -1 |
+| Encuentro random negativo barrio | -1 (1/6 probabilidad) |
+| **Fragmento oscuro dignidad <= 2** | **-1 por noche** |
 
-**Threshold crítico**: `salud_mental <= 2` → Trigger final GRIS (burnout)
+**Thresholds críticos**:
+- `salud_mental <= 2` → Trigger final GRIS (burnout) en domingo
+- `salud_mental <= 0` → **GAME OVER inmediato** → final APAGADO
 
-**No hay recuperación fácil**: A diferencia de energía, salud mental solo se mantiene o baja. Requiere conexión para evitar caída.
+**No hay recuperación**: A diferencia de otros recursos, salud mental **SOLO BAJA, NUNCA SUBE**. Espiral descendente inevitable.
+
+**Consecuencia**: Colapso mental individual. Crítica fisher: la depresión como síntoma estructural del capitalismo.
+
+---
+
+### 🌀 Sistema de Fragmentos Oscuros (Death Spirals)
+
+**Nuevo sistema**: Los fragmentos nocturnos tienen **3 versiones condicionales** basadas en recursos críticos.
+
+#### Mecánica
+
+Al final de cada día, ANTES de dormir, se muestra un fragmento nocturno desde la perspectiva de un NPC (Sofía, Elena, Diego o Marcos). Estos fragmentos ahora tienen 3 versiones:
+
+| Condición | Versión Fragmento | Consecuencia |
+|-----------|-------------------|--------------|
+| `dignidad <= 2` | **Fragmento Oscuro - Humillación** | `-1 salud_mental` |
+| `conexion <= 1` | **Fragmento Oscuro - Aislamiento** | `-1 llama` |
+| Normal | Fragmento original | Sin penalty |
+
+#### Ejemplo: Fragmento de Sofía (Lunes)
+
+**Dignidad <= 2** (Humillación):
+```
+Sofía está agotada.
+Piensa en vos.
+En cómo te arrastraste hoy.
+En cómo aceptaste todo.
+
+"Así termina la gente", piensa.
+"Aceptando cualquier cosa."
+
+~ bajar_salud_mental(1)
+```
+
+**Conexion <= 1** (Aislamiento):
+```
+Sofía cierra la olla temprano.
+Nadie vino.
+Otra vez nadie vino.
+
+"¿Para qué?", se pregunta.
+
+Mañana quizás tampoco abra.
+
+~ bajar_llama(1)
+```
+
+**Normal** (dignidad > 2 y conexion > 1):
+```
+Sofía tampoco duerme bien.
+Los números de la olla no cierran.
+Hace tres meses que no cierran.
+
+Mañana hay que seguir.
+```
+
+#### Death Spirals
+
+Los fragmentos oscuros crean **espirales descendentes** que aceleran hacia los finales oscuros:
+
+**Espiral Individual** (Dignidad → Salud Mental → Colapso):
+```
+dignidad <= 2 → fragmento oscuro cada noche → -1 salud_mental/día
+→ acelera llegada a salud_mental = 0
+→ final APAGADO temprano
+```
+
+**Espiral Colectiva** (Conexión → Llama → Destrucción Social):
+```
+conexion <= 1 → fragmento oscuro cada noche → -1 llama/día
+→ acelera llegada a llama = 0
+→ final SIN LLAMA temprano
+```
+
+#### Diseño Intencional
+
+1. **Dignidad NO es final temprano**: Difícil de perder (solo 5 triggers), pero genera death spiral hacia salud_mental = 0
+2. **Conexión NO es final temprano**: Fácil de recuperar (40 subidas vs 8 bajadas), pero genera death spiral hacia llama = 0
+3. **Salud Mental = 0**: GAME OVER individual (colapso psicológico)
+4. **Llama = 0**: GAME OVER colectivo (muerte comunitaria)
+
+**Teoría de juegos narrativos**: Los fragmentos oscuros traducen decisiones de gameplay en consecuencias narrativas y mecánicas, creando feedback loops que empujan hacia finales coherentes con tus elecciones.
 
 ---
 

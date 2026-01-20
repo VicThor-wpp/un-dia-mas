@@ -5,7 +5,7 @@
       "icon": "zap",
       "max": 5,
       "default": 4,
-      "color": "#ffc107",
+      "color": "#d4a373",
       "visible": true,
       "showInHeader": true,
       "description": "Capacidad de acción diaria. Se restaura cada mañana."
@@ -14,8 +14,8 @@
       "label": "Conexión",
       "icon": "users",
       "max": 10,
-      "default": 5,
-      "color": "#4caf50",
+      "default": 3,
+      "color": "#588157",
       "visible": true,
       "showInHeader": false,
       "description": "Tu integración con el barrio y la comunidad."
@@ -25,7 +25,7 @@
       "icon": "shield",
       "max": 10,
       "default": 5,
-      "color": "#2196f3",
+      "color": "#4a90d9",
       "visible": true,
       "showInHeader": false,
       "description": "Tu sentido de valor propio y respeto."
@@ -34,8 +34,8 @@
       "label": "Llama",
       "icon": "flame",
       "max": 10,
-      "default": 3,
-      "color": "#ff6b35",
+      "default": 5,
+      "color": "#f48c06",
       "visible": true,
       "showInHeader": false,
       "isSpecial": true,
@@ -43,10 +43,10 @@
     },
     "salud_mental": {
       "label": "Salud Mental",
-      "icon": "heart-pulse",
+      "icon": "brain",
       "max": 5,
       "default": 3,
-      "color": "#4fc3f7",
+      "color": "#9381ff",
       "visible": true,
       "showInHeader": true,
       "description": "Tu bienestar psicológico. Baja con el estrés."

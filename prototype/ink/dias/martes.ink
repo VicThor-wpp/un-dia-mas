@@ -242,6 +242,41 @@ Mañana vas a saber.
 
 === fragmento_sofia_martes ===
 
+{dignidad <= 2:
+    // FRAGMENTO OSCURO - Dignidad destruida
+    Sofía piensa en vos.
+
+    En cómo te vio hoy.
+    Roto antes de tiempo.
+
+    "Así empiezan a caer", piensa.
+    "Primero la dignidad. Después todo."
+
+    Conoció a tantos que terminaron así.
+    Ahora vos también.
+
+    ~ bajar_salud_mental(1)
+    * [Continuar] -> martes_cliffhanger
+}
+
+{conexion <= 1:
+    // FRAGMENTO OSCURO - Aislamiento total
+    Sofía está sola en la olla.
+
+    Nadie ayudó hoy.
+    Nadie preguntó.
+
+    "El barrio se muere", piensa.
+
+    Antes la gente se juntaba.
+    Ahora cada uno en su casa.
+    Cada uno solo.
+
+    ~ bajar_llama(1)
+    * [Continuar] -> martes_cliffhanger
+}
+
+// FRAGMENTO NORMAL
 # SOFÍA
 
 Sofía tampoco duerme bien.
@@ -267,6 +302,46 @@ Eso la mantiene despierta.
 
 === fragmento_elena_martes ===
 
+{dignidad <= 2:
+    // FRAGMENTO OSCURO - Dignidad destruida
+    Elena prende la radio.
+
+    Hablan de despidos masivos.
+    De gente que se rompe.
+
+    Piensa en vos.
+    En lo que vio en tu cara.
+
+    "El 2002 quebró a muchos así", piensa.
+    "Los que aceptaron todo hasta que no quedó nada."
+
+    Raúl también estuvo cerca.
+    Muy cerca.
+
+    ~ bajar_salud_mental(1)
+    * [Continuar] -> martes_cliffhanger
+}
+
+{conexion <= 1:
+    // FRAGMENTO OSCURO - Aislamiento total
+    Elena mira por la ventana.
+
+    El barrio oscuro.
+    Todas las ventanas cerradas.
+
+    "Ya nadie se conoce", piensa.
+    "Ya nadie toca el timbre del vecino."
+
+    Cuando Raúl murió, tres vecinos vinieron.
+    Tres.
+
+    Antes hubiera sido el barrio entero.
+
+    ~ bajar_llama(1)
+    * [Continuar] -> martes_cliffhanger
+}
+
+// FRAGMENTO NORMAL
 # ELENA
 
 Elena está con la radio.
@@ -286,6 +361,48 @@ Mañana hay que estar atentos.
 
 === fragmento_diego_martes ===
 
+{dignidad <= 2:
+    // FRAGMENTO OSCURO - Dignidad destruida
+    Diego piensa en vos.
+
+    En lo que te vi aceptar hoy.
+    Todo. Sin pelear.
+
+    "Yo voy a terminar igual", piensa.
+
+    Dejó Venezuela para esto.
+    Para terminar roto en otro país.
+    Igual de roto.
+    Igual de solo.
+
+    Su madre preguntó cómo estaba.
+    Mintió.
+
+    ~ bajar_salud_mental(1)
+    * [Continuar] -> martes_cliffhanger
+}
+
+{conexion <= 1:
+    // FRAGMENTO OSCURO - Aislamiento total
+    Diego cuenta sus contactos.
+
+    Tres personas hablan con él.
+    Tres.
+
+    En Venezuela no tenía muchos.
+    Acá tiene menos.
+
+    "Vine a estar solo en otro idioma", piensa.
+
+    La pieza alquilada.
+    El depósito.
+    Nadie.
+
+    ~ bajar_llama(1)
+    * [Continuar] -> martes_cliffhanger
+}
+
+// FRAGMENTO NORMAL
 # DIEGO
 
 Diego mira el techo.
@@ -304,6 +421,49 @@ No puede perder esto también.
 
 === fragmento_marcos_martes ===
 
+{dignidad <= 2:
+    // FRAGMENTO OSCURO - Dignidad destruida
+    Marcos te reconoce en la distancia.
+
+    Ahora sos como él.
+    Alguien que acepta.
+    Alguien que se dobla.
+
+    "Bienvenido", piensa.
+
+    Antes también era diferente.
+    Antes también tenía dignidad.
+
+    Ahora solo funciona.
+    Vos también vas a funcionar.
+    Solo funcionar.
+
+    ~ bajar_salud_mental(1)
+    * [Continuar] -> martes_cliffhanger
+}
+
+{conexion <= 1:
+    // FRAGMENTO OSCURO - Aislamiento total
+    Marcos mira los mensajes sin leer.
+
+    Quince personas que intentaron.
+    Quince personas que dejó de lado.
+
+    La asamblea del barrio.
+    La olla.
+    Los amigos.
+
+    Todo se cayó.
+    Todo se va a seguir cayendo.
+
+    La gente no cambia nada.
+    Nunca cambió nada.
+
+    ~ bajar_llama(1)
+    * [Continuar] -> martes_cliffhanger
+}
+
+// FRAGMENTO NORMAL
 # MARCOS
 
 Marcos está despierto.
@@ -332,4 +492,17 @@ Es de RRHH.
 No dice más.
 Pero sabés que no es bueno.
 
-* [Intentar dormir] -> miercoles_amanecer
+* [Intentar dormir] -> transicion_martes_miercoles
+
+=== transicion_martes_miercoles ===
+// Chequeo de colapso mental antes de continuar
+{salud_mental <= 0:
+    -> final_apagado
+}
+
+// Chequeo de destrucción del tejido social
+{llama <= 0:
+    -> final_sin_llama
+}
+
+-> miercoles_amanecer

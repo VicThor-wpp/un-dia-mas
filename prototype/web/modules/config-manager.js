@@ -62,26 +62,28 @@ const ConfigManager = (function() {
             },
             stats: {
                 stats: {
-                    energia: { label: 'Energía', icon: 'zap', max: 5, default: 4, color: '#ffc107', visible: true, showInHeader: true },
-                    conexion: { label: 'Conexión', icon: 'users', max: 10, default: 5, color: '#4caf50', visible: true },
-                    dignidad: { label: 'Dignidad', icon: 'shield', max: 10, default: 5, color: '#2196f3', visible: true },
-                    llama: { label: 'Llama', icon: 'flame', max: 10, default: 3, color: '#ff6b35', visible: true, isSpecial: true },
+                    energia: { label: 'Energía', icon: 'zap', max: 5, default: 4, color: '#d4a373', visible: true, showInHeader: true },
+                    conexion: { label: 'Conexión', icon: 'users', max: 10, default: 3, color: '#588157', visible: true },
+                    dignidad: { label: 'Dignidad', icon: 'shield', max: 10, default: 5, color: '#4a90d9', visible: true },
+                    llama: { label: 'Llama', icon: 'flame', max: 10, default: 5, color: '#f48c06', visible: true, isSpecial: true },
+                    salud_mental: { label: 'Salud Mental', icon: 'brain', max: 5, default: 3, color: '#9381ff', visible: true },
                     trauma: { label: 'Trauma', icon: 'heart-crack', max: 10, default: 0, visible: false, showWhenPositive: true },
                     acumulacion: { label: 'Acumulación', icon: 'trending-up', max: 10, default: 0, visible: false, hiddenStat: true }
                 },
                 thresholds: {
                     trauma: { high: 4, effects: { bodyClass: 'trauma-high', indicator: 'Traumatizado' } },
                     llama: { low: 2, effects: { bodyClass: 'llama-low', indicator: 'Sin esperanza' } },
-                    conexion: { low: 3, effects: { bodyClass: 'conexion-low', indicator: 'Aislado' } }
+                    conexion: { low: 3, effects: { bodyClass: 'conexion-low', indicator: 'Aislado' } },
+                    salud_mental: { low: 2, effects: { bodyClass: 'salud-baja', indicator: 'Agotamiento' } }
                 }
             },
             characters: {
                 characters: {
-                    sofia: { name: 'Sofía', role: 'La de la olla', color: '#e89b7b', relationVar: 'sofia_relacion' },
-                    elena: { name: 'Elena', role: 'La que recuerda', color: '#98b89e', relationVar: 'elena_relacion' },
-                    diego: { name: 'Diego', role: 'El que llegó', color: '#d4a574', relationVar: 'diego_relacion' },
-                    marcos: { name: 'Marcos', role: 'El quemado', color: '#7ba3c7', relationVar: 'marcos_relacion' },
-                    juan: { name: 'Juan', role: 'El compañero', color: '#8b7b7b', relationVar: 'juan_relacion' }
+                    sofia: { name: 'Sofía', role: 'La de la olla', color: '#e89b7b', relationVar: 'sofia_relacion', portrait: 'assets/portraits/sofia', expressions: ['neutral', 'happy', 'sad', 'worried', 'tired'] },
+                    elena: { name: 'Elena', role: 'La que recuerda', color: '#98b89e', relationVar: 'elena_relacion', portrait: 'assets/portraits/elena', expressions: ['neutral', 'wise', 'worried', 'remembering'] },
+                    diego: { name: 'Diego', role: 'El que llegó', color: '#d4a574', relationVar: 'diego_relacion', portrait: 'assets/portraits/diego', expressions: ['neutral', 'curious', 'hopeful', 'worried'] },
+                    marcos: { name: 'Marcos', role: 'El quemado', color: '#7ba3c7', relationVar: 'marcos_relacion', portrait: 'assets/portraits/marcos', expressions: ['neutral', 'distant', 'opening', 'bitter'] },
+                    juan: { name: 'Juan', role: 'El compañero', color: '#8b7b7b', relationVar: 'juan_relacion', portrait: 'assets/portraits/juan', expressions: ['neutral', 'friendly', 'worried', 'distant'] }
                 },
                 display: { maxRelation: 5 }
             },
@@ -89,7 +91,15 @@ const ConfigManager = (function() {
                 layout: { maxParagraphsBeforePause: 4 },
                 notifications: { duration: 2500, fadeOutDuration: 500 },
                 days: { names: ['', 'LUNES', 'MARTES', 'MIÉRCOLES', 'JUEVES', 'VIERNES', 'SÁBADO', 'DOMINGO'] },
-                features: { diceRolls: true, statNotifications: true, choiceBadges: true }
+                portraits: {
+                    enabled: true,
+                    position: 'bottom',
+                    height: '35vh',
+                    fadeInDuration: 300,
+                    hideOnMobile: true,
+                    mobileBreakpoint: 480
+                },
+                features: { diceRolls: true, statNotifications: true, choiceBadges: true, thresholdEffects: true }
             }
         };
         loaded = true;

@@ -273,6 +273,37 @@ Sofía está adentro.
 
 === fragmento_sofia_lunes ===
 
+{dignidad <= 2:
+    // FRAGMENTO OSCURO - Dignidad destruida
+    Sofía está agotada.
+
+    Piensa en vos.
+    En cómo te arrastraste hoy.
+    En cómo aceptaste todo.
+
+    "Así termina la gente", piensa.
+    "Aceptando cualquier cosa."
+
+    ~ bajar_salud_mental(1)
+    * [Continuar] -> lunes_cliffhanger
+}
+
+{conexion <= 1:
+    // FRAGMENTO OSCURO - Aislamiento total
+    Sofía cierra la olla temprano.
+
+    Nadie vino.
+    Otra vez nadie vino.
+
+    "¿Para qué?", se pregunta.
+
+    Mañana quizás tampoco abra.
+
+    ~ bajar_llama(1)
+    * [Continuar] -> lunes_cliffhanger
+}
+
+// FRAGMENTO NORMAL
 Sofía tampoco duerme bien.
 
 Los números de la olla no cierran.
@@ -284,6 +315,39 @@ Mañana hay que seguir.
 
 === fragmento_elena_lunes ===
 
+{dignidad <= 2:
+    // FRAGMENTO OSCURO - Dignidad destruida
+    Elena te vio hoy.
+
+    Te vio aceptar.
+    Te vio agachar la cabeza.
+    Te vio convertirte en lo que no eras.
+
+    "El 2002 también quebró gente así", piensa.
+    "Los que se dejaron quebrar."
+
+    ~ bajar_salud_mental(1)
+    * [Continuar] -> lunes_cliffhanger
+}
+
+{conexion <= 1:
+    // FRAGMENTO OSCURO - Aislamiento total
+    Elena prende la radio.
+
+    Hablan de la crisis.
+    De los despidos.
+    De la gente sola.
+
+    Apaga la radio.
+    Ella también está sola.
+
+    "Ya nadie se cuida", piensa.
+
+    ~ bajar_llama(1)
+    * [Continuar] -> lunes_cliffhanger
+}
+
+// FRAGMENTO NORMAL
 Elena no puede dormir.
 
 La radio dice cosas.
@@ -295,6 +359,42 @@ Apaga la radio.
 
 === fragmento_diego_lunes ===
 
+{dignidad <= 2:
+    // FRAGMENTO OSCURO - Dignidad destruida
+    Diego piensa en vos.
+
+    En cómo te vio hoy.
+    Roto. Doblado.
+
+    "Yo también voy a terminar así", piensa.
+    "Todos terminamos así."
+
+    Llama a su madre.
+    Cuelga antes de que atienda.
+
+    ~ bajar_salud_mental(1)
+    * [Continuar] -> lunes_cliffhanger
+}
+
+{conexion <= 1:
+    // FRAGMENTO OSCURO - Aislamiento total
+    Diego está solo en su pieza.
+
+    Nadie lo llamó hoy.
+    Nadie lo llamó ayer.
+    Nadie lo va a llamar mañana.
+
+    Piensa en Venezuela.
+    Allá estaba solo.
+    Acá está solo.
+
+    No hay diferencia.
+
+    ~ bajar_llama(1)
+    * [Continuar] -> lunes_cliffhanger
+}
+
+// FRAGMENTO NORMAL
 Diego está despierto.
 
 Piensa en su madre.
@@ -305,6 +405,41 @@ En todo lo que dejó.
 
 === fragmento_marcos_lunes ===
 
+{dignidad <= 2:
+    // FRAGMENTO OSCURO - Dignidad destruida
+    Marcos te reconoce.
+
+    Ahora sos como él.
+    Quebrado. Funcional. Vacío.
+
+    "Bienvenido", piensa.
+    Pero no siente nada.
+
+    Ya no queda nada que sentir.
+
+    ~ bajar_salud_mental(1)
+    * [Continuar] -> lunes_cliffhanger
+}
+
+{conexion <= 1:
+    // FRAGMENTO OSCURO - Aislamiento total
+    Marcos está solo.
+
+    Dejó de esperar que cambie.
+    Dejó de esperar que alguien llame.
+    Dejó de esperar.
+
+    La gente no se junta.
+    La gente no se organiza.
+    La gente no hace nada.
+
+    Nunca lo hizo. Nunca lo hará.
+
+    ~ bajar_llama(1)
+    * [Continuar] -> lunes_cliffhanger
+}
+
+// FRAGMENTO NORMAL
 Marcos está solo.
 Como siempre.
 
@@ -323,4 +458,17 @@ Un mensaje de grupo del laburo.
 
 No dice más.
 
-* [Dormir inquieto] -> martes_amanecer
+* [Dormir inquieto] -> transicion_lunes_martes
+
+=== transicion_lunes_martes ===
+// Chequeo de colapso mental antes de continuar
+{salud_mental <= 0:
+    -> final_apagado
+}
+
+// Chequeo de destrucción del tejido social
+{llama <= 0:
+    -> final_sin_llama
+}
+
+-> martes_amanecer

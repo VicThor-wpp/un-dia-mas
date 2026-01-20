@@ -323,6 +323,158 @@ Eso es algo.
 
 -> END
 
+=== final_sin_llama ===
+
+# FINAL: SIN LLAMA
+
+El barrio está en silencio.
+
+No el silencio de la noche.
+El silencio de la rendición.
+
+* [...]
+-
+
+La olla cerró.
+No por falta de ganas.
+Por falta de gente que crea.
+
+* [...]
+-
+
+Sofía se rindió.
+"Para qué", dijo.
+"Si nadie viene."
+
+Elena ya no habla del 2002.
+Ahora solo dice: "Era otra época."
+
+Diego dejó de buscar.
+"No hay nada que hacer."
+
+* [...]
+-
+
+Marcos tenía razón desde el principio.
+No hay llama.
+Nunca la hubo.
+
+* [...]
+-
+
+El tejido social no se rompe de golpe.
+Se deshilacha.
+Persona por persona.
+Día por día.
+
+* [...]
+-
+
+Hasta que no queda nada.
+
+Y reconstruirlo toma generaciones.
+No días.
+No semanas.
+
+Generaciones.
+
+* [...]
+-
+
+{idea_hay_cosas_juntos:
+    Hay cosas que solo se hacen juntos.
+
+    Pero ya no hay "juntos".
+}
+
+{idea_red_o_nada:
+    La red o la nada.
+
+    Elegiste la nada.
+    Sin querer. Sin darte cuenta.
+    Pero la elegiste.
+}
+
+La llama se apagó.
+
+# FIN - "El tejido social se destruyó"
+
+-> END
+
+=== final_apagado ===
+
+# FINAL: APAGADO
+
+La pantalla del teléfono te ilumina la cara en la oscuridad.
+
+3:47 AM.
+
+* [...]
+-
+
+Mañana tenés turno con la psiquiatra.
+O pasado.
+No te acordás.
+
+* [...]
+-
+
+El antidepresivo está en el cajón.
+"Tomar con alimentos."
+
+No comiste nada desde... ayer? anteayer?
+
+Da igual.
+
+* [...]
+-
+
+Lo que no te dicen es que el problema no está en tu cabeza.
+
+El problema está en que no podés pagar el alquiler trabajando 60 horas.
+
+El problema está en que "flexibilidad laboral" significa que no sabés si comés el jueves.
+
+El problema está en que "resiliencia" es la palabra que usan cuando quieren que aguantes lo inaguantable.
+
+* [...]
+-
+
+No estás enfermo.
+
+El sistema está enfermo.
+
+* [...]
+-
+
+Pero ellos te venden la pastilla.
+
+Y vos te la tomás.
+
+Porque mañana hay que levantarse igual.
+
+* [...]
+-
+
+{idea_quien_soy:
+    ¿Quién sos sin laburo?
+
+    Nadie.
+    Eso es lo que el sistema te dice.
+}
+
+{idea_esto_es_lo_que_hay:
+    Esto es lo que hay.
+
+    Y lo que hay te está matando de a poco.
+}
+
+La luz del teléfono se apaga.
+
+# FIN - "El realismo capitalista"
+
+-> END
+
 === final_gris ===
 
 # FINAL: GRIS

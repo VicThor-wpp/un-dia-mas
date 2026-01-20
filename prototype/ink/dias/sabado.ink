@@ -554,6 +554,49 @@ Pero cambia algo.
 
 === fragmento_sofia_sabado ===
 
+{dignidad <= 2:
+    // FRAGMENTO OSCURO - Dignidad destruida
+    Sofía está destruida.
+
+    Hoy vio gente en la asamblea.
+    Gente rota que intenta seguir.
+
+    Vos también estabas ahí.
+    Roto.
+
+    "¿Para qué seguir?", piensa.
+
+    La olla no salva a nadie.
+    Solo retrasa lo inevitable.
+    Un día más.
+    Hasta que no hay más días.
+
+    ~ bajar_salud_mental(1)
+    * [Continuar] -> transicion_sabado_domingo
+}
+
+{conexion <= 1:
+    // FRAGMENTO OSCURO - Aislamiento total
+    Sofía está sola en la olla.
+
+    Hoy hubo asamblea.
+    Vino poca gente.
+
+    "El barrio se muere", piensa.
+
+    Cada vez menos gente.
+    Cada vez más solos.
+
+    La olla va a cerrar.
+    Es cuestión de tiempo.
+
+    Y nadie va a hacer nada.
+
+    ~ bajar_llama(1)
+    * [Continuar] -> transicion_sabado_domingo
+}
+
+// FRAGMENTO NORMAL
 # SOFÍA
 
 Sofía finalmente duerme.
@@ -571,10 +614,52 @@ Mañana es domingo.
 Un día para respirar.
 Después sigue la lucha.
 
-* [Continuar] -> domingo_amanecer
+* [Continuar] -> transicion_sabado_domingo
 
 === fragmento_elena_sabado ===
 
+{dignidad <= 2:
+    // FRAGMENTO OSCURO - Dignidad destruida
+    Elena sueña con Raúl.
+
+    Está en el frigorífico.
+    El día que lo echaron.
+
+    Vuelve a casa roto.
+    Ya no es el mismo.
+
+    "Nunca volvió a ser el mismo", piensa Elena.
+
+    Despierta.
+    Piensa en vos.
+
+    Vos tampoco vas a volver a ser el mismo.
+    Nadie vuelve.
+
+    ~ bajar_salud_mental(1)
+    * [Continuar] -> transicion_sabado_domingo
+}
+
+{conexion <= 1:
+    // FRAGMENTO OSCURO - Aislamiento total
+    Elena está sola.
+
+    Raúl murió.
+    El barrio se dispersó.
+
+    "Nos convertimos en islas", piensa.
+
+    Cuando Raúl murió, tres vecinos vinieron.
+    Antes hubiera sido el barrio entero.
+
+    Ahora ni eso.
+    Ahora solo puertas cerradas.
+
+    ~ bajar_llama(1)
+    * [Continuar] -> transicion_sabado_domingo
+}
+
+// FRAGMENTO NORMAL
 # ELENA
 
 Elena sueña con Raúl.
@@ -588,10 +673,54 @@ Hace calor.
 Se despierta.
 Es un buen sueño.
 
-* [Continuar] -> domingo_amanecer
+* [Continuar] -> transicion_sabado_domingo
 
 === fragmento_diego_sabado ===
 
+{dignidad <= 2:
+    // FRAGMENTO OSCURO - Dignidad destruida
+    Diego habló con su madre.
+
+    "Estoy bien, má."
+    Mentira.
+
+    No está bien.
+
+    Dejó Venezuela para esto.
+    Para ver cómo te humillan.
+    Para terminar roto.
+
+    En otro país.
+    En otro idioma.
+
+    Pero la humillación es la misma.
+    Siempre la misma.
+
+    ~ bajar_salud_mental(1)
+    * [Continuar] -> transicion_sabado_domingo
+}
+
+{conexion <= 1:
+    // FRAGMENTO OSCURO - Aislamiento total
+    Diego está solo.
+
+    Tres contactos en Uruguay.
+    Su familia en Venezuela.
+
+    "Crucé un continente para seguir solo", piensa.
+
+    La asamblea.
+    El barrio.
+    Todo le queda lejos.
+
+    Siempre le quedó lejos.
+    Siempre va a quedar lejos.
+
+    ~ bajar_llama(1)
+    * [Continuar] -> transicion_sabado_domingo
+}
+
+// FRAGMENTO NORMAL
 # DIEGO
 
 Diego habló con su madre.
@@ -608,10 +737,55 @@ O quizás no.
 
 Mañana sigue.
 
-* [Continuar] -> domingo_amanecer
+* [Continuar] -> transicion_sabado_domingo
 
 === fragmento_marcos_sabado ===
 
+{dignidad <= 2:
+    // FRAGMENTO OSCURO - Dignidad destruida
+    Marcos piensa.
+
+    Vos ahora entendés.
+    Ya sos como él.
+
+    No hay dignidad.
+    Nunca la hubo.
+
+    Solo hay funcionar.
+    Aceptar.
+    Agachar la cabeza.
+
+    "Bienvenido", piensa.
+
+    Ya no queda nada más.
+    Nunca quedó.
+
+    ~ bajar_salud_mental(1)
+    * [Continuar] -> transicion_sabado_domingo
+}
+
+{conexion <= 1:
+    // FRAGMENTO OSCURO - Aislamiento total
+    Marcos mira la asamblea desde lejos.
+
+    Gente que se junta.
+    Gente que habla de cambiar cosas.
+
+    "No van a cambiar nada", piensa.
+
+    La gente nunca cambió nada.
+    Los de arriba ganan.
+    Siempre ganan.
+
+    Mejor solo.
+    Mejor no intentar.
+    Mejor apagarse.
+
+    ~ bajar_llama(1)
+    * [Continuar] -> transicion_sabado_domingo
+}
+
+// FRAGMENTO NORMAL
 # MARCOS
 
 {marcos_estado == "mirando":
@@ -631,7 +805,7 @@ Mañana sigue.
 
 Mañana es domingo.
 
-* [Continuar] -> domingo_amanecer
+* [Continuar] -> transicion_sabado_domingo
 
 // --- ECOS: NPCs RECUERDAN TUS ACCIONES ---
 
@@ -697,4 +871,17 @@ Mañana es domingo.
 La semana que viene empieza todo de vuelta.
 Pero quizás no igual.
 
-* [Continuar] -> domingo_amanecer
+* [Continuar] -> transicion_sabado_domingo
+
+=== transicion_sabado_domingo ===
+// Chequeo de colapso mental antes de continuar
+{salud_mental <= 0:
+    -> final_apagado
+}
+
+// Chequeo de destrucción del tejido social
+{llama <= 0:
+    -> final_sin_llama
+}
+
+-> domingo_amanecer

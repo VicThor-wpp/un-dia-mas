@@ -502,6 +502,47 @@ La cuenta regresiva empezó.
 
 === fragmento_sofia_miercoles ===
 
+{dignidad <= 2:
+    // FRAGMENTO OSCURO - Dignidad destruida
+    Sofía piensa en vos.
+
+    En cómo te vio salir del edificio.
+    Vacío. Roto.
+
+    "Así empiezan todos", piensa.
+    "Primero el despido. Después la nada."
+
+    La olla está llena de gente así.
+    Gente que era otra cosa.
+    Ahora solo sobreviven.
+
+    Vos vas a ser uno más.
+
+    ~ bajar_salud_mental(1)
+    * [Continuar] -> transicion_miercoles_jueves
+}
+
+{conexion <= 1:
+    // FRAGMENTO OSCURO - Aislamiento total
+    Sofía está en la olla vacía.
+
+    Hoy nadie vino a ayudar.
+    Mañana tampoco van a venir.
+
+    "El barrio se deshace", piensa.
+
+    Cada uno con su problema.
+    Cada uno solo.
+    Ya nadie viene.
+
+    La olla va a cerrar.
+    Es cuestión de tiempo.
+
+    ~ bajar_llama(1)
+    * [Continuar] -> transicion_miercoles_jueves
+}
+
+// FRAGMENTO NORMAL
 Sofía tampoco puede dormir.
 
 Está en la cocina, con la calculadora.
@@ -525,10 +566,55 @@ En que quizás vengas mañana.
 Apaga la luz.
 Mañana hay que seguir.
 
-* [Continuar] -> jueves_amanecer
+* [Continuar] -> transicion_miercoles_jueves
 
 === fragmento_diego_miercoles ===
 
+{dignidad <= 2:
+    // FRAGMENTO OSCURO - Dignidad destruida
+    Diego piensa en vos.
+
+    En cómo te vio hoy.
+    Destruido. Humillado.
+
+    "Yo también voy a terminar así", piensa.
+    "Todos los que venimos de afuera terminamos así."
+
+    Dejó todo en Venezuela.
+    Para esto.
+    Para ver cómo te rompen en otro país.
+
+    Su madre preguntó cómo estaba.
+    "Bien, má."
+    Mentira.
+
+    Todo es mentira.
+
+    ~ bajar_salud_mental(1)
+    * [Continuar] -> transicion_miercoles_jueves
+}
+
+{conexion <= 1:
+    // FRAGMENTO OSCURO - Aislamiento total
+    Diego está solo en su pieza.
+
+    Llegó hace dos años.
+    Tiene tres contactos en el celular.
+    Tres.
+
+    "Vine acá para estar solo en otro idioma", piensa.
+
+    En Venezuela no tenía a nadie.
+    Acá no tiene a nadie.
+
+    No hay diferencia.
+    Nunca hubo.
+
+    ~ bajar_llama(1)
+    * [Continuar] -> transicion_miercoles_jueves
+}
+
+// FRAGMENTO NORMAL
 Diego está en su pieza.
 Alquilada, chica, con olor a humedad.
 
@@ -556,10 +642,54 @@ Quiere ayudarse pero no sabe cómo.
 Mañana te va a buscar.
 No sabe para qué. Pero te va a buscar.
 
-* [Continuar] -> jueves_amanecer
+* [Continuar] -> transicion_miercoles_jueves
 
 === fragmento_elena_miercoles ===
 
+{dignidad <= 2:
+    // FRAGMENTO OSCURO - Dignidad destruida
+    Elena piensa en Raúl.
+
+    Él también se rompió.
+    En el 2002, cuando cerró el frigorífico.
+
+    Por tres meses fue otra persona.
+    Vacía. Derrotada.
+
+    Piensa en vos.
+    En tu voz hoy.
+
+    "Ya empezó a romperse", piensa.
+    Y sabe que es difícil volver de eso.
+
+    Raúl nunca volvió del todo.
+    Murió un poco roto.
+
+    ~ bajar_salud_mental(1)
+    * [Continuar] -> transicion_miercoles_jueves
+}
+
+{conexion <= 1:
+    // FRAGMENTO OSCURO - Aislamiento total
+    Elena está sola.
+
+    Raúl murió hace tres años.
+    Los hijos viven lejos.
+
+    El barrio ya no es lo que era.
+    Ya nadie se junta.
+    Ya nadie toca timbre.
+
+    "Nos volvimos un país de solos", piensa.
+
+    Antes había red.
+    Ahora hay puertas cerradas.
+
+    ~ bajar_llama(1)
+    * [Continuar] -> transicion_miercoles_jueves
+}
+
+// FRAGMENTO NORMAL
 Elena no puede dormir.
 
 Piensa en Raúl.
@@ -578,4 +708,17 @@ Es lo que se hace.
 Prende la radio bajito.
 Algo de compañía en la oscuridad.
 
-* [Continuar] -> jueves_amanecer
+* [Continuar] -> transicion_miercoles_jueves
+
+=== transicion_miercoles_jueves ===
+// Chequeo de colapso mental antes de continuar
+{salud_mental <= 0:
+    -> final_apagado
+}
+
+// Chequeo de destrucción del tejido social
+{llama <= 0:
+    -> final_sin_llama
+}
+
+-> jueves_amanecer

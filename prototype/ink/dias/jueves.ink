@@ -517,6 +517,50 @@ Vos también.
 
 === fragmento_marcos_jueves ===
 
+{dignidad <= 2:
+    // FRAGMENTO OSCURO - Dignidad destruida
+    Marcos piensa en vos.
+
+    Ya sos como él.
+    Roto. Funcional. Vacío.
+
+    "Ahora entendés", piensa.
+
+    No hay salida.
+    Solo hay aceptar.
+    Aceptar que esto es todo.
+    Que nunca fue más.
+
+    Mañana va a ser igual.
+    Siempre igual.
+
+    ~ bajar_salud_mental(1)
+    * [Continuar] -> jueves_cliffhanger
+}
+
+{conexion <= 1:
+    // FRAGMENTO OSCURO - Aislamiento total
+    Marcos mira el celular.
+
+    Veinte mensajes sin leer.
+    La asamblea del barrio.
+    Invitaciones.
+    Gente que intenta.
+
+    "Para qué", piensa.
+
+    La gente no cambia nada.
+    Nunca cambió nada.
+    Nunca va a cambiar nada.
+
+    Mejor solo.
+    Mejor apagado.
+
+    ~ bajar_llama(1)
+    * [Continuar] -> jueves_cliffhanger
+}
+
+// FRAGMENTO NORMAL
 # MARCOS
 
 Marcos tampoco duerme.
@@ -535,6 +579,50 @@ Mañana es otro día igual.
 
 === fragmento_sofia_jueves ===
 
+{dignidad <= 2:
+    // FRAGMENTO OSCURO - Dignidad destruida
+    Sofía mira la olla vacía.
+
+    Piensa en toda la gente que pasó por acá.
+    Gente que llegó rota.
+    Gente que se fue más rota.
+
+    Vos sos uno más.
+
+    "No sé si puedo seguir viendo esto", piensa.
+
+    Cada día llega alguien más destruido.
+    Cada día la olla alcanza para menos.
+
+    Todo cae.
+    Todo se rompe.
+
+    ~ bajar_salud_mental(1)
+    * [Continuar] -> jueves_cliffhanger
+}
+
+{conexion <= 1:
+    // FRAGMENTO OSCURO - Aislamiento total
+    Sofía está sola en la cocina.
+
+    Hoy vino poca gente.
+    Mañana va a venir menos.
+
+    "La olla se muere", piensa.
+
+    Cuando empezó, el barrio se juntaba.
+    Ahora cada uno se salva solo.
+
+    O no se salva.
+
+    La llama se apaga.
+    Y ella no sabe cómo volver a prenderla.
+
+    ~ bajar_llama(1)
+    * [Continuar] -> jueves_cliffhanger
+}
+
+// FRAGMENTO NORMAL
 # SOFÍA
 
 // Fragmento nocturno de Sofia
@@ -549,6 +637,51 @@ Mañana hay que buscar soluciones.
 
 === fragmento_elena_jueves ===
 
+{dignidad <= 2:
+    // FRAGMENTO OSCURO - Dignidad destruida
+    Elena piensa en toda la gente que vio romperse.
+
+    En el 2002 fueron muchos.
+    Gente que no volvió a ser la misma.
+
+    Raúl también se rompió.
+    Siguió funcionando.
+    Pero algo murió en él.
+
+    Vos también te estás rompiendo.
+    Ella lo ve.
+
+    "Ojalá alcance el tejido para sostenerlo", piensa.
+    Pero no está segura.
+
+    ~ bajar_salud_mental(1)
+    * [Continuar] -> jueves_cliffhanger
+}
+
+{conexion <= 1:
+    // FRAGMENTO OSCURO - Aislamiento total
+    Elena prende la radio.
+
+    Hablan de la crisis.
+    De cómo la gente ya no se ayuda.
+
+    "Tienen razón", piensa.
+
+    El barrio ya no es barrio.
+    Son casas una al lado de la otra.
+    Nada más.
+
+    Cuando Raúl murió, tres vecinos vinieron.
+    Antes hubiera sido el barrio entero.
+
+    Ya no hay barrio.
+    Ya no hay nada.
+
+    ~ bajar_llama(1)
+    * [Continuar] -> jueves_cliffhanger
+}
+
+// FRAGMENTO NORMAL
 # ELENA
 
 // Fragmento nocturno de Elena
@@ -558,6 +691,53 @@ Mañana hay que buscar soluciones.
 
 === fragmento_diego_jueves ===
 
+{dignidad <= 2:
+    // FRAGMENTO OSCURO - Dignidad destruida
+    Diego piensa en Venezuela.
+
+    Dejó todo para venir acá.
+    Para esto.
+    Para ver cómo te humillan en otro idioma.
+
+    Su madre pregunta cómo está.
+    "Bien, má."
+    Mentira.
+
+    Piensa en vos.
+    En cómo te vio hoy.
+    Destruido.
+
+    "Yo voy a terminar igual", piensa.
+    "Todos terminamos igual."
+
+    ~ bajar_salud_mental(1)
+    * [Continuar] -> jueves_cliffhanger
+}
+
+{conexion <= 1:
+    // FRAGMENTO OSCURO - Aislamiento total
+    Diego cuenta.
+
+    Tres personas le hablan en Uruguay.
+    Tres.
+
+    Su familia está en Venezuela.
+    Sus amigos quedaron allá.
+
+    Acá no tiene a nadie.
+
+    "Crucé un continente para estar solo", piensa.
+
+    En Venezuela estaba solo.
+    Acá está solo.
+
+    No hay diferencia.
+
+    ~ bajar_llama(1)
+    * [Continuar] -> jueves_cliffhanger
+}
+
+// FRAGMENTO NORMAL
 # DIEGO
 
 // Fragmento nocturno de Diego
@@ -591,4 +771,17 @@ Los problemas no.
     }
 }
 
-* [Dormir] -> viernes_amanecer
+* [Dormir] -> transicion_jueves_viernes
+
+=== transicion_jueves_viernes ===
+// Chequeo de colapso mental antes de continuar
+{salud_mental <= 0:
+    -> final_apagado
+}
+
+// Chequeo de destrucción del tejido social
+{llama <= 0:
+    -> final_sin_llama
+}
+
+-> viernes_amanecer
