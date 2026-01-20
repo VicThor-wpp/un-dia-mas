@@ -114,14 +114,8 @@ Hay una señora al lado tuyo. Elena, se llama. No la Sofía del barrio, otra Ele
     "¿Vos sos nuevo?"
     "Sí. Primera vez."
     "Ah. Está bien. Siempre hace falta gente."
-
     Pelás papas en silencio un rato.
-
-    * [...]
-    -
-
     "Yo venía a comer. Ahora ayudo. Es mejor que hacer la cola."
-
     No sabés qué decir.
     Seguís pelando.
 - else:
@@ -542,10 +536,6 @@ Comés.
     "Sí."
     "Está bien la comida."
     "Sí."
-
-    * [...]
-    -
-
     No dicen más.
     Pero es algo.
 }
@@ -854,17 +844,11 @@ Mañana hay que volver a empezar.
 
 {elena_conto_historia:
     Elena te ve llegar.
-
     "Viniste."
-
-    * [...]
-    -
-
     No es sorpresa.
     Es algo más.
     Como si hubiera esperado que vinieras.
     Como si la historia del 2002 hubiera funcionado.
-
     ~ elena_relacion += 1
 }
 

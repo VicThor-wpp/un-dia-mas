@@ -1,5 +1,9 @@
 /* Un Día Más - Clean Terminal UI */
 
+/* ==========================================
+   THEME VARIABLES
+   ========================================== */
+
 :root {
     --bg-dark: #1a1a1a;
     --bg-light: #252525;
@@ -11,7 +15,85 @@
     --warning: #ffc107;
     --danger: #f44336;
     --info: #2196f3;
+
+    /* Reading settings */
+    --font-size-base: 18px;
+    --line-height-base: 1.6;
+    --max-line-width: 65ch;
 }
+
+/* Theme: Dark (default) */
+.theme-dark {
+    --bg-dark: #121212;
+    --bg-light: #1e1e1e;
+    --text-main: #d4d4d4;
+    --text-muted: #888;
+}
+
+/* Theme: Light */
+.theme-light {
+    --bg-dark: #f5f5f5;
+    --bg-light: #ffffff;
+    --text-main: #1a1a1a;
+    --text-muted: #666;
+    --accent: #d4511c;
+    --accent-dim: rgba(212, 81, 28, 0.15);
+}
+
+.theme-light .modal-content,
+.theme-light .choices button {
+    background: var(--bg-light);
+    border-color: #ddd;
+}
+
+.theme-light .choices button:hover {
+    background: #f0f0f0;
+}
+
+/* Theme: Sepia */
+.theme-sepia {
+    --bg-dark: #f4ecd8;
+    --bg-light: #faf6eb;
+    --text-main: #433422;
+    --text-muted: #7a6a5a;
+    --accent: #b85c38;
+    --accent-dim: rgba(184, 92, 56, 0.15);
+}
+
+.theme-sepia .modal-content,
+.theme-sepia .choices button {
+    background: var(--bg-light);
+    border-color: #d4c9b0;
+}
+
+/* Theme: High Contrast */
+.theme-high-contrast {
+    --bg-dark: #000000;
+    --bg-light: #0a0a0a;
+    --text-main: #ffffff;
+    --text-muted: #cccccc;
+    --accent: #ffcc00;
+    --accent-dim: rgba(255, 204, 0, 0.2);
+    --success: #00ff00;
+    --danger: #ff0000;
+}
+
+/* Font Sizes */
+.font-small { --font-size-base: 15px; }
+.font-medium { --font-size-base: 18px; }
+.font-large { --font-size-base: 21px; }
+.font-xlarge { --font-size-base: 24px; }
+
+/* Font Families */
+.font-mono { --font-family: 'Courier New', Courier, monospace; }
+.font-serif { --font-family: Georgia, 'Times New Roman', serif; }
+.font-sans { --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+.font-dyslexic { --font-family: 'Open-Dyslexic', 'OpenDyslexic', 'Comic Sans MS', sans-serif; }
+
+/* Line Heights */
+.line-compact { --line-height-base: 1.4; }
+.line-normal { --line-height-base: 1.7; }
+.line-relaxed { --line-height-base: 2.0; }
 
 /* Lucide Icons */
 [data-lucide] {
@@ -33,10 +115,11 @@
 body {
     background: var(--bg-dark);
     color: var(--text-main);
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 18px;
-    line-height: 1.6;
+    font-family: var(--font-family, 'Courier New', Courier, monospace);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
     min-height: 100vh;
+    transition: background 0.3s, color 0.3s;
 }
 
 /* ==========================================
@@ -210,7 +293,7 @@ body {
    ========================================== */
 
 .container {
-    max-width: 700px;
+    max-width: min(700px, var(--max-line-width));
     margin: 0 auto;
     padding: 0 20px 40px;
 }
@@ -1182,6 +1265,379 @@ a:hover {
 ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
 
 /* ==========================================
+   START SCREEN
+   ========================================== */
+
+.start-screen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    background: var(--bg-dark);
+}
+
+.start-content {
+    text-align: center;
+    max-width: 400px;
+}
+
+.start-flame {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    animation: flicker 2s infinite;
+}
+
+@keyframes flicker {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(0.98); }
+}
+
+.start-title {
+    font-size: 2.5rem;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+    letter-spacing: 3px;
+}
+
+.start-subtitle {
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin-bottom: 2.5rem;
+    line-height: 1.5;
+}
+
+.start-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 2rem;
+}
+
+.start-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 24px;
+    font-family: inherit;
+    font-size: 1rem;
+    background: var(--bg-light);
+    color: var(--text-main);
+    border: 1px solid var(--text-muted);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.start-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: var(--accent-dim);
+}
+
+.start-btn-primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+}
+
+.start-btn-primary:hover {
+    background: #e55a2a;
+    border-color: #e55a2a;
+    color: #fff;
+}
+
+.start-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+.start-credits {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    opacity: 0.6;
+}
+
+/* ==========================================
+   MANUAL MODAL (spoiler-free)
+   ========================================== */
+
+.manual-modal {
+    max-width: 550px;
+}
+
+.manual-body {
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.manual-section {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.manual-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.manual-section h3 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--accent);
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.manual-section h3 svg {
+    width: 18px;
+    height: 18px;
+}
+
+.manual-section p {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+.manual-section ul {
+    margin-left: 1.2rem;
+    line-height: 1.8;
+}
+
+.manual-section li {
+    margin-bottom: 0.3rem;
+}
+
+.stat-color {
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+.stat-color.energia { color: #ffc107; }
+.stat-color.conexion { color: #4caf50; }
+.stat-color.llama { color: #ff6b35; }
+.stat-color.dignidad { color: #2196f3; }
+.stat-color.salud { color: #4fc3f7; }
+
+.dice-preview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 0.5rem;
+}
+
+.dice-ex {
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+}
+
+.dice-crit { background: rgba(255, 215, 0, 0.2); color: gold; }
+.dice-ok { background: rgba(76, 175, 80, 0.2); color: #4caf50; }
+.dice-fail { background: rgba(255, 152, 0, 0.2); color: #ff9800; }
+.dice-fumble { background: rgba(244, 67, 54, 0.2); color: #f44336; }
+
+.manual-tip {
+    background: var(--accent-dim);
+    border: 1px solid var(--accent);
+    border-radius: 6px;
+    padding: 1rem !important;
+    text-align: center;
+}
+
+/* ==========================================
+   READING PREFERENCES PANEL
+   ========================================== */
+
+.prefs-panel {
+    max-width: 450px;
+}
+
+.pref-group {
+    margin-bottom: 20px;
+}
+
+.pref-label {
+    display: block;
+    font-size: 12px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.pref-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.pref-btn {
+    flex: 1;
+    min-width: 80px;
+    padding: 10px 12px;
+    background: var(--bg-light);
+    border: 1px solid var(--text-muted);
+    border-radius: 6px;
+    color: var(--text-main);
+    font-family: inherit;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.pref-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.pref-btn.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+}
+
+.pref-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+.theme-options .pref-btn {
+    flex: 1 1 45%;
+}
+
+.pref-actions {
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 1px solid var(--text-muted);
+}
+
+/* ==========================================
+   TOOLTIPS FOR URUGUAYAN TERMS
+   ========================================== */
+
+.term-tooltip {
+    position: relative;
+    border-bottom: 1px dotted var(--accent);
+    cursor: help;
+}
+
+.term-tooltip::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--bg-light);
+    color: var(--text-main);
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 13px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+    border: 1px solid var(--accent);
+    z-index: 100;
+}
+
+.term-tooltip:hover::after {
+    opacity: 1;
+}
+
+/* ==========================================
+   DAY PROGRESS INDICATOR
+   ========================================== */
+
+.day-progress {
+    display: flex;
+    gap: 4px;
+    margin-left: 10px;
+}
+
+.day-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--text-muted);
+    opacity: 0.3;
+    transition: all 0.3s;
+}
+
+.day-dot.past {
+    background: var(--success);
+    opacity: 0.6;
+}
+
+.day-dot.current {
+    background: var(--accent);
+    opacity: 1;
+    box-shadow: 0 0 6px var(--accent);
+}
+
+/* ==========================================
+   TYPEWRITER EFFECT
+   ========================================== */
+
+.typewriter-enabled .story-text {
+    animation: none;
+}
+
+.typewriter-cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1em;
+    background: var(--accent);
+    margin-left: 2px;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+/* ==========================================
+   KEYBOARD HINTS
+   ========================================== */
+
+.keyboard-hint {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--bg-light);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    color: var(--text-muted);
+    opacity: 0.7;
+    pointer-events: none;
+    z-index: 50;
+}
+
+.keyboard-hint kbd {
+    background: var(--bg-dark);
+    padding: 2px 6px;
+    border-radius: 3px;
+    margin: 0 4px;
+    border: 1px solid var(--text-muted);
+}
+
+/* Hide keyboard hints on mobile */
+@media (max-width: 768px) {
+    .keyboard-hint { display: none; }
+}
+
+/* ==========================================
    MOBILE RESPONSIVE
    ========================================== */
 
@@ -1239,6 +1695,24 @@ a:hover {
         bottom: 20px;
         right: 10px;
         left: 10px;
+    }
+
+    /* Preferences panel mobile */
+    .pref-options {
+        flex-direction: column;
+    }
+
+    .theme-options .pref-btn {
+        flex: 1 1 100%;
+    }
+
+    .day-progress {
+        margin-left: 8px;
+    }
+
+    .day-dot {
+        width: 6px;
+        height: 6px;
     }
 }
 

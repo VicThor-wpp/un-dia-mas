@@ -446,12 +446,6 @@ const GameEngine = (function() {
     };
 })();
 
-// Start the game when DOM is ready
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', GameEngine.init);
-} else {
-    GameEngine.init();
-}
-
-// Expose globally for debugging and module access
+// Don't auto-init - StartScreen.startGame() calls GameEngine.init()
+// Expose globally for module access
 window.GameEngine = GameEngine;

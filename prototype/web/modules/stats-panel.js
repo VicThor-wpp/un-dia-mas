@@ -117,6 +117,30 @@ const StatsPanel = (function() {
     }
 
     /**
+     * Create day progress indicator (7 dots for 7 days)
+     */
+    function createDayProgress(currentDay) {
+        const days = ['L', 'M', 'X', 'J', 'V', 'S', 'D'];
+        return `<div class="day-progress" title="Progreso de la semana">
+            ${days.map((d, i) => {
+                const dayNum = i + 1;
+                let cls = 'day-dot';
+                if (dayNum < currentDay) cls += ' past';
+                else if (dayNum === currentDay) cls += ' current';
+                return `<span class="${cls}" title="${getDayFullName(dayNum)}"></span>`;
+            }).join('')}
+        </div>`;
+    }
+
+    /**
+     * Get full day name
+     */
+    function getDayFullName(day) {
+        const names = ['', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
+        return names[day] || '';
+    }
+
+    /**
      * Render the stats panel - Always visible
      */
     function render() {
@@ -128,9 +152,9 @@ const StatsPanel = (function() {
                 <div class="header-bar">
                     <span class="phase-label">CREACIÓN DE PERSONAJE</span>
                     <div class="actions-section">
-                        <a href="manual.html" class="header-btn" title="Manual" target="_blank">
+                        <button class="header-btn" onclick="StartScreen.showManual()" title="Cómo jugar">
                             ${iconHTML('book-open', 18)}
-                        </a>
+                        </button>
                         <button class="header-btn" onclick="SaveSystem.showModal()" title="Guardar/Cargar">
                             ${iconHTML('save', 18)}
                         </button>
@@ -167,6 +191,7 @@ const StatsPanel = (function() {
             <div class="header-bar">
                 <div class="day-section">
                     <span class="day-name">${diaNombre}</span>
+                    ${createDayProgress(diaActual)}
                 </div>
 
                 <div class="stats-section">
@@ -196,9 +221,9 @@ const StatsPanel = (function() {
                     <button class="header-btn" onclick="StatsPanel.showFullInfo()" title="Ver todo">
                         ${iconHTML('info', 18)}
                     </button>
-                    <a href="manual.html" class="header-btn" title="Manual" target="_blank">
+                    <button class="header-btn" onclick="StartScreen.showManual()" title="Cómo jugar">
                         ${iconHTML('book-open', 18)}
-                    </a>
+                    </button>
                     <button class="header-btn" onclick="SaveSystem.showModal()" title="Guardar/Cargar">
                         ${iconHTML('save', 18)}
                     </button>

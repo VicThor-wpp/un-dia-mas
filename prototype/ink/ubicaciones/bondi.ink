@@ -94,10 +94,6 @@ Nunca hablaste con ella.
     "Yo trabajo acá cerca hace 20 años. Antes el bondi venía cada 10 minutos. Ahora..."
     Se encoge de hombros.
     "Todo empeora de a poco. Uno se acostumbra."
-
-    * [...]
-    -
-
     No es una conversación feliz.
     Pero es una conversación.
     ~ subir_conexion(1)
@@ -239,10 +235,6 @@ Dos personas atrás hablan:
     "...y le dijeron que no renovaban. Así nomás. Diez años en la empresa."
     "Está jodida la cosa."
     "Está jodidísima."
-
-    * [...]
-    -
-
     {tiene_laburo: Las palabras quedan. Podrías ser vos.}
     {not tiene_laburo: Ya sos vos.}
 }
@@ -250,20 +242,12 @@ Dos personas atrás hablan:
     "...el nene tiene fiebre y no puedo faltar..."
     "Es una mierda."
     "Es lo que hay."
-
-    * [...]
-    -
-
     Problemas de todos.
 }
 {ultima_tirada >= 5:
     "...y entonces le dije que no, que así no..."
     Se ríen.
     Una conversación normal.
-
-    * [...]
-    -
-
     Eso también existe.
 }
 

@@ -106,12 +106,7 @@ No hay reunión hoy. Pero hay gente.
     Sofía está afuera.
     Elena toma mate en la vereda.
     Diego ordena cosas.
-
-    * [...]
-    -
-
     {marcos_vino_a_asamblea: Marcos está parado lejos, pero ahí.}
-
     Te ven.
 
     * [Acercarte]

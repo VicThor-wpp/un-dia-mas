@@ -316,10 +316,6 @@ Con sus bolsas, sus cartones, su mundo.
 {not tiene_laburo:
     Ahora lo mirás distinto.
     ¿Cuántos pasos hay entre vos y él?
-
-    * [...]
-    -
-
     Unipersonal. Sin indemnización. Sin seguro.
     Muy pocos pasos.
 }
@@ -420,22 +416,11 @@ Toma.
 
 {d6() >= 4:
     "Yo laburaba, ¿sabés? En una fábrica. Hace años."
-
     No preguntaste.
     Pero te cuenta.
-
-    * [...]
-    -
-
     "Después cerró. Y bueno. Una cosa lleva a la otra."
-
     Toma el café.
-
-    * [...]
-    -
-
     "Pero no estoy mal. Tengo mis cosas. Conozco gente. Vivo."
-
     ~ subir_conexion(1)
 }
 
@@ -664,10 +649,6 @@ La televisión prendida en las casas.
     Hay un grupo de pibes en la esquina.
     Fumando.
     Hablando.
-
-    * [...]
-    -
-
     Te miran cuando pasás.
     Seguís caminando.
 }

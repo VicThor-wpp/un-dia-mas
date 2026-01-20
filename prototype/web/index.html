@@ -5,12 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Un Día Más</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='24' font-size='24'>🔥</text></svg>">
+    <!-- OpenDyslexic font for accessibility -->
+    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/opendyslexic">
     <link rel="stylesheet" href="style.css">
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 </head>
 <body class="terminal">
-    <div id="game" class="container">
+    <!-- Start Screen -->
+    <div id="startScreen" class="start-screen">
+        <div class="start-content">
+            <div class="start-flame">🔥</div>
+            <h1 class="start-title">Un Día Más</h1>
+            <p class="start-subtitle">Un juego sobre pertenecer cuando todo se reorganiza</p>
+
+            <div class="start-buttons">
+                <button class="start-btn start-btn-primary" onclick="StartScreen.startGame()">
+                    <i data-lucide="play"></i> Empezar
+                </button>
+                <button class="start-btn" onclick="StartScreen.showContinue()">
+                    <i data-lucide="folder-open"></i> Continuar
+                </button>
+                <button class="start-btn" onclick="ReadingPreferences.togglePanel()">
+                    <i data-lucide="settings"></i> Configuración
+                </button>
+                <button class="start-btn" onclick="StartScreen.showManual()">
+                    <i data-lucide="book-open"></i> Cómo jugar
+                </button>
+            </div>
+
+            <p class="start-credits">Montevideo, Uruguay</p>
+        </div>
+    </div>
+
+    <!-- Game Container (hidden initially) -->
+    <div id="game" class="container" style="display: none;">
         <header id="statusContainer" class="status-bar"></header>
         <main id="storyContainer" class="story"></main>
         <nav id="choicesContainer" class="choices"></nav>
@@ -29,6 +58,8 @@
     <script src="modules/portrait-system.js"></script>
     <script src="modules/save-system.js"></script>
     <script src="modules/choice-parser.js"></script>
+    <script src="modules/reading-preferences.js"></script>
+    <script src="modules/start-screen.js"></script>
 
     <!-- Main Game Engine -->
     <script src="game.js"></script>

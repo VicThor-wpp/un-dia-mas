@@ -104,18 +104,9 @@ Es mediodía.
     Por un segundo, ves a tu vieja en la calle.
     No es ella. No puede ser.
     Pero por un segundo...
-
-    * [...]
-    -
-
     Recordás cuando te dijo:
     "Mientras tengas laburo, estás bien."
-
     Ya no tenés laburo.
-
-    * [...]
-    -
-
     El fantasma se desvanece.
 }
 
@@ -123,14 +114,8 @@ Es mediodía.
     Pensás en llamar a alguien.
     Por un segundo, tu dedo va al contacto.
     Todavía está ahí.
-
-    * [...]
-    -
-
     No lo borraste.
-
     No llamás.
-
     Pero por un segundo, quisiste.
 }
 
@@ -138,10 +123,6 @@ Es mediodía.
     Recordás cuando tenías un plan.
     Ibas a ser algo.
     Tenías una forma.
-
-    * [...]
-    -
-
     Ahora no hay forma.
     Solo hay esto.
     Un mediodía, sin laburo.
@@ -151,12 +132,7 @@ Es mediodía.
     Hay algo.
     No sabés qué.
     Ese vacío que siempre estuvo.
-
-    * [...]
-    -
-
     Ahora más grande.
-
     O quizás siempre fue así de grande.
     Y recién ahora lo ves.
 }

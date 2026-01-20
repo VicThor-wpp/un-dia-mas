@@ -128,10 +128,6 @@ Pero no estás solo.
     Y hay algo más.
     Un fuego pequeño.
     Una llama que no se apaga.
-
-    * [...]
-    -
-
     La esperanza de que las cosas pueden ser diferentes.
     No mejor. Diferentes.
 }
@@ -345,10 +341,6 @@ Todo.
     La salud mental se desgastó.
     No es una cosa.
     Son muchas.
-
-    * [...]
-    -
-
     El despido.
     La soledad.
     Las preguntas sin respuesta.
