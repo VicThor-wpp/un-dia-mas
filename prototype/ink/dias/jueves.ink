@@ -551,11 +551,12 @@ Vos también.
 
 # MIENTRAS DORMÍS
 
-{vinculo == "sofia": -> fragmento_sofia_jueves}
-{vinculo == "elena": -> fragmento_elena_jueves}
-{vinculo == "diego": -> fragmento_diego_jueves}
-{vinculo == "marcos": -> fragmento_marcos_jueves}
--> fragmento_olla_jueves
+{vinculo == "sofia": -> fragmento_sofia_jueves ->}
+{vinculo == "elena": -> fragmento_elena_jueves ->}
+{vinculo == "diego": -> fragmento_diego_jueves ->}
+{vinculo == "marcos": -> fragmento_marcos_jueves ->}
+
+-> fragmento_comun_jueves
 
 === fragmento_marcos_jueves ===
 
@@ -577,7 +578,7 @@ Vos también.
     Siempre igual.
 
     ~ bajar_salud_mental(1)
-    * [Continuar] -> jueves_cliffhanger
+    ->->
 }
 
 {conexion <= 1:
@@ -599,7 +600,7 @@ Vos también.
     Mejor apagado.
 
     ~ bajar_llama(1)
-    * [Continuar] -> jueves_cliffhanger
+    ->->
 }
 
 // FRAGMENTO NORMAL
@@ -617,7 +618,7 @@ Es más fácil no ir.
 
 Mañana es otro día igual.
 
-* [Continuar] -> jueves_cliffhanger
+->->
 
 === fragmento_sofia_jueves ===
 
@@ -640,7 +641,7 @@ Mañana es otro día igual.
     Todo se rompe.
 
     ~ bajar_salud_mental(1)
-    * [Continuar] -> jueves_cliffhanger
+    ->->
 }
 
 {conexion <= 1:
@@ -661,7 +662,7 @@ Mañana es otro día igual.
     Y ella no sabe cómo volver a prenderla.
 
     ~ bajar_llama(1)
-    * [Continuar] -> jueves_cliffhanger
+    ->->
 }
 
 // FRAGMENTO NORMAL
@@ -675,7 +676,7 @@ Mañana es otro día igual.
 
 Mañana hay que buscar soluciones.
 
-* [Continuar] -> jueves_cliffhanger
+->->
 
 === fragmento_elena_jueves ===
 
@@ -697,7 +698,7 @@ Mañana hay que buscar soluciones.
     Pero no está segura.
 
     ~ bajar_salud_mental(1)
-    * [Continuar] -> jueves_cliffhanger
+    ->->
 }
 
 {conexion <= 1:
@@ -720,7 +721,7 @@ Mañana hay que buscar soluciones.
     Ya no hay nada.
 
     ~ bajar_llama(1)
-    * [Continuar] -> jueves_cliffhanger
+    ->->
 }
 
 // FRAGMENTO NORMAL
@@ -729,7 +730,7 @@ Mañana hay que buscar soluciones.
 // Fragmento nocturno de Elena
 -> elena_fragmento_noche ->
 
-* [Continuar] -> jueves_cliffhanger
+->->
 
 === fragmento_diego_jueves ===
 
@@ -776,7 +777,7 @@ Mañana hay que buscar soluciones.
     No hay diferencia.
 
     ~ bajar_llama(1)
-    * [Continuar] -> jueves_cliffhanger
+    ->->
 }
 
 // FRAGMENTO NORMAL
@@ -785,18 +786,22 @@ Mañana hay que buscar soluciones.
 // Fragmento nocturno de Diego
 -> diego_fragmento_noche ->
 
-* [Continuar] -> jueves_cliffhanger
+->->
 
-=== fragmento_olla_jueves ===
+=== fragmento_comun_jueves ===
 
 // Olla cerrada de noche
 -> olla_cerrar_noche ->
 
-El barrio duerme.
-Los problemas no.
+// Fragmento de Ixchel (si no fue visto en Sofia)
+{fui_a_olla_jueves && vinculo != "sofia":
+    -> ixchel_fragmento_noche ->
+}
 
 El barrio duerme.
 Los problemas no.
+
+* [Continuar] -> jueves_cliffhanger
 
 // Fragmento de Ixchel (ex Yulimar)
 {fui_a_olla_jueves:

@@ -100,7 +100,7 @@ Sofía te mira de arriba abajo.
 Te sentás en un banquito con un balde de papas.
 Pelás.
 
-Hay una señora al lado tuyo. Elena, se llama. No la Sofía del barrio, otra Elena.
+Hay una señora al lado tuyo. Es Elena, la veterana del barrio. No la habías visto en esta tarea antes, o quizás sí y no te dabas cuenta.
 
 * [...]
 -

@@ -394,13 +394,13 @@ Todos te miran.
 
 ~ temp modificador = 0
 { veces_que_ayude >= 2:
-    ~ modificador = 1  // Tenés credibilidad
+    ~ modificador += 1  // Tenés credibilidad
 }
 { participe_asamblea:
-    ~ modificador = modificador + 1
+    ~ modificador += 1
 }
 { sofia_relacion >= 4:
-    ~ modificador = modificador + 1
+    ~ modificador += 1
 }
 
 ~ temp resultado = chequeo(modificador, 5)

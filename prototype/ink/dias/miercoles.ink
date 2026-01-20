@@ -337,6 +337,7 @@ Te quedás solo.
 
 ¿A quién llamás?
 
+* {vinculo == "sofia"} [A Sofía] -> miercoles_llamar_sofia
 * {vinculo == "elena"} [A Elena] -> miercoles_llamar_elena
 * {vinculo == "diego"} [A Diego] -> miercoles_llamar_diego
 * {vinculo == "marcos"} [A Marcos] -> miercoles_llamar_marcos
@@ -407,6 +408,26 @@ Cortás.
 Te sentís un poco menos solo.
 
 * [Ir a la noche] -> miercoles_noche
+
+=== miercoles_llamar_sofia ===
+
+~ subir_conexion(1)
+~ conte_a_alguien = true
+
+Llamás a Sofía. Contesta enseguida, de fondo se escuchan los pibes gritando.
+
+"Hola. ¿Todo bien?"
+
+Le contás. La reunión, el despido, el frío en el pecho.
+
+"Puta madre. Lo siento mucho, de verdad."
+
+Pausa. Se escucha que le dice a uno de los hijos que se baje de la mesa.
+
+"Mirá, hoy estamos a mil, pero mañana venite a la olla. A veces lo mejor es tener las manos ocupadas para que la cabeza no piense tanto."
+
+* ["Voy a ir."] -> miercoles_si_olla
+* ["No sé si puedo."] -> miercoles_nosabe_olla
 
 === miercoles_llamar_diego ===
 
@@ -497,7 +518,13 @@ La cuenta regresiva empezó.
 {conte_a_alguien && vinculo == "elena":
     -> fragmento_elena_miercoles
 }
+{conte_a_alguien && vinculo == "marcos":
+    -> fragmento_marcos_miercoles
+}
 // Default
+{vinculo == "marcos": -> fragmento_marcos_miercoles}
+{vinculo == "sofia": -> fragmento_sofia_miercoles}
+{vinculo == "elena": -> fragmento_elena_miercoles}
 -> fragmento_diego_miercoles
 
 === fragmento_sofia_miercoles ===
@@ -707,6 +734,65 @@ Es lo que se hace.
 
 Prende la radio bajito.
 Algo de compañía en la oscuridad.
+
+* [Continuar] -> transicion_miercoles_jueves
+
+=== fragmento_marcos_miercoles ===
+
+{dignidad <= 2:
+    // FRAGMENTO OSCURO - Dignidad destruida
+    Marcos piensa en vos.
+
+    Ahora somos iguales. 
+    Dos descartes del sistema.
+
+    "Ya vas a entender", piensa.
+    "Que no importa cuánto te esfuerces."
+    "Al final, sos solo una pieza que se cambia."
+
+    Él ya no pelea. 
+    Espera que vos tampoco lo hagas. 
+    Es más fácil así.
+
+    ~ bajar_salud_mental(1)
+    * [Continuar] -> transicion_miercoles_jueves
+}
+
+{conexion <= 1:
+    // FRAGMENTO OSCURO - Aislamiento total
+    Marcos mira el teléfono. 
+    
+    Vio tu llamada perdida. 
+    Vio el mensaje.
+    
+    No respondió. 
+    
+    "Para qué", se pregunta. 
+    "Un despedido consolando a otro despedido."
+    "Una miseria compartida no es menos miseria."
+    
+    Mejor el silencio. 
+    En el silencio no hay que fingir nada.
+
+    ~ bajar_llama(1)
+    * [Continuar] -> transicion_miercoles_jueves
+}
+
+// FRAGMENTO NORMAL
+Marcos mira la tele. 
+Programas de política que ya no le dicen nada. 
+Gente de traje hablando de "macroeconomía" mientras el barrio se cae a pedazos.
+
+Piensa en vos. 
+En que te echaron. 
+En que ahora sabés lo que se siente.
+
+"Cagaste, uruguayo", murmura para el cuarto vacío. 
+
+Pero hay algo en su mirada. 
+Un resto de bronca que todavía no se convirtió en ceniza.
+
+Mañana será otro día.
 
 * [Continuar] -> transicion_miercoles_jueves
 

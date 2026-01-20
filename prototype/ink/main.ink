@@ -22,6 +22,7 @@ INCLUDE personajes/sofia.ink
 INCLUDE personajes/elena.ink
 INCLUDE personajes/diego.ink
 INCLUDE personajes/marcos.ink
+INCLUDE personajes/ixchel.ink
 
 // --- INCLUDES: DÍAS ---
 INCLUDE dias/lunes.ink
@@ -213,6 +214,13 @@ Pero con alguien tenés algo más.
     Trabaja más horas que nadie. Siempre camina rápido.
     Un día le convidé un mate en la parada del bondi. Ahora me saluda de lejos.
     Me pregunta cosas del barrio. Confía en mí. No sé si lo merezco.
+    -> confirmar_inicio
+
+* [Marcos. El que se alejó.]
+    ~ vinculo = "marcos"
+    Lo conocía de las asambleas de antes. Tenía fuego en los ojos.
+    Ahora lo veo pasar rápido, sin mirar a nadie, como si el barrio le doliera.
+    Me pregunto qué le pasó. Qué le rompieron para que se apagara así.
     -> confirmar_inicio
 
 === confirmar_inicio ===

@@ -123,6 +123,8 @@ VAR juan_hablo_de_miedo = false
 VAR sofia_hablo_de_madre = false
 VAR sofia_hablo_de_alemania = false
 VAR sofia_hablo_de_martin = false
+VAR hable_con_ixchel_profundo = false
+VAR vino_marcos = false
 
 // Olla
 VAR escuche_historia_olla = false

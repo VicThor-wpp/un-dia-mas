@@ -182,7 +182,7 @@ Silencio largo.
 "¿Qué onda?", pregunta al fin.
 
 * ["¿Cómo estás de verdad?"] -> marcos_verdad
-* ["¿Por qué te alejaste?"] -> marcos_porque
+* ["¿Por qué te alejaste?"] -> marcos_porque ->
 * ["Nada. Solo quería verte."] -> marcos_solo_ver
 
 === marcos_verdad ===
