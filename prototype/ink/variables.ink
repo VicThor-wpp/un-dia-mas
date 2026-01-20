@@ -21,7 +21,7 @@ VAR olla_en_crisis = false
 VAR olla_abierta = true
 VAR ayude_en_olla = false
 VAR veces_que_ayude = 0
-VAR conozco_a_marta = false
+VAR conozco_a_marta = false // DEPRECATED: merged into main flow
 VAR participe_asamblea = false
 VAR olla_cerro_viernes = false
 VAR vos_propusiste_cerrar = false
@@ -87,7 +87,7 @@ VAR juan_ofrecio_changa = false      // Hook viernes: si ofreció contacto
 
 // --- OTROS NPCs ---
 
-VAR yulimar_estado = "trabajando"     // trabajando, ayudando
+VAR ixchel_estado = "trabajando"     // trabajando, ayudando
 
 // --- ELECCIONES DEL JUGADOR ---
 

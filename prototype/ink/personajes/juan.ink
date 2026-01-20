@@ -82,7 +82,8 @@ Se encoge de hombros.
 
 Un momento de honestidad.
 Los dos saben que son descartables.
-Todos lo son.
+Que la "independencia" de la unipersonal era solo una forma de que la empresa se ahorre nuestros derechos.
+Todos lo somos.
 
 ~ juan_relacion += 1
 
@@ -204,10 +205,10 @@ Dos cervezas.
 "¿Vos qué harías si te echan?", pregunta Juan.
 
 * ["No sé. Buscar otra cosa."]
-    "Sí, yo también. Pero está difícil."
-    "Está difícil."
-    Se quedan en silencio.
-    Dos tipos con miedo compartido.
+"A veces siento que estoy corriendo en una cinta, uruguayo. Mis viejos se rompieron el lomo para sacarme del barrio, para que yo fuera 'alguien'. Y acá estoy, facturando como si fuera un empresario mientras rezo que no me corten la luz. Si nos echan, volvemos al mismo barro del que ellos quisieron sacarnos."
+
+Se quedan en silencio.
+La cerveza está fría, pero el miedo calienta el aire.
     -> juan_bar_fin
 * ["Tengo algo de ahorros. Aguantaría unos meses."]
     "Yo no. Si me echan, cago fuego."
@@ -500,7 +501,7 @@ Como vos.
 
 Se queda mirando la cerveza.
 
-"Tres años. Facturando como pelotudo. Creyendo que era distinto."
+"Tres años. Facturando como si fuera mi propio jefe, mientras ellos ponían las reglas y se llevaban la tajada. Me vendieron la del emprendedor y me compraron como insumo."
 
 * ["No sos pelotudo. Nos cagaron a todos."]
     ~ subir_conexion(2)

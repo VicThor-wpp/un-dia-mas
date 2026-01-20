@@ -35,7 +35,7 @@ Su voz es ronca. Años de café fuerte y cigarros.
 
 * ["Ahí ando, Elena."] -> elena_ahi_ando
 * ["Mal. Todo mal."] -> elena_todo_mal
-* ["¿Y usted?"] -> elena_ella_como
+* ["¿Y vos, Elena?"] -> elena_ella_como
 
 === elena_ahi_ando ===
 
@@ -147,8 +147,8 @@ Sigue pelando. No mira.
 * [...]
 -
 
-"No teníamos nada. Ollas prestadas. Verduras de descarte.
-Cocinábamos en la calle porque no había salón."
+"No teníamos nada. Pero teníamos bronca y teníamos manos.
+Cocinábamos en la calle para que nos vieran. Para que supieran que no nos íbamos a morir en silencio."
 
 "¿Cuántos venían?"
 
@@ -217,9 +217,8 @@ Cuando terminás, toma café. Piensa.
 
 "¿Qué?"
 
-"Que todo pasa. Lo bueno y lo malo.
-El problema es que cuando estás en lo malo,
-parece que no va a terminar nunca."
+"Que nadie se salva solo. Lo aprendí a los golpes.
+Cuando el barco se hunde, o armamos una balsa entre todos o nos ahogamos por separado."
 
 * [...]
 -
@@ -266,20 +265,20 @@ Los bancos cerrados. Todo cerrado."
 
 "¿Cómo sobrevivieron?"
 
-"Juntos. No había otra."
+"Organizándonos. No esperando.
+Entendiendo que la vergüenza es de ellos, no nuestra."
 
 * [...]
 -
 
 Toma café.
 
-"Las ollas, el trueque, las asambleas.
-La gente se organizó porque el Estado no existía."
+"Las ollas no eran caridad. Eran trincheras.
+El trueque, las asambleas... eran formas de decir 'acá estamos y no nos vamos'."
 
 "¿Y después?"
 
-"Después volvió todo. El país se acomodó.
-Pero los que nos quedamos acá, no olvidamos."
+"Después volvió todo. El país se acomodó para los que siempre están bien. Los políticos se votaron sus propios aumentos y nos dijeron que la 'crisis había pasado'. Pero la crisis no pasa para el que perdió la casa o el que se le rompió la familia. Nosotros nos quedamos acá, sosteniendo los pedazos que ellos tiraron por la ventana."
 
 ~ elena_relacion += 1
 ~ subir_conexion(1)
@@ -450,10 +449,9 @@ Sofía asiente.
 === elena_pedir ===
 // Tunnel: Elena sabe pedir
 // Uso: -> elena_pedir ->
-
-Elena sabe cómo pedir.
+Elena sabe cómo gestionar recursos.
 No es mendigar.
-Es pedir a vecinos.
+Es sostener la red.
 Es distinto.
 
 "En el 2002 hacíamos esto todo el tiempo. Te acostumbrás."

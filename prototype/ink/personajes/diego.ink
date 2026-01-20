@@ -51,15 +51,11 @@ Se detiene. Piensa.
 
 Mira para los lados. Como si alguien pudiera escuchar.
 
-"El trabajo está raro. Dicen que van a echar gente."
+"El trabajo está raro. Nos quieren tratar como piezas de repuesto. Pero ya vi venir esto antes."
 
-"¿A vos?"
+"¿Te preocupa?"
 
-"No sé. Ojalá que no."
-
-Si lo echan, tiene su red.
-Pero igual es un golpe.
-La red sostiene, pero no evita la caída.
+"Preocuparse es perder el tiempo. Hay que moverse. La red sostiene, hermano, pero uno tiene que ser parte del nudo."
 
 ~ diego_relacion += 1
 
@@ -126,18 +122,18 @@ bueno, hay que hacer algo."
 
 Sonríe. Se seca la frente.
 
-"En Venezuela yo organizaba comedores.
-Sé cómo es la logística.
-Acá les faltaban brazos."
+"En Venezuela yo organizaba los operativos de comida en Petare. Sé cómo es la logística cuando no hay nada. Acá les faltaba alguien que supiera estirar los recursos."
 
-"Siempre faltan brazos."
+"Siempre falta gente."
 
-"Sí. Pero ahora hay dos más."
+"Falta organización. Brazos sobran, lo que falta es saber hacia dónde empujarlos."
 
 * [...]
 -
 
 ~ diego_relacion += 1
+
+Sofía le pasa una botella de agua. Se miran con respeto, como dos veteranos de una guerra que no termina.
 
 ~ diego_relacion += 1
 
@@ -230,42 +226,15 @@ Silencio.
 
 Diego mira el cigarrillo.
 
-"Salí de Caracas hace dos años. Bus hasta Colombia.
-De Colombia a Ecuador. De Ecuador a Perú."
+"En Caracas, antes de venirme, yo creía. De verdad creía. Estuve en una cooperativa agrícola en el llano. Metíamos las manos en la tierra pensando que por fin era nuestra, que el socialismo de abajo iba a funcionar."
 
-Pausa.
+"¿Y qué pasó?"
 
-* [...]
--
+"Pasó que la revolución tiene muchos estómagos y pocas manos. La corrupción se comió las semillas, y el autoritarismo se comió a los que preguntábamos dónde estaba el fertilizante. Destruyeron lo que construimos, y de paso borraron el trabajo de los que estaban antes de ellos, que tampoco eran santos, pero al menos dejaban algo en pie."
 
-"En Perú estuve seis meses. Vendiendo café en la calle.
-Después me vine para acá. Un amigo me dijo que había trabajo."
+Pausa larga. Diego mira sus manos, curtidas por dos tierras distintas.
 
-"¿Y había?"
-
-"Más o menos. El depósito paga poco. Pero paga."
-
-* [...]
--
-
-Tira el cigarrillo.
-
-"Dejé a mi mamá, a mi hermana. Mi vida entera.
-Allá no se puede vivir. Pero acá..."
-
-No termina la frase.
-
-* [...]
--
-
-"Acá tampoco es fácil."
-
-"No. Pero al menos hay comida en los supermercados."
-Se ríe. Una risa corta.
-
-"Y están los panas. Los venezolanos nos encontramos.
-Nos reímos de cosas que ustedes no entienden.
-Eso cura más que la medicina."
+"Vine acá para dejar de pelear, pero el hambre es el mismo monstruo con distinto acento. A veces... a veces ya ni me da la cabeza para imaginar que la cosa se acomode. Es como si el futuro fuera un idioma que dejé de hablar."
 
 Comunidad.
 En el medio de la nada, se tienen entre ellos.
@@ -298,8 +267,9 @@ En Caracas, al final, cada uno miraba su propio plato."
 Hace una pausa.
 
 "Por eso vengo a la olla.
-No por la comida. Yo me arreglo.
-Sino porque me recuerda a cuando allá todavía nos mirábamos."
+No por el plato. Yo sé hacerme el mío.
+Sino porque acá el hambre se combate con asamblea, no con silencio.
+Eso lo aprendí allá: el que come solo, muere solo."
 
 * [...]
 -
@@ -556,12 +526,11 @@ Casa. Por ahora.
 
 {ayude_a_diego:
     Piensa en vos.
-    En que entendiste algo importante:
-    Nadie se salva solo.
-    
-    Se ríe bajito en la oscuridad.
-    "Uruguayo loco", piensa.
-    "Bienvenido al rebusque."
+En que estás empezando a entender que la 'clase media' era un cuento que te contabas para no sentirte parte de nosotros.
+
+Se ríe bajito en la oscuridad.
+"Uruguayo loco", piensa.
+"Bienvenido a la resistencia. Acá no se factura, acá se sostiene."
 }
 
 Afuera, la ciudad duerme.

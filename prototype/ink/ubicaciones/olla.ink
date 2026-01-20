@@ -14,13 +14,9 @@ La olla popular del barrio.
 Un galponcito con chapas, mesas largas, ollas enormes.
 El olor a comida que se siente desde la esquina.
 
-{not conozco_a_marta:
-    Hay una señora corpulenta dirigiendo todo.
-    Marta. Todos la conocen.
-    ~ conozco_a_marta = true
-- else:
-    Marta está ahí, como siempre.
-}
+    Sofía está en el medio de todo.
+    Coordinando, hablando, moviendo ollas.
+    No para.
 
 {olla_en_crisis:
     Hay poca gente cocinando.
@@ -47,13 +43,13 @@ Todavía no estás listo para esto.
 
 Te quedás mirando desde afuera.
 
-La cola. Viejos, familias, pibes solos.
-Gente del barrio. Gente que conocés de vista.
-Gente que no esperabas ver acá.
+La gente. Viejos, familias, pibes.
+No es una fila de espera pasiva. Se habla. Se comparte.
+Vecinos. Gente que conocés de vista.
 
 {not tiene_laburo:
-    ¿Cuánto falta para que te quedes sin red?
-    Para que nadie te sostenga.
+    Ahí está la red.
+    La que te empieza a faltar a vos.
 
 Una señora te mira.
 "¿Vas a comer o a mirar?"
@@ -68,14 +64,14 @@ Una señora te mira.
 
 "Disculpá, ¿necesitan una mano?"
 
-Marta te mira de arriba abajo.
+Sofía te mira de arriba abajo.
 
 {veces_que_ayude == 0:
     "¿Sabés pelar papas?"
     "Sí."
     "Entonces vení."
 - else:
-    "Ah, volviste. Bien. Andá a {d6() >= 4: las papas|servir}."
+    "Ah, volviste. Bien. Metete en {d6() >= 4: las papas|el reparto}."
 }
 
 -> olla_ayudar_menu
@@ -136,7 +132,7 @@ Las papas se acaban.
 Te ponés atrás de la mesa.
 Cucharón en mano.
 
-La cola avanza.
+La gente avanza.
 Platos, platos, platos.
 
 * [...]
@@ -149,7 +145,8 @@ Platos, platos, platos.
     El plato ya tiene lo que corresponde.
     Pero mirás para el costado y le ponés un poco más.
 
-    Marta te ve pero no dice nada.
+    Sofía te ve.
+    Te guiña un ojo. "Bien ahí", murmura.
 - else:
     Servís.
     Uno tras otro.
@@ -158,12 +155,13 @@ Platos, platos, platos.
 
 {not tiene_laburo:
     Algunos te miran con agradecimiento.
-    Otros no te miran.
+    Otros ni levantan la vista.
     Vos estás de este lado del cucharón.
     Por ahora.
+    Tu contrato decía "prestador de servicios", pero el hambre no entiende de ficciones legales.
 }
 
-La cola se termina.
+La fila se termina.
 
 * [Seguir ayudando] -> olla_ayudar_menu
 * [Irte] -> olla_despedirse
@@ -185,11 +183,11 @@ Solo en la mugre y en sacarla.
 -
 
 {d6() >= 5:
-    Marta se acerca.
-    "Gracias, pibe. Hacía falta."
+    Sofía se acerca.
+    "Gracias. Hacía falta."
 
     No es mucho.
-    Pero se siente bien.
+    Pero se siente bien. Ser parte.
     ~ subir_conexion(1)
 }
 
@@ -203,8 +201,8 @@ Terminás de limpiar.
 "Me voy yendo."
 
 {veces_que_ayude >= 2:
-    Marta asiente.
-    "Gracias por la mano. Volvé cuando quieras."
+    Sofía asiente.
+    "Gracias por la mano. La olla es de todos."
 
     ~ subir_conexion(1)
 - else:
@@ -222,9 +220,9 @@ El olor a comida te sigue un rato.
 
 "¿Qué pasó? ¿Por qué tan vacío?"
 
-Marta suspira.
+Sofía suspira.
 
-"No hay donaciones. La municipalidad nos clavó. El super que nos daba las verduras cerró."
+"No hay donaciones. El municipio se borró. El super cerró."
 
 * [...]
 -
@@ -250,7 +248,7 @@ Mira las ollas casi vacías.
 
 "¿Puedo aportar algo? Plata, digo."
 
-Marta te mira.
+Sofía te mira.
 
 "Todo suma, pibe. Todo suma."
 
@@ -336,7 +334,7 @@ Dos pibes que no tienen más de 15.
 Te quedás.
 No sabés para qué.
 
-Marta sale del galpón.
+Sofía sale del galpón.
 Tiene los ojos rojos.
 
 * [...]
@@ -375,7 +373,7 @@ Gente del barrio que nunca viste.
 * [...]
 -
 
-Marta está al frente.
+Sofía está al frente.
 
 "Bueno, gracias por venir. Esto es de todos. Hablamos todos."
 
@@ -401,7 +399,7 @@ Otra señora: "La municipalidad no responde. Llamé veinte veces."
 
 Un pibe joven: "Hay que hacer algo. No podemos quedarnos esperando."
 
-Marta: "Por eso estamos acá. Para decidir qué hacemos."
+Sofía: "Por eso estamos acá. Para decidir qué hacemos."
 
 {not tiene_laburo:
     Pensás en tu propia situación.
@@ -425,7 +423,7 @@ Levantás la mano.
 
 La gente te mira.
 
-Marta asiente.
+Sofía asiente.
 
 "Todo el mundo aporta lo que puede. Eso está bien."
 
@@ -460,7 +458,7 @@ Se discuten propuestas.
 La asamblea termina.
 La gente se va de a poco.
 
-Marta te ve.
+Sofía te ve.
 
 "Gracias por venir."
 
@@ -474,7 +472,7 @@ Marta te ve.
 # COMIENDO EN LA OLLA
 
 {veces_que_ayude >= 2:
-    Marta te ve.
+    Sofía te ve.
     "¿Hoy comés?"
 
     * [Sí]
@@ -504,8 +502,8 @@ Nadie habla.
 
 {not tiene_laburo:
     ¿Es esto tu futuro?
-    Tres meses de colchón.
-    Después, ¿esto?
+    Quizás.
+    Pero si es esto, al menos no estás solo.
 }
 
 * [...]
@@ -654,9 +652,12 @@ Pedir.
 -
 
 ~ energia -= 1
-~ subir_dignidad(-1)
+~ subir_dignidad(1)
+~ subir_llama(1)
 
 Pero lo hacés.
+No bajás la cabeza. Mirás a los ojos.
+Esto es trabajo digno. Es sostener.
 
 * [...]
 -

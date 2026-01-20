@@ -214,19 +214,11 @@ Pausa.
 
 Silencio largo.
 
-"Porque me quemé."
-
-"¿Cómo?"
-
-* [...]
--
-
-"Diez años en la militancia. Asambleas, marchas, colectas.
-Y al final... nada cambió."
+"Porque me quemé los ojos de ver cómo nos usaban. Diez años en la mesa chica de la militancia. Asambleas de trasnoche, marchas con la garganta rota, colectas para compañeros que después te vendían por un puesto en el ministerio."
 
 Mira el piso.
 
-"Me cansé de pelear para nada."
+"Cansado de ver cómo la estructura se morphaba el espíritu. Peleamos contra el sistema de afuera y nos terminó ganando el sistema de adentro. Al final, los de mi clase siguen igual, y los que hablaban en su nombre tienen auto nuevo. Me cansé de pelear para nada, uruguayo."
 
 ~ marcos_era_militante = true
 ~ marcos_relacion += 1

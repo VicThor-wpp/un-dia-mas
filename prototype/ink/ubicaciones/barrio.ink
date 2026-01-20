@@ -21,6 +21,7 @@ Los perros callejeros.
     Todo igual que siempre.
 - else:
     Todo igual. Pero vos no.
+    La calle se siente más ancha cuando no tenés adónde ir.
 }
 
 ~ ultima_tirada = d6()
@@ -485,7 +486,7 @@ Silencio.
     -> barrio_encuentro_vieja ->
 }
 {ultima_tirada == 6:
-    -> barrio_encuentro_silencio ->
+    -> ixchel_encuentro_casual ->
 }
 
 ->->

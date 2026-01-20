@@ -195,17 +195,14 @@ No dormís bien.
 * [...]
 -
 
-Pensás en mañana.
-En la reunión.
 En lo que viene.
 
-* [...]
--
-
-Si te echan, no hay nada.
-Unipersonal. Sin indemnización. Sin seguro.
-Tres años facturando para esto.
-
+{not tiene_laburo:
+    Si te echan, no hay nada. 
+    La "unipersonal" fue el invento perfecto: les diste tres años de tu vida y ellos no te deben ni el saludo. 
+    Sin indemnización. Sin despido. Sin red.
+    Solo una factura que ya no vas a emitir.
+}
 * [Intentar dormir] -> fragmento_martes
 
 === fragmento_martes ===

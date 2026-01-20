@@ -110,11 +110,11 @@ Un ritmo.
 
 Sofía habla mientras revuelve.
 
-"Mi vieja hacía esto. En el 2002. Cuando no había nada."
+"Mi vieja ya revolvía esta misma olla en el 2002. Ella me enseñó que cuando el Estado se retira, el barrio tiene que avanzar. Vi los 'Centros Sociales' que prometieron volverse cáscaras vacías, llenas de carteles pero sin comida. Nosotros no tenemos carteles, pero tenemos fuego."
 
-"¿Ella te enseñó?"
+"¿Es agotador, no?"
 
-"Ella y la necesidad."
+"Agotador es esperar que alguien te salve. Cocinar es resistencia."
 
 ~ subir_conexion(1)
 
@@ -175,7 +175,7 @@ Se detiene. Piensa.
 Silencio.
 
 "Cuando llegué al barrio, no tenía nada. Un bolso y los gurises.
-La olla me salvó. Elena me salvó."
+Pero acá no me dieron limosna. Me dieron un lugar."
 
 * [...]
 -
@@ -244,12 +244,13 @@ No conocía a nadie. No tenía trabajo."
 * [...]
 -
 
-"Elena me encontró en la plaza. Los gurises llorando de hambre.
-Me trajo acá. Me dio un cuchillo. Me dijo 'pelá'."
+"Elena me vio en la plaza. Yo estaba sentada, calculando cuánto me duraba la leche.
+Se acercó y me dijo: 'Si tenés manos, servís'. Me trajo acá. Me dio un cuchillo."
 
 Pausa.
 
-"Cuando pude, empecé a ayudar. Y nunca paré."
+"Ese día comimos. Pero lo importante fue que ese día cociné.
+Dejé de esperar y empecé a hacer."
 
 ~ sofia_relacion += 1
 

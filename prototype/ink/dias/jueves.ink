@@ -667,8 +667,8 @@ Mañana es otro día igual.
 // FRAGMENTO NORMAL
 # SOFÍA
 
-// Fragmento nocturno de Sofia
--> sofia_fragmento_noche ->
+// Fragmento nocturno de Ixchel
+-> ixchel_fragmento_noche ->
 
 // Sofia pensando
 -> sofia_fragmento_pensar ->
@@ -800,7 +800,7 @@ Los problemas no.
 
 // Fragmento de Ixchel (ex Yulimar)
 {fui_a_olla_jueves:
-    -> fragmento_ixchel_intro ->
+    -> ixchel_fragmento_noche ->
 }
 
 * [Continuar] -> jueves_cliffhanger

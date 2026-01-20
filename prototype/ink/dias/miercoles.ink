@@ -76,10 +76,10 @@ Salís.
     # IDEA: "¿QUIÉN SOY SIN LABURO?"
 
     No la elegiste. Llegó sola.
-    Como un zumbido en la cabeza que no para.
+    La empresa te convenció de que eras un "socio estratégico".
+    Ahora sos solo un número que ya no suma.
 
-    La pregunta no tiene respuesta fácil.
-    Pero ahora la tenés.
+    La pregunta quema. ¿Sos lo que hacés o lo que sos cuando nadie te paga?
 }
 
 ¿Qué hacés?
