@@ -310,6 +310,192 @@ Pero risa.
 
 ->->
 
+// --- LOS HIJOS DE MARCOS ---
+
+=== marcos_sobre_hijos ===
+
+~ marcos_hablo_de_hijos = true
+
+"¿Y tus hijos, Marcos? ¿Cómo están?"
+
+Silencio largo.
+
+"Lejos."
+
+* [...]
+-
+
+"Lucía está en Barcelona. Se fue en 2019. Trabaja en comunicación, algo de redes sociales. Volvió una vez, hace dos años."
+
+"¿Y el otro?"
+
+"Martín está en Madrid. Se fue detrás de la hermana en 2021. Estudia algo de tecnología. No entiendo bien qué hace."
+
+* [...]
+-
+
+Pausa.
+
+"Hablamos por WhatsApp. Cada tanto. Pero las conversaciones son... superficiales. '¿Cómo estás?' 'Bien'. '¿Y vos?' 'Bien'. Nada de verdad."
+
+* ["¿Los extrañás?"]
+    "No sé si extraño. No sé si tengo derecho a extrañar."
+    -> marcos_hijos_cont
+    
+* ["Debe ser duro."]
+    "Es lo que es. Ellos están mejor allá. Acá no hay nada para ellos."
+    -> marcos_hijos_cont
+
+=== marcos_hijos_cont ===
+
+* [...]
+-
+
+"¿Sabés qué pienso a veces?"
+
+"¿Qué?"
+
+"Les dejamos un país del que se tienen que ir. Toda mi vida militando para construir algo mejor, y mis hijos se tienen que en Europa a lavar platos o programar boludeces."
+
+* [...]
+-
+
+Su voz se quiebra un poco.
+
+"Cuando era joven, la política era todo. No aprendí a ser padre fuera de eso. Y ahora están lejos y no sé cómo hablarles."
+
+* [...]
+-
+
+"A veces los veo en videollamada. Sonriendo. Felices. Lejos."
+
+Pausa.
+
+"Y no sé si siento alivio o fracaso."
+
+~ subir_conexion(1)
+~ marcos_relacion += 1
+
+->->
+
+=== marcos_sobre_zabalza ===
+// Referencia a Jorge Zabalza
+
+~ marcos_hablo_de_zabalza = true
+
+"¿Conocés a Zabalza?"
+
+"¿Jorge Zabalza? El tupamaro..."
+
+"El que cuestiona la historia oficial. El que dice lo que nadie quiere decir."
+
+* [...]
+-
+
+"Leí una entrevista suya. De las que da cada tanto. Y sentí que alguien decía en voz alta lo que yo pensaba en silencio."
+
+"¿Qué pensás?"
+
+* [...]
+-
+
+"Que la revolución se la comió la burocracia. Que los que empezaron peleando contra el sistema terminaron siendo el sistema. Que los que dormían en pensiones ahora viven en barrios privados."
+
+* [...]
+-
+
+"Zabalza sigue hablando. Sigue poniendo el dedo en la llaga. Yo me callé."
+
+"¿Por qué?"
+
+"Porque cuando lo decís en voz alta, te quedás solo. Y yo ya estaba bastante solo."
+
+~ subir_conexion(1)
+~ marcos_relacion += 1
+
+->->
+
+=== marcos_noche_votos_2009 ===
+// La noche de las internas 2009
+
+~ marcos_conto_2009 = true
+
+"¿Te acordás del 2009?"
+
+"¿Qué pasó en el 2009?"
+
+"Las internas del Frente. Cuando eligieron a Mujica."
+
+* [...]
+-
+
+"Estuve en el festejo. En la sede. Era euforia. La gente saltando, gritando. El triunfo."
+
+"¿Y?"
+
+* [...]
+-
+
+"Y mientras la militancia de base festejaba, vi a los dirigentes en un rincón. Repartiéndose cargos. Hablando de quién iba a qué ministerio, quién se quedaba con qué secretaría."
+
+"Como si fuera botín de guerra."
+
+"Exacto. Botín."
+
+* [...]
+-
+
+Marcos mira sus manos.
+
+"Vi compañeros que dormían en pensiones brindando porque ahora iban a vivir en casas con alarma. Vi la transformación en tiempo real."
+
+"¿Y qué hiciste?"
+
+"Nada. Me quedé mirando. Y al otro día seguí militando. Tardé años en animarme a irme."
+
+* [...]
+-
+
+"Ese fue el principio del fin. Solo que no lo supe hasta mucho después."
+
+~ subir_conexion(1)
+~ marcos_relacion += 1
+
+->->
+
+=== marcos_sobre_voto_blanco ===
+// El voto en blanco
+
+~ marcos_conto_voto = true
+
+"¿Sabés qué hice la última elección?"
+
+"¿Qué?"
+
+"Voté en blanco."
+
+* [...]
+-
+
+"Después de treinta años votando a la izquierda. Después de todo lo que militía. Fui al cuarto oscuro y no pude poner la cruz."
+
+"¿Por qué?"
+
+"Porque no podía votar a los que me traicionaron. Pero tampoco podía votar a la derecha. Entonces nada."
+
+* [...]
+-
+
+"Me sentí sucio una semana entera. Como si hubiera traicionado a los compañeros muertos. A los que se jugaron la vida."
+
+"¿Y ahora?"
+
+"Ahora... ahora no sé. Capaz que votar en blanco fue lo más honesto que hice en años. O capaz que fue cobardía. No sé."
+
+~ marcos_relacion += 1
+
+->->
+
 // --- MARCOS REVELA SU SITUACION ---
 
 === marcos_revelar_despido ===

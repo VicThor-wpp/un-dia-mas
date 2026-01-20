@@ -9,7 +9,7 @@
 === sofia_encuentro_casual ===
 
 Sofía sale del almacén con dos bolsas pesadas.
-Madre soltera. Tres hijos.
+Madre soltera. Dos hijos: Nico y Lupe.
 Organiza la olla popular desde hace dos años.
 
 Tiene ojeras. Siempre tiene ojeras.
@@ -256,6 +256,220 @@ Dejé de esperar y empecé a hacer."
 
 ->->
 
+// --- HISTORIA PROFUNDA DE SOFÍA ---
+
+=== sofia_sobre_madre ===
+// La muerte de la Chola
+
+~ sofia_hablo_de_madre = true
+
+Es de noche. La olla está vacía.
+Sofía mira la imagen de la Virgen de Guadalupe en la pared.
+
+"La puso mi vieja. La Chola."
+
+* [...]
+-
+
+"Ella empezó todo esto. En los 90. Dando merienda a los gurises en su casa. De a poco fue creciendo."
+
+"¿Y vos?"
+
+"Yo me fui. Conseguí beca, estudié afuera. Era la 'chica brillante' del barrio. La que 'salió'."
+
+* [...]
+-
+
+Pausa. Sofía mira la imagen de la Virgen.
+
+"Cuando mi vieja se enfermó, vine a 'ayudar seis meses'. Nunca volví a España."
+
+"¿Por qué?"
+
+* [...]
+-
+
+"Porque ella me tomó la mano en el hospital y me dijo: 'La olla no se apaga'. Y después me dijo otra cosa."
+
+"¿Qué?"
+
+"'No seas boluda, Sofía. La olla sos vos ahora. Pero no sola. Nunca sola'."
+
+* [...]
+-
+
+Se le humedecen los ojos. No llora. Ya no llora por esto.
+
+"Se murió tres semanas después. Y yo me quedé."
+
+~ subir_conexion(1)
+~ sofia_relacion += 1
+
+->->
+
+=== sofia_oferta_alemania ===
+// La beca que rechazó
+
+~ sofia_hablo_de_alemania = true
+
+"¿Sabés qué me llegó hace unos meses?"
+
+"¿Qué?"
+
+"Un mail de mi ex director de tesis. Una beca postdoctoral en Heidelberg. Alemania. Condiciones excelentes."
+
+* [...]
+-
+
+"¿En serio? ¿Y qué hiciste?"
+
+"Le respondí que no en una semana."
+
+"¿Por qué?"
+
+* [...]
+-
+
+Sofía se ríe. Pero no es una risa alegre.
+
+"Porque si me iba ahora, mi vieja me tiraba el mate desde el cielo."
+
+* [...]
+-
+
+Pausa.
+
+"A veces, en los congresos, veo a compañeros que siguieron la carrera 'en serio'. Publicando papers, viajando a conferencias. Y siento un poco de envidia."
+
+"Es normal."
+
+"Sí. Pero después me acuerdo de la risa de los gurises cuando hay postre en la olla. Y se me pasa."
+
+* [...]
+-
+
+Hace una pausa más larga.
+
+"Casi siempre se me pasa."
+
+~ subir_conexion(1)
+~ sofia_relacion += 1
+
+->->
+
+=== sofia_martin_papas ===
+// El compañero de laboratorio pelando papas
+
+~ sofia_hablo_de_martin = true
+
+"¿Te conté de Martín?"
+
+"¿Quién es Martín?"
+
+"Un compañero del laboratorio. Especialista en química de alimentos."
+
+* [...]
+-
+
+"Un invierno vino a la olla. 'A ver de qué se trata', dijo."
+
+"¿Y?"
+
+"Terminó pelando papas tres horas. Torpemente. Se manchó el jean entero."
+
+* [...]
+-
+
+Sofía se ríe. Esta vez de verdad.
+
+"En un momento dijo: 'Esto es más difícil que una cromatografía'. Y yo me reí por primera vez en semanas."
+
+* [...]
+-
+
+"Ahora viene una vez por mes, cuando puede. No es mucho, pero ayuda."
+
+"¿Y en la universidad no te miran raro por la olla?"
+
+* [...]
+-
+
+"Al principio sí. '¿Olla popular? ¿Como en 2002?'. Pero con el tiempo varios entendieron."
+
+Pausa.
+
+"No es doble vida. Es vida integrada. Mis papers y mis papas."
+
+~ subir_conexion(1)
+~ sofia_relacion += 1
+
+->->
+
+=== sofia_catolicismo ===
+// El catolicismo práctico
+
+Notás la estampita de la Virgen de Guadalupe en el delantal de Sofía.
+
+"¿Sos católica?"
+
+"Sí. Como la Chola. No soy de ir a misa todos los domingos, pero rezo a veces."
+
+* [...]
+-
+
+"Por eso les puse esos nombres a mis hijos. Nicolás y Guadalupe. Por ella."
+
+Señala la imagen en la pared.
+
+"Mi vieja la trajo de México cuando era joven. Decía que la Virgen de Guadalupe entiende a los pobres porque se apareció morena, hablándole a un indio."
+
+* [...]
+-
+
+"No es una fe de discurso. Es una base silenciosa. Cuando no sé qué hacer, rezo. Y después sigo haciendo."
+
+"¿Y funciona?"
+
+"No sé si funciona. Pero me calma."
+
+~ sofia_relacion += 1
+
+->->
+
+=== sofia_delantal_madre ===
+// El delantal de la Chola
+
+Notás que Sofía siempre usa el mismo delantal.
+Viejo, manchado, remendado.
+
+"Ese delantal..."
+
+"Era de mi vieja."
+
+* [...]
+-
+
+"No lo lavo. Bueno, lo lavo un poco. Pero no le saco las manchas viejas."
+
+"¿Por qué?"
+
+"Porque son sus manchas. Sus horas de cocina. Su trabajo."
+
+* [...]
+-
+
+Se lo toca.
+
+"A veces, cuando estoy muy quemada, me lo aprieto contra el pecho. Como si ella pudiera abrazarme."
+
+No dice más.
+No hace falta.
+
+~ subir_conexion(1)
+~ sofia_relacion += 1
+
+->->
+
 // --- SOFIA PIDE AYUDA ---
 
 === sofia_pide_ayuda ===
@@ -479,9 +693,9 @@ Pero es algo.
 === sofia_fragmento_noche ===
 
 Sofía mira a sus hijos dormir.
-Tres cuerpos en dos colchones.
+Nico y Lupe, dos cuerpos en un colchón y medio.
 
-El más chico tiene tos.
+Lupe tiene tos.
 Otra vez.
 No hay plata para el médico.
 

@@ -371,6 +371,242 @@ Todos mienten.
 
 ->->
 
+// --- EL PASADO ENTERRADO DE JUAN ---
+
+=== juan_recuerdo_marchas ===
+
+~ juan_recuerdo_padre = true
+
+Están hablando de la situación laboral.
+Juan está más callado que de costumbre.
+
+De pronto dice:
+
+"Mi viejo me llevaba a las marchas."
+
+"¿Qué marchas?"
+
+* [...]
+-
+
+"Del PIT-CNT. Cuando era chico. Cinco, seis años. Me ponía arriba de los hombros para que viera."
+
+"No sabía."
+
+"No lo cuento nunca."
+
+* [...]
+-
+
+Pausa larga.
+
+"No sé por qué me acordé recién. Hace años que no pienso en eso."
+
+"¿Y por qué dejaste de ir?"
+
+* [...]
+-
+
+"No sé. Crecí. Empecé a laburar. El viejo se jubiló, se volvió amargo. Ya no hablamos de política."
+
+"¿Y vos?"
+
+"Yo... no sé. Supongo que me dio miedo terminar como él. Toda la vida peleando y al final solo, en un monoambiente, viendo las noticias para putearse."
+
+* [...]
+-
+
+Silencio.
+
+"A veces sueño con esas marchas. Con el ruido. Con mi viejo joven. Y me despierto confundido."
+
+~ subir_conexion(1)
+~ juan_relacion += 1
+
+->->
+
+=== juan_sobre_laura ===
+// Escenas con Laura (la esposa)
+
+~ juan_hablo_de_laura = true
+
+"¿Cómo está Laura?"
+
+Juan suspira.
+
+"Bien. Ella siempre está bien. Es más tranquila que yo."
+
+* [...]
+-
+
+"A veces me dice: 'Dejá de ver tantas noticias que te hacés mala sangre'. Tiene razón. Pero no puedo parar."
+
+"¿Por qué?"
+
+"Porque si no miro, siento que algo me va a agarrar desprevenido. Que me van a cagar y no me voy a dar cuenta."
+
+* [...]
+-
+
+"Ella quiere tener hijos. Yo le digo que 'todavía no estamos listos económicamente'. Pero la verdad es que tengo miedo."
+
+"¿De qué?"
+
+"De traer un guri a este quilombo. De no poder darle nada. De terminar como mi viejo: prometiendo cosas que no podés cumplir."
+
+* [...]
+-
+
+Pausa.
+
+"Si me echan del laburo, ¿qué le digo? '¿Perdón, amor, se me terminó el curro y ahora somos pobres'?"
+
+"No sos pobre, Juan."
+
+"Todavía no."
+
+~ subir_conexion(1)
+~ juan_relacion += 1
+
+->->
+
+=== juan_fascinado_diego ===
+// Juan fascinado por las historias de Diego
+
+Están en la olla. Diego cuenta una historia.
+Juan lo escucha con la boca abierta.
+
+"Hermano, eso es de película. Las cooperativas, el camión quemado, la huida..."
+
+Diego se encoge de hombros.
+
+"Es mi vida, no más."
+
+* [...]
+-
+
+Después, cuando Diego se va, Juan te dice:
+
+"Ese tipo vivió más en veintiocho años que yo en treinta y dos."
+
+"¿Te parece?"
+
+* [...]
+-
+
+"A mí nunca me pasó nada. Nunca tuve que huir de nada. Nunca arriesgué nada."
+
+"Eso no es malo."
+
+"No sé. A veces siento que mi vida es... gris. Chica. Sin épica."
+
+* [...]
+-
+
+Pausa.
+
+"Y después viene uno como Diego, que perdió todo y sigue laburando, sigue ayudando. Y yo acá quejándome del alquiler."
+
+No sabés qué decirle.
+Pero algo se movió adentro suyo.
+
+~ subir_conexion(1)
+
+->->
+
+=== juan_procesando ===
+// El procesamiento lento de Juan
+// Esta escena ocurre DESPUÉS de una conversación anterior
+
+~ juan_proceso_algo = true
+
+Una semana después de la charla.
+Juan te manda un mensaje.
+
+"Che, ¿podemos vernos un rato?"
+
+* [Aceptar]
+
+    Se encuentran.
+    Juan trae café.
+    
+    "Estuve pensando en lo que dijo Diego el otro día."
+    
+    "¿Qué cosa?"
+    
+    * [...]
+    -
+    
+    "Eso de que el problema no es el inmigrante, es el empresario que nos explota a los dos."
+    
+    "¿Y qué pensás?"
+    
+    * [...]
+    -
+    
+    Juan toma café. Piensa.
+    
+    "Creo que tiene razón. O sea... yo siempre repetía lo que escuchaba en las noticias. 'Vienen a sacarnos el laburo'. Pero Diego labura el doble que yo y le pagan la mitad."
+    
+    * [...]
+    -
+    
+    "Y el que nos paga poco a los dos es el mismo. No es Diego. Es el patrón."
+    
+    Pausa larga.
+    
+    "No sé. Capaz que soy un boludo y recién estoy entendiendo cosas que todo el mundo sabe."
+    
+    "No sos boludo. Estás pensando. Eso ya es algo."
+    
+    ~ subir_conexion(2)
+    ~ juan_relacion += 1
+    ->->
+
+* [No poder]
+    "No puedo ahora, Juan. Después."
+    "Dale."
+    
+    No sabés qué quería decirte.
+    Pero algo le quedó dando vueltas.
+    ->->
+
+=== juan_sobre_miedo ===
+// Juan confronta su propio miedo
+
+~ juan_hablo_de_miedo = true
+
+"¿Sabés qué me pasa?"
+
+"¿Qué?"
+
+"Que tengo miedo de todo. De perder el laburo, de que me roben, de que las cosas se vayan al carajo. Y el miedo me hace decir cosas que después me arrepiento."
+
+* [...]
+-
+
+"Como lo del 'acá falta autoridad'. O lo de 'los que vienen de afuera'. Cosas que repito sin pensar."
+
+"¿Y por qué las decís?"
+
+"Porque si le echo la culpa a alguien, me siento menos en banda. Como si supiera qué está pasando."
+
+* [...]
+-
+
+Silencio.
+
+"Pero la verdad es que no sé nada. Solo tengo miedo y repito lo que dicen en la tele."
+
+"Eso ya es darse cuenta de algo."
+
+"Sí. Pero darse cuenta no alcanza. Hay que hacer algo. Y no sé qué."
+
+~ subir_conexion(1)
+~ juan_relacion += 1
+
+->->
+
 // --- ENCUENTRO DEL VIERNES ---
 // Hook: si tenés buena relación con Juan, te llama el viernes
 

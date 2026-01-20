@@ -189,20 +189,7 @@ Está en la puerta, los pibes adentro.
     -> lunes_ir_casa
 
 === lunes_visita_elena ===
-
-Pasás por lo de Elena.
-Está tomando café afuera, en un vaso térmico.
-
-"Vení, sentate."
-
-* [Contarle] # STAT:conexion # EFECTO:conexion+
-    ~ subir_conexion(1)
-    Le contás.
-    "En el 2002 Raúl perdió el laburo. Fue una guerra.
-    Y en la trinchera no se deja a nadie."
-    -> lunes_ir_casa
-* ["Normal."] # EFECTO:conexion-
-    No te cree. Pero no insiste.
+    -> elena_conversacion ->
     -> lunes_ir_casa
 
 === lunes_visita_diego ===

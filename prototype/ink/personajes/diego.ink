@@ -297,6 +297,234 @@ A veces solo estar alcanza.
 
 ->->
 
+// --- HISTORIA DE CECOSESOLA ---
+
+=== diego_historia_cecosesola ===
+
+~ diego_conto_cecosesola = true
+
+Es domingo. Diego tiene el día libre.
+Están sentados en la plaza del barrio.
+
+"¿Sabés qué hacía yo en Venezuela, antes de todo?"
+
+"No. ¿Qué?"
+
+"Organizaba ferias. Ferias de verdad."
+
+* [...]
+-
+
+"Mi familia estaba en CECOSESOLA. Central Cooperativa de Servicios Sociales de Lara. Suena a burocracia, pero era todo lo contrario."
+
+"¿Qué era?"
+
+"La red cooperativa más vieja del país. Fundada en el 67, antes de Chávez, antes de todo. Mi abuelo fue de los primeros. Mi padre también. Yo nací en eso."
+
+* [...]
+-
+
+Diego mira al cielo. Sonríe por primera vez en mucho tiempo.
+
+"Las ferias de consumo familiar. Imaginate: los productores llevaban la cosecha directo a la feria. Tomates, pimentones, yuca, plátano. Sin intermediarios. Los precios eran treinta por ciento menos que en el mercado."
+
+"¿Treinta por ciento?"
+
+"Porque no había patrón. No había jefe. Todos ganábamos lo mismo: el que cargaba, el que vendía, el que contaba la plata. Rotábamos los cargos. Nadie se quedaba arriba."
+
+* ["Eso suena a cuento."]
+    "Suena, sí. Pero funcionó sesenta años. Todavía funciona, aunque destruyeron la mitad."
+    -> diego_cecosesola_cont
+    
+* ["¿Y cómo funcionaba?"]
+    "Con asambleas. Todo se decidía entre todos. Si había problema, hablábamos. Si alguien se mandaba un moco, lo corregíamos. No había despidos, había conversaciones."
+    -> diego_cecosesola_cont
+
+=== diego_cecosesola_cont ===
+
+* [...]
+-
+
+"También teníamos un centro de salud. Propio. Con quirófanos. Lo construimos nosotros. No esperamos que el gobierno nos lo diera."
+
+"La puta madre."
+
+* [...]
+-
+
+Diego se pone serio.
+
+"¿Sabés cuál es la diferencia entre la cooperativa de verdad y la que quería imponer el Estado?"
+
+"¿Cuál?"
+
+"El Estado quería que dependiéramos de él. Créditos estatales, contratos oficiales, consejos comunales alineados al partido. Nosotros dijimos que no. CECOSESOLA nunca aceptó plata del gobierno. Preferíamos ser pobres y libres."
+
+* [...]
+-
+
+"Y eso nos hizo enemigos."
+
+~ subir_conexion(1)
+~ diego_relacion += 1
+
+->->
+
+=== diego_sobre_camion ===
+// La historia del camión quemado
+
+~ diego_conto_camion = true
+
+Diego baja la voz.
+
+"¿Sabés por qué me fui?"
+
+"Por la situación, ¿no? El hambre, la inflación..."
+
+"No. Bueno, también. Pero hubo algo más."
+
+* [...]
+-
+
+"Cuando el gobierno empezó a presionar a CECOSESOLA, nos negamos a alinearnos. No queríamos distribuir las cajas CLAP."
+
+"¿Qué eran las CLAP?"
+
+"Paquetes de comida que controlaba el partido. Si estabas con ellos, comías. Si no, te jodías. Era control político, no ayuda."
+
+* [...]
+-
+
+"Un funcionario le dijo a mi viejo: 'O entran al sistema o los vamos a asfixiar'. Empezaron a negarnos permisos. A demorarnos los insumos."
+
+"Hijos de puta."
+
+* [...]
+-
+
+Diego mira sus manos.
+
+"Una noche quemaron un camión de la cooperativa. Lleno de verduras para la feria del sábado. Nadie investigó. El mensaje era claro."
+
+* [...]
+-
+
+Silencio largo.
+
+"Mi vieja me dijo: 'Vos tenés que irte antes de que te toque a vos'. Me dieron los ahorros de toda la vida. Que no eran nada, por la inflación. Pero era todo lo que tenían."
+
+* ["Lo siento."]
+    "No hay nada que sentir. Es la historia de miles. Millones. Nos robaron el futuro antes de que existiera."
+    ~ subir_conexion(1)
+    ~ diego_relacion += 1
+    ->->
+
+* [Quedarte callado]
+    No hay palabras.
+    Diego tampoco las espera.
+    ~ diego_relacion += 1
+    ->->
+
+=== diego_libreta_semillas ===
+// La libreta con semillas
+
+Notás que Diego tiene una libretita gastada.
+Anota todo ahí: gastos, horarios, nombres.
+
+"¿Qué tenés en esa libreta?"
+
+Diego sonríe.
+
+"Cosas de feria. Costumbre vieja."
+
+* ["¿Puedo ver?"]
+    
+    Diego duda. Después te la muestra.
+    
+    En las últimas páginas hay una lista distinta.
+    No son números. Son nombres de plantas.
+    
+    "Pimentón larence. Tomate perita. Ají dulce. Cilantro cimarrón."
+    
+    "¿Qué es esto?"
+    
+    * [...]
+    -
+    
+    "Semillas de mi tierra. Las que aprendí a sembrar con mi abuelo."
+    
+    Pasa el dedo por la lista.
+    
+    "Ninguna crece igual acá. El clima es distinto. La tierra es distinta."
+    
+    * [...]
+    -
+    
+    "A veces la leo como quien lee una carta de un muerto."
+    
+    Guarda la libreta.
+    
+    "Pero la guardo. Por si algún día..."
+    
+    No termina la frase.
+    No hace falta.
+    
+    ~ subir_conexion(1)
+    ~ diego_relacion += 1
+    ->->
+
+* ["No, perdón. Es personal."]
+    "Está bien. Capaz otro día."
+    ->->
+
+=== diego_y_marcos ===
+// Tensión/diálogo con Marcos sobre organización
+
+Marcos está hablando de "la orga". De cuando él militaba.
+De la estructura, de las células, de la disciplina.
+
+Diego lo escucha con cara rara.
+
+"¿Y quién controlaba a la orga?"
+
+Marcos se frena.
+
+"¿Cómo?"
+
+"¿Quién decidía quién subía y quién bajaba? ¿Quién manejaba la plata? ¿Había asambleas o había jefes?"
+
+* [...]
+-
+
+Marcos no sabe qué decir.
+
+"Había... había dirección. Cuadros. Gente formada..."
+
+"O sea, jefes."
+
+* [...]
+-
+
+Diego no lo dice con bronca. Lo dice con tristeza.
+
+"Yo vi el cooperativismo de verdad ser aplastado por el cooperativismo del Estado. El problema no era la idea. Era que alguien arriba se creía con derecho a decidir por todos."
+
+* [...]
+-
+
+Marcos se queda callado.
+
+Diego sigue:
+
+"Sin la asamblea, sos solo otro tipo con libros y buenas intenciones. Y eso no alcanza."
+
+Silencio incómodo.
+
+Pero Marcos no se va.
+Algo le quedó sonando.
+
+->->
+
 // --- DIEGO Y EL DESPIDO ---
 
 === diego_enterarse_despido ===
@@ -488,6 +716,10 @@ Un cuarto compartido con otro venezolano.
 Seis metros cuadrados.
 Casa. Por ahora.
 
+Debajo de la almohada tiene una franela vieja.
+El logo de CECOSESOLA: una mano sosteniendo espigas.
+Ya no la usa, pero la guarda.
+
 {diego_perdio_laburo:
     Mañana tiene que buscar trabajo.
     Tiene que encontrar algo.
@@ -518,20 +750,44 @@ Casa. Por ahora.
     Después despierta.
 }
 
+{diego_conto_cecosesola:
+    Piensa en la cooperativa.
+    En 2022, CECOSESOLA ganó el Right Livelihood Award.
+    El "Nobel Alternativo", le dicen.
+    
+    Lo vio por internet, desde este mismo cuarto.
+    
+    Lloró de orgullo.
+    La cooperativa sobrevivió. Sigue funcionando.
+    Pero su familia tuvo que irse.
+    
+    Lloró también de rabia.
+}
+
 {diego_viene_a_olla:
     Al menos mañana hay olla.
     Al menos va a estar ocupado.
     Cansarse hace bien. Ayuda a no pensar.
+    
+    Además, en la olla se siente útil.
+    Organizando logística, estirando recursos.
+    Sus manos recuerdan cómo se hace.
 }
 
 {ayude_a_diego:
     Piensa en vos.
-En que estás empezando a entender que la 'clase media' era un cuento que te contabas para no sentirte parte de nosotros.
+    En que estás empezando a entender que la "clase media" era un cuento que te contabas para no sentirte parte de nosotros.
 
-Se ríe bajito en la oscuridad.
-"Uruguayo loco", piensa.
-"Bienvenido a la resistencia. Acá no se factura, acá se sostiene."
+    Se ríe bajito en la oscuridad.
+    "Uruguayo loco", piensa.
+    "Bienvenido a la resistencia. Acá no se factura, acá se sostiene."
 }
+
+Saca la libretita del bolsillo del pantalón.
+La lista de semillas en la última página.
+Pimentón larence. Tomate perita. Ají dulce.
+
+"Algún día", murmura.
 
 Afuera, la ciudad duerme.
 Él no.
@@ -541,4 +797,9 @@ Calculan.
 Planean.
 Sobreviven.
 
+Guarda la libreta.
+Aprieta la franela bajo la almohada.
+Cierra los ojos.
+
 ->->
+

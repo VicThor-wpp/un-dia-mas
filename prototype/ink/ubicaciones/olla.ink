@@ -853,3 +853,305 @@ Mañana hay que volver a empezar.
 }
 
 ->->
+
+// --- HISTORIA FUNDACIONAL DE LA OLLA ---
+
+=== olla_historia_fundacion ===
+// La historia de cómo empezó la olla
+
+~ escuche_historia_olla = true
+
+Elena está sentada en un rincón.
+Sofía revuelve la olla.
+Hay un momento de calma.
+
+"¿Cómo empezó todo esto?", preguntás.
+
+Elena y Sofía se miran.
+
+"La Chola", dicen las dos al mismo tiempo.
+
+* [...]
+-
+
+Elena habla primero.
+
+"La mamá de Sofía. Empezó en los 90, dando merienda a los gurises en su casa."
+
+Sofía asiente.
+
+"Quince porciones. Con lo que había. Nada más."
+
+* [...]
+-
+
+"En el 2002 explotó. De quince a ochenta porciones. La Chola y Elena cocinaban turnándose."
+
+Elena se ríe.
+
+"Terminábamos a las cuatro de la mañana. Y a las siete ya estábamos pelando de nuevo."
+
+* [...]
+-
+
+"Después de la crisis, bajó un poco. Veinte, treinta porciones. La Chola se puso vieja. Sofía estaba en España."
+
+"Y después vino la pandemia", dice Sofía.
+
+"Y de treinta pasamos a cien. Y acá estamos."
+
+* [...]
+-
+
+Mirás el galponcito. Las paredes de bloque, el techo de chapa.
+
+"Todo esto lo construyeron ustedes."
+
+"Entre todos", corrige Elena. "Nunca nadie solo."
+
+~ subir_conexion(1)
+
+->->
+
+=== olla_virgen_guadalupe ===
+// La imagen de la Virgen
+
+Notás una imagen en la pared.
+La Virgen de Guadalupe. Colores vivos. Flores dibujadas alrededor.
+
+"La puso la Chola", dice Sofía sin que preguntes.
+
+* [...]
+-
+
+"La trajo de un viaje a México. Decía que era la patrona de los pobres."
+
+"¿Vos creés en eso?"
+
+* [...]
+-
+
+Sofía se encoge de hombros.
+
+"Creo en lo que funciona. Y esa imagen lleva ahí veinte años. La gente la mira cuando entra. Algunos rezan. Otros no. Pero todos la ven."
+
+* [...]
+-
+
+Mirás la imagen.
+Morena, con rayos dorados.
+Parece vigilar todo.
+
+{ixchel_me_conto_de_tomas:
+    Pensás en Ixchel.
+    Ella también tiene una estampita de la Virgen.
+    La misma Virgen en dos continentes.
+    La misma lucha.
+}
+
+->->
+
+=== olla_grupo_whatsapp ===
+// El grupo de WhatsApp
+
+El celular de Sofía no para de sonar.
+
+"El grupo", explica. "Ahí coordinamos todo."
+
+"¿Cuántos son?"
+
+"Ocho. Los que siempre estamos."
+
+* [...]
+-
+
+"Diego avisa cuando consigue donaciones. Yo anoto quién trae qué. Las vecinas confirman si pueden venir."
+
+"¿Y Elena?"
+
+* [...]
+-
+
+Sofía se ríe.
+
+"Elena no tiene WhatsApp. Dice que es 'para pendejos'. Yo le cuento todo."
+
+"¿Y funciona?"
+
+"Más o menos. A veces los mensajes se pierden. A veces la gente no lee. Pero es mejor que nada."
+
+->->
+
+// --- ECONOMÍA COLECTIVA ---
+
+=== olla_sobre_donaciones ===
+// Cómo funcionan las donaciones
+
+"¿De dónde sale todo esto?", preguntás mirando las ollas, los cajones de verdura.
+
+Sofía cuenta con los dedos.
+
+"El Plan ABC de la Intendencia. Insumos básicos: arroz, fideos, aceite. Pero llega irregular."
+
+* [...]
+-
+
+"Don Rubén, del almacén de la esquina. Nos da lo que está por vencer. Y a veces algo más."
+
+"La verdulería de los paraguayos. Dejan cajones los viernes."
+
+* [...]
+-
+
+"Vecinos que aportan. Desde cien pesos hasta dos mil. Todo va a una caja que administra Elena."
+
+"¿Y vos?"
+
+* [...]
+-
+
+Sofía duda.
+
+"Yo pongo entre diez y quince mil por mes. Más cuando hay emergencias."
+
+"Eso es mucho."
+
+"Sí. Pero no alcanza para mantenerlo sola. Esto es colectivo o no es."
+
+~ subir_conexion(1)
+
+->->
+
+=== olla_don_ruben ===
+// El almacenero Don Rubén
+
+Llega un hombre mayor cargando bolsas.
+
+"Don Rubén", lo saluda Sofía. "Gracias."
+
+"De nada, m'hija. Esto iba a la basura pero todavía está bueno."
+
+* [...]
+-
+
+Don Rubén se va.
+
+"Siempre nos ayuda", dice Sofía. "Desde el 2002."
+
+"¿Por qué?"
+
+* [...]
+-
+
+"Dice que él también estuvo en la cola cuando era chico. En otra olla, en otro barrio. Ahora le toca dar."
+
+"Qué grande."
+
+"Es el barrio. Así funciona. Los que pueden dan, los que necesitan reciben. Y a veces es lo mismo."
+
+->->
+
+=== olla_verduleria_paraguayos ===
+// La verdulería de los paraguayos
+
+Es viernes.
+Llegan cajones de verdura.
+
+"De la verdulería de los paraguayos", explica Diego. "Siempre los viernes."
+
+* [...]
+-
+
+"¿Por qué ayudan?"
+
+"Porque son de acá también. Aunque algunos no los vean así."
+
+* [...]
+-
+
+Diego baja la voz.
+
+"A veces los molestan. Les dicen cosas. Pero siguen viniendo, siguen donando."
+
+"Qué hijos de puta los que los molestan."
+
+"Sí. Pero ellos son más fuertes que eso."
+
+~ subir_conexion(1)
+
+->->
+
+=== olla_plan_abc ===
+// El Plan ABC de la Intendencia
+
+Sofía revisa unas cajas.
+
+"El Plan ABC llegó", anuncia.
+
+"¿Qué es?"
+
+* [...]
+-
+
+"El plan de la Intendencia de Montevideo. Nos dan insumos: arroz, fideos, aceite. A veces lentejas."
+
+"¿Y alcanza?"
+
+* [...]
+-
+
+Sofía se ríe sin gracia.
+
+"Alcanza para un día y medio. Y llega una vez por mes. Cuando llega."
+
+"¿Cómo que cuando llega?"
+
+* [...]
+-
+
+"A veces se demoran. A veces falta algo. Una vez nos mandaron arroz para tres meses pero nada de aceite. ¿Qué hacés con arroz sin aceite?"
+
+Suspira.
+
+"Pero es algo. Más de lo que teníamos antes de 2020."
+
+->->
+
+=== olla_caja_elena ===
+// La caja que administra Elena
+
+Elena saca una caja de lata de debajo de la mesa.
+
+"La caja", dice.
+
+"¿Qué tiene?"
+
+* [...]
+-
+
+"Los aportes de los vecinos. Los que pueden, ponen algo. Cien pesos, quinientos, lo que tengan."
+
+Abre la caja. Billetes doblados, monedas, un papelito con anotaciones.
+
+* [...]
+-
+
+"Todo se anota. Yo llevo la cuenta acá, Sofía tiene un backup en el celular."
+
+"¿Y cuánto hay?"
+
+Elena cuenta.
+
+"Mil trescientos. Alcanza para una garrafa y algo de verdura."
+
+* [...]
+-
+
+Cierra la caja.
+
+"No es mucho. Pero es nuestro. Nadie nos lo regaló."
+
+~ subir_conexion(1)
+
+->->
+

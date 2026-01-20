@@ -6,20 +6,77 @@
 
 // --- ENCUENTRO CASUAL EN EL BARRIO ---
 
-=== elena_encuentro_casual ===
+=== elena_conversacion ===
+// Hub principal llamado desde los días
+// Llamada: -> elena_conversacion ->
+
 # PORTRAIT:elena,neutral,right
 
 Elena está sentada en el banco de la plaza.
 Siempre el mismo banco. Siempre la misma hora.
 
-Setenta y pico. Llegó al barrio antes que todos.
-Vio todo. Recuerda todo.
+{elena_relacion == 0:
+    Setenta y pico. Llegó al barrio antes que todos.
+    Vio todo. Recuerda todo.
+    Mira pasar a la gente como quien lee un libro viejo.
+}
 
-Mira pasar a la gente como quien lee un libro viejo.
++ [Sentarte a su lado] -> elena_menu_temas
++ [Saludar de lejos] -> elena_saludo_lejos
++ [Pasar de largo] -> elena_ignorar
 
-* [Sentarte a su lado] -> elena_sentarse
-* [Saludar de lejos] -> elena_saludo_lejos
-* [Pasar de largo] -> elena_ignorar
+=== elena_menu_temas ===
+
+Te sentás a su lado.
+{elena_relacion > 2:
+    "¿Cómo andás, m'hijo?"
+    Su voz es ronca pero amable.
+- else:
+    No dice nada. No hace falta.
+}
+
+- (opts)
+* [Charlar del día a día] -> elena_charla_cotidiana
++ [Preguntar sobre el barrio] -> elena_menu_historia
++ {elena_relacion >= 3} [Hablar de cosas serias] -> elena_menu_profundo
++ {elena_relacion >= 4} [Preguntar por la olla] -> elena_sobre_olla
++ [Me tengo que ir]
+    "Andá, andá. Que no se te haga tarde."
+    ->->
+
+=== elena_charla_cotidiana ===
+"Ahí andamos todos."
+# PORTRAIT:elena,remembering,right
+Mira hacia la calle.
+"¿Sabés cuántas veces escuché eso? 'Ahí ando'.
+En el 2002 todo el mundo andaba 'ahí'."
+-> opts
+
+=== elena_menu_historia ===
++ [Sobre el 2002] {not elena_conto_trueque} -> elena_trueque_2002 ->
++ [Sobre el trueque] {elena_conto_trueque and not escuche_sobre_2002} -> elena_sobre_2002 ->
++ [Sobre el banco] {elena_conto_trueque and not elena_conto_banco} -> elena_en_banco_2002 ->
++ [Sobre los García] {not elena_conto_desalojo} -> elena_desalojo_garcia ->
++ [Volver] -> opts
+
+=== elena_menu_profundo ===
++ [Sobre la Chola] {not elena_hablo_de_chola} -> elena_sobre_la_chola ->
++ [Sobre política] {not elena_hablo_politica} -> elena_anarquismo ->
++ [Volver] -> opts
+
+=== elena_sobre_olla ===
++ [La historia de la fundación] {not escuche_historia_olla} -> olla_historia_fundacion ->
++ [Volver] -> opts
+
+=== elena_ignorar ===
+Pasás de largo.
+Ella sigue mirando la nada. O el todo.
+->->
+
+=== elena_saludo_lejos ===
+Levantás la mano.
+Ella asiente.
+->->
 
 === elena_sentarse ===
 
@@ -282,6 +339,276 @@ El trueque, las asambleas... eran formas de decir 'acá estamos y no nos vamos'.
 
 ~ elena_relacion += 1
 ~ subir_conexion(1)
+
+->->
+
+// --- LA CHOLA Y ELENA ---
+
+=== elena_sobre_la_chola ===
+
+~ elena_hablo_de_chola = true
+
+"¿La Chola? ¿La mamá de Sofía?"
+
+Elena sonríe. Es la primera vez que la ves sonreír así.
+
+"La Chola era mi hermana. No de sangre. De vida."
+
+* [...]
+-
+
+"Nos conocimos en la fábrica textil del Cerro. Año 75. Yo tenía veinticinco, ella veintitrés. Turnos de diez horas cosiendo zapatos."
+
+"¿Y?"
+
+"Y nada. Trabajábamos, tomábamos mate, puteábamos al capataz. Pero cuando vino la dictadura, nos juntamos de verdad."
+
+* [...]
+-
+
+"Éramos compañeras de fábrica, de huelga, de mate y de velorio."
+
+* ["¿De velorio?"]
+    "Enterramos a mucha gente juntas. Compañeros que se llevaron. Algunos que aparecieron. Otros que no."
+    
+    Silencio largo.
+    
+    "Pero seguíamos. Siempre seguíamos."
+    -> elena_chola_cont
+
+* ["¿Cuarenta años juntas?"]
+    "Más. Nos vimos envejecer. Nos vimos enterrar maridos. Nos vimos criar hijos. Y cuando ella se enfermó..."
+    -> elena_chola_cont
+
+=== elena_chola_cont ===
+
+* [...]
+-
+
+"Cuando la Chola se enfermó, estuve con ella hasta el final. En el hospital, tomándole la mano."
+
+"¿Qué le dijiste?"
+
+"Que iba a cuidar la olla. Y que iba a cuidar a Sofía."
+
+* [...]
+-
+
+Pausa larga.
+
+"A veces le hablo todavía. A la foto que tengo en el aparador. Le cuento cómo está la olla. Le puteo cuando las cosas no salen."
+
+Se ríe bajito.
+
+"Ella me escucha. Estoy segura."
+
+~ subir_conexion(1)
+~ elena_relacion += 1
+
+->->
+
+=== elena_desalojo_garcia ===
+// El desalojo de los García en los 90
+
+~ elena_conto_desalojo = true
+
+"¿Vos conociste a los García? Los que vivían en la esquina."
+
+"No."
+
+"Ya no están. Pero casi los sacan antes de tiempo."
+
+* [...]
+-
+
+"Fue en el 98, creo. O 97. La mujer se había quedado sin laburo, el marido estaba enfermo. Debían tres meses de alquiler."
+
+"¿Los iban a desalojar?"
+
+"Vino la policía con el acta. A sacarlos a la calle. Con los gurises."
+
+* [...]
+-
+
+Elena se toma el mate.
+
+"Yo me enteré por la vecina de enfrente. Salí corriendo. Llamé a la Chola, a otras cuantas."
+
+"¿Y qué hicieron?"
+
+* [...]
+-
+
+"Nos paramos en la puerta. Yo adelante, con el mate en la mano y la mirada de alguien que no tiene nada que perder."
+
+"¿Y la policía?"
+
+"El oficial me dijo: 'Señora, apártese o la llevamos'. Yo le dije: 'Llevame entonces. Pero vas a tener que llevar a todas'."
+
+* [...]
+-
+
+Sonríe. Una sonrisa feroz.
+
+"Detrás mío había veinte mujeres del barrio. Y un par de tipos también, pero las que paraban la olla éramos nosotras."
+
+"¿Funcionó?"
+
+"El milico llamó por radio. No sé qué le dijeron. Pero se fueron. Los García se quedaron tres meses más, hasta que consiguieron otro lugar."
+
+* [...]
+-
+
+Pausa.
+
+"La propiedad privada se termina donde empieza el frío de un guri. Eso no lo escribió ningún filósofo. Eso lo aprendí ese día."
+
+~ subir_dignidad(1)
+~ elena_relacion += 1
+
+->->
+
+=== elena_trueque_2002 ===
+// Detalle del trueque en 2002
+
+~ elena_conto_trueque = true
+
+"¿Sabés lo que es el trueque?"
+
+"Más o menos. Cambiar cosas, ¿no?"
+
+"Cambiar lo que tenés por lo que necesitás. Sin plata. Porque la plata no servía para nada."
+
+* [...]
+-
+
+"En el 2002, once intendencias aceptaron trueque. Hasta pagaban impuestos con carne. ¿Te imaginás? Yendo a la intendencia con un pedazo de carne para pagar la patente."
+
+"No me lo imagino."
+
+* [...]
+-
+
+"Nosotras organizamos trueque acá en el barrio. En el gimnasio de la parroquia."
+
+"¿Cómo funcionaba?"
+
+"Cada uno llevaba lo que tenía. Ropa vieja, herramientas, comida casera, verduras del fondo. Y cambiaba por lo que necesitaba."
+
+* [...]
+-
+
+Elena mira hacia la pared. La foto de su marido.
+
+"Yo cambié la ropa de mi marido muerto por leche en polvo para los nietos de una vecina."
+
+* [...]
+-
+
+"Recuerdo el olor de ese gimnasio. Humedad, desesperación... y solidaridad. Todo mezclado."
+
+"¿Funcionó?"
+
+"Funcionó hasta que la cosa se acomodó. Después todos fingimos que no había pasado. Pero yo me acuerdo. Yo siempre me acuerdo."
+
+~ subir_conexion(1)
+~ elena_relacion += 1
+
+->->
+
+=== elena_en_banco_2002 ===
+// Escena del banco en 2002
+
+~ elena_conto_banco = true
+
+"Un día fui al Banco República a sacar mis ahorros. Cuarenta mil pesos. Todo lo que tenía."
+
+"¿Y?"
+
+"Me dijeron que no había efectivo. 'Vuelva mañana'. Volví al otro día. Lo mismo. 'Vuelva la semana que viene'."
+
+* [...]
+-
+
+"Un viernes volví con la Chola y otras diez vecinas. No llevábamos martillos, pero sí la mirada de quien no tiene nada que perder."
+
+"¿Y qué hicieron?"
+
+* [...]
+-
+
+"Nos plantamos en el hall. No gritamos. No rompimos nada. Solo nos sentamos y nos quedamos mirando."
+
+"¿Y?"
+
+"El gerente llamó a un teléfono. Media hora después apareció el efectivo."
+
+* [...]
+-
+
+Sonríe con satisfacción.
+
+"A veces pararse es suficiente. Pero hay que saber pararse. Y hay que saber con quién."
+
+~ subir_dignidad(1)
+~ elena_relacion += 1
+
+->->
+
+=== elena_anarquismo ===
+// El anarquismo visceral explícito
+
+~ elena_hablo_politica = true
+
+"Elena, ¿vos sos de algún partido?"
+
+Se ríe con ganas.
+
+"¿Partido? M'hijo, yo estuve en todos y en ninguno."
+
+* [...]
+-
+
+"En los 70 estuve cerca del sindicato. Después de lo de la fábrica, me junté con los de la barriada. Después de la dictadura, voté al Frente algunas veces."
+
+"Pero..."
+
+"Pero aprendí que el de arriba siempre caga al de abajo. No importa el color de la bandera."
+
+* [...]
+-
+
+Te mira fijo.
+
+"Yo no soy anarquista de libro, m'hijo. Nunca leí a Bakunin. Pero sé una cosa: cada vez que alguien se pone por encima de otros, termina pisándolos."
+
+"¿Entonces?"
+
+* [...]
+-
+
+"Entonces la única defensa real es el compañero de al lado. No el partido. No el sindicato. No el Estado. El compañero."
+
+* [...]
+-
+
+Hace una pausa.
+
+"Los hombres hablan y miden quién la tiene más larga. Nosotras paramos la olla para que los gurises no se mueran. Esa es mi política."
+
+~ subir_conexion(1)
+~ elena_relacion += 1
+
+->->
+
+=== elena_frase_trinchera ===
+// Tunnel: La olla como trinchera
+
+Elena dice, mirando la olla:
+
+"Esto no es caridad, m'hijo. Esto es trinchera."
+
+Lo dice como quien dice una verdad eterna.
 
 ->->
 

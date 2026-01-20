@@ -88,6 +88,44 @@ VAR juan_ofrecio_changa = false      // Hook viernes: si ofreció contacto
 // --- OTROS NPCs ---
 
 VAR ixchel_estado = "trabajando"     // trabajando, ayudando
+VAR ixchel_relacion = 0
+VAR ixchel_me_conto_de_tomas = false
+VAR ixchel_hablo_de_mina = false
+VAR ixchel_conto_llegada = false
+VAR ixchel_hablo_de_huipil = false
+
+// --- ESTADO DETALLADO NPCs (Fase 2) ---
+
+// Diego
+VAR diego_conto_cecosesola = false
+VAR diego_conto_camion = false
+
+// Elena
+VAR elena_hablo_de_chola = false
+VAR elena_conto_desalojo = false
+VAR elena_conto_trueque = false
+VAR elena_conto_banco = false
+VAR elena_hablo_politica = false
+
+// Marcos
+VAR marcos_hablo_de_hijos = false
+VAR marcos_hablo_de_zabalza = false
+VAR marcos_conto_2009 = false
+VAR marcos_conto_voto = false
+
+// Juan
+VAR juan_recuerdo_padre = false
+VAR juan_hablo_de_laura = false
+VAR juan_proceso_algo = false
+VAR juan_hablo_de_miedo = false
+
+// Sofia
+VAR sofia_hablo_de_madre = false
+VAR sofia_hablo_de_alemania = false
+VAR sofia_hablo_de_martin = false
+
+// Olla
+VAR escuche_historia_olla = false
 
 // --- ELECCIONES DEL JUGADOR ---
 
