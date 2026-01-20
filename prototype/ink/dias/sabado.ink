@@ -92,9 +92,10 @@ El barrio más tranquilo.
 -> marcos_invitar_asamblea ->
 
 * ["Vamos juntos."] # EFECTO:conexion+
-    "Hace mucho que no voy al barrio."
-    "Por eso. Vamos."
-    Marcos asiente.
+    "Hace mucho que no voy. Siempre es lo mismo."
+    "Hoy no. Hoy vamos nosotros."
+    Marcos te mira. Hay algo ahí. Una duda.
+    "Vamos a ver", dice. Pero va.
     ~ marcos_estado = "mirando"
     -> sabado_tarde
 * ["No importa, era por decir."] # EFECTO:conexion-

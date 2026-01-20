@@ -232,6 +232,29 @@ Sofía asiente.
 // Ambiente normal de trabajo
 -> olla_ambiente_normal ->
 
+// NUEVO: Avistamiento de Marcos
+{not vino_marcos:
+    De reojo, ves a alguien en la esquina.
+    Campera oscura. Cabeza gacha.
+    
+    Es Marcos.
+    
+    Está mirando la olla desde lejos.
+    Como si quisiera entrar pero una pared invisible lo frenara.
+    
+    * [Salir a buscarlo]
+        Salís rápido.
+        Pero Marcos te ve venir.
+        Gira y se va. Casi corriendo.
+        
+        La vergüenza es más rápida que vos.
+    * [Dejarlo mirar]
+        Lo dejás estar.
+        A veces, mirar es el primer paso.
+        
+        Se queda un minuto más. Y se va.
+}
+
 * [Irte] -> jueves_noche
 
 === jueves_olla_ayudar ===
@@ -381,9 +404,28 @@ Elena pela papas a tu lado.
 - resultado == 1:  // Éxito
     # PORTRAIT:elena,wise,right
 
-    Elena te cuenta cosas.
-    De cómo era el barrio antes.
-    De los que ya no están.
+    Elena te mira las manos.
+    "No aprietes tanto, m'hijo. La papa siente que tenés miedo."
+    
+    Se ríe, pero con cariño.
+    
+    "Estás acá ayudando, sí. Pero te veo los ojos.
+    Tenés miedo de terminar necesitando el plato vos también."
+    
+    Te quedás helado. Elena ve todo.
+    
+    "En el 2002 nos pasaba lo mismo.
+    Nos daba vergüenza caer. Como si fuera culpa nuestra."
+    
+    Te muestra cómo pela ella.
+    Rápido. Eficiente. Memoria muscular de la crisis.
+    
+    "Pero escuchame bien:
+    Esto no es un pozo donde caés.
+    Es una trinchera donde nos juntamos."
+    
+    "El de arriba te quiere con vergüenza y solo.
+    Acá te queremos con orgullo y juntos."
 
     -> elena_historia_2002 ->
 
@@ -752,6 +794,14 @@ Mañana hay que buscar soluciones.
 
 El barrio duerme.
 Los problemas no.
+
+El barrio duerme.
+Los problemas no.
+
+// Fragmento de Ixchel (ex Yulimar)
+{fui_a_olla_jueves:
+    -> fragmento_ixchel_intro ->
+}
 
 * [Continuar] -> jueves_cliffhanger
 

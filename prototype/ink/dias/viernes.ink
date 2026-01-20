@@ -328,6 +328,17 @@ Elegiste no hacerlo.
 // Diego en la colecta
 -> diego_colecta ->
 
+Diego se mueve diferente.
+No pide con lástima. Pide con encanto.
+Habla con las viejas. Les sonríe.
+
+"Es un arte", te dice.
+"Si das lástima, te dan sobras.
+Si das alegría, te dan lo que tienen."
+
+Aprendés algo nuevo.
+El rebusque no es solo pedir. Es conectar.
+
 Al final de la tarde, entre todos:
 Hay para comprar verduras.
 No es mucho. Pero es algo.
@@ -413,6 +424,14 @@ Pero algo falta.
 // Hook de Juan: si tenés buena relación, te llama
 {juan_relacion >= 4 && energia >= 1:
     -> juan_llamado_viernes ->
+    
+    Te quedás pensando en Juan.
+    Siempre pareció el más seguro.
+    Pero hoy su voz temblaba un poco.
+    
+    "Tengo miedo de ser el próximo", dijo.
+    
+    El miedo no respeta antigüedad.
 }
 
 ~ energia = 0
@@ -611,12 +630,19 @@ Diego cuenta la plata.
 
 No alcanza.
 Nunca alcanza.
-Pero hoy comió.
+Pero hoy trabajó fuerte.
 
 {ayude_en_olla:
-    Y ayudó en algo.
-    Eso se siente diferente.
+    Y vos estuviste ahí.
+    Cargando cajones a la par.
 }
+
+"La gente piensa que venimos a pedir", piensa.
+"No venimos a pedir."
+"Venimos a ser parte de algo."
+
+Eso alimenta más que el guiso.
+Casi.
 
 Mañana sigue.
 

@@ -142,6 +142,7 @@ Ha visto esto antes.
 Te sentás.
 Ella no dice nada esperanzador.
 No dice que todo va a estar bien.
+"Acá estamos", dice. "Resistiendo."
 Solo está.
 
 ~ subir_conexion(1)

@@ -52,9 +52,8 @@ Gente del barrio. Gente que conocés de vista.
 Gente que no esperabas ver acá.
 
 {not tiene_laburo:
-    ¿Cuánto falta para que seas vos el que hace la cola?
-    Tenés tres meses de colchón. Pero después...
-}
+    ¿Cuánto falta para que te quedes sin red?
+    Para que nadie te sostenga.
 
 Una señora te mira.
 "¿Vas a comer o a mirar?"
@@ -115,7 +114,7 @@ Hay una señora al lado tuyo. Elena, se llama. No la Sofía del barrio, otra Ele
     "Sí. Primera vez."
     "Ah. Está bien. Siempre hace falta gente."
     Pelás papas en silencio un rato.
-    "Yo venía a comer. Ahora ayudo. Es mejor que hacer la cola."
+    "Yo venía a comer. Ahora ayudo. Es mejor ser parte que mirar de afuera."
     No sabés qué decir.
     Seguís pelando.
 - else:
@@ -154,7 +153,7 @@ Platos, platos, platos.
 - else:
     Servís.
     Uno tras otro.
-    Caras de cansancio, de hambre, de vergüenza a veces.
+    Caras de cansancio, de hambre. De bronca, a veces.
 }
 
 {not tiene_laburo:

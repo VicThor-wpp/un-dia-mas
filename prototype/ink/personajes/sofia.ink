@@ -245,7 +245,7 @@ No conocía a nadie. No tenía trabajo."
 -
 
 "Elena me encontró en la plaza. Los gurises llorando de hambre.
-Me trajo acá. Me dio un plato. Y después otro."
+Me trajo acá. Me dio un cuchillo. Me dijo 'pelá'."
 
 Pausa.
 

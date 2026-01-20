@@ -57,8 +57,9 @@ Mira para los lados. Como si alguien pudiera escuchar.
 
 "No sé. Ojalá que no."
 
-Si lo echan, no tiene nada.
-Ni papeles. Ni red. Ni nada.
+Si lo echan, tiene su red.
+Pero igual es un golpe.
+La red sostiene, pero no evita la caída.
 
 ~ diego_relacion += 1
 
@@ -104,42 +105,45 @@ Por un rato, casi te olvidás.
 
 === diego_en_olla ===
 
-Diego está en la fila.
-Trata de pasar desapercibido.
-No lo logra.
+Diego está descargando cajones.
+Camisa arremangada. Transpirado.
+Se mueve rápido, como siempre.
 
 ~ diego_viene_a_olla = true
 
 "No sabía que venías acá."
 
-Se pone tenso. Vergüenza.
+"Vengo a dar una mano. Los domingos no trabajo y...
+bueno, hay que hacer algo."
 
-"A veces. Cuando no... cuando está difícil."
-
-* ["No hay drama. Todos venimos."] -> diego_tranquilizar
-* ["¿Está muy jodido?"] -> diego_pregunta_situacion
+* ["Qué grande, Diego."] -> diego_tranquilizar
+* ["¿Te tratan bien?"] -> diego_pregunta_situacion
 * [Asentir y seguir] -> diego_no_presionar
 
 === diego_tranquilizar ===
 
-"No hay drama, Diego. Para eso está esto."
+"Qué grande, Diego. Hace falta gente."
 
-Relaja un poco.
+Sonríe. Se seca la frente.
 
-"En Venezuela yo ayudaba en comedores.
-Nunca pensé que iba a estar del otro lado."
+"En Venezuela yo organizaba comedores.
+Sé cómo es la logística.
+Acá les faltaban brazos."
 
-"Las cosas cambian."
+"Siempre faltan brazos."
 
-"Sí. Cambian."
+"Sí. Pero ahora hay dos más."
 
 * [...]
 -
 
 ~ diego_relacion += 1
 
-Sofía le sirve. Porción grande.
-Ella sabe quién necesita más.
+~ diego_relacion += 1
+
+Sofía le pasa una botella de agua.
+Él sigue cargando cosas.
+No para.
 
 ->->
 
@@ -162,9 +166,11 @@ Esperando.
 
 "Lo siento, Diego."
 
-"Está bien. Voy a poder. Siempre se puede."
+"Está bien. Voy a poder. Siempre se puede.
+Tengo unos panas que venden comida. Capaz me sumo."
 
-No suena convencido.
+Ya está pensando en la siguiente jugada.
+No se queda quieto. No puede.
 
 ~ diego_relacion += 1
 
@@ -173,11 +179,9 @@ No suena convencido.
 === diego_no_presionar ===
 
 Asentís. Seguís.
-A veces el silencio es respeto.
-
-Diego come solo.
-En una esquina.
-Mirando el plato.
+Diego sigue laburando.
+Carga dos bolsa de papa como si fueran plumas.
+La fuerza de la costumbre.
 
 ->->
 
@@ -257,9 +261,14 @@ No termina la frase.
 "Acá tampoco es fácil."
 
 "No. Pero al menos hay comida en los supermercados."
+Se ríe. Una risa corta.
 
-Perspectiva.
-Lo que para vos es crisis, para él es progreso.
+"Y están los panas. Los venezolanos nos encontramos.
+Nos reímos de cosas que ustedes no entienden.
+Eso cura más que la medicina."
+
+Comunidad.
+En el medio de la nada, se tienen entre ellos.
 
 ~ diego_relacion += 1
 ~ subir_conexion(1)
@@ -281,7 +290,16 @@ Cuando un kilo de arroz cuesta un sueldo."
 
 "¿Y esto?"
 
-"Esto es difícil. Pero no es Venezuela."
+"Esto es difícil. Pero no es Venezuela.
+Y acá... acá se siente distinto.
+La gente todavía se mira.
+En Caracas, al final, cada uno miraba su propio plato."
+
+Hace una pausa.
+
+"Por eso vengo a la olla.
+No por la comida. Yo me arreglo.
+Sino porque me recuerda a cuando allá todavía nos mirábamos."
 
 * [...]
 -
@@ -390,9 +408,10 @@ Sonríe. Sin gracia.
 
 "¿Con lo que pagaban? Apenas daba para el cuarto y mandar algo."
 
-{diego_familia_en_venezuela:
+"{diego_familia_en_venezuela:
     "Mi vieja va a tener que esperar.
-    No sé cómo le voy a decir."
+    Pero ella entiende. Es una guerrera.
+    Ya pasó por peores."
 }
 
 ->->
@@ -442,7 +461,9 @@ Aunque no siempre sea verdad.
 
     Diego asiente.
 
-    "Gracias. Lo mismo digo."
+    "Gracias. Lo mismo digo.
+    Si vos te quedás en banda, el grupo se mueve.
+    No te vamos a dejar caer."
 
     ~ diego_relacion += 1
 
@@ -529,16 +550,18 @@ Casa. Por ahora.
 
 {diego_viene_a_olla:
     Al menos mañana hay olla.
-    Al menos hay un plato seguro.
-    Al menos hay gente.
+    Al menos va a estar ocupado.
+    Cansarse hace bien. Ayuda a no pensar.
 }
 
 {ayude_a_diego:
     Piensa en vos.
-    En que hay uruguayos que lo ven.
-    Que no es invisible.
-
-    Eso vale más que la plata.
+    En que entendiste algo importante:
+    Nadie se salva solo.
+    
+    Se ríe bajito en la oscuridad.
+    "Uruguayo loco", piensa.
+    "Bienvenido al rebusque."
 }
 
 Afuera, la ciudad duerme.

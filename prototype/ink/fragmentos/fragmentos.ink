@@ -12,41 +12,38 @@
 // Este archivo contiene fragmentos compartidos y utilidades.
 
 // ============================================
-// FRAGMENTOS DE YULIMAR (la venezolana)
+// FRAGMENTOS DE IXCHEL (la guatemalteca)
 // ============================================
 
-=== fragmento_yulimar_intro ===
+=== fragmento_ixchel_intro ===
 
-// Yulimar aparece a partir del jueves si el jugador va a la olla
+// Ixchel aparece a partir del jueves
+// Reemplaza el lugar que ocupaba la "venezolana" genérica
 
-Yulimar termina de limpiar.
+Ixchel termina de limpiar la cocina del restaurante.
+Sus manos están rojas por el agua caliente y el detergente.
 
-El restaurante donde trabaja cierra tarde.
-Siempre cierra tarde.
+"Dale, bolita, apurate que cerramos", grita el encargado.
 
-Cuenta los billetes.
-No alcanzan.
-Nunca alcanzan.
+No es boliviana. Es guatemalteca. Maya-K'iche'.
+Se lo dijo tres veces. Él sigue diciendo "bolita".
+Para él, todos los indígenas son lo mismo.
 
-Manda plata a Venezuela cuando puede.
-Su mamá, su hermana, los sobrinos.
-Todos esperan.
+Ixchel no contesta.
+Su dignidad es un silencio antiguo.
 
-Acá la tratan bien.
-Más o menos.
-"La venezolana", le dicen.
-Como si no tuviera nombre.
+Piensa en su abuela en Quetzaltenango.
+En el tejido que le enseñó.
+Acá no hay tejidos. Solo grasa y platos sucios.
 
-Pero tiene trabajo.
-Eso es más de lo que muchos tienen.
+Sale a la calle. El frío de Montevideo le corta la cara.
+Le duele la espalda.
+Pero sigue de pie.
 
-Piensa en la olla del barrio.
-En que podría ayudar.
-En que no tiene tiempo.
-En que quizás el domingo...
-
-Se duerme.
-Mañana hay que madrugar.
+"Mañana será otro día", dice en su lengua.
+Nadie la escucha.
+Nadie la entiende.
+Pero ella se entiende.
 
 ->->
 
