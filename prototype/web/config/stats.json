@@ -73,16 +73,26 @@
     },
     "llama": {
       "low": 2,
+      "high": 7,
       "effects": {
         "bodyClass": "llama-low",
         "indicator": "Sin esperanza"
+      },
+      "highEffects": {
+        "bodyClass": "llama-high",
+        "indicator": "Esperanza viva"
       }
     },
     "conexion": {
       "low": 3,
+      "high": 7,
       "effects": {
         "bodyClass": "conexion-low",
         "indicator": "Aislado"
+      },
+      "highEffects": {
+        "bodyClass": "conexion-high",
+        "indicator": "Parte del barrio"
       }
     },
     "acumulacion": {

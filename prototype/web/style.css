@@ -1314,6 +1314,38 @@ body.trauma-high::after {
     z-index: 9999;
 }
 
+/* --- POSITIVE STATE EFFECTS --- */
+
+/* High connection: the world feels warmer */
+body.conexion-high {
+    --text-main: #efe6d6;
+    --bg-surface: #2d3545;
+}
+
+body.conexion-high .story p {
+    line-height: calc(var(--line-height-base) + 0.05);
+}
+
+/* High llama: collective hope - subtle warm glow */
+body.llama-high {
+    --accent: #f48c06;
+    --accent-glow: rgba(244, 140, 6, 0.5);
+}
+
+body.llama-high .story {
+    text-shadow: 0 0 40px rgba(244, 140, 6, 0.03);
+}
+
+/* Combined crisis: multiple low stats compound */
+body.salud-baja.conexion-low {
+    filter: saturate(0.3) brightness(0.8);
+}
+
+body.salud-baja.conexion-low .story p {
+    max-width: 50ch;
+    letter-spacing: -0.02em;
+}
+
 /* ==========================================
    UTILITIES
    ========================================== */
@@ -2356,5 +2388,47 @@ a:focus-visible,
     .ending-stat-label {
         min-width: 70px;
         font-size: 12px;
+    }
+}
+
+/* ==========================================
+   SYSTEM PREFERENCE DETECTION
+   ========================================== */
+
+@media (prefers-color-scheme: light) {
+    :root:not([data-theme-override]) {
+        --bg-dark: #f5efe6;
+        --bg-light: #ede4d8;
+        --bg-surface: #e8dfd0;
+        --text-main: #2a2520;
+        --text-muted: #6b5e52;
+        --text-dim: #9a8f80;
+        --accent: #c4501a;
+        --accent-dim: rgba(196, 80, 26, 0.2);
+        --accent-glow: rgba(196, 80, 26, 0.3);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+@media (prefers-contrast: more) {
+    :root:not([data-theme-override]) {
+        --bg-dark: #000000;
+        --bg-light: #111111;
+        --bg-surface: #1a1a1a;
+        --text-main: #ffffff;
+        --text-muted: #cccccc;
+        --accent: #ffaa00;
+        --success: #00ff00;
+        --danger: #ff0000;
     }
 }

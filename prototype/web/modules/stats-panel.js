@@ -74,10 +74,11 @@ const StatsPanel = (function() {
             const value = getStatValue(statId);
 
             if (threshold.high !== undefined && value >= threshold.high) {
+                const highFx = threshold.highEffects || threshold.effects;
                 indicators.push({
                     statId, type: 'high',
-                    label: threshold.effects?.indicator || `${statId} alto`,
-                    class: threshold.effects?.bodyClass || ''
+                    label: highFx?.indicator || `${statId} alto`,
+                    class: highFx?.bodyClass || ''
                 });
             }
 
@@ -96,10 +97,26 @@ const StatsPanel = (function() {
      * Apply threshold effects to body
      */
     function applyThresholdEffects() {
-        document.body.classList.remove('salud-baja', 'llama-low', 'conexion-low');
+        document.body.classList.remove('salud-baja', 'llama-low', 'conexion-low', 'conexion-high', 'llama-high');
         getActiveIndicators().forEach(ind => {
             if (ind.class) document.body.classList.add(ind.class);
         });
+
+        // Positive state thresholds
+        const conexionValue = getStatValue('conexion');
+        const llamaValue = getStatValue('llama');
+
+        if (conexionValue >= 7) {
+            document.body.classList.add('conexion-high');
+        } else {
+            document.body.classList.remove('conexion-high');
+        }
+
+        if (llamaValue >= 7) {
+            document.body.classList.add('llama-high');
+        } else {
+            document.body.classList.remove('llama-high');
+        }
     }
 
     /**

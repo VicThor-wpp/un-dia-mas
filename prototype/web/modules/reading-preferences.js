@@ -73,6 +73,9 @@ const ReadingPreferences = (function() {
         body.classList.add(`font-${prefs.fontFamily}`);
         body.classList.add(`line-${prefs.lineHeight}`);
 
+        // Signal that user has manually chosen a theme, overriding system detection
+        document.documentElement.setAttribute('data-theme-override', 'true');
+
         if (prefs.typewriter) {
             body.classList.add('typewriter-enabled');
         } else {
@@ -293,6 +296,8 @@ const ReadingPreferences = (function() {
     function resetPrefs() {
         prefs = { ...defaults };
         savePrefs();
+        // Allow system preference detection to take effect again
+        document.documentElement.removeAttribute('data-theme-override');
         applyPrefs();
         closePanel();
         openPanel(); // Reopen to refresh UI
