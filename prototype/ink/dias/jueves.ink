@@ -14,7 +14,7 @@
 === jueves_amanecer ===
 
 ~ dia_actual = 4
-~ energia = 3  // Dormiste mal
+~ energia = 4  // Dormiste mal, pero el cuerpo se adapta
 
 # JUEVES
 
@@ -229,6 +229,7 @@ Y otra gente que no conocés bien.
             Te pone una mano en el hombro. Firme.
             "Acá nadie juzga. ¿Querés dar una mano?"
             ~ subir_conexion(2)
+            ~ subir_salud_mental(1)
         }
         { resultado_jueves_abrirte == 1:
             Sofía asiente. No dice "qué bajón" ni "vas a conseguir algo".
@@ -673,7 +674,9 @@ Vos también.
     Mañana va a ser igual.
     Siempre igual.
 
-    ~ bajar_salud_mental(1)
+    { chance(50):
+        ~ bajar_salud_mental(1)
+    }
     ->->
 }
 
@@ -695,7 +698,9 @@ Vos también.
     Mejor solo.
     Mejor apagado.
 
-    ~ bajar_llama(1)
+    { chance(60):
+        ~ bajar_llama(1)
+    }
     ->->
 }
 
@@ -736,7 +741,9 @@ Mañana es otro día igual.
     Todo cae.
     Todo se rompe.
 
-    ~ bajar_salud_mental(1)
+    { chance(50):
+        ~ bajar_salud_mental(1)
+    }
     ->->
 }
 
@@ -757,7 +764,9 @@ Mañana es otro día igual.
     La llama se apaga.
     Y ella no sabe cómo volver a prenderla.
 
-    ~ bajar_llama(1)
+    { chance(60):
+        ~ bajar_llama(1)
+    }
     ->->
 }
 
@@ -793,7 +802,9 @@ Mañana hay que buscar soluciones.
     "Ojalá alcance el tejido para sostenerlo", piensa.
     Pero no está segura.
 
-    ~ bajar_salud_mental(1)
+    { chance(50):
+        ~ bajar_salud_mental(1)
+    }
     ->->
 }
 
@@ -816,7 +827,9 @@ Mañana hay que buscar soluciones.
     Ya no hay barrio.
     Ya no hay nada.
 
-    ~ bajar_llama(1)
+    { chance(60):
+        ~ bajar_llama(1)
+    }
     ->->
 }
 
@@ -849,7 +862,9 @@ Mañana hay que buscar soluciones.
     "Yo voy a terminar igual", piensa.
     "Todos terminamos igual."
 
-    ~ bajar_salud_mental(1)
+    { chance(50):
+        ~ bajar_salud_mental(1)
+    }
     * [Continuar] -> jueves_cliffhanger
 }
 
@@ -872,7 +887,9 @@ Mañana hay que buscar soluciones.
 
     No hay diferencia.
 
-    ~ bajar_llama(1)
+    { chance(60):
+        ~ bajar_llama(1)
+    }
     ->->
 }
 

@@ -605,6 +605,8 @@ Otras voces hablan.
 // Cierre de la asamblea
 -> olla_asamblea_fin ->
 
+~ subir_salud_mental(1)
+
 {idea_hay_cosas_juntos == false:
     # IDEA DISPONIBLE: "HAY COSAS QUE SE HACEN JUNTOS"
 
@@ -990,8 +992,9 @@ Pero quizás no igual.
 === transicion_sabado_domingo ===
 // Chequeo de colapso mental antes de continuar
 {salud_mental <= 0:
-    -> final_apagado
+    -> recovery_mental_sabado
 }
+- (post_recovery_sabado)
 
 // Chequeo de destrucción del tejido social
 {llama <= 0:
@@ -999,3 +1002,27 @@ Pero quizás no igual.
 }
 
 -> domingo_amanecer
+
+=== recovery_mental_sabado ===
+La oscuridad viene de nuevo. Más fuerte.
+
+* [...]
+-
+
+{conexion <= 1 && llama <= 1:
+    No hay red. No hay llama. No hay mañana.
+
+    -> final_apagado
+}
+
+{participe_asamblea:
+    La asamblea. Las voces. Algo de eso queda.
+- else:
+    Una cara. Un gesto. Algo mínimo.
+}
+
+~ salud_mental = 1
+
+Mañana es domingo. Último día. Algo tiene que pasar.
+
+-> transicion_sabado_domingo.post_recovery_sabado

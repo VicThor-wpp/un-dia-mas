@@ -472,6 +472,10 @@ Todos ayudan.
 A las 7 la olla abre.
 -> olla_servir ->
 
+{veces_que_ayude == 1:
+    ~ subir_salud_mental(1)
+}
+
 -> viernes_noche
 
 === viernes_tarde ===
@@ -576,7 +580,9 @@ Para hablar de la olla, de la situación.
 
     Hasta que no hay mañana.
 
-    ~ bajar_salud_mental(1)
+    { chance(50):
+        ~ bajar_salud_mental(1)
+    }
     * [Continuar] -> transicion_viernes_sabado
 }
 
@@ -596,7 +602,9 @@ Para hablar de la olla, de la situación.
     No hay tejido que sostenga esto.
     Ya no hay nada.
 
-    ~ bajar_llama(1)
+    { chance(60):
+        ~ bajar_llama(1)
+    }
     * [Continuar] -> transicion_viernes_sabado
 }
 
@@ -639,7 +647,9 @@ De cómo seguir.
     Vos también vas a morir roto.
     Todos mueren rotos.
 
-    ~ bajar_salud_mental(1)
+    { chance(50):
+        ~ bajar_salud_mental(1)
+    }
     * [Continuar] -> transicion_viernes_sabado
 }
 
@@ -660,7 +670,9 @@ De cómo seguir.
     Hasta el final.
     Siempre solo.
 
-    ~ bajar_llama(1)
+    { chance(60):
+        ~ bajar_llama(1)
+    }
     * [Continuar] -> transicion_viernes_sabado
 }
 
@@ -700,7 +712,9 @@ Tiene cosas que decir.
     Pero la destrucción es igual.
     Siempre igual.
 
-    ~ bajar_salud_mental(1)
+    { chance(50):
+        ~ bajar_salud_mental(1)
+    }
     * [Continuar] -> transicion_viernes_sabado
 }
 
@@ -722,7 +736,9 @@ Tiene cosas que decir.
 
     No hay diferencia.
 
-    ~ bajar_llama(1)
+    { chance(60):
+        ~ bajar_llama(1)
+    }
     * [Continuar] -> transicion_viernes_sabado
 }
 
@@ -773,7 +789,9 @@ Mañana sigue.
     Ya sos como él.
     Ya no queda nada más.
 
-    ~ bajar_salud_mental(1)
+    { chance(50):
+        ~ bajar_salud_mental(1)
+    }
     * [Continuar] -> transicion_viernes_sabado
 }
 
@@ -794,7 +812,9 @@ Mañana sigue.
     Mejor apagado.
     Mejor no intentar.
 
-    ~ bajar_llama(1)
+    { chance(60):
+        ~ bajar_llama(1)
+    }
     * [Continuar] -> transicion_viernes_sabado
 }
 
@@ -828,8 +848,9 @@ Para hablar de cómo seguir.
 === transicion_viernes_sabado ===
 // Chequeo de colapso mental antes de continuar
 {salud_mental <= 0:
-    -> final_apagado
+    -> recovery_mental_viernes
 }
+- (post_recovery_viernes)
 
 // Chequeo de destrucción del tejido social
 {llama <= 0:
@@ -837,3 +858,24 @@ Para hablar de cómo seguir.
 }
 
 -> sabado_amanecer
+
+=== recovery_mental_viernes ===
+Todo se pone oscuro. Otra vez. Peor.
+
+* [...]
+-
+
+{conexion <= 1 && llama <= 1:
+    No queda nada.
+    Ni gente. Ni fuego. Ni razón.
+
+    -> final_apagado
+}
+
+Pero algo queda. Alguien dijo tu nombre hoy. Alguien te vio.
+
+~ salud_mental = 1
+
+No estás bien. Pero todavía estás.
+
+-> transicion_viernes_sabado.post_recovery_viernes

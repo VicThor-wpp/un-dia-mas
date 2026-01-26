@@ -442,6 +442,12 @@ const StatsPanel = (function() {
     }
 
     return {
+        getPreviousStats: function() { return Object.assign({}, previousStats); },
+        getStatDiff: function(statId) {
+            const current = getStatValue(statId);
+            const prev = previousStats[statId] !== undefined ? previousStats[statId] : current;
+            return current - prev;
+        },
         init,
         setGameStarted,
         render,

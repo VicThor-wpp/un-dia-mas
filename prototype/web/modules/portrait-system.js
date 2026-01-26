@@ -25,7 +25,11 @@ const PortraitSystem = (function() {
 
         // Check mobile breakpoint
         checkMobile();
-        window.addEventListener('resize', checkMobile);
+        let resizeTimer;
+        window.addEventListener('resize', function() {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(checkMobile, 150);
+        });
     }
 
     /**

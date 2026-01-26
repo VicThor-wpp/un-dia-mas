@@ -130,6 +130,20 @@ VAR dia_actual = 1
         ~ salud_mental = 0
     }
 
+=== function subir_salud_mental(cantidad) ===
+    ~ temp salud_antes = salud_mental
+    ~ salud_mental = salud_mental + cantidad
+    {salud_mental > 5:
+        ~ salud_mental = 5
+    }
+    // Feedback narrativo en thresholds
+    {
+    - salud_mental >= 3 && salud_antes < 3:
+        # STAT_THRESHOLD
+        Algo se afloja en el pecho.
+        No estás bien. Pero estás un poco mejor.
+    }
+
 // --- CHEQUEOS DE ESTADO ---
 
 === function esta_agotado() ===

@@ -59,7 +59,7 @@ const NotificationSystem = (function() {
 
         // Refresh icons
         if (typeof lucide !== 'undefined') {
-            lucide.createIcons();
+            lucide.createIcons({ root: notif });
         }
 
         // Auto-remove

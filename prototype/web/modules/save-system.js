@@ -87,7 +87,10 @@ const SaveSystem = (function() {
 
         try {
             const saveData = createSaveData(description);
-            if (!saveData) return false;
+            if (!saveData) {
+                saveLock = false;
+                return false;
+            }
 
             const serialized = JSON.stringify(saveData);
             const storageKey = `${STORAGE_PREFIX}save_${slotId}`;
@@ -96,6 +99,7 @@ const SaveSystem = (function() {
             if (typeof SecurityValidator !== 'undefined' && !SecurityValidator.checkStorageQuota(storageKey, serialized)) {
                 console.error('Storage quota exceeded');
                 showNotification('Sin espacio para guardar', 'error');
+                saveLock = false;
                 return false;
             }
 
@@ -122,13 +126,17 @@ const SaveSystem = (function() {
 
         try {
             const saveData = createSaveData('Auto-guardado');
-            if (!saveData) return false;
+            if (!saveData) {
+                saveLock = false;
+                return false;
+            }
 
             const serialized = JSON.stringify(saveData);
             const storageKey = `${STORAGE_PREFIX}autosave`;
 
             if (typeof SecurityValidator !== 'undefined' && !SecurityValidator.checkStorageQuota(storageKey, serialized)) {
                 console.warn('Storage quota exceeded for auto-save');
+                saveLock = false;
                 return false;
             }
 

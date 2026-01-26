@@ -24,7 +24,6 @@ const GameEngine = (function() {
     // State
     let gameStarted = false;
     let contentQueue = [];
-    let previousStats = {};
     let previousDice = { ultima_tirada: 0, ultimo_resultado: 0 };
     let detectedEnding = null;
 
@@ -91,11 +90,6 @@ const GameEngine = (function() {
         if (!story) return;
 
         try {
-            const stats = ConfigManager.getAllStats();
-            for (const statId in stats) {
-                previousStats[statId] = story.variablesState[statId] ?? stats[statId].default;
-            }
-
             previousDice = {
                 ultima_tirada: story.variablesState['ultima_tirada'] ?? 0,
                 ultimo_resultado: story.variablesState['ultimo_resultado'] ?? 0
@@ -182,7 +176,7 @@ const GameEngine = (function() {
             `;
         }
 
-        refreshIcons();
+        refreshIcons(rollDiv);
         return rollDiv;
     }
 
@@ -196,15 +190,14 @@ const GameEngine = (function() {
             const stats = ConfigManager.getAllStats();
 
             for (const statId in stats) {
-                const current = story.variablesState[statId] ?? stats[statId].default;
-                const previous = previousStats[statId] ?? current;
-                const diff = current - previous;
+                const diff = StatsPanel.getStatDiff(statId);
 
                 if (diff !== 0) {
+                    const current = StatsPanel.getStatValue(statId);
                     NotificationSystem.showStatChange(statId, diff);
                     // Log the stat change
                     if (typeof DecisionLog !== 'undefined') {
-                        DecisionLog.logStatChange(statId, previous, current);
+                        DecisionLog.logStatChange(statId, current - diff, current);
                     }
                 }
             }
@@ -448,7 +441,7 @@ const GameEngine = (function() {
             AccessibilityManager.enhanceChoices(choicesContainer);
         }
 
-        refreshIcons();
+        refreshIcons(choicesContainer);
     }
 
     /**
@@ -498,9 +491,13 @@ const GameEngine = (function() {
     /**
      * Refresh Lucide icons
      */
-    function refreshIcons() {
+    function refreshIcons(container) {
         if (typeof lucide !== 'undefined') {
-            lucide.createIcons();
+            if (container) {
+                lucide.createIcons({ root: container });
+            } else {
+                lucide.createIcons();
+            }
         }
     }
 

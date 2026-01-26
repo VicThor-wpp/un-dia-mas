@@ -80,7 +80,7 @@ VAR ultimo_resultado = 0
     { tirada == 6 && t1 == 6:  // Solo crítico si ambos son 6
         ~ return 2
     }
-    { tirada == 1:
+    { tirada == 1 && t1 <= 3 && t2 <= 3:  // Pifia si ambos dados son bajos (reduce de 30.6% a ~14%)
         ~ return -1
     }
     { tirada + modificador >= dificultad:
@@ -164,10 +164,7 @@ VAR ultimo_resultado = 0
     ~ pequenas_victorias += 1
 
 === function critico_exito_mental() ===
-    ~ salud_mental = salud_mental + 1
-    { salud_mental > 5:
-        ~ salud_mental = 5
-    }
+    ~ subir_salud_mental(1)
     ~ pequenas_victorias += 1
 
 === function critico_exito_comunitario() ===
