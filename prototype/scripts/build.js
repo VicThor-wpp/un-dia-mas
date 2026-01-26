@@ -31,9 +31,27 @@ function build() {
 
     try {
         // Compile Ink to JSON
-        const cmd = `${inklecate} -o "${JSON_OUT}" "${INK_ENTRY}"`;
-        const output = execSync(cmd, { encoding: 'utf8', cwd: ROOT, stdio: 'pipe' });
-        if (output.trim()) console.log(output.trim());
+        const cmd = `"${inklecate}" -o "${JSON_OUT}" "${INK_ENTRY}"`;
+        let output = '';
+        let warnings = '';
+        try {
+            output = execSync(cmd, { encoding: 'utf8', cwd: ROOT, stdio: 'pipe', shell: true });
+        } catch (execErr) {
+            // inklecate exits non-zero on warnings — check if JSON was still produced
+            warnings = (execErr.stderr || '').toString();
+            output = (execErr.stdout || '').toString();
+            const hasErrors = /^ERROR:/m.test(warnings) || /^ERROR:/m.test(output);
+            if (hasErrors || !fs.existsSync(JSON_OUT)) {
+                throw execErr;
+            }
+        }
+
+        // Print warnings (non-fatal)
+        const allOutput = (warnings + '\n' + output).trim();
+        const warningLines = allOutput.split('\n').filter(l => /^WARNING:/.test(l.trim()));
+        if (warningLines.length > 0) {
+            console.log(`[build] ${warningLines.length} warnings (non-fatal)`);
+        }
 
         // Verify JSON output
         if (!fs.existsSync(JSON_OUT)) {
@@ -41,7 +59,12 @@ function build() {
             process.exit(1);
         }
 
-        const jsonContent = fs.readFileSync(JSON_OUT, 'utf8');
+        let jsonContent = fs.readFileSync(JSON_OUT, 'utf8');
+        // Strip UTF-8 BOM if present (inklecate on Windows)
+        if (jsonContent.charCodeAt(0) === 0xFEFF) {
+            jsonContent = jsonContent.slice(1);
+            fs.writeFileSync(JSON_OUT, jsonContent, 'utf8');
+        }
         // Validate it's valid JSON
         JSON.parse(jsonContent);
 
