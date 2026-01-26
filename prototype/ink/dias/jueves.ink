@@ -938,6 +938,14 @@ Todo se pone oscuro. La cabeza no funciona.
 * [...]
 -
 
+{conexion <= 1 && llama <= 1:
+    No hay nada.
+    No hay nadie.
+    No hay razón.
+
+    -> final_apagado
+}
+
 Pero algo te sostiene. Un recuerdo. Una cara. Algo.
 
 ~ salud_mental = 1
