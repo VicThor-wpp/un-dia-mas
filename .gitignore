@@ -38,3 +38,8 @@ atrament-analysis/
 # Temp files
 *.zip
 design-system.html
+
+# Compiled story output
+prototype/web/un_dia_mas.js
+prototype/web/un_dia_mas.json
+prototype/ink/main.ink.json

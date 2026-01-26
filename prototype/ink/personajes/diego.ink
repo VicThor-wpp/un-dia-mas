@@ -128,14 +128,40 @@ Sonríe. Se seca la frente.
 
 "Falta organización. Brazos sobran, lo que falta es saber hacia dónde empujarlos."
 
-* [...]
--
+Te hace una seña. Hay cajones para descargar.
 
-~ diego_relacion += 1
-
-Sofía le pasa una botella de agua. Se miran con respeto, como dos veteranos de una guerra que no termina.
-
-~ diego_relacion += 1
+// Chequeo físico: trabajar a la par de Diego
+# DADOS:CHEQUEO
+~ temp resultado_diego_fisico = chequeo_completo_fisico(1, 4)
+{ resultado_diego_fisico == 2:
+    Agarrás un cajón de papas. Pesado. Lo cargás sin parar.
+    Diego te mira con respeto.
+    "Sos fuerte, hermano. Si todos empujaran así..."
+    Trabajan juntos. A la par. Sin hablar.
+    El trabajo dice lo que las palabras no.
+    ~ diego_relacion += 2
+    ~ subir_conexion(1)
+}
+{ resultado_diego_fisico == 1:
+    Ayudás a cargar. Cuesta, pero se puede.
+    Diego asiente. Trabajan juntos.
+    ~ diego_relacion += 1
+}
+{ resultado_diego_fisico == 0:
+    Intentás cargar un cajón. Es más pesado de lo que parece.
+    Diego agarra el otro lado sin decir nada.
+    "Entre los dos es más fácil."
+    No es debilidad. Es equipo.
+    ~ diego_relacion += 1
+}
+{ resultado_diego_fisico == -1:
+    Agarrás un cajón. Se te resbala.
+    Las papas se desparraman por el piso.
+    "Tranquilo, tranquilo." Diego se agacha a juntar.
+    Te agachás con él. Rojo de vergüenza.
+    "A todos nos pasa. Las papas son traicioneras."
+    Sonríe. No te juzga.
+}
 
 Sofía le pasa una botella de agua.
 Él sigue cargando cosas.
@@ -222,25 +248,81 @@ Silencio.
 
 === diego_historia ===
 
-~ diego_me_conto_historia = true
-
 Diego mira el cigarrillo.
 
-"En Caracas, antes de venirme, yo creía. De verdad creía. Estuve en una cooperativa agrícola en el llano. Metíamos las manos en la tierra pensando que por fin era nuestra, que el socialismo de abajo iba a funcionar."
+// Chequeo social: lograr que Diego confíe lo suficiente para contar su historia
+# DADOS:CHEQUEO
+~ temp resultado_diego_confianza = chequeo_completo_social(diego_relacion, 4)
+{ resultado_diego_confianza == 2:
+    ~ diego_me_conto_historia = true
 
-"¿Y qué pasó?"
+    Diego te mira. Algo se abre.
 
-"Pasó que la revolución tiene muchos estómagos y pocas manos. La corrupción se comió las semillas, y el autoritarismo se comió a los que preguntábamos dónde estaba el fertilizante. Destruyeron lo que construimos, y de paso borraron el trabajo de los que estaban antes de ellos, que tampoco eran santos, pero al menos dejaban algo en pie."
+    "En Caracas, antes de venirme, yo creía. De verdad creía. Estuve en una cooperativa agrícola en el llano. Metíamos las manos en la tierra pensando que por fin era nuestra, que el socialismo de abajo iba a funcionar."
 
-Pausa larga. Diego mira sus manos, curtidas por dos tierras distintas.
+    "¿Y qué pasó?"
 
-"Vine acá para dejar de pelear, pero el hambre es el mismo monstruo con distinto acento. A veces... a veces ya ni me da la cabeza para imaginar que la cosa se acomode. Es como si el futuro fuera un idioma que dejé de hablar."
+    "Pasó que la revolución tiene muchos estómagos y pocas manos. La corrupción se comió las semillas, y el autoritarismo se comió a los que preguntábamos dónde estaba el fertilizante."
 
-Comunidad.
-En el medio de la nada, se tienen entre ellos.
+    Pausa larga. Diego mira sus manos.
 
-~ diego_relacion += 1
-~ subir_conexion(1)
+    "Vine acá para dejar de pelear, pero el hambre es el mismo monstruo con distinto acento."
+
+    Se queda callado un momento. Después agrega algo que nunca le contó a nadie:
+
+    "Mi viejo todavía está allá. Enfermo. No puedo ir a verlo porque si cruzo la frontera no me dejan volver. Y si no vuelvo, quién les manda plata."
+
+    La voz se le quiebra. Un instante. Después se recompone.
+
+    ~ diego_relacion += 2
+    ~ subir_conexion(2)
+    ~ activar_pedir_no_debilidad()
+}
+{ resultado_diego_confianza == 1:
+    ~ diego_me_conto_historia = true
+
+    "En Caracas, antes de venirme, yo creía. De verdad creía. Estuve en una cooperativa agrícola en el llano. Metíamos las manos en la tierra pensando que por fin era nuestra, que el socialismo de abajo iba a funcionar."
+
+    "¿Y qué pasó?"
+
+    "Pasó que la revolución tiene muchos estómagos y pocas manos. La corrupción se comió las semillas, y el autoritarismo se comió a los que preguntábamos dónde estaba el fertilizante. Destruyeron lo que construimos, y de paso borraron el trabajo de los que estaban antes de ellos, que tampoco eran santos, pero al menos dejaban algo en pie."
+
+    Pausa larga. Diego mira sus manos, curtidas por dos tierras distintas.
+
+    "Vine acá para dejar de pelear, pero el hambre es el mismo monstruo con distinto acento. A veces... a veces ya ni me da la cabeza para imaginar que la cosa se acomode. Es como si el futuro fuera un idioma que dejé de hablar."
+
+    Comunidad.
+    En el medio de la nada, se tienen entre ellos.
+
+    ~ diego_relacion += 1
+    ~ subir_conexion(1)
+    ~ activar_pedir_no_debilidad()
+}
+{ resultado_diego_confianza == 0:
+    Diego fuma. Piensa.
+
+    "Vine de Venezuela. Ya sabés eso."
+
+    Pausa.
+
+    "Algún día te cuento bien. Hoy no me da."
+
+    No insistís. Hay cosas que necesitan su tiempo.
+
+    ~ diego_relacion += 1
+}
+{ resultado_diego_confianza == -1:
+    Diego se cierra. Tirás del cigarrillo.
+
+    "No me gusta hablar de eso."
+
+    "Perdón. No quería..."
+
+    "Está bien. Pero... no hoy."
+
+    El silencio se vuelve incómodo.
+    Quizás preguntaste demasiado pronto.
+}
 
 ->->
 
@@ -800,6 +882,64 @@ Sobreviven.
 Guarda la libreta.
 Aprieta la franela bajo la almohada.
 Cierra los ojos.
+
+->->
+
+// --- FRAGMENTOS NOCTURNOS DE DIEGO ---
+
+=== fragmento_diego_llamada ===
+Diego llama a su mamá en Caracas.
+
+La señal va y viene.
+"¿Comiste, mijo?"
+"Sí, mamá."
+Mentira. Hoy no comió.
+
+Le manda la mitad de lo que gana.
+Se queda con la otra mitad.
+A veces alcanza. A veces no.
+
+"Te quiero, mijo."
+"Yo también, mamá."
+
+Corta. Se queda mirando el techo.
+
+->->
+
+=== fragmento_diego_permiso ===
+Diego revisa los papeles de residencia.
+Todo en orden. Más o menos.
+
+{diego_relacion >= 3:
+    Piensa en el barrio.
+    En que alguien le habló hoy sin pedirle los papeles primero.
+    Eso vale.
+}
+
+El trámite es el jueves.
+Si sale bien, puede trabajar en blanco.
+Si sale mal...
+
+No piensa en eso. Mañana.
+
+->->
+
+=== fragmento_diego_mate ===
+Diego intenta cebar mate.
+
+Le sale lavado. Otra vez.
+
+{diego_relacion >= 2:
+    "Mañana le pido al vecino que me enseñe."
+}
+
+En Venezuela el café es otra cosa.
+Acá todo es mate.
+Mate dulce, mate amargo, mate con yuyos.
+Un idioma nuevo que todavía no domina.
+
+Se toma el mate lavado igual.
+Algo caliente es algo caliente.
 
 ->->
 

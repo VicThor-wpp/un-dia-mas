@@ -59,10 +59,24 @@ Los mails.
 
 Lo de siempre.
 
-{energia >= 3:
-    Estás enfocado. El trabajo sale.
-- else:
-    Te cuesta concentrarte. El cansancio pesa.
+// Chequeo mental: concentración en el laburo
+~ temp concentracion = chequeo_mental(0, 3)
+{ concentracion == 2:
+    Hoy estás afilado. Todo sale rápido y bien.
+    El jefe pasa y asiente. Bien.
+    ~ pequenas_victorias += 1
+}
+{ concentracion == 1:
+    Estás enfocado. El trabajo sale. Las horas pasan sin dolor.
+}
+{ concentracion == 0:
+    Te cuesta concentrarte. Releés el mismo mail tres veces.
+    El cansancio pesa.
+}
+{ concentracion == -1:
+    Cometés un error estúpido. Un mail al cliente equivocado.
+    El jefe se da cuenta. "Prestá atención."
+    ~ bajar_salud_mental(1)
 }
 
 ->->
@@ -122,8 +136,24 @@ Lo que pudiste armar anoche.
 {ultima_tirada >= 5: Milanesa fría. Lujo.}
 
 Te sentás con alguien.
-Hablás de cosas.
-{d6() >= 4: Por un rato, te olvidás de los problemas.|Pero los problemas siguen ahí.}
+
+// Chequeo social: conversación en el almuerzo
+~ temp charla_almuerzo = chequeo_social(0, 3)
+{ charla_almuerzo == 2:
+    Enganchás una charla copada. Se ríen. Por un rato, olvidás todo.
+    ~ subir_conexion(1)
+}
+{ charla_almuerzo == 1:
+    Hablás de cosas. Por un rato, te olvidás de los problemas.
+}
+{ charla_almuerzo == 0:
+    Hablás de cosas. Pero los problemas siguen ahí.
+}
+{ charla_almuerzo == -1:
+    Metés la pata con un comentario. Silencio incómodo.
+    Te levantás antes de tiempo.
+    ~ bajar_conexion(1)
+}
 
 ~ subir_conexion(1)
 

@@ -141,11 +141,16 @@ const ChoiceParser = (function() {
         }
 
         // Build final HTML
+        // Sanitize text to prevent XSS from story content
+        const safeText = typeof SecurityValidator !== 'undefined'
+            ? SecurityValidator.sanitizeHTML(text)
+            : text;
+
         if (badges) {
-            return `<span class="choice-text">${text}</span><span class="choice-badges">${badges}</span>`;
+            return `<span class="choice-text">${safeText}</span><span class="choice-badges">${badges}</span>`;
         }
 
-        return text;
+        return safeText;
     }
 
     /**

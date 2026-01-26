@@ -80,13 +80,63 @@ Parece que sus manos tienen ojos propios.
 
 * ["¿Cómo hacés tan rápido?"]
     "Aprendí de mis abuelas. Ellas decían que el alimento se prepara primero con la intención y después con las manos."
+    Te invita a sentarte a su lado. A separar lentejas.
+    -> ixchel_cocinar_juntos
 * ["Parece un laburo pesado."]
     "El trabajo duro es el que se hace solo, joven. Dios nos dio manos para compartir la carga. Entre muchos, es celebración."
+    Te hace un lugar. Te pone un balde de legumbres adelante.
+    -> ixchel_cocinar_juntos
 
-* [...]
--
+=== ixchel_cocinar_juntos ===
 
-~ subir_llama(1)
+// Chequeo físico: cocinar a la par de Ixchel
+# DADOS:CHEQUEO
+~ temp resultado_ixchel_cocinar = chequeo_completo_fisico(0, 3)
+{ resultado_ixchel_cocinar == 2:
+    Tus manos encuentran el ritmo. Rápido. Preciso.
+    Ixchel te mira sorprendida.
+
+    "Tiene buenas manos, joven. Mi abuela diría que el maíz lo eligió."
+
+    Trabajan juntos en silencio. Un silencio sagrado.
+    El guiso toma forma.
+
+    ~ ixchel_relacion += 1
+    ~ subir_llama(1)
+    ~ subir_conexion(1)
+}
+{ resultado_ixchel_cocinar == 1:
+    Separás lentejas. No tan rápido como ella, pero sin parar.
+    Ixchel asiente. Conforme.
+
+    El trabajo compartido habla por los dos.
+
+    ~ subir_llama(1)
+}
+{ resultado_ixchel_cocinar == 0:
+    Confundís lentejas con piedritas. Dos veces.
+    Ixchel las saca sin decir nada.
+
+    "Despacio. La lenteja no tiene apuro."
+
+    Aprendés. Lento, pero aprendés.
+
+    ~ subir_llama(1)
+}
+{ resultado_ixchel_cocinar == -1:
+    Se te cae el balde. Las lentejas ruedan por el piso.
+
+    "Ay, perdón..."
+
+    Ixchel se ríe. Sin maldad. Con ternura.
+
+    "Mi hermano Tomás hacía lo mismo. Manos de elefante, decía mi abuela."
+
+    Juntan las lentejas del piso. Las lavan de vuelta.
+    El desastre se convirtió en recuerdo compartido.
+
+    ~ ixchel_relacion += 1
+}
 
 ->->
 
@@ -651,6 +701,204 @@ Ixchel dice, pausada:
 Simple.
 Profundo.
 Te queda sonando.
+
+->->
+
+// --- IXCHEL EN LA OLLA (JUEVES-SABADO) ---
+
+=== ixchel_encuentro_olla ===
+// Encuentro en la olla
+# PORTRAIT:elena,neutral,right
+
+{ixchel_estado == "desconocida":
+    Hay una mujer que no conocés.
+    Morena, pelo largo y negro. Trabaja en silencio.
+    Pela papas más rápido que nadie.
+
+    * [Acercarte]
+        "Hola. ¿Primera vez?"
+        Te mira. Ojos oscuros, profundos.
+        "No. Vengo hace un mes."
+        ~ ixchel_estado = "conocida"
+        ~ ixchel_relacion += 1
+        ->->
+    * [Seguir de largo]
+        ->->
+- else:
+    Ixchel está en la cocina. Como siempre.
+
+    * [Saludarla]
+        "Hola, Ixchel."
+        Sonríe apenas. "Hola."
+        ~ ixchel_relacion += 1
+        ->->
+    * [Trabajar cerca]
+        Te ponés a pelar al lado de ella.
+        No hace falta hablar.
+        ->->
+}
+
+=== ixchel_conversacion_profunda ===
+// Conversacion cuando hay confianza
+# PORTRAIT:elena,neutral,right
+
+{ixchel_relacion >= 3:
+    Ixchel te mira diferente hoy.
+    "¿Puedo contarte algo?"
+
+    * ["Claro."]
+        // Chequeo social: comunicación intercultural, entender su mundo
+        # DADOS:CHEQUEO
+        ~ temp resultado_ixchel_comunicar = chequeo_completo_social(ixchel_relacion, 4)
+        { resultado_ixchel_comunicar == 2:
+            "Allá, en Quetzaltenango, mi abuela tejía.
+            Huipiles con pájaros y montañas.
+            Cada color tenía un significado."
+
+            Pausa.
+
+            "Acá limpio grasa. Pero sigo tejiendo.
+            No con hilos. Con esto."
+
+            Señala la olla. La gente.
+
+            "La comunidad es un tejido. ¿Entendés?"
+
+            Algo te cruza. No solo entendés. Lo sentís.
+
+            "Sí. Y cada uno de nosotros es un hilo."
+
+            Ixchel sonríe. Amplia. Real.
+
+            "Exacto. Ya entendés, joven."
+
+            ~ ixchel_conto_historia = true
+            ~ ixchel_relacion += 2
+            ~ subir_conexion(2)
+            ~ activar_esto_es_lo_que_hay()
+        }
+        { resultado_ixchel_comunicar == 1:
+            "Allá, en Quetzaltenango, mi abuela tejía.
+            Huipiles con pájaros y montañas.
+            Cada color tenía un significado."
+
+            Pausa.
+
+            "Acá limpio grasa. Pero sigo tejiendo.
+            No con hilos. Con esto."
+
+            Señala la olla. La gente.
+
+            "La comunidad es un tejido. ¿Entendés?"
+
+            ~ ixchel_conto_historia = true
+            ~ ixchel_relacion += 1
+            ~ subir_conexion(1)
+            ~ activar_esto_es_lo_que_hay()
+        }
+        { resultado_ixchel_comunicar == 0:
+            "Allá, en Quetzaltenango, mi abuela tejía.
+            Huipiles con pájaros y montañas."
+
+            Pausa.
+
+            "Acá es diferente. Pero sigo intentando."
+
+            No entendés del todo. Pero escuchás.
+            A veces eso alcanza.
+
+            ~ ixchel_relacion += 1
+        }
+        { resultado_ixchel_comunicar == -1:
+            "Allá, en Quetzaltenango..."
+
+            Se detiene. Te mira.
+
+            "No importa. Son cosas mías."
+
+            Algo en tu cara la frenó. Quizás incomprensión.
+            Quizás distancia.
+            El mundo de Ixchel queda lejos. Demasiado lejos hoy.
+        }
+        ->->
+    * ["Ahora no puedo."]
+        Asiente. Sin ofenderse.
+        "Otro día."
+        ->->
+- else:
+    Ixchel está ocupada. No es momento.
+    ->->
+}
+
+=== ixchel_fragmento_noche_tejido ===
+// Fragmento nocturno de Ixchel - tejido
+
+Ixchel cierra la puerta de su pieza.
+Un cuarto compartido con dos mujeres más.
+
+Se sienta en la cama.
+Saca un hilo de colores de debajo de la almohada.
+
+Teje.
+
+Un patrón que su abuela le enseñó.
+Pájaros que nunca vio en Montevideo.
+Montañas que están a miles de kilómetros.
+
+{ixchel_relacion >= 2:
+    Hoy alguien le habló en la olla.
+    No como "la boliviana".
+    Como Ixchel.
+    Eso vale más que el sueldo de un mes.
+}
+
+Teje hasta que se le cierran los ojos.
+El hilo se cae al piso.
+
+En sueños, está en Quetzaltenango.
+
+->->
+
+// --- FRAGMENTOS NOCTURNOS DE IXCHEL ---
+
+=== fragmento_ixchel_cocina ===
+Ixchel se lava las manos.
+Rojas del agua caliente del restaurante.
+
+El encargado gritó de vuelta.
+"Boliviana" de vuelta.
+
+No es boliviana. No importa.
+Para ellos todos son lo mismo.
+
+Se mira las manos.
+Manos de su abuela. De su madre.
+Manos que saben tejer y cocinar y sobrevivir.
+
+Se duerme con las manos doloridas.
+Mañana será otro día.
+
+->->
+
+=== fragmento_ixchel_altar ===
+Ixchel tiene un altar pequeño.
+Debajo de la cama, donde las otras no ven.
+
+Una vela. Una foto de su abuela.
+Un hilo de colores.
+
+Reza en K'iche'.
+Palabras que no entiende nadie en este país.
+Palabras que la sostienen.
+
+{ixchel_relacion >= 2:
+    Hoy alguien la llamó por su nombre.
+    No "boliviana". No "india".
+    Ixchel.
+    Agrega eso a la oración.
+}
+
+La vela se apaga. Se duerme.
 
 ->->
 

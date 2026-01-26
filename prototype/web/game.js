@@ -10,6 +10,7 @@
  * - PortraitSystem: Character portraits
  * - NotificationSystem: Visual notifications
  * - ChoiceParser: Choice tag parsing
+ * - AudioSystem: Background music and sound effects (optional)
  */
 const GameEngine = (function() {
     'use strict';
@@ -25,6 +26,7 @@ const GameEngine = (function() {
     let contentQueue = [];
     let previousStats = {};
     let previousDice = { ultima_tirada: 0, ultimo_resultado: 0 };
+    let detectedEnding = null;
 
     // Constants
     const DIAS = ['', 'LUNES', 'MARTES', 'MIÉRCOLES', 'JUEVES', 'VIERNES', 'SÁBADO', 'DOMINGO'];
@@ -59,6 +61,21 @@ const GameEngine = (function() {
         SaveSystem.init(story, {
             onLoad: handleLoad
         });
+
+        // Initialize ending screen
+        if (typeof EndingScreen !== 'undefined') {
+            await EndingScreen.loadConfig();
+        }
+
+        // Initialize accessibility
+        if (typeof AccessibilityManager !== 'undefined') {
+            AccessibilityManager.init();
+        }
+
+        // Initialize audio system
+        if (typeof AudioSystem !== 'undefined') {
+            AudioSystem.init();
+        }
 
         // Save initial state
         saveCurrentState();
@@ -131,7 +148,7 @@ const GameEngine = (function() {
      * @param {number} result - Result code (0 = simple roll, 1/-1/2 = chequeo result)
      * @returns {HTMLElement}
      */
-    function createDiceElement(roll, result) {
+    function createDiceElement(roll, result, context) {
         const rollDiv = document.createElement('div');
 
         // For simple rolls (result=0), show just the number
@@ -149,11 +166,13 @@ const GameEngine = (function() {
             const resultInfo = ConfigManager.getDiceResult(result);
             const description = resultInfo.description || '';
 
-            rollDiv.className = `dice-roll-box ${resultInfo.class}`;
+            const contextClass = context ? `dice-${context}` : '';
+            const contextLabel = context === 'ventaja' ? ' (con ventaja)' : context === 'desventaja' ? ' (con desventaja)' : '';
+            rollDiv.className = `dice-roll-box ${resultInfo.class} ${contextClass}`;
             rollDiv.innerHTML = `
                 <div class="dice-roll-header">
                     <span class="dice-icon">${iconHTML('dices', 28)}</span>
-                    <span class="dice-title">TIRADA DE DADOS</span>
+                    <span class="dice-title">TIRADA DE DADOS${contextLabel}</span>
                 </div>
                 <div class="dice-roll-result">
                     <span class="dice-value">${roll}</span>
@@ -212,7 +231,7 @@ const GameEngine = (function() {
             // Check for dice roll and add to batch if found
             const diceData = checkDiceRoll();
             if (diceData) {
-                currentBatch.push({ type: 'dice', roll: diceData.roll, result: diceData.result });
+                currentBatch.push({ type: 'dice', roll: diceData.roll, result: diceData.result, context: diceData.context || null });
             }
 
             // Process portrait tags
@@ -221,7 +240,17 @@ const GameEngine = (function() {
             // Process other tags
             let hasHeader = false;
             for (const tag of tags) {
-                if (tag.startsWith('IDEA DISPONIBLE:') || tag === 'IDEA') {
+                // Handle audio tags
+                if (tag.startsWith('AUDIO:')) {
+                    if (typeof AudioSystem !== 'undefined') {
+                        AudioSystem.processTag(tag);
+                    }
+                } else if (tag === 'DADOS:VENTAJA' || tag === 'DADOS:DESVENTAJA') {
+                    // Store dice context for next dice roll display
+                    if (diceData) {
+                        diceData.context = tag === 'DADOS:VENTAJA' ? 'ventaja' : 'desventaja';
+                    }
+                } else if (tag.startsWith('IDEA DISPONIBLE:') || tag === 'IDEA') {
                     currentBatch.push({ type: 'idea', content: tag });
                 } else if (tag.startsWith('MIENTRAS')) {
                     currentBatch.push({ type: 'fragmento', content: tag });
@@ -235,6 +264,12 @@ const GameEngine = (function() {
                     currentBatch.push({ type: 'header', content: tag });
                     gameStarted = true;
                     StatsPanel.setGameStarted(true);
+                    // Update BGM for the new day
+                    if (typeof AudioSystem !== 'undefined') {
+                        AudioSystem.setDayBGM(tag.toLowerCase());
+                    }
+                } else if (tag.startsWith('ENDING:')) {
+                    detectedEnding = tag.substring(7).trim();
                 } else if (!tag.startsWith('PORTRAIT') && !tag.startsWith('HIDE') && !tag.startsWith('EXPRESSION') && !tag.startsWith('SPEAKING')) {
                     // Other header-like tags
                     if (tag.length > 0 && tag === tag.toUpperCase() && !tag.includes(':')) {
@@ -299,7 +334,7 @@ const GameEngine = (function() {
         for (const item of batch) {
             if (item.type === 'dice') {
                 // Render dice roll
-                const rollDiv = createDiceElement(item.roll, item.result);
+                const rollDiv = createDiceElement(item.roll, item.result, item.context);
                 storyContainer.appendChild(rollDiv);
                 continue;
             }
@@ -357,6 +392,28 @@ const GameEngine = (function() {
     }
 
     /**
+     * Extract key story variables for the ending screen
+     * @returns {object}
+     */
+    function extractStoryVariables() {
+        const vars = {};
+        const keys = [
+            'energia', 'conexion', 'dignidad', 'llama', 'salud_mental',
+            'sofia_relacion', 'elena_relacion', 'diego_relacion',
+            'marcos_relacion', 'juan_relacion', 'ixchel_relacion',
+            'vinculo', 'dia_actual', 'tiene_laburo', 'pequenas_victorias'
+        ];
+        for (const key of keys) {
+            try {
+                vars[key] = story.variablesState[key];
+            } catch (e) {
+                // Variable may not exist
+            }
+        }
+        return vars;
+    }
+
+    /**
      * Show choices
      */
     function showChoices() {
@@ -364,6 +421,19 @@ const GameEngine = (function() {
 
         if (story.currentChoices.length === 0) {
             // End of story
+            // Accessibility: announce game end
+            if (typeof AccessibilityManager !== 'undefined') {
+                AccessibilityManager.announceGameEnd();
+            }
+
+            // Show ending screen if an ending was detected
+            if (detectedEnding && typeof EndingScreen !== 'undefined') {
+                const vars = extractStoryVariables();
+                // Small delay to let final text render
+                setTimeout(function() {
+                    EndingScreen.show(detectedEnding, vars);
+                }, 1500);
+            }
             return;
         }
 
@@ -371,6 +441,11 @@ const GameEngine = (function() {
             const choice = story.currentChoices[i];
             const button = ChoiceParser.buildButton(choice, i, story, onChoiceClick);
             choicesContainer.appendChild(button);
+        }
+
+        // Accessibility: enhance choices
+        if (typeof AccessibilityManager !== 'undefined') {
+            AccessibilityManager.enhanceChoices(choicesContainer);
         }
 
         refreshIcons();

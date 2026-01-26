@@ -77,6 +77,45 @@ Se encoge de hombros.
 
 "Yo también."
 
+// Chequeo social: navegar la conversación delicada en el trabajo
+# DADOS:CHEQUEO
+~ temp resultado_juan_social = chequeo_completo_social(juan_relacion, 3)
+{ resultado_juan_social == 2:
+    -> juan_preocupacion_critico
+}
+{ resultado_juan_social == 1:
+    -> juan_preocupacion_exito
+}
+{ resultado_juan_social == 0:
+    -> juan_preocupacion_fallo
+}
+-> juan_preocupacion_crit_fallo
+
+= juan_preocupacion_critico
+* [...]
+-
+
+Un momento de honestidad. Raro en la oficina.
+Los dos saben que son descartables.
+
+Juan baja la voz aún más.
+
+"Che, ¿sabés qué me dijo Martínez antes de que lo rajaran? Que vio una lista. Con nombres. En el escritorio de RRHH."
+
+"¿Una lista?"
+
+"No sé si es verdad. Pero si es así... tenemos que cuidarnos."
+
+El dato queda. No sabés si es real.
+Pero la confianza de Juan sí lo es.
+
+~ juan_relacion += 2
+~ subir_conexion(1)
+
+"Bueno. A laburar. Que nos vean laburando."
+->->
+
+= juan_preocupacion_exito
 * [...]
 -
 
@@ -88,7 +127,38 @@ Todos lo somos.
 ~ juan_relacion += 1
 
 "Bueno. A laburar. Que nos vean laburando."
+->->
 
+= juan_preocupacion_fallo
+* [...]
+-
+
+Juan mira para los costados. Nervioso.
+
+"Mejor no hablar de esto acá."
+
+Vuelve a su pantalla.
+La conversación se cortó. Pero el miedo quedó.
+
+"Bueno. A laburar."
+->->
+
+= juan_preocupacion_crit_fallo
+* [...]
+-
+
+Juan se pone pálido.
+
+"Pará, pará. ¿Vos creés que nos van a echar a todos?"
+
+"No, no dije eso..."
+
+"No, ya sé. Pero..."
+
+Se levanta. Nervioso. Se va al baño.
+Le metiste más miedo del que ya tenía.
+
+~ bajar_salud_mental(1)
 ->->
 
 === juan_minimizar ===
@@ -229,6 +299,8 @@ Se despiden.
 
 "Nos vemos mañana."
 "Nos vemos."
+
+~ activar_tengo_tiempo()
 
 ->->
 
@@ -591,6 +663,43 @@ Juan te manda un mensaje.
 
 "Porque si le echo la culpa a alguien, me siento menos en banda. Como si supiera qué está pasando."
 
+// Chequeo mental: ayudar a Juan a procesar su miedo
+# DADOS:CHEQUEO
+~ temp resultado_juan_miedo = chequeo_completo_mental(juan_relacion, 4)
+{ resultado_juan_miedo == 2:
+    -> juan_miedo_critico
+}
+{ resultado_juan_miedo == 1:
+    -> juan_miedo_exito
+}
+{ resultado_juan_miedo == 0:
+    -> juan_miedo_fallo
+}
+-> juan_miedo_crit_fallo
+
+= juan_miedo_critico
+* [...]
+-
+
+Silencio.
+
+"Pero la verdad es que no sé nada. Solo tengo miedo y repito lo que dicen en la tele."
+
+"Eso ya es darse cuenta de algo."
+
+Juan te mira. Y por primera vez, dice algo que no esperabas:
+
+"¿Sabés qué? Creo que mi viejo decía las mismas cosas. En las marchas, el enemigo era claro. Ahora todo es confuso. Y en la confusión, repetimos lo primero que escuchamos."
+
+"Pero estás dejando de repetir."
+
+"Sí. Capaz que sí."
+
+~ subir_conexion(2)
+~ juan_relacion += 2
+->->
+
+= juan_miedo_exito
 * [...]
 -
 
@@ -604,7 +713,41 @@ Silencio.
 
 ~ subir_conexion(1)
 ~ juan_relacion += 1
+->->
 
+= juan_miedo_fallo
+* [...]
+-
+
+Juan se queda callado.
+
+"La verdad es que no sé nada."
+
+No sabés qué decirle. El miedo es contagioso.
+Y vos también tenés el tuyo.
+
+"Somos dos boludos con miedo."
+
+Se ríe. Vos también.
+No resuelve nada. Pero alivia.
+
+~ juan_relacion += 1
+->->
+
+= juan_miedo_crit_fallo
+* [...]
+-
+
+Juan se pone más nervioso.
+
+"¿Ves? Ni vos sabés qué decir. Nadie sabe."
+
+El miedo se multiplica. Hablaron del tema y quedaron peor.
+A veces abrir la caja de Pandora no ayuda.
+
+"Mejor dejemos de hablar de esto."
+
+~ bajar_salud_mental(1)
 ->->
 
 // --- ENCUENTRO DEL VIERNES ---
@@ -799,5 +942,132 @@ Volvés a casa.
 Con algo más.
 O algo menos.
 Depende cómo lo mires.
+
+->->
+
+// --- JUAN EN JUEVES-DOMINGO ---
+
+=== juan_encuentro_jueves ===
+// Juan te encuentra despues del despido
+# PORTRAIT:juan,worried,left
+
+Te suena el celular. Es Juan.
+
+"Che, ¿estás bien? Me enteré de lo del laburo."
+
+* ["Sí, ahí ando."]
+    "No me vendas humo. ¿Necesitás algo?"
+    ~ juan_relacion += 1
+    ~ juan_sabe_mi_situacion = true
+    ->->
+* ["¿Cómo te enteraste?"]
+    "El laburo es chico, se sabe todo."
+    ~ juan_sabe_mi_situacion = true
+    ->->
+* [No contestar]
+    Dejás sonar. No es el momento.
+    ->->
+
+=== juan_charla_viernes ===
+// Juan en viernes
+# PORTRAIT:juan,friendly,left
+
+{juan_sabe_mi_situacion:
+    Juan te manda un mensaje:
+    "Tengo un contacto que busca gente. No es gran cosa pero es algo. ¿Querés que le pase tu número?"
+
+    * ["Dale, pasale."]
+        "Listo. Te aviso si me dice algo."
+        ~ juan_ofrecio_contacto = true
+        ~ juan_relacion += 1
+        ->->
+    * ["Dejá, ya veo."]
+        "Bueno, pero si cambiás de idea avisame."
+        ->->
+- else:
+    Juan te manda un mensaje genérico del grupo del laburo.
+    No sabés si decirle lo que pasó.
+    ->->
+}
+
+=== juan_invitar_olla_sabado ===
+// Invitar a Juan a la olla
+# PORTRAIT:juan,neutral,left
+
+{ayude_en_olla && juan_sabe_mi_situacion:
+    "Che Juan, hay una olla popular en el barrio. ¿Querés venir?"
+
+    * ["Hay buena gente."]
+        Juan duda.
+        "¿Olla popular? No sé..."
+        "Vení una vez. Si no te copa, no venís más."
+        "Bueno. Dale."
+        ~ juan_fue_a_olla = true
+        ~ juan_relacion += 1
+        ->->
+    * [No insistir]
+        "Ta, dejá. Era una idea."
+        ->->
+- else:
+    No tiene sentido invitarlo todavía.
+    ->->
+}
+
+=== fragmento_juan_noche ===
+// Fragmento nocturno de Juan
+
+Juan llega a su casa.
+Un dos ambientes en la periferia. Más lejos, más barato.
+
+Abre la heladera. Hay poco.
+Piensa en el laburo. En que capaz que es el próximo.
+En que los rumores siempre se cumplen.
+
+{juan_sabe_mi_situacion:
+    Piensa en vos.
+    "Ojalá esté bien", murmura.
+}
+
+Se acuesta con la tele prendida.
+El noticiero habla de desempleo.
+Cambia de canal.
+
+->->
+
+// --- FRAGMENTOS NOCTURNOS DE JUAN ---
+
+=== fragmento_juan_cena ===
+Juan calienta una lata de atún.
+
+Pan. Atún. Tele.
+La rutina de los que viven solos.
+
+{juan_sabe_mi_situacion:
+    Piensa en vos.
+    En que no contestaste el mensaje.
+    O sí contestaste pero cortito.
+
+    "Ojalá esté bien."
+}
+
+Lava el plato. Uno solo.
+Se acuesta.
+
+->->
+
+=== fragmento_juan_curriculum ===
+Juan actualiza su currículum.
+
+Por las dudas.
+Siempre por las dudas.
+
+Después de lo que te pasó a vos...
+Mejor tener todo listo.
+
+"Experiencia laboral: 8 años en el mismo puesto."
+"Habilidades: Excel, Word, aguantar."
+
+Cierra la compu. Mañana hay que ir.
+Mientras haya donde ir.
 
 ->->

@@ -50,6 +50,7 @@ Vecinos. Gente que conocés de vista.
 {not tiene_laburo:
     Ahí está la red.
     La que te empieza a faltar a vos.
+}
 
 Una señora te mira.
 "¿Vas a comer o a mirar?"
@@ -105,17 +106,31 @@ Hay una señora al lado tuyo. Es Elena, la veterana del barrio. No la habías vi
 * [...]
 -
 
-{d6() >= 4:
-    "¿Vos sos nuevo?"
-    "Sí. Primera vez."
-    "Ah. Está bien. Siempre hace falta gente."
-    Pelás papas en silencio un rato.
-    "Yo venía a comer. Ahora ayudo. Es mejor ser parte que mirar de afuera."
-    No sabés qué decir.
-    Seguís pelando.
-- else:
-    Pelás en silencio.
-    A veces está bien no hablar.
+// Chequeo comunitario: pelar papas en la olla
+~ temp pelada = chequeo_comunitario(0, 3)
+{ pelada == 2:
+    Te sale natural. Como si siempre hubieras estado acá.
+    "¿Vos sos nuevo?" "Sí. Primera vez." "No parece."
+    Pelás papas en silencio un rato. Elena te mira y asiente.
+    "Es mejor ser parte que mirar de afuera."
+    ~ subir_conexion(1)
+}
+{ pelada == 1:
+    Pelás bien. El ritmo sale solo.
+    "Yo venía a comer. Ahora ayudo", dice Elena.
+    "Es mejor ser parte que mirar de afuera."
+    No sabés qué decir. Seguís pelando.
+}
+{ pelada == 0:
+    Se te caen un par de papas.
+    "Tranquilo", dice Elena. "Acá nadie nació sabiendo."
+    Seguís pelando. Más despacio.
+}
+{ pelada == -1:
+    Te cortás pelando. Nada grave, pero sangra.
+    "Poné la mano bajo el agua", dice Elena.
+    Te lavás. Volvés. Seguís.
+    ~ bajar_salud_mental(1)
 }
 
 Las papas se acaban.
@@ -138,19 +153,29 @@ Platos, platos, platos.
 * [...]
 -
 
-{d6() <= 2:
-    Una nena te mira.
-    "Más, por favor."
-
-    El plato ya tiene lo que corresponde.
-    Pero mirás para el costado y le ponés un poco más.
-
-    Sofía te ve.
-    Te guiña un ojo. "Bien ahí", murmura.
-- else:
-    Servís.
-    Uno tras otro.
-    Caras de cansancio, de hambre. De bronca, a veces.
+// Chequeo comunitario: servir en la olla
+~ temp servicio = chequeo_comunitario(0, 3)
+{ servicio == 2:
+    Le agarrás la mano. Servís parejo, con ritmo.
+    Una nena te mira. "Más, por favor."
+    Le ponés un poco más. Sofía te guiña un ojo. "Bien ahí."
+    ~ subir_conexion(1)
+}
+{ servicio == 1:
+    Servís bien. Uno tras otro. Parejo.
+    Las caras pasan. Cansancio, hambre, bronca a veces.
+    Pero estás acá. Eso cuenta.
+}
+{ servicio == 0:
+    Se te cae un poco de guiso fuera del plato.
+    "Tranquilo", dice alguien. "Acá no se desperdicia nada."
+    Limpiás y seguís.
+}
+{ servicio == -1:
+    Se te resbala el cucharón y volcás guiso en la mesa.
+    "¡Cuidado!" Sofía viene a ayudar. "No pasa nada."
+    Pero sentís la vergüenza.
+    ~ bajar_salud_mental(1)
 }
 
 {not tiene_laburo:

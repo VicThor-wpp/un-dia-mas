@@ -105,6 +105,32 @@ Trabajás en silencio.
 El ruido de los cuchillos, el burbujeo de la olla.
 Un ritmo.
 
+// Chequeo físico: el trabajo en la olla es pesado
+# DADOS:CHEQUEO
+~ temp resultado_sofia_olla_fisico = chequeo_completo_fisico(1, 4)
+{ resultado_sofia_olla_fisico == 2:
+    Las manos se mueven solas. Encontrás el ritmo de la cocina.
+    Sofía te mira de reojo. Impresionada.
+    "Tenés mano para esto."
+    ~ sofia_relacion += 1
+    ~ subir_conexion(1)
+}
+{ resultado_sofia_olla_fisico == 1:
+    Cortás, pelás, revolvés. El cuerpo responde.
+    No es elegante, pero es trabajo honesto.
+}
+{ resultado_sofia_olla_fisico == 0:
+    Te cansás rápido. Las manos no rinden.
+    Sofía no dice nada. Pero te pasa las tareas más livianas.
+    "Andá separando los platos."
+}
+{ resultado_sofia_olla_fisico == -1:
+    Se te resbala el cuchillo. Casi te cortás.
+    "¡Cuidado!" Sofía te frena la mano.
+    "Despacio. La olla no tiene apuro."
+    Te tiemblan las manos. El cuerpo no da más.
+}
+
 * [...]
 -
 
@@ -117,6 +143,7 @@ Sofía habla mientras revuelve.
 "Agotador es esperar que alguien te salve. Cocinar es resistencia."
 
 ~ subir_conexion(1)
+~ activar_hay_cosas_juntos()
 
 * [...]
 -
@@ -513,9 +540,33 @@ Algo se me ocurre."
 
 Sofía te mira. Evaluando.
 
-"Dale. Cualquier cosa sirve."
-
-~ sofia_relacion += 1
+// Chequeo social: convencer a Sofia de que podés ayudar
+# DADOS:CHEQUEO
+~ temp resultado_sofia_persuadir = chequeo_completo_social(sofia_relacion, 4)
+{ resultado_sofia_persuadir == 2:
+    Sofía te mira distinto. Algo en tu voz la convenció.
+    "Sabés qué, sí. Necesito alguien que me ayude a hablar con los comercios de la zona. Tengo una lista."
+    Te pasa un papel arrugado. Nombres, direcciones.
+    "Juntos capaz que los convencemos."
+    ~ sofia_relacion += 2
+    ~ subir_conexion(1)
+}
+{ resultado_sofia_persuadir == 1:
+    "Dale. Cualquier cosa sirve."
+    ~ sofia_relacion += 1
+}
+{ resultado_sofia_persuadir == 0:
+    "Mirá... no es por desconfiar. Pero ya vinieron otros con eso y después no aparecieron."
+    "Yo voy a aparecer."
+    "Bueno. Veremos."
+    No te cierra la puerta. Pero tampoco la abre del todo.
+}
+{ resultado_sofia_persuadir == -1:
+    "Mirá, te agradezco. Pero la verdad... no te conozco tanto."
+    El rechazo duele. Pero Sofía no puede darse el lujo de confiar en cualquiera.
+    Tiene sesenta bocas que dependen de ella.
+    ~ bajar_conexion(1)
+}
 
 ->->
 
@@ -730,5 +781,64 @@ Cierra los ojos.
 A las seis suena el despertador.
 Otra vez.
 Siempre otra vez.
+
+->->
+
+// --- FRAGMENTOS NOCTURNOS DE SOFIA ---
+
+=== fragmento_sofia_cocina ===
+Sofía lava los platos de la olla.
+Sola. Los pibes duermen.
+
+El agua corre. Las manos le duelen.
+Pero la cocina queda limpia.
+
+{sofia_relacion >= 3:
+    Piensa en vos.
+    "Ojalá venga mañana", murmura.
+}
+
+Mañana hay que cocinar de vuelta.
+Siempre hay que cocinar de vuelta.
+
+->->
+
+=== fragmento_sofia_pibes ===
+Los pibes de Sofía duermen.
+Ella los mira desde la puerta.
+
+El grande tiene un examen mañana.
+El chico tose.
+
+{olla_en_crisis:
+    Si la olla cierra, no sabe qué van a comer.
+    No lo dice. No hace falta.
+    Los pibes no necesitan saber que el mundo se tambalea.
+}
+
+Les acomoda las frazadas.
+Se acuesta sin cenar.
+
+->->
+
+=== fragmento_sofia_asamblea ===
+{participe_asamblea:
+    Sofía repasa la lista de la asamblea.
+    Quién dijo qué. Quién se comprometió.
+    Quién no vino.
+
+    {sofia_relacion >= 4:
+        Tu nombre está en la lista de los que vinieron.
+        Sonríe.
+    }
+
+    Mañana hay que hacer lo que se dijo.
+    No el lunes. Mañana.
+- else:
+    Sofía mira la lista vacía de voluntarios.
+    Suspira.
+
+    "¿Para qué hago asambleas si nadie viene?"
+}
 
 ->->

@@ -1,0 +1,18 @@
+{
+    "version": 1,
+    "sanitization": {
+        "allowedTags": ["b", "i", "em", "strong", "br", "p"],
+        "maxInputLength": 10000,
+        "maxSaveSize": 5242880
+    },
+    "storage": {
+        "quotaWarningThreshold": 0.8,
+        "maxSlots": 3,
+        "prefix": "udm_"
+    },
+    "saves": {
+        "maxDescriptionLength": 500,
+        "minTimestamp": "2024-01-01",
+        "maxVersionNumber": 100
+    }
+}

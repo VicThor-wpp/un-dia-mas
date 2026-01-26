@@ -188,6 +188,15 @@ const ReadingPreferences = (function() {
                         </div>
                     </div>
 
+                    <!-- Audio -->
+                    <div class="pref-group">
+                        <label class="pref-label">Audio</label>
+                        <div class="pref-options">
+                            <button class="pref-btn ${typeof AudioSystem !== 'undefined' && AudioSystem.isEnabled() ? 'active' : ''}" data-audio="on">Activado</button>
+                            <button class="pref-btn ${typeof AudioSystem !== 'undefined' && !AudioSystem.isEnabled() ? 'active' : ''}" data-audio="off">Desactivado</button>
+                        </div>
+                    </div>
+
                     <!-- Reset -->
                     <div class="pref-group pref-actions">
                         <button class="btn-secondary" onclick="ReadingPreferences.resetPrefs()">
@@ -200,6 +209,11 @@ const ReadingPreferences = (function() {
         `;
 
         document.body.appendChild(panel);
+
+        // Accessibility: trap focus in settings panel
+        if (typeof AccessibilityManager !== 'undefined') {
+            AccessibilityManager.trapFocus(panel);
+        }
 
         // Setup event listeners
         panel.querySelectorAll('[data-theme]').forEach(btn => {
@@ -218,6 +232,21 @@ const ReadingPreferences = (function() {
             btn.onclick = () => setPref('typewriter', btn.dataset.typewriter === 'true');
         });
 
+        panel.querySelectorAll('[data-audio]').forEach(btn => {
+            btn.onclick = () => {
+                if (typeof AudioSystem !== 'undefined') {
+                    AudioSystem.toggle();
+                    // Update button states
+                    panel.querySelectorAll('[data-audio]').forEach(b => {
+                        b.classList.toggle('active',
+                            (b.dataset.audio === 'on' && AudioSystem.isEnabled()) ||
+                            (b.dataset.audio === 'off' && !AudioSystem.isEnabled())
+                        );
+                    });
+                }
+            };
+        });
+
         // Close on overlay click
         panel.onclick = (e) => {
             if (e.target === panel) closePanel();
@@ -233,6 +262,9 @@ const ReadingPreferences = (function() {
      */
     function closePanel() {
         if (panel) {
+            if (typeof AccessibilityManager !== 'undefined') {
+                AccessibilityManager.releaseFocus(panel);
+            }
             panel.remove();
             panel = null;
         }

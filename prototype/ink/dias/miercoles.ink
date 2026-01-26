@@ -58,6 +58,29 @@ A las 11 te llaman.
 // Usamos el módulo de laburo para la mecánica del despido
 -> laburo_despido ->
 
+// Chequeo mental: encajar el golpe del despido
+~ temp golpe = chequeo_mental(0, 4)
+{ golpe == 2:
+    Algo en vos se endurece. No se quiebra. Se endurece.
+    "Esto no me define", pensás. Y por ahora, lo creés.
+    ~ pequenas_victorias += 1
+}
+{ golpe == 1:
+    Respirás. Tragás. Seguís caminando.
+    No está bien, pero podés con esto. Ahora.
+}
+{ golpe == 0:
+    El pasillo se siente largo. Las piernas pesan.
+    La cabeza repite: "tu puesto fue afectado."
+    Fue. Afectado. Como si fuera algo que pasó solo.
+}
+{ golpe == -1:
+    Se te nubla la vista. Tenés que parar en el baño.
+    Te mirás al espejo. No te reconocés.
+    Las manos tiemblan. El aire no entra bien.
+    ~ bajar_salud_mental(1)
+}
+
 // Después del despido, contenido específico
 Alguien te dice "suerte" sin mirarte a los ojos.
 
@@ -268,9 +291,26 @@ Después:
 
 "No sé."
 
-Se queda un momento.
-No te abraza, no te dice que todo va a estar bien.
-Eso lo agradecés.
+// Chequeo social: abrirte con alguien después del golpe
+~ temp abrirse = chequeo_social(0, 3)
+{ abrirse == 2:
+    Se queda un rato. No dice nada esperanzador, no dice que todo va a estar bien.
+    Pero algo en su silencio te sostiene. Sentís que podés con esto.
+    ~ subir_conexion(1)
+}
+{ abrirse == 1:
+    Se queda un momento. No te abraza, no te dice que todo va a estar bien.
+    Eso lo agradecés.
+}
+{ abrirse == 0:
+    Se queda un momento. Pero se nota que tiene la cabeza en otro lado.
+    La olla, los pibes, todo lo que la aplasta a ella también.
+}
+{ abrirse == -1:
+    Se te quiebra la voz. Mierda. No querías llorar.
+    Sofía te mira. No dice nada. Esperás que no le cuente a nadie.
+    ~ bajar_salud_mental(1)
+}
 
 * [...]
 -

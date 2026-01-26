@@ -21,7 +21,6 @@ VAR olla_en_crisis = false
 VAR olla_abierta = true
 VAR ayude_en_olla = false
 VAR veces_que_ayude = 0
-VAR conozco_a_marta = false // DEPRECATED: merged into main flow
 VAR participe_asamblea = false
 VAR olla_cerro_viernes = false
 VAR vos_propusiste_cerrar = false
@@ -84,6 +83,10 @@ VAR fue_al_bar_con_juan = false
 VAR juan_sabe_de_mi_despido = false
 VAR juan_tambien_despedido = false   // Hook viernes: si lo echaron
 VAR juan_ofrecio_changa = false      // Hook viernes: si ofreció contacto
+VAR juan_hablo_sobre_despido = false
+VAR juan_ofrecio_contacto = false
+VAR juan_fue_a_olla = false
+VAR juan_sabe_mi_situacion = false
 
 // --- OTROS NPCs ---
 
@@ -93,6 +96,8 @@ VAR ixchel_me_conto_de_tomas = false
 VAR ixchel_hablo_de_mina = false
 VAR ixchel_conto_llegada = false
 VAR ixchel_hablo_de_huipil = false
+VAR ixchel_conto_historia = false
+VAR ixchel_sabe_mi_situacion = false
 
 // --- ESTADO DETALLADO NPCs (Fase 2) ---
 
@@ -143,3 +148,18 @@ VAR conte_a_alguien = false
 VAR fui_a_olla_jueves = false
 VAR pequenas_victorias = 0
 VAR dias_sin_ducha = 0
+
+// --- TRACKING DE IDEAS ---
+VAR ideas_activas = 0
+VAR sinergia_colectiva = 0    // combo: hay_cosas_juntos + pedir_no_debilidad + red_o_nada
+VAR sinergia_individual = 0    // combo: tengo_tiempo + quien_soy
+VAR idea_momento_sintesis = false  // whether the synthesis scene has been shown
+
+// --- TRACKING DE FRAGMENTOS ---
+VAR fragmentos_vistos = 0
+VAR fragmentos_sofia = 0
+VAR fragmentos_elena = 0
+VAR fragmentos_diego = 0
+VAR fragmentos_marcos = 0
+VAR fragmentos_juan = 0
+VAR fragmentos_ixchel = 0

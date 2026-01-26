@@ -299,6 +299,11 @@ const StatsPanel = (function() {
                     ` : ''}
 
                     <section class="info-section">
+                        <h3>${iconHTML('lightbulb', 16)} Ideas Internalizadas</h3>
+                        <div id="ideasContainer" class="ideas-container"></div>
+                    </section>
+
+                    <section class="info-section">
                         <h3>${iconHTML('scroll', 16)} Registro de Eventos</h3>
                         <div id="decisionLogContainer" class="decision-log-container"></div>
                     </section>
@@ -314,6 +319,12 @@ const StatsPanel = (function() {
             relGrid.innerHTML = RelationshipsPanel.renderAll();
         }
 
+        // Fill ideas
+        const ideasContainer = modal.querySelector('#ideasContainer');
+        if (ideasContainer && story) {
+            ideasContainer.innerHTML = renderIdeas();
+        }
+
         // Fill decision log
         const logContainer = modal.querySelector('#decisionLogContainer');
         if (logContainer && typeof DecisionLog !== 'undefined') {
@@ -324,6 +335,62 @@ const StatsPanel = (function() {
 
         modal.querySelector('.modal-close').onclick = () => modal.remove();
         modal.onclick = (e) => { if (e.target === modal) modal.remove(); };
+    }
+
+    /**
+     * Render active ideas list for modal
+     */
+    function renderIdeas() {
+        if (!story) return '<p class="no-ideas">Sin ideas todav\u00eda.</p>';
+
+        const ideaDefinitions = [
+            { id: 'idea_tengo_tiempo', label: 'Tengo tiempo', type: 'elegida' },
+            { id: 'idea_pedir_no_debilidad', label: 'Pedir no es debilidad', type: 'elegida' },
+            { id: 'idea_hay_cosas_juntos', label: 'Hay cosas que se hacen juntos', type: 'elegida' },
+            { id: 'idea_red_o_nada', label: 'La red o la nada', type: 'elegida' },
+            { id: 'idea_quien_soy', label: '\u00bfQui\u00e9n soy?', type: 'involuntaria' },
+            { id: 'idea_esto_es_lo_que_hay', label: 'Esto es lo que hay', type: 'involuntaria' }
+        ];
+
+        const activeIdeas = ideaDefinitions.filter(idea => {
+            try {
+                return story.variablesState[idea.id] === true || story.variablesState[idea.id] === 1;
+            } catch (e) {
+                return false;
+            }
+        });
+
+        if (activeIdeas.length === 0) {
+            return '<p class="no-ideas">Ninguna idea internalizada todav\u00eda.</p>';
+        }
+
+        let html = '<ul class="ideas-list">';
+        activeIdeas.forEach(idea => {
+            const typeClass = idea.type === 'involuntaria' ? 'idea-involuntaria' : 'idea-elegida';
+            const typeLabel = idea.type === 'involuntaria' ? ' (involuntaria)' : '';
+            html += `<li class="idea-item ${typeClass}">${iconHTML('sparkles', 14)} ${idea.label}${typeLabel}</li>`;
+        });
+        html += '</ul>';
+
+        // Synergies
+        try {
+            const sinCol = story.variablesState['sinergia_colectiva'] || 0;
+            const sinInd = story.variablesState['sinergia_individual'] || 0;
+            if (sinCol >= 2 || sinInd >= 2) {
+                html += '<div class="ideas-synergies">';
+                if (sinCol >= 2) {
+                    html += `<span class="synergy synergy-colectiva">${iconHTML('users', 14)} Sinergia colectiva</span>`;
+                }
+                if (sinInd >= 2) {
+                    html += `<span class="synergy synergy-individual">${iconHTML('user', 14)} Sinergia individual</span>`;
+                }
+                html += '</div>';
+            }
+        } catch (e) {
+            // Synergy variables not available yet
+        }
+
+        return html;
     }
 
     /**

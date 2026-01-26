@@ -336,12 +336,50 @@ Habla con las viejas. Les sonríe.
 "Si das lástima, te dan sobras.
 Si das alegría, te dan lo que tienen."
 
-Aprendés algo nuevo.
-El rebusque no es solo pedir. Es conectar.
+// Chequeo comunitario: la colecta depende de la fuerza del tejido social
+# DADOS:CHEQUEO
+~ temp resultado_viernes_colecta = chequeo_completo_comunitario(1, 4)
+{ resultado_viernes_colecta == 2:
+    Aprendés algo nuevo.
+    El rebusque no es solo pedir. Es conectar.
 
-Al final de la tarde, entre todos:
-Hay para comprar verduras.
-No es mucho. Pero es algo.
+    La gente responde. Más de lo esperado.
+    Un almacenero da dos bolsas llenas. "Para los gurises", dice.
+    Una vecina trae una olla de arroz ya hecho.
+
+    Al final de la tarde, entre todos:
+    Hay de sobra. Por primera vez en semanas.
+
+    ~ subir_llama(1)
+    ~ subir_conexion(1)
+}
+{ resultado_viernes_colecta == 1:
+    Aprendés algo nuevo.
+    El rebusque no es solo pedir. Es conectar.
+
+    Al final de la tarde, entre todos:
+    Hay para comprar verduras.
+    No es mucho. Pero es algo.
+}
+{ resultado_viernes_colecta == 0:
+    Aprendés, pero cuesta.
+    La gente mira para otro lado. O da monedas.
+
+    Al final de la tarde, entre todos:
+    Apenas alcanza. Justo.
+    Diego no dice nada. Pero se le nota en la cara.
+}
+{ resultado_viernes_colecta == -1:
+    La gente no da. O da con desprecio.
+    "Siempre pidiendo", dice uno.
+    Diego aprieta los dientes. Vos también.
+
+    Al final de la tarde:
+    Casi nada. No alcanza.
+    Van a tener que improvisar.
+
+    ~ bajar_llama(1)
+}
 
 -> viernes_olla_tarde
 
@@ -353,8 +391,32 @@ No es mucho. Pero es algo.
 // Elena sabe pedir
 -> elena_pedir ->
 
-Volvés con bolsas.
-No es mucho. Pero es algo.
+// Chequeo social: convencer a los vecinos de donar
+# DADOS:CHEQUEO
+~ temp resultado_viernes_vecinos = chequeo_completo_social(elena_relacion, 4)
+{ resultado_viernes_vecinos == 2:
+    Los vecinos responden. Con ganas.
+    Volvés con bolsas llenas. Papas, cebollas, fideos, hasta un pollo.
+    Elena sonríe. "¿Viste? La gente es buena. Solo hay que saber pedir."
+    ~ subir_conexion(1)
+    ~ subir_llama(1)
+}
+{ resultado_viernes_vecinos == 1:
+    Volvés con bolsas.
+    No es mucho. Pero es algo.
+}
+{ resultado_viernes_vecinos == 0:
+    Volvés con poco. Unas papas. Un paquete de arroz.
+    "Está jodido para todos", dice Elena.
+    No culpa a nadie. Pero la preocupación se le nota.
+}
+{ resultado_viernes_vecinos == -1:
+    Casi nadie abre la puerta. Los que abren dicen que no.
+    "No tenemos", dice una vecina. Y cierra.
+    Volvés con las manos casi vacías.
+    Elena no dice nada. Pero camina más lento.
+    ~ bajar_llama(1)
+}
 
 -> viernes_olla_tarde
 
@@ -389,6 +451,11 @@ A las 7 la olla abre.
 
 // Caminar por el barrio de tarde
 -> barrio_caminar_tarde ->
+
+// Mensaje de Juan
+{juan_sabe_mi_situacion:
+    -> juan_charla_viernes ->
+}
 
 {olla_en_crisis && not ayude_en_olla:
     Te preguntás cómo les habrá ido a los de la olla.
@@ -442,6 +509,9 @@ Para hablar de la olla, de la situación.
 
 {ayude_en_olla: Te invitaron. Podés ir.}
 {not ayude_en_olla: Escuchaste que hay. Quizás podrías ir.}
+
+// Fragmento nocturno
+-> seleccionar_fragmento_viernes ->
 
 * [Dormir] -> fragmento_viernes
 

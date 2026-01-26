@@ -39,6 +39,11 @@ El barrio más tranquilo.
 
 {salud_mental <= 4: La cabeza sigue dando vueltas. Tres días sin laburo y ya parece una eternidad.}
 
+// Invitar a Juan a la olla
+{juan_sabe_mi_situacion && ayude_en_olla:
+    -> juan_invitar_olla_sabado ->
+}
+
 ¿Qué hacés con la mañana?
 
 * [Llamar a alguien] # EFECTO:conexion?
@@ -339,12 +344,45 @@ Solo gente tratando.
 
 === sabado_hablar ===
 
-~ subir_dignidad(1)
-
 Hablás.
 
 "Yo... hace tres días me quedé sin laburo. No sé bien qué puedo aportar. Pero tengo tiempo ahora. Y quiero ayudar."
 
+// Chequeo comunitario: hablar frente a la asamblea, conectar con el grupo
+# DADOS:CHEQUEO
+~ temp resultado_sabado_hablar = chequeo_completo_comunitario(conexion, 4)
+{ resultado_sabado_hablar == 2:
+    -> sabado_hablar_critico
+}
+{ resultado_sabado_hablar == 1:
+    -> sabado_hablar_exito
+}
+{ resultado_sabado_hablar == 0:
+    -> sabado_hablar_fallo
+}
+-> sabado_hablar_crit_fallo
+
+= sabado_hablar_critico
+Te miran.
+
+* [...]
+-
+
+Silencio. Y después algo inesperado: aplausos. Pocos, pero sinceros.
+
+Sofía tiene los ojos húmedos.
+Elena asiente con fuerza.
+
+"Eso. Eso es lo que necesitamos. Gente que diga la verdad."
+
+Tu voz encontró algo. Un nervio. Un lugar real.
+
+~ subir_dignidad(2)
+~ subir_conexion(1)
+~ subir_llama(1)
+-> sabado_asamblea_fin
+
+= sabado_hablar_exito
 Te miran.
 
 * [...]
@@ -355,6 +393,39 @@ Elena sonríe.
 
 "Eso es lo que necesitamos. Gente."
 
+~ subir_dignidad(1)
+-> sabado_asamblea_fin
+
+= sabado_hablar_fallo
+Te miran.
+
+* [...]
+-
+
+Algunos asienten. Otros miran para otro lado.
+No es un discurso brillante. Pero es honesto.
+
+Sofía dice: "Gracias."
+Y sigue la reunión.
+
+~ subir_dignidad(1)
+-> sabado_asamblea_fin
+
+= sabado_hablar_crit_fallo
+Te miran.
+
+* [...]
+-
+
+Se te corta la voz. Te trabás.
+
+"Bueno... eso."
+
+Te sentás. Rojo.
+Nadie dice nada. Lo que es peor que si dijeran algo.
+
+Sofía pasa a otro tema. Con suavidad.
+Pero el silencio te quema.
 -> sabado_asamblea_fin
 
 // DEPRECATED: Replaced by sabado_asamblea_proponer (dice-based version)
@@ -540,6 +611,9 @@ Pero cambia algo.
 
 // Marcos se fue de la asamblea
 -> marcos_se_fue ->
+
+// Fragmento nocturno
+-> seleccionar_fragmento_sabado ->
 
 * [Dormir] -> fragmento_sabado
 

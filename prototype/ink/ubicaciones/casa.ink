@@ -190,6 +190,24 @@ No es gusto.
 Es sostén energético.
 Una forma de sobrevivir a la mañana.
 
+// Chequeo mental: cómo arranca el día
+~ temp despertar = chequeo_mental(0, 3)
+{ despertar == 2:
+    El café te despierta de verdad. Sentís que hoy podés con lo que venga.
+    ~ pequenas_victorias += 1
+}
+{ despertar == 1:
+    Algo en el café te despierta. Hoy se puede.
+}
+{ despertar == 0:
+    El café no basta. La cabeza sigue nublada.
+}
+{ despertar == -1:
+    Te quemás con el café. El vaso se cae, te salpica la mano.
+    El día arranca mal.
+    ~ bajar_salud_mental(1)
+}
+
 El café se termina.
 
 ->->

@@ -24,6 +24,25 @@ Los perros callejeros.
     La calle se siente más ancha cuando no tenés adónde ir.
 }
 
+// Chequeo social: encuentro en el barrio
+~ temp encuentro_barrio = chequeo_social(0, 3)
+{ encuentro_barrio == 2:
+    Un vecino que no conocías te para. "¿Sos nuevo por acá?" "No, de toda la vida." Se ríen.
+    "Soy el Carlos. Del 14." Te da la mano. Un tipo más que te conoce.
+    ~ subir_conexion(1)
+}
+{ encuentro_barrio == 1:
+    Cruzás saludos con un par de vecinos. El barrio te conoce.
+}
+{ encuentro_barrio == 0:
+    Nadie te saluda. O capaz no miraste.
+}
+{ encuentro_barrio == -1:
+    Un tipo te mira mal desde la esquina. No sabés por qué.
+    Apurás el paso. El barrio a veces no es fácil.
+    ~ bajar_salud_mental(1)
+}
+
 ~ ultima_tirada = d6()
 
 {ultima_tirada == 1:

@@ -202,10 +202,35 @@ Y otra gente que no conocés bien.
 {not conte_a_alguien || vinculo != "sofia":
     * ["Me echaron ayer."]
         ~ conte_a_alguien = true
-        ~ subir_conexion(1)
-        Sofía asiente. No dice "qué bajón" ni "vas a conseguir algo".
-        Solo asiente.
-        "Bueno. ¿Querés dar una mano?"
+        // Chequeo social: abrirte ante desconocidos en la olla
+        # DADOS:CHEQUEO
+        ~ temp resultado_jueves_abrirte = chequeo_completo_social(0, 4)
+        { resultado_jueves_abrirte == 2:
+            Sofía asiente. Algo en tu voz fue real. Crudo.
+            "Gracias por contarlo. No es fácil."
+            Te pone una mano en el hombro. Firme.
+            "Acá nadie juzga. ¿Querés dar una mano?"
+            ~ subir_conexion(2)
+        }
+        { resultado_jueves_abrirte == 1:
+            Sofía asiente. No dice "qué bajón" ni "vas a conseguir algo".
+            Solo asiente.
+            "Bueno. ¿Querés dar una mano?"
+            ~ subir_conexion(1)
+        }
+        { resultado_jueves_abrirte == 0:
+            Sofía te mira. Asiente.
+            "Está jodido. Lo sé."
+            No hay mucho más. Pero no te rechaza.
+        }
+        { resultado_jueves_abrirte == -1:
+            Las palabras salen mal. Entrecortadas.
+            Sofía te mira sin entender del todo.
+            "¿Perdón?"
+            "Nada. Nada."
+            La vergüenza te traga. No podés ni decirlo en voz alta.
+            ~ bajar_salud_mental(1)
+        }
         -> jueves_olla_pregunta
     * ["Tenía el día libre."]
         Sofía te mira.
@@ -246,14 +271,18 @@ Sofía asiente.
         Salís rápido.
         Pero Marcos te ve venir.
         Gira y se va. Casi corriendo.
-        
+
         La vergüenza es más rápida que vos.
+        -> jueves_olla_ver_post
     * [Dejarlo mirar]
         Lo dejás estar.
         A veces, mirar es el primer paso.
-        
+
         Se queda un minuto más. Y se va.
+        -> jueves_olla_ver_post
 }
+
+= jueves_olla_ver_post
 
 * [Irte] -> jueves_noche
 
@@ -537,9 +566,38 @@ Tres meses.
 Noventa días.
 La cuenta regresiva.
 
-{ayude_en_olla: Pero hoy hiciste algo. Ayudaste en la olla. Eso es algo.}
-{fui_a_olla_jueves && not ayude_en_olla: Fuiste a la olla. Viste algo. Quizás mañana.}
-{not fui_a_olla_jueves: No saliste mucho. Mañana quizás.}
+// Chequeo mental: enfrentar la primera noche sin laburo
+# DADOS:CHEQUEO
+~ temp resultado_jueves_noche = chequeo_completo_mental(0, 4)
+{ resultado_jueves_noche == 2:
+    Pero algo te frena el espiral.
+    Un pensamiento claro entre la niebla:
+    "Hoy pasó el primer día. Y seguís acá."
+    No es mucho. Pero es suficiente para cerrar los ojos.
+    ~ subir_dignidad(1)
+}
+{ resultado_jueves_noche == 1:
+    {ayude_en_olla: Pero hoy hiciste algo. Ayudaste en la olla. Eso es algo.}
+    {fui_a_olla_jueves && not ayude_en_olla: Fuiste a la olla. Viste algo. Quizás mañana.}
+    {not fui_a_olla_jueves: No saliste mucho. Mañana quizás.}
+}
+{ resultado_jueves_noche == 0:
+    {ayude_en_olla: Ayudaste en la olla. Pero no alcanza para silenciar la cabeza.}
+    {not ayude_en_olla: El día pasó. No hiciste mucho. La culpa no deja dormir.}
+    Las tres de la mañana. Seguís despierto. Mirando el techo.
+}
+{ resultado_jueves_noche == -1:
+    La cabeza no para. No para. No para.
+    ¿Qué hice mal? ¿Podría haber hecho algo distinto?
+    ¿Voy a terminar en la calle?
+    El pensamiento se repite en loop. Hasta las cinco de la mañana.
+    ~ bajar_salud_mental(1)
+}
+
+// Juan te llama
+{vinculo == "sofia" || vinculo == "elena" || vinculo == "diego":
+    -> juan_encuentro_jueves ->
+}
 
 El viernes viene.
 La olla necesita resolver algo.
@@ -831,8 +889,9 @@ Los problemas no.
 === transicion_jueves_viernes ===
 // Chequeo de colapso mental antes de continuar
 {salud_mental <= 0:
-    -> final_apagado
+    -> recovery_mental_jueves
 }
+- (post_recovery_jueves)
 
 // Chequeo de destrucción del tejido social
 {llama <= 0:
@@ -840,3 +899,17 @@ Los problemas no.
 }
 
 -> viernes_amanecer
+
+=== recovery_mental_jueves ===
+Todo se pone oscuro. La cabeza no funciona.
+
+* [...]
+-
+
+Pero algo te sostiene. Un recuerdo. Una cara. Algo.
+
+~ salud_mental = 1
+
+No estás bien. Pero seguís.
+
+-> transicion_jueves_viernes.post_recovery_jueves

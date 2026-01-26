@@ -61,24 +61,62 @@ Pensás.
 La semana que pasó.
 Lo que viene.
 
-{salud_mental <= 4:
-    La cabeza no para.
-    ¿Quién sos ahora?
-    ¿Qué hacés?
-    ¿Qué viene?
-}
+// Chequeo mental: la reflexión final del domingo
+# DADOS:CHEQUEO
+~ temp resultado_domingo_reflexion = chequeo_completo_mental(conexion, 4)
+{ resultado_domingo_reflexion == 2:
+    La cabeza se aquieta. Por primera vez en días.
 
-{conexion >= 6:
-    Pero no estás solo.
-    Esta semana conociste gente.
-    O reconectaste con gente.
-    Eso es algo.
-}
+    Algo se acomoda. No es una respuesta. Es una calma.
 
-{conexion < 4:
-    Estás bastante solo.
-    Esta semana no conectaste mucho.
-    La soledad pesa.
+    Una semana atrás eras otro. Tenías laburo y nada más.
+    Ahora no tenés laburo. Pero tenés algo que antes no tenías.
+
+    {conexion >= 6: Gente. Caras. Nombres. Una red que no sabías que existía.}
+    {conexion < 6: Algo. Todavía no sabés qué. Pero algo.}
+
+    ~ subir_dignidad(1)
+    ~ salud_mental = salud_mental + 1
+}
+{ resultado_domingo_reflexion == 1:
+    {salud_mental <= 4:
+        La cabeza no para.
+        ¿Quién sos ahora?
+        ¿Qué hacés?
+        ¿Qué viene?
+    }
+
+    {conexion >= 6:
+        Pero no estás solo.
+        Esta semana conociste gente.
+        O reconectaste con gente.
+        Eso es algo.
+    }
+
+    {conexion < 4:
+        Estás bastante solo.
+        Esta semana no conectaste mucho.
+        La soledad pesa.
+    }
+}
+{ resultado_domingo_reflexion == 0:
+    La cabeza da vueltas.
+    No llegás a ningún lado.
+
+    {conexion >= 4: Al menos hay gente. Eso debería alcanzar. Pero hoy no alcanza.}
+    {conexion < 4: Estás solo. Y el domingo es el peor día para estar solo.}
+
+    La tarde va a ser larga.
+}
+{ resultado_domingo_reflexion == -1:
+    La cabeza explota.
+
+    Todo se mezcla. El laburo. La plata. La olla. Las caras.
+    ¿Qué sentido tiene? ¿Para qué?
+
+    El domingo es un espejo. Y no te gusta lo que ves.
+
+    ~ bajar_salud_mental(1)
 }
 
 * [Ir a la tarde] -> domingo_tarde
@@ -291,6 +329,11 @@ Una semana.
 
 {not conte_a_alguien && not ayude_en_olla: Estuviste bastante solo esta semana.}
 
+{juan_sabe_mi_situacion: Juan sabe lo que pasó. Te bancó a su manera.}
+
+// Fragmento nocturno final
+-> seleccionar_fragmento_domingo ->
+
 -> domingo_resumen_ideas
 
 === domingo_resumen_ideas ===
@@ -307,7 +350,40 @@ La semana termina.
 El juego también.
 Por ahora.
 
-* [Ver el final] -> evaluar_final
+* [Ver el final] -> sintesis_ideas
+
+=== sintesis_ideas ===
+
+~ idea_momento_sintesis = true
+~ check_sinergias()
+
+{ideas_activas >= 1:
+    Un momento de silencio.
+    Las ideas de la semana se acomodan.
+}
+
+{sinergia_colectiva >= 2:
+    Algo se armó esta semana. No fue solo vos.
+    Pedir ayuda, hacer juntos, sostener la red.
+    Esas tres cosas se cruzan. Se sostienen.
+}
+
+{sinergia_individual >= 2:
+    Algo cambió adentro. Todavía no sabés qué.
+    Pero el tiempo y las preguntas dejaron marca.
+}
+
+{ideas_activas >= 4:
+    Fue una semana entera. No una semana cualquiera.
+    Algo se movió. En vos. En el barrio. En los dos.
+}
+
+{ideas_activas == 0:
+    La semana pasó.
+    No sabés si algo cambió.
+}
+
+* [...] -> evaluar_final
 
 === evaluar_final ===
 
@@ -322,6 +398,11 @@ Por ahora.
 // FINAL DESTRUCCIÓN TEJIDO SOCIAL - Colapso colectivo
 {llama <= 0:
     -> final_sin_llama
+}
+
+// FINAL IXCHEL - Requiere vínculo con Ixchel
+{vinculo == "ixchel" && ixchel_relacion >= 4 && ixchel_conto_historia && ayude_en_olla:
+    -> final_tejido
 }
 
 // FINAL OCULTO - Requiere perfección

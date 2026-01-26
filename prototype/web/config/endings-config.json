@@ -1,0 +1,98 @@
+{
+    "endings": {
+        "final_la_llama": {
+            "title": "La Llama",
+            "description": "El fuego no se apag\u00f3. La comunidad encontr\u00f3 su fuerza.",
+            "category": "colectivo",
+            "tone": "esperanzado"
+        },
+        "final_red": {
+            "title": "La Red",
+            "description": "No est\u00e1s solo. Hay una red de gente que sabe que exist\u00eds.",
+            "category": "colectivo",
+            "tone": "esperanzado"
+        },
+        "final_solo": {
+            "title": "Solo",
+            "description": "El barrio sigue. Pero sin vos. Todo gris.",
+            "category": "aislamiento",
+            "tone": "melanc\u00f3lico"
+        },
+        "final_quizas": {
+            "title": "Quiz\u00e1s",
+            "description": "No es esperanza. Es posibilidad. Un quiz\u00e1s que antes no hab\u00eda.",
+            "category": "ambiguo",
+            "tone": "ambiguo"
+        },
+        "final_incierto": {
+            "title": "Incierto",
+            "description": "No sab\u00e9s qu\u00e9 viene. Pero est\u00e1s vivo. Eso es algo.",
+            "category": "ambiguo",
+            "tone": "ambiguo"
+        },
+        "final_sin_llama": {
+            "title": "Sin Llama",
+            "description": "La llama se apag\u00f3. El tejido social se deshilach\u00f3.",
+            "category": "aislamiento",
+            "tone": "desolador"
+        },
+        "final_apagado": {
+            "title": "Apagado",
+            "description": "No est\u00e1s enfermo. El sistema est\u00e1 enfermo. Pero vos tom\u00e1s la pastilla.",
+            "category": "aislamiento",
+            "tone": "cr\u00edtico"
+        },
+        "final_gris": {
+            "title": "Gris",
+            "description": "No hay final feliz. No hay final triste. Solo hay ma\u00f1ana.",
+            "category": "ambiguo",
+            "tone": "gris"
+        },
+        "final_tejido": {
+            "title": "El Tejido",
+            "description": "Ixchel te ense\u00f1\u00f3 que la comunidad es un tejido. Cada persona, un hilo.",
+            "category": "colectivo",
+            "tone": "esperanzado"
+        },
+        "final_pequeno_cambio": {
+            "title": "Peque\u00f1o Cambio",
+            "description": "No cambi\u00f3 el mundo. Pero vos cambiaste. Algo se movi\u00f3 adentro.",
+            "category": "individual",
+            "tone": "esperanzado"
+        },
+        "final_vulnerabilidad_honesta": {
+            "title": "Vulnerabilidad Honesta",
+            "description": "Dejaste de fingir. Hay una grieta en el muro por donde entra la luz.",
+            "category": "individual",
+            "tone": "esperanzado"
+        },
+        "final_lucha_colectiva": {
+            "title": "Lucha Colectiva",
+            "description": "La olla es organizaci\u00f3n. La asamblea es acci\u00f3n. El barrio es decisi\u00f3n.",
+            "category": "colectivo",
+            "tone": "combativo"
+        }
+    },
+    "categories": {
+        "colectivo": {
+            "label": "Final Colectivo",
+            "color": "#e8a838",
+            "icon": "users"
+        },
+        "individual": {
+            "label": "Final Individual",
+            "color": "#6ba3d6",
+            "icon": "user"
+        },
+        "aislamiento": {
+            "label": "Final de Aislamiento",
+            "color": "#8a8a8a",
+            "icon": "cloud-off"
+        },
+        "ambiguo": {
+            "label": "Final Ambiguo",
+            "color": "#b08fd8",
+            "icon": "help-circle"
+        }
+    }
+}

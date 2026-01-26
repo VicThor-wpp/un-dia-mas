@@ -109,14 +109,20 @@ El bondi llega.
 El bondi está por irse.
 Corrés.
 
-~ ultima_tirada = d6()
-
-{ultima_tirada >= 3:
+// Chequeo físico: llegar al bondi a tiempo
+~ temp carrera = chequeo_fisico(0, 3)
+{ carrera == 2:
+    Lo agarrás de taquito. El chofer te ve llegar corriendo y espera.
+    "Dale, subí." Ni transpirado estás.
+    -> bondi_subir
+}
+{ carrera == 1:
     Lo agarrás justo.
     El chofer te mira con cara de "siempre lo mismo".
     Pero te deja subir.
     -> bondi_subir
-- else:
+}
+{ carrera == 0:
     Se va.
     El bondi se va en tu cara.
 
@@ -125,6 +131,19 @@ Corrés.
     * [Esperar el próximo] # COSTO:1
         -> bondi_esperar_otro
     * [Caminar] # COSTO:1
+        -> bondi_caminar_alternativa
+}
+{ carrera == -1:
+    Corrés y te torcés el tobillo en la vereda rota.
+    El bondi se va.
+
+    Mierda. Mierda.
+
+    ~ gastar_energia(1)
+
+    * [Esperar el próximo renqueando] # COSTO:1
+        -> bondi_esperar_otro
+    * [Caminar como puedas] # COSTO:1
         -> bondi_caminar_alternativa
 }
 

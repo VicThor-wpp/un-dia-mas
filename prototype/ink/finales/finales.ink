@@ -3,6 +3,7 @@
 // ============================================
 
 === final_la_llama ===
+# ENDING:final_la_llama
 
 # FINAL: LA LLAMA
 
@@ -84,6 +85,7 @@ Pero sabés con quién vas.
 -> END
 
 === final_red ===
+# ENDING:final_red
 
 # FINAL: LA RED
 
@@ -152,6 +154,7 @@ Es el principio de otra cosa.
 -> END
 
 === final_solo ===
+# ENDING:final_solo
 
 # FINAL: SOLO
 
@@ -215,6 +218,7 @@ Todo gris.
 -> END
 
 === final_quizas ===
+# ENDING:final_quizas
 
 # FINAL: QUIZÁS
 
@@ -273,6 +277,7 @@ Es posibilidad.
 -> END
 
 === final_incierto ===
+# ENDING:final_incierto
 
 # FINAL: INCIERTO
 
@@ -324,6 +329,7 @@ Eso es algo.
 -> END
 
 === final_sin_llama ===
+# ENDING:final_sin_llama
 
 # FINAL: SIN LLAMA
 
@@ -402,6 +408,7 @@ La llama se apagó.
 -> END
 
 === final_apagado ===
+# ENDING:final_apagado
 
 # FINAL: APAGADO
 
@@ -475,7 +482,64 @@ La luz del teléfono se apaga.
 
 -> END
 
+=== final_tejido ===
+# ENDING:final_tejido
+
+# FINAL: EL TEJIDO
+
+El lunes llega.
+No tenés laburo.
+Pero tenés hilos.
+
+* [...]
+-
+
+Ixchel te enseñó algo que no tiene nombre en castellano.
+
+Que la comunidad es un tejido.
+Que cada persona es un hilo.
+Que cuando uno se rompe, los demás sostienen.
+
+* [...]
+-
+
+No es la olla. No es la asamblea.
+Es algo más antiguo.
+
+Un saber que cruzó océanos y fronteras.
+Que sobrevivió a todo lo que quisieron matarlo.
+
+* [...]
+-
+
+"Ri qa tzij, ri qa k'aslemal", dice Ixchel.
+Nuestras palabras, nuestra vida.
+
+No entendés el idioma.
+Pero entendés el gesto.
+
+{ixchel_conto_historia:
+    Los pájaros y las montañas del huipil.
+    El tejido que conecta.
+    Lo que sobrevive.
+}
+
+* [...]
+-
+
+Mañana hay olla.
+Mañana hay tejido.
+Mañana hay comunidad.
+
+No lo arregla. No lo soluciona.
+Pero lo sostiene.
+
+# FIN - "El tejido que conecta"
+
+-> END
+
 === final_gris ===
+# ENDING:final_gris
 
 # FINAL: GRIS
 
@@ -533,5 +597,182 @@ O no.
 }
 
 # FIN
+
+-> END
+
+=== final_pequeno_cambio ===
+# ENDING:final_pequeno_cambio
+
+# FINAL: PEQUEÑO CAMBIO
+
+El lunes llega.
+No tenés laburo.
+Pero algo es distinto.
+
+* [...]
+-
+
+No es grande. No es histórico.
+No cambia el mundo.
+
+Pero vos cambiaste.
+
+* [...]
+-
+
+Un poco. Apenas.
+Como cuando girás la cabeza y ves algo que siempre estuvo ahí.
+
+{conte_a_alguien:
+    Le contaste a alguien. Eso cambió algo.
+    No en el mundo. En vos.
+}
+
+{ayude_en_olla:
+    Pelaste papas. Serviste guiso.
+    No es revolución. Es presencia.
+}
+
+* [...]
+-
+
+Los tres meses empiezan.
+No sabés qué viene.
+
+Pero algo se movió.
+Adentro. Donde importa.
+
+{pequenas_victorias >= 5:
+    Pequeñas victorias.
+    Levantarse. Bañarse. Salir.
+    Hablar. Escuchar. Estar.
+
+    Eso, a veces, es el cambio.
+}
+
+# FIN - "Algo se movió"
+
+-> END
+
+=== final_vulnerabilidad_honesta ===
+# ENDING:final_vulnerabilidad_honesta
+
+# FINAL: VULNERABILIDAD
+
+El lunes llega.
+No tenés laburo.
+Pero dejaste de fingir.
+
+* [...]
+-
+
+Le dijiste a alguien que estabas mal.
+No es heroísmo. Es honestidad.
+
+* [...]
+-
+
+{conte_a_alguien:
+    Dijiste "estoy mal" y no se cayó el mundo.
+    La persona te escuchó.
+    No te arregló. No te salvó.
+    Te escuchó.
+    Y eso alcanzó.
+}
+
+{salud_mental <= 3:
+    La cabeza sigue pesando.
+    Pero ya no pesás solo.
+
+    Alguien sabe.
+    Alguien vio.
+    Eso cambia las cosas.
+    No las arregla. Las cambia.
+}
+
+* [...]
+-
+
+Los tres meses empiezan.
+La incertidumbre sigue.
+
+Pero hay una grieta en el muro.
+Una grieta por donde entra algo de luz.
+
+No es esperanza. Es aire.
+
+{idea_pedir_no_debilidad:
+    Pedir ayuda no es debilidad.
+    Lo aprendiste esta semana.
+    Duele. Pero funciona.
+}
+
+# FIN - "La grieta por donde entra la luz"
+
+-> END
+
+=== final_lucha_colectiva ===
+# ENDING:final_lucha_colectiva
+
+# FINAL: LUCHA COLECTIVA
+
+El lunes llega.
+No tenés laburo.
+Pero tenés un plan.
+
+* [...]
+-
+
+La asamblea no fue solo hablar.
+Salieron cosas.
+Propuestas. Ideas. Gente que se comprometió.
+
+* [...]
+-
+
+{participe_asamblea:
+    En la asamblea dijeron:
+    "Esto no se arregla solo."
+    "Esto se arregla juntos."
+    Y por primera vez, creíste.
+}
+
+{veces_que_ayude >= 3:
+    Ayudaste tantas veces que ya te conocen.
+    "El nuevo", dicen. Pero con cariño.
+    Sos parte.
+}
+
+* [...]
+-
+
+La olla no es caridad.
+Es organización.
+
+La asamblea no es queja.
+Es acción.
+
+El barrio no es geografía.
+Es decisión.
+
+* [...]
+-
+
+Los tres meses empiezan.
+Pero esta vez no son solo tuyos.
+
+{llama >= 7:
+    La llama arde.
+    No como incendio. Como fogón.
+    Como reunión. Como olla.
+    Como lo que pasa cuando la gente decide
+    que sola no puede,
+    pero junta sí.
+}
+
+Mañana hay asamblea de nuevo.
+Y vos vas a estar.
+
+# FIN - "La organización es esperanza"
 
 -> END

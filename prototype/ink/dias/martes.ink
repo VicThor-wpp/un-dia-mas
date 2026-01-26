@@ -43,6 +43,23 @@ El jefe no te mira.
 Los de RRHH entran y salen.
 Hay reuniones que no te incluyen.
 
+// Chequeo mental: aguantar la tensión del martes
+~ temp aguante = chequeo_mental(0, 4)
+{ aguante == 2:
+    Respirás hondo. Te concentrás en lo tuyo. Si pasa algo, pasa. Pero hoy estás entero.
+    ~ pequenas_victorias += 1
+}
+{ aguante == 1:
+    Intentás no pensar en eso. Te concentrás en la pantalla. Más o menos funciona.
+}
+{ aguante == 0:
+    No podés dejar de mirar la puerta de RRHH. Cada vez que se abre, el estómago se cierra.
+}
+{ aguante == -1:
+    Las manos te tiemblan. No podés concentrarte en nada. El miedo te paraliza.
+    ~ bajar_salud_mental(1)
+}
+
 -> laburo_manana ->
 
 // Encuentro con Juan
@@ -96,6 +113,23 @@ A las 5 te vas.
 
 Necesitás hablar con alguien.
 O solo estar con alguien.
+
+// Chequeo social: encontrar a tu vínculo
+~ temp busqueda = chequeo_social(0, 3)
+{ busqueda == 2:
+    Salís y te los cruzás enseguida. Como si el barrio supiera que necesitás a alguien.
+}
+{ busqueda == 1:
+    Caminás un rato. Los encontrás.
+}
+{ busqueda == 0:
+    Tardás en encontrar a alguien. El barrio se siente vacío hoy.
+}
+{ busqueda == -1:
+    Caminás y caminás. No hay nadie. Estás por volverte cuando los ves a lo lejos.
+    La soledad pega más fuerte cuando la buscás romper y no podés.
+    ~ bajar_salud_mental(1)
+}
 
 {vinculo == "sofia": -> martes_buscar_sofia}
 {vinculo == "elena": -> martes_buscar_elena}

@@ -269,12 +269,58 @@ Te mira. Sorprendido.
 
 "No tiene que ser transaccional."
 
-Silencio.
+// Chequeo social: llegar emocionalmente a Marcos (difícil - está muy aislado)
+# DADOS:CHEQUEO
+~ temp resultado_marcos_reconectar = chequeo_completo_social(marcos_relacion, 5)
+{ resultado_marcos_reconectar == 2:
+    Silencio largo. Marcos mira el piso.
 
-"Hace mucho que nadie me dice eso."
+    Cuando levanta la vista, tiene los ojos húmedos.
 
-~ marcos_relacion += 1
-~ subir_conexion(1)
+    "Hace mucho que nadie me dice eso."
+
+    Pausa.
+
+    "¿Sabés qué es lo peor de alejarte? Que después no sabés cómo volver. Y cada día es más difícil."
+
+    Se le quiebra la voz un segundo.
+
+    "Gracias por insistir. De verdad."
+
+    ~ marcos_relacion += 2
+    ~ subir_conexion(2)
+}
+{ resultado_marcos_reconectar == 1:
+    Silencio.
+
+    "Hace mucho que nadie me dice eso."
+
+    ~ marcos_relacion += 1
+    ~ subir_conexion(1)
+}
+{ resultado_marcos_reconectar == 0:
+    Marcos se queda callado.
+    Asiente apenas.
+
+    No te rechaza. Pero tampoco se abre.
+    La pared sigue ahí. Un poco más baja, quizás.
+
+    ~ marcos_relacion += 1
+}
+{ resultado_marcos_reconectar == -1:
+    Marcos se pone de pie.
+
+    "No hagás eso."
+
+    "¿Qué cosa?"
+
+    "Venirme con eso de que te importo. No me conocés. No sabés nada."
+
+    Se va caminando rápido.
+    La defensa de los que tienen miedo de que les importe algo.
+
+    ~ bajar_conexion(1)
+}
 
 ->->
 
@@ -529,6 +575,7 @@ y me echaron como a cualquiera."
 
 ~ marcos_relacion += 1
 ~ subir_conexion(1)
+~ activar_quien_soy()
 
 * ["A mí también me echaron."] -> marcos_compartir
 * ["No tenés que avergonzarte."] -> marcos_sin_verguenza
@@ -544,12 +591,57 @@ Te mira. Sorprendido.
 
 "Hace poco. También me da vergüenza."
 
-"Bienvenido al club."
+// Chequeo mental: conectar emocionalmente desde la vulnerabilidad compartida
+# DADOS:CHEQUEO
+~ temp resultado_marcos_emocional = chequeo_completo_mental(marcos_relacion, 5)
+{ resultado_marcos_emocional == 2:
+    "Bienvenido al club."
 
-Una sonrisa amarga.
-Pero compartida.
+    Una sonrisa amarga. Pero compartida.
 
-~ marcos_estado = "mirando"
+    Y entonces Marcos dice algo inesperado:
+
+    "¿Sabés qué? Capaz que esto es lo que necesitaba. Que alguien que entiende me diga que no estoy loco."
+
+    Se queda un momento.
+
+    "Diez años de militancia y me echaron como a un trapo. La dignidad del trabajador, decía. Y miranos."
+
+    Pero hay algo diferente en su voz. No amargura. Algo más tibio.
+
+    ~ marcos_estado = "mirando"
+    ~ marcos_relacion += 1
+    ~ subir_conexion(1)
+}
+{ resultado_marcos_emocional == 1:
+    "Bienvenido al club."
+
+    Una sonrisa amarga.
+    Pero compartida.
+
+    ~ marcos_estado = "mirando"
+}
+{ resultado_marcos_emocional == 0:
+    "Bienvenido al club."
+
+    El tono es seco. Distante.
+    Pero no se va.
+
+    ~ marcos_estado = "mirando"
+}
+{ resultado_marcos_emocional == -1:
+    "Bienvenido al club."
+
+    Pero algo se apaga en su cara.
+
+    "Qué mierda, ¿no? Todos iguales. Todos descartables."
+
+    El intento de conectar se convierte en confirmación de lo peor.
+    Para los dos.
+
+    ~ marcos_estado = "mirando"
+    ~ bajar_salud_mental(1)
+}
 
 ->->
 
@@ -727,7 +819,7 @@ Llegó sola.
 Mirando a Marcos.
 Viendo el futuro posible.
 
-~ idea_esto_es_lo_que_hay = true
+~ activar_esto_es_lo_que_hay()
 
 ->->
 
@@ -795,5 +887,66 @@ Quizás algo cambie.
     Se duerme con el vacío de siempre.
     El vacío que ya es familiar.
 }
+
+->->
+
+// --- FRAGMENTOS NOCTURNOS DE MARCOS ---
+
+=== fragmento_marcos_insomnio ===
+Marcos no duerme.
+
+El techo. Las paredes. El silencio.
+
+Antes iba a las asambleas. Antes creía.
+Antes había fuego.
+
+{marcos_relacion >= 2:
+    Hoy alguien le habló.
+    No de política. De nada.
+    Solo hablar.
+
+    Eso jode. Porque es más difícil
+    ser cínico cuando alguien te mira a los ojos.
+}
+
+Se da vuelta. Otra vez.
+El insomnio de los desencantados es el peor.
+
+->->
+
+=== fragmento_marcos_balcon ===
+Marcos sale al balcón.
+
+Fuma.
+La ciudad abajo.
+Las luces de las casas.
+
+{marcos_vino_a_asamblea:
+    Fue a la asamblea. No sabe por qué.
+    Capaz que por vos. Capaz que por curiosidad.
+
+    No fue tan malo.
+    Pero no lo va a admitir.
+}
+
+Tira el pucho.
+Mañana es otro día.
+Igual que todos.
+
+->->
+
+=== fragmento_marcos_musica ===
+Marcos pone música.
+Rock nacional. De los '80.
+
+Charly cantando sobre demoler.
+Los Redondos sobre la bestia.
+
+Sube el volumen.
+La vecina golpea la pared.
+Baja el volumen.
+
+Música. Cigarros. Insomnio.
+Las tres constantes de su vida.
 
 ->->

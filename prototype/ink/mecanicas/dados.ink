@@ -104,3 +104,132 @@ VAR ultimo_resultado = 0
         ~ return 2
     }
     ~ return 3
+
+// ============================================
+// CONTEXTUAL DICE FUNCTIONS
+// ============================================
+
+// Chequeo contextual: elige ventaja/desventaja segun estado del personaje
+// Uso: chequeo_contexto(modificador, dificultad, "social")
+// Contextos: "social", "fisico", "mental", "comunitario"
+=== function chequeo_social(modificador, dificultad) ===
+    // Social checks: advantage if connected, disadvantage if isolated
+    { conexion >= 6:
+        ~ return chequeo_ventaja(modificador, dificultad)
+    }
+    { conexion <= 2:
+        ~ return chequeo_desventaja(modificador, dificultad)
+    }
+    ~ return chequeo(modificador, dificultad)
+
+=== function chequeo_fisico(modificador, dificultad) ===
+    // Physical checks: advantage if rested, disadvantage if exhausted
+    { energia >= 4:
+        ~ return chequeo_ventaja(modificador, dificultad)
+    }
+    { energia <= 1:
+        ~ return chequeo_desventaja(modificador, dificultad)
+    }
+    ~ return chequeo(modificador, dificultad)
+
+=== function chequeo_mental(modificador, dificultad) ===
+    // Mental checks: advantage if healthy, disadvantage if breaking down
+    { salud_mental >= 4:
+        ~ return chequeo_ventaja(modificador, dificultad)
+    }
+    { salud_mental <= 1:
+        ~ return chequeo_desventaja(modificador, dificultad)
+    }
+    ~ return chequeo(modificador, dificultad)
+
+=== function chequeo_comunitario(modificador, dificultad) ===
+    // Community checks: advantage if flame is alive, disadvantage if dying
+    { llama >= 6:
+        ~ return chequeo_ventaja(modificador, dificultad)
+    }
+    { llama <= 2:
+        ~ return chequeo_desventaja(modificador, dificultad)
+    }
+    ~ return chequeo(modificador, dificultad)
+
+// --- CONSECUENCIAS DE CRITICOS ---
+
+// Aplicar consecuencia de éxito crítico según contexto
+=== function critico_exito_social() ===
+    ~ subir_conexion(1)
+    ~ pequenas_victorias += 1
+
+=== function critico_exito_fisico() ===
+    ~ recuperar_energia(1)
+    ~ pequenas_victorias += 1
+
+=== function critico_exito_mental() ===
+    ~ salud_mental = salud_mental + 1
+    { salud_mental > 5:
+        ~ salud_mental = 5
+    }
+    ~ pequenas_victorias += 1
+
+=== function critico_exito_comunitario() ===
+    ~ subir_llama(1)
+    ~ pequenas_victorias += 1
+
+// Aplicar consecuencia de fallo crítico según contexto
+=== function critico_fallo_social() ===
+    ~ bajar_conexion(1)
+
+=== function critico_fallo_fisico() ===
+    ~ energia -= 1
+    { energia < 0:
+        ~ energia = 0
+    }
+
+=== function critico_fallo_mental() ===
+    ~ bajar_salud_mental(1)
+
+=== function critico_fallo_comunitario() ===
+    ~ bajar_llama(1)
+
+// --- HELPER: Chequeo completo con consecuencias ---
+// Hace un chequeo contextual Y aplica consecuencias de criticos automaticamente
+// Devuelve el resultado del chequeo (2, 1, 0, -1)
+
+=== function chequeo_completo_social(modificador, dificultad) ===
+    ~ temp resultado = chequeo_social(modificador, dificultad)
+    { resultado == 2:
+        ~ critico_exito_social()
+    }
+    { resultado == -1:
+        ~ critico_fallo_social()
+    }
+    ~ return resultado
+
+=== function chequeo_completo_fisico(modificador, dificultad) ===
+    ~ temp resultado = chequeo_fisico(modificador, dificultad)
+    { resultado == 2:
+        ~ critico_exito_fisico()
+    }
+    { resultado == -1:
+        ~ critico_fallo_fisico()
+    }
+    ~ return resultado
+
+=== function chequeo_completo_mental(modificador, dificultad) ===
+    ~ temp resultado = chequeo_mental(modificador, dificultad)
+    { resultado == 2:
+        ~ critico_exito_mental()
+    }
+    { resultado == -1:
+        ~ critico_fallo_mental()
+    }
+    ~ return resultado
+
+=== function chequeo_completo_comunitario(modificador, dificultad) ===
+    ~ temp resultado = chequeo_comunitario(modificador, dificultad)
+    { resultado == 2:
+        ~ critico_exito_comunitario()
+    }
+    { resultado == -1:
+        ~ critico_fallo_comunitario()
+    }
+    ~ return resultado

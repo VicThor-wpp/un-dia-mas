@@ -159,7 +159,28 @@ El kiosquero te conoce de vista.
 
 "Día largo."
 
-"Son todos largos."
+// Chequeo social: charla con el kiosquero
+~ temp kiosco_charla = chequeo_social(0, 3)
+{ kiosco_charla == 2:
+    "¿Sabés qué? Tomá." Te da otro alfajor.
+    "No te cobro ese. Cara de que lo necesitás."
+    Le agradecés. A veces la gente te sorprende.
+    ~ subir_conexion(1)
+}
+{ kiosco_charla == 1:
+    "Son todos largos." Se queda un rato. "Pero se bancan."
+    Asentiás. Se bancan.
+}
+{ kiosco_charla == 0:
+    "Son todos largos."
+    Silencio. Nada más.
+}
+{ kiosco_charla == -1:
+    "Son todos largos. Y cada vez peor."
+    Te mira y se da vuelta. Conversación terminada.
+    Te vas sintiéndote peor que antes.
+    ~ bajar_salud_mental(1)
+}
 
 -> lunes_ir_casa
 

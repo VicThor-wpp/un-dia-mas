@@ -145,6 +145,11 @@ const StartScreen = (function() {
 
         document.body.appendChild(modal);
 
+        // Accessibility: trap focus in modal
+        if (typeof AccessibilityManager !== 'undefined') {
+            AccessibilityManager.trapFocus(modal);
+        }
+
         // Close on overlay click
         modal.onclick = (e) => {
             if (e.target === modal) closeManual();
@@ -160,7 +165,12 @@ const StartScreen = (function() {
      */
     function closeManual() {
         const modal = document.getElementById('manualModal');
-        if (modal) modal.remove();
+        if (modal) {
+            if (typeof AccessibilityManager !== 'undefined') {
+                AccessibilityManager.releaseFocus(modal);
+            }
+            modal.remove();
+        }
     }
 
     /**

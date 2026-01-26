@@ -50,7 +50,10 @@ const NotificationSystem = (function() {
         notif.className = `notification ${type}`;
 
         const icon = iconName ? iconHTML(iconName, 16) : '';
-        notif.innerHTML = `${icon} ${message}`;
+        const safeMessage = typeof SecurityValidator !== 'undefined'
+            ? SecurityValidator.sanitizeText(message)
+            : message;
+        notif.innerHTML = `${icon} ${safeMessage}`;
 
         container.appendChild(notif);
 

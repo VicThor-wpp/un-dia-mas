@@ -12,6 +12,7 @@ const SaveSystem = (function() {
     let autoSaveTimer = null;
     let onSaveCallback = null;
     let onLoadCallback = null;
+    let saveLock = false;
 
     /**
      * Initialize the save system
@@ -78,17 +79,34 @@ const SaveSystem = (function() {
             console.error('Invalid slot ID:', slotId);
             return false;
         }
+        if (saveLock) {
+            console.warn('Save already in progress');
+            return false;
+        }
+        saveLock = true;
 
         try {
             const saveData = createSaveData(description);
             if (!saveData) return false;
 
-            localStorage.setItem(`${STORAGE_PREFIX}save_${slotId}`, JSON.stringify(saveData));
+            const serialized = JSON.stringify(saveData);
+            const storageKey = `${STORAGE_PREFIX}save_${slotId}`;
+
+            // Check storage quota before writing
+            if (typeof SecurityValidator !== 'undefined' && !SecurityValidator.checkStorageQuota(storageKey, serialized)) {
+                console.error('Storage quota exceeded');
+                showNotification('Sin espacio para guardar', 'error');
+                return false;
+            }
+
+            localStorage.setItem(storageKey, serialized);
 
             if (onSaveCallback) onSaveCallback(slotId, saveData);
 
+            saveLock = false;
             return true;
         } catch (e) {
+            saveLock = false;
             console.error('Error saving to slot:', e);
             return false;
         }
@@ -99,13 +117,26 @@ const SaveSystem = (function() {
      * @returns {boolean}
      */
     function autoSave() {
+        if (saveLock) return false;
+        saveLock = true;
+
         try {
             const saveData = createSaveData('Auto-guardado');
             if (!saveData) return false;
 
-            localStorage.setItem(`${STORAGE_PREFIX}autosave`, JSON.stringify(saveData));
+            const serialized = JSON.stringify(saveData);
+            const storageKey = `${STORAGE_PREFIX}autosave`;
+
+            if (typeof SecurityValidator !== 'undefined' && !SecurityValidator.checkStorageQuota(storageKey, serialized)) {
+                console.warn('Storage quota exceeded for auto-save');
+                return false;
+            }
+
+            localStorage.setItem(storageKey, serialized);
+            saveLock = false;
             return true;
         } catch (e) {
+            saveLock = false;
             console.error('Error auto-saving:', e);
             return false;
         }
@@ -140,7 +171,18 @@ const SaveSystem = (function() {
             const data = localStorage.getItem(key);
             if (!data) return null;
 
-            const saveData = JSON.parse(data);
+            const saveData = typeof SecurityValidator !== 'undefined'
+                ? SecurityValidator.safeJSONParse(data)
+                : JSON.parse(data);
+
+            if (!saveData) return null;
+
+            // Validate save data structure
+            if (typeof SecurityValidator !== 'undefined' && !SecurityValidator.validateSaveData(saveData)) {
+                console.warn('Invalid save data in slot:', key);
+                return null;
+            }
+
             return migrate(saveData);
         } catch (e) {
             console.error('Error loading save data:', e);

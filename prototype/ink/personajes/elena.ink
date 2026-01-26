@@ -50,33 +50,23 @@ Te sentás a su lado.
 Mira hacia la calle.
 "¿Sabés cuántas veces escuché eso? 'Ahí ando'.
 En el 2002 todo el mundo andaba 'ahí'."
--> opts
+-> elena_menu_temas.opts
 
 === elena_menu_historia ===
 + [Sobre el 2002] {not elena_conto_trueque} -> elena_trueque_2002 ->
 + [Sobre el trueque] {elena_conto_trueque and not escuche_sobre_2002} -> elena_sobre_2002 ->
 + [Sobre el banco] {elena_conto_trueque and not elena_conto_banco} -> elena_en_banco_2002 ->
 + [Sobre los García] {not elena_conto_desalojo} -> elena_desalojo_garcia ->
-+ [Volver] -> opts
++ [Volver] -> elena_menu_temas.opts
 
 === elena_menu_profundo ===
 + [Sobre la Chola] {not elena_hablo_de_chola} -> elena_sobre_la_chola ->
 + [Sobre política] {not elena_hablo_politica} -> elena_anarquismo ->
-+ [Volver] -> opts
++ [Volver] -> elena_menu_temas.opts
 
 === elena_sobre_olla ===
 + [La historia de la fundación] {not escuche_historia_olla} -> olla_historia_fundacion ->
-+ [Volver] -> opts
-
-=== elena_ignorar ===
-Pasás de largo.
-Ella sigue mirando la nada. O el todo.
-->->
-
-=== elena_saludo_lejos ===
-Levantás la mano.
-Ella asiente.
-->->
++ [Volver] -> elena_menu_temas.opts
 
 === elena_sentarse ===
 
@@ -267,6 +257,53 @@ El laburo. La plata. El miedo.
 Ella escucha. No interrumpe.
 Cuando terminás, toma café. Piensa.
 
+// Chequeo social: lograr que Elena se abra sobre el pasado
+# DADOS:CHEQUEO
+~ temp resultado_elena_abrir = chequeo_completo_social(elena_relacion, 4)
+{ resultado_elena_abrir == 2:
+    -> elena_escucha_critico
+}
+{ resultado_elena_abrir == 1:
+    -> elena_escucha_exito
+}
+{ resultado_elena_abrir == 0:
+    -> elena_escucha_fallo
+}
+-> elena_escucha_crit_fallo
+
+= elena_escucha_critico
+* [...]
+-
+
+Elena deja la taza. Te mira con ojos que vieron demasiado.
+
+"¿Sabés qué aprendí en setenta años?"
+
+"¿Qué?"
+
+"Que nadie se salva solo. Lo aprendí a los golpes.
+Cuando el barco se hunde, o armamos una balsa entre todos o nos ahogamos por separado."
+
+* [...]
+-
+
+Hace una pausa larga. Algo se abre en ella.
+
+"Raúl pasó lo mismo que vos. Exactamente. Lo echaron del frigorífico un martes. Llegó a casa blanco. No habló en tres días."
+
+"¿Qué hicieron?"
+
+"Lo que vamos a hacer con vos. Sostenerlo. Un día a la vez."
+
+~ elena_me_aconsejo = true
+~ elena_relacion += 2
+~ subir_conexion(2)
+~ activar_red_o_nada()
+
+"Y vení a la olla. Siempre hay un plato."
+->->
+
+= elena_escucha_exito
 * [...]
 -
 
@@ -288,9 +325,43 @@ No pensés en mañana. Pensá en hoy."
 ~ elena_me_aconsejo = true
 ~ elena_relacion += 1
 ~ subir_conexion(1)
+~ activar_red_o_nada()
 
 "Y vení a la olla. Siempre hay un plato."
+->->
 
+= elena_escucha_fallo
+* [...]
+-
+
+Elena asiente. Despacio.
+
+"Es jodido. Lo sé."
+
+No dice mucho más. Toma café.
+El silencio se estira.
+
+"Vení a la olla si querés. Siempre hay un plato."
+
+No se abrió del todo. Pero la puerta quedó entreabierta.
+
+~ elena_relacion += 1
+->->
+
+= elena_escucha_crit_fallo
+* [...]
+-
+
+Elena se queda callada. Demasiado callada.
+
+"M'hijo... todos tenemos problemas."
+
+Algo se cerró. Quizás no era el momento.
+Quizás hablar de tus problemas le trajo fantasmas de los suyos.
+
+Toman café en un silencio incómodo.
+
+"Disculpá. Estoy cansada hoy."
 ->->
 
 === elena_no_cuenta ===
@@ -650,10 +721,51 @@ A veces eso alcanza."
 
 No dice gracias. No hace falta.
 
-"Sofía es terca. Como yo.
-Pero necesita gente."
+// Chequeo mental: procesar la gravedad de la situación de la olla
+# DADOS:CHEQUEO
+~ temp resultado_elena_olla_futuro = chequeo_completo_mental(elena_relacion, 4)
+{ resultado_elena_olla_futuro == 2:
+    "Sofía es terca. Como yo.
+    Pero necesita gente."
 
-~ elena_relacion += 1
+    Elena te mira fijo. Algo cambia en su cara.
+
+    "¿Sabés qué, m'hijo? Vos me hacés acordar a cuando empezamos en el 2002. La misma cara de asustado. Pero estás acá. Y eso es lo que importa."
+
+    "Vamos a sacar esto adelante. Como sacamos todo."
+
+    ~ elena_relacion += 2
+    ~ subir_llama(1)
+}
+{ resultado_elena_olla_futuro == 1:
+    "Sofía es terca. Como yo.
+    Pero necesita gente."
+
+    ~ elena_relacion += 1
+}
+{ resultado_elena_olla_futuro == 0:
+    "Sofía es terca. Como yo.
+    Pero necesita gente."
+
+    Se te hace un nudo en el estómago.
+    La gravedad de la situación te cae encima.
+    ¿Puede cerrar la olla? ¿Qué pasa con las sesenta personas?
+
+    ~ elena_relacion += 1
+}
+{ resultado_elena_olla_futuro == -1:
+    "Sofía es terca. Como yo."
+
+    Elena te mira. Ve algo en tus ojos.
+    Miedo. Parálisis.
+
+    "No te congeles, m'hijo. Congelarse es lo peor."
+
+    Pero ya estás congelado.
+    La responsabilidad te aplasta.
+
+    ~ bajar_salud_mental(1)
+}
 
 ->->
 
@@ -769,7 +881,7 @@ Elena habla:
 Sofía asiente.
 "Podemos probar."
 
-~ idea_hay_cosas_juntos = true
+~ activar_hay_cosas_juntos()
 
 ->->
 
@@ -872,5 +984,57 @@ A las cuatro se acuesta.
 El sueño de los viejos.
 Liviano. Interrumpido.
 Lleno de fantasmas.
+
+->->
+
+// --- FRAGMENTOS NOCTURNOS DE ELENA ---
+
+=== fragmento_elena_banco ===
+Elena está en su casa.
+La tele prendida. El mate frío.
+
+Mira la foto de Raúl en la repisa.
+"Vos me entenderías", le dice.
+
+En el 2002 estaban todos en la calle.
+Ahora cada uno en su casa.
+Con su pantalla. Con su soledad.
+
+Se acuesta.
+El banco de la plaza la espera mañana.
+
+->->
+
+=== fragmento_elena_recuerdo ===
+Elena no puede dormir.
+
+Piensa en la olla de 2002.
+En cómo empezó con tres ollas y un fogón.
+En cómo terminaron siendo cincuenta.
+
+{elena_relacion >= 3:
+    Piensa en vos.
+    "Tiene algo", se dice. "Algo de los de antes."
+}
+
+Se da vuelta en la cama.
+El insomnio de los setenta es diferente.
+No es ansiedad. Es inventario.
+
+->->
+
+=== fragmento_elena_cartas ===
+Elena relee una carta vieja.
+De su hermana en Buenos Aires.
+
+"Venite, Elena. Acá hay trabajo."
+La carta es de 2003.
+
+Nunca se fue.
+El barrio la necesitaba.
+O ella necesitaba al barrio.
+Da igual.
+
+Guarda la carta. Apaga la luz.
 
 ->->

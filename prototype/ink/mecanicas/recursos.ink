@@ -155,3 +155,26 @@ VAR dia_actual = 1
 
 === function tiene_todas_ideas() ===
     ~ return idea_tengo_tiempo && idea_pedir_no_debilidad && idea_hay_cosas_juntos && idea_red_o_nada
+
+// --- EVALUACION DE FINALES ---
+
+=== function evaluar_pequeno_cambio() ===
+    // Hiciste poco pero algo cambió en vos
+    { conexion >= 4 && conexion < 7 && pequenas_victorias >= 5:
+        ~ return true
+    }
+    ~ return false
+
+=== function evaluar_vulnerabilidad() ===
+    // Mostraste vulnerabilidad genuina
+    { conte_a_alguien && salud_mental >= 2 && salud_mental <= 3:
+        ~ return true
+    }
+    ~ return false
+
+=== function evaluar_lucha_colectiva() ===
+    // Participaste activamente en la lucha colectiva
+    { participe_asamblea && veces_que_ayude >= 3 && llama >= 7 && conexion >= 7:
+        ~ return true
+    }
+    ~ return false

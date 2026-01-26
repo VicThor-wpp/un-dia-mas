@@ -1,0 +1,55 @@
+{
+    "version": 1,
+    "bgm": {
+        "lunes": {
+            "track": "bgm_rutina",
+            "mood": "neutral",
+            "description": "Día normal, rutina laboral"
+        },
+        "martes": {
+            "track": "bgm_tension",
+            "mood": "tension",
+            "description": "Tensión creciente, rumores"
+        },
+        "miercoles": {
+            "track": "bgm_despido",
+            "mood": "dark",
+            "description": "El despido, shock"
+        },
+        "jueves": {
+            "track": "bgm_vacio",
+            "mood": "melancholy",
+            "description": "Primer día sin laburo"
+        },
+        "viernes": {
+            "track": "bgm_crisis",
+            "mood": "urgent",
+            "description": "Crisis de la olla, acción"
+        },
+        "sabado": {
+            "track": "bgm_asamblea",
+            "mood": "hopeful",
+            "description": "La asamblea, comunidad"
+        },
+        "domingo": {
+            "track": "bgm_reflexion",
+            "mood": "contemplative",
+            "description": "Reflexión final"
+        }
+    },
+    "sfx": {
+        "dice_roll": "sfx_dados",
+        "dice_success": "sfx_exito",
+        "dice_fail": "sfx_fallo",
+        "dice_critical": "sfx_critico",
+        "stat_up": "sfx_subida",
+        "stat_down": "sfx_bajada",
+        "idea_unlock": "sfx_idea",
+        "save": "sfx_guardar",
+        "ending": "sfx_final",
+        "notification": "sfx_notificacion"
+    },
+    "fadeMs": 2000,
+    "enabled": true,
+    "notes": "Audio files not yet included. Place MP3 files in assets/audio/ matching the track names."
+}

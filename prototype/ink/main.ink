@@ -5,6 +5,7 @@
 // --- INCLUDES: MECÁNICAS ---
 INCLUDE mecanicas/dados.ink
 INCLUDE mecanicas/recursos.ink
+INCLUDE mecanicas/ideas.ink
 
 // --- INCLUDES: VARIABLES ---
 INCLUDE variables.ink
@@ -46,6 +47,7 @@ INCLUDE finales/finales.ink
 === inicio ===
 
 # UN DÍA MÁS
+# AUDIO:bgm_rutina
 
 Suena el despertador. Todavía está oscuro afuera.
 El colchón tiene un hundimiento que ya tiene la forma de tu cuerpo.
@@ -223,6 +225,14 @@ Pero con alguien tenés algo más.
     Me pregunto qué le pasó. Qué le rompieron para que se apagara así.
     -> confirmar_inicio
 
+* [Ixchel. La de la cocina del restaurante.]
+    ~ vinculo = "ixchel"
+    La vi una vez en la olla. Estaba sirviendo con una seriedad que no era frialdad.
+    Cuando terminó, se sentó sola. Nadie se acercó.
+    Me acerqué yo. No dijo mucho. Pero al irse me dijo "gracias" en un idioma que no conozco.
+    Desde entonces la busco con la mirada cuando paso por ahí.
+    -> confirmar_inicio
+
 === confirmar_inicio ===
 
 # LISTO
@@ -242,7 +252,7 @@ Pero con alguien tenés algo más.
 {posicion == "esperanzado": Todavía creés. Pero.}
 {posicion == "ambiguo": No sabés qué creés.}
 
-Tu historia está con {vinculo == "sofia": Sofía}{vinculo == "elena": Elena}{vinculo == "diego": Diego}.
+Tu historia está con {vinculo == "sofia": Sofía}{vinculo == "elena": Elena}{vinculo == "diego": Diego}{vinculo == "marcos": Marcos}{vinculo == "ixchel": Ixchel}.
 
 La semana empieza.
 Todavía no sabés lo que viene.
