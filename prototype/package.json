@@ -12,6 +12,7 @@
     "test:narrative": "node scripts/test-narrative.js",
     "lint": "node scripts/lint-ink.js",
     "dev": "node scripts/build.js --watch",
+    "audit": "node scripts/audit-variables.js",
     "clean": "node -e \"const fs=require('fs');['web/un_dia_mas.json','web/un_dia_mas.js'].forEach(f=>{try{fs.unlinkSync(f)}catch(e){}});console.log('Cleaned.')\""
   },
   "keywords": [],

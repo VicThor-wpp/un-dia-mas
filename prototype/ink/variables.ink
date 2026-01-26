@@ -103,7 +103,7 @@ VAR ixchel_sabe_mi_situacion = false
 
 // Diego
 VAR diego_conto_cecosesola = false
-VAR diego_conto_camion = false
+VAR diego_conto_camion = false    // TODO(fase2): pendiente de lectura en narrativa
 
 // Elena
 VAR elena_hablo_de_chola = false
@@ -113,22 +113,22 @@ VAR elena_conto_banco = false
 VAR elena_hablo_politica = false
 
 // Marcos
-VAR marcos_hablo_de_hijos = false
-VAR marcos_hablo_de_zabalza = false
-VAR marcos_conto_2009 = false
-VAR marcos_conto_voto = false
+VAR marcos_hablo_de_hijos = false    // TODO(fase2): pendiente de lectura en narrativa
+VAR marcos_hablo_de_zabalza = false  // TODO(fase2): pendiente de lectura en narrativa
+VAR marcos_conto_2009 = false        // TODO(fase2): pendiente de lectura en narrativa
+VAR marcos_conto_voto = false        // TODO(fase2): pendiente de lectura en narrativa
 
 // Juan
-VAR juan_recuerdo_padre = false
-VAR juan_hablo_de_laura = false
-VAR juan_proceso_algo = false
-VAR juan_hablo_de_miedo = false
+VAR juan_recuerdo_padre = false     // TODO(fase2): pendiente de lectura en narrativa
+VAR juan_hablo_de_laura = false     // TODO(fase2): pendiente de lectura en narrativa
+VAR juan_proceso_algo = false       // TODO(fase2): pendiente de lectura en narrativa
+VAR juan_hablo_de_miedo = false     // TODO(fase2): pendiente de lectura en narrativa
 
 // Sofia
-VAR sofia_hablo_de_madre = false
-VAR sofia_hablo_de_alemania = false
-VAR sofia_hablo_de_martin = false
-VAR hable_con_ixchel_profundo = false
+VAR sofia_hablo_de_madre = false     // TODO(fase2): pendiente de lectura en narrativa
+VAR sofia_hablo_de_alemania = false  // TODO(fase2): pendiente de lectura en narrativa
+VAR sofia_hablo_de_martin = false    // TODO(fase2): pendiente de lectura en narrativa
+VAR hable_con_ixchel_profundo = false // TODO(fase2): pendiente de lectura en narrativa
 VAR vino_marcos = false
 
 // Olla
