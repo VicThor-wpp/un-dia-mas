@@ -429,16 +429,34 @@ Por ahora.
     -> final_la_llama
 }
 
+// FINAL LUCHA COLECTIVA - Participación activa
+{evaluar_lucha_colectiva():
+    -> final_lucha_colectiva
+}
+
+// FINAL RED - Comunidad como red
 {conexion >= 7 && llama >= 5 && ayude_en_olla:
     -> final_red
 }
 
+// FINAL VULNERABILIDAD - Apertura emocional genuina
+{evaluar_vulnerabilidad():
+    -> final_vulnerabilidad_honesta
+}
+
+// FINAL SOLO - Aislamiento completo
 {conexion <= 3 && llama <= 2:
     -> final_solo
 }
 
+// FINAL GRIS - Depresión y soledad
 {salud_mental <= 2 && conexion <= 4:
     -> final_gris
+}
+
+// FINAL PEQUEÑO CAMBIO - Algo movió adentro
+{evaluar_pequeno_cambio():
+    -> final_pequeno_cambio
 }
 
 // Default: segun nivel de conexion
