@@ -191,46 +191,47 @@ Cosas que no se ven.
 
 # HAY ALGUIEN.
 
-En el barrio hay gente. Saludos, caras conocidas, nombres que recordás a medias.
-Pero con alguien tenés algo más.
+En el barrio hay gente. Caras conocidas, nombres que recordás a medias.
 
-* [Sofía. La de la olla.]
+Pero un momento te vuelve siempre.
+
+* [Un tupper de guiso que apareció en tu puerta. "Sobró", te dijeron. Mentira.]
     ~ vinculo = "sofia"
-    Un día no tenía nada en la heladera. Ella se dio cuenta sin que dijera nada.
-    Me trajo un tupper con guiso. "Sobró", me dijo. Mentira.
-    Nunca hablamos de eso. Pero desde entonces nos miramos distinto.
-    Sus pibes me saludan por la calle. Ella sabe que estoy ahí.
+    Era Sofía. La de la olla popular.
+    Sus pibes iban a la misma escuela. O iban.
+    Nunca hablaron de ese tupper.
+    Pero desde entonces se miran distinto.
     -> confirmar_inicio
 
-* [Elena. La veterana.]
+* [Un banco de plaza. Una vieja que te dijo "mirá qué grande estás", como si te conociera de siempre.]
     ~ vinculo = "elena"
-    Me conoce desde que era pibe. Conoció a mi viejo antes que yo.
-    Siempre está en el banco de la plaza, mirando pasar la gente.
-    Cada vez que paso me dice "mirá qué grande estás". Como si el tiempo no pasara para ella.
-    A veces me da consejos que no pedí. A veces los necesito.
+    Era Elena. La veterana.
+    Conoció a tu familia. O vos la ayudaste una vez.
+    Te mira como esperando algo.
+    No sabés si podés dárselo.
     -> confirmar_inicio
 
-* [Diego. El que llegó de afuera.]
+* [Un tipo con una mochila, mirando un papel con una dirección. Le señalaste el camino.]
     ~ vinculo = "diego"
-    Venezolano. Llegó hace unos meses con una mochila y poco más.
-    Trabaja más horas que nadie. Siempre camina rápido.
-    Un día le convidé un mate en la parada del bondi. Ahora me saluda de lejos.
-    Me pregunta cosas del barrio. Confía en mí. No sé si lo merezco.
+    Era Diego. Había llegado hacía poco.
+    Te buscó después. Preguntó cosas. Confió en vos.
+    No sabés si merecés esa confianza.
     -> confirmar_inicio
 
-* [Marcos. El que se alejó.]
+* [Un portón cerrado. Sabés quién vive ahí. Hace rato que no lo ves.]
     ~ vinculo = "marcos"
-    Lo conocía de las asambleas de antes. Tenía fuego en los ojos.
-    Ahora lo veo pasar rápido, sin mirar a nadie, como si el barrio le doliera.
-    Me pregunto qué le pasó. Qué le rompieron para que se apagara así.
+    Es Marcos. El que se alejó.
+    Antes eran cercanos. Antes de que él se quemara.
+    Ahora se cruzan y es raro.
+    Hay algo ahí que ninguno termina de cerrar.
     -> confirmar_inicio
 
-* [Ixchel. La de la cocina del restaurante.]
+* [Una mujer en la cocina de la olla. Pica verduras como si rezara. No la conocés todavía.]
     ~ vinculo = "ixchel"
-    La vi una vez en la olla. Estaba sirviendo con una seriedad que no era frialdad.
-    Cuando terminó, se sentó sola. Nadie se acercó.
-    Me acerqué yo. No dijo mucho. Pero al irse me dijo "gracias" en un idioma que no conozco.
-    Desde entonces la busco con la mirada cuando paso por ahí.
+    Es Ixchel. No sabés su nombre todavía.
+    Pero algo en sus manos te llamó la atención.
+    Una precisión antigua. Un silencio que dice cosas.
+    Alguien te contó que vino de lejos.
     -> confirmar_inicio
 
 === confirmar_inicio ===
