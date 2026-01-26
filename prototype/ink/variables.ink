@@ -18,7 +18,6 @@ VAR idea_esto_es_lo_que_hay = false // "Esto es lo que hay"
 // --- ESTADO DE LA OLLA ---
 
 VAR olla_en_crisis = false
-VAR olla_abierta = true
 VAR ayude_en_olla = false
 VAR veces_que_ayude = 0
 VAR participe_asamblea = false
@@ -43,7 +42,6 @@ VAR sofia_hijos_enfermos = false
 
 // --- ESTADO DE ELENA ---
 
-VAR elena_estado = "presente"         // presente, cansada, enferma, memoria
 VAR elena_relacion = 2                // 0-5
 VAR elena_conto_historia = false
 VAR elena_me_aconsejo = false
@@ -83,7 +81,6 @@ VAR fue_al_bar_con_juan = false
 VAR juan_sabe_de_mi_despido = false
 VAR juan_tambien_despedido = false   // Hook viernes: si lo echaron
 VAR juan_ofrecio_changa = false      // Hook viernes: si ofreció contacto
-VAR juan_hablo_sobre_despido = false
 VAR juan_ofrecio_contacto = false
 VAR juan_fue_a_olla = false
 VAR juan_sabe_mi_situacion = false
@@ -97,7 +94,6 @@ VAR ixchel_hablo_de_mina = false
 VAR ixchel_conto_llegada = false
 VAR ixchel_hablo_de_huipil = false
 VAR ixchel_conto_historia = false
-VAR ixchel_sabe_mi_situacion = false
 
 // --- ESTADO DETALLADO NPCs (Fase 2) ---
 
@@ -155,11 +151,3 @@ VAR sinergia_colectiva = 0    // combo: hay_cosas_juntos + pedir_no_debilidad + 
 VAR sinergia_individual = 0    // combo: tengo_tiempo + quien_soy
 VAR idea_momento_sintesis = false  // whether the synthesis scene has been shown
 
-// --- TRACKING DE FRAGMENTOS ---
-VAR fragmentos_vistos = 0
-VAR fragmentos_sofia = 0
-VAR fragmentos_elena = 0
-VAR fragmentos_diego = 0
-VAR fragmentos_marcos = 0
-VAR fragmentos_juan = 0
-VAR fragmentos_ixchel = 0

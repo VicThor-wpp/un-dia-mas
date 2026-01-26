@@ -27,10 +27,13 @@ El olor a comida que se siente desde la esquina.
     Funciona.
 }
 
-* [Acercarte a ayudar] # EFECTO:conexion+ -> olla_ofrecer_ayuda
+* [Acercarte a ayudar] # EFECTO:conexion+
+    -> olla_ofrecer_ayuda
 * [Quedarte mirando] -> olla_observar
-* {olla_en_crisis} [Preguntar qué pasa] # EFECTO:conexion? -> olla_preguntar_crisis
-* [Irte] # EFECTO:conexion- -> olla_irse
+* {olla_en_crisis} [Preguntar qué pasa] # EFECTO:conexion?
+    -> olla_preguntar_crisis
+* [Irte] # EFECTO:conexion-
+    -> olla_irse
 
 === olla_irse ===
 

@@ -53,19 +53,33 @@ En el 2002 todo el mundo andaba 'ahí'."
 -> elena_menu_temas.opts
 
 === elena_menu_historia ===
-+ [Sobre el 2002] {not elena_conto_trueque} -> elena_trueque_2002 ->
-+ [Sobre el trueque] {elena_conto_trueque and not escuche_sobre_2002} -> elena_sobre_2002 ->
-+ [Sobre el banco] {elena_conto_trueque and not elena_conto_banco} -> elena_en_banco_2002 ->
-+ [Sobre los García] {not elena_conto_desalojo} -> elena_desalojo_garcia ->
++ [Sobre el 2002] {not elena_conto_trueque}
+    -> elena_trueque_2002 ->
+    -> elena_menu_historia
++ [Sobre el trueque] {elena_conto_trueque and not escuche_sobre_2002}
+    -> elena_sobre_2002 ->
+    -> elena_menu_historia
++ [Sobre el banco] {elena_conto_trueque and not elena_conto_banco}
+    -> elena_en_banco_2002 ->
+    -> elena_menu_historia
++ [Sobre los García] {not elena_conto_desalojo}
+    -> elena_desalojo_garcia ->
+    -> elena_menu_historia
 + [Volver] -> elena_menu_temas.opts
 
 === elena_menu_profundo ===
-+ [Sobre la Chola] {not elena_hablo_de_chola} -> elena_sobre_la_chola ->
-+ [Sobre política] {not elena_hablo_politica} -> elena_anarquismo ->
++ [Sobre la Chola] {not elena_hablo_de_chola}
+    -> elena_sobre_la_chola ->
+    -> elena_menu_profundo
++ [Sobre política] {not elena_hablo_politica}
+    -> elena_anarquismo ->
+    -> elena_menu_profundo
 + [Volver] -> elena_menu_temas.opts
 
 === elena_sobre_olla ===
-+ [La historia de la fundación] {not escuche_historia_olla} -> olla_historia_fundacion ->
++ [La historia de la fundación] {not escuche_historia_olla}
+    -> olla_historia_fundacion ->
+    -> elena_sobre_olla
 + [Volver] -> elena_menu_temas.opts
 
 === elena_sentarse ===

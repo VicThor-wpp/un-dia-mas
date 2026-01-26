@@ -337,8 +337,10 @@ Sofía suspira.
 Otra cosa que cae.
 Todo cae junto.
 
-* [Ofrecer ayuda] # EFECTO:conexion+ # EFECTO:llama+ -> miercoles_si_olla
-* [Decir que no sabés si podés] # EFECTO:conexion- -> miercoles_nosabe_olla
+* [Ofrecer ayuda] # EFECTO:conexion+ # EFECTO:llama+
+    -> miercoles_si_olla
+* [Decir que no sabés si podés] # EFECTO:conexion-
+    -> miercoles_nosabe_olla
 
 === miercoles_si_olla ===
 

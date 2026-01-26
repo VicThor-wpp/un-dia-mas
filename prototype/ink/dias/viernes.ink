@@ -166,9 +166,12 @@ Silencio.
 
 ¿Qué se puede hacer?
 
-* [Proponer una colecta rápida] # EFECTO:dignidad+ # EFECTO:llama+ -> viernes_colecta
-* [Proponer pedir a vecinos] # EFECTO:dignidad+ # EFECTO:llama+ -> viernes_vecinos
-* [Proponer cancelar por hoy] # EFECTO:llama- # EFECTO:dignidad+ -> viernes_cancelar_olla
+* [Proponer una colecta rápida] # EFECTO:dignidad+ # EFECTO:llama+
+    -> viernes_colecta
+* [Proponer pedir a vecinos] # EFECTO:dignidad+ # EFECTO:llama+
+    -> viernes_vecinos
+* [Proponer cancelar por hoy] # EFECTO:llama- # EFECTO:dignidad+
+    -> viernes_cancelar_olla
 * [Quedarte callado, escuchar] -> viernes_escuchar
 
 === viernes_escuchar ===
@@ -309,9 +312,12 @@ Se dividen.
 
 "¿Vos podés ayudar?", pregunta Sofía.
 
-* [Sí, voy con la colecta] # EFECTO:conexion+ # EFECTO:llama+ -> viernes_colecta_accion
-* [Sí, voy a pedir a vecinos] # EFECTO:conexion+ # EFECTO:llama+ -> viernes_vecinos_accion
-* [No puedo, tengo que hacer otra cosa] # EFECTO:conexion- -> viernes_no_ayudar
+* [Sí, voy con la colecta] # EFECTO:conexion+ # EFECTO:llama+
+    -> viernes_colecta_accion
+* [Sí, voy a pedir a vecinos] # EFECTO:conexion+ # EFECTO:llama+
+    -> viernes_vecinos_accion
+* [No puedo, tengo que hacer otra cosa] # EFECTO:conexion-
+    -> viernes_no_ayudar
 
 === viernes_no_ayudar ===
 

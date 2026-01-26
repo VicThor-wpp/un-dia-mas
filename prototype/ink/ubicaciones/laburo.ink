@@ -370,9 +370,11 @@ Así que era eso.
     Sos unipersonal. Facturás. "Independiente."
     Así te contrataron hace tres años.
     Así te echan hoy.
+    -> laburo_despido_firmar
 
 * [Aceptar] -> laburo_despido_firmar
-* [Preguntar por qué] # EFECTO:dignidad? -> laburo_despido_preguntar
+* [Preguntar por qué] # EFECTO:dignidad?
+    -> laburo_despido_preguntar
 
 === laburo_despido_preguntar ===
 

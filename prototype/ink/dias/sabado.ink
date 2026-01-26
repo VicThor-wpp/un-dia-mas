@@ -198,8 +198,10 @@ Nada.
 
 Las horas pasan.
 
-* [Ir a la asamblea igual] # EFECTO:llama+ -> sabado_asamblea
-* [No ir] # EFECTO:conexion- # EFECTO:llama- -> sabado_noche_solo
+* [Ir a la asamblea igual] # EFECTO:llama+
+    -> sabado_asamblea
+* [No ir] # EFECTO:conexion- # EFECTO:llama-
+    -> sabado_noche_solo
 
 === sabado_tarde ===
 

@@ -174,9 +174,11 @@ Salís.
 -> barrio_caminar_manana ->
 // Continua con opciones del dia
 
-* [Ir a la olla] # EFECTO:llama+ -> jueves_olla
+* [Ir a la olla] # EFECTO:llama+
+    -> jueves_olla
 * [Caminar nomás] -> jueves_caminar
-* [Buscar a tu vínculo] # EFECTO:conexion+ -> jueves_buscar_vinculo
+* [Buscar a tu vínculo] # EFECTO:conexion+
+    -> jueves_buscar_vinculo
 
 === jueves_caminar ===
 
@@ -260,8 +262,10 @@ Y otra gente que no conocés bien.
 
 ¿Querés ayudar?
 
-* [Sí] # EFECTO:conexion+ # EFECTO:llama+ -> jueves_olla_ayudar
-* [Solo vine a ver] # EFECTO:conexion- -> jueves_olla_ver
+* [Sí] # EFECTO:conexion+ # EFECTO:llama+
+    -> jueves_olla_ayudar
+* [Solo vine a ver] # EFECTO:conexion-
+    -> jueves_olla_ver
 
 === jueves_olla_ver ===
 
