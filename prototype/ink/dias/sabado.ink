@@ -205,6 +205,8 @@ Las horas pasan.
 
 === sabado_tarde ===
 
+-> check_game_over ->
+
 La tarde.
 
 A las 5 es la asamblea.
@@ -627,6 +629,8 @@ Otras voces hablan.
 
 ~ energia = 0
 ~ subir_llama(1)
+
+-> check_game_over ->
 
 Volvés a casa.
 Cansado pero distinto.

@@ -589,6 +589,8 @@ Elena asiente.
 
 ~ energia = 0
 
+-> check_game_over ->
+
 Primer día completo sin laburo.
 
 Te acostás temprano.

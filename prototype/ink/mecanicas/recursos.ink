@@ -156,6 +156,18 @@ VAR dia_actual = 1
 === function tiene_todas_ideas() ===
     ~ return idea_tengo_tiempo && idea_pedir_no_debilidad && idea_hay_cosas_juntos && idea_red_o_nada
 
+// --- CHEQUEO TEMPRANO DE GAME-OVER ---
+// Tunnel: llamar en momentos críticos del día con -> check_game_over ->
+
+=== check_game_over ===
+{salud_mental <= 0:
+    -> final_apagado
+}
+{llama <= 0:
+    -> final_sin_llama
+}
+->->
+
 // --- EVALUACION DE FINALES ---
 
 === function evaluar_pequeno_cambio() ===

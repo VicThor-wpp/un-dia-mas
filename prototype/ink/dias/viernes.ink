@@ -478,6 +478,8 @@ A las 7 la olla abre.
 
 ~ energia -= 1
 
+-> check_game_over ->
+
 // Caminar por el barrio de tarde
 -> barrio_caminar_tarde ->
 
@@ -501,6 +503,8 @@ Pero algo falta.
 === viernes_noche ===
 
 # VIERNES - NOCHE
+
+-> check_game_over ->
 
 {ayude_en_olla:
     Estás destruido.

@@ -105,6 +105,9 @@ Salís.
     La pregunta quema. ¿Sos lo que hacés o lo que sos cuando nadie te paga?
 }
 
+// Chequeo temprano: el despido puede destruirte
+-> check_game_over ->
+
 ¿Qué hacés?
 
 * [Ir a casa a procesar] # COSTO:1 # EFECTO:conexion-
@@ -522,6 +525,8 @@ No esperabas otra cosa.
 # MIÉRCOLES - NOCHE
 
 ~ energia = 0
+
+-> check_game_over ->
 
 -> casa_llegada_noche ->
 
