@@ -9,7 +9,7 @@
 // - personajes/sofia.ink: sofia_llamar, sofia_conversacion_telefono
 // - personajes/elena.ink: elena_llamar, elena_conversacion_telefono
 // - personajes/diego.ink: diego_llamar, diego_conversacion_telefono
-// - personajes/marcos.ink: marcos_llamar, marcos_conversacion_telefono
+// - personajes/marcos.ink: marcos_llamar, marcos_conversacion_telefono, marcos_domingo_olla
 
 === domingo_amanecer ===
 
@@ -143,6 +143,11 @@ Salís.
 
 // Ambiente de domingo
 -> barrio_domingo ->
+
+// Marcos en la olla - domingo
+{marcos_vino_a_asamblea && marcos_relacion >= 4:
+    -> marcos_domingo_olla ->
+}
 
 -> domingo_encuentro_grupo
 

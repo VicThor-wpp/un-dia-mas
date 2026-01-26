@@ -950,3 +950,73 @@ Música. Cigarros. Insomnio.
 Las tres constantes de su vida.
 
 ->->
+
+// ============================================
+// MARCOS - DOMINGO EN LA OLLA
+// ============================================
+
+=== marcos_domingo_olla ===
+// Triggered from domingo.ink if marcos_vino_a_asamblea && marcos_relacion >= 4
+
+Marcos está en la olla.
+
+No en la puerta. No mirando de lejos.
+Adentro.
+
+Tiene las manos en los bolsillos.
+La postura de alguien que no sabe dónde ponerse.
+
+{marcos_secreto:
+    Te ve.
+
+    "No me mires así."
+
+    "..."
+
+    "Vine. No sé por qué. No me hagas explicar."
+}
+{not marcos_secreto:
+    Te ve. Asiente.
+
+    Algo cambió desde ayer.
+    No sabés qué. Pero algo.
+}
+
+* [No decir nada. Estar.]
+    No decís nada.
+    Él tampoco.
+
+    Se quedan así.
+    Dos tipos en una olla popular un domingo.
+
+    No es heroico.
+    No es revolucionario.
+
+    Pero está ahí.
+
+    ~ marcos_estado = "reconectando"
+    ~ marcos_relacion += 1
+    ~ subir_conexion(1)
+    ~ subir_llama(1)
+
+    ->->
+
+* [Pasarle un mate.]
+    Le pasás un mate.
+
+    Lo mira. Lo agarra.
+
+    "Hace rato que no tomaba mate con alguien."
+
+    Pausa.
+
+    "Gracias."
+
+    No es solo por el mate.
+
+    ~ marcos_estado = "reconectando"
+    ~ marcos_relacion += 1
+    ~ subir_conexion(1)
+    ~ subir_llama(1)
+
+    ->->
