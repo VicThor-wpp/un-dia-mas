@@ -10,6 +10,18 @@
 
 # MARTES
 
+// --- Ecos del lunes ---
+{almorzamos_juntos:
+    Juan te saluda de lejos al llegar.
+    Ayer almorzaron juntos.
+    Hoy hay algo distinto en el saludo. Más cercano.
+}
+{conozco_al_kiosquero:
+    Pasás por el kiosco. El tipo te saluda.
+    "¿Lo de siempre?"
+    Parece que ya tenés rutina.
+}
+
 // Despertar en casa
 -> casa_despertar ->
 

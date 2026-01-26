@@ -21,6 +21,19 @@
 
 # SABADO
 
+// --- Ecos del viernes ---
+{olla_cerro_viernes:
+    Ayer la olla cerró.
+    Es sábado y todavía te pesa.
+    40 personas que no comieron.
+    ¿O sí comieron? ¿Dónde?
+}
+{not olla_cerro_viernes && ayude_en_olla:
+    Ayer la olla funcionó.
+    Con lo justo. Pero funcionó.
+    Hoy hay asamblea.
+}
+
 Sábado.
 Antes era descanso.
 Ahora todos los días son iguales.

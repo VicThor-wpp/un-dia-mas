@@ -18,6 +18,22 @@
 
 # JUEVES
 
+// --- Ecos del miércoles ---
+{conte_a_alguien:
+    El celular tiene un mensaje.
+    {vinculo == "sofia": Sofía: "¿Cómo amaneciste?"}
+    {vinculo == "elena": Elena: "Pensé en vos anoche. Pasá si querés."}
+    {vinculo == "diego": Diego: "Che, cualquier cosa avisá."}
+    {vinculo == "marcos": Marcos no escribió. Pero vos sabés que sabe.}
+    {vinculo == "ixchel": Ixchel: "Buenos días. Hoy cocino temprano si querés venir."}
+}
+{not conte_a_alguien:
+    Silencio.
+    El celular no suena.
+    Nadie sabe.
+    Nadie va a preguntar.
+}
+
 Te despertás.
 Por un segundo, pensás que tenés que ir a laburar.
 

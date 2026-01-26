@@ -18,6 +18,20 @@
 
 # DOMINGO
 
+// --- Ecos del sábado ---
+{participe_asamblea:
+    La asamblea de ayer fue... algo.
+    {marcos_vino_a_asamblea: Marcos estaba. No dijiste nada. Pero estaba.}
+    Hoy es domingo.
+    Último día de la semana.
+}
+{not participe_asamblea:
+    Domingo.
+    Ayer no fuiste a nada.
+    Hoy tampoco hay nada.
+    O capaz que sí, pero no te enteraste.
+}
+
 Una semana.
 
 Hace una semana eras otra persona.

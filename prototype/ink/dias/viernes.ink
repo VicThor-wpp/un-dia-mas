@@ -18,6 +18,17 @@
 
 # VIERNES
 
+// --- Ecos del jueves ---
+{fui_a_olla_jueves:
+    Te acordás de ayer en la olla.
+    Las manos con olor a cebolla.
+    Las caras.
+    Hoy hay que volver.
+}
+{ayude_a_diego:
+    Diego te mandó un mensaje anoche: "Gracias por la mano, che."
+}
+
 Dos días sin laburo.
 Se siente más largo.
 
