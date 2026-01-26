@@ -432,6 +432,18 @@ Vuelven todos.
 La cocina empieza.
 Todos ayudan.
 
+// Ixchel durante la crisis - sigue cocinando con lo que hay
+{ixchel_relacion >= 1:
+    Ixchel está en la cocina.
+    No dice nada. Pero sigue cocinando.
+    Con lo que hay. Con lo que queda.
+
+    "Siempre se puede con menos", murmura.
+    "En mi pueblo, con menos se hacía más."
+
+    ~ ixchel_relacion += 1
+}
+
 {energia > 0:
     Te quedás ayudando.
     Pelás, cortás, revolvés.

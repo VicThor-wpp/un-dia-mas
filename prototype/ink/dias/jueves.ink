@@ -291,6 +291,22 @@ Sofía asiente.
 // Tunnel de ayudar en la cocina
 -> olla_ayudar_cocina ->
 
+// Encuentro con Ixchel en la cocina de la olla
+{ixchel_relacion == 0:
+    En la cocina hay alguien que no conocés.
+
+    Una mujer baja, morena, pelo largo recogido.
+    Pica verduras con una precisión que parece innata.
+
+    -> ixchel_primer_encuentro_olla ->
+}
+{ixchel_relacion >= 1:
+    Ixchel está en la cocina.
+    Te saluda con un gesto breve.
+
+    -> ixchel_en_olla ->
+}
+
 // Escuchar sobre la crisis
 -> olla_escuchar_crisis ->
 

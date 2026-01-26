@@ -317,6 +317,26 @@ Es todo.
 // Marcos en la asamblea (si vino)
 -> marcos_en_asamblea ->
 
+// Ixchel en la asamblea - su intervención desde la experiencia
+{ixchel_relacion >= 2:
+    Ixchel está al fondo.
+    No habla. Pero escucha.
+
+    En un momento, cuando alguien dice "esto se cae",
+    ella dice, bajito:
+
+    "En mi comunidad votaron 98% que no.
+    Y la mina abrió igual.
+    Pero no dejamos de juntarnos."
+
+    Silencio.
+
+    "Juntarse es lo primero. Lo demás viene después."
+
+    ~ ixchel_relacion += 1
+    ~ subir_llama(1)
+}
+
 ¿Qué hacés?
 
 * [Hablar] # STAT:dignidad # EFECTO:dignidad+
