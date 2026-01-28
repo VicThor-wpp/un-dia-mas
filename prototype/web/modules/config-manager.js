@@ -66,7 +66,7 @@ const ConfigManager = (function() {
                     conexion: { label: 'Conexión', icon: 'users', max: 10, default: 3, color: '#588157', visible: true },
                     dignidad: { label: 'Dignidad', icon: 'shield', max: 10, default: 5, color: '#4a90d9', visible: true },
                     llama: { label: 'Llama', icon: 'flame', max: 10, default: 5, color: '#f48c06', visible: true, isSpecial: true },
-                    salud_mental: { label: 'Salud Mental', icon: 'brain', max: 5, default: 3, color: '#9381ff', visible: true },
+                    inercia: { label: 'Inercia', icon: 'anchor', max: 10, default: 5, color: '#607d8b', visible: true },
                     trauma: { label: 'Trauma', icon: 'heart-crack', max: 10, default: 0, visible: false, showWhenPositive: true },
                     acumulacion: { label: 'Acumulación', icon: 'trending-up', max: 10, default: 0, visible: false, hiddenStat: true }
                 },
@@ -74,7 +74,7 @@ const ConfigManager = (function() {
                     trauma: { high: 4, effects: { bodyClass: 'trauma-high', indicator: 'Traumatizado' } },
                     llama: { low: 2, effects: { bodyClass: 'llama-low', indicator: 'Sin esperanza' } },
                     conexion: { low: 3, effects: { bodyClass: 'conexion-low', indicator: 'Aislado' } },
-                    salud_mental: { low: 2, effects: { bodyClass: 'salud-baja', indicator: 'Agotamiento' } }
+                    inercia: { high: 8, low: 2, effects: { bodyClass: 'inercia-high', indicator: 'Parálisis' }, lowEffects: { bodyClass: 'inercia-low', indicator: 'Despierto' } }
                 }
             },
             characters: {
