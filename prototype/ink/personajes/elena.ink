@@ -783,7 +783,7 @@ No dice gracias. No hace falta.
     Pero ya estás congelado.
     La responsabilidad te aplasta.
 
-    ~ aumentar_peso(1)
+    ~ aumentar_inercia(1)
 }
 
 ->->

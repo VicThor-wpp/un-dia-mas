@@ -78,7 +78,7 @@ A las 11 te llaman.
     Se te nubla la vista. Tenés que parar en el baño.
     Te mirás al espejo. No te reconocés.
     Las manos tiemblan. El aire no entra bien.
-    ~ aumentar_peso(1)
+    ~ aumentar_inercia(1)
 }
 
 // Después del despido, contenido específico
@@ -312,7 +312,7 @@ Después:
 { abrirse == -1:
     Se te quiebra la voz. Mierda. No querías llorar.
     Sofía te mira. No dice nada. Esperás que no le cuente a nadie.
-    ~ aumentar_peso(1)
+    ~ aumentar_inercia(1)
 }
 
 * [...]
@@ -592,7 +592,7 @@ La cuenta regresiva empezó.
 
     Vos vas a ser uno más.
 
-    ~ aumentar_peso(1)
+    ~ aumentar_inercia(1)
     * [Continuar] -> transicion_miercoles_jueves
 }
 
@@ -664,7 +664,7 @@ Mañana hay que seguir.
 
     Todo es mentira.
 
-    ~ aumentar_peso(1)
+    ~ aumentar_inercia(1)
     * [Continuar] -> transicion_miercoles_jueves
 }
 
@@ -739,7 +739,7 @@ No sabe para qué. Pero te va a buscar.
     Raúl nunca volvió del todo.
     Murió un poco roto.
 
-    ~ aumentar_peso(1)
+    ~ aumentar_inercia(1)
     * [Continuar] -> transicion_miercoles_jueves
 }
 
@@ -801,7 +801,7 @@ Algo de compañía en la oscuridad.
     Espera que vos tampoco lo hagas. 
     Es más fácil así.
 
-    ~ aumentar_peso(1)
+    ~ aumentar_inercia(1)
     * [Continuar] -> transicion_miercoles_jueves
 }
 

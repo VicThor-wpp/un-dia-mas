@@ -134,6 +134,21 @@ Pocas que sirvan.
 "Se busca. Hasta 25 años."
 "Se busca. Disponibilidad full time. Pago por productividad."
 
+{genero == "mujer":
+    "Se busca. Buena presencia."
+    Sabés lo que significa eso.
+    Mirás tu ropa. Mirás tus ojeras.
+    Pasás al siguiente.
+}
+
+{raza == "afro" || raza == "indigena":
+    Mirás tu foto en el CV.
+    Dudas.
+    ¿La sacás? ¿La dejás?
+    Si la dejás, filtran por cara. Si la sacás, filtran cuando te ven.
+    La dejás. Que se curtan.
+}
+
 * [...]
 -
 
@@ -229,7 +244,7 @@ Y otra gente que no conocés bien.
             Te pone una mano en el hombro. Firme.
             "Acá nadie juzga. ¿Querés dar una mano?"
             ~ subir_conexion(2)
-            ~ aliviar_peso(1)
+            ~ disminuir_inercia(1)
         }
         { resultado_jueves_abrirte == 1:
             Sofía asiente. No dice "qué bajón" ni "vas a conseguir algo".
@@ -248,7 +263,7 @@ Y otra gente que no conocés bien.
             "¿Perdón?"
             "Nada. Nada."
             La vergüenza te traga. No podés ni decirlo en voz alta.
-            ~ aumentar_peso(1)
+            ~ aumentar_inercia(1)
         }
         -> jueves_olla_pregunta
     * ["Tenía el día libre."]
@@ -630,7 +645,7 @@ La cuenta regresiva.
     ¿Qué hice mal? ¿Podría haber hecho algo distinto?
     ¿Voy a terminar en la calle?
     El pensamiento se repite en loop. Hasta las cinco de la mañana.
-    ~ aumentar_peso(1)
+    ~ aumentar_inercia(1)
 }
 
 // Juan te llama
@@ -675,7 +690,7 @@ Vos también.
     Siempre igual.
 
     { chance(50):
-        ~ aumentar_peso(1)
+        ~ aumentar_inercia(1)
     }
     ->->
 }
@@ -742,7 +757,7 @@ Mañana es otro día igual.
     Todo se rompe.
 
     { chance(50):
-        ~ aumentar_peso(1)
+        ~ aumentar_inercia(1)
     }
     ->->
 }
@@ -803,7 +818,7 @@ Mañana hay que buscar soluciones.
     Pero no está segura.
 
     { chance(50):
-        ~ aumentar_peso(1)
+        ~ aumentar_inercia(1)
     }
     ->->
 }
@@ -863,7 +878,7 @@ Mañana hay que buscar soluciones.
     "Todos terminamos igual."
 
     { chance(50):
-        ~ aumentar_peso(1)
+        ~ aumentar_inercia(1)
     }
     * [Continuar] -> jueves_cliffhanger
 }

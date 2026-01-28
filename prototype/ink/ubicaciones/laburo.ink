@@ -43,7 +43,7 @@ Anota algo.
 
 Mierda.
 
-~ aumentar_peso(1)
+~ aumentar_inercia(1)
 
 ->->
 
@@ -76,7 +76,7 @@ Lo de siempre.
 { concentracion == -1:
     Cometés un error estúpido. Un mail al cliente equivocado.
     El jefe se da cuenta. "Prestá atención."
-    ~ aumentar_peso(1)
+    ~ aumentar_inercia(1)
 }
 
 ->->
@@ -104,7 +104,7 @@ Mails que podrían ser nada.
         Sigue.
 
         ¿Qué mierda fue eso?
-        ~ aumentar_peso(1)
+        ~ aumentar_inercia(1)
     }
 }
 
@@ -121,7 +121,7 @@ Mails que podrían ser nada.
     Tratás de no hacer ruido.
     Te lavás las manos rápido y salís.
     El sonido del llanto te sigue hasta el escritorio.
-    ~ aumentar_peso(1)
+    ~ aumentar_inercia(1)
 
 - 2:
     La impresora se traba.
@@ -129,7 +129,7 @@ Mails que podrían ser nada.
     "LISTA DE REVISIÓN DE PUESTOS - CONFIDENCIAL"
     Alguien te lo arranca de la mano antes de que leas nombres.
     "Dámelo." Es la secretaria de RRHH.
-    ~ aumentar_peso(1)
+    ~ aumentar_inercia(1)
 
 - 3:
     Reunión de equipo.
@@ -180,7 +180,7 @@ Hora de comer.
     -> laburo_almuerzo_acompanado
 * [Almorzar solo] # EFECTO:conexion-
     -> laburo_almuerzo_solo
-* [Saltear el almuerzo] # COSTO:1 # EFECTO:dignidad-
+* [Saltear el almuerzo] # EFECTO:dignidad-
     -> laburo_almuerzo_saltear
 
 === laburo_almuerzo_acompanado ===
@@ -375,7 +375,7 @@ La reunión termina.
 Todos vuelven a sus puestos.
 Nadie habla.
 
-~ aumentar_peso(1)
+~ aumentar_inercia(1)
 
 ->->
 
@@ -402,7 +402,7 @@ No dicen para qué.
 
 === laburo_citacion_fin ===
 
-~ aumentar_peso(1)
+~ aumentar_inercia(1)
 
 Aunque ya sabés.
 O creés saber.
@@ -451,6 +451,9 @@ Se miran entre ellos.
 
 "No es personal. Es reestructuración."
 
+// Confrontar sube dignidad (aunque no cambie el resultado)
+~ subir_dignidad(1)
+
 "Pero trabajo acá hace tres años."
 
 * [...]
@@ -479,7 +482,7 @@ El escritorio se vacía rápido.
 
 ~ fui_despedido = true
 ~ tiene_laburo = false
-~ aumentar_peso(1)
+~ aumentar_inercia(1)
 
 ->->
 
@@ -574,6 +577,6 @@ Te mira.
 
     Salís.
     Peor que antes.
-    ~ aumentar_peso(1)
+    ~ aumentar_inercia(1)
     ->->
 }

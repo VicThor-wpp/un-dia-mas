@@ -60,10 +60,12 @@ Todavía no sabés lo que viene.
 
 === creacion_personaje ===
 
-# ANTES DE EMPEZAR
-
 Te mirás en el espejo del baño. El vidrio tiene una rajadura en la esquina.
 Treinta y algo. Ojeras que ya son parte de tu cara.
+
+Caminar de noche por el barrio.
+El cálculo automático de riesgos antes de salir.
+El privilegio de la invisibilidad o el peso de la alerta permanente.
 
 * [El espejo devuelve la imagen de siempre.]
     ~ genero = "varon"
@@ -84,6 +86,10 @@ Treinta y algo. Ojeras que ya son parte de tu cara.
     -> creacion_cuerpo
 
 === creacion_cuerpo ===
+
+Y debajo de la ropa, la piel.
+Esa frontera inmediata con el mundo.
+Lo que te abre puertas o te las cierra en la cara.
 
 * [La piel clara, herencia de abuelos que vinieron de Europa.]
     ~ raza = "blanco"

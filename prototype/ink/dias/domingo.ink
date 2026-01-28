@@ -90,10 +90,10 @@ Lo que viene.
     {conexion < 6: Algo. Todavía no sabés qué. Pero algo.}
 
     ~ subir_dignidad(1)
-    ~ peso_estructural = peso_estructural + 1
+    ~ disminuir_inercia(1)
 }
 { resultado_domingo_reflexion == 1:
-    {peso_estructural <= 4:
+    {inercia <= 6:
         La cabeza no para.
         ¿Quién sos ahora?
         ¿Qué hacés?
@@ -130,7 +130,7 @@ Lo que viene.
 
     El domingo es un espejo. Y no te gusta lo que ves.
 
-    ~ aumentar_peso(1)
+    ~ aumentar_inercia(1)
 }
 
 * [Ir a la tarde] -> domingo_tarde
@@ -410,7 +410,7 @@ Por ahora.
 // Los finales estan definidos en finales/finales.ink
 
 // FINAL MÁS DURO - Colapso mental individual (peso alto = malo)
-{peso_estructural >= 5:
+{inercia >= 10:
     -> final_apagado
 }
 
@@ -421,7 +421,7 @@ Por ahora.
 
 // FINAL REPRESIÓN - Intentaste luchar y te reprimieron
 // Requiere intento de acción radical con mala suerte
-{participe_asamblea && conexion >= 6 && llama >= 7 && peso_estructural >= 4:
+{participe_asamblea && conexion >= 6 && llama >= 7 && inercia <= 4:
     -> final_represion
 }
 
@@ -457,7 +457,7 @@ Por ahora.
 
 // FINAL DESERCIÓN - Abandonar el circuito laboral
 // Requiere desconexión del sistema pero conexión con la comunidad
-{not tiene_laburo && conexion >= 5 && peso_estructural >= 3:
+{not tiene_laburo && conexion >= 5 && inercia <= 4:
     -> final_desercion
 }
 
@@ -472,7 +472,7 @@ Por ahora.
 }
 
 // FINAL GRIS - Depresión y soledad (peso alto = malo)
-{peso_estructural >= 4 && conexion <= 4:
+{inercia >= 8 && conexion <= 4:
     -> final_gris
 }
 

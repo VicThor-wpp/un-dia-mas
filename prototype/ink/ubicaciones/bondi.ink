@@ -194,7 +194,7 @@ Conseguís un lugar donde agarrarte.
     * [Ignorar]
         Aguantás. Como siempre.
         El peso del día empieza temprano.
-        ~ aumentar_peso(1)
+        ~ aumentar_inercia(1)
         -> bondi_continuar_viaje
     * [Correrte]
         Te movés. El tipo ni te mira.
@@ -221,7 +221,7 @@ Conseguís un lugar donde agarrarte.
     Pero el cuerpo quedó tenso.
     Siempre queda tenso.
     
-    ~ aumentar_peso(1)
+    ~ aumentar_inercia(1)
     -> bondi_continuar_viaje
 }
 

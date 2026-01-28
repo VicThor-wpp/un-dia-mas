@@ -50,7 +50,7 @@ Ahora todos los días son iguales.
 La mañana de sábado.
 El barrio más tranquilo.
 
-{peso_estructural <= 4: La cabeza sigue dando vueltas. Tres días sin laburo y ya parece una eternidad.}
+{inercia <= 6: La cabeza sigue dando vueltas. Tres días sin laburo y ya parece una eternidad.}
 
 // Invitar a Juan a la olla
 {juan_sabe_mi_situacion && ayude_en_olla:
@@ -514,7 +514,7 @@ Todos te miran.
 ~ temp resultado = chequeo(modificador, 5)
 
 {
-- resultado == 2:  // Crítico
+- resultado == 2 || (inercia <= 3 && ayude_en_olla):  // Crítico O Conciencia Despierta
     Las palabras salen.
     No sabés de dónde.
     Pero salen.
@@ -674,7 +674,7 @@ Otras voces hablan.
 // Cierre de la asamblea
 -> olla_asamblea_fin ->
 
-~ aliviar_peso(1)
+~ disminuir_inercia(1)
 
 {idea_hay_cosas_juntos == false:
     # IDEA DISPONIBLE: "HAY COSAS QUE SE HACEN JUNTOS"
@@ -756,7 +756,7 @@ Pero cambia algo.
     Un día más.
     Hasta que no hay más días.
 
-    ~ aumentar_peso(1)
+    ~ aumentar_inercia(1)
     * [Continuar] -> transicion_sabado_domingo
 }
 
@@ -821,7 +821,7 @@ Después sigue la lucha.
     Vos tampoco vas a volver a ser el mismo.
     Nadie vuelve.
 
-    ~ aumentar_peso(1)
+    ~ aumentar_inercia(1)
     * [Continuar] -> transicion_sabado_domingo
 }
 
@@ -881,7 +881,7 @@ Es un buen sueño.
     Pero la humillación es la misma.
     Siempre la misma.
 
-    ~ aumentar_peso(1)
+    ~ aumentar_inercia(1)
     * [Continuar] -> transicion_sabado_domingo
 }
 
@@ -945,7 +945,7 @@ Mañana sigue.
     Ya no queda nada más.
     Nunca quedó.
 
-    ~ aumentar_peso(1)
+    ~ aumentar_inercia(1)
     * [Continuar] -> transicion_sabado_domingo
 }
 
@@ -1060,7 +1060,7 @@ Pero quizás no igual.
 
 === transicion_sabado_domingo ===
 // Chequeo de colapso mental antes de continuar
-{peso_estructural <= 0:
+{inercia >= 10:
     -> recovery_mental_sabado
 }
 - (post_recovery_sabado)
@@ -1090,7 +1090,7 @@ La oscuridad viene de nuevo. Más fuerte.
     Una cara. Un gesto. Algo mínimo.
 }
 
-~ peso_estructural = 1
+~ disminuir_inercia(3)
 
 Mañana es domingo. Último día. Algo tiene que pasar.
 

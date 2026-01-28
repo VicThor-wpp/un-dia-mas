@@ -165,7 +165,7 @@ Juan se pone pálido.
 Se levanta. Nervioso. Se va al baño.
 Le metiste más miedo del que ya tenía.
 
-~ aumentar_peso(1)
+~ aumentar_inercia(1)
 ->->
 
 === juan_minimizar ===
@@ -325,7 +325,7 @@ Se despiden.
 
 Eso no ayuda.
 
-~ aumentar_peso(1)
+~ aumentar_inercia(1)
 
 ->->
 
@@ -754,7 +754,7 @@ A veces abrir la caja de Pandora no ayuda.
 
 "Mejor dejemos de hablar de esto."
 
-~ aumentar_peso(1)
+~ aumentar_inercia(1)
 ->->
 
 // --- ENCUENTRO DEL VIERNES ---
@@ -891,7 +891,7 @@ Se queda mirando la cerveza.
 
 * ["No sos pelotudo. Nos cagaron a todos."]
     ~ subir_conexion(2)
-    ~ aumentar_peso(1)
+    ~ aumentar_inercia(1)
 
     "Es el sistema, Juan. Así funciona."
 
@@ -905,7 +905,7 @@ Se queda mirando la cerveza.
 
 * ["¿Y ahora qué vas a hacer?"]
     ~ subir_conexion(1)
-    ~ aumentar_peso(1)
+    ~ aumentar_inercia(1)
 
     "No sé. Buscar. Lo que sea."
 
@@ -920,7 +920,7 @@ Se queda mirando la cerveza.
     -> juan_encuentro_fin
 
 * [Quedarte callado]
-    ~ aumentar_peso(1)
+    ~ aumentar_inercia(1)
 
     No sabés qué decir.
     ¿Qué se dice?

@@ -19,9 +19,11 @@ VAR dignidad = 5
 // Inicial: 5 (frágil pero presente)
 VAR llama = 5
 
-// PESO ESTRUCTURAL: El peso del sistema sobre tu cuerpo y mente (0-5)
-// Empezamos en 2, ya venimos cargando el desgaste de la vida
-VAR peso_estructural = 2
+// PESO ESTRUCTURAL: Reemplazado por INERCIA
+// INERCIA: Resistencia al cambio y automatismo (0-10)
+// 0: Despierto, agencia total
+// 10: Zombi, parálisis total
+VAR inercia = 5
 
 // --- SITUACIÓN MATERIAL ---
 // NOTA: No hay indemnización - el protagonista era unipersonal forzado
@@ -124,24 +126,24 @@ VAR dia_actual = 1
         Es difícil creer en algo.
     }
 
-=== function aumentar_peso(cantidad) ===
-    ~ temp peso_antes = peso_estructural
-    ~ peso_estructural = peso_estructural + cantidad
-    {peso_estructural > 5:
-        ~ peso_estructural = 5
+=== function aumentar_inercia(cantidad) ===
+    ~ temp inercia_antes = inercia
+    ~ inercia = inercia + cantidad
+    {inercia > 10:
+        ~ inercia = 10
     }
     // Feedback narrativo en thresholds
     {
-    - peso_estructural >= 4 && peso_antes < 4:
+    - inercia >= 8 && inercia_antes < 8:
         # STAT_THRESHOLD
-        El peso del sistema aprieta.
-        No sos vos. Es la estructura.
+        La inercia te aplasta.
+        Cuesta pensar en otra cosa que no sea sobrevivir.
     }
 
-=== function aliviar_peso(cantidad) ===
-    ~ peso_estructural = peso_estructural - cantidad
-    {peso_estructural < 0:
-        ~ peso_estructural = 0
+=== function disminuir_inercia(cantidad) ===
+    ~ inercia = inercia - cantidad
+    {inercia < 0:
+        ~ inercia = 0
     }
 
 // --- CHEQUEOS DE ESTADO ---
@@ -158,8 +160,8 @@ VAR dia_actual = 1
 === function esta_aislado() ===
     ~ return conexion <= 3
 
-=== function peso_alto() ===
-    ~ return peso_estructural >= 4
+=== function inercia_alta() ===
+    ~ return inercia >= 8
 
 === function llama_viva() ===
     ~ return llama >= 5
@@ -174,7 +176,7 @@ VAR dia_actual = 1
 // Tunnel: llamar en momentos críticos del día con -> check_game_over ->
 
 === check_game_over ===
-{peso_estructural >= 5:
+{inercia >= 10:
     -> final_apagado
 }
 {llama <= 0:
@@ -193,7 +195,7 @@ VAR dia_actual = 1
 
 === function evaluar_vulnerabilidad() ===
     // Mostraste vulnerabilidad genuina
-    { conte_a_alguien && peso_estructural >= 2 && peso_estructural <= 3:
+    { conte_a_alguien && inercia <= 6:
         ~ return true
     }
     ~ return false

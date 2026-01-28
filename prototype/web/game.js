@@ -391,7 +391,7 @@ const GameEngine = (function() {
     function extractStoryVariables() {
         const vars = {};
         const keys = [
-            'energia', 'conexion', 'dignidad', 'llama', 'salud_mental',
+            'energia', 'conexion', 'dignidad', 'llama', 'inercia',
             'sofia_relacion', 'elena_relacion', 'diego_relacion',
             'marcos_relacion', 'juan_relacion', 'ixchel_relacion',
             'vinculo', 'dia_actual', 'tiene_laburo', 'pequenas_victorias'

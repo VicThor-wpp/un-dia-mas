@@ -138,7 +138,7 @@ Hay una señora al lado tuyo. Es Elena, la veterana del barrio. No la habías vi
     Elena te venda rápido. Tiene práctica.
     "La sangre se lava. El hambre no", murmura alguien.
     Sentís la vergüenza arder más que el corte.
-    ~ aumentar_peso(1)
+    ~ aumentar_inercia(1)
 }
 
 Las papas se acaban. Tus manos huelen a tierra y almidón.
@@ -200,7 +200,7 @@ Platos, platos, platos.
     Sofía viene con un trapo. No te reta. Su silencio es peor.
     "Tomate un respiro", te dice.
     Te apartás, con las manos temblando.
-    ~ aumentar_peso(1)
+    ~ aumentar_inercia(1)
 }
 
 {not tiene_laburo:
@@ -582,7 +582,7 @@ Papas, carne (poca), verduras.
         Apartás los trozos de carne con cuidado. 
         El caldo sabe a animal, pero el hambre es más fuerte que el asco.
         Te sentís sucio, pero un poco más lleno.
-        ~ aumentar_peso(1)
+        ~ aumentar_inercia(1)
         -> olla_comer_sentarse
     * [Comer todo. El hambre no tiene ética.]
         Cerrás los ojos y tragás. 

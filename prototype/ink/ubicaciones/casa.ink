@@ -205,7 +205,7 @@ Una forma de sobrevivir a la mañana.
 { despertar == -1:
     Te quemás con el café. El vaso se cae, te salpica la mano.
     El día arranca mal.
-    ~ aumentar_peso(1)
+    ~ aumentar_inercia(1)
 }
 
 El café se termina.

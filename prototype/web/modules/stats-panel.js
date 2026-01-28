@@ -97,7 +97,7 @@ const StatsPanel = (function() {
      * Apply threshold effects to body
      */
     function applyThresholdEffects() {
-        document.body.classList.remove('salud-baja', 'llama-low', 'conexion-low', 'conexion-high', 'llama-high');
+        document.body.classList.remove('inercia-high', 'inercia-low', 'llama-low', 'conexion-low', 'conexion-high', 'llama-high');
         getActiveIndicators().forEach(ind => {
             if (ind.class) document.body.classList.add(ind.class);
         });
@@ -194,7 +194,7 @@ const StatsPanel = (function() {
         const llamaMax = ConfigManager.getStat('llama')?.max || 10;
         const dignidad = getStatValue('dignidad');
         const dignidadMax = ConfigManager.getStat('dignidad')?.max || 10;
-        const saludMental = getStatValue('salud_mental');
+        const inercia = getStatValue('inercia');
 
         // Get thresholds
         const indicators = getActiveIndicators();
@@ -228,9 +228,9 @@ const StatsPanel = (function() {
                         ${iconHTML('shield', 14)}
                         ${createStatDisplay(dignidad, dignidadMax, '#2196f3')}
                     </div>
-                    <div class="stat-item stat-salud" title="Salud Mental: bienestar psicológico">
-                        ${iconHTML('heart-pulse', 14)}
-                        ${createStatDisplay(saludMental, 5, '#4fc3f7')}
+                    <div class="stat-item stat-inercia" title="Inercia: resistencia al cambio">
+                        ${iconHTML('anchor', 14)}
+                        ${createStatDisplay(inercia, 10, '#607d8b')}
                     </div>
                 </div>
 
@@ -294,7 +294,7 @@ const StatsPanel = (function() {
                             ${renderFullStat('conexion')}
                             ${renderFullStat('dignidad')}
                             ${renderFullStat('llama')}
-                            ${renderFullStat('salud_mental')}
+                            ${renderFullStat('inercia')}
                         </div>
                     </section>
 

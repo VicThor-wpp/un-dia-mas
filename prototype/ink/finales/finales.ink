@@ -553,7 +553,7 @@ Todo.
 * [...]
 -
 
-{peso_estructural <= 1:
+{inercia >= 8:
     La salud mental se desgastó.
     No es una cosa.
     Son muchas.
@@ -680,7 +680,7 @@ No es heroísmo. Es honestidad.
     Y eso alcanzó.
 }
 
-{peso_estructural <= 3:
+{inercia >= 5:
     La cabeza sigue pesando.
     Pero ya no pesás solo.
 

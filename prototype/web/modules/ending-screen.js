@@ -143,7 +143,7 @@ const EndingScreen = (function() {
             { key: 'energia', label: 'Energia', max: 5, color: 'var(--color-energia)' },
             { key: 'conexion', label: 'Conexion', max: 10, color: 'var(--color-conexion)' },
             { key: 'llama', label: 'Llama', max: 10, color: 'var(--color-llama)' },
-            { key: 'salud_mental', label: 'Salud Mental', max: 5, color: 'var(--color-salud)' }
+            { key: 'inercia', label: 'Inercia', max: 10, color: '#607d8b' },
         ];
 
         for (const stat of statDefs) {

@@ -41,15 +41,15 @@
       "isSpecial": true,
       "description": "La esperanza colectiva. No es solo tuya."
     },
-    "salud_mental": {
-      "label": "Salud Mental",
-      "icon": "brain",
-      "max": 5,
-      "default": 3,
-      "color": "#9381ff",
+    "inercia": {
+      "label": "Inercia",
+      "icon": "anchor",
+      "max": 10,
+      "default": 5,
+      "color": "#607d8b",
       "visible": true,
       "showInHeader": true,
-      "description": "Tu bienestar psicológico. Baja con el estrés."
+      "description": "Resistencia al cambio. Si sube demasiado, te paraliza."
     },
     "acumulacion": {
       "label": "Acumulación",
@@ -64,11 +64,16 @@
     }
   },
   "thresholds": {
-    "salud_mental": {
+    "inercia": {
+      "high": 8,
       "low": 2,
       "effects": {
-        "bodyClass": "salud-baja",
-        "indicator": "Salud mental baja"
+        "bodyClass": "inercia-high",
+        "indicator": "Parálisis"
+      },
+      "lowEffects": {
+        "bodyClass": "inercia-low",
+        "indicator": "Despierto"
       }
     },
     "llama": {
@@ -103,7 +108,7 @@
     }
   },
   "display": {
-    "headerStats": ["energia", "salud_mental"],
+    "headerStats": ["energia", "inercia"],
     "panelStats": ["conexion", "dignidad", "llama"],
     "modalStats": ["acumulacion"]
   }

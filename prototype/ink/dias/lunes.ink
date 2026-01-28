@@ -179,7 +179,7 @@ El kiosquero te conoce de vista.
     "Son todos largos. Y cada vez peor."
     Te mira y se da vuelta. Conversación terminada.
     Te vas sintiéndote peor que antes.
-    ~ aumentar_peso(1)
+    ~ aumentar_inercia(1)
 }
 
 -> lunes_ir_casa
@@ -293,7 +293,7 @@ Sofía está adentro.
     "Así termina la gente", piensa.
     "Aceptando cualquier cosa."
 
-    ~ aumentar_peso(1)
+    ~ aumentar_inercia(1)
     * [Continuar] -> lunes_cliffhanger
 }
 
@@ -335,7 +335,7 @@ Mañana hay que seguir.
     "El 2002 también quebró gente así", piensa.
     "Los que se dejaron quebrar."
 
-    ~ aumentar_peso(1)
+    ~ aumentar_inercia(1)
     * [Continuar] -> lunes_cliffhanger
 }
 
@@ -381,7 +381,7 @@ Apaga la radio.
     Llama a su madre.
     Cuelga antes de que atienda.
 
-    ~ aumentar_peso(1)
+    ~ aumentar_inercia(1)
     * [Continuar] -> lunes_cliffhanger
 }
 
@@ -426,7 +426,7 @@ En todo lo que dejó.
 
     Ya no queda nada que sentir.
 
-    ~ aumentar_peso(1)
+    ~ aumentar_inercia(1)
     * [Continuar] -> lunes_cliffhanger
 }
 

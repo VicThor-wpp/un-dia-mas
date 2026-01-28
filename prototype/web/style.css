@@ -1614,7 +1614,7 @@ a:hover {
 .stat-color.llama { color: var(--color-llama); }
 .stat-color.dignidad { color: var(--color-dignidad); }
 .stat-color.salud_mental { color: var(--color-salud); }
-.stat-color.salud { color: #4fc3f7; }
+.stat-color.inercia { color: #607d8b; }
 
 .dice-preview {
     display: flex;

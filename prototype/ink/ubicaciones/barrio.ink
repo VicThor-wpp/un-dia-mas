@@ -40,7 +40,7 @@ Los perros callejeros.
 { encuentro_barrio == -1:
     Un tipo te mira mal desde la esquina. No sabés por qué.
     Apurás el paso. El barrio a veces no es fácil.
-    ~ aumentar_peso(1)
+    ~ aumentar_inercia(1)
 }
 
 ~ ultima_tirada = d6()
@@ -573,7 +573,7 @@ Pasás de largo.
     "¡¿Qué mirás?!"
     "Nada."
     Seguís caminando.
-    ~ aumentar_peso(1)
+    ~ aumentar_inercia(1)
 }
 
 ->->

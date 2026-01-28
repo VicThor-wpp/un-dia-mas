@@ -133,11 +133,11 @@ VAR ultimo_resultado = 0
     ~ return chequeo(modificador, dificultad)
 
 === function chequeo_mental(modificador, dificultad) ===
-    // Mental checks: advantage if healthy, disadvantage if breaking down
-    { peso_estructural >= 4:
+    // Mental checks: advantage if awake (low inertia), disadvantage if zombie (high inertia)
+    { inercia <= 2:
         ~ return chequeo_ventaja(modificador, dificultad)
     }
-    { peso_estructural <= 1:
+    { inercia >= 8:
         ~ return chequeo_desventaja(modificador, dificultad)
     }
     ~ return chequeo(modificador, dificultad)
@@ -164,7 +164,7 @@ VAR ultimo_resultado = 0
     ~ pequenas_victorias += 1
 
 === function critico_exito_mental() ===
-    ~ aliviar_peso(1)
+    ~ disminuir_inercia(1)
     ~ pequenas_victorias += 1
 
 === function critico_exito_comunitario() ===
@@ -182,7 +182,7 @@ VAR ultimo_resultado = 0
     }
 
 === function critico_fallo_mental() ===
-    ~ aumentar_peso(1)
+    ~ aumentar_inercia(1)
 
 === function critico_fallo_comunitario() ===
     ~ bajar_llama(1)

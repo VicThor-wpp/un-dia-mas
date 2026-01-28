@@ -473,7 +473,7 @@ A las 7 la olla abre.
 -> olla_servir ->
 
 {veces_que_ayude == 1:
-    ~ aliviar_peso(1)
+    ~ disminuir_inercia(1)
 }
 
 -> viernes_noche
@@ -581,7 +581,7 @@ Para hablar de la olla, de la situación.
     Hasta que no hay mañana.
 
     { chance(50):
-        ~ aumentar_peso(1)
+        ~ aumentar_inercia(1)
     }
     * [Continuar] -> transicion_viernes_sabado
 }
@@ -648,7 +648,7 @@ De cómo seguir.
     Todos mueren rotos.
 
     { chance(50):
-        ~ aumentar_peso(1)
+        ~ aumentar_inercia(1)
     }
     * [Continuar] -> transicion_viernes_sabado
 }
@@ -713,7 +713,7 @@ Tiene cosas que decir.
     Siempre igual.
 
     { chance(50):
-        ~ aumentar_peso(1)
+        ~ aumentar_inercia(1)
     }
     * [Continuar] -> transicion_viernes_sabado
 }
@@ -790,7 +790,7 @@ Mañana sigue.
     Ya no queda nada más.
 
     { chance(50):
-        ~ aumentar_peso(1)
+        ~ aumentar_inercia(1)
     }
     * [Continuar] -> transicion_viernes_sabado
 }

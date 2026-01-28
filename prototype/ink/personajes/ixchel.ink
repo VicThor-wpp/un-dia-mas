@@ -1065,5 +1065,5 @@ Los demás la miran sorprendidos. Después se suman.
     
     "¡Mañana!", dice.
     
-    ~ aliviar_peso(1)
+    ~ disminuir_inercia(1)
     ->->

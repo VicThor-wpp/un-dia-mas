@@ -641,7 +641,7 @@ Te mira. Sorprendido.
     Para los dos.
 
     ~ marcos_estado = "mirando"
-    ~ aumentar_peso(1)
+    ~ aumentar_inercia(1)
 }
 
 ->->
