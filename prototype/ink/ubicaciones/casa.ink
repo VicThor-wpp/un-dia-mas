@@ -100,7 +100,7 @@ El techo.
 El silencio.
 Los pensamientos.
 
-{peso_estructural <= 4:
+{inercia < 8:
     ¿Quién sos ahora?
     ¿Qué hacés?
     ¿Para qué te levantás?
@@ -439,7 +439,7 @@ No hablás con nadie.
 Es fácil quedarse.
 Demasiado fácil.
 
-{peso_estructural <= 4:
+{inercia < 8:
     Los pensamientos vienen solos.
     ¿Para qué?
     ¿Quién sos?

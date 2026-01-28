@@ -845,7 +845,7 @@ Mañana será otro día.
 
 === transicion_miercoles_jueves ===
 // Chequeo de colapso mental antes de continuar
-{peso_estructural <= 0:
+{inercia >= 10:
     -> final_apagado
 }
 

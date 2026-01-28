@@ -6,6 +6,7 @@
 INCLUDE mecanicas/dados.ink
 INCLUDE mecanicas/recursos.ink
 INCLUDE mecanicas/ideas.ink
+INCLUDE mecanicas/sistema_ideas.ink
 
 // --- INCLUDES: VARIABLES ---
 INCLUDE variables.ink
@@ -24,6 +25,11 @@ INCLUDE personajes/elena.ink
 INCLUDE personajes/diego.ink
 INCLUDE personajes/marcos.ink
 INCLUDE personajes/ixchel.ink
+INCLUDE personajes/lucia.ink
+INCLUDE personajes/tiago.ink
+INCLUDE personajes/cacho.ink
+INCLUDE personajes/bruno.ink
+INCLUDE personajes/claudia.ink
 
 // --- INCLUDES: DÍAS ---
 INCLUDE dias/lunes.ink

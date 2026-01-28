@@ -51,6 +51,21 @@ Los perros callejeros.
 {ultima_tirada == 2:
     -> barrio_encuentro_perro ->
 }
+{ultima_tirada == 3:
+    // Evento Cacho (Fase 2)
+    -> cacho_oferta_negocio ->
+}
+{ultima_tirada == 4:
+    // Evento Bruno (Fase 2) - Si Inercia es alta, aparece el buitre
+    {inercia >= 7:
+        -> bruno_primer_encuentro ->
+    - else:
+        -> barrio_encuentro_nenes ->
+    }
+}
+{ultima_tirada == 5:
+    -> barrio_encuentro_vieja ->
+}
 {ultima_tirada == 6:
     -> barrio_encuentro_positivo ->
 }

@@ -97,14 +97,19 @@ Mails que podrían ser nada.
 {d6() <= 3:
     -> laburo_evento_tension
 - else:
-    {d6() <= 2:
-        El jefe pasa por tu escritorio.
-        Te mira.
-        No dice nada.
-        Sigue.
+    // Evento Lucía (Fase 2)
+    {lucia_relacion == 0 && d6() >= 4:
+        -> lucia_escena_mate ->
+    - else:
+        {d6() <= 2:
+            El jefe pasa por tu escritorio.
+            Te mira.
+            No dice nada.
+            Sigue.
 
-        ¿Qué mierda fue eso?
-        ~ aumentar_inercia(1)
+            ¿Qué mierda fue eso?
+            ~ aumentar_inercia(1)
+        }
     }
 }
 

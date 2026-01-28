@@ -539,7 +539,7 @@ Pero sabés que no es bueno.
 
 === transicion_martes_miercoles ===
 // Chequeo de colapso mental antes de continuar
-{peso_estructural <= 0:
+{inercia >= 10:
     -> final_apagado
 }
 

@@ -657,6 +657,9 @@ El viernes viene.
 La olla necesita resolver algo.
 Vos también.
 
+// Reflexión nocturna (Fase 3)
+-> reflexion_nocturna ->
+
 * [Dormir] -> fragmento_jueves
 
 === fragmento_jueves ===
@@ -958,7 +961,7 @@ Los problemas no.
 
 === transicion_jueves_viernes ===
 // Chequeo de colapso mental antes de continuar
-{peso_estructural <= 0:
+{inercia >= 10:
     -> recovery_mental_jueves
 }
 - (post_recovery_jueves)
@@ -986,7 +989,7 @@ Todo se pone oscuro. La cabeza no funciona.
 
 Pero algo te sostiene. Un recuerdo. Una cara. Algo.
 
-~ peso_estructural = 1
+~ inercia = 9
 
 No estás bien. Pero seguís.
 

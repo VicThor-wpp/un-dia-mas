@@ -265,6 +265,9 @@ Sofía está adentro.
 
 === lunes_dormir ===
 
+// Reflexión nocturna (Fase 3)
+-> reflexion_nocturna ->
+
 * [Dormir] -> lunes_fragmentos
 
 === lunes_fragmentos ===
@@ -471,7 +474,7 @@ No dice más.
 
 === transicion_lunes_martes ===
 // Chequeo de colapso mental antes de continuar
-{peso_estructural <= 0:
+{inercia >= 10:
     -> final_apagado
 }
 

@@ -84,6 +84,11 @@ Sofía te mira de arriba abajo.
 
 # AYUDANDO EN LA OLLA
 
+// Evento Tiago (Fase 2)
+{tiago_confianza == 0 && d6() >= 5:
+    -> tiago_primer_encuentro ->
+}
+
 ¿Qué hacés?
 
 * [Pelar papas] # COSTO:1 # DADOS # EFECTO:conexion+
@@ -588,7 +593,7 @@ Papas, carne (poca), verduras.
         Cerrás los ojos y tragás. 
         La carne es blanda, fibrosa. 
         Tus principios se disuelven en el ácido gástrico.
-        ~ aumentar_peso(2)
+        ~ aumentar_inercia(1)
         ~ bajar_dignidad(1)
         -> olla_comer_sentarse
     * [No comer. La ética es lo único que me queda.]

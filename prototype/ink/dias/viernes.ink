@@ -122,26 +122,23 @@ Hay movimiento.
 // Ambiente de crisis
 -> olla_ambiente_crisis ->
 
-// Reunion de crisis con Sofia
--> sofia_reunion_crisis ->
+// EL CONFLICTO: CLAUDIA (Fase 2)
+-> claudia_la_auditoria ->
 
-Te ven.
-
-{ayude_en_olla:
-    // Sofia pide ideas
-    -> sofia_pedir_ideas ->
-    -> viernes_reunion
+{lista_entregada:
+    // TRAICIÓN: Hay comida pero a un costo terrible
+    Sofía cocina en silencio.
+    Nadie habla.
+    La comida está asegurada.
+    Pero se siente robada.
+    -> viernes_olla_tarde
 - else:
-    Sofía te mira.
-    "¿Venís a ayudar o a mirar?"
-    * ["A ayudar."] # STAT:conexion
-        ~ ayude_en_olla = true
-        ~ subir_conexion(1)
-        "Bien. Porque estamos en el horno."
-        -> viernes_reunion
-    * ["Solo pasaba."]
-        "Bueno. Si te animás, acá estamos."
-        -> viernes_tarde
+    // DIGNIDAD: No hay lista, no hay comida del estado
+    // Ahora hay que salir a buscar
+    "Bueno", dice Sofía. "No tenemos los insumos secos."
+    "Pero tenemos dignidad."
+    "Ahora hay que conseguir comida."
+    -> viernes_reunion
 }
 
 === viernes_reunion ===
@@ -151,7 +148,7 @@ Te ven.
 Están: Sofía, Elena, dos o tres más que no conocés bien.
 
 El problema es simple:
-No hay plata para la comida de hoy.
+Claudia cortó los insumos.
 Vienen 30 personas a comer.
 No tienen qué darles.
 
@@ -547,6 +544,9 @@ Para hablar de la olla, de la situación.
 {ayude_en_olla: Te invitaron. Podés ir.}
 {not ayude_en_olla: Escuchaste que hay. Quizás podrías ir.}
 
+// Reflexión nocturna (Fase 3)
+-> reflexion_nocturna ->
+
 // Fragmento nocturno
 -> seleccionar_fragmento_viernes ->
 
@@ -847,7 +847,7 @@ Para hablar de cómo seguir.
 
 === transicion_viernes_sabado ===
 // Chequeo de colapso mental antes de continuar
-{peso_estructural <= 0:
+{inercia >= 10:
     -> recovery_mental_viernes
 }
 - (post_recovery_viernes)
@@ -874,7 +874,7 @@ Todo se pone oscuro. Otra vez. Peor.
 
 Pero algo queda. Alguien dijo tu nombre hoy. Alguien te vio.
 
-~ peso_estructural = 1
+~ inercia = 9
 
 No estás bien. Pero todavía estás.
 

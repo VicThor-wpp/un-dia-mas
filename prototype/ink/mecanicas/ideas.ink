@@ -116,10 +116,18 @@
 === function tiene_sinergia_politica() ===
     // Cuenta cuántas ideas políticas tiene
     ~ temp politicas = 0
-    { idea_no_es_individual: ~ politicas += 1 }
-    { idea_antagonismo_clase: ~ politicas += 1 }
-    { idea_autonomia_posible: ~ politicas += 1 }
-    { idea_sabotaje_legitimo: ~ politicas += 1 }
+    { idea_no_es_individual: 
+        ~ politicas += 1 
+    }
+    { idea_antagonismo_clase: 
+        ~ politicas += 1 
+    }
+    { idea_autonomia_posible: 
+        ~ politicas += 1 
+    }
+    { idea_sabotaje_legitimo: 
+        ~ politicas += 1 
+    }
     ~ return politicas >= 2
 
 === function tiene_conciencia_radical() ===

@@ -1049,7 +1049,7 @@ Los demás la miran sorprendidos. Después se suman.
     Por un rato, solo existe esto.
     Cuerpos moviéndose. Risas. Música.
     
-    ~ aliviar_peso(2)
+    ~ disminuir_inercia(1)
     ~ subir_conexion(1)
     ~ subir_llama(1)
     ->->
