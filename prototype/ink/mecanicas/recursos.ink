@@ -127,23 +127,18 @@ VAR dia_actual = 1
     }
 
 === function aumentar_inercia(cantidad) ===
-    ~ temp inercia_antes = inercia
-    ~ inercia = inercia + cantidad
-    {inercia > 10:
-        ~ inercia = 10
+    ~ ajustar(inercia, cantidad, 0, 10)
+    { inercia >= 8:
+        # STAT_THRESHOLD:inercia,critical
     }
-    // Feedback narrativo en thresholds
-    {
-    - inercia >= 8 && inercia_antes < 8:
-        # STAT_THRESHOLD
-        La inercia te aplasta.
-        Cuesta pensar en otra cosa que no sea sobrevivir.
+    { inercia >= 5 && inercia < 8:
+        # STAT_THRESHOLD:inercia,high
     }
 
 === function disminuir_inercia(cantidad) ===
-    ~ inercia = inercia - cantidad
-    {inercia < 0:
-        ~ inercia = 0
+    ~ ajustar(inercia, -cantidad, 0, 10)
+    { inercia <= 2:
+        # STAT_THRESHOLD:inercia,low
     }
 
 // --- CHEQUEOS DE ESTADO ---

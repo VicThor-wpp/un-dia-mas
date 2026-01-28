@@ -201,3 +201,7 @@ VAR ideas_activas = 0
 VAR sinergia_colectiva = 0    // combo: hay_cosas_juntos + pedir_no_debilidad + red_o_nada
 VAR sinergia_individual = 0    // combo: tengo_tiempo + quien_soy
 VAR idea_momento_sintesis = false  // whether the synthesis scene has been shown
+
+// --- VARIABLES ADICIONALES FASE 2 ---
+VAR tiago_se_queda = false
+VAR cacho_momento_real = false

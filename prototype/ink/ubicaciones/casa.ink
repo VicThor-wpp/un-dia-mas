@@ -191,7 +191,7 @@ Es sostén energético.
 Una forma de sobrevivir a la mañana.
 
 // Chequeo mental: cómo arranca el día
-~ temp despertar = chequeo_mental(0, 3)
+~ despertar = chequeo_mental(0, 3)
 { despertar == 2:
     El café te despierta de verdad. Sentís que hoy podés con lo que venga.
     ~ pequenas_victorias += 1

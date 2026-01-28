@@ -124,7 +124,7 @@ flowchart TD
 
     EVAL -->|conexion≥7 AND llama≥5<br/>AND ayude_en_olla| FINAL_RED[⭐ LA RED ⭐]:::ending_best
     EVAL -->|conexion≤3 AND llama≤2| FINAL_SOLO[💀 SOLO 💀]:::ending_worst
-    EVAL -->|salud_mental≤2 AND<br/>conexion≤4| FINAL_GRIS[🌫️ GRIS 🌫️]:::ending_bad
+    EVAL -->|inercia≥3 AND<br/>conexion≤4| FINAL_GRIS[🌫️ GRIS 🌫️]:::ending_bad
     EVAL -->|conexion≥5| FINAL_QUIZ[✨ QUIZÁS ✨]:::ending_good
     EVAL -->|default| FINAL_INC[❓ INCIERTO ❓]:::ending_neutral
 
@@ -155,7 +155,7 @@ flowchart TD
     CHOICE -->|IR A CASA| HOME[Sentarse en casa vacía<br/>Mediodía solo]
     HOME --> HOME_CHOICE{Llamar a alguien?}
 
-    HOME_CHOICE -->|NO LLAMAR| HOME_ALONE[conte_a_alguien = FALSE<br/>-1 salud_mental<br/>AISLAMIENTO TOTAL]:::worst
+    HOME_CHOICE -->|NO LLAMAR| HOME_ALONE[conte_a_alguien = FALSE<br/>+1 inercia<br/>AISLAMIENTO TOTAL]:::worst
 
     HOME_CHOICE -->|LLAMAR ELENA| HOME_ELENA[Elena cuenta 2002<br/>💡 idea_red_o_nada<br/>conte_a_alguien = TRUE<br/>+1 conexion]:::good
 
@@ -165,7 +165,7 @@ flowchart TD
 
     %% OPCIÓN B: CAMINAR
     CHOICE -->|CAMINAR SIN RUMBO| WALK[Aimless walk<br/>Ver homeless en plaza]
-    WALK --> WALK_REFLECT[Metáfora destitución<br/>Contemplación solitaria<br/>-1 salud_mental]:::neutral
+    WALK --> WALK_REFLECT[Metáfora destitución<br/>Contemplación solitaria<br/>+1 inercia]:::neutral
 
     %% OPCIÓN C: BARRIO (MEJOR RUTA)
     CHOICE -->|IR AL BARRIO| BARRIO[Caminar al barrio<br/>Ver movimiento normal]
@@ -224,7 +224,7 @@ flowchart TD
 
     CHECK2 -->|✅ SÍ| ENDING2[💀 FINAL: SOLO 💀<br/><br/>La semana pasó<br/>No hablaste con nadie<br/>El barrio siguió<br/>Vos seguiste solo<br/><br/>Como antes, como siempre]:::ending_worst
 
-    CHECK2 -->|❌ NO| CHECK3{salud_mental ≤ 2<br/>AND conexion ≤ 4?}
+    CHECK2 -->|❌ NO| CHECK3{inercia ≥ 3<br/>AND conexion ≤ 4?}
 
     CHECK3 -->|✅ SÍ| ENDING3[🌫️ FINAL: GRIS 🌫️<br/><br/>La semana fue pesada<br/>El cuerpo pesa<br/>La cabeza pesa<br/>Todo pesa<br/><br/>Un día más, otro más, y otro]:::ending_bad
 
@@ -257,7 +257,7 @@ graph LR
     end
 
     subgraph GRIS[🌫️ GRIS]
-        REQ6[salud_mental ≤ 2]
+        REQ6[inercia ≥ 3]
         REQ7[conexion ≤ 4]
     end
 
@@ -430,6 +430,36 @@ flowchart TD
     classDef good fill:#51cf66,stroke:#2f9e44,stroke-width:2px
     classDef neutral fill:#868e96,stroke:#495057,stroke-width:2px,color:#fff
     classDef worst fill:#212529,stroke:#000,stroke-width:3px,color:#fff,font-weight:bold
+```
+
+### Flujo de Personajes Fase 2
+
+```mermaid
+graph TD
+    subgraph Jueves
+        J_CACHO[Encuentro Cacho - oferta negocio]
+        J_TIAGO[Primer encuentro Tiago]
+        J_BRUNO[Bruno marca territorio]
+    end
+
+    subgraph Viernes
+        V_LUCIA[Lucía aconseja por teléfono]
+        V_CLAUDIA[Claudia audita la olla]
+        V_CONFLICT[Conflicto Tiago vs Claudia]
+    end
+
+    subgraph Sábado
+        S_BRUNO[Bruno recluta Tiago]
+        S_DECISION[Decisión de Tiago]
+        S_CACHO[Cacho en la fila]
+        S_OFERTA[Bruno ofrece al protagonista]
+    end
+
+    J_TIAGO --> V_CONFLICT
+    V_CLAUDIA --> V_CONFLICT
+    V_CONFLICT --> S_DECISION
+    J_BRUNO --> S_BRUNO
+    S_BRUNO --> S_DECISION
 ```
 
 ---
@@ -692,12 +722,12 @@ flowchart TD
     LUNCH -->|Solo| ISO_L1[conexion -1]:::iso
     ISO_L1 --> ISO_L2[Lunes tarde: Casa directo<br/>conexion -1]:::iso
     ISO_L2 --> ISO_M1[Martes: No buscar nadie<br/>conexion -1]:::iso
-    ISO_M1 --> ISO_W1[💥 Miércoles: Despido<br/>Casa solo, no llamar<br/>conte_a_alguien = FALSE<br/>salud_mental -1]:::iso
+    ISO_M1 --> ISO_W1[💥 Miércoles: Despido<br/>Casa solo, no llamar<br/>conte_a_alguien = FALSE<br/>inercia +1]:::iso
     ISO_W1 --> ISO_TH1[Jueves: Quedarse cama<br/>No ayudar olla<br/>conexion -1, energia -1]:::iso
     ISO_TH1 --> ISO_F1[Viernes: No ir olla<br/>conexion -1]:::iso
     ISO_F1 --> ISO_S1[Sábado: No ir asamblea<br/>conexion -2, llama -1]:::iso
     ISO_S1 --> ISO_D1[Domingo: Casa solo<br/>conexion -1]:::iso
-    ISO_D1 --> ISO_FINAL[💀 FINAL: SOLO 💀<br/>conexion: 0-2<br/>llama: 1-2<br/>salud_mental: 1-2]:::ending_worst
+    ISO_D1 --> ISO_FINAL[💀 FINAL: SOLO 💀<br/>conexion: 0-2<br/>llama: 1-2<br/>inercia: 3-4]:::ending_worst
 
     %% RUTA CONEXIÓN
     LUNCH -->|Con Juan| CONN_L1[conexion +1]:::conn

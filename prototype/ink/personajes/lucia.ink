@@ -46,20 +46,133 @@ Mira alrededor. Baja la voz.
 
 * ["Me dijeron que soy unipersonal."]
     Del otro lado del teléfono, Lucía bufa.
-    
+
     "Hijos de puta. El fraude laboral de manual."
-    
+
     "Escuchame. No te vayas a casa a llorar. Andá al ministerio. Hacé la denuncia. Aunque te digan que no sirve."
-    
+
     * [Decirle que vas a ir.]
         "Voy a ir."
         "Bien. Eso es lo que no quieren. Que molestes."
         ~ lucia_consejo_sindical = true
         ~ disminuir_inercia(1) // Acción concreta
         ->->
-    
+
     * [Decirle que no tenés fuerza.]
         "No sé si puedo ahora, Lucía."
         "Te entiendo. Pero la bronca usala para moverte, no para comerte la cabeza."
         ->->
 - ->->
+
+=== lucia_almuerzo_oficina ===
+// Escena Martes: Almuerzo tenso
+
+Lucía se sienta a tu lado en el comedor.
+Abre un tupper. Arroz con verduras.
+
+"¿Viste la cara del jefe hoy?"
+
+* [Preguntar qué vio.]
+    "¿Qué pasa?"
+
+    Lucía baja la voz.
+    "Están preparando la lista.
+    Los que sobran."
+
+    "¿Y vos?"
+
+    "Yo ya me peleé con todos.
+    Si me echan, me echan peleando."
+
+    ~ lucia_relacion += 1
+    ->->
+
+* [Cambiar de tema.]
+    "Prefiero no pensar en eso."
+
+    Lucía asiente.
+    "Entiendo.
+    Pero pensar es lo único que nos queda."
+
+    ->->
+
+=== lucia_post_despido ===
+// Escena Jueves: Si la buscás después del despido
+
+Lucía atiende el teléfono rápido.
+
+"Me enteré. Hijos de puta."
+
+No te deja hablar.
+
+"Escuchame. No te quedes en casa.
+Mañana a las 9 hay una reunión en el sindicato.
+No por vos. Por todos los que vienen después."
+
+* [Decir que vas a ir.]
+    "Voy."
+
+    "Bien. Y traete papeles.
+    Recibos, mails, lo que tengas."
+
+    ~ lucia_consejo_sindical = true
+    ~ disminuir_inercia(1)
+    ~ activar_no_es_individual()
+    ->->
+
+* [Decir que no tenés fuerzas.]
+    "No sé si puedo, Lucía."
+
+    Silencio.
+
+    "Nadie puede solo.
+    Por eso nos juntamos."
+
+    Corta.
+
+    ~ aumentar_inercia(1)
+    ->->
+
+=== lucia_en_olla ===
+// Escena Viernes/Sábado: Lucía aparece en la olla
+
+Lucía entra a la olla.
+Sofía la abraza.
+
+"¿Qué hacés acá?"
+
+"Vine a dar una mano.
+El sindicato puede esperar.
+Esto no."
+
+Se arremanga.
+Agarra un cuchillo.
+
+"¿Dónde están las papas?"
+
+~ lucia_relacion += 1
+~ subir_conexion(1)
+
+->->
+
+=== fragmento_lucia_numeros ===
+// Lucía hace números de noche
+
+Lucía tiene la calculadora en la mano.
+Papeles por todos lados.
+
+Suma lo que la empresa se ahorró
+echándolos a todos.
+
+Tres sueldos.
+Aguinaldo proporcional.
+Vacaciones.
+
+"Un millón doscientos."
+
+Por cabeza.
+
+Apaga la luz.
+Mañana hay que pelear.
+
+->->

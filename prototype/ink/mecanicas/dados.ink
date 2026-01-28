@@ -5,6 +5,7 @@
 // Variable temporal para guardar resultado de última tirada
 VAR ultima_tirada = 0
 VAR ultimo_resultado = 0
+VAR despertar = 0
 
 // Tirar un dado de 6
 === function d6() ===

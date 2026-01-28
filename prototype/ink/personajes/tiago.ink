@@ -55,12 +55,134 @@ Tiago te mira a vos. Los ojos inyectados de bronca.
 
 * [No intervenir.]
     Te quedás callado.
-    
+
     Tiago tira el tupper al piso.
     "Métanse el guiso en el orto."
-    
+
     Se va pateando una silla.
-    
+
     ~ tiago_estado = "ido"
     ~ aumentar_inercia(1)
     ->->
+
+=== tiago_se_abre ===
+// Escena Viernes/Sábado: Si tiago_confianza >= 2
+
+{tiago_confianza >= 2:
+    Tiago se sienta a tu lado.
+    No dice nada.
+
+    Después de un rato:
+
+    "Mi vieja está internada.
+    En el Vilardebó."
+
+    No te mira.
+
+    "No voy a visitarla.
+    No puedo."
+
+    * [Escuchar en silencio.]
+        No decís nada.
+
+        A veces el silencio es el único respeto.
+
+        Tiago asiente.
+        "Gracias por no decir nada."
+
+        ~ tiago_confianza += 2
+        ->->
+
+    * [Decir algo de apoyo.]
+        "Está bien no poder."
+
+        Tiago te mira.
+        Por primera vez, sin desafío.
+
+        "¿Vos creés?"
+
+        "Sí."
+
+        ~ tiago_confianza += 1
+        ->->
+- else:
+    ->->
+}
+
+=== tiago_decision_final ===
+// Escena Sábado/Domingo: La encrucijada
+
+{tiago_confianza >= 3:
+    Tiago te busca.
+
+    "Bruno me ofreció llevarme a la chacra.
+    Zapatillas. Comida. Un lugar."
+
+    Te mira.
+
+    "¿Qué hago?"
+
+    * [Decirle que se quede.]
+        "Quedate, Tiago.
+        Acá también hay lugar.
+        No es una chacra, pero es real."
+
+        Tiago piensa.
+
+        "¿Y si no alcanza?"
+
+        "Vamos a hacer que alcance.
+        Pero juntos."
+
+        Tiago asiente.
+
+        ~ tiago_se_queda = true
+        ~ subir_llama(2)
+        ~ subir_conexion(1)
+        ->->
+
+    * [Dejarlo decidir.]
+        "No sé, Tiago.
+        Es tu vida."
+
+        Tiago baja la cabeza.
+
+        "Nadie me dijo eso nunca."
+
+        Se queda pensando.
+
+        {llama >= 6:
+            "Me quedo. Por ahora."
+            ~ tiago_se_queda = true
+        - else:
+            "Voy a ir. A ver qué onda."
+            ~ tiago_captado_por_bruno = true
+            ~ bajar_llama(2)
+        }
+        ->->
+- else:
+    ->->
+}
+
+=== fragmento_tiago_techo ===
+// Tiago en un techo, mirando el barrio
+
+Tiago está en el techo de la olla.
+Se subió por la canaleta.
+
+Desde arriba, el barrio parece distinto.
+Más ordenado.
+Menos caótico.
+
+Piensa en la chacra de Bruno.
+Piensa en la olla.
+Piensa en la calle.
+
+Tres opciones.
+Ninguna buena.
+
+Se queda mirando las estrellas.
+Las mismas de siempre.
+Las únicas que no cambian.
+
+->->

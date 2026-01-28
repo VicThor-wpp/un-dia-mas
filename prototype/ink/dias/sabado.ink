@@ -57,6 +57,16 @@ El barrio más tranquilo.
     -> juan_invitar_olla_sabado ->
 }
 
+// Bruno recluta a Tiago si la olla falló
+{olla_en_crisis || olla_cerro_viernes:
+    -> bruno_recluta_tiago ->
+}
+
+// Decisión crucial de Tiago
+{tiago_confianza >= 3 && not tiago_captado_por_bruno:
+    -> tiago_decision_final ->
+}
+
 ¿Qué hacés con la mañana?
 
 * [Llamar a alguien] # EFECTO:conexion?
@@ -312,6 +322,16 @@ Es todo.
 -> sabado_ver_sofia ->
 -> sabado_ver_diego ->
 
+// Cacho en la fila
+{not olla_en_crisis:
+    -> cacho_en_la_fila ->
+}
+
+// Lucía aparece en la olla
+{lucia_consejo_sindical:
+    -> lucia_en_olla ->
+}
+
 // Inicio de la asamblea
 -> olla_asamblea_inicio ->
 
@@ -352,6 +372,11 @@ Es todo.
 
     ~ ixchel_relacion += 1
     ~ subir_llama(1)
+}
+
+// Bruno ofrece al protagonista
+{inercia >= 7:
+    -> bruno_oferta_protagonista ->
 }
 
 ¿Qué hacés?

@@ -40,10 +40,10 @@ Normal       Laboral        11 AM           Día Sin      Olla           Colecti
 | **Energía** | 0-5 | Limita acciones diarias | ❌ No |
 | **Conexión** | 0-10 | Integración comunitaria, acceso a finales, **death spiral si <= 1** | ⚠️ Indirecto (vía llama) |
 | **Llama** | 0-10 | Esperanza colectiva, tono de finales | ✅ **Sí (= 0)** → final SIN LLAMA |
-| **Dignidad** | 0-10 | Autoestima, resistencia a humillación, **death spiral si <= 2** | ⚠️ Indirecto (vía salud_mental) |
+| **Dignidad** | 0-10 | Autoestima, resistencia a humillación, **death spiral si <= 2** | ⚠️ Indirecto (vía inercia) |
 | **Inercia** | 0-10 | Resistencia al cambio, **death spiral si >= 8** | ✅ **Sí (= 10)** → final APAGADO |
 
-**⚠️ IMPORTANTE**: El juego ahora puede terminar ANTES del domingo si salud_mental o llama llegan a 0.
+**⚠️ IMPORTANTE**: El juego ahora puede terminar ANTES del domingo si inercia llega a 10 o llama llega a 0.
 
 ---
 
@@ -502,7 +502,7 @@ graph TD
 
     EVAL -->|conexion <= 3<br/>llama <= 2| F2[💀 FINAL: SOLO 💀<br/>Aislamiento total<br/>Como antes, como siempre]
 
-    EVAL -->|salud_mental <= 2<br/>conexion <= 4| F3[🌫️ FINAL: GRIS 🌫️<br/>Burnout mental<br/>Sobrevivir día a día]
+    EVAL -->|inercia >= 8<br/>conexion <= 4| F3[🌫️ FINAL: GRIS 🌫️<br/>Burnout mental<br/>Sobrevivir día a día]
 
     EVAL -->|conexion >= 5| F4[✨ FINAL: QUIZÁS ✨<br/>Conexiones hechas<br/>Posibilidad abierta]
 
@@ -580,8 +580,8 @@ Al final de **cada día** (lunes→martes, martes→miércoles, etc.), el juego 
     -> final_solo
 }
 
-// 6. BURNOUT (salud mental crítica)
-{salud_mental <= 2 && conexion <= 4:
+// 6. BURNOUT (inercia crítica)
+{inercia >= 8 && conexion <= 4:
     -> final_gris
 }
 
@@ -1029,7 +1029,7 @@ El juego usa `d6()` para rolls de 1-6. Los chequeos son **mayormente ocultos** -
 ### Variables de NPC
 
 Cada NPC tiene:
-- `[nombre]_relacion` (int 0-10)
+- `[nombre]_relacion` (int 0-5)
 - `[nombre]_estado` (string: activa/agotada/ausente/etc.)
 
 ---
@@ -1246,6 +1246,104 @@ Pausa.
 
 ---
 
+### Lucía (La Sindicalista Pragmática) - FASE 2
+
+**Rol**: Sindicalista experimentada, pragmática, representa la lucha organizada
+**Relacion inicial**: 0
+**Estados**: organizando / negociando / cansada / combativa
+
+**Contexto**:
+- Sindicalista con años de experiencia
+- Pragmática: sabe que las luchas se ganan con organización, no con idealismo
+- Puede aparecer en contextos laborales o comunitarios
+- Representa la institucionalización de la resistencia
+
+**Arco narrativo**:
+- Ofrece perspectiva de lucha colectiva organizada
+- Tensión entre idealismo y pragmatismo
+- Muestra límites y posibilidades del sindicalismo
+
+---
+
+### Tiago (El Pibe de Logística) - FASE 2
+
+**Rol**: Trabajador joven de logística, precarizado, energía juvenil
+**Relacion inicial**: 0
+**Estados**: activo / agotado / rebelde / esperanzado
+
+**Contexto**:
+- Trabaja en logística/delivery
+- Representa la nueva precarización juvenil
+- Energía y voluntad de cambio
+- Menos quemado que Marcos, más optimista
+
+**Arco narrativo**:
+- Representa la generación más joven enfrentando precarización
+- Contraste con personajes más viejos y cansados
+- Potencial para organización desde abajo
+
+---
+
+### Cacho (El Iluso del Mindset) - FASE 2
+
+**Rol**: Creyente en cultura del emprendedurismo, "mindset positivo"
+**Relacion inicial**: 0
+**Estados**: motivado / negando / quebrando / despertando
+
+**Contexto**:
+- Compró el discurso del emprendedurismo y la mentalidad positiva
+- "No hay empleados pobres, solo emprendedores que no lo saben"
+- Niega la realidad estructural de la precarización
+- Puede tener un arco de "despertar" o seguir en negación
+
+**Arco narrativo**:
+- Representa la ideología del "esfuerzo individual"
+- Posible quiebre cuando la realidad lo golpea
+- Tensión entre ilusión y realidad material
+
+---
+
+### Bruno (El Apóstol) - FASE 2 - ANTAGONISTA
+
+**Rol**: Antagonista fascista, discurso autoritario, anti-solidaridad
+**Relacion inicial**: 0
+**Estados**: predicando / agresivo / reclutando / amenazante
+
+**Contexto**:
+- Representa el fascismo de barrio
+- Discurso anti-olla, anti-solidaridad, pro-orden
+- "Los pobres son pobres porque quieren"
+- Antagonista directo de la comunidad y la olla
+- Puede aparecer generando conflicto o amenaza
+
+**Arco narrativo**:
+- Antagonista ideológico principal
+- Representa la reacción fascista a la organización popular
+- Genera tensión y conflicto en espacios comunitarios
+
+---
+
+### Claudia (La Auditora) - FASE 2 - ANTAGONISTA
+
+**Rol**: Violencia administrativa, burocracia como arma, antagonista sistémica
+**Relacion inicial**: 0
+**Estados**: auditando / sancionando / procesando / ejecutando
+
+**Contexto**:
+- Representa la violencia del Estado administrativo
+- "Solo hago mi trabajo"
+- Auditorías, regulaciones, papelerías que destruyen iniciativas populares
+- Puede amenazar la olla con clausura, regulaciones imposibles
+- Violencia fría, administrativa, "legal"
+
+**Arco narrativo**:
+- Antagonista sistémica (no personal)
+- Representa cómo el Estado usa burocracia como arma
+- Tensión entre legalidad y legitimidad
+- Puede generar crisis institucional para la olla
+
+---
+
 ## Decisiones Críticas
 
 ### 🔴 Miércoles Post-Despido
@@ -1276,7 +1374,7 @@ C) IR AL BARRIO → VER SOFÍA
 
 **Stats afectadas**:
 - `conexion`: +2 si contás, -1 si escondés
-- `salud_mental`: -1 si aislamiento total
+- `inercia`: +1 si aislamiento total
 - `sofia_relacion`, `elena_relacion`, `diego_relacion`: +1 si contactás
 
 ---
@@ -1595,7 +1693,7 @@ En cómo aceptaste todo.
 "Así termina la gente", piensa.
 "Aceptando cualquier cosa."
 
-~ bajar_salud_mental(1)
+~ subir_inercia(1)
 ```
 
 **Conexion <= 1** (Aislamiento):
@@ -1640,7 +1738,7 @@ conexion <= 1 → fragmento oscuro cada noche → -1 llama/día
 
 #### Diseño Intencional
 
-1. **Dignidad NO es final temprano**: Difícil de perder (solo 5 triggers), pero genera death spiral hacia salud_mental = 0
+1. **Dignidad NO es final temprano**: Difícil de perder (solo 5 triggers), pero genera death spiral hacia inercia = 10
 2. **Conexión NO es final temprano**: Fácil de recuperar (40 subidas vs 8 bajadas), pero genera death spiral hacia llama = 0
 3. **Inercia = 10**: GAME OVER individual (colapso de agencia)
 4. **Llama = 0**: GAME OVER colectivo (muerte comunitaria)
@@ -1974,7 +2072,7 @@ VAR ultimo_resultado = 0
 }
 
 // Prioridad 3: Burnout
-{salud_mental <= 2 && conexion <= 4:
+{inercia >= 8 && conexion <= 4:
     -> final_gris
 }
 
@@ -2027,12 +2125,12 @@ Resultado: conexion <= 3, llama <= 2
 
 ```
 ❌ Miércoles: No contar a nadie
-❌ Jueves: Quedarse en cama (-salud_mental)
-❌ Ver tele malas noticias (-salud_mental)
-❌ Aislamiento sostenido (-salud_mental por día)
+❌ Jueves: Quedarse en cama (+inercia)
+❌ Ver tele malas noticias (+inercia)
+❌ Aislamiento sostenido (+inercia por día)
 ✅ Alguna conexión mínima (conexion 3-4)
 
-Resultado: salud_mental <= 2, conexion <= 4
+Resultado: inercia >= 8, conexion <= 4
 ```
 
 ---
@@ -2071,7 +2169,7 @@ Resultado: No cumple criterios otros finales
 | `ayude_en_olla` | bool | ⚠️ SÍ | Bloquea final LA RED si false |
 | `conexion` | int | ⚠️ SÍ | Determina 4 de 6 finales |
 | `llama` | int | ⚠️ SÍ | Determina tono + acceso LA RED |
-| `salud_mental` | int | ⚠️ SÍ | Trigger final GRIS |
+| `inercia` | int | ⚠️ SÍ | Trigger final GRIS y APAGADO |
 | `conte_a_alguien` | bool | ⚠️ SÍ | Afecta toda semana |
 | `participe_asamblea` | bool | 🔸 Importante | Gran impacto conexion/llama |
 | `veces_que_ayude` | int | 🔸 Importante | Tono finales |

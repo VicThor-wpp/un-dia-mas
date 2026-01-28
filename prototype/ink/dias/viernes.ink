@@ -63,6 +63,12 @@ El sostén energético más honesto: algo caliente y amargo que te hace funciona
     -> viernes_olla_temprano
 * [Buscar laburo primero] # COSTO:1 # STAT:dignidad # EFECTO:dignidad-
     -> viernes_buscar
+* {lucia_relacion >= 1} [Llamar a Lucía]
+    -> lucia_post_despido ->
+    * * [Ir a la olla después]
+        -> viernes_olla_temprano
+    * * [Buscar laburo]
+        -> viernes_buscar
 * [Ver qué pasa]
     -> viernes_barrio
 
@@ -115,6 +121,9 @@ Hay movimiento.
 
 // Llegada a la olla
 -> olla_llegada ->
+
+// Claudia llega a auditar
+-> claudia_llegada ->
 
 // Eco: Elena recuerda si le contaste tu historia
 -> viernes_olla_elena_eco ->
@@ -445,6 +454,11 @@ Vuelven todos.
 
 La cocina empieza.
 Todos ayudan.
+
+// Conflicto Tiago vs Claudia
+{tiago_confianza >= 1:
+    -> tiago_conflicto_comida ->
+}
 
 // Ixchel durante la crisis - sigue cocinando con lo que hay
 {ixchel_relacion >= 1:

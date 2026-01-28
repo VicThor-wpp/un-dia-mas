@@ -48,6 +48,16 @@ El protagonista no es un empleado formal despedido con indemnización. Es un **f
 | **Ixchel** | Resistencia Ancestral | Cosmovisión maya. "Tejer" comunidad. Final alternativo `final_tejido`. |
 | **Juan** | El Testigo | Compañero que se queda. Representa la culpa del sobreviviente. |
 
+### NPCs Fase 2 (Antagonistas y Secundarios)
+
+| Personaje | Rol | Archivo |
+|-----------|-----|---------|
+| Lucía | Sindicalista pragmática, compañera de trabajo | personajes/lucia.ink |
+| Tiago | Adolescente de logística, futuro en riesgo | personajes/tiago.ink |
+| Cacho | "Emprendedor" iluso, pensamiento mágico | personajes/cacho.ink |
+| Bruno | Líder teocrático, antagonista territorial | personajes/bruno.ink |
+| Claudia | Auditora estatal, violencia administrativa | personajes/claudia.ink |
+
 ---
 
 ## 3. ESTRUCTURA DE JUEGO (7 DÍAS)

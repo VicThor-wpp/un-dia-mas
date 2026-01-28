@@ -10,6 +10,9 @@
 // - personajes/elena.ink: elena_historia_2002
 // - personajes/diego.ink: diego_encuentro_barrio, diego_enterarse_despido, diego_caminar_juntos
 // - personajes/marcos.ink: marcos_no_esta
+// - personajes/cacho.ink: cacho_oferta_negocio (encuentro aleatorio en la mañana)
+// - personajes/bruno.ink: bruno_la_visita (visita a la olla)
+// - personajes/tiago.ink: tiago_primer_encuentro (en la olla mientras se ayuda)
 
 === jueves_amanecer ===
 
@@ -109,6 +112,11 @@ Sin saber qué hacer.
 
 {conte_a_alguien: Al menos alguien sabe. No estás completamente solo en esto.}
 {not conte_a_alguien: Nadie sabe todavía. El peso es solo tuyo.}
+
+// Encuentro aleatorio con Cacho
+{RANDOM(1,3) == 1:
+    -> cacho_oferta_negocio ->
+}
 
 ¿Qué hacés hoy?
 
@@ -224,6 +232,9 @@ Pero la distancia se siente más corta.
 
 Sofía está ahí.
 Y otra gente que no conocés bien.
+
+// Bruno aparece marcando territorio
+-> bruno_la_visita ->
 
 // Encuentro con Sofia
 -> sofia_primer_encuentro ->
@@ -342,6 +353,9 @@ Sofía asiente.
 
     -> ixchel_en_olla ->
 }
+
+// Tiago aparece en la olla
+-> tiago_primer_encuentro ->
 
 // Escuchar sobre la crisis
 -> olla_escuchar_crisis ->
@@ -931,13 +945,6 @@ Mañana hay que buscar soluciones.
 
 El barrio duerme.
 Los problemas no.
-
-* [Continuar] -> jueves_cliffhanger
-
-// Fragmento de Ixchel (ex Yulimar)
-{fui_a_olla_jueves:
-    -> ixchel_fragmento_noche ->
-}
 
 * [Continuar] -> jueves_cliffhanger
 
