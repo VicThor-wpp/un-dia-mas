@@ -41,7 +41,7 @@ Normal       Laboral        11 AM           Día Sin      Olla           Colecti
 | **Conexión** | 0-10 | Integración comunitaria, acceso a finales, **death spiral si <= 1** | ⚠️ Indirecto (vía llama) |
 | **Llama** | 0-10 | Esperanza colectiva, tono de finales | ✅ **Sí (= 0)** → final SIN LLAMA |
 | **Dignidad** | 0-10 | Autoestima, resistencia a humillación, **death spiral si <= 2** | ⚠️ Indirecto (vía salud_mental) |
-| **Salud Mental** | 0-5 | Estado psicológico, **NUNCA SUBE, SOLO BAJA** | ✅ **Sí (= 0)** → final APAGADO |
+| **Inercia** | 0-10 | Resistencia al cambio, **death spiral si >= 8** | ✅ **Sí (= 10)** → final APAGADO |
 
 **⚠️ IMPORTANTE**: El juego ahora puede terminar ANTES del domingo si salud_mental o llama llegan a 0.
 
@@ -535,7 +535,7 @@ Al final de **cada día** (lunes→martes, martes→miércoles, etc.), el juego 
 === transicion_XXX_YYY ===
 
 // 1. COLAPSO MENTAL INDIVIDUAL (prioridad máxima)
-{salud_mental <= 0:
+{inercia >= 10:
     -> final_apagado
 }
 
@@ -555,8 +555,8 @@ Al final de **cada día** (lunes→martes, martes→miércoles, etc.), el juego 
 ```ink
 === evaluar_final ===
 
-// 1. COLAPSO MENTAL (por si llegaste al domingo con salud_mental = 0)
-{salud_mental <= 0:
+// 1. COLAPSO MENTAL (por si llegaste al domingo con inercia = 10)
+{inercia >= 10:
     -> final_apagado
 }
 
@@ -601,41 +601,23 @@ Al final de **cada día** (lunes→martes, martes→miércoles, etc.), el juego 
 **Tipo**: GAME OVER TEMPRANO (puede pasar lunes-sábado)
 
 **Triggers**:
-- `salud_mental <= 0` al final de cualquier día
+- `inercia >= 10` al final de cualquier día
 
 **Narrativa Fisher**:
 ```
 Pantalla negra. 3:47 AM.
-
-El antidepresivo en el cajón.
-"Tomar con alimentos."
-No comiste nada.
-
-Lo que no te dicen es que el problema no está en tu cabeza.
-El problema está en que no podés pagar el alquiler trabajando 60 horas.
-El problema está en que "flexibilidad laboral" significa que no sabés si comés el jueves.
-El problema está en que "resiliencia" es la palabra que usan cuando quieren que aguantes lo inaguantable.
-
-No estás enfermo.
-El sistema está enfermo.
-
-Pero ellos te venden la pastilla.
-Y vos te la tomás.
-Porque mañana hay que levantarse igual.
-
-# FIN - "El realismo capitalista"
+...
 ```
 
-**Tono**: Crítica estructural. Mark Fisher. Depresión como síntoma del capitalismo tardío, no falla química individual.
+**Tono**: Crítica estructural. Mark Fisher. Inercia total. Zombificación.
 
 **Cómo llegar**:
-- Salud mental inicial: 3/5
-- Necesitas perder 4 puntos
-- Triggers: despido (-1), llegada tarde (-1), reunión RRHH (-1), encuentros con Juan (-1 cada uno)
-- **No hay forma de recuperarla** - espiral descendente inevitable
-- Run pesimista: Martes puede llevarte a 0 (reunión + citación + conversación Juan)
+- Inercia inicial: 5/10
+- Necesitas ganar 5 puntos
+- Triggers: despido (+1), llegada tarde (+1), reunión RRHH (+1), encuentros con Juan (+1 cada uno), fragmentos oscuros (+1)
+- **Recuperación**: `disminuir_inercia()` solo ocurre en momentos de conexión profunda o éxito crítico.
 
-**Logro**: "Realismo Capitalista" - Alcanzar salud_mental = 0
+**Logro**: "Realismo Capitalista" - Alcanzar inercia = 10
 
 ---
 
@@ -838,7 +820,7 @@ Como siempre.
 ### 🌫️ FINAL 3: GRIS (Gray)
 
 **Triggers**:
-- `salud_mental <= 2`
+- `inercia >= 8`
 - `conexion <= 4`
 
 **Narrativa**:
@@ -1019,7 +1001,7 @@ El juego usa `d6()` para rolls de 1-6. Los chequeos son **mayormente ocultos** -
 | `conexion` | int | 0-10 | Integración comunitaria |
 | `llama` | int | 0-10 | Esperanza colectiva |
 | `dignidad` | int | 0-10 | Autoestima |
-| `salud_mental` | int | 0-5 | Estado psicológico |
+| `inercia` | int | 0-10 | Resistencia al cambio (0=Bien, 10=Mal) |
 
 ### Variables de Tracking
 
@@ -1564,26 +1546,26 @@ Vos.
 
 ---
 
-### Salud Mental: Espiral Negativa
+### Inercia: La Jaula (Espiral Negativa)
 
-| Evento | Impacto Salud Mental |
-|--------|----------------------|
-| Llegar tarde al laburo | -1 |
-| Reunión de área (martes) | -1 (automático) |
-| Esperar citación de RRHH | -1 (automático) |
-| Despido (miércoles) | -1 (automático) |
-| Conversaciones con Juan | -1 por opción negativa |
-| Buscar referencias y recibir tibia | -1 |
-| Encuentro random negativo barrio | -1 (1/6 probabilidad) |
-| **Fragmento oscuro dignidad <= 2** | **-1 por noche** |
+| Evento | Impacto Inercia |
+|--------|-----------------|
+| Llegar tarde al laburo | +1 |
+| Reunión de área (martes) | +1 (automático) |
+| Esperar citación de RRHH | +1 (automático) |
+| Despido (miércoles) | +1 (automático) |
+| Conversaciones con Juan | +1 por opción negativa |
+| Buscar referencias y recibir tibia | +1 |
+| Encuentro random negativo barrio | +1 (1/6 probabilidad) |
+| **Fragmento oscuro dignidad <= 2** | **+1 por noche** |
 
 **Thresholds críticos**:
-- `salud_mental <= 2` → Trigger final GRIS (burnout) en domingo
-- `salud_mental <= 0` → **GAME OVER inmediato** → final APAGADO
+- `inercia >= 8` → Parálisis (opciones bloqueadas) + Trigger final GRIS
+- `inercia >= 10` → **GAME OVER inmediato** → final APAGADO
 
-**No hay recuperación**: A diferencia de otros recursos, salud mental **SOLO BAJA, NUNCA SUBE**. Espiral descendente inevitable.
+**Recuperación**: Difícil. Solo baja con actos de agencia genuina o conexión profunda (`disminuir_inercia()`).
 
-**Consecuencia**: Colapso mental individual. Crítica fisher: la depresión como síntoma estructural del capitalismo.
+**Consecuencia**: Zombificación. Crítica fisher: la incapacidad de imaginar alternativas.
 
 ---
 
@@ -1597,7 +1579,7 @@ Al final de cada día, ANTES de dormir, se muestra un fragmento nocturno desde l
 
 | Condición | Versión Fragmento | Consecuencia |
 |-----------|-------------------|--------------|
-| `dignidad <= 2` | **Fragmento Oscuro - Humillación** | `-1 salud_mental` |
+| `dignidad <= 2` | **Fragmento Oscuro - Humillación** | `+1 inercia` |
 | `conexion <= 1` | **Fragmento Oscuro - Aislamiento** | `-1 llama` |
 | Normal | Fragmento original | Sin penalty |
 
@@ -1642,10 +1624,10 @@ Mañana hay que seguir.
 
 Los fragmentos oscuros crean **espirales descendentes** que aceleran hacia los finales oscuros:
 
-**Espiral Individual** (Dignidad → Salud Mental → Colapso):
+**Espiral Individual** (Dignidad → Inercia → Colapso):
 ```
-dignidad <= 2 → fragmento oscuro cada noche → -1 salud_mental/día
-→ acelera llegada a salud_mental = 0
+dignidad <= 2 → fragmento oscuro cada noche → +1 inercia/día
+→ acelera llegada a inercia = 10
 → final APAGADO temprano
 ```
 
@@ -1660,7 +1642,7 @@ conexion <= 1 → fragmento oscuro cada noche → -1 llama/día
 
 1. **Dignidad NO es final temprano**: Difícil de perder (solo 5 triggers), pero genera death spiral hacia salud_mental = 0
 2. **Conexión NO es final temprano**: Fácil de recuperar (40 subidas vs 8 bajadas), pero genera death spiral hacia llama = 0
-3. **Salud Mental = 0**: GAME OVER individual (colapso psicológico)
+3. **Inercia = 10**: GAME OVER individual (colapso de agencia)
 4. **Llama = 0**: GAME OVER colectivo (muerte comunitaria)
 
 **Teoría de juegos narrativos**: Los fragmentos oscuros traducen decisiones de gameplay en consecuencias narrativas y mecánicas, creando feedback loops que empujan hacia finales coherentes con tus elecciones.
@@ -1908,7 +1890,7 @@ VAR energia = 4
 VAR conexion = 3
 VAR llama = 5
 VAR dignidad = 5
-VAR salud_mental = 3
+VAR inercia = 5
 
 // Tracking
 VAR vinculo = "sofia"

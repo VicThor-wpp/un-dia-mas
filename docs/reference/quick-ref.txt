@@ -73,7 +73,7 @@
      Result: "La semana pasó. No hablaste con nadie. Como antes, como siempre."
 
   🌫️ GRIS (Burnout)
-     ├─ salud_mental <= 2
+     ├─ inercia >= 8
      └─ conexion <= 4
      Result: "Todo pesa. Un día más. Otro más. Y otro."
 
@@ -95,7 +95,7 @@
   ayude_en_olla          bool     🚫 Gates LA RED if false
   conexion               0-10     🔑 Determines 5 of 6 endings
   llama                  0-10     🔑 Community hope, affects endings
-  salud_mental           0-5      🔑 Triggers GRIS if <= 2
+  inercia                0-10     🔑 Triggers GRIS if >= 8, APAGADO if >= 10
   conte_a_alguien        bool     Affects whole week
 
   GAMEPLAY
@@ -249,7 +249,7 @@
   ✗ Ver tele malas noticias (-salud_mental)
   ✗ Aislamiento sostenido
   ✓ Alguna conexión mínima (3-4)
-  Result: salud_mental 1-2, conexion 3-4
+  Result: inercia 8-10, conexion 3-4
 
 
 ┌─────────────────────────────────────────────────────────────────────────────┐
@@ -330,7 +330,7 @@
   □ Final GRIS
     - Aislamiento mínimo (W-Th)
     - Quedarse en cama, malas noticias, no ayudar
-    - Expect: salud_mental <= 2, conexion <= 4
+    - Expect: inercia >= 8, conexion <= 4
 
   □ Marcos Complete Arc
     - No contesta L-V
