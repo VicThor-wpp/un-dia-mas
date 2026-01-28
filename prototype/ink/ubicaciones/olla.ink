@@ -112,31 +112,36 @@ Hay una señora al lado tuyo. Es Elena, la veterana del barrio. No la habías vi
 // Chequeo comunitario: pelar papas en la olla
 ~ temp pelada = chequeo_comunitario(0, 3)
 { pelada == 2:
-    Te sale natural. Como si siempre hubieras estado acá.
-    "¿Vos sos nuevo?" "Sí. Primera vez." "No parece."
-    Pelás papas en silencio un rato. Elena te mira y asiente.
-    "Es mejor ser parte que mirar de afuera."
+    Te sale natural. La cáscara sale en una tira larga, casi perfecta.
+    Elena te mira de reojo. No sonríe, pero asiente.
+    "Mi viejo pelaba así", dice. "En el 2002. Cuando tuvimos que cerrar el taller."
+    Es la primera vez que menciona el taller. El cuchillo sigue moviéndose.
+    Historias que se cuentan mirando para abajo.
     ~ subir_conexion(1)
 }
 { pelada == 1:
-    Pelás bien. El ritmo sale solo.
-    "Yo venía a comer. Ahora ayudo", dice Elena.
-    "Es mejor ser parte que mirar de afuera."
-    No sabés qué decir. Seguís pelando.
+    Pelás. El movimiento repetitivo calma algo en tu cabeza.
+    Elena habla del precio del aceite. De que no alcanza.
+    "Es cíclico", dice. "Cada diez años nos rompen las piernas. Y aprendemos a caminar de nuevo."
+    Te pasa otra papa sin mirarte.
+    "Aprendemos."
 }
 { pelada == 0:
-    Se te caen un par de papas.
-    "Tranquilo", dice Elena. "Acá nadie nació sabiendo."
-    Seguís pelando. Más despacio.
+    Se te caen un par de papas. Tenés las manos torpes, desacostumbradas al trabajo manual.
+    Elena las levanta sin decir nada. Las lava. Te las devuelve.
+    "Despacio", dice. "Nadie nos corre."
+    Pero el hambre sí corre.
 }
 { pelada == -1:
-    Te cortás pelando. Nada grave, pero sangra.
-    "Poné la mano bajo el agua", dice Elena.
-    Te lavás. Volvés. Seguís.
+    El cuchillo se resbala. Te cortás el dedo. La sangre gotea sobre una papa lavada.
+    "¡Trapo!"
+    Elena te venda rápido. Tiene práctica.
+    "La sangre se lava. El hambre no", murmura alguien.
+    Sentís la vergüenza arder más que el corte.
     ~ bajar_salud_mental(1)
 }
 
-Las papas se acaban.
+Las papas se acaban. Tus manos huelen a tierra y almidón.
 
 * [Seguir ayudando] -> olla_ayudar_menu
 * [Irte] -> olla_despedirse
@@ -159,34 +164,42 @@ Platos, platos, platos.
 // Chequeo comunitario: servir en la olla
 ~ temp servicio = chequeo_comunitario(0, 3)
 { servicio == 2:
-    Le agarrás la mano. Servís parejo, con ritmo.
-    Una nena te mira. "Más, por favor."
-    Le ponés un poco más. Sofía te guiña un ojo. "Bien ahí."
+    El ritmo es perfecto. Cucharón, plato, sonrisa. Cucharón, plato, sonrisa.
+    Ves una cara conocida. González. De contabilidad.
+    Te ve. Baja la vista.
+    Le servís un poco más de carne.
+    Él asiente, rápido, y se va sin mirar atrás.
+    La dignidad es un cristal frágil. Hoy vos lo cuidaste.
     ~ subir_conexion(1)
 }
 { servicio == 1:
-    Servís bien. Uno tras otro. Parejo.
-    Las caras pasan. Cansancio, hambre, bronca a veces.
-    Pero estás acá. Eso cuenta.
+    Servís. Las manos se estiran. Manos curtidas, manos de oficina, manos de pibes.
+    Una nena te da un dibujo a cambio del plato. Un sol negro.
+    "Gracias", dice.
+    Te guardás el dibujo en el bolsillo. Quema.
 }
 { servicio == 0:
-    Se te cae un poco de guiso fuera del plato.
-    "Tranquilo", dice alguien. "Acá no se desperdicia nada."
-    Limpiás y seguís.
+    Calculaste mal. Le diste mucho a los primeros, ahora tenés que escatimar.
+    Un viejo te mira el cucharón medio vacío.
+    "¿Eso es todo?"
+    "Hay que estirar, abuelo."
+    Te odiás por decir eso. Te odiás mucho.
 }
 { servicio == -1:
-    Se te resbala el cucharón y volcás guiso en la mesa.
-    "¡Cuidado!" Sofía viene a ayudar. "No pasa nada."
-    Pero sentís la vergüenza.
+    Se te vuelca el cucharón sobre la mesa.
+    "¡Eh, cuidado!"
+    Es comida caliente. Es comida que falta.
+    Sofía viene con un trapo. No te reta. Su silencio es peor.
+    "Tomate un respiro", te dice.
+    Te apartás, con las manos temblando.
     ~ bajar_salud_mental(1)
 }
 
 {not tiene_laburo:
-    Algunos te miran con agradecimiento.
-    Otros ni levantan la vista.
-    Vos estás de este lado del cucharón.
-    Por ahora.
-    Tu contrato decía "prestador de servicios", pero el hambre no entiende de ficciones legales.
+    Del otro lado del mesón, las caras cambian.
+    Pero los ojos son los mismos.
+    Miedo.
+    El mismo miedo que tenés vos cuando te despertás a las 4 de la mañana.
 }
 
 La fila se termina.
@@ -211,15 +224,19 @@ Solo en la mugre y en sacarla.
 -
 
 {d6() >= 5:
-    Sofía se acerca.
-    "Gracias. Hacía falta."
-
-    No es mucho.
-    Pero se siente bien. Ser parte.
+    Sofía está haciendo cuentas en una libreta.
+    Muerde la lapicera.
+    "No cierran", murmura. "Nunca cierran."
+    Te ve limpiando. Cierra la libreta de golpe.
+    "Dejá eso. Vení."
+    Te da un mate. Está frío.
+    "Gracias por venir. La mayoría viene una vez, se saca la foto moral y no vuelve."
+    Te mira fijo.
+    "No desaparezcas."
     ~ subir_conexion(1)
 }
 
-Terminás de limpiar.
+Terminás de limpiar. El piso brilla, o eso te parece.
 
 * [Seguir ayudando] -> olla_ayudar_menu
 * [Irte] -> olla_despedirse

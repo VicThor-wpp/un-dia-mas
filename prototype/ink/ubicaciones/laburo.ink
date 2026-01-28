@@ -94,14 +94,75 @@ Planillas.
 Reuniones que podrían ser mails.
 Mails que podrían ser nada.
 
-{d6() <= 2:
-    El jefe pasa por tu escritorio.
-    Te mira.
-    No dice nada.
-    Sigue.
+{d6() <= 3:
+    -> laburo_evento_tension
+- else:
+    {d6() <= 2:
+        El jefe pasa por tu escritorio.
+        Te mira.
+        No dice nada.
+        Sigue.
 
-    ¿Qué mierda fue eso?
+        ¿Qué mierda fue eso?
+        ~ bajar_salud_mental(1)
+    }
+}
+
+->->
+
+=== laburo_evento_tension ===
+
+~ temp evento = d6()
+
+{ evento:
+- 1:
+    Vas al baño.
+    Escuchás a alguien llorando en el cubículo del fondo.
+    Tratás de no hacer ruido.
+    Te lavás las manos rápido y salís.
+    El sonido del llanto te sigue hasta el escritorio.
     ~ bajar_salud_mental(1)
+
+- 2:
+    La impresora se traba.
+    Vas a destrabarla y ves un papel que quedó a medias.
+    "LISTA DE REVISIÓN DE PUESTOS - CONFIDENCIAL"
+    Alguien te lo arranca de la mano antes de que leas nombres.
+    "Dámelo." Es la secretaria de RRHH.
+    ~ bajar_salud_mental(1)
+
+- 3:
+    Reunión de equipo.
+    Falta una silla.
+    "¿Y Gómez?"
+    "Gómez... ya no está con nosotros."
+    Nadie pregunta más.
+    El aire acondicionado está demasiado frío.
+
+- 4:
+    Tu computadora se reinicia sola.
+    Por un segundo, la pantalla negra te devuelve tu reflejo.
+    Cara de miedo.
+    "¿Será hoy?", pensás.
+    No, hoy no. Reinicia.
+    Pero el miedo queda.
+
+- 5:
+    Café en la cocina.
+    Dos gerentes hablan bajito.
+    Cuando entrás, se callan.
+    Te sonríen. Una sonrisa de plástico.
+    "Todo bien, ¿no?"
+    "Sí, sí."
+    Salís con el café ardiendo en la mano.
+
+- 6:
+    Un mail general.
+    "Celebramos los resultados del trimestre."
+    Gráficos en subida. Números verdes.
+    Abajo, en letra chica: "Continuaremos optimizando recursos."
+    Optimizar.
+    Vos sos un recurso.
 }
 
 ->->
