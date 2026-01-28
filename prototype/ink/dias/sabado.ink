@@ -50,7 +50,7 @@ Ahora todos los días son iguales.
 La mañana de sábado.
 El barrio más tranquilo.
 
-{salud_mental <= 4: La cabeza sigue dando vueltas. Tres días sin laburo y ya parece una eternidad.}
+{peso_estructural <= 4: La cabeza sigue dando vueltas. Tres días sin laburo y ya parece una eternidad.}
 
 // Invitar a Juan a la olla
 {juan_sabe_mi_situacion && ayude_en_olla:
@@ -577,10 +577,79 @@ Todos te miran.
 }
 
 === asamblea_exito_total ===
-// Stub: Consecuencias de éxito crítico en propuesta
+// Éxito crítico: se abre el momento de análisis político
 
 El resto de la asamblea fluye diferente.
 Tu intervención cambió algo.
+
+* [...]
+-
+
+Elena pide la palabra.
+
+"Perdonen que me ponga memoriosa. Pero lo que dijo el compañero me hizo acordar."
+
+* [Escuchar]
+-
+
+"En el 2002, cuando cerró el frigorífico, dijeron que era problema nuestro.
+Que no éramos competitivos.
+Que el mercado había decidido."
+
+"Pero el mercado no decidió nada.
+Los dueños decidieron.
+Se llevaron la plata y nos dejaron afuera."
+
+* [...]
+-
+
+"Lo que quiero decir es esto:
+No sos vos el problema.
+Nunca fuiste vos."
+
+~ activar_no_es_individual()
+
+# IDEA DESBLOQUEADA: "NO ES SOLO MI PROBLEMA"
+
+La precariedad no es falla personal.
+Es diseño.
+
+* [...]
+-
+
+Diego suma:
+
+"En Venezuela pasó igual.
+Los patrones decían que ellos creaban trabajo.
+Pero nosotros hacíamos todo el laburo.
+Ellos solo firmaban."
+
+"Un día paramos.
+Y se dieron cuenta que sin nosotros
+no hay empresa."
+
+~ activar_antagonismo_clase()
+
+# IDEA DESBLOQUEADA: "HAY INTERESES OPUESTOS"
+
+No es que "todos estamos en el mismo barco".
+Unos reman. Otros pasean.
+
+* [...]
+-
+
+Sofía cierra:
+
+"Bueno. Por eso estamos acá.
+La olla no es caridad.
+Es organización.
+Es decir: nosotros podemos."
+
+~ activar_autonomia_posible()
+
+# IDEA DESBLOQUEADA: "PODEMOS ORGANIZARNOS SIN JEFES"
+
+No necesitás permiso para cuidarte entre ustedes.
 
 -> sabado_asamblea_fin
 
@@ -605,7 +674,7 @@ Otras voces hablan.
 // Cierre de la asamblea
 -> olla_asamblea_fin ->
 
-~ subir_salud_mental(1)
+~ aliviar_peso(1)
 
 {idea_hay_cosas_juntos == false:
     # IDEA DISPONIBLE: "HAY COSAS QUE SE HACEN JUNTOS"
@@ -687,7 +756,7 @@ Pero cambia algo.
     Un día más.
     Hasta que no hay más días.
 
-    ~ bajar_salud_mental(1)
+    ~ aumentar_peso(1)
     * [Continuar] -> transicion_sabado_domingo
 }
 
@@ -752,7 +821,7 @@ Después sigue la lucha.
     Vos tampoco vas a volver a ser el mismo.
     Nadie vuelve.
 
-    ~ bajar_salud_mental(1)
+    ~ aumentar_peso(1)
     * [Continuar] -> transicion_sabado_domingo
 }
 
@@ -812,7 +881,7 @@ Es un buen sueño.
     Pero la humillación es la misma.
     Siempre la misma.
 
-    ~ bajar_salud_mental(1)
+    ~ aumentar_peso(1)
     * [Continuar] -> transicion_sabado_domingo
 }
 
@@ -876,7 +945,7 @@ Mañana sigue.
     Ya no queda nada más.
     Nunca quedó.
 
-    ~ bajar_salud_mental(1)
+    ~ aumentar_peso(1)
     * [Continuar] -> transicion_sabado_domingo
 }
 
@@ -991,7 +1060,7 @@ Pero quizás no igual.
 
 === transicion_sabado_domingo ===
 // Chequeo de colapso mental antes de continuar
-{salud_mental <= 0:
+{peso_estructural <= 0:
     -> recovery_mental_sabado
 }
 - (post_recovery_sabado)
@@ -1021,7 +1090,7 @@ La oscuridad viene de nuevo. Más fuerte.
     Una cara. Un gesto. Algo mínimo.
 }
 
-~ salud_mental = 1
+~ peso_estructural = 1
 
 Mañana es domingo. Último día. Algo tiene que pasar.
 

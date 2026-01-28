@@ -11,7 +11,7 @@
 Diego camina rápido.
 Siempre camina rápido.
 
-Venezolano. Llegó hace ocho meses.
+Venezolano. Llegó hace dos años.
 Trabaja en el depósito de la zona industrial.
 Turnos de doce horas. Pago en negro.
 
@@ -895,8 +895,8 @@ La señal va y viene.
 "Sí, mamá."
 Mentira. Hoy no comió.
 
-Le manda la mitad de lo que gana.
-Se queda con la otra mitad.
+Saca cuentas mentalmente. De los veintiocho mil pesos que sacó en el depósito, mandó doce mil ayer.
+Le quedan dieciséis para el alquiler de la pieza y comer todo el mes.
 A veces alcanza. A veces no.
 
 "Te quiero, mijo."
@@ -942,4 +942,3 @@ Se toma el mate lavado igual.
 Algo caliente es algo caliente.
 
 ->->
-

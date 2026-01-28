@@ -229,7 +229,7 @@ Y otra gente que no conocés bien.
             Te pone una mano en el hombro. Firme.
             "Acá nadie juzga. ¿Querés dar una mano?"
             ~ subir_conexion(2)
-            ~ subir_salud_mental(1)
+            ~ aliviar_peso(1)
         }
         { resultado_jueves_abrirte == 1:
             Sofía asiente. No dice "qué bajón" ni "vas a conseguir algo".
@@ -248,7 +248,7 @@ Y otra gente que no conocés bien.
             "¿Perdón?"
             "Nada. Nada."
             La vergüenza te traga. No podés ni decirlo en voz alta.
-            ~ bajar_salud_mental(1)
+            ~ aumentar_peso(1)
         }
         -> jueves_olla_pregunta
     * ["Tenía el día libre."]
@@ -630,7 +630,7 @@ La cuenta regresiva.
     ¿Qué hice mal? ¿Podría haber hecho algo distinto?
     ¿Voy a terminar en la calle?
     El pensamiento se repite en loop. Hasta las cinco de la mañana.
-    ~ bajar_salud_mental(1)
+    ~ aumentar_peso(1)
 }
 
 // Juan te llama
@@ -675,7 +675,7 @@ Vos también.
     Siempre igual.
 
     { chance(50):
-        ~ bajar_salud_mental(1)
+        ~ aumentar_peso(1)
     }
     ->->
 }
@@ -742,7 +742,7 @@ Mañana es otro día igual.
     Todo se rompe.
 
     { chance(50):
-        ~ bajar_salud_mental(1)
+        ~ aumentar_peso(1)
     }
     ->->
 }
@@ -803,7 +803,7 @@ Mañana hay que buscar soluciones.
     Pero no está segura.
 
     { chance(50):
-        ~ bajar_salud_mental(1)
+        ~ aumentar_peso(1)
     }
     ->->
 }
@@ -863,7 +863,7 @@ Mañana hay que buscar soluciones.
     "Todos terminamos igual."
 
     { chance(50):
-        ~ bajar_salud_mental(1)
+        ~ aumentar_peso(1)
     }
     * [Continuar] -> jueves_cliffhanger
 }
@@ -943,7 +943,7 @@ Los problemas no.
 
 === transicion_jueves_viernes ===
 // Chequeo de colapso mental antes de continuar
-{salud_mental <= 0:
+{peso_estructural <= 0:
     -> recovery_mental_jueves
 }
 - (post_recovery_jueves)
@@ -971,7 +971,7 @@ Todo se pone oscuro. La cabeza no funciona.
 
 Pero algo te sostiene. Un recuerdo. Una cara. Algo.
 
-~ salud_mental = 1
+~ peso_estructural = 1
 
 No estás bien. Pero seguís.
 

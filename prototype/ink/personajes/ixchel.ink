@@ -10,8 +10,9 @@
 
 === ixchel_encuentro_casual ===
 
-Ves a una mujer barriendo la vereda frente a la mercería.
-Es Ixchel. Siempre lleva un huipil colorido bajo el delantal de trabajo.
+Ves a una mujer acomodando tejidos sobre un paño en la vereda.
+Es Ixchel. Vende bordados y, cuando la dejan, tamales.
+Un día bueno saca mil pesos. Un día malo, vuelve con la canasta llena.
 Se mueve con una parsimonia que contrasta con el ritmo frenético del barrio.
 
 * [Saludar] -> ixchel_saludo
@@ -22,9 +23,9 @@ Se mueve con una parsimonia que contrasta con el ritmo frenético del barrio.
 
 "Buen día, Ixchel."
 
-Ella levanta la vista. Sus ojos son profundos, como si vieran más allá de la calle rota.
+Ella levanta la vista. Te mira directo, sin adornos.
 
-"Buen día para quien sabe caminarlo", dice con una leve sonrisa.
+"Buen día", dice seca. Sigue barriendo.
 
 {not tiene_laburo:
     "Lo veo cargando mucho peso en los hombros, joven. No todo lo que pesa es mochila."
@@ -39,7 +40,7 @@ Ella levanta la vista. Sus ojos son profundos, como si vieran más allá de la c
 "¿Te doy una mano con eso?"
 
 Ixchel te entrega la escoba sin dudar.
-"La limpieza es un acto sagrado. Gracias."
+"Gracias. Hay mucho que hacer."
 
 ~ subir_conexion(1)
 ~ ixchel_estado = "ayudando"
@@ -65,7 +66,7 @@ Hace una pausa. Sus manos siguen barriendo, pero sus ojos miran algo lejano.
 
 Pasás rápido.
 Ixchel sigue barriendo.
-Para ella, el tiempo no es algo que se gasta, es algo que se habita.
+No te mira. Tiene cosas que hacer.
 
 ->->
 
@@ -902,3 +903,167 @@ La vela se apaga. Se duerme.
 
 ->->
 
+// --- ESCENA CLAVE: CRÍTICA A LA IZQUIERDA ACADÉMICA ---
+
+=== ixchel_critica_academica ===
+// Esta escena muestra a Ixchel con agencia política crítica
+
+~ ixchel_hablo_de_ayni = true
+
+Están en la olla después del cierre.
+Alguien trajo un libro de la facultad.
+
+"Es sobre economía solidaria", dice. "Súper interesante."
+
+Ixchel mira el libro. Se ríe bajito.
+
+* [...]
+-
+
+"¿Qué pasa?", preguntás.
+
+"Nada. Es que ustedes le ponen nombres nuevos a todo."
+
+* [...]
+-
+
+"'Economía solidaria'. En mi comunidad se llama ayni. Se llama mink'a.
+Lo venimos haciendo hace quinientos años.
+Pero claro, si no tiene paper académico, no cuenta."
+
+* [...]
+-
+
+Se cruza de brazos.
+
+"Una vez vino una profesora de la universidad a mi pueblo.
+A 'estudiar nuestras prácticas ancestrales'.
+Tres semanas nos filmó, preguntó, anotó.
+
+¿Sabés qué hizo después?"
+
+"¿Qué?"
+
+* [...]
+-
+
+"Publicó un libro. El libro costaba más de lo que ganamos en un mes.
+Nosotros ni lo pudimos leer."
+
+Silencio incómodo.
+
+* [...]
+-
+
+"No digo que la solidaridad esté mal, joven.
+Digo que algunos vienen a explicarnos lo que ya sabemos.
+Y de paso se llevan el crédito."
+
+* ["Tenés razón."]
+    "No es cuestión de razón. Es cuestión de respeto."
+    
+    Pausa.
+    
+    "Pero bueno. Por lo menos acá se hace algo.
+    Mejor hacer mal que explicar bien."
+    
+    ~ subir_dignidad(1)
+    ~ subir_conexion(1)
+    ->->
+    
+* [Quedarte callado]
+    El silencio dice más que las palabras.
+    
+    Ixchel vuelve a ordenar.
+    No hace falta respuesta.
+    ->->
+
+=== ixchel_sobre_ayni ===
+// Escena sobre economías del cuidado
+
+Ixchel te ve ayudando a cargar cosas.
+
+"Ayni", dice.
+
+"¿Eh?"
+
+"En quechua. Mi abuela lo usaba.
+Significa: 'Yo te doy, vos me das'.
+No es trueque. No es préstamo.
+Es ciclo. Como la luna. Como el agua."
+
+* [...]
+-
+
+"Cuando cocinamos acá, no es caridad.
+Es ayni. Los que tienen verduras traen verduras.
+Los que tienen manos traen manos.
+Los que tienen hambre traen hambre.
+Todo sirve."
+
+* [...]
+-
+
+"El capitalismo dice: 'Dame primero, después te doy'.
+Ayni dice: 'Damos juntos, recibimos juntos'.
+
+Suena simple. Pero cambiaría todo."
+
+~ activar_autonomia_posible()
+
+# IDEA DESBLOQUEADA: "PODEMOS ORGANIZARNOS SIN JEFES"
+
+Otra forma de vivir ya existe.
+Solo que la llaman "economía informal"
+para que parezca menos peligrosa.
+
+->->
+
+// --- ESCENA CLAVE: MOMENTO DE ALEGRÍA COLECTIVA ---
+
+=== ixchel_momento_alegria ===
+// No todo es dolor - momentos de alegría colectiva
+
+La olla terminó.
+La olla cerró llena, todos comieron.
+Sobró, incluso. Cosa rara.
+
+Alguien puso música. Cumbia.
+
+Ixchel se ríe.
+
+"¡Esto me recuerda a las fiestas en mi pueblo!"
+
+Se pone a bailar. Pequeños pasos, brazos en alto.
+Los demás la miran sorprendidos. Después se suman.
+
+* [Bailar]
+    Te sumás. No sabés bailar cumbia. No importa.
+    
+    Diego te agarra del brazo y te marca el paso.
+    "Así, así. Uno-dos, uno-dos."
+    
+    Sofía se ríe a carcajadas.
+    Elena palmea desde la silla.
+    
+    Por un rato, solo existe esto.
+    Cuerpos moviéndose. Risas. Música.
+    
+    ~ aliviar_peso(2)
+    ~ subir_conexion(1)
+    ~ subir_llama(1)
+    ->->
+
+* [Quedarte mirando]
+    Mirás desde afuera.
+    
+    Pero algo te toca igual.
+    La alegría de los otros.
+    
+    Diego te hace señas para que te sumes.
+    Negás con la cabeza.
+    
+    "¡Mañana!", dice.
+    
+    ~ aliviar_peso(1)
+    ->->

@@ -67,6 +67,11 @@ Se ríe. Sin gracia.
 
 "Nunca alcanza. Pero se estira."
 
+{es_vegano:
+    Te mira un segundo. 
+    "Espero que no seas muy mañoso con la comida, m'hijo. Acá lo que más sobra es hueso para darle sabor al agua. Lo verde es lujo de radio."
+}
+
 ->->
 
 === sofia_ignorar ===
@@ -517,12 +522,12 @@ Si no pagamos, no nos fían más."
 
 "¿Cuánto es?"
 
-"Tres mil pesos. Para ayer."
+"Dieciocho mil pesos. Para ayer."
 
 * [...]
 -
 
-Tres mil pesos.
+Dieciocho mil pesos.
 No los tenés. O sí, pero son para el alquiler.
 
 * [Ofrecer ayudar a conseguir donaciones] -> sofia_ayuda_donaciones
@@ -573,7 +578,7 @@ Sofía te mira. Evaluando.
 === sofia_dar_plata ===
 
 Le das lo que tenés.
-No son tres mil. Pero es algo.
+No son dieciocho mil. Pero es algo.
 
 "No puedo aceptar esto."
 

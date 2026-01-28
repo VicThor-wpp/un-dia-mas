@@ -134,10 +134,10 @@ VAR ultimo_resultado = 0
 
 === function chequeo_mental(modificador, dificultad) ===
     // Mental checks: advantage if healthy, disadvantage if breaking down
-    { salud_mental >= 4:
+    { peso_estructural >= 4:
         ~ return chequeo_ventaja(modificador, dificultad)
     }
-    { salud_mental <= 1:
+    { peso_estructural <= 1:
         ~ return chequeo_desventaja(modificador, dificultad)
     }
     ~ return chequeo(modificador, dificultad)
@@ -164,7 +164,7 @@ VAR ultimo_resultado = 0
     ~ pequenas_victorias += 1
 
 === function critico_exito_mental() ===
-    ~ subir_salud_mental(1)
+    ~ aliviar_peso(1)
     ~ pequenas_victorias += 1
 
 === function critico_exito_comunitario() ===
@@ -182,7 +182,7 @@ VAR ultimo_resultado = 0
     }
 
 === function critico_fallo_mental() ===
-    ~ bajar_salud_mental(1)
+    ~ aumentar_peso(1)
 
 === function critico_fallo_comunitario() ===
     ~ bajar_llama(1)

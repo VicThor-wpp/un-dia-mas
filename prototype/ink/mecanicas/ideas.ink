@@ -80,3 +80,48 @@
 
 === function tiene_sinergia_individual() ===
     ~ return sinergia_individual >= 2
+
+// --- FUNCIONES DE ACTIVACION: IDEAS POLITICAS ---
+
+=== function activar_no_es_individual() ===
+    { not idea_no_es_individual:
+        ~ idea_no_es_individual = true
+        ~ ideas_activas += 1
+        ~ check_sinergias()
+    }
+
+=== function activar_antagonismo_clase() ===
+    { not idea_antagonismo_clase:
+        ~ idea_antagonismo_clase = true
+        ~ ideas_activas += 1
+        ~ check_sinergias()
+    }
+
+=== function activar_autonomia_posible() ===
+    { not idea_autonomia_posible:
+        ~ idea_autonomia_posible = true
+        ~ ideas_activas += 1
+        ~ check_sinergias()
+    }
+
+=== function activar_sabotaje_legitimo() ===
+    { not idea_sabotaje_legitimo:
+        ~ idea_sabotaje_legitimo = true
+        ~ ideas_activas += 1
+        ~ check_sinergias()
+    }
+
+// --- SINERGIA POLITICA ---
+
+=== function tiene_sinergia_politica() ===
+    // Cuenta cuántas ideas políticas tiene
+    ~ temp politicas = 0
+    { idea_no_es_individual: ~ politicas += 1 }
+    { idea_antagonismo_clase: ~ politicas += 1 }
+    { idea_autonomia_posible: ~ politicas += 1 }
+    { idea_sabotaje_legitimo: ~ politicas += 1 }
+    ~ return politicas >= 2
+
+=== function tiene_conciencia_radical() ===
+    // Tiene las 3 ideas clave para acciones radicales
+    ~ return idea_no_es_individual && idea_antagonismo_clase && idea_autonomia_posible

@@ -100,7 +100,7 @@ El techo.
 El silencio.
 Los pensamientos.
 
-{salud_mental <= 4:
+{peso_estructural <= 4:
     ¿Quién sos ahora?
     ¿Qué hacés?
     ¿Para qué te levantás?
@@ -205,7 +205,7 @@ Una forma de sobrevivir a la mañana.
 { despertar == -1:
     Te quemás con el café. El vaso se cae, te salpica la mano.
     El día arranca mal.
-    ~ bajar_salud_mental(1)
+    ~ aumentar_peso(1)
 }
 
 El café se termina.
@@ -439,7 +439,7 @@ No hablás con nadie.
 Es fácil quedarse.
 Demasiado fácil.
 
-{salud_mental <= 4:
+{peso_estructural <= 4:
     Los pensamientos vienen solos.
     ¿Para qué?
     ¿Quién sos?

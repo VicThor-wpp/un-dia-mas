@@ -15,6 +15,12 @@ VAR idea_red_o_nada = false         // "La red o la nada" (de Elena)
 VAR idea_quien_soy = false          // "¿Quién soy sin laburo?"
 VAR idea_esto_es_lo_que_hay = false // "Esto es lo que hay"
 
+// Ideas políticas (se desbloquean por experiencias, no por acumulación)
+VAR idea_no_es_individual = false   // "No es solo mi problema" - la precariedad es estructural
+VAR idea_antagonismo_clase = false  // "Hay intereses opuestos" - patrones vs trabajadores
+VAR idea_autonomia_posible = false  // "Podemos organizarnos sin jefes"
+VAR idea_sabotaje_legitimo = false  // "A veces hay que romper para construir"
+
 // --- ESTADO DE LA OLLA ---
 
 VAR olla_en_crisis = false
@@ -59,6 +65,13 @@ VAR diego_perdio_laburo = false
 VAR diego_familia_en_venezuela = false
 VAR hable_con_diego_profundo = false
 VAR diego_viene_a_olla = false
+VAR diego_conto_cecosesola = false
+VAR diego_conto_camion = false
+VAR diego_mostro_contradiccion = false
+
+// --- EXPERIENCIA POLÍTICA ---
+
+VAR accion_directa_intentada = false  // Si intentaste acción directa (huelga, ocupación, etc)
 
 // --- ESTADO DE MARCOS ---
 
@@ -84,6 +97,14 @@ VAR juan_ofrecio_changa = false      // Hook viernes: si ofreció contacto
 VAR juan_ofrecio_contacto = false
 VAR juan_fue_a_olla = false
 VAR juan_sabe_mi_situacion = false
+VAR juan_mostro_contradiccion = false
+
+// --- ESTADO DE LUCÍA ---
+// Compañera de trabajo - la que politiza
+
+VAR lucia_relacion = 0               // 0-5
+VAR hable_con_lucia_sobre_paro = false
+VAR lucia_sigue_luchando = false
 
 // --- OTROS NPCs ---
 
@@ -94,6 +115,7 @@ VAR ixchel_hablo_de_mina = false
 VAR ixchel_conto_llegada = false
 VAR ixchel_hablo_de_huipil = false
 VAR ixchel_conto_historia = false
+VAR ixchel_hablo_de_ayni = false
 
 // --- ESTADO DETALLADO NPCs (Fase 2) ---
 
@@ -136,6 +158,12 @@ VAR perdida = ""      // familiar, relacion, futuro, vacio
 VAR atadura = ""      // responsabilidad, barrio, inercia, algo
 VAR posicion = ""     // ajeno, quemado, esperanzado, ambiguo
 VAR vinculo = ""      // sofia, elena, diego
+
+// --- POSICIÓN SOCIAL (afecta experiencias concretas) ---
+
+VAR genero = ""       // varon, mujer, no_binario
+VAR raza = ""         // blanco, mestizo, afro, indigena
+VAR es_vegano = false // convicción ética
 
 // --- TRACKING DE EVENTOS ---
 

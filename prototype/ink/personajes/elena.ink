@@ -132,6 +132,10 @@ Te mira. Ojos que vieron demasiado.
 
 "Entonces no está todo mal. Está jodido, pero no todo mal."
 
+{es_vegano:
+    "Y no me pongas cara con el guiso, m'hijo. Yo sé que vos tenés tus ideas, pero el estómago es un traidor que no sabe de ética cuando aprieta de verdad."
+}
+
 Tiene razón. O no.
 Pero su certeza ayuda.
 
@@ -145,7 +149,8 @@ Pero su certeza ayuda.
 
 Se ríe.
 
-"Pero acá sigo. Como el banco este. Como el barrio."
+"Y peleando con la mínima. Diecinueve mil pesos que se van en remedios y la cuenta de la luz antes de que pueda verlos.
+Pero acá sigo. Como el banco este. Como el barrio."
 
 Pausa.
 
@@ -778,7 +783,7 @@ No dice gracias. No hace falta.
     Pero ya estás congelado.
     La responsabilidad te aplasta.
 
-    ~ bajar_salud_mental(1)
+    ~ aumentar_peso(1)
 }
 
 ->->

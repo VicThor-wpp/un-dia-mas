@@ -553,7 +553,7 @@ Todo.
 * [...]
 -
 
-{salud_mental <= 1:
+{peso_estructural <= 1:
     La salud mental se desgastó.
     No es una cosa.
     Son muchas.
@@ -680,7 +680,7 @@ No es heroísmo. Es honestidad.
     Y eso alcanzó.
 }
 
-{salud_mental <= 3:
+{peso_estructural <= 3:
     La cabeza sigue pesando.
     Pero ya no pesás solo.
 
@@ -774,5 +774,207 @@ Mañana hay asamblea de nuevo.
 Y vos vas a estar.
 
 # FIN - "La organización es esperanza"
+
+-> END
+
+=== final_huelga ===
+# ENDING:final_huelga
+
+# FINAL: HUELGA SALVAJE
+
+El lunes, nadie fue.
+
+* [...]
+-
+
+No fue planeado por el sindicato.
+Fue planeado en el almuerzo, en el bondi, en la calle.
+
+* [...]
+-
+
+Lucía lo dijo primero:
+"¿Y si paramos todos? Una semana. Que vean qué pasa sin nosotros."
+
+Y todos dijeron que sí.
+
+* [...]
+-
+
+La patronal amenazó. La policía vino.
+Algunos se rajaron. Otros se mantuvieron.
+
+{conexion >= 7:
+    La olla sostuvo a las familias.
+    Sofía organizó turnos. Nadie pasó hambre.
+}
+
+* [...]
+-
+
+No ganaron todo. Capaz no ganaron nada.
+Pero aprendieron algo:
+
+El poder del patrón no es absoluto.
+Existe solo si ellos van a trabajar.
+
+{llama >= 8:
+    La llama ya no es llama.
+    Es fogata. Es incendio controlado.
+    Es el calor que se necesita para forjar algo nuevo.
+}
+
+# FIN - "Nuestro trabajo vale más que nuestro sueldo"
+
+-> END
+
+=== final_ocupacion ===
+# ENDING:final_ocupacion
+
+# FINAL: OCUPACIÓN
+
+La fábrica cerró hace dos semanas.
+"Problemas financieros", dijeron los dueños.
+Mientras tanto, maquinaria nueva, sin usar.
+
+* [...]
+-
+
+La asamblea decidió.
+Esta noche entran.
+
+{conexion >= 8:
+    Producen por dos meses sin que nadie se entere.
+    Venden directo. Sin patrón. Sin intermediarios.
+    
+    Eventualmente los descubren. Viene la policía.
+    Pero esos dos meses probaron algo:
+    
+    No los necesitamos. Nunca los necesitamos.
+- else:
+    La policía llega a la semana.
+    Represión. Desalojo. Algunos detenidos.
+    
+    Pero algo quedó:
+    La sensación de que otro mundo es posible.
+    Breve. Frágil. Pero posible.
+}
+
+* [...]
+-
+
+No es el mundo nuevo.
+Es una grieta en el viejo.
+Por donde entra luz.
+
+{participe_asamblea:
+    En la asamblea aprendiste algo:
+    El poder no se pide. Se construye.
+    Ladrillo a ladrillo. Día a día.
+}
+
+# FIN - "La fábrica es nuestra"
+
+-> END
+
+=== final_desercion ===
+# ENDING:final_desercion
+
+# FINAL: DESERCIÓN
+
+Renunciaste. O te rajaron. Ya no importa.
+
+* [...]
+-
+
+Pero decidiste algo:
+No volvés al circuito.
+
+No más CV.
+No más entrevistas donde te humillan.
+No más "adaptabilidad al cambio" y "trabajo en equipo".
+
+* [...]
+-
+
+{conexion >= 6:
+    La olla te ofrece algo.
+    No es sueldo. Es comida a cambio de trabajo.
+    No es futuro. Es presente.
+    Vivir de otra forma.
+}
+
+Los tres meses se terminan.
+No conseguiste laburo.
+Pero tampoco lo buscaste.
+
+* [...]
+-
+
+¿Es rendirse? ¿Es desertar?
+No sabés.
+
+Pero estás vivo. Y eso, hoy, es victoria.
+
+{idea_esto_es_lo_que_hay:
+    "Esto es lo que hay", decían.
+    Pero resulta que "lo que hay" se puede dejar de lado.
+    Y construir otra cosa.
+}
+
+# FIN - "Fuera del circuito"
+
+-> END
+
+=== final_represion ===
+# ENDING:final_represion
+
+# FINAL: REPRESIÓN
+
+La huelga duró tres días.
+La policía entró al cuarto día.
+
+* [...]
+-
+
+Te agarraron a vos, a Juan, a cinco más.
+Golpes. Comisaría. Abogado caro que no tenés.
+
+Salís una semana después.
+Marcado. Nadie te va a dar laburo.
+Tu cara está en la lista.
+
+* [...]
+-
+
+{conexion >= 7:
+    Pero el barrio te sostiene.
+    Sofía trae comida.
+    Elena te consigue changas bajo mano.
+    No te salvaron. Pero no te dejaron solo.
+}
+
+No es victoria. Es derrota.
+Pero hay algo.
+
+* [...]
+-
+
+Dignidad. Memoria. Gente.
+
+La lucha no siempre gana.
+A veces te rompen.
+Pero no te rompiste solo.
+Y eso cambia todo.
+
+{llama >= 5:
+    La llama sigue. Más chica. Más cuidada.
+    Pero sigue.
+}
+
+No es el fin. Es una pausa.
+Y después, se vuelve a empezar.
+
+# FIN - "La derrota también enseña"
 
 -> END

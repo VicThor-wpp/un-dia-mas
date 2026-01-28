@@ -473,7 +473,7 @@ A las 7 la olla abre.
 -> olla_servir ->
 
 {veces_que_ayude == 1:
-    ~ subir_salud_mental(1)
+    ~ aliviar_peso(1)
 }
 
 -> viernes_noche
@@ -581,7 +581,7 @@ Para hablar de la olla, de la situación.
     Hasta que no hay mañana.
 
     { chance(50):
-        ~ bajar_salud_mental(1)
+        ~ aumentar_peso(1)
     }
     * [Continuar] -> transicion_viernes_sabado
 }
@@ -648,7 +648,7 @@ De cómo seguir.
     Todos mueren rotos.
 
     { chance(50):
-        ~ bajar_salud_mental(1)
+        ~ aumentar_peso(1)
     }
     * [Continuar] -> transicion_viernes_sabado
 }
@@ -713,7 +713,7 @@ Tiene cosas que decir.
     Siempre igual.
 
     { chance(50):
-        ~ bajar_salud_mental(1)
+        ~ aumentar_peso(1)
     }
     * [Continuar] -> transicion_viernes_sabado
 }
@@ -790,7 +790,7 @@ Mañana sigue.
     Ya no queda nada más.
 
     { chance(50):
-        ~ bajar_salud_mental(1)
+        ~ aumentar_peso(1)
     }
     * [Continuar] -> transicion_viernes_sabado
 }
@@ -847,7 +847,7 @@ Para hablar de cómo seguir.
 
 === transicion_viernes_sabado ===
 // Chequeo de colapso mental antes de continuar
-{salud_mental <= 0:
+{peso_estructural <= 0:
     -> recovery_mental_viernes
 }
 - (post_recovery_viernes)
@@ -874,7 +874,7 @@ Todo se pone oscuro. Otra vez. Peor.
 
 Pero algo queda. Alguien dijo tu nombre hoy. Alguien te vio.
 
-~ salud_mental = 1
+~ peso_estructural = 1
 
 No estás bien. Pero todavía estás.
 

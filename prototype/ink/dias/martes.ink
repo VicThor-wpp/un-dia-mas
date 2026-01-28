@@ -69,7 +69,7 @@ Hay reuniones que no te incluyen.
 }
 { aguante == -1:
     Las manos te tiemblan. No podés concentrarte en nada. El miedo te paraliza.
-    ~ bajar_salud_mental(1)
+    ~ aumentar_peso(1)
 }
 
 -> laburo_manana ->
@@ -140,7 +140,7 @@ O solo estar con alguien.
 { busqueda == -1:
     Caminás y caminás. No hay nadie. Estás por volverte cuando los ves a lo lejos.
     La soledad pega más fuerte cuando la buscás romper y no podés.
-    ~ bajar_salud_mental(1)
+    ~ aumentar_peso(1)
 }
 
 {vinculo == "sofia": -> martes_buscar_sofia}
@@ -298,7 +298,7 @@ Mañana vas a saber.
     Conoció a tantos que terminaron así.
     Ahora vos también.
 
-    ~ bajar_salud_mental(1)
+    ~ aumentar_peso(1)
     * [Continuar] -> martes_cliffhanger
 }
 
@@ -361,7 +361,7 @@ Eso la mantiene despierta.
     Raúl también estuvo cerca.
     Muy cerca.
 
-    ~ bajar_salud_mental(1)
+    ~ aumentar_peso(1)
     * [Continuar] -> martes_cliffhanger
 }
 
@@ -421,7 +421,7 @@ Mañana hay que estar atentos.
     Su madre preguntó cómo estaba.
     Mintió.
 
-    ~ bajar_salud_mental(1)
+    ~ aumentar_peso(1)
     * [Continuar] -> martes_cliffhanger
 }
 
@@ -481,7 +481,7 @@ No puede perder esto también.
     Vos también vas a funcionar.
     Solo funcionar.
 
-    ~ bajar_salud_mental(1)
+    ~ aumentar_peso(1)
     * [Continuar] -> martes_cliffhanger
 }
 
@@ -539,7 +539,7 @@ Pero sabés que no es bueno.
 
 === transicion_martes_miercoles ===
 // Chequeo de colapso mental antes de continuar
-{salud_mental <= 0:
+{peso_estructural <= 0:
     -> final_apagado
 }
 

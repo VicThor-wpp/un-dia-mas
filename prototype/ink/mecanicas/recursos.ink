@@ -19,9 +19,9 @@ VAR dignidad = 5
 // Inicial: 5 (frágil pero presente)
 VAR llama = 5
 
-// SALUD MENTAL: Baja con eventos difíciles (0-5)
-// Empezamos en 3, ya venimos con desgaste de la vida
-VAR salud_mental = 3
+// PESO ESTRUCTURAL: El peso del sistema sobre tu cuerpo y mente (0-5)
+// Empezamos en 2, ya venimos cargando el desgaste de la vida
+VAR peso_estructural = 2
 
 // --- SITUACIÓN MATERIAL ---
 // NOTA: No hay indemnización - el protagonista era unipersonal forzado
@@ -124,24 +124,24 @@ VAR dia_actual = 1
         Es difícil creer en algo.
     }
 
-=== function bajar_salud_mental(cantidad) ===
-    ~ salud_mental = salud_mental - cantidad
-    {salud_mental < 0:
-        ~ salud_mental = 0
-    }
-
-=== function subir_salud_mental(cantidad) ===
-    ~ temp salud_antes = salud_mental
-    ~ salud_mental = salud_mental + cantidad
-    {salud_mental > 5:
-        ~ salud_mental = 5
+=== function aumentar_peso(cantidad) ===
+    ~ temp peso_antes = peso_estructural
+    ~ peso_estructural = peso_estructural + cantidad
+    {peso_estructural > 5:
+        ~ peso_estructural = 5
     }
     // Feedback narrativo en thresholds
     {
-    - salud_mental >= 3 && salud_antes < 3:
+    - peso_estructural >= 4 && peso_antes < 4:
         # STAT_THRESHOLD
-        Algo se afloja en el pecho.
-        No estás bien. Pero estás un poco mejor.
+        El peso del sistema aprieta.
+        No sos vos. Es la estructura.
+    }
+
+=== function aliviar_peso(cantidad) ===
+    ~ peso_estructural = peso_estructural - cantidad
+    {peso_estructural < 0:
+        ~ peso_estructural = 0
     }
 
 // --- CHEQUEOS DE ESTADO ---
@@ -158,8 +158,8 @@ VAR dia_actual = 1
 === function esta_aislado() ===
     ~ return conexion <= 3
 
-=== function salud_mental_baja() ===
-    ~ return salud_mental <= 2
+=== function peso_alto() ===
+    ~ return peso_estructural >= 4
 
 === function llama_viva() ===
     ~ return llama >= 5
@@ -174,7 +174,7 @@ VAR dia_actual = 1
 // Tunnel: llamar en momentos críticos del día con -> check_game_over ->
 
 === check_game_over ===
-{salud_mental <= 0:
+{peso_estructural >= 5:
     -> final_apagado
 }
 {llama <= 0:
@@ -193,7 +193,7 @@ VAR dia_actual = 1
 
 === function evaluar_vulnerabilidad() ===
     // Mostraste vulnerabilidad genuina
-    { conte_a_alguien && salud_mental >= 2 && salud_mental <= 3:
+    { conte_a_alguien && peso_estructural >= 2 && peso_estructural <= 3:
         ~ return true
     }
     ~ return false

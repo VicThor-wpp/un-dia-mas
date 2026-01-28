@@ -90,10 +90,10 @@ Lo que viene.
     {conexion < 6: Algo. Todavía no sabés qué. Pero algo.}
 
     ~ subir_dignidad(1)
-    ~ salud_mental = salud_mental + 1
+    ~ peso_estructural = peso_estructural + 1
 }
 { resultado_domingo_reflexion == 1:
-    {salud_mental <= 4:
+    {peso_estructural <= 4:
         La cabeza no para.
         ¿Quién sos ahora?
         ¿Qué hacés?
@@ -130,7 +130,7 @@ Lo que viene.
 
     El domingo es un espejo. Y no te gusta lo que ves.
 
-    ~ bajar_salud_mental(1)
+    ~ aumentar_peso(1)
 }
 
 * [Ir a la tarde] -> domingo_tarde
@@ -409,14 +409,30 @@ Por ahora.
 // Evaluamos variables para determinar el final
 // Los finales estan definidos en finales/finales.ink
 
-// FINAL MÁS DURO - Colapso mental individual
-{salud_mental <= 0:
+// FINAL MÁS DURO - Colapso mental individual (peso alto = malo)
+{peso_estructural >= 5:
     -> final_apagado
 }
 
 // FINAL DESTRUCCIÓN TEJIDO SOCIAL - Colapso colectivo
 {llama <= 0:
     -> final_sin_llama
+}
+
+// FINAL REPRESIÓN - Intentaste luchar y te reprimieron
+// Requiere intento de acción radical con mala suerte
+{participe_asamblea && conexion >= 6 && llama >= 7 && peso_estructural >= 4:
+    -> final_represion
+}
+
+// FINAL HUELGA - Huelga salvaje organizada desde abajo
+{participe_asamblea && veces_que_ayude >= 3 && llama >= 8 && conexion >= 8 && diego_relacion >= 4:
+    -> final_huelga
+}
+
+// FINAL OCUPACIÓN - Ocupación de fábrica
+{participe_asamblea && conexion >= 8 && llama >= 7 && veces_que_ayude >= 4:
+    -> final_ocupacion
 }
 
 // FINAL IXCHEL - Requiere vínculo con Ixchel
@@ -439,6 +455,12 @@ Por ahora.
     -> final_red
 }
 
+// FINAL DESERCIÓN - Abandonar el circuito laboral
+// Requiere desconexión del sistema pero conexión con la comunidad
+{not tiene_laburo && conexion >= 5 && peso_estructural >= 3:
+    -> final_desercion
+}
+
 // FINAL VULNERABILIDAD - Apertura emocional genuina
 {evaluar_vulnerabilidad():
     -> final_vulnerabilidad_honesta
@@ -449,8 +471,8 @@ Por ahora.
     -> final_solo
 }
 
-// FINAL GRIS - Depresión y soledad
-{salud_mental <= 2 && conexion <= 4:
+// FINAL GRIS - Depresión y soledad (peso alto = malo)
+{peso_estructural >= 4 && conexion <= 4:
     -> final_gris
 }
 

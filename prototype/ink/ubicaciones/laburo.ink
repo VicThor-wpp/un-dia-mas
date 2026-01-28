@@ -43,7 +43,7 @@ Anota algo.
 
 Mierda.
 
-~ bajar_salud_mental(1)
+~ aumentar_peso(1)
 
 ->->
 
@@ -76,7 +76,7 @@ Lo de siempre.
 { concentracion == -1:
     Cometés un error estúpido. Un mail al cliente equivocado.
     El jefe se da cuenta. "Prestá atención."
-    ~ bajar_salud_mental(1)
+    ~ aumentar_peso(1)
 }
 
 ->->
@@ -104,7 +104,7 @@ Mails que podrían ser nada.
         Sigue.
 
         ¿Qué mierda fue eso?
-        ~ bajar_salud_mental(1)
+        ~ aumentar_peso(1)
     }
 }
 
@@ -121,7 +121,7 @@ Mails que podrían ser nada.
     Tratás de no hacer ruido.
     Te lavás las manos rápido y salís.
     El sonido del llanto te sigue hasta el escritorio.
-    ~ bajar_salud_mental(1)
+    ~ aumentar_peso(1)
 
 - 2:
     La impresora se traba.
@@ -129,7 +129,7 @@ Mails que podrían ser nada.
     "LISTA DE REVISIÓN DE PUESTOS - CONFIDENCIAL"
     Alguien te lo arranca de la mano antes de que leas nombres.
     "Dámelo." Es la secretaria de RRHH.
-    ~ bajar_salud_mental(1)
+    ~ aumentar_peso(1)
 
 - 3:
     Reunión de equipo.
@@ -192,9 +192,15 @@ Lo que trajiste de casa.
 Lo que pudiste armar anoche.
 
 ~ ultima_tirada = d6()
-{ultima_tirada <= 2: Arroz con huevo. Otra vez.}
-{ultima_tirada == 3 || ultima_tirada == 4: Fideos con tuco de ayer.}
-{ultima_tirada >= 5: Milanesa fría. Lujo.}
+{es_vegano:
+    {ultima_tirada <= 2: Arroz blanco con un chorro de aceite. Qué tristeza.}
+    {ultima_tirada == 3 || ultima_tirada == 4: Fideos con salsa de tomate de lata. Sobreviviendo.}
+    {ultima_tirada >= 5: Ensalada de lentejas que armaste con lo que quedaba. Un festín en este desierto.}
+- else:
+    {ultima_tirada <= 2: Arroz con huevo. Otra vez.}
+    {ultima_tirada == 3 || ultima_tirada == 4: Fideos con tuco de ayer.}
+    {ultima_tirada >= 5: Milanesa fría. Lujo.}
+}
 
 Te sentás con alguien.
 
@@ -369,7 +375,7 @@ La reunión termina.
 Todos vuelven a sus puestos.
 Nadie habla.
 
-~ bajar_salud_mental(1)
+~ aumentar_peso(1)
 
 ->->
 
@@ -396,7 +402,7 @@ No dicen para qué.
 
 === laburo_citacion_fin ===
 
-~ bajar_salud_mental(1)
+~ aumentar_peso(1)
 
 Aunque ya sabés.
 O creés saber.
@@ -473,7 +479,7 @@ El escritorio se vacía rápido.
 
 ~ fui_despedido = true
 ~ tiene_laburo = false
-~ bajar_salud_mental(1)
+~ aumentar_peso(1)
 
 ->->
 
@@ -568,6 +574,6 @@ Te mira.
 
     Salís.
     Peor que antes.
-    ~ bajar_salud_mental(1)
+    ~ aumentar_peso(1)
     ->->
 }

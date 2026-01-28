@@ -138,7 +138,7 @@ Hay una señora al lado tuyo. Es Elena, la veterana del barrio. No la habías vi
     Elena te venda rápido. Tiene práctica.
     "La sangre se lava. El hambre no", murmura alguien.
     Sentís la vergüenza arder más que el corte.
-    ~ bajar_salud_mental(1)
+    ~ aumentar_peso(1)
 }
 
 Las papas se acaban. Tus manos huelen a tierra y almidón.
@@ -160,6 +160,14 @@ Platos, platos, platos.
 
 * [...]
 -
+
+{es_vegano:
+    Cada cucharón que servís te pesa. 
+    Huesos, grasa flotando, restos de un sistema que rechazás.
+    Pero la gente tiene hambre. 
+    Y el hambre no entiende de especismo.
+    Servís igual. Pero por dentro, algo se retuerce.
+}
 
 // Chequeo comunitario: servir en la olla
 ~ temp servicio = chequeo_comunitario(0, 3)
@@ -192,7 +200,7 @@ Platos, platos, platos.
     Sofía viene con un trapo. No te reta. Su silencio es peor.
     "Tomate un respiro", te dice.
     Te apartás, con las manos temblando.
-    ~ bajar_salud_mental(1)
+    ~ aumentar_peso(1)
 }
 
 {not tiene_laburo:
@@ -564,7 +572,38 @@ Guiso.
 
 Guiso.
 Papas, carne (poca), verduras.
-Comida de verdad.
+
+{es_vegano:
+    El olor a grasa te revuelve el estómago. 
+    Años de convicción frente a un plato caliente que no respeta tus principios.
+    Pero es lo que hay. O comés, o seguís vacío.
+
+    * [Comer solo el caldo y las verduras]
+        Apartás los trozos de carne con cuidado. 
+        El caldo sabe a animal, pero el hambre es más fuerte que el asco.
+        Te sentís sucio, pero un poco más lleno.
+        ~ aumentar_peso(1)
+        -> olla_comer_sentarse
+    * [Comer todo. El hambre no tiene ética.]
+        Cerrás los ojos y tragás. 
+        La carne es blanda, fibrosa. 
+        Tus principios se disuelven en el ácido gástrico.
+        ~ aumentar_peso(2)
+        ~ bajar_dignidad(1)
+        -> olla_comer_sentarse
+    * [No comer. La ética es lo único que me queda.]
+        Dejás el plato sobre la mesa. 
+        No podés. 
+        Preferís el rugido del estómago al silencio de la conciencia.
+        ~ subir_dignidad(1)
+        ~ energia -= 1
+        -> olla_despedirse
+- else:
+    Comida de verdad.
+    -> olla_comer_sentarse
+}
+
+=== olla_comer_sentarse ===
 
 Te sentás en una mesa larga.
 Comés.

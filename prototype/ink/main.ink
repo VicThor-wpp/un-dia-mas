@@ -65,8 +65,53 @@ Todavía no sabés lo que viene.
 Te mirás en el espejo del baño. El vidrio tiene una rajadura en la esquina.
 Treinta y algo. Ojeras que ya son parte de tu cara.
 
-* [...]
--
+* [El espejo devuelve la imagen de siempre.]
+    ~ genero = "varon"
+    La barba de dos días. Las manos ásperas. Todo en su lugar.
+    -> creacion_cuerpo
+
+* [El espejo muestra más de lo que lo que el mundo ve.]
+    ~ genero = "mujer"
+    El pelo que nunca queda como querés. La cara sin maquillaje.
+    Afuera sos una más. Adentro, una historia que pocos conocen.
+    -> creacion_cuerpo
+
+* [El espejo no dice nada que me defina.]
+    ~ genero = "no_binario"
+    Ni esto ni lo otro. O las dos cosas. O ninguna.
+    El mundo te pone en una caja. Vos rompés la caja.
+    Pero romperse cansa.
+    -> creacion_cuerpo
+
+=== creacion_cuerpo ===
+
+* [La piel clara, herencia de abuelos que vinieron de Europa.]
+    ~ raza = "blanco"
+    Nadie te para en la calle por el color.
+    No pensás en eso. Nunca tuviste que pensarlo.
+    -> creacion_rutina
+
+* [La piel morena, mezcla de todo lo que somos.]
+    ~ raza = "mestizo"
+    Como la mayoría. Ni una cosa ni la otra.
+    Lo suficiente para pasar desapercibido. Casi siempre.
+    -> creacion_rutina
+
+* [La piel oscura, herencia que a veces pesa.]
+    ~ raza = "afro"
+    A veces te miran diferente. Más en algunos barrios.
+    La policía te para más seguido. "Rutina", dicen.
+    No hace falta que te expliquen. Ya sabés.
+    -> creacion_rutina
+
+* [Los rasgos que delatan otra tierra, otro origen.]
+    ~ raza = "indigena"
+    Tus abuelos vinieron del norte. O del oeste.
+    Acá sos minoría. Invisible o exótico, según el día.
+    Pero sabés de dónde venís. Y eso es algo.
+    -> creacion_rutina
+
+=== creacion_rutina ===
 
 Laburás. Pagás las cuentas. Más o menos.
 A veces llegás justo. A veces no llegás.
@@ -86,7 +131,30 @@ Pero hay cosas que solo vos sabés.
 Cosas que cargás cuando caminás por la calle.
 Cosas que no se ven.
 
--> elegir_perdida
+-> creacion_convicciones
+
+=== creacion_convicciones ===
+
+¿Y la comida? 
+No solo lo que comes, sino lo que significa comer.
+Donde empieza y termina la explotación.
+
+* [No podés separar una lucha de la otra.]
+    ~ es_vegano = true
+    El especismo es otra forma de opresión. 
+    Los mismos que explotaron a tu viejo en la fábrica son los que meten animales en jaulas industriales. 
+    El mismo sistema que te trata como descartable trata a los cuerpos no humanos como mercancía.
+    No es purismo. Es coherencia.
+    En el barrio te tildan de "hippie" o "burgués". 
+    Pero vos sabés que la explotación tiene muchas caras y todas responden al mismo patrón.
+    -> elegir_perdida
+
+* [Hay batallas más urgentes que elegir.]
+    ~ es_vegano = false
+    Entendés la idea, pero no te da el cuero para eso. 
+    Bastante quilombo es sobrevivir como para ponerte exigencias éticas con el plato.
+    Primero la supervivencia. Después, si queda aire, el resto.
+    -> elegir_perdida
 
 === elegir_perdida ===
 
@@ -226,12 +294,12 @@ Pero un momento te vuelve siempre.
     Hay algo ahí que ninguno termina de cerrar.
     -> confirmar_inicio
 
-* [Una mujer en la cocina de la olla. Pica verduras como si rezara. No la conocés todavía.]
+* [Una mujer en la cocina de la olla. Trabaja rápido, sin hablar de más.]
     ~ vinculo = "ixchel"
-    Es Ixchel. No sabés su nombre todavía.
-    Pero algo en sus manos te llamó la atención.
-    Una precisión antigua. Un silencio que dice cosas.
-    Alguien te contó que vino de lejos.
+    Es Ixchel. Todavía no sabés su nombre.
+    Pero hay algo en cómo trabaja que te llamó la atención.
+    Eficiente. Seria. Sin sonrisas de compromiso.
+    Alguien te contó que tuvo que irse de Guatemala. Una minera, dijeron.
     -> confirmar_inicio
 
 === confirmar_inicio ===

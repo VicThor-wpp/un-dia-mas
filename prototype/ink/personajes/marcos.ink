@@ -195,7 +195,8 @@ Te mira. Ojos cansados.
 
 "No."
 
-"Mal. No duermo. No salgo. No hago nada."
+"Mal. No duermo. El seguro de paro se me termina el mes que viene.
+Y a mi edad, encontrar algo fijo es un chiste. Me estoy comiendo los ahorros."
 
 * [...]
 -
@@ -218,7 +219,7 @@ Silencio largo.
 
 Mira el piso.
 
-"Cansado de ver cómo la estructura se morphaba el espíritu. Peleamos contra el sistema de afuera y nos terminó ganando el sistema de adentro. Al final, los de mi clase siguen igual, y los que hablaban en su nombre tienen auto nuevo. Me cansé de pelear para nada, uruguayo."
+"Cansado de ver cómo la estructura se morphaba el espíritu. Peleamos contra el sistema de afuera y nos terminó ganando el sistema de adentro. Al final, los de mi clase siguen igual, y los que hablaban en su nombre tienen auto nuevo. Me cansé de pelear para nada."
 
 ~ marcos_era_militante = true
 ~ marcos_relacion += 1
@@ -640,7 +641,7 @@ Te mira. Sorprendido.
     Para los dos.
 
     ~ marcos_estado = "mirando"
-    ~ bajar_salud_mental(1)
+    ~ aumentar_peso(1)
 }
 
 ->->

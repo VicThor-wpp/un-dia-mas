@@ -75,6 +75,13 @@ Se encoge de hombros.
 
 "Yo tengo el alquiler, la cuota del auto... Si me echan, cago fuego."
 
+Se frota la cara.
+
+"Me hacen facturar cuarenta mil pesos, bo. Como unipersonal.
+Descontale el BPS, el Fonasa... me quedan treinta y cinco en la mano.
+Entre eso y lo que gana Laura apenas llegamos.
+El alquiler ya nos come la mitad. Después la luz, internet, el préstamo de la moto..."
+
 "Yo también."
 
 // Chequeo social: navegar la conversación delicada en el trabajo
@@ -158,7 +165,7 @@ Juan se pone pálido.
 Se levanta. Nervioso. Se va al baño.
 Le metiste más miedo del que ya tenía.
 
-~ bajar_salud_mental(1)
+~ aumentar_peso(1)
 ->->
 
 === juan_minimizar ===
@@ -318,7 +325,7 @@ Se despiden.
 
 Eso no ayuda.
 
-~ bajar_salud_mental(1)
+~ aumentar_peso(1)
 
 ->->
 
@@ -747,7 +754,7 @@ A veces abrir la caja de Pandora no ayuda.
 
 "Mejor dejemos de hablar de esto."
 
-~ bajar_salud_mental(1)
+~ aumentar_peso(1)
 ->->
 
 // --- ENCUENTRO DEL VIERNES ---
@@ -884,7 +891,7 @@ Se queda mirando la cerveza.
 
 * ["No sos pelotudo. Nos cagaron a todos."]
     ~ subir_conexion(2)
-    ~ bajar_salud_mental(1)
+    ~ aumentar_peso(1)
 
     "Es el sistema, Juan. Así funciona."
 
@@ -898,7 +905,7 @@ Se queda mirando la cerveza.
 
 * ["¿Y ahora qué vas a hacer?"]
     ~ subir_conexion(1)
-    ~ bajar_salud_mental(1)
+    ~ aumentar_peso(1)
 
     "No sé. Buscar. Lo que sea."
 
@@ -913,7 +920,7 @@ Se queda mirando la cerveza.
     -> juan_encuentro_fin
 
 * [Quedarte callado]
-    ~ bajar_salud_mental(1)
+    ~ aumentar_peso(1)
 
     No sabés qué decir.
     ¿Qué se dice?
@@ -1069,5 +1076,83 @@ Mejor tener todo listo.
 
 Cierra la compu. Mañana hay que ir.
 Mientras haya donde ir.
+
+->->
+
+// --- ESCENA CLAVE: CONTRADICCIÓN DE JUAN ---
+// Juan retrocede después de que Lucía propone el paro
+
+
+=== juan_contradiccion ===
+// Juan retrocede después de hablar de organizarse
+
+~ juan_mostro_contradiccion = true
+
+Es viernes. Juan te llama aparte.
+
+"Che. Sobre lo que hablamos el otro día..."
+
+"¿Lo de juntarnos a hablar con otros?"
+
+"Sí. Mirá..."
+
+* [...]
+-
+
+Juan mira para los costados.
+
+"La verdad, no sé si me conviene."
+
+* [...]
+-
+
+"Si se enteran de que andamos juntando gente... sabés cómo son.
+Te marcan. Y cuando hay despidos, sos el primero de la lista."
+
+Te mira. Vergüenza.
+
+"Tengo el alquiler. Laura. Los planes..."
+
+* ["Te entiendo."]
+    "No te juzgo, Juan. Cada uno tiene su situación."
+    
+    Juan suspira. Aliviado.
+    
+    "Gracias. Me siento un cagón, ¿sabés? Hablar de la injusticia y después..."
+    -> juan_contradiccion_cierre
+    
+* ["Pero vos dijiste..."]
+    "Sí, ya sé lo que dije. En el bar es fácil."
+    
+    Juan se frota la cara.
+    
+    "Después llegás a casa y pensás en Laura preguntando cómo pagamos el alquiler."
+    -> juan_contradiccion_cierre
+    
+* [Quedarte callado]
+    No decís nada.
+    
+    Juan tampoco.
+    
+    El silencio dice lo que las palabras no.
+    -> juan_contradiccion_cierre
+
+=== juan_contradiccion_cierre ===
+
+"Si sale algo más tranqui... algo sin tanto riesgo..."
+
+"Dale. Te aviso."
+
+* [...]
+-
+
+Juan vuelve a su escritorio.
+
+No es cobarde. Es que tiene mucho que perder.
+Las revoluciones las hacen los que pueden darse el lujo de perder.
+O los que ya perdieron todo.
+
+Juan está en el medio.
+Como la mayoría.
 
 ->->

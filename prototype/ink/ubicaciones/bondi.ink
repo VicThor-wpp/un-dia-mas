@@ -186,6 +186,50 @@ Olor a cuerpos, a sudor de madrugada, a cansancio acumulado.
 
 Conseguís un lugar donde agarrarte.
 
+// Experiencias diferenciadas por género
+{genero == "mujer" || genero == "no_binario":
+    Un tipo se apreta de más.
+    ¿Es por el bondi lleno o por otra cosa?
+    
+    * [Ignorar]
+        Aguantás. Como siempre.
+        El peso del día empieza temprano.
+        ~ aumentar_peso(1)
+        -> bondi_continuar_viaje
+    * [Correrte]
+        Te movés. El tipo ni te mira.
+        Pero vos sabés lo que fue.
+        -> bondi_continuar_viaje
+    * [Decirle algo]
+        "¿Podés correrte?"
+        Te mira con cara de nada.
+        "El bondi está lleno."
+        No es una victoria. Pero dijiste algo.
+        ~ subir_dignidad(1)
+        -> bondi_continuar_viaje
+}
+
+// Experiencias diferenciadas por raza
+{raza == "afro":
+    Un cana sube en una parada.
+    Te mira. A vos específicamente.
+    
+    Mirás el piso.
+    El cana baja en la siguiente.
+    
+    No pasó nada.
+    Pero el cuerpo quedó tenso.
+    Siempre queda tenso.
+    
+    ~ aumentar_peso(1)
+    -> bondi_continuar_viaje
+}
+
+// Flujo normal para quienes no tienen estas experiencias
+-> bondi_continuar_viaje
+
+=== bondi_continuar_viaje ===
+
 * [Mirar por la ventana] -> bondi_ventana
 * [Cerrar los ojos] -> bondi_ojos_cerrados
 * [Escuchar conversaciones] -> bondi_escuchar
