@@ -563,16 +563,21 @@ Pero algo falta.
     Quizás deberías haber ido.
 }
 
-// Hook de Juan: si tenés buena relación, te llama
-{juan_relacion >= 4 && energia >= 1:
+// Escena de despedida de Juan (migración)
+{juan_relacion >= 3 && not juan_migra && fui_despedido:
+    -> juan_despedida_migracion ->
+}
+
+// Hook de Juan: si tenés buena relación, te llama (solo si no migra)
+{juan_relacion >= 4 && energia >= 1 && not juan_migra:
     -> juan_llamado_viernes ->
-    
+
     Te quedás pensando en Juan.
     Siempre pareció el más seguro.
     Pero hoy su voz temblaba un poco.
-    
+
     "Tengo miedo de ser el próximo", dijo.
-    
+
     El miedo no respeta antigüedad.
 }
 

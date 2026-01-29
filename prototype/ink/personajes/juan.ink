@@ -1079,6 +1079,181 @@ Mientras haya donde ir.
 
 ->->
 
+// === JUAN SE VA - MIGRACIÓN A ESPAÑA ===
+
+=== juan_despedida_migracion ===
+// Juan cuenta que se va a España con Laura
+// Trigger: viernes, si juan_relacion >= 3
+
+El teléfono vibra. Juan.
+
+"Che, ¿podés? Necesito contarte algo."
+
+* ["Sí, dale."]
+    "¿Dónde estás? Voy para allá."
+    -> juan_despedida_cafe
+* ["Estoy complicado ahora."]
+    "Es importante. Media hora."
+    -> juan_despedida_cafe
+
+=== juan_despedida_cafe ===
+
+~ energia -= 1
+
+El mismo bar de siempre.
+Pero Juan está distinto. Nervioso. O aliviado. No sabés.
+
+Pide dos cervezas. No espera a que lleguen.
+
+"Nos vamos."
+
+* ["¿Cómo?"]
+    -> juan_explica_migracion
+* ["¿A dónde?"]
+    -> juan_explica_migracion
+* [...]
+    -> juan_explica_migracion
+
+=== juan_explica_migracion ===
+
+"Laura tiene familia en Valencia. Una tía. Consiguió laburo en una clínica, le hacen los papeles."
+
+# PAUSA
+
+"Y yo... bueno. Con el pasaporte italiano del abuelo puedo entrar. Buscar algo allá."
+
+* ["¿Y el laburo acá?"]
+    Juan se ríe. Amargo.
+    "¿Qué laburo? Estamos todos colgando de un hilo. Mejor cortar antes de que me corten."
+    -> juan_migracion_razones
+* ["¿Cuándo se van?"]
+    "En dos semanas. Ya sacamos los pasajes."
+    -> juan_migracion_razones
+* [Quedarte callado]
+    Las cervezas llegan. Juan toma un trago largo.
+    -> juan_migracion_razones
+
+=== juan_migracion_razones ===
+
+"Mirá, yo sé lo que estás pensando. Que me escapo. Que es de cagón."
+
+# PAUSA
+
+"Capaz que sí. Pero Laura tiene la oportunidad, y yo... no tengo nada que me ate acá."
+
+Silencio.
+
+"Mis viejos se van a quedar solos. Eso me mata. Pero ellos mismos me dicen que me vaya. 'Andá, que acá no hay futuro'."
+
+* ["¿Y vos qué pensás?"]
+    -> juan_duda_interna
+* ["Tus viejos tienen razón."]
+    Juan asiente. Pero no parece convencido.
+    -> juan_duda_interna
+* ["Yo no me iría."]
+    -> juan_contraste_quedarse
+
+=== juan_duda_interna ===
+
+Juan mira la cerveza.
+
+"No sé. A veces pienso que me voy porque puedo. Porque tengo el pasaporte, porque Laura tiene el contacto."
+
+# PAUSA
+
+"Y pienso en Diego. En lo que tuvo que dejar. En que él no eligió irse."
+
+* [...]
+-
+
+"Yo elijo. Y no sé si eso me hace libre o cobarde."
+
+-> juan_despedida_final
+
+=== juan_contraste_quedarse ===
+
+"¿Por qué no te irías?"
+
+* ["Porque acá está mi gente."]
+    Juan te mira.
+    "¿Qué gente? A vos te echaron igual que a mí van a echar. ¿Qué te queda?"
+    "No sé. Pero algo."
+    -> juan_reflexion_quedarse
+* ["Porque irme es rendirse."]
+    "¿Y quedarte qué es? ¿Ganar?"
+    No tenés respuesta.
+    -> juan_reflexion_quedarse
+* ["No tengo a dónde ir."]
+    Juan asiente.
+    "Eso también. Yo puedo porque Laura puede. Si no, estaría igual que vos."
+    -> juan_reflexion_quedarse
+
+=== juan_reflexion_quedarse ===
+
+# PAUSA
+
+"Sabés qué pienso a veces? Que los que se quedan son más valientes. O más boludos. No sé."
+
+Silencio.
+
+"Mi viejo se quedó toda la vida. Fue a las marchas, peleó, y al final... monoambiente y soledad."
+
+* [...]
+-
+
+"Yo no quiero eso. Pero tampoco quiero ser el que se fue y nunca volvió."
+
+-> juan_despedida_final
+
+=== juan_despedida_final ===
+
+Terminan las cervezas.
+
+Juan deja plata en la mesa. Más de lo que corresponde.
+
+"Bueno. Era eso."
+
+Se para. Incómodo.
+
+* [Abrazarlo]
+    Lo abrazás.
+    Un abrazo largo. De esos que no se daban antes.
+    "Cuidate, boludo."
+    "Vos también."
+    ~ juan_relacion += 1
+    ~ subir_conexion(1)
+    -> juan_despedida_cierre
+* [Darle la mano]
+    Le das la mano.
+    "Suerte, Juan."
+    "Gracias. Vos también."
+    -> juan_despedida_cierre
+* [No decir nada]
+    No sabés qué decir.
+    Juan tampoco.
+    "Bueno. Chau."
+    "Chau."
+    -> juan_despedida_cierre
+
+=== juan_despedida_cierre ===
+
+~ juan_migra = true
+
+Se va.
+
+Lo mirás caminar hasta la esquina. Dobla. Desaparece.
+
+# PAUSA
+
+Otro que se va.
+Diego vino huyendo. Juan se va buscando.
+Vos te quedás.
+
+No sabés si es valentía o inercia.
+Pero te quedás.
+
+->->
+
 // --- ESCENA CLAVE: CONTRADICCIÓN DE JUAN ---
 // Juan retrocede después de que Lucía propone el paro
 
