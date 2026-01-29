@@ -25,7 +25,7 @@ Documentación completa del juego narrativo **Un Día Más**.
 ### 🗺️ [Narrative Map](./design/narrative-map.md)
 **Mapa narrativo completo** - Análisis exhaustivo de la estructura del juego.
 - Estructura detallada de los 7 días
-- Sistema de finales (12 endings)
+- Sistema de finales (16 endings)
 
 ### 📊 [Flowcharts](./design/flowcharts.md)
 **Diagramas visuales** - Visualización de rutas y mecánicas con Mermaid.
@@ -101,10 +101,12 @@ Trigger final GRIS              → design/narrative-map.md
 | Métrica | Valor |
 |---------|-------|
 | Días totales | 7 |
-| Escenas únicas | ~100+ |
-| NPCs con arco | 6 (incl. Ixchel) |
-| Variables de estado | 30+ |
-| Finales posibles | 12 |
+| Escenas únicas | ~150+ |
+| NPCs con arco | 11 (6 principales + 5 Fase 2) |
+| Variables de estado | 139 |
+| Ideas desbloqueables | 14 |
+| Finales posibles | 16 |
+| PAUSA tags (pacing) | 75 |
 | Mecánica central | Inercia (0-10) |
 
 ---

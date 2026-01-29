@@ -46,7 +46,7 @@ El protagonista no es un empleado formal despedido con indemnización. Es un **f
 | **Diego** | El Migrante | Cooperativismo (CECOSESOLA). Tensión solidaridad vs. supervivencia. |
 | **Marcos** | El Quemado | Aislado hasta el sábado. Espejo del protagonista (también despedido). |
 | **Ixchel** | Resistencia Ancestral | Cosmovisión maya. "Tejer" comunidad. Final alternativo `final_tejido`. |
-| **Juan** | El Testigo | Compañero que se queda. Representa la culpa del sobreviviente. |
+| **Juan** | El Migrante | Decide irse a España con Laura (`juan_migra`). Contraste temático con Diego/Ixchel que vinieron. |
 
 ## Fase 2: Antagonistas y Secundarios (COMPLETADA)
 
@@ -66,6 +66,7 @@ El protagonista no es un empleado formal despedido con indemnización. Es un **f
 - lucia_escena_mate (Lunes)
 - lucia_almuerzo_oficina (Martes)
 - lucia_post_despido (Jueves)
+- lucia_explica_unipersonal (Viernes) - **NUEVO**: Explica por qué el sindicato no puede ayudar a unipersonales
 - lucia_en_olla (Viernes)
 - lucia_en_asamblea (Sábado)
 - lucia_cierre_domingo (Domingo)
@@ -102,6 +103,19 @@ El protagonista no es un empleado formal despedido con indemnización. Es un **f
 - claudia_el_tupper (Viernes)
 - claudia_segundo_round (Sábado)
 - claudia_domingo (Domingo)
+
+### Escenas de Profundidad Emocional (2026-01-29)
+
+**Nuevas escenas que agregan vulnerabilidad y momentos de impacto:**
+
+| Escena | Archivo | Trigger | Descripción |
+|--------|---------|---------|-------------|
+| `sofia_momento_quiebre` | sofia.ink | sofia_relacion >= 3, ayude_en_olla | Sofía admite que no puede más. Revela el peso de la Chola. |
+| `protagonista_pide_ayuda` | elena.ink | elena_relacion >= 2, inercia >= 4 | El protagonista se quiebra y pide ayuda a Elena. |
+| `asamblea_momento_colectivo` | olla.ink | participe_asamblea | Votación dramatizada con canto de murga emergente. |
+| `juan_despedida_migracion` | juan.ink | juan_relacion >= 2 | Juan se despide: migra a España con Laura. |
+
+**Sistema de pacing:** 75 tags `# PAUSA` distribuidos en escenas clave para ritmo dramático.
 
 ### Finales Fase 2 (Balanceados)
 
@@ -177,7 +191,7 @@ prototype/ink/
 │   └── dados.ink               (Sistema de azar)
 ├── dias/                       (Flujo temporal Lunes-Domingo)
 ├── personajes/                 (Contenido específico de NPCs)
-└── finales/                    (Texto de los 12 finales)
+└── finales/                    (Texto de los 16 finales)
 ```
 
 ---

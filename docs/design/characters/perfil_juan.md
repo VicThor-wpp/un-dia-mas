@@ -56,4 +56,28 @@
 *   **Rutina:** Laburo, changa, gimnasio barato (800 pesos por mes, máquinas oxidadas) para estar "fuerte por si pasa algo", encierro con series.
 
 ## ROL EN LA HISTORIA
-Juan es el espejo del miedo sin procesar. Muestra qué pasa cuando no tenés herramientas para entender por qué tu vida es precaria: buscás culpables fáciles. Pero no es un villano. Es rescatable. Su arco es empezar a entender que Diego no le saca nada, que el enemigo no está abajo sino arriba. No se va a hacer militante, pero puede dejar de repetir el discurso del noticiero.
+
+Juan representa el **contraste migratorio** con Diego e Ixchel: mientras ellos vinieron a Uruguay huyendo, Juan **se va a España** buscando. Su arco pasó de "el que se queda" a "el que migra".
+
+### Arco Narrativo Actual (v1.1)
+
+**Variable clave:** `juan_migra` (bool)
+
+**Escena principal:** `juan_despedida_migracion` (viernes.ink)
+- Juan llama al protagonista para despedirse
+- Revela que Laura consiguió trabajo en España (prima enfermera)
+- Él se va con ella: "No hay nada acá para nosotros"
+- El protagonista puede reaccionar con enojo, comprensión o silencio
+
+**Significado temático:**
+- Diego vino huyendo de la crisis venezolana → se quedó
+- Ixchel vino huyendo de la violencia guatemalteca → se quedó
+- Juan nació acá → se va buscando lo que ellos dejaron
+
+Esta inversión subraya que la precariedad expulsa a todos, sin importar de dónde sean.
+
+### Perfil Original (Contexto)
+
+Juan era el espejo del miedo sin procesar. Mostraba qué pasa cuando no tenés herramientas para entender por qué tu vida es precaria: buscás culpables fáciles. Pero no era un villano. Era rescatable. Su arco original era empezar a entender que Diego no le saca nada, que el enemigo no está abajo sino arriba.
+
+**Cambio:** En la versión actual, Juan no procesa esto a tiempo. En lugar de quedarse y entender, elige irse. Es una resolución realista para muchos uruguayos de su generación.
