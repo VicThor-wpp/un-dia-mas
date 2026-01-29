@@ -205,6 +205,7 @@ Se detiene. Piensa.
 "Mis hijos comen de acá también."
 
 Silencio.
+# PAUSA
 
 "Cuando llegué al barrio, no tenía nada. Un bolso y los gurises.
 Pero acá no me dieron limosna. Me dieron un lugar."
@@ -280,6 +281,7 @@ No conocía a nadie. No tenía trabajo."
 Se acercó y me dijo: 'Si tenés manos, servís'. Me trajo acá. Me dio un cuchillo."
 
 Pausa.
+# PAUSA
 
 "Ese día comimos. Pero lo importante fue que ese día cociné.
 Dejé de esperar y empecé a hacer."
@@ -331,6 +333,7 @@ Pausa. Sofía mira la imagen de la Virgen.
 -
 
 Se le humedecen los ojos. No llora. Ya no llora por esto.
+# PAUSA
 
 "Se murió tres semanas después. Y yo me quedé."
 
@@ -370,6 +373,7 @@ Sofía se ríe. Pero no es una risa alegre.
 -
 
 Pausa.
+# PAUSA
 
 "A veces, en los congresos, veo a compañeros que siguieron la carrera 'en serio'. Publicando papers, viajando a conferencias. Y siento un poco de envidia."
 
@@ -381,6 +385,7 @@ Pausa.
 -
 
 Hace una pausa más larga.
+# PAUSA
 
 "Casi siempre se me pasa."
 
@@ -493,6 +498,7 @@ Viejo, manchado, remendado.
 Se lo toca.
 
 "A veces, cuando estoy muy quemada, me lo aprieto contra el pecho. Como si ella pudiera abrazarme."
+# PAUSA
 
 No dice más.
 No hace falta.
@@ -786,6 +792,195 @@ Cierra los ojos.
 A las seis suena el despertador.
 Otra vez.
 Siempre otra vez.
+
+->->
+
+// === SOFÍA SE QUIEBRA ===
+
+=== sofia_momento_quiebre ===
+// Sofía admite que no puede más
+// Trigger: viernes, después de auditoría Claudia, si sofia_relacion >= 3
+
+La olla está vacía.
+Todos se fueron.
+
+Sofía está sentada en un banco. Sola.
+No te vio entrar.
+
+* [Acercarte]
+    -> sofia_quiebre_encuentro
+* [Observar desde lejos]
+    -> sofia_quiebre_observar
+
+=== sofia_quiebre_observar ===
+
+Tiene la cabeza entre las manos.
+
+Los hombros le tiemblan.
+
+# PAUSA
+
+Nunca la viste así.
+Sofía siempre es la que sostiene.
+La que tiene respuestas.
+La que sigue.
+
+* [Acercarte ahora]
+    -> sofia_quiebre_encuentro
+* [Dejarla sola]
+    Te vas sin hacer ruido.
+    Hay cosas que se procesan solas.
+    ->->
+
+=== sofia_quiebre_encuentro ===
+
+"Sofía."
+
+Se sobresalta. Se limpia la cara rápido.
+
+"Ah. Sos vos."
+
+* ["¿Estás bien?"]
+    "Sí, sí. Bien."
+    Mentira evidente.
+    -> sofia_quiebre_presion
+* [Sentarte al lado sin decir nada]
+    Te sentás.
+    Silencio.
+    Ella respira hondo.
+    -> sofia_quiebre_admision
+* ["No tenés que estar bien."]
+    -> sofia_quiebre_admision
+
+=== sofia_quiebre_presion ===
+
+"En serio, Sofía."
+
+# PAUSA
+
+Silencio largo.
+
+Después, muy bajo:
+
+-> sofia_quiebre_admision
+
+=== sofia_quiebre_admision ===
+
+"No sé si puedo seguir."
+
+# PAUSA
+
+Lo dijo.
+
+"La Chola me dejó esto. Me dijo 'la olla sos vos ahora'. Y yo dije que sí porque no podía decir que no."
+
+* [...]
+-
+
+"Pero yo no soy ella. Ella tenía... no sé. Fe. Yo solo tengo miedo."
+
+* ["¿Miedo de qué?"]
+    -> sofia_miedo
+* [Escuchar]
+    -> sofia_miedo
+
+=== sofia_miedo ===
+
+"De que cierre. De que mañana no haya comida. De Claudia y sus planillas."
+
+Se frota la cara.
+
+"De fallarles a todos."
+
+# PAUSA
+
+"Cuarenta personas vienen acá. Cuarenta. Y yo no sé si la semana que viene voy a poder darles un plato."
+
+* ["No estás sola."]
+    -> sofia_no_sola
+* ["Cerrá entonces."]
+    -> sofia_cerrar_provocacion
+* [Quedarte en silencio]
+    -> sofia_silencio
+
+=== sofia_no_sola ===
+
+"Ya sé. Elena, Diego, vos... pero al final la que firma soy yo. La que responde soy yo. La que no duerme soy yo."
+
+Pausa.
+
+"Mi vieja murió haciendo esto. ¿Sabés? Literalmente. Se murió cocinando."
+
+# PAUSA
+
+"Y yo a veces pienso: ¿para qué?"
+
+* [...]
+-
+
+-> sofia_cierre_quiebre
+
+=== sofia_cerrar_provocacion ===
+
+Sofía te mira. Dura.
+
+"¿Vos me estás cargando?"
+
+"No. En serio. Si no podés, cerrá. Nadie te obliga."
+
+# PAUSA
+
+Silencio.
+
+"No puedo cerrar. Eso es lo peor. No puedo."
+
+-> sofia_cierre_quiebre
+
+=== sofia_silencio ===
+
+No decís nada.
+
+A veces no hay nada que decir.
+
+Sofía respira. Una vez. Dos.
+
+# PAUSA
+
+-> sofia_cierre_quiebre
+
+=== sofia_cierre_quiebre ===
+
+Después de un rato, dice:
+
+"Gracias por no decirme que todo va a estar bien."
+
+* ["No sé si va a estar bien."]
+    "No. Yo tampoco."
+    -> sofia_cierre_final
+* ["Capaz que no. Pero estamos."]
+    Sofía asiente.
+    -> sofia_cierre_final
+* [...]
+    -> sofia_cierre_final
+
+=== sofia_cierre_final ===
+
+Se para. Se acomoda el pelo.
+
+"Bueno. Mañana hay asamblea. Hay que preparar."
+
+La máscara vuelve.
+Pero ahora sabés lo que hay abajo.
+
+~ sofia_estado = "quebrando"
+~ sofia_relacion += 1
+~ subir_conexion(1)
+
+"¿Me ayudás a cerrar?"
+
+"Sí."
+
+Cierran la olla juntos.
 
 ->->
 

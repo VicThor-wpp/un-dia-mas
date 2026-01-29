@@ -307,6 +307,7 @@ Cuando el barco se hunde, o armamos una balsa entre todos o nos ahogamos por sep
 -
 
 Hace una pausa larga. Algo se abre en ella.
+# PAUSA
 
 "Raúl pasó lo mismo que vos. Exactamente. Lo echaron del frigorífico un martes. Llegó a casa blanco. No habló en tres días."
 
@@ -462,7 +463,8 @@ Elena sonríe. Es la primera vez que la ves sonreír así.
     "Enterramos a mucha gente juntas. Compañeros que se llevaron. Algunos que aparecieron. Otros que no."
     
     Silencio largo.
-    
+    # PAUSA
+
     "Pero seguíamos. Siempre seguíamos."
     -> elena_chola_cont
 
@@ -485,6 +487,7 @@ Elena sonríe. Es la primera vez que la ves sonreír así.
 -
 
 Pausa larga.
+# PAUSA
 
 "A veces le hablo todavía. A la foto que tengo en el aparador. Le cuento cómo está la olla. Le puteo cuando las cosas no salen."
 
@@ -550,6 +553,7 @@ Sonríe. Una sonrisa feroz.
 -
 
 Pausa.
+# PAUSA
 
 "La propiedad privada se termina donde empieza el frío de un guri. Eso no lo escribió ningún filósofo. Eso lo aprendí ese día."
 
@@ -591,6 +595,7 @@ Pausa.
 Elena mira hacia la pared. La foto de su marido.
 
 "Yo cambié la ropa de mi marido muerto por leche en polvo para los nietos de una vecina."
+# PAUSA
 
 * [...]
 -
@@ -952,6 +957,144 @@ No sabés si es verdad.
 Pero ayuda escucharlo.
 
 ~ subir_conexion(1)
+
+->->
+
+// === PROTAGONISTA SE QUIEBRA ===
+
+=== protagonista_pide_ayuda ===
+// El protagonista finalmente muestra vulnerabilidad
+// Trigger: jueves o viernes, si ayudó en olla y tiene inercia alta
+
+Elena está pelando papas.
+
+Movimientos lentos, seguros. Años de práctica.
+
+Te sentás al lado. Agarrás un cuchillo.
+
+* [Pelar en silencio]
+    -> pelar_silencio
+* ["Elena, ¿puedo preguntarte algo?"]
+    -> elena_pregunta_directa
+
+=== pelar_silencio ===
+
+Pelan.
+
+El ruido del cuchillo contra la cáscara.
+
+# PAUSA
+
+"¿Qué te pasa, gurí?"
+
+Elena no te mira. Sigue pelando.
+
+* ["Nada."]
+    "Mentira."
+    Sigue pelando.
+    -> protagonista_admision
+* ["No sé."]
+    -> protagonista_admision
+* [Dejar el cuchillo]
+    Dejás el cuchillo.
+    Elena espera.
+    -> protagonista_admision
+
+=== elena_pregunta_directa ===
+
+"Preguntá."
+
+* ["¿Cómo hacés?"]
+    "¿Cómo hago qué?"
+    "Para seguir. Cuando todo se va a la mierda."
+    -> protagonista_admision
+* ["¿Alguna vez quisiste dejar todo?"]
+    Elena deja de pelar. Te mira.
+    "¿Vos querés dejar todo?"
+    -> protagonista_admision
+
+=== protagonista_admision ===
+
+# PAUSA
+
+"No sé qué estoy haciendo."
+
+Lo dijiste.
+
+"Me echaron. No tengo guita. No tengo plan. Vengo acá y ayudo pero no sé por qué. No sé si sirve de algo."
+
+# PAUSA
+
+Elena sigue pelando.
+
+"Y tengo miedo. Todo el tiempo. De que se me acabe la plata, de no conseguir nada, de terminar..."
+
+No terminás la frase.
+
+* [...]
+-
+
+Silencio.
+
+-> elena_respuesta_quiebre
+
+=== elena_respuesta_quiebre ===
+
+Elena termina una papa. Agarra otra.
+
+"En el 2002 perdí todo."
+
+# PAUSA
+
+"El laburo, los ahorros, casi la casa. Raúl estaba enfermo. Los gurises chicos."
+
+* [...]
+-
+
+"¿Sabés qué hice? Vine acá. A esta misma olla. Que en ese momento era un fogón en la calle."
+
+"¿Y?"
+
+# PAUSA
+
+"Y pelé papas. Porque no sabía qué más hacer."
+
+-> elena_consejo_quiebre
+
+=== elena_consejo_quiebre ===
+
+Te mira por primera vez.
+
+"No tenés que saber qué estás haciendo. Solo tenés que seguir haciendo."
+
+* ["¿Y si no alcanza?"]
+    "Nunca alcanza. Pero hacemos igual."
+    -> elena_cierre_quiebre
+* ["Suena a resignación."]
+    "No. Resignación es quedarte en tu casa esperando que alguien te salve. Esto es otra cosa."
+    -> elena_cierre_quiebre
+* [Asentir]
+    -> elena_cierre_quiebre
+
+=== elena_cierre_quiebre ===
+
+"El miedo no se va, gurí. Se acompaña."
+
+# PAUSA
+
+Te pasa una papa.
+
+"Dale. Que estas no se pelan solas."
+
+~ elena_relacion += 1
+~ subir_conexion(1)
+~ disminuir_inercia(1)
+
+Pelás.
+
+El miedo sigue ahí.
+Pero estás pelando papas.
+Por ahora, alcanza.
 
 ->->
 

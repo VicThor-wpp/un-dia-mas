@@ -376,6 +376,8 @@ Es todo.
     Y la mina abrió igual.
     Pero no dejamos de juntarnos."
 
+    # PAUSA
+
     Silencio.
 
     "Juntarse es lo primero. Lo demás viene después."
@@ -389,22 +391,11 @@ Es todo.
     -> bruno_oferta_protagonista ->
 }
 
-// Momento colectivo - boost de llama
+// Momento colectivo expandido - decisión y canto
 {veces_que_ayude >= 2 && participe_asamblea:
-    Algo pasa en la asamblea.
-    No es grande. No es histórico.
-    Pero es real.
+    -> asamblea_momento_colectivo ->
 
-    Alguien empieza a cantar.
-    Una canción vieja. De cuando había fábricas.
-
-    Elena la conoce. Sofía también.
-    Uno a uno, se van sumando.
-
-    No es esperanza ingenua.
-    Es memoria. Es resistencia.
-
-    ~ subir_llama(3)
+    ~ subir_llama(2)
     ~ activar_hay_cosas_juntos()
 }
 
@@ -472,10 +463,14 @@ Hablás.
 = sabado_hablar_critico
 Te miran.
 
+# PAUSA
+
 * [...]
 -
 
 Silencio. Y después algo inesperado: aplausos. Pocos, pero sinceros.
+
+# PAUSA
 
 Sofía tiene los ojos húmedos.
 Elena asiente con fuerza.
@@ -666,12 +661,16 @@ Elena pide la palabra.
 Que no éramos competitivos.
 Que el mercado había decidido."
 
+# PAUSA
+
 "Pero el mercado no decidió nada.
 Los dueños decidieron.
 Se llevaron la plata y nos dejaron afuera."
 
 * [...]
 -
+
+# PAUSA
 
 "Lo que quiero decir es esto:
 No sos vos el problema.
@@ -698,6 +697,8 @@ Ellos solo firmaban."
 Y se dieron cuenta que sin nosotros
 no hay empresa."
 
+# PAUSA
+
 ~ activar_antagonismo_clase()
 
 # IDEA DESBLOQUEADA: "HAY INTERESES OPUESTOS"
@@ -709,6 +710,8 @@ Unos reman. Otros pasean.
 -
 
 Sofía cierra:
+
+# PAUSA
 
 "Bueno. Por eso estamos acá.
 La olla no es caridad.
@@ -785,6 +788,8 @@ La cuenta regresiva sigue.
 
 Pero hoy estuviste en una asamblea.
 Hoy fuiste parte de algo.
+
+# PAUSA
 
 No resuelve nada.
 Pero cambia algo.

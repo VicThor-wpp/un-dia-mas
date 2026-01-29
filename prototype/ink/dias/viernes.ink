@@ -65,6 +65,10 @@ El sostén energético más honesto: algo caliente y amargo que te hace funciona
     -> viernes_buscar
 * {lucia_relacion >= 1} [Llamar a Lucía]
     -> lucia_post_despido ->
+    // Lucía explica por qué los canales institucionales no funcionan para unipersonales
+    {fui_despedido && lucia_relacion >= 1:
+        -> lucia_explica_unipersonal ->
+    }
     * * [Ir a la olla después]
         -> viernes_olla_temprano
     * * [Buscar laburo]
@@ -555,6 +559,11 @@ Pero algo falta.
     Mañana hay que ver de vuelta.
 
     ~ subir_llama(1)
+}
+
+// Escena quiebre de Sofía (después de auditoría de Claudia)
+{sofia_relacion >= 3 && ayude_en_olla && not olla_cerro_viernes:
+    -> sofia_momento_quiebre ->
 }
 
 {not ayude_en_olla && olla_en_crisis:

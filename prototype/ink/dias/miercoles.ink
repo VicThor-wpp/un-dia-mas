@@ -54,6 +54,8 @@ A las 11 te llaman.
 
 # LA REUNIÓN
 
+# PAUSA
+
 // El despido - contenido específico del miércoles
 // Usamos el módulo de laburo para la mecánica del despido
 -> laburo_despido ->
@@ -82,6 +84,9 @@ A las 11 te llaman.
 }
 
 // Después del despido, contenido específico
+
+# PAUSA
+
 Alguien te dice "suerte" sin mirarte a los ojos.
 
 Salís.
@@ -283,6 +288,8 @@ Deja la frase ahí.
 
 "Me echaron."
 
+# PAUSA
+
 Sofía no dice nada por un momento.
 Después:
 
@@ -400,6 +407,8 @@ Elena contesta al segundo ring.
 Le contás. Ella escucha.
 Cuando terminás, hay silencio.
 
+# PAUSA
+
 * [...]
 -
 
@@ -411,6 +420,8 @@ Raúl era su marido.
 -
 
 "Tres meses estuvo sin laburo. Yo trabajaba limpiando. Los pibes eran chicos. La olla del barrio nos salvó ese invierno."
+
+# PAUSA
 
 "No sabía."
 
@@ -537,6 +548,8 @@ Primer día sin laburo.
 Te acostás pero no dormís.
 La cabeza no para.
 
+# PAUSA
+
 * [...]
 -
 
@@ -544,6 +557,8 @@ La tarjeta. El alquiler. La obra social.
 Tenés tres meses. Tres meses para resolver algo.
 
 La cuenta regresiva empezó.
+
+# PAUSA
 
 {conte_a_alguien: Al menos alguien sabe. No estás completamente solo.}
 {not conte_a_alguien: No le contaste a nadie. El peso es solo tuyo.}

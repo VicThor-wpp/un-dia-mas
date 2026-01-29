@@ -234,3 +234,66 @@ Mañana hay que pelear.
 - else:
     ->->
 }
+
+// === POR QUÉ EL SINDICATO NO PUEDE AYUDAR ===
+
+=== lucia_explica_unipersonal ===
+// Lucía explica por qué los canales formales no funcionan para unipersonales
+// Trigger: después del despido, si hay relación con Lucía
+
+"¿Y el sindicato? ¿No pueden hacer algo?"
+
+Lucía suspira.
+
+"Mirá, yo quisiera. Pero vos no sos empleado. Sos 'prestador de servicios'."
+
+* ["Es lo mismo."]
+    "Para vos sí. Para la ley, no."
+    -> lucia_explica_legal
+* ["¿Y eso qué significa?"]
+    -> lucia_explica_legal
+
+=== lucia_explica_legal ===
+
+"Significa que no tenés convenio colectivo. No tenés despido. No tenés BPS patronal. No tenés nada."
+
+# PAUSA
+
+"Facturás, cobrás, y cuando no les servís más... chau. Sin indemnización, sin seguro de paro, sin nada."
+
+* ["Pero yo laburaba ahí todos los días..."]
+    "Sí. Como empleado. Pero en los papeles sos un 'proveedor'. Como si vendieras tornillos."
+    -> lucia_explica_sistema
+* ["¿Y el MTSS?"]
+    "Podés hacer la denuncia. Van a decir que es 'relación de dependencia encubierta'. Capaz ganás en tres años. Capaz."
+    -> lucia_explica_sistema
+
+=== lucia_explica_sistema ===
+
+Lucía toma mate.
+
+"El sistema está armado así. Las empresas tercerizan, contratan unipersonales, y se ahorran el treinta por ciento de aportes. Vos ponés el cuerpo, ellos ponen las reglas."
+
+# PAUSA
+
+"Nosotros peleamos desde adentro, pero los que están afuera... no tenemos cómo cubrirlos."
+
+* ["Entonces estoy solo."]
+    "No solo. Pero sí... desprotegido."
+    -> lucia_cierre_institucional
+* ["¿Y qué hago?"]
+    -> lucia_cierre_institucional
+
+=== lucia_cierre_institucional ===
+
+"Mirá, yo no te voy a mentir. El Estado no te va a salvar. El sindicato tampoco, porque legalmente no sos de los nuestros."
+
+# PAUSA
+
+"Pero hay otras redes. La olla. Los vecinos. Eso no tiene convenio colectivo, pero existe."
+
+~ lucia_consejo_sindical = true
+
+"Es lo que hay."
+
+->->

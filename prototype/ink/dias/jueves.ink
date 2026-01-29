@@ -603,6 +603,11 @@ Las manos mojadas. El olor a papa.
 Elena asiente.
 "Gracias por la mano, m'hijo."
 
+// Protagonista se quiebra frente a Elena
+{ayude_en_olla && elena_relacion >= 2 && inercia >= 4:
+    -> protagonista_pide_ayuda ->
+}
+
 * [Irte] -> jueves_noche
 
 === jueves_diego ===

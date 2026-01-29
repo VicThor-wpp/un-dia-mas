@@ -19,6 +19,7 @@ Sofía tiembla de rabia. "La gente repite, Claudia. Tienen hambre."
 "La repetición no está contemplada en el protocolo. Una cédula, un plato."
 
 Saca una planilla vacía.
+# PAUSA
 
 "Necesito nombre, cédula y firma de cada persona que comió hoy.
 Si no está la lista para el lunes, se corta el suministro seco."
@@ -100,6 +101,7 @@ Que la gente tiene hambre.
 Que el Estado no llega."
 
 Guarda el papel.
+# PAUSA
 
 "El Estado soy yo.
 Y estoy llegando."
@@ -206,6 +208,7 @@ no existe.
     "No."
 
     Claudia guarda el papel.
+    # PAUSA
 
     "Bien. El lunes nos vemos en el juzgado."
 

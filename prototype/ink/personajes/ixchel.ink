@@ -55,6 +55,7 @@ Barrés juntos un rato. El sonido de la paja contra el cemento es hipnótico.
 -
 
 "Me vine hace cinco años, cuando los líderes empezaron a no volver a casa."
+# PAUSA
 
 Hace una pausa. Sus manos siguen barriendo, pero sus ojos miran algo lejano.
 
@@ -197,6 +198,7 @@ Sus manos siguen lavando, pero más lento.
 * [...]
 -
 
+# PAUSA
 Silencio largo.
 
 "Un día salió a una reunión y no volvió. Lo encontraron tres días después. La policía dijo 'ajuste de cuentas'. Nadie investigó."
@@ -211,6 +213,7 @@ Sigue lavando.
 "Lo siento, Ixchel."
 
 "Dios lo tiene en su gloria. Y yo lo tengo acá."
+# PAUSA
 
 Se toca el pecho.
 
@@ -312,6 +315,7 @@ Ixchel sonríe, pero sin alegría.
 -
 
 Hace una pausa.
+# PAUSA
 
 "El primer invierno casi me muero. Ocho grados me parecían el fin del mundo. Una vecina de la pensión me prestó una campera. Nunca se la pude devolver. Se mudó."
 
@@ -348,6 +352,7 @@ Ixchel sonríe.
 -
 
 "Porque yo sé que está ahí."
+# PAUSA
 
 Se toca el pecho, donde el bordado queda oculto.
 

@@ -47,6 +47,7 @@ Pero no vas a decirlo.
 "¿Cómo estás?"
 
 Pausa larga.
+# PAUSA
 
 "Estoy."
 
@@ -202,6 +203,7 @@ Y a mi edad, encontrar algo fijo es un chiste. Me estoy comiendo los ahorros."
 -
 
 Pausa.
+# PAUSA
 
 "Estoy podrido de todo."
 
@@ -281,6 +283,7 @@ Te mira. Sorprendido.
     "Hace mucho que nadie me dice eso."
 
     Pausa.
+    # PAUSA
 
     "¿Sabés qué es lo peor de alejarte? Que después no sabés cómo volver. Y cada día es más difícil."
 
@@ -408,6 +411,7 @@ Pausa.
 -
 
 Su voz se quiebra un poco.
+# PAUSA
 
 "Cuando era joven, la política era todo. No aprendí a ser padre fuera de eso. Y ahora están lejos y no sé cómo hablarles."
 
@@ -553,6 +557,7 @@ Están hablando. De nada.
 De pronto, Marcos dice:
 
 "Me echaron."
+# PAUSA
 
 "¿Cuándo?"
 
@@ -570,9 +575,10 @@ Por eso se aisló.
 * [...]
 -
 
-"Vergüenza. Orgullo. No sé.
+""Vergüenza. Orgullo. No sé.
 Después de todo lo que hablaba sobre dignidad del trabajador...
 y me echaron como a cualquiera."
+# PAUSA"
 
 ~ marcos_relacion += 1
 ~ subir_conexion(1)

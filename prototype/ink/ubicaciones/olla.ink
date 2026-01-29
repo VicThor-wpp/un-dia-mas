@@ -879,6 +879,178 @@ Pero todos buscan.
 
 ->->
 
+// --- MOMENTO COLECTIVO EN ASAMBLEA ---
+
+=== asamblea_momento_colectivo ===
+// Tunnel: El momento donde la comunidad actua como unidad
+// Llamar desde la escena de asamblea del sabado: -> asamblea_momento_colectivo ->
+
+Sofía pide silencio.
+
+"Bueno. Ya saben por qué estamos acá."
+
+Mira alrededor. A las caras cansadas. A los números que no cierran.
+
+"Tenemos que decidir."
+
+* [...]
+-
+
+Silencio.
+
+Nadie quiere ser el primero.
+
+# PAUSA
+
+Entonces Elena se para.
+
+-> elena_habla_asamblea ->
+
+-> asamblea_votacion ->
+
+-> asamblea_canto ->
+
+->->
+
+=== elena_habla_asamblea ===
+// Tunnel: Elena habla en la asamblea
+
+"Yo voy a hablar."
+
+Todos la miran.
+
+"En el 2002, cuando cerraron los bancos, vinimos acá. A este mismo lugar. Éramos veinte, treinta. No teníamos nada."
+
+# PAUSA
+
+"Hoy somos más. Y seguimos sin tener nada."
+
+Risas nerviosas.
+
+"Pero estamos."
+
+* [...]
+-
+
+"Yo no sé qué va a pasar mañana. No sé si Claudia nos cierra, si conseguimos la plata, si esto se sostiene."
+
+# PAUSA
+
+"Pero sé una cosa: solos no llegamos a ningún lado. Juntos... tampoco sé. Pero prefiero no saber juntos."
+
+->->
+
+=== asamblea_votacion ===
+// Tunnel: La votacion en la asamblea
+
+Sofía asiente.
+
+"Gracias, Elena. ¿Alguien más?"
+
+{marcos_vino_a_asamblea:
+    Marcos levanta la mano. Tímido.
+    "Yo... hace mucho que no venía. Pero estoy."
+    Es poco. Pero es algo.
+}
+
+{diego_relacion >= 3:
+    Diego dice:
+    "En mi país destruyeron algo que tardó sesenta años en construirse. No voy a dejar que pase acá."
+}
+
+* [...]
+-
+
+Sofía mira alrededor.
+
+"Bueno. Votemos. ¿Seguimos?"
+
+# PAUSA
+
+Silencio.
+
+Después, una mano.
+
+Otra.
+
+Otra.
+
+-> asamblea_manos
+
+=== asamblea_manos ===
+// Las manos suben en la votacion
+
+Las manos suben.
+
+No todas. Pero suficientes.
+
+{ixchel_relacion >= 2:
+    Ixchel no levanta la mano. Pero asiente. En su cultura, el consenso se muestra distinto.
+}
+
+Sofía cuenta.
+
+"Mayoría. Seguimos."
+
+# PAUSA
+
+Y entonces, no sabés quién empieza, alguien tararea.
+
+->->
+
+=== asamblea_canto ===
+// Tunnel: El canto colectivo
+
+Es una murga vieja. De las que cantaban en el 2002.
+
+# PAUSA
+
+"...que se vayan todos, que no quede ni uno solo..."
+
+Algunos se suman.
+
+Elena sonríe. Conoce la letra.
+
+Diego no la conoce pero hace palmas.
+
+{marcos_vino_a_asamblea:
+    Marcos murmura la letra. La recuerda de algún lado.
+}
+
+* [Cantar]
+    Cantás.
+    No te sabés toda la letra, pero cantás.
+    ~ subir_conexion(2)
+    ~ subir_llama(1)
+    -> asamblea_canto_final
+* [Hacer palmas]
+    Hacés palmas.
+    Es suficiente.
+    ~ subir_conexion(1)
+    -> asamblea_canto_final
+* [Observar]
+    Mirás.
+    Algo se mueve adentro tuyo.
+    -> asamblea_canto_final
+
+=== asamblea_canto_final ===
+// Cierre del momento del canto
+
+No dura mucho.
+
+Se apaga solo, como empezó.
+
+Pero por un momento, algo pasó.
+
+# PAUSA
+
+No es una victoria.
+No es una solución.
+
+Pero es algo que no se puede poner en una planilla.
+
+->->
+
 // --- FIN ASAMBLEA ---
 
 === olla_asamblea_fin ===

@@ -265,6 +265,7 @@ Diego mira el cigarrillo.
     "Pasó que la revolución tiene muchos estómagos y pocas manos. La corrupción se comió las semillas, y el autoritarismo se comió a los que preguntábamos dónde estaba el fertilizante."
 
     Pausa larga. Diego mira sus manos.
+    # PAUSA
 
     "Vine acá para dejar de pelear, pero el hambre es el mismo monstruo con distinto acento."
 
@@ -288,6 +289,7 @@ Diego mira el cigarrillo.
     "Pasó que la revolución tiene muchos estómagos y pocas manos. La corrupción se comió las semillas, y el autoritarismo se comió a los que preguntábamos dónde estaba el fertilizante. Destruyeron lo que construimos, y de paso borraron el trabajo de los que estaban antes de ellos, que tampoco eran santos, pero al menos dejaban algo en pie."
 
     Pausa larga. Diego mira sus manos, curtidas por dos tierras distintas.
+    # PAUSA
 
     "Vine acá para dejar de pelear, pero el hambre es el mismo monstruo con distinto acento. A veces... a veces ya ni me da la cabeza para imaginar que la cosa se acomode. Es como si el futuro fuera un idioma que dejé de hablar."
 
@@ -491,6 +493,7 @@ Diego mira sus manos.
 * [...]
 -
 
+# PAUSA
 Silencio largo.
 
 "Mi vieja me dijo: 'Vos tenés que irte antes de que te toque a vos'. Me dieron los ahorros de toda la vida. Que no eran nada, por la inflación. Pero era todo lo que tenían."
@@ -538,10 +541,11 @@ Diego sonríe.
     Pasa el dedo por la lista.
     
     "Ninguna crece igual acá. El clima es distinto. La tierra es distinta."
-    
+
     * [...]
     -
-    
+
+    # PAUSA
     "A veces la leo como quien lee una carta de un muerto."
     
     Guarda la libreta.
@@ -661,6 +665,7 @@ Mira el piso.
 * [...]
 -
 
+# PAUSA
 "Ocho meses. Nunca falté. Nunca llegué tarde.
 Y me echaron como si nada."
 
