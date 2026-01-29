@@ -1,8 +1,8 @@
 # UN DÍA MÁS - Source of Truth (Consolidado)
 
-> **Fecha Última Actualización:** 2026-01-28
-> **Estado:** Implementación Completada (Fase 1)
-> **Versión:** Prototype v1.0
+> **Fecha Última Actualización:** 2026-01-29
+> **Estado:** Implementación Completada (Fase 1 y Fase 2)
+> **Versión:** Prototype v1.1
 
 ---
 
@@ -48,15 +48,69 @@ El protagonista no es un empleado formal despedido con indemnización. Es un **f
 | **Ixchel** | Resistencia Ancestral | Cosmovisión maya. "Tejer" comunidad. Final alternativo `final_tejido`. |
 | **Juan** | El Testigo | Compañero que se queda. Representa la culpa del sobreviviente. |
 
-### NPCs Fase 2 (Antagonistas y Secundarios)
+## Fase 2: Antagonistas y Secundarios (COMPLETADA)
 
-| Personaje | Rol | Archivo |
-|-----------|-----|---------|
-| Lucía | Sindicalista pragmática, compañera de trabajo | personajes/lucia.ink |
-| Tiago | Adolescente de logística, futuro en riesgo | personajes/tiago.ink |
-| Cacho | "Emprendedor" iluso, pensamiento mágico | personajes/cacho.ink |
-| Bruno | Líder teocrático, antagonista territorial | personajes/bruno.ink |
-| Claudia | Auditora estatal, violencia administrativa | personajes/claudia.ink |
+### Personajes Integrados
+
+| Personaje | Rol | Días Activo | Arco Completo |
+|-----------|-----|-------------|---------------|
+| Lucía | Sindicalista pragmática | L, M, V, S, D | Organización vs institucionalización |
+| Tiago | Pibe vulnerable (INAU) | J, V, S, D | Captación por Bruno vs comunidad |
+| Cacho | Emprendedor iluso | J, V, S, D | Delirio vs momento de realidad |
+| Bruno | Fascista territorial | J, V, S, D | Amenaza a la olla y captación de vulnerables |
+| Claudia | Auditora estatal | V, S, D | Violencia administrativa vs resistencia |
+
+### Escenas por Personaje
+
+**Lucía:**
+- lucia_escena_mate (Lunes)
+- lucia_almuerzo_oficina (Martes)
+- lucia_post_despido (Jueves)
+- lucia_en_olla (Viernes)
+- lucia_en_asamblea (Sábado)
+- lucia_cierre_domingo (Domingo)
+
+**Tiago:**
+- tiago_primer_encuentro (Jueves)
+- tiago_conflicto_comida (Viernes)
+- tiago_se_abre (Sábado)
+- tiago_decision_final (Sábado)
+- tiago_en_asamblea (Sábado)
+- tiago_domingo (Domingo)
+
+**Cacho:**
+- cacho_oferta_negocio (Jueves)
+- cacho_casa (Jueves)
+- cacho_en_la_fila (Viernes)
+- cacho_sin_olla (Sábado)
+- cacho_redencion (Domingo)
+- cacho_domingo (Domingo)
+
+**Bruno:**
+- bruno_primer_encuentro (Jueves)
+- bruno_la_visita (Jueves)
+- bruno_confronta_sofia (Viernes)
+- bruno_recluta_tiago (Sábado)
+- bruno_oferta_protagonista (Sábado)
+- bruno_amenaza_olla (Sábado)
+- bruno_domingo (Domingo)
+
+**Claudia:**
+- claudia_llegada (Viernes)
+- claudia_la_auditoria (Viernes)
+- claudia_amenaza_final (Viernes)
+- claudia_el_tupper (Viernes)
+- claudia_segundo_round (Sábado)
+- claudia_domingo (Domingo)
+
+### Finales Fase 2 (Balanceados)
+
+| Final | Requisitos |
+|-------|------------|
+| final_huelga | llama >= 6, conexion >= 6, veces_que_ayude >= 2, participe_asamblea |
+| final_ocupacion | llama >= 7, conexion >= 7, veces_que_ayude >= 3, participe_asamblea |
+| final_represion | llama >= 5, conexion >= 5, participe_asamblea |
+| final_desercion | conexion >= 5, inercia <= 4 |
 
 ---
 

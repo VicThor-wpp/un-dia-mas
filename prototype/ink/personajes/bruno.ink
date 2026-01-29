@@ -221,3 +221,105 @@ Dios descansa.
 Él también.
 
 ->->
+
+=== bruno_domingo ===
+// Escena Domingo: El resultado del conflicto con Bruno
+
+{tiago_captado_por_bruno:
+    // Bruno ganó a Tiago
+    La camioneta de Bruno pasa por el barrio.
+    Despacio. Como patrullando.
+
+    Adentro, Tiago mira al frente.
+    Como soldado.
+
+    Bruno baja el vidrio.
+    Te mira.
+    Sonríe.
+
+    "Gracias por nada, vecino."
+
+    El vidrio sube.
+    Se van.
+
+    ~ bruno_tension += 1
+    ->->
+}
+
+{tiago_se_queda && bruno_tension >= 2:
+    // Bruno perdió a Tiago pero no se rinde
+    Bruno aparece en la esquina.
+    Solo. Sin camioneta.
+
+    "Me sacaste al pibe."
+
+    * [Confrontarlo.]
+        Te plantás.
+
+        "No te lo saqué. Él eligió."
+
+        Bruno achica los ojos.
+        "Nadie elige en este barrio.
+        Solo sobreviven o no."
+
+        Se va.
+        Pero sabés que va a volver.
+
+        ~ subir_dignidad(1)
+        ->->
+
+    * [Ignorarlo.]
+        Seguís caminando.
+
+        "Esto no termina", dice a tu espalda.
+
+        No te das vuelta.
+
+        ->->
+- else:
+    ->->
+}
+
+=== bruno_amenaza_olla ===
+// Escena Sábado tarde: Bruno amenaza la olla directamente
+
+{bruno_tension >= 3 && not lista_entregada:
+    Bruno entra a la olla.
+    Sin golpear. Sin permiso.
+
+    "Escuché que tienen problemas con la municipalidad."
+
+    Sofía se tensa.
+
+    "Yo tengo contactos. Puedo ayudar.
+    Pero necesito algo a cambio."
+
+    * [Rechazarlo.]
+        "No necesitamos tu ayuda, Bruno."
+
+        "Todos necesitan ayuda.
+        La pregunta es de quién la aceptan."
+
+        Se va.
+
+        ~ subir_dignidad(2)
+        ~ bruno_tension += 1
+        ->->
+
+    * [Escuchar su propuesta.]
+        "¿Qué querés?"
+
+        "La lista. Los nombres de quienes vienen.
+        Para mis... estadísticas."
+
+        Sofía niega con la cabeza.
+
+        "Piénsenlo."
+
+        Se va.
+
+        ~ olla_en_crisis = true
+        ->->
+- else:
+    ->->
+}

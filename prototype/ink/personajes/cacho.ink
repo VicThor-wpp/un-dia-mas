@@ -201,3 +201,51 @@ Pero la mentira lo deja dormir.
 Es suficiente.
 
 ->->
+
+=== cacho_domingo ===
+// Escena Domingo: Cacho reflexiona
+
+{cacho_momento_real:
+    Cacho te cruza en la calle.
+
+    "Vecino."
+
+    No tiene el discurso de siempre.
+    Se lo ve más... real.
+
+    "Ayer pensé mucho.
+    Capaz que tenés razón.
+    Capaz que hay que dejar de mentirse."
+
+    Pausa.
+
+    "Pero cuesta, ¿sabés?"
+
+    * [Acompañarlo.]
+        "Sí. Cuesta."
+
+        Se quedan un rato en silencio.
+        A veces eso alcanza.
+
+        ~ subir_conexion(1)
+        ->->
+
+    * [Dejarlo solo.]
+        "Suerte, Cacho."
+
+        Te vas.
+        Algunos procesos son solitarios.
+
+        ->->
+- else:
+    // Cacho sigue en su mundo
+    Cacho te cruza en la calle.
+
+    "¡Vecino! Tengo una oportunidad de oro.
+    Cripto. NFTs. El futuro."
+
+    Seguís de largo.
+    Algunos nunca cambian.
+
+    ->->
+}

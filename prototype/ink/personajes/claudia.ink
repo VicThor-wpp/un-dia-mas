@@ -189,3 +189,76 @@ Lo que no está en la planilla
 no existe.
 
 ->->
+
+=== claudia_segundo_round ===
+// Escena Sábado: Claudia vuelve a presionar
+
+{claudia_hostilidad >= 1 && not lista_entregada:
+    Claudia aparece de nuevo.
+    Esta vez con otro papel.
+
+    "Última oportunidad.
+    La lista o cierro el lunes."
+
+    Sofía mira a todos.
+    Elena. Diego. Vos.
+
+    "No."
+
+    Claudia guarda el papel.
+
+    "Bien. El lunes nos vemos en el juzgado."
+
+    Se va.
+
+    ~ claudia_hostilidad += 1
+    ~ olla_en_crisis = true
+    ~ subir_dignidad(1)
+    ->->
+- else:
+    ->->
+}
+
+=== claudia_domingo ===
+// Escena Domingo: El resultado de la auditoría
+
+{lista_entregada:
+    // Claudia ganó - hay lista
+    El lunes llega la confirmación.
+    "Suministros aprobados para la próxima semana."
+
+    Pero el barrio no festeja.
+    Saben lo que costó.
+
+    Hay gente que dejó de venir.
+    "No quiero que tengan mi cédula."
+
+    La olla sobrevive.
+    Pero algo se rompió.
+
+    ~ bajar_llama(1)
+    ->->
+}
+
+{not lista_entregada && claudia_hostilidad >= 2:
+    // Claudia perdió - resistieron
+    El domingo suena el teléfono.
+    Es Sofía.
+
+    "Claudia mandó una nota.
+    Dice que tenemos hasta el miércoles
+    para regularizar o nos cierran."
+
+    Pausa.
+
+    "Pero también dice algo más.
+    Que hay un recurso. Una apelación.
+    Elena conoce a alguien del municipio."
+
+    No es victoria. Es resistencia.
+
+    ~ subir_dignidad(1)
+    ->->
+- else:
+    ->->
+}

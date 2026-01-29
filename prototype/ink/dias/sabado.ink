@@ -67,6 +67,11 @@ El barrio más tranquilo.
     -> tiago_decision_final ->
 }
 
+// Tiago se abre si hay confianza
+{tiago_confianza >= 2 && not tiago_captado_por_bruno:
+    -> tiago_se_abre ->
+}
+
 ¿Qué hacés con la mañana?
 
 * [Llamar a alguien] # EFECTO:conexion?
@@ -327,6 +332,11 @@ Es todo.
     -> cacho_en_la_fila ->
 }
 
+// Cacho reacciona al cierre de la olla
+{olla_cerro_viernes:
+    -> cacho_sin_olla ->
+}
+
 // Lucía aparece en la olla
 {lucia_consejo_sindical:
     -> lucia_en_olla ->
@@ -377,6 +387,41 @@ Es todo.
 // Bruno ofrece al protagonista
 {inercia >= 7:
     -> bruno_oferta_protagonista ->
+}
+
+// Momento colectivo - boost de llama
+{veces_que_ayude >= 2 && participe_asamblea:
+    Algo pasa en la asamblea.
+    No es grande. No es histórico.
+    Pero es real.
+
+    Alguien empieza a cantar.
+    Una canción vieja. De cuando había fábricas.
+
+    Elena la conoce. Sofía también.
+    Uno a uno, se van sumando.
+
+    No es esperanza ingenua.
+    Es memoria. Es resistencia.
+
+    ~ subir_llama(3)
+    ~ activar_hay_cosas_juntos()
+}
+
+// Reconocimiento del barrio - boost de conexión
+{veces_que_ayude >= 3 && conexion >= 5:
+    Sofía te llama aparte.
+
+    "Quiero decirte algo."
+    "Cuando llegaste, pensé que eras otro más."
+    "Me equivoqué."
+
+    Te abraza.
+
+    "Sos parte, ¿sabés? Ya sos parte."
+
+    ~ subir_conexion(3)
+    ~ sofia_relacion += 2
 }
 
 ¿Qué hacés?

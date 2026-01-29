@@ -201,3 +201,20 @@ VAR dia_actual = 1
         ~ return true
     }
     ~ return false
+
+// ============================================
+// TRACKING DE AYUDAS
+// ============================================
+
+=== function registrar_ayuda() ===
+    ~ veces_que_ayude += 1
+    { veces_que_ayude == 2:
+        # NOTIFICATION:positive:Segunda vez ayudando
+    }
+    { veces_que_ayude == 3:
+        # NOTIFICATION:positive:Ya sos parte del equipo
+        # STAT_THRESHOLD:ayuda,milestone
+    }
+    { veces_que_ayude >= 4:
+        # NOTIFICATION:positive:El barrio te reconoce
+    }

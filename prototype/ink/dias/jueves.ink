@@ -233,9 +233,6 @@ Pero la distancia se siente más corta.
 Sofía está ahí.
 Y otra gente que no conocés bien.
 
-// Bruno aparece marcando territorio
--> bruno_la_visita ->
-
 // Encuentro con Sofia
 -> sofia_primer_encuentro ->
 
@@ -354,8 +351,11 @@ Sofía asiente.
     -> ixchel_en_olla ->
 }
 
-// Tiago aparece en la olla
+// Tiago aparece en la olla mientras ayudás
 -> tiago_primer_encuentro ->
+
+// Bruno pasa a marcar territorio
+-> bruno_la_visita ->
 
 // Escuchar sobre la crisis
 -> olla_escuchar_crisis ->
@@ -365,6 +365,20 @@ Sofía asiente.
 // Sofia en silencio ante la crisis
 Sofía no dice nada.
 Solo sigue cocinando.
+
+// Opción adicional de ayuda
+* {energia >= 1} [Quedarte a limpiar] # COSTO:1 # EFECTO:conexion+ # EFECTO:llama+
+    ~ energia -= 1
+    Te quedás a ordenar.
+    Sofía te mira con gratitud.
+    "Gracias. Esto ayuda más de lo que pensás."
+    ~ veces_que_ayude += 1
+    ~ subir_conexion(1)
+    ~ subir_llama(1)
+    -> jueves_olla_idea
+* [Seguir] -> jueves_olla_idea
+
+= jueves_olla_idea
 
 {idea_tengo_tiempo == false:
     # IDEA DISPONIBLE: "AHORA TENGO TIEMPO"

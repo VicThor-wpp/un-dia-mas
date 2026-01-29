@@ -402,7 +402,39 @@ Por ahora.
     No sabés si algo cambió.
 }
 
-* [...] -> evaluar_final
+* [...] -> cierres_fase_2
+
+// ============================================
+// CIERRES DE PERSONAJES FASE 2
+// ============================================
+
+=== cierres_fase_2 ===
+
+// Lucía - cierre sindical
+-> lucia_cierre_domingo ->
+
+// Tiago - resultado de su decisión
+-> tiago_domingo ->
+
+// Cacho - reflexión
+-> cacho_domingo ->
+
+// Bruno - resultado del conflicto
+-> bruno_domingo ->
+
+// Claudia - resultado de la auditoría
+-> claudia_domingo ->
+
+// Redención de Cacho si aplica
+-> cacho_redencion ->
+
+// Tiago en asamblea si aplica
+-> tiago_en_asamblea ->
+
+// Lucía en asamblea si aplica
+-> lucia_en_asamblea ->
+
+-> evaluar_final
 
 === evaluar_final ===
 
@@ -421,17 +453,17 @@ Por ahora.
 
 // FINAL REPRESIÓN - Intentaste luchar y te reprimieron
 // Requiere intento de acción radical con mala suerte
-{participe_asamblea && conexion >= 6 && llama >= 7 && inercia <= 4:
+{participe_asamblea && conexion >= 5 && llama >= 5 && inercia <= 4:
     -> final_represion
 }
 
 // FINAL HUELGA - Huelga salvaje organizada desde abajo
-{participe_asamblea && veces_que_ayude >= 3 && llama >= 8 && conexion >= 8 && diego_relacion >= 4:
+{participe_asamblea && veces_que_ayude >= 2 && llama >= 6 && conexion >= 6 && diego_relacion >= 4:
     -> final_huelga
 }
 
 // FINAL OCUPACIÓN - Ocupación de fábrica
-{participe_asamblea && conexion >= 8 && llama >= 7 && veces_que_ayude >= 4:
+{participe_asamblea && conexion >= 7 && llama >= 7 && veces_que_ayude >= 3:
     -> final_ocupacion
 }
 

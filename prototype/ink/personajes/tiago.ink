@@ -186,3 +186,62 @@ Las mismas de siempre.
 Las únicas que no cambian.
 
 ->->
+
+=== tiago_domingo ===
+// Escena Domingo: Resultado de la decisión de Tiago
+
+{tiago_se_queda:
+    Tiago está en la olla.
+    Barriendo. Ordenando.
+
+    No habla mucho.
+    Pero está.
+
+    "¿Todo bien?", preguntás.
+
+    "Más o menos."
+
+    Pausa.
+
+    "Pero estoy acá. Es algo."
+
+    ~ subir_conexion(1)
+    ->->
+}
+
+{tiago_captado_por_bruno:
+    Pasás por la esquina.
+    La camioneta de Bruno está ahí.
+
+    Adentro, Tiago.
+    Mira para otro lado cuando te ve.
+
+    Ya no es del barrio.
+    Ya no es de nadie.
+
+    ~ bajar_llama(1)
+    ->->
+}
+
+->->
+
+=== tiago_en_asamblea ===
+// Escena Sábado: Tiago en la asamblea (si se quedó)
+
+{tiago_se_queda && participe_asamblea:
+    Tiago está en el fondo.
+    No habla. Escucha.
+
+    Cuando alguien propone algo sobre los pibes del barrio,
+    levanta la mano.
+
+    "Yo puedo ayudar con eso."
+
+    Primera vez que lo ves participar.
+
+    ~ tiago_confianza += 1
+    ~ subir_llama(1)
+    ->->
+- else:
+    ->->
+}

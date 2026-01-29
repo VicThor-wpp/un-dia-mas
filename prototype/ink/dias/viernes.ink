@@ -134,6 +134,11 @@ Hay movimiento.
 // EL CONFLICTO: CLAUDIA (Fase 2)
 -> claudia_la_auditoria ->
 
+// Conflicto Tiago vs Claudia por el tupper
+{tiago_confianza >= 1:
+    -> tiago_conflicto_comida ->
+}
+
 {lista_entregada:
     // TRAICIÓN: Hay comida pero a un costo terrible
     Sofía cocina en silencio.
@@ -479,8 +484,25 @@ Todos ayudan.
     ~ subir_conexion(1)
 }
 
+* {energia >= 2} [Ofrecerte para la colecta] # COSTO:2 # EFECTO:conexion++ # EFECTO:llama+
+    ~ energia -= 2
+    Salís a pedir en los negocios.
+    No es fácil. Pero conseguís algo.
+    ~ veces_que_ayude += 1
+    ~ subir_conexion(2)
+    ~ subir_llama(1)
+
+// Lucía aparece si la relación es buena
+{lucia_relacion >= 2:
+    -> lucia_en_olla ->
+}
+
 // Servir la comida
 A las 7 la olla abre.
+
+// Cacho está en la fila
+-> cacho_en_la_fila ->
+
 -> olla_servir ->
 
 {veces_que_ayude == 1:
@@ -507,6 +529,11 @@ A las 7 la olla abre.
     Te preguntás cómo les habrá ido a los de la olla.
     Si resolvieron.
     Si cerraron.
+}
+
+// Bruno aparece a confrontar a Sofía
+{bruno_tension >= 1 || fui_a_olla_jueves:
+    -> bruno_confronta_sofia ->
 }
 
 El barrio sigue.

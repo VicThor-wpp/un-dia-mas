@@ -176,3 +176,61 @@ Apaga la luz.
 Mañana hay que pelear.
 
 ->->
+
+=== lucia_cierre_domingo ===
+// Escena Domingo: Lucía reflexiona sobre la semana
+
+{lucia_consejo_sindical:
+    Lucía te llama el domingo.
+
+    "¿Fuiste al ministerio?"
+
+    * [Sí, fui.]
+        "Bien. No va a cambiar nada mañana.
+        Pero es un ladrillo. Uno de muchos."
+
+        Silencio.
+
+        "Seguimos el lunes. Hay asamblea en el sindicato."
+
+        ~ lucia_sigue_luchando = true
+        ~ subir_conexion(1)
+        ~ activar_no_es_individual()
+        ->->
+
+    * [No pude.]
+        "Entiendo. Pero no te quedes.
+        Solo no se puede."
+
+        Corta.
+
+        ~ aumentar_inercia(1)
+        ->->
+- else:
+    ->->
+}
+
+=== lucia_en_asamblea ===
+// Escena Sábado: Lucía aparece en la asamblea del barrio
+
+{lucia_relacion >= 2 && participe_asamblea:
+    Lucía entra a la asamblea.
+    Algunos la conocen del sindicato.
+
+    "¿Qué hacés acá?", pregunta Sofía.
+
+    "Vine a escuchar. Y a sumar.
+    El sindicato tiene recursos.
+    Ustedes tienen organización."
+
+    Se sienta.
+    Toma nota.
+
+    "Juntos podemos más."
+
+    ~ lucia_relacion += 1
+    ~ subir_llama(1)
+    ->->
+- else:
+    ->->
+}

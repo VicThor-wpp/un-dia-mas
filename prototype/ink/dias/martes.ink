@@ -80,8 +80,23 @@ Hay reuniones que no te incluyen.
 // Trabajo de rutina
 -> laburo_trabajo_rutina ->
 
+// ALMUERZO
+-> martes_almuerzo
+
+=== martes_almuerzo ===
+
+# ALMUERZO
+
+12:30. Hora de comer.
+
+* [Almorzar con Lucía] # EFECTO:conexion+
+    -> lucia_almuerzo_oficina ->
+    -> martes_citacion
+* [Almorzar solo] # EFECTO:conexion-
+    -> laburo_almuerzo_solo ->
+    -> martes_citacion
+
 // A la tarde, la citación
--> martes_citacion
 
 === martes_citacion ===
 

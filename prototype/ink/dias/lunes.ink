@@ -54,6 +54,11 @@
 // Encuentro con Juan
 -> juan_saludo_manana ->
 
+// Encuentro con Lucía (compañera sindicalista)
+{RANDOM(1,2) == 1:
+    -> lucia_escena_mate ->
+}
+
 // Trabajo de la mañana
 -> laburo_trabajo_rutina ->
 

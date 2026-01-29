@@ -1248,18 +1248,26 @@ Pausa.
 
 ### Lucía (La Sindicalista Pragmática) - FASE 2
 
-**Rol**: Sindicalista experimentada, pragmática, representa la lucha organizada
+**Rol**: Compañera de trabajo, conecta mundo laboral con organización.
 **Relacion inicial**: 0
 **Estados**: organizando / negociando / cansada / combativa
+
+**Arco narrativo**:
+1. **Lunes:** Mate y advertencia sobre despidos
+2. **Martes:** Almuerzo tenso, habla de "la lista"
+3. **Jueves:** Llamada post-despido, consejo sindical
+4. **Viernes:** Aparece en la olla a ayudar
+5. **Sábado:** Conecta sindicato con asamblea barrial
+6. **Domingo:** Cierre según si el jugador actuó
+
+**Variables clave**: `lucia_relacion`, `lucia_consejo_sindical`, `lucia_sigue_luchando`
+
+**Idea que desbloquea**: `idea_no_es_individual` (activar_no_es_individual)
 
 **Contexto**:
 - Sindicalista con años de experiencia
 - Pragmática: sabe que las luchas se ganan con organización, no con idealismo
-- Puede aparecer en contextos laborales o comunitarios
 - Representa la institucionalización de la resistencia
-
-**Arco narrativo**:
-- Ofrece perspectiva de lucha colectiva organizada
 - Tensión entre idealismo y pragmatismo
 - Muestra límites y posibilidades del sindicalismo
 
@@ -1267,80 +1275,114 @@ Pausa.
 
 ### Tiago (El Pibe de Logística) - FASE 2
 
-**Rol**: Trabajador joven de logística, precarizado, energía juvenil
+**Rol**: Adolescente vulnerable, disputa entre Bruno y la comunidad.
 **Relacion inicial**: 0
-**Estados**: activo / agotado / rebelde / esperanzado
-
-**Contexto**:
-- Trabaja en logística/delivery
-- Representa la nueva precarización juvenil
-- Energía y voluntad de cambio
-- Menos quemado que Marcos, más optimista
+**Estados**: defensivo / confiando / captado / solidario
 
 **Arco narrativo**:
-- Representa la generación más joven enfrentando precarización
-- Contraste con personajes más viejos y cansados
-- Potencial para organización desde abajo
+1. **Jueves:** Primer encuentro en la olla, actitud defensiva
+2. **Viernes:** Conflicto con Claudia por el tupper de su abuela
+3. **Sábado:** Se abre sobre su madre en el Vilardebó
+4. **Sábado:** Decisión crucial: Bruno o la comunidad
+5. **Domingo:** Resultado según decisión
+
+**Variables clave**: `tiago_confianza` (0-5), `tiago_se_queda`, `tiago_captado_por_bruno`
+
+**Bifurcación crítica**: Si `tiago_confianza >= 3`, puede elegir quedarse. Si no, Bruno lo capta.
+
+**Contexto**:
+- Adolescente en situación vulnerable (madre internada en Vilardebó)
+- Representa la nueva generación precarizada
+- Objeto de disputa ideológica entre la comunidad y Bruno
+- Su decisión final refleja qué visión de mundo lo alcanzó primero
+- Simboliza la lucha por el futuro de la juventud
 
 ---
 
-### Cacho (El Iluso del Mindset) - FASE 2
+### Cacho (El Heredero Iluso) - FASE 2
 
-**Rol**: Creyente en cultura del emprendedurismo, "mindset positivo"
+**Rol**: Contrapunto cómico-trágico, pensamiento mágico como defensa.
 **Relacion inicial**: 0
 **Estados**: motivado / negando / quebrando / despertando
+
+**Arco narrativo**:
+1. **Jueves:** Oferta de "negocio" (perfumes truchos)
+2. **Jueves:** Muestra su casa como "emprendimiento"
+3. **Viernes:** En la fila de la olla mintiendo sobre sus motivos
+4. **Sábado:** Reacción si la olla cerró
+5. **Domingo:** Momento de realidad o continúa en delirio
+
+**Variables clave**: `cacho_deuda`, `cacho_momento_real`
+
+**Redención posible**: Si `conexion >= 7` y `cacho_momento_real`, ayuda de verdad.
 
 **Contexto**:
 - Compró el discurso del emprendedurismo y la mentalidad positiva
 - "No hay empleados pobres, solo emprendedores que no lo saben"
-- Niega la realidad estructural de la precarización
+- Niega la realidad estructural de la precarización mediante pensamiento mágico
+- Heredó algo (casa, contactos) que le permite mantener la ilusión más tiempo
 - Puede tener un arco de "despertar" o seguir en negación
-
-**Arco narrativo**:
-- Representa la ideología del "esfuerzo individual"
-- Posible quiebre cuando la realidad lo golpea
-- Tensión entre ilusión y realidad material
+- Tensión entre ilusión sostenida por privilegio y realidad material
 
 ---
 
-### Bruno (El Apóstol) - FASE 2 - ANTAGONISTA
+### Bruno (El Apóstol Fascista) - FASE 2 - ANTAGONISTA
 
-**Rol**: Antagonista fascista, discurso autoritario, anti-solidaridad
+**Rol**: Antagonista territorial, ofrece "orden" a cambio de sometimiento.
 **Relacion inicial**: 0
-**Estados**: predicando / agresivo / reclutando / amenazante
-
-**Contexto**:
-- Representa el fascismo de barrio
-- Discurso anti-olla, anti-solidaridad, pro-orden
-- "Los pobres son pobres porque quieren"
-- Antagonista directo de la comunidad y la olla
-- Puede aparecer generando conflicto o amenaza
+**Estados**: predicando / marcando_territorio / reclutando / amenazante
 
 **Arco narrativo**:
-- Antagonista ideológico principal
-- Representa la reacción fascista a la organización popular
-- Genera tensión y conflicto en espacios comunitarios
+1. **Jueves:** Primer encuentro, ofrece su chacra
+2. **Jueves:** Marca territorio en la olla
+3. **Viernes:** Confronta a Sofía ideológicamente
+4. **Sábado:** Intenta reclutar a Tiago
+5. **Sábado:** Si `inercia` alta, ofrece al protagonista
+6. **Domingo:** Resultado según Tiago y confrontaciones
+
+**Variables clave**: `bruno_tension` (0-5), `tiago_captado_por_bruno`
+
+**Idea que desbloquea**: `idea_orden_autoritario` (si el jugador escucha)
+
+**Contexto**:
+- Representa el fascismo de barrio / autoritarismo comunitario
+- Discurso: orden, disciplina, jerarquía natural
+- "Los pobres son pobres porque quieren / porque no se esfuerzan"
+- Anti-olla, anti-solidaridad horizontal, pro-verticalidad
+- Antagonista directo de la comunidad organizada
+- Ofrece certezas simples en momento de crisis
+- Recluta a quien tiene alta inercia o baja conexión (vulnerables ideológicamente)
 
 ---
 
 ### Claudia (La Auditora) - FASE 2 - ANTAGONISTA
 
-**Rol**: Violencia administrativa, burocracia como arma, antagonista sistémica
+**Rol**: Antagonista burocrática, violencia administrativa.
 **Relacion inicial**: 0
-**Estados**: auditando / sancionando / procesando / ejecutando
+**Estados**: auditando / sancionando / ultimatum / ejecutando
+
+**Arco narrativo**:
+1. **Viernes mañana:** Llegada a auditar la olla
+2. **Viernes:** Exige lista de beneficiarios
+3. **Viernes:** Conflicto con Tiago por el tupper
+4. **Sábado:** Segundo ultimátum
+5. **Domingo:** Resultado según si entregaron la lista
+
+**Variables clave**: `claudia_hostilidad` (0-5), `lista_entregada`, `olla_en_crisis`
+
+**Bifurcación crítica**: Entregar lista = comida pero traición. Negarse = dignidad pero crisis.
+
+**Idea que desbloquea**: `idea_numero_frio` (si se entrega la lista)
 
 **Contexto**:
 - Representa la violencia del Estado administrativo
-- "Solo hago mi trabajo"
+- "Solo hago mi trabajo" / "Son las normas"
 - Auditorías, regulaciones, papelerías que destruyen iniciativas populares
-- Puede amenazar la olla con clausura, regulaciones imposibles
-- Violencia fría, administrativa, "legal"
-
-**Arco narrativo**:
-- Antagonista sistémica (no personal)
-- Representa cómo el Estado usa burocracia como arma
-- Tensión entre legalidad y legitimidad
-- Puede generar crisis institucional para la olla
+- Amenaza la olla con clausura por incumplimientos burocráticos
+- Violencia fría, administrativa, "legal" pero destructiva
+- Antagonista sistémica (no personal): representa cómo el Estado usa burocracia como arma
+- Tensión entre legalidad formal y legitimidad comunitaria
+- Genera crisis institucional que fuerza decisiones morales difíciles
 
 ---
 

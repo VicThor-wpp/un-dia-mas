@@ -432,34 +432,94 @@ flowchart TD
     classDef worst fill:#212529,stroke:#000,stroke-width:3px,color:#fff,font-weight:bold
 ```
 
-### Flujo de Personajes Fase 2
+### Flujo Completo de Personajes Fase 2
 
 ```mermaid
 graph TD
+    subgraph Lunes
+        L_LUCIA[Lucía: mate y advertencia]
+    end
+
+    subgraph Martes
+        M_LUCIA[Lucía: almuerzo tenso]
+    end
+
     subgraph Jueves
-        J_CACHO[Encuentro Cacho - oferta negocio]
-        J_TIAGO[Primer encuentro Tiago]
-        J_BRUNO[Bruno marca territorio]
+        J_CACHO[Cacho: oferta negocio]
+        J_TIAGO[Tiago: primer encuentro]
+        J_BRUNO[Bruno: marca territorio]
     end
 
     subgraph Viernes
-        V_LUCIA[Lucía aconseja por teléfono]
-        V_CLAUDIA[Claudia audita la olla]
-        V_CONFLICT[Conflicto Tiago vs Claudia]
+        V_LUCIA[Lucía: aparece en olla]
+        V_CLAUDIA[Claudia: auditoría]
+        V_CONFLICT[Tiago vs Claudia: tupper]
+        V_BRUNO[Bruno: confronta Sofía]
+        V_CACHO[Cacho: en la fila]
     end
 
     subgraph Sábado
-        S_BRUNO[Bruno recluta Tiago]
-        S_DECISION[Decisión de Tiago]
-        S_CACHO[Cacho en la fila]
-        S_OFERTA[Bruno ofrece al protagonista]
+        S_TIAGO_ABRE[Tiago: se abre]
+        S_BRUNO_RECLUTA[Bruno: recluta Tiago]
+        S_DECISION[Tiago: decisión final]
+        S_CACHO[Cacho: sin olla]
+        S_OFERTA[Bruno: oferta protagonista]
+        S_CLAUDIA[Claudia: segundo round]
+        S_ASAMBLEA[Lucía/Tiago en asamblea]
     end
+
+    subgraph Domingo
+        D_CIERRES[Cierres de todos]
+        D_FINALES[Evaluación de finales]
+    end
+
+    L_LUCIA --> M_LUCIA
+    M_LUCIA --> V_LUCIA
 
     J_TIAGO --> V_CONFLICT
     V_CLAUDIA --> V_CONFLICT
     V_CONFLICT --> S_DECISION
-    J_BRUNO --> S_BRUNO
-    S_BRUNO --> S_DECISION
+
+    J_BRUNO --> V_BRUNO
+    V_BRUNO --> S_BRUNO_RECLUTA
+    S_BRUNO_RECLUTA --> S_DECISION
+
+    S_TIAGO_ABRE --> S_DECISION
+    S_DECISION -->|Se queda| S_ASAMBLEA
+    S_DECISION -->|Bruno gana| D_CIERRES
+
+    V_CLAUDIA --> S_CLAUDIA
+    S_CLAUDIA --> D_CIERRES
+
+    S_ASAMBLEA --> D_CIERRES
+    D_CIERRES --> D_FINALES
+```
+
+### Árbol de Decisiones de Tiago
+
+```mermaid
+graph TD
+    START[Tiago: primer encuentro] --> AYUDA{¿Ayudás?}
+    AYUDA -->|Sí| CONF1[+1 confianza]
+    AYUDA -->|No| NEUTRAL[Sin cambio]
+
+    CONF1 --> TUPPER[Conflicto tupper]
+    TUPPER --> DEF{¿Defendés?}
+    DEF -->|Sí| CONF2[+2 confianza]
+    DEF -->|No| IDO[Tiago se va]
+
+    CONF2 --> ABRE{¿Se abre?}
+    ABRE -->|conf >= 2| MADRE[Cuenta de su madre]
+    MADRE --> SILENCIO{¿Silencio?}
+    SILENCIO -->|Sí| CONF3[+2 confianza]
+    SILENCIO -->|Apoyo| CONF3B[+1 confianza]
+
+    CONF3 --> DECISION[Decisión final]
+    CONF3B --> DECISION
+    DECISION -->|conf >= 3| QUEDA[Se queda]
+    DECISION -->|conf < 3| BRUNO_GANA[Bruno lo capta]
+
+    IDO --> BRUNO_GANA
 ```
 
 ---
