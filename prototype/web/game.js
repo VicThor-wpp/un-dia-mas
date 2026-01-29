@@ -76,6 +76,11 @@ const GameEngine = (function() {
             AudioSystem.init();
         }
 
+        // Initialize text presenter
+        if (typeof TextPresenter !== 'undefined') {
+            TextPresenter.init();
+        }
+
         // Save initial state
         saveCurrentState();
 
@@ -263,6 +268,13 @@ const GameEngine = (function() {
                     }
                 } else if (tag.startsWith('ENDING:')) {
                     detectedEnding = tag.substring(7).trim();
+                } else if (tag === 'PAUSA' || tag === 'CONTINUO') {
+                    // Store for TextPresenter
+                    if (currentBatch.length > 0) {
+                        const lastItem = currentBatch[currentBatch.length - 1];
+                        if (!lastItem.tags) lastItem.tags = [];
+                        lastItem.tags.push(tag);
+                    }
                 } else if (!tag.startsWith('PORTRAIT') && !tag.startsWith('HIDE') && !tag.startsWith('EXPRESSION') && !tag.startsWith('SPEAKING')) {
                     // Other header-like tags
                     if (tag.length > 0 && tag === tag.toUpperCase() && !tag.includes(':')) {
@@ -315,48 +327,65 @@ const GameEngine = (function() {
 
         const batch = contentQueue.shift();
 
-        // Check if we're appending to existing content (not a fresh scene)
-        const isAppending = storyContainer.children.length > 0 &&
-                           !(batch.length > 0 && batch[0].type === 'header');
+        // Check if batch starts with a header (fresh scene)
+        const isNewScene = batch.length > 0 && batch[0].type === 'header';
 
-        // If batch starts with a header, clear the screen for fresh start
-        if (batch.length > 0 && batch[0].type === 'header') {
+        if (isNewScene) {
             storyContainer.innerHTML = '';
         }
 
+        // Prepare items for TextPresenter
+        const items = [];
         for (const item of batch) {
             if (item.type === 'dice') {
-                // Render dice roll
+                // Render dice immediately (special element)
                 const rollDiv = createDiceElement(item.roll, item.result, item.context);
                 storyContainer.appendChild(rollDiv);
-                continue;
+            } else {
+                // Queue for animated presentation
+                items.push(item);
             }
-
-            const el = document.createElement(item.type === 'header' ? 'h1' : 'div');
-
-            switch (item.type) {
-                case 'header':
-                    el.textContent = item.content;
-                    el.className = 'story-header';
-                    break;
-                case 'text':
-                    el.innerHTML = item.content;
-                    // Add appended-text class only when continuing, not on fresh scenes
-                    el.className = isAppending ? 'story-text appended-text' : 'story-text';
-                    break;
-                case 'idea':
-                    el.textContent = item.content;
-                    el.className = 'tag-idea';
-                    break;
-                case 'fragmento':
-                    el.textContent = item.content;
-                    el.className = 'tag-fragmento';
-                    break;
-            }
-
-            storyContainer.appendChild(el);
         }
 
+        // Use TextPresenter if available, otherwise fallback to direct render
+        if (typeof TextPresenter !== 'undefined' && items.length > 0) {
+            TextPresenter.present(storyContainer, items, () => {
+                finishBatch();
+            });
+        } else {
+            // Fallback: render directly (old behavior)
+            for (const item of items) {
+                const el = document.createElement(item.type === 'header' ? 'h1' : 'div');
+                switch (item.type) {
+                    case 'header':
+                        el.textContent = item.content;
+                        el.className = 'story-header';
+                        break;
+                    case 'text':
+                        el.innerHTML = item.content;
+                        el.className = 'story-text';
+                        break;
+                    case 'idea':
+                        el.textContent = item.content;
+                        el.className = 'tag-idea';
+                        break;
+                    case 'fragmento':
+                        el.textContent = item.content;
+                        el.className = 'tag-fragmento';
+                        break;
+                }
+                storyContainer.appendChild(el);
+            }
+            finishBatch();
+        }
+
+        window.scrollTo(0, 0);
+    }
+
+    /**
+     * Finish batch presentation
+     */
+    function finishBatch() {
         // Check for changes after content
         checkStatChanges();
         saveCurrentState();
@@ -367,8 +396,6 @@ const GameEngine = (function() {
         } else {
             showChoices();
         }
-
-        window.scrollTo(0, 0);
     }
 
     /**
