@@ -75,12 +75,14 @@ Tiago te mira a vos. Los ojos inyectados de bronca.
     Después de un rato:
 
     "Mi vieja está internada.
-    En el Vilardebó." # PAUSA
+    En el Vilardebó."
+    # PAUSA
 
     No te mira.
 
     "No voy a visitarla.
-    No puedo." # PAUSA
+    No puedo."
+    # PAUSA
 
     * [Escuchar en silencio.]
         No decís nada.

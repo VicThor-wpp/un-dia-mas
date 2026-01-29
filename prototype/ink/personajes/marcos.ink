@@ -575,10 +575,10 @@ Por eso se aisló.
 * [...]
 -
 
-""Vergüenza. Orgullo. No sé.
+"Vergüenza. Orgullo. No sé.
 Después de todo lo que hablaba sobre dignidad del trabajador...
 y me echaron como a cualquiera."
-# PAUSA"
+# PAUSA
 
 ~ marcos_relacion += 1
 ~ subir_conexion(1)
