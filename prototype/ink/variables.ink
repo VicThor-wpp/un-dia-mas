@@ -83,21 +83,27 @@ VAR hable_con_marcos_profundo = false
 VAR marcos_era_militante = false
 VAR intente_contactar_marcos = false
 
-// --- ESTADO DE JUAN ---
+// === JUAN - Variables activas ===
 // Compañero de trabajo - el que comparte tu situación de unipersonal
-
-VAR juan_estado = "compañero"        // compañero, distante, despedido, perdido
-VAR juan_relacion = 3                // 0-5
-VAR almorzamos_juntos = false
-VAR hable_con_juan_sobre_rumores = false
-VAR fue_al_bar_con_juan = false
+VAR juan_relacion = 2
 VAR juan_sabe_de_mi_despido = false
-VAR juan_tambien_despedido = false   // Hook viernes: si lo echaron
-VAR juan_ofrecio_changa = false      // Hook viernes: si ofreció contacto
-VAR juan_ofrecio_contacto = false
-VAR juan_fue_a_olla = false
 VAR juan_sabe_mi_situacion = false
+VAR juan_recuerdo_padre = false
+VAR juan_hablo_de_laura = false
+VAR juan_hablo_de_miedo = false
 VAR juan_mostro_contradiccion = false
+VAR juan_proceso_algo = false
+VAR juan_estado = "normal"
+VAR almorzamos_juntos = false
+VAR fue_al_bar_con_juan = false
+VAR hable_con_juan_sobre_rumores = false
+VAR juan_migra = false              // NUEVO: Juan decide irse a España
+
+// === JUAN - Variables deprecadas (no eliminar, pueden romper compilación) ===
+VAR juan_tambien_despedido = false   // DEPRECADA: reemplazada por juan_migra
+VAR juan_ofrecio_changa = false      // DEPRECADA: arco cambiado
+VAR juan_ofrecio_contacto = false    // DEPRECADA: arco cambiado
+VAR juan_fue_a_olla = false          // DEPRECADA: Juan no va a la olla
 
 // --- ESTADO DE LUCÍA (Fase 2 Completo) ---
 // Compañera de trabajo - la que politiza
@@ -158,12 +164,6 @@ VAR marcos_hablo_de_hijos = false
 VAR marcos_hablo_de_zabalza = false
 VAR marcos_conto_2009 = false
 VAR marcos_conto_voto = false
-
-// Juan
-VAR juan_recuerdo_padre = false
-VAR juan_hablo_de_laura = false
-VAR juan_proceso_algo = false
-VAR juan_hablo_de_miedo = false
 
 // Sofia
 VAR sofia_hablo_de_madre = false

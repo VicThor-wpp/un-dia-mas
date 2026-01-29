@@ -52,10 +52,10 @@ El barrio más tranquilo.
 
 {inercia <= 6: La cabeza sigue dando vueltas. Tres días sin laburo y ya parece una eternidad.}
 
-// Invitar a Juan a la olla
-{juan_sabe_mi_situacion && ayude_en_olla:
-    -> juan_invitar_olla_sabado ->
-}
+// REMOVIDO: Juan no se integra a la olla, su arco es migración
+// {juan_sabe_mi_situacion && ayude_en_olla:
+//     -> juan_invitar_olla_sabado ->
+// }
 
 // Bruno recluta a Tiago si la olla falló
 {olla_en_crisis || olla_cerro_viernes:
