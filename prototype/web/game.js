@@ -331,7 +331,12 @@ const GameEngine = (function() {
         const isNewScene = batch.length > 0 && batch[0].type === 'header';
 
         if (isNewScene) {
-            storyContainer.innerHTML = '';
+            // Add visual separator for new scenes instead of clearing
+            // This preserves dice rolls and previous content in the same story flow
+            const separator = document.createElement('hr');
+            separator.className = 'scene-separator';
+            separator.setAttribute('aria-hidden', 'true');
+            storyContainer.appendChild(separator);
         }
 
         // Prepare items for TextPresenter

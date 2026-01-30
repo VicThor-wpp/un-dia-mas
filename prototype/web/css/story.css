@@ -99,6 +99,14 @@ h2 {
     }
 }
 
+/* Scene separator (for new scenes within same flow) */
+.scene-separator {
+    border: none;
+    border-top: 1px solid var(--border-subtle);
+    margin: 2rem 0;
+    opacity: 0.5;
+}
+
 /* Pause indicator */
 .pause-indicator {
     display: flex;
