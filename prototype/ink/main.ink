@@ -69,104 +69,63 @@ Todavía no sabés lo que viene.
 Te mirás en el espejo del baño. El vidrio tiene una rajadura en la esquina.
 Treinta y algo. Ojeras que ya son parte de tu cara.
 
-Caminar de noche por el barrio.
-El cálculo automático de riesgos antes de salir.
-El privilegio de la invisibilidad o el peso de la alerta permanente.
-
-* [El espejo devuelve la imagen de siempre.]
+* [Soy varón.]
     ~ genero = "varon"
-    La barba de dos días. Las manos ásperas. Todo en su lugar.
+    La barba de dos días. Las manos ásperas.
+    Caminar de noche por el barrio sin pensarlo dos veces. El privilegio de la invisibilidad.
     -> creacion_cuerpo
 
-* [El espejo muestra más de lo que lo que el mundo ve.]
+* [Soy mujer.]
     ~ genero = "mujer"
     El pelo que nunca queda como querés. La cara sin maquillaje.
-    Afuera sos una más. Adentro, una historia que pocos conocen.
+    El cálculo automático de riesgos antes de salir. La alerta que no se apaga.
     -> creacion_cuerpo
 
-* [El espejo no dice nada que me defina.]
+* [No soy ninguna de esas cosas. O soy las dos.]
     ~ genero = "no_binario"
-    Ni esto ni lo otro. O las dos cosas. O ninguna.
-    El mundo te pone en una caja. Vos rompés la caja.
-    Pero romperse cansa.
+    Ni esto ni lo otro. El mundo te pone en cajas. Vos las rompés.
+    Pero romperse cansa. Y afuera siguen queriendo etiquetarte.
     -> creacion_cuerpo
 
 === creacion_cuerpo ===
 
 Y debajo de la ropa, la piel.
-Esa frontera inmediata con el mundo.
-Lo que te abre puertas o te las cierra en la cara.
+Esa frontera con el mundo. Lo que te abre puertas o te las cierra.
 
 * [La piel clara, herencia de abuelos que vinieron de Europa.]
     ~ raza = "blanco"
     Nadie te para en la calle por el color.
     No pensás en eso. Nunca tuviste que pensarlo.
-    -> creacion_rutina
+    -> transicion_barrio
 
 * [La piel morena, mezcla de todo lo que somos.]
     ~ raza = "mestizo"
     Como la mayoría. Ni una cosa ni la otra.
     Lo suficiente para pasar desapercibido. Casi siempre.
-    -> creacion_rutina
+    -> transicion_barrio
 
 * [La piel oscura, herencia que a veces pesa.]
     ~ raza = "afro"
     A veces te miran diferente. Más en algunos barrios.
     La policía te para más seguido. "Rutina", dicen.
     No hace falta que te expliquen. Ya sabés.
-    -> creacion_rutina
+    -> transicion_barrio
 
 * [Los rasgos que delatan otra tierra, otro origen.]
     ~ raza = "indigena"
     Tus abuelos vinieron del norte. O del oeste.
     Acá sos minoría. Invisible o exótico, según el día.
     Pero sabés de dónde venís. Y eso es algo.
-    -> creacion_rutina
+    -> transicion_barrio
 
-=== creacion_rutina ===
+=== transicion_barrio ===
 
 Laburás. Pagás las cuentas. Más o menos.
-A veces llegás justo. A veces no llegás.
+Vivís en el barrio. Conocés a la gente de vista, de cruce, de historia compartida.
 
-* [...]
--
+Pero hay cosas que solo vos sabés. Cosas que cargás. Cosas que no se ven.
 
-Vivís en el barrio.
-Conocés a la gente de vista, de cruce, de historia compartida.
-El almacenero que te fía. La vecina que barre la vereda a las siete.
-El perro que ladra siempre en la misma esquina.
-
-* [...]
--
-
-Pero hay cosas que solo vos sabés.
-Cosas que cargás cuando caminás por la calle.
-Cosas que no se ven.
-
--> creacion_convicciones
-
-=== creacion_convicciones ===
-
-¿Y la comida? 
-No solo lo que comes, sino lo que significa comer.
-Donde empieza y termina la explotación.
-
-* [No podés separar una lucha de la otra.]
-    ~ es_vegano = true
-    El especismo es otra forma de opresión. 
-    Los mismos que explotaron a tu viejo en la fábrica son los que meten animales en jaulas industriales. 
-    El mismo sistema que te trata como descartable trata a los cuerpos no humanos como mercancía.
-    No es purismo. Es coherencia.
-    En el barrio te tildan de "hippie" o "burgués". 
-    Pero vos sabés que la explotación tiene muchas caras y todas responden al mismo patrón.
-    -> elegir_perdida
-
-* [Hay batallas más urgentes que elegir.]
-    ~ es_vegano = false
-    Entendés la idea, pero no te da el cuero para eso. 
-    Bastante quilombo es sobrevivir como para ponerte exigencias éticas con el plato.
-    Primero la supervivencia. Después, si queda aire, el resto.
-    -> elegir_perdida
+* [...] -> elegir_perdida
 
 === elegir_perdida ===
 

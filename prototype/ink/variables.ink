@@ -186,7 +186,7 @@ VAR vinculo = ""      // sofia, elena, diego
 
 VAR genero = ""       // varon, mujer, no_binario
 VAR raza = ""         // blanco, mestizo, afro, indigena
-VAR es_vegano = false // convicción ética
+VAR es_vegano = false // TODO: mover elección a gameplay (ej: primera comida en olla)
 
 // --- TRACKING DE EVENTOS ---
 
