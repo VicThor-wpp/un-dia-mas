@@ -15,6 +15,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 | `prototype/` | **Main game project** - all development happens here | ✅ YES |
 | `prototype/ink/` | Ink narrative files (story, mechanics, NPCs) | ✅ YES |
 | `prototype/web/` | Web runtime (HTML, CSS, JS for playing the game) | ✅ YES |
+| `prototype/web/css/` | Modular CSS (themes, components, responsive) | ✅ YES |
 | `prototype/web/modules/` | Custom modular framework (UI, saves, stats, etc.) | ✅ YES |
 | `docs/` | **Game documentation** - narrative maps, flowcharts, references | 📖 REFERENCE |
 
@@ -52,6 +53,20 @@ The game uses a custom modular framework built on top of Ink's official runtime:
 **Core Stack:**
 - `ink.js` - Official Ink runtime from Inkle Studios
 - `game.js` - Main game engine that orchestrates all modules
+- `css/` - Modular CSS architecture:
+  - `main.css` - Entry point with @import statements
+  - `variables.css` - Theme colors, fonts, stat colors
+  - `base.css` - Reset, utilities, scrollbar
+  - `header.css` - Sticky header bar and stats display
+  - `story.css` - Narrative text and text presenter animations
+  - `dice.css` - Dice roll display and result styling
+  - `choices.css` - Choice buttons and badges
+  - `notifications.css` - Toast notifications
+  - `modals.css` - All modal dialogs (stats, save, manual, manifesto, prefs)
+  - `ui-elements.css` - Relationships, tags, portraits, threshold effects
+  - `start-screen.css` - Game intro screen
+  - `ending-screen.css` - Game over and book of endings
+  - `responsive.css` - Mobile styles and accessibility
 - `modules/` - Custom subsystems:
   - `config-manager.js` - Configuration loading and access
   - `notification-system.js` - Visual notifications and feedback
