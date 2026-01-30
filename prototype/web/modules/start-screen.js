@@ -82,8 +82,8 @@ const StartScreen = (function() {
 
                     <section class="manual-section">
                         <h3><i data-lucide="info"></i> ¿De qué va?</h3>
-                        <p>Sos un trabajador en un barrio de Montevideo. Una semana que empieza como todas... pero no lo es.</p>
-                        <p>Tus decisiones definen quién sos y cómo te relacionás con el barrio.</p>
+                        <p>Sos un trabajador precario en un barrio de Montevideo. Facturás como "independiente" - sin derechos, sin red. El miércoles te despiden.</p>
+                        <p><strong>No es mala suerte. Es el sistema.</strong> ¿Te aislás o te conectás?</p>
                     </section>
 
                     <section class="manual-section">
@@ -98,13 +98,13 @@ const StartScreen = (function() {
 
                     <section class="manual-section">
                         <h3><i data-lucide="bar-chart-2"></i> Recursos</h3>
-                        <p>En el header vas a ver tus recursos. Sin spoilers:</p>
+                        <p>En el header vas a ver tus recursos:</p>
                         <ul>
                             <li><span class="stat-color energia">Energía</span> - Lo que podés hacer hoy</li>
-                            <li><span class="stat-color conexion">Conexión</span> - Tu lugar en el barrio</li>
-                            <li><span class="stat-color llama">La Llama</span> - Algo que se comparte</li>
-                            <li><span class="stat-color dignidad">Dignidad</span> - Tu valor propio</li>
-                            <li><span class="stat-color salud">Salud Mental</span> - Cómo estás</li>
+                            <li><span class="stat-color conexion">Conexión</span> - Tu lugar en el tejido del barrio</li>
+                            <li><span class="stat-color llama">La Llama</span> - La esperanza colectiva. Si se apaga, todo se vuelve gris.</li>
+                            <li><span class="stat-color dignidad">Dignidad</span> - El sistema te la saca de a poco. Defendela.</li>
+                            <li><span class="stat-color salud">Salud Mental</span> - Cómo estás aguantando</li>
                         </ul>
                     </section>
 
@@ -124,19 +124,8 @@ const StartScreen = (function() {
                         <p>Podés guardar en cualquier momento con el ícono <i data-lucide="save" style="width:14px;height:14px;vertical-align:middle;"></i> en el header.</p>
                     </section>
 
-                    <section class="manual-section">
-                        <h3><i data-lucide="map-pin"></i> Vocabulario</h3>
-                        <p>El juego usa palabras uruguayas:</p>
-                        <ul>
-                            <li><strong>Bondi</strong> - Autobús</li>
-                            <li><strong>Laburo</strong> - Trabajo</li>
-                            <li><strong>Olla popular</strong> - Comedor comunitario</li>
-                            <li><strong>Pibe/a</strong> - Chico/a</li>
-                        </ul>
-                    </section>
-
                     <section class="manual-section manual-tip">
-                        <p><strong>Consejo:</strong> No hay finales buenos o malos. Cada historia es válida.</p>
+                        <p><strong>Importante:</strong> Este juego tiene una posición. La precariedad no es mala suerte, es diseño. El individualismo es una trampa. La organización colectiva funciona.</p>
                     </section>
 
                 </div>
