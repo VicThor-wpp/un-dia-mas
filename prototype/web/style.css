@@ -1715,6 +1715,47 @@ a:hover {
 }
 
 /* ==========================================
+   MANIFESTO MODAL
+   ========================================== */
+
+.manifesto-modal {
+    max-width: 650px;
+}
+
+.manifesto-body {
+    max-height: 75vh;
+    overflow-y: auto;
+    padding: 1.5rem;
+}
+
+.manifesto-body p {
+    margin-bottom: 1.25rem;
+    line-height: 1.8;
+    text-align: justify;
+    color: var(--text-main);
+    font-size: 0.95rem;
+}
+
+.manifesto-body p:first-child::first-letter {
+    font-size: 2.5rem;
+    float: left;
+    line-height: 1;
+    margin-right: 0.5rem;
+    margin-top: 0.1rem;
+    color: var(--accent);
+    font-weight: bold;
+}
+
+.manifesto-final {
+    margin-top: 2rem !important;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--accent);
+    text-align: center !important;
+    font-size: 1.05rem !important;
+    color: var(--accent) !important;
+}
+
+/* ==========================================
    READING PREFERENCES PANEL
    ========================================== */
 

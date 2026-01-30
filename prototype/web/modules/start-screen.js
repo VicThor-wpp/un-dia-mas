@@ -163,6 +163,73 @@ const StartScreen = (function() {
     }
 
     /**
+     * Show manifesto modal
+     */
+    function showManifesto() {
+        const modal = document.createElement('div');
+        modal.className = 'modal-overlay';
+        modal.id = 'manifestoModal';
+        modal.innerHTML = `
+            <div class="modal-content manifesto-modal">
+                <div class="modal-header">
+                    <h2><i data-lucide="flame"></i> Manifiesto</h2>
+                    <button class="modal-close" onclick="StartScreen.closeManifesto()">
+                        <i data-lucide="x" style="width:20px;height:20px;"></i>
+                    </button>
+                </div>
+                <div class="modal-body manifesto-body">
+                    <p>Sabés que está todo podrido. Todas saben. Quinientos años de modernidad colonial y doscientos de promesas republicanas incumplidas produjeron esto: un mundo donde el despojo se llama desarrollo, la explotación se llama oportunidad, y la muerte lenta de los pueblos se llama progreso.</p>
+
+                    <p>Saber no cambia nada. Ese es el truco más viejo del poder. Podés tener el análisis perfecto, la teoría correcta, el diagnóstico certero —nombrar la colonialidad del poder, la necropolítica, la acumulación por desposesión— y mañana igual madrugás, igual vas a trabajar, igual agachás la cabeza cuando toca. El conocimiento sin práctica es decoración.</p>
+
+                    <p>El cinismo no es resistencia. Es la forma que toma la derrota cuando se disfraza de lucidez. "Ya sé que es una mierda pero qué voy a hacer" es el sentido común que el poder necesita reproducir. No les importa que sepas. Les importa que no actúes. La conciencia crítica sin organización es inofensiva; más que eso, es funcional.</p>
+
+                    <p>No hay afuera. No hay pureza. Todas nacimos en esto, formadas por esto, manchadas por esto. Rivera Cusicanqui tiene razón: somos ch'ixi, mezcladas, contradictorias, habitando mundos antagónicos simultáneamente. Cualquier pretensión de exterioridad absoluta es una mentira —y una mentira peligrosa, porque quien se cree pura se autoriza cualquier cosa.</p>
+
+                    <p>Pero hay grietas. Las hubo siempre. Antes del capital, durante el capital, a pesar del capital. Comunidades que sostienen formas de vida que no responden a la lógica de la ganancia. Redes de cuidado que no escalan porque no están hechas para escalar. Saberes y prácticas que la modernidad declaró muertos y que siguen ahí, tercos, respirando.</p>
+
+                    <p>No son puras. No son ingenuas. Son personas que hacen lo que creen correcto y ponen el cuerpo ahí, todos los días. Que construyen poder popular sin esperar permiso, sin esperar el momento correcto, sin esperar que la teoría esté completa. Que organizan sabiendo que pueden perder, que probablemente van a perder, y que igual hay que hacerlo.</p>
+
+                    <p>La izquierda de Estado fracasó. Las vanguardias iluminadas que iban a liberar al pueblo terminaron siendo nuevos patrones. La socialdemocracia administró la miseria y cuando vino el fascismo, lo dejó pasar. Lo que queda es lo que siempre estuvo: la organización desde abajo, el mandar obedeciendo, la comunalidad, el apoyo mutuo. No como programa de gobierno sino como forma de vida.</p>
+
+                    <p>Freire tenía razón: nadie libera a nadie, nadie se libera sola. Nos liberamos en comunidad o no nos liberamos. Y esa liberación no es un evento futuro, es una práctica presente. Cada asamblea horizontal, cada olla común, cada red de cuidado, cada espacio recuperado es un pedazo de mundo nuevo funcionando dentro del viejo.</p>
+
+                    <p class="manifesto-final"><strong>No importa lo que pensás. No importa lo que sentís. Importa lo que hacés. La praxis es el único lugar donde la palabra se vuelve verdad.</strong></p>
+                </div>
+            </div>
+        `;
+
+        document.body.appendChild(modal);
+
+        // Accessibility: trap focus in modal
+        if (typeof AccessibilityManager !== 'undefined') {
+            AccessibilityManager.trapFocus(modal);
+        }
+
+        // Close on overlay click
+        modal.onclick = (e) => {
+            if (e.target === modal) closeManifesto();
+        };
+
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
+    }
+
+    /**
+     * Close manifesto modal
+     */
+    function closeManifesto() {
+        const modal = document.getElementById('manifestoModal');
+        if (modal) {
+            if (typeof AccessibilityManager !== 'undefined') {
+                AccessibilityManager.releaseFocus(modal);
+            }
+            modal.remove();
+        }
+    }
+
+    /**
      * Show start screen (for returning from game)
      */
     function show() {
@@ -186,6 +253,8 @@ const StartScreen = (function() {
         showContinue,
         showManual,
         closeManual,
+        showManifesto,
+        closeManifesto,
         show,
         hide
     };
