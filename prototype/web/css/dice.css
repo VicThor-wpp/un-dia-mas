@@ -1,0 +1,150 @@
+/* Un Día Más - Dice Rolls */
+/* Prominent card display for dice roll results */
+
+/* ==========================================
+   DICE ROLLS - Prominent Card Display
+   ========================================== */
+
+.dice-roll-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: var(--bg-light);
+    border: 2px solid var(--accent);
+    padding: 25px 30px;
+    margin: 25px auto;
+    max-width: 320px;
+    border-radius: 12px;
+    animation: diceAppear 0.5s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.dice-roll-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    opacity: 0.7;
+}
+
+.dice-roll-title {
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+.dice-roll-result {
+    margin: 10px 0;
+}
+
+.dice-roll-box .dice-value {
+    font-size: 4em;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.dice-roll-label {
+    font-size: 1.2em;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.dice-roll-desc {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-top: 10px;
+    line-height: 1.4;
+}
+
+/* ==========================================
+   DICE RESULT COLORS
+   ========================================== */
+
+/* Critical Success - Gold */
+.dice-roll-box.critical-success {
+    border-color: gold;
+    background: linear-gradient(180deg, rgba(255, 215, 0, 0.15), var(--bg-light));
+}
+.dice-roll-box.critical-success .dice-value,
+.dice-roll-box.critical-success .dice-roll-label { color: gold; }
+.dice-roll-box.critical-success .dice-roll-header { color: gold; }
+
+/* Success - Green */
+.dice-roll-box.success {
+    border-color: var(--success);
+    background: linear-gradient(180deg, rgba(76, 175, 80, 0.15), var(--bg-light));
+}
+.dice-roll-box.success .dice-value,
+.dice-roll-box.success .dice-roll-label { color: var(--success); }
+.dice-roll-box.success .dice-roll-header { color: var(--success); }
+
+/* Failure - Red */
+.dice-roll-box.failure {
+    border-color: var(--danger);
+    background: linear-gradient(180deg, rgba(244, 67, 54, 0.15), var(--bg-light));
+}
+.dice-roll-box.failure .dice-value,
+.dice-roll-box.failure .dice-roll-label { color: var(--danger); }
+.dice-roll-box.failure .dice-roll-header { color: var(--danger); }
+
+/* Critical Failure - Dark Red with shake */
+.dice-roll-box.critical-failure {
+    border-color: #8b0000;
+    background: linear-gradient(180deg, rgba(139, 0, 0, 0.2), var(--bg-light));
+    animation: diceAppear 0.5s ease, shake 0.5s ease;
+}
+.dice-roll-box.critical-failure .dice-value,
+.dice-roll-box.critical-failure .dice-roll-label { color: #ff4444; }
+.dice-roll-box.critical-failure .dice-roll-header { color: #ff4444; }
+
+/* ==========================================
+   DICE ANIMATIONS
+   ========================================== */
+
+@keyframes diceAppear {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes shake {
+    0%, 100% { transform: scale(1); }
+    10%, 30%, 50%, 70%, 90% { transform: scale(1) translateX(-3px); }
+    20%, 40%, 60%, 80% { transform: scale(1) translateX(3px); }
+}
+
+/* ==========================================
+   SIMPLE DICE ROLL (Inline)
+   ========================================== */
+
+.dice-roll-box.dice-simple {
+    background: transparent;
+    border: 1px solid var(--border);
+    padding: 10px 15px;
+    max-width: none;
+    margin: 15px 0;
+    box-shadow: none;
+}
+
+.dice-roll-inline {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.dice-value-inline {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--accent);
+    background: rgba(255, 107, 53, 0.15);
+    padding: 5px 12px;
+    border-radius: 6px;
+}
+
+.dice-label-inline {
+    color: var(--text-muted);
+    font-size: 14px;
+}

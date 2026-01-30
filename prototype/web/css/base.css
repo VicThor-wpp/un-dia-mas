@@ -1,0 +1,98 @@
+/* Un Día Más - Base Styles */
+/* Reset, icons, utilities, and main container */
+
+/* ==========================================
+   RESET & BASE
+   ========================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--bg-dark);
+    color: var(--text-main);
+    font-family: var(--font-family, 'Courier New', Courier, monospace);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    min-height: 100vh;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* Subtle vignette for atmosphere */
+#game::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(ellipse at center, transparent 60%, rgba(0, 0, 0, 0.15) 100%);
+    pointer-events: none;
+    z-index: 9990;
+}
+
+/* ==========================================
+   LUCIDE ICONS
+   ========================================== */
+
+[data-lucide] {
+    display: inline-block;
+    vertical-align: middle;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+}
+
+/* ==========================================
+   MAIN CONTAINER
+   ========================================== */
+
+.container {
+    max-width: min(700px, var(--max-line-width));
+    margin: 0 auto;
+    padding: 0 20px 40px;
+}
+
+/* ==========================================
+   UTILITIES
+   ========================================== */
+
+.error {
+    color: var(--danger);
+    text-align: center;
+    padding: 20px;
+}
+
+.loading {
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+em {
+    color: var(--accent);
+    font-style: normal;
+}
+
+strong {
+    color: var(--text-main);
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================
+   SCROLLBAR
+   ========================================== */
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg-dark); }
+::-webkit-scrollbar-thumb { background: var(--text-muted); }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }

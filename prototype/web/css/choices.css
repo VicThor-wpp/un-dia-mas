@@ -1,0 +1,163 @@
+/* Un Día Más - Choices */
+/* Choice buttons and continue functionality */
+
+/* ==========================================
+   CHOICES
+   ========================================== */
+
+.choices {
+    margin-top: 30px;
+}
+
+.choices button {
+    display: block;
+    width: 100%;
+    background: var(--bg-surface);
+    color: var(--text-main);
+    font-family: inherit;
+    font-size: 16px;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    border: 1px solid var(--border-subtle);
+    border-left: 3px solid transparent;
+    border-radius: 2px;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    position: relative;
+}
+
+.choices button:hover {
+    border-left-color: var(--accent);
+    background: rgba(42, 49, 66, 0.9);
+    transform: translateX(4px);
+    box-shadow: -4px 0 15px rgba(232, 93, 4, 0.15);
+}
+
+.choices button:active {
+    background: rgba(42, 49, 66, 1);
+    transform: translateX(2px);
+}
+
+/* ==========================================
+   CHOICE WITH BADGES
+   ========================================== */
+
+.choice-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.choice-text { flex: 1; }
+
+.choice-badges {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.cost-badge, .dice-badge, .effect-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.cost-badge svg, .dice-badge svg, .effect-badge svg {
+    width: 14px;
+    height: 14px;
+}
+
+.cost-badge {
+    background: rgba(212, 163, 115, 0.2);
+    color: var(--color-energia);
+    border: 1px solid rgba(212, 163, 115, 0.4);
+}
+
+.cost-badge.cost-insufficient {
+    background: rgba(155, 35, 53, 0.2);
+    color: var(--danger);
+    border: 1px solid rgba(155, 35, 53, 0.4);
+}
+
+.dice-badge {
+    background: rgba(147, 129, 255, 0.15);
+    color: var(--color-salud);
+    border: 1px solid rgba(147, 129, 255, 0.3);
+}
+
+.effect-badge.effect-up {
+    background: rgba(124, 181, 24, 0.2);
+    color: var(--success);
+    border: 1px solid rgba(124, 181, 24, 0.4);
+}
+
+.effect-badge.effect-down {
+    background: rgba(155, 35, 53, 0.2);
+    color: #d45d69;
+    border: 1px solid rgba(155, 35, 53, 0.4);
+}
+
+.effect-badge.effect-uncertain {
+    background: rgba(94, 84, 142, 0.2);
+    color: #a89fcc;
+    border: 1px solid rgba(94, 84, 142, 0.4);
+}
+
+/* ==========================================
+   SPECIAL CHOICE TYPES
+   ========================================== */
+
+/* Fake choices */
+.choice-falsa {
+    opacity: 0.85;
+    font-style: italic;
+    border-style: dashed;
+    border-color: var(--text-muted);
+}
+
+.choice-falsa:hover {
+    border-color: var(--text-muted);
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.choice-unavailable {
+    opacity: 0.5;
+}
+
+.choice-unavailable:hover {
+    border-color: var(--danger);
+    background: rgba(244, 67, 54, 0.1);
+}
+
+/* ==========================================
+   CONTINUE BUTTON
+   ========================================== */
+
+.continue-button {
+    text-align: center;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.continue-button::after {
+    content: 'Continuar →';
+}
+
+.continue-button:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+    background: rgba(255, 107, 53, 0.1);
+}

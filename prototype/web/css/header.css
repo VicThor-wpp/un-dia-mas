@@ -1,0 +1,171 @@
+/* Un Día Más - Header Bar */
+/* Always visible stats and actions */
+
+/* ==========================================
+   HEADER BAR - Always Visible Stats
+   ========================================== */
+
+#statusContainer {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--bg-dark);
+    border-bottom: 2px solid var(--accent);
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.header-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 15px;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.phase-label {
+    color: var(--text-muted);
+    letter-spacing: 2px;
+    font-size: 14px;
+}
+
+.day-section {
+    flex-shrink: 0;
+}
+
+.day-name {
+    color: var(--accent);
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+
+.stats-section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-main);
+    font-size: 14px;
+    cursor: help;
+}
+
+.stat-item svg {
+    opacity: 0.8;
+}
+
+.stat-item.stat-llama {
+    color: var(--accent);
+}
+
+.stat-item.stat-salud {
+    color: #4fc3f7;
+}
+
+.stat-num {
+    font-weight: bold;
+    min-width: 20px;
+    text-align: center;
+}
+
+/* Mini bar for energy */
+.mini-bar {
+    display: flex;
+    gap: 3px;
+}
+
+.mini-bar .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+
+.mini-bar .dot.empty {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Compact bar for larger stat ranges */
+.compact-bar {
+    width: 40px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.compact-bar-fill {
+    height: 100%;
+    border-radius: 3px;
+    transition: width 0.3s ease;
+}
+
+.stat-num-small {
+    font-size: 12px;
+    min-width: 16px;
+    text-align: center;
+    opacity: 0.9;
+}
+
+.actions-section {
+    display: flex;
+    gap: 8px;
+}
+
+.header-btn {
+    background: transparent;
+    border: 1px solid var(--text-muted);
+    border-radius: 6px;
+    padding: 8px 10px;
+    cursor: pointer;
+    color: var(--text-main);
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+}
+
+.header-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: var(--accent-dim);
+}
+
+/* ==========================================
+   ALERTS FOR THRESHOLDS
+   ========================================== */
+
+.alerts {
+    display: flex;
+    gap: 10px;
+    padding: 8px 15px;
+    background: rgba(0, 0, 0, 0.3);
+    flex-wrap: wrap;
+}
+
+.alert {
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.alert-high {
+    background: rgba(244, 67, 54, 0.2);
+    color: var(--danger);
+    border: 1px solid rgba(244, 67, 54, 0.5);
+}
+
+.alert-low {
+    background: rgba(255, 152, 0, 0.2);
+    color: var(--warning);
+    border: 1px solid rgba(255, 152, 0, 0.5);
+}

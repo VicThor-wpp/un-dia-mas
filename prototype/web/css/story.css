@@ -1,0 +1,139 @@
+/* Un Día Más - Story Content */
+/* Story text, headers, and text presenter animations */
+
+/* ==========================================
+   STORY CONTENT
+   ========================================== */
+
+/* Espacio para que el contenido no quede tapado por el header sticky */
+.story {
+    padding-top: 10px;
+    margin-bottom: 30px;
+}
+
+.story-text {
+    margin-bottom: 1em;
+    animation: fadeIn 0.6s ease;
+}
+
+/* Texto nuevo al continuar (no en escenas nuevas) */
+.story-text.appended-text {
+    animation: slideInAppended 0.7s ease;
+    border-left: 2px solid var(--accent);
+    padding-left: 12px;
+    margin-left: -14px;
+}
+
+@keyframes slideInAppended {
+    from {
+        opacity: 0;
+        transform: translateX(-8px);
+        border-left-color: transparent;
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+        border-left-color: var(--accent);
+    }
+}
+
+.story-header {
+    color: var(--accent);
+    text-transform: uppercase;
+    font-size: 1.3em;
+    margin: 2em 0 1em;
+    letter-spacing: 3px;
+    animation: fadeIn 0.3s ease;
+}
+
+h1, h2 {
+    color: var(--accent);
+}
+
+h1 {
+    font-size: 1.3em;
+    margin: 1.5em 0 1em;
+    letter-spacing: 2px;
+}
+
+h2 {
+    font-size: 1.1em;
+    margin: 1.2em 0 0.8em;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================
+   TEXT PRESENTER - Animated Paragraphs
+   ========================================== */
+
+.tp-paragraph {
+    opacity: 0;
+    transform: translateY(8px);
+}
+
+.tp-paragraph.tp-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 450ms ease-out, transform 450ms ease-out;
+}
+
+.tp-paragraph.tp-instant {
+    opacity: 1;
+    transform: translateY(0);
+    transition: none;
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    .tp-paragraph {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+    .tp-paragraph.tp-visible {
+        transition: none;
+    }
+}
+
+/* Pause indicator */
+.pause-indicator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    opacity: 0.6;
+    animation: tp-pulse 1.5s ease-in-out infinite;
+    cursor: pointer;
+    user-select: none;
+}
+
+.pause-indicator-symbol {
+    font-size: 1.2em;
+    color: var(--accent);
+}
+
+@keyframes tp-pulse {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 0.9; }
+}
+
+/* Click anywhere hint on mobile */
+@media (pointer: coarse) {
+    .pause-indicator::after {
+        content: 'toca para continuar';
+        font-size: 0.75em;
+        opacity: 0.5;
+        margin-left: 10px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .pause-indicator {
+        animation: none;
+        opacity: 0.7;
+    }
+}
