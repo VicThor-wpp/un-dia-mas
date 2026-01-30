@@ -78,15 +78,23 @@ const StartScreen = (function() {
                         <i data-lucide="x" style="width:20px;height:20px;"></i>
                     </button>
                 </div>
-                <div class="modal-body manual-body">
+                <div class="modal-body manual-body" id="manualBody">
+                    <nav class="manual-nav">
+                        <button class="manual-nav-dot active" data-section="0" title="¿De qué va?">1</button>
+                        <button class="manual-nav-dot" data-section="1" title="Cómo se juega">2</button>
+                        <button class="manual-nav-dot" data-section="2" title="Recursos">3</button>
+                        <button class="manual-nav-dot" data-section="3" title="Dados">4</button>
+                        <button class="manual-nav-dot" data-section="4" title="Guardar">5</button>
+                        <button class="manual-nav-dot" data-section="5" title="Importante">6</button>
+                    </nav>
 
-                    <section class="manual-section">
+                    <section class="manual-section" id="manual-section-0">
                         <h3><i data-lucide="info"></i> ¿De qué va?</h3>
                         <p>Sos un trabajador precario en un barrio de Montevideo. Facturás como "independiente" - sin derechos, sin red. El miércoles te despiden.</p>
                         <p><strong>No es mala suerte. Es el sistema.</strong> ¿Te aislás o te conectás?</p>
                     </section>
 
-                    <section class="manual-section">
+                    <section class="manual-section" id="manual-section-1">
                         <h3><i data-lucide="mouse-pointer-click"></i> Cómo se juega</h3>
                         <ul>
                             <li>Leés la historia y elegís entre las opciones</li>
@@ -96,7 +104,7 @@ const StartScreen = (function() {
                         </ul>
                     </section>
 
-                    <section class="manual-section">
+                    <section class="manual-section" id="manual-section-2">
                         <h3><i data-lucide="bar-chart-2"></i> Recursos</h3>
                         <p>En el header vas a ver tus recursos:</p>
                         <ul>
@@ -108,7 +116,7 @@ const StartScreen = (function() {
                         </ul>
                     </section>
 
-                    <section class="manual-section">
+                    <section class="manual-section" id="manual-section-3">
                         <h3><i data-lucide="dices"></i> Dados</h3>
                         <p>A veces el azar decide. Vas a ver tiradas de dados con resultados:</p>
                         <div class="dice-preview">
@@ -119,12 +127,12 @@ const StartScreen = (function() {
                         </div>
                     </section>
 
-                    <section class="manual-section">
+                    <section class="manual-section" id="manual-section-4">
                         <h3><i data-lucide="save"></i> Guardar</h3>
                         <p>Podés guardar en cualquier momento con el ícono <i data-lucide="save" style="width:14px;height:14px;vertical-align:middle;"></i> en el header.</p>
                     </section>
 
-                    <section class="manual-section manual-tip">
+                    <section class="manual-section manual-tip" id="manual-section-5">
                         <p><strong>Importante:</strong> Este juego tiene una posición. La precariedad no es mala suerte, es diseño. El individualismo es una trampa. La organización colectiva funciona.</p>
                     </section>
 
@@ -133,6 +141,9 @@ const StartScreen = (function() {
         `;
 
         document.body.appendChild(modal);
+
+        // Setup mini-nav functionality
+        setupManualNav();
 
         // Accessibility: trap focus in modal
         if (typeof AccessibilityManager !== 'undefined') {
@@ -147,6 +158,42 @@ const StartScreen = (function() {
         if (typeof lucide !== 'undefined') {
             lucide.createIcons();
         }
+    }
+
+    /**
+     * Setup manual navigation dots
+     */
+    function setupManualNav() {
+        const body = document.getElementById('manualBody');
+        const dots = document.querySelectorAll('.manual-nav-dot');
+        const sections = document.querySelectorAll('.manual-section');
+
+        // Click handlers for dots
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                const sectionIndex = dot.dataset.section;
+                const section = document.getElementById(`manual-section-${sectionIndex}`);
+                if (section) {
+                    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Scroll handler to update active dot
+        body.addEventListener('scroll', () => {
+            const scrollTop = body.scrollTop;
+            let activeIndex = 0;
+
+            sections.forEach((section, index) => {
+                if (section.offsetTop - 50 <= scrollTop) {
+                    activeIndex = index;
+                }
+            });
+
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === activeIndex);
+            });
+        });
     }
 
     /**

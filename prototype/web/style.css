@@ -1634,12 +1634,15 @@ a:hover {
 .manual-body {
     max-height: 70vh;
     overflow-y: auto;
+    position: relative;
+    scroll-behavior: smooth;
 }
 
 .manual-section {
-    margin-bottom: 1.5rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    scroll-margin-top: 1rem;
 }
 
 .manual-section:last-child {
@@ -1714,6 +1717,53 @@ a:hover {
     text-align: center;
 }
 
+/* Manual Mini-Nav */
+.manual-body {
+    position: relative;
+}
+
+.manual-content {
+    padding-right: 3rem;
+}
+
+.manual-nav {
+    position: sticky;
+    top: 0;
+    float: right;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    margin-left: 1rem;
+    z-index: 10;
+}
+
+.manual-nav-dot {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--bg-light);
+    border: 1px solid var(--text-muted);
+    color: var(--text-muted);
+    font-size: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.manual-nav-dot:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.manual-nav-dot.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+}
+
 /* ==========================================
    MANIFESTO MODAL
    ========================================== */
@@ -1729,21 +1779,27 @@ a:hover {
 }
 
 .manifesto-body p {
-    margin-bottom: 1.25rem;
-    line-height: 1.8;
-    text-align: justify;
+    margin-bottom: 0;
+    line-height: 1.7;
+    text-align: left;
+    text-indent: 1.5em;
     color: var(--text-main);
-    font-size: 0.95rem;
+    font-size: 1.05rem;
+}
+
+.manifesto-body p:first-child {
+    text-indent: 0;
 }
 
 .manifesto-body p:first-child::first-letter {
-    font-size: 2.5rem;
+    font-size: 3rem;
     float: left;
-    line-height: 1;
-    margin-right: 0.5rem;
-    margin-top: 0.1rem;
+    line-height: 0.8;
+    margin-right: 0.6rem;
+    margin-top: 0.15rem;
     color: var(--accent);
     font-weight: bold;
+    font-family: Georgia, serif;
 }
 
 .manifesto-final {
@@ -1751,7 +1807,8 @@ a:hover {
     padding-top: 1.5rem;
     border-top: 1px solid var(--accent);
     text-align: center !important;
-    font-size: 1.05rem !important;
+    text-indent: 0 !important;
+    font-size: 1.1rem !important;
     color: var(--accent) !important;
 }
 
