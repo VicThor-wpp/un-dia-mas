@@ -11,7 +11,7 @@
 # LA OLLA
 
 La olla popular del barrio.
-Un galponcito con chapas, mesas largas, ollas enormes.
+El patio de la casa de la Chola. Una lona vieja sobre postes, mesas largas, ollas enormes sobre el fuego.
 El olor a comida que se siente desde la esquina.
 
     Sofía está en el medio de todo.
@@ -397,7 +397,7 @@ Dos pibes que no tienen más de 15.
 Te quedás.
 No sabés para qué.
 
-Sofía sale del galpón.
+Sofía sale de la casa.
 Tiene los ojos rojos.
 
 * [...]
@@ -427,7 +427,7 @@ Vos te quedás.
 # ASAMBLEA EN LA OLLA
 
 Viernes de noche.
-El galpón de la olla lleno de gente.
+El patio de la olla lleno de gente.
 
 No solo los que ayudan.
 Vecinos.
@@ -1169,9 +1169,9 @@ Elena se ríe.
 * [...]
 -
 
-Mirás el galponcito. Las paredes de bloque, el techo de chapa.
+Mirás el patio. La lona remendada, las mesas que vieron de todo.
 
-"Todo esto lo construyeron ustedes."
+"Todo esto lo armaron ustedes."
 
 "Entre todos", corrige Elena. "Nunca nadie solo."
 
@@ -1271,18 +1271,16 @@ Sofía cuenta con los dedos.
 
 "Vecinos que aportan. Desde cien pesos hasta dos mil. Todo va a una caja que administra Elena."
 
-"¿Y vos?"
-
 * [...]
 -
 
-Sofía duda.
+Sofía mira las ollas. Hace una cuenta mental.
 
-"Yo pongo entre diez y quince mil por mes. Más cuando hay emergencias."
+"Y lo que me queda del sueldo. Ocho mil, más o menos. En lugar de ahorrarlo."
 
-"Eso es mucho."
+No lo dice con orgullo. Lo dice como quien cuenta los días de la semana.
 
-"Sí. Pero no alcanza para mantenerlo sola. Esto es colectivo o no es."
+"Si no lo pongo, no alcanza. Y si no alcanza, no hay olla."
 
 ~ subir_conexion(1)
 
@@ -1418,6 +1416,234 @@ Cierra la caja.
 "No es mucho. Pero es nuestro. Nadie nos lo regaló."
 
 ~ subir_conexion(1)
+
+->->
+
+// --- LA RED DE OLLAS ---
+
+=== olla_red_coordinacion ===
+// Escena sobre la coordinación entre ollas del barrio
+// Trigger: después de ayudar 2+ veces, cuando Sofía o Elena mencionan "la red"
+
+~ conoce_red_ollas = true
+~ activar_red_sostiene()
+
+# NOTIFICATION:positive:Idea: "La red sostiene"
+
+"No estamos solas acá. Hay una red."
+
+Sofía saca el celular. Muestra un grupo de WhatsApp con muchos mensajes.
+
+"Mirá: nosotras abrimos lunes, miércoles y viernes. La olla del Marconi abre martes y jueves. La de Casabó, sábados."
+
+* [...]
+-
+
+"Así nadie se queda sin comer ningún día. Nos pasamos información, insumos cuando sobra, gente cuando falta."
+
+{elena_relacion >= 2:
+    Elena, desde la cocina:
+    "En el 2002 hacíamos lo mismo pero a los gritos y corriendo por la calle. Ahora hay WhatsApp."
+}
+
+"¿Y quién coordina todo eso?"
+
+* [...]
+-
+
+"La Coordinadora. La CPS, le dicen. Pero al final somos todas viejas con celular y mala señal."
+
+Sofía guarda el celular.
+
+"A veces nos juntamos. Compartimos recetas, proveedores. Si una olla cierra, las otras absorben."
+
+* ["¿Y si cierran todas?"]
+    Sofía te mira.
+    "No cierran todas. Nunca cerraron todas. Ni en el 2002."
+    ~ subir_llama(1)
+    ->->
+* ["¿Cuántas ollas hay?"]
+    "En el municipio, como veinte. En todo Montevideo, cientos. Nadie sabe exacto."
+    ->->
+* [Asentir]
+    ->->
+
+=== olla_momento_magico ===
+// Escena especial: un día donde todo sale bien
+// Trigger: veces_que_ayude >= 3 && d6() >= 5 && not vio_momento_magico
+
+~ vio_momento_magico = true
+
+Hoy algo es distinto.
+
+La comida alcanzó exacta. La cola no fue larga. Los gurises jugaron en el patio mientras esperaban.
+
+Nadie se quejó. Nadie se fue con hambre.
+
+* [...]
+-
+
+Sofía se sienta un momento en el escalón de la casa. Cosa rara.
+
+Te mira.
+
+"A veces pasa esto."
+
+* ["¿Qué cosa?"]
+    -> momento_magico_explicacion
+* [Sentarte a su lado]
+    Te sentás. Ella sigue hablando sola.
+    -> momento_magico_explicacion
+
+=== momento_magico_explicacion ===
+
+"Un día donde todo sale. La cantidad justa de gente, la comida que querías hacer, nadie peleó en la cola."
+
+* [...]
+-
+
+Elena pasa con un balde vacío. Sonríe.
+
+"Los días buenos", dice. "Hay que acordarse de estos."
+
+* [...]
+-
+
+Sofía asiente.
+
+"Son los días que te hacen seguir. Porque la mayoría no son así."
+
+Se queda mirando el patio. La lona, las mesas, las ollas enfriándose.
+
+"Hoy fue un día bueno."
+
+* [...]
+-
+
+Por un rato, nadie habla de plata, ni de donaciones, ni de Claudia, ni de crisis.
+
+Solo está el olor a comida que se va, y las voces de la gente yéndose a sus casas.
+
+~ subir_llama(1)
+~ subir_conexion(1)
+
+->->
+
+// --- RAMÓN Y LA VERDULERÍA ---
+
+=== olla_ramon_encuentro ===
+// Escena expandida: conocer a Ramón, el verdulero paraguayo
+// Reemplaza/expande olla_verduleria_paraguayos
+
+~ conocio_a_ramon = true
+
+Es viernes.
+
+Llega una camioneta vieja. Cajones de verdura en la caja.
+
+Diego los descarga con un hombre morocho, de brazos gruesos y acento suave.
+
+* [Acercarte a ayudar]
+    Agarrás un cajón. Pesa.
+    -> ramon_presentacion
+* [Observar]
+    -> ramon_presentacion
+
+=== ramon_presentacion ===
+
+"Te presento a Ramón", dice Diego. "De la verdulería."
+
+Ramón asiente. No sonríe mucho. Tiene cara de cansado.
+
+"Mucho gusto."
+
+"Igualmente."
+
+* [...]
+-
+
+Bajan los cajones. Zapallo, papa, cebolla. Todo un poco golpeado pero bueno.
+
+"Esto iba a quedar", explica Ramón. "Mejor acá que en la basura."
+
+* ["Gracias."]
+    Ramón se encoge de hombros.
+    "No es nada."
+    -> ramon_historia
+* [Seguir descargando]
+    -> ramon_historia
+
+=== ramon_historia ===
+
+Sofía aparece. Le da un abrazo a Ramón.
+
+"Gracias, como siempre."
+
+"Como siempre."
+
+* [...]
+-
+
+Ramón se va a la camioneta. Diego te habla bajito:
+
+"Lleva dos años viniendo. Cada viernes, sin falta."
+
+"¿Por qué ayuda?"
+
+* [...]
+-
+
+Diego mira hacia la camioneta.
+
+"Una vez le pregunté. Me dijo: 'Porque allá pasamos hambre también. Y acá me dieron de comer cuando llegué'."
+
+* [...]
+-
+
+"Hay gente que lo putea en la calle. Le dicen cosas. 'Paragua de mierda', esas cosas."
+
+Aprieta los puños.
+
+"Pero él sigue viniendo. Cada viernes."
+
+* ["Qué hijos de puta los que lo molestan."]
+    "Sí. Pero él es más fuerte que todo eso."
+    -> ramon_despedida
+* [No decir nada]
+    -> ramon_despedida
+
+=== ramon_despedida ===
+
+Ramón vuelve del camión con un último cajón. Más chico.
+
+"Esto es aparte. Frutillas. Para los gurises."
+
+Sofía se queda mirando el cajón. No dice nada.
+
+* [...]
+-
+
+Ramón se sube a la camioneta. Saluda con la mano y se va.
+
+No dijo casi nada.
+Pero trajo comida para sesenta personas.
+Y frutillas para los gurises.
+
+~ subir_conexion(1)
+
+->->
+
+// --- ESCENA: SOFÍA HABLA DE LA RED ---
+
+=== sofia_sobre_red ===
+// Tunnel: Sofía explica la red de ollas
+// Uso: -> sofia_sobre_red ->
+
+{not conoce_red_ollas:
+    -> olla_red_coordinacion ->
+}
+
+"La red es lo único que nos sostiene. Solas no duraríamos un mes."
 
 ->->
 

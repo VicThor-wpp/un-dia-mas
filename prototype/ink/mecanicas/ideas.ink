@@ -33,6 +33,13 @@
         ~ check_sinergias()
     }
 
+=== function activar_red_sostiene() ===
+    { not idea_red_sostiene:
+        ~ idea_red_sostiene = true
+        ~ ideas_activas += 1
+        ~ check_sinergias()
+    }
+
 === function activar_quien_soy() ===
     { not idea_quien_soy:
         ~ idea_quien_soy = true
@@ -240,6 +247,9 @@
         ~ count += 1
     }
     { idea_red_o_nada:
+        ~ count += 1
+    }
+    { idea_red_sostiene:
         ~ count += 1
     }
     { idea_ayni:

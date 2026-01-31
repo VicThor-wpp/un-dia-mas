@@ -10,6 +10,7 @@ VAR idea_tengo_tiempo = false       // "Ahora tengo tiempo para esto"
 VAR idea_pedir_no_debilidad = false // "Pedir ayuda no es debilidad"
 VAR idea_hay_cosas_juntos = false   // "Hay cosas que se hacen juntos"
 VAR idea_red_o_nada = false         // "La red o la nada" (de Elena)
+VAR idea_red_sostiene = false       // "La red sostiene" (de conocer la coordinación entre ollas)
 
 // Ideas involuntarias (aparecen por estrés o eventos)
 VAR idea_quien_soy = false          // "¿Quién soy sin laburo?"
@@ -35,6 +36,9 @@ VAR veces_que_ayude = 0
 VAR participe_asamblea = false
 VAR olla_cerro_viernes = false
 VAR vos_propusiste_cerrar = false
+VAR conoce_red_ollas = false
+VAR vio_momento_magico = false
+VAR conocio_a_ramon = false
 
 // --- ESTADO DEL BARRIO ---
 

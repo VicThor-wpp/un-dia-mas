@@ -126,6 +126,11 @@ Hay movimiento.
 // Llegada a la olla
 -> olla_llegada ->
 
+// Es viernes: Ramón trae las verduras
+{not conocio_a_ramon:
+    -> olla_ramon_encuentro ->
+}
+
 // Claudia llega a auditar
 -> claudia_llegada ->
 

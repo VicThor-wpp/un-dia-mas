@@ -388,6 +388,16 @@ Solo sigue cocinando.
 Terminás de ayudar.
 Son las 3 de la tarde.
 
+// Momento mágico: un día donde todo sale bien (poco frecuente)
+{veces_que_ayude >= 3 && not vio_momento_magico && d6() >= 5:
+    -> olla_momento_magico ->
+}
+
+// Si ayudó varias veces y no conoce la red, Sofía la menciona
+{veces_que_ayude >= 2 && not conoce_red_ollas && sofia_relacion >= 2:
+    -> olla_red_coordinacion ->
+}
+
 // Agradecimiento de Sofia
 -> sofia_agradecimiento ->
 

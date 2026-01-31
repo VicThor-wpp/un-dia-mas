@@ -52,7 +52,7 @@ Papas, fideos, aceite.
 
 ~ sofia_relacion += 1
 
-Caminan juntos hacia el salón comunal.
+Caminan juntos hacia la casa de la Chola.
 
 "¿Para cuántos cocinan hoy?"
 
@@ -86,7 +86,7 @@ Tiene demasiado en la cabeza.
 
 === sofia_en_olla ===
 
-El salón comunal huele a guiso.
+El patio huele a guiso.
 Sofía revuelve una olla enorme.
 
 Hay voluntarios. Pocos.
@@ -894,7 +894,20 @@ Se frota la cara.
 
 # PAUSA
 
-"Cuarenta personas vienen acá. Cuarenta. Y yo no sé si la semana que viene voy a poder darles un plato."
+"Hay días que llego a casa y no tengo ilusión de nada. Nada."
+
+* [...]
+-
+
+"Los gurises me hablan y yo estoy pensando en los números. En si mañana hay para cocinar. En si alguien va a venir a ayudar."
+
+Se le quiebra un poco la voz.
+
+"Me dicen que soy fuerte. Que soy un ejemplo. Pero yo no me siento fuerte. Me siento vacía."
+
+# PAUSA
+
+"Sesenta personas vienen acá. Sesenta. Y yo no sé si la semana que viene voy a poder darles un plato."
 
 * ["No estás sola."]
     -> sofia_no_sola
