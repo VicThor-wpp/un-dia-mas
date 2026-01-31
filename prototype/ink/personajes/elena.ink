@@ -452,7 +452,7 @@ Elena sonríe. Es la primera vez que la ves sonreír así.
 
 "¿Y?"
 
-"Y nada. Trabajábamos, tomábamos mate, puteábamos al capataz. Pero cuando vino la dictadura, nos juntamos de verdad."
+"Y nada. Trabajábamos, tomábamos mate, puteábamos al encargado. Pero cuando vino la dictadura, nos juntamos de verdad."
 
 * [...]
 -

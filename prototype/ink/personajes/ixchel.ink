@@ -610,6 +610,7 @@ Elena le pasa el mate a Ixchel.
 "Tomá, m'hija."
 
 Ixchel acepta con las dos manos, ceremonial.
+El olor a yerba le recuerda al pericón de su abuela. No es igual, pero tiene algo.
 
 "Gracias, doña Elena."
 

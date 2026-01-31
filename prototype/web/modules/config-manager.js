@@ -73,7 +73,6 @@ const ConfigManager = (function() {
                 thresholds: {
                     trauma: { high: 4, effects: { bodyClass: 'trauma-high', indicator: 'Traumatizado' } },
                     llama: { low: 2, effects: { bodyClass: 'llama-low', indicator: 'Sin esperanza' } },
-                    conexion: { low: 3, effects: { bodyClass: 'conexion-low', indicator: 'Aislado' } },
                     inercia: { high: 8, low: 2, effects: { bodyClass: 'inercia-high', indicator: 'Parálisis' }, lowEffects: { bodyClass: 'inercia-low', indicator: 'Despierto' } }
                 }
             },

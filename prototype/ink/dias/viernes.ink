@@ -281,7 +281,7 @@ Te quedás.
 No hay mucho que hacer.
 Pero te quedás.
 
-Sofía hace café.
+Sofía ceba mate en silencio.
 Elena mira por la ventana.
 Diego ordena sillas vacías.
 

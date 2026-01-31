@@ -88,18 +88,6 @@
         "indicator": "Esperanza viva"
       }
     },
-    "conexion": {
-      "low": 3,
-      "high": 7,
-      "effects": {
-        "bodyClass": "conexion-low",
-        "indicator": "Aislado"
-      },
-      "highEffects": {
-        "bodyClass": "conexion-high",
-        "indicator": "Parte del barrio"
-      }
-    },
     "acumulacion": {
       "high": 5,
       "effects": {

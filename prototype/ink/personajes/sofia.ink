@@ -993,6 +993,12 @@ Sola. Los pibes duermen.
 El agua corre. Las manos le duelen.
 Pero la cocina queda limpia.
 
+Se hace un café. De los buenos.
+Una amiga le está enseñando: granos, molienda, temperatura.
+"Tenés que olerlo primero", le dice siempre.
+Sofía lo huele. Sonríe.
+Un lujo chiquito en medio del caos.
+
 {sofia_relacion >= 3:
     Piensa en vos.
     "Ojalá venga mañana", murmura.

@@ -242,7 +242,7 @@ Solo en la mugre y en sacarla.
     "No cierran", murmura. "Nunca cierran."
     Te ve limpiando. Cierra la libreta de golpe.
     "Dejá eso. Vení."
-    Te da un mate. Está frío.
+    Te da un mate. El termo ya perdió temperatura, pero es lo que hay.
     "Gracias por venir. La mayoría viene una vez, se saca la foto moral y no vuelve."
     Te mira fijo.
     "No desaparezcas."
@@ -855,7 +855,7 @@ Sofía abre.
 * [...]
 -
 
-Elena sirve café.
+Elena ceba mate. La ronda empieza.
 Alguien trae bizcochos.
 
 "Hay que hablar de cómo seguimos."

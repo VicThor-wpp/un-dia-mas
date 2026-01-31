@@ -932,18 +932,19 @@ No piensa en eso. Mañana.
 === fragmento_diego_mate ===
 Diego intenta cebar mate.
 
-Le sale lavado. Otra vez.
+Lo inundó. Otra vez.
+El agua le tapó toda la yerba, una piscina verde sin montañita.
 
 {diego_relacion >= 2:
     "Mañana le pido al vecino que me enseñe."
 }
 
-En Venezuela el café es otra cosa.
+En Venezuela el café es otra cosa. Fuerte, negro, en tacita.
 Acá todo es mate.
 Mate dulce, mate amargo, mate con yuyos.
 Un idioma nuevo que todavía no domina.
 
-Se toma el mate lavado igual.
+Se lo toma igual, aunque ya casi no tenga gusto.
 Algo caliente es algo caliente.
 
 ->->
