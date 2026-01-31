@@ -312,12 +312,17 @@ Un cartel de Coca-Cola de hace 20 años.
     * ["Sí, todo bien."]
         "Sí, todo bien."
         "Bueno."
+        // Mentir aumenta inercia (el automatismo de responder bien)
+        ~ aumentar_inercia(1)
         ->->
     * ["Ahí andamos."]
         "Ahí andamos. Perdí el laburo."
         "Uh. Está jodido."
         "Está jodido."
         "Bueno. Suerte."
+        // Ser honesto sube conexión (el kiosquero ahora sabe)
+        ~ subir_conexion(1)
+        ~ conte_a_alguien = true
         ->->
 - else:
     ->->

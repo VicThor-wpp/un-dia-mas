@@ -16,7 +16,7 @@ Cada uno en su mundo.
     -> bondi_esperar_tranquilo
 * [Mirar el celular] # DADOS # EFECTO:dignidad?
     -> bondi_esperar_celular
-* {energia >= 3} [Hablar con alguien] # COSTO:1 # DADOS:conexion # EFECTO:conexion+
+* {energia >= 3 || dia_actual == 1} [Hablar con alguien] # COSTO:1 # DADOS:conexion # EFECTO:conexion+
     -> bondi_esperar_hablar
 
 === bondi_esperar_tranquilo ===

@@ -57,60 +57,44 @@ INCLUDE finales/finales.ink
 
 Todavía no despertaste.
 
-El cuerpo sabe que tiene que levantarse.
-La cabeza sigue en otro lado.
-
 Fragmentos.
 
-Una mano que conocías.
+Una mano. Una calle. Una voz.
 
-* [La última vez, en el hospital. No dijo nada.]
+* [Tu madre esperando. El cepillo de dientes que quedó.]
     ~ perdida = "familiar"
-* [Se fue un martes. El cepillo de dientes quedó.]
-    ~ perdida = "relacion"
-* [Tu mano, más joven. Sosteniendo un diploma.]
-    ~ perdida = "futuro"
-* [Vacía. Buscando algo que no encontrás.]
-    ~ perdida = "vacio"
-
-- Una calle. La tuya.
-
-* [Tu madre sola, esperando. No podés irte.]
     ~ atadura = "responsabilidad"
-* [El árbol que plantó tu abuelo. Estas calles son tu cuerpo.]
-    ~ atadura = "barrio"
-* [La valija que armaste hace dos años. Sigue ahí.]
+* [La valija sin abrir. El diploma en un cajón.]
+    ~ perdida = "futuro"
     ~ atadura = "inercia"
-* [El almacenero. La panadera. Algo que no sabés nombrar.]
+* [El almacenero. La panadera. Las veredas rotas.]
+    ~ perdida = "vacio"
+    ~ atadura = "barrio"
+* [El portón cerrado. Lo que no dijiste.]
+    ~ perdida = "relacion"
     ~ atadura = "algo"
 
-- Una voz. Lejana.
+- "...hay que organizarse..."
 
-"...hay que organizarse..."
+La voz se pierde.
 
-* [La ignorás. Ya escuchaste eso.]
-    ~ posicion = "quemado"
-* [Algo se mueve adentro.]
-    ~ posicion = "esperanzado"
-* [No entendés. No es tu mundo.]
-    ~ posicion = "ajeno"
-* [No sabés qué sentir.]
-    ~ posicion = "ambiguo"
-
-- Una cara.
-
-Alguien del barrio. Alguien que importa.
+Una cara. Alguien del barrio.
 
 * [Sofía. Un tupper que apareció en tu puerta.]
     ~ vinculo = "sofia"
+    ~ posicion = "esperanzado"
 * [Elena. "Mirá qué grande estás", te dijo.]
     ~ vinculo = "elena"
+    ~ posicion = "quemado"
 * [Diego. Le señalaste el camino. Te buscó después.]
     ~ vinculo = "diego"
+    ~ posicion = "ajeno"
 * [Marcos. El portón cerrado. Algo sin cerrar.]
     ~ vinculo = "marcos"
+    ~ posicion = "ambiguo"
 * [Ixchel. Trabaja en la olla. Seria. Sin sonrisas de compromiso.]
     ~ vinculo = "ixchel"
+    ~ posicion = "esperanzado"
 
 -
 

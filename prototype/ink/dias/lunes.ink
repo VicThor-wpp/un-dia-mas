@@ -89,6 +89,12 @@
 12:30.
 Hora de comer.
 
+{hable_con_juan_sobre_rumores:
+    Juan te mira.
+    "¿Hablaste con el jefe?"
+    No contestás.
+}
+
 * [Almorzar con Juan] # EFECTO:conexion+
     -> juan_almuerzo ->
     -> lunes_tarde

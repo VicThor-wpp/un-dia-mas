@@ -314,17 +314,22 @@ Sofía te mira.
     Le das lo que tenés en el bolsillo.
     No es mucho.
     "Gracias."
+    ~ pequenas_victorias += 1
     ->->
 * [Dar algo más] # COSTO:1 # STAT:conexion
     Le das un billete más grande.
     ~ energia -= 1
     "Gracias. En serio."
     ~ subir_conexion(1)
+    ~ pequenas_victorias += 1
+    ~ sofia_relacion += 1
     ->->
 * [Pensarlo mejor]
     "Después te traigo algo."
     "Bueno."
     No suena convencida.
+    // No cumplir promesas tiene costo
+    ~ aumentar_inercia(1)
     ->->
 
 === olla_ofrecer_ayuda_crisis ===

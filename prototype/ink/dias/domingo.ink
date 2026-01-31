@@ -451,6 +451,21 @@ Por ahora.
     -> final_sin_llama
 }
 
+// FINAL RESISTENCIA SILENCIOSA - Ayudaste sin participar en asamblea
+{evaluar_resistencia_silenciosa():
+    -> final_resistencia_silenciosa
+}
+
+// FINAL DESPERTAR - Te recuperaste de una espiral
+{evaluar_despertar():
+    -> final_despertar
+}
+
+// FINAL JUAN MIGRANTE - Juan se fue y te despediste
+{evaluar_juan_migrante():
+    -> final_juan_migrante
+}
+
 // FINAL REPRESIÓN - Intentaste luchar y te reprimieron
 // Requiere intento de acción radical con mala suerte
 {participe_asamblea && conexion >= 5 && llama >= 5 && inercia <= 4:

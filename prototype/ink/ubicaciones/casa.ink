@@ -42,6 +42,16 @@ La disciplina del cuerpo que ya no pregunta.
 
 ~ pequenas_victorias += 1
 
+{tiene_laburo && dia_actual == 1:
+    El celular vibra.
+    Un mensaje del grupo del laburo.
+
+    "Ojo hoy. Andan raros los jefes."
+
+    No dice más.
+    Pero algo se te aprieta en el pecho.
+}
+
 -> casa_banarse
 
 === casa_cinco_mas ===
