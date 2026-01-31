@@ -8,6 +8,8 @@
 === casa_despertar ===
 // Llamar al inicio de cada día
 
+# AUDIO:sfx_despertador
+
 El despertador.
 {dia_actual == 1: Las 6:30.}
 {dia_actual >= 4 && not tiene_laburo: No hay despertador. Te despertás igual.}

@@ -182,10 +182,8 @@ VAR atadura = ""      // responsabilidad, barrio, inercia, algo
 VAR posicion = ""     // ajeno, quemado, esperanzado, ambiguo
 VAR vinculo = ""      // sofia, elena, diego
 
-// --- POSICIÓN SOCIAL (afecta experiencias concretas) ---
+// --- OTROS ---
 
-VAR genero = ""       // varon, mujer, no_binario
-VAR raza = ""         // blanco, mestizo, afro, indigena
 VAR es_vegano = false // TODO: mover elección a gameplay (ej: primera comida en olla)
 
 // --- TRACKING DE EVENTOS ---

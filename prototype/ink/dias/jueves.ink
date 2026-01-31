@@ -142,21 +142,6 @@ Pocas que sirvan.
 "Se busca. Hasta 25 años."
 "Se busca. Disponibilidad full time. Pago por productividad."
 
-{genero == "mujer":
-    "Se busca. Buena presencia."
-    Sabés lo que significa eso.
-    Mirás tu ropa. Mirás tus ojeras.
-    Pasás al siguiente.
-}
-
-{raza == "afro" || raza == "indigena":
-    Mirás tu foto en el CV.
-    Dudas.
-    ¿La sacás? ¿La dejás?
-    Si la dejás, filtran por cara. Si la sacás, filtran cuando te ven.
-    La dejás. Que se curtan.
-}
-
 * [...]
 -
 

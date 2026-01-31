@@ -181,6 +181,15 @@ const ChoiceParser = (function() {
     function buildButton(choice, index, story, onClick) {
         const meta = parseTags(choice.tags);
 
+        // Check if this is a "..." continue choice - render as continue button
+        if (choice.text.trim() === '...') {
+            const button = document.createElement('button');
+            button.className = 'choice-button continue-button';
+            button.dataset.choiceIndex = index;
+            button.addEventListener('click', onClick);
+            return button;
+        }
+
         const button = document.createElement('button');
         button.className = 'choice-button';
 
