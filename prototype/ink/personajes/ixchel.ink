@@ -1015,6 +1015,9 @@ Ayni dice: 'Damos juntos, recibimos juntos'.
 Suena simple. Pero cambiaría todo."
 
 ~ activar_autonomia_posible()
+~ activar_ayni()
+
+# IDEA DESBLOQUEADA: "LA RECIPROCIDAD ES SUPERVIVENCIA"
 
 # IDEA DESBLOQUEADA: "PODEMOS ORGANIZARNOS SIN JEFES"
 

@@ -926,6 +926,179 @@ Pero estás vivo. Y eso, hoy, es victoria.
 
 -> END
 
+=== final_resistencia_silenciosa ===
+# ENDING:final_resistencia_silenciosa
+
+# FINAL: RESISTENCIA SILENCIOSA
+
+El lunes llega.
+No fuiste a la asamblea.
+Pero estuviste.
+
+* [...]
+-
+
+No todas las luchas son visibles.
+No todas las resistencias tienen pancartas.
+
+* [...]
+-
+
+Pelaste papas. Serviste guiso.
+Escuchaste historias. Contaste las tuyas.
+
+{veces_que_ayude >= 3:
+    Tres veces. O más.
+    No llevaste la cuenta.
+    Pero el barrio sí.
+}
+
+* [...]
+-
+
+No sos activista. No sos militante.
+Sos alguien que estuvo cuando hacía falta.
+
+Y eso, a veces, es más importante
+que cualquier discurso.
+
+{conexion >= 4:
+    La olla te conoce.
+    No como héroe. Como vecino.
+    Eso alcanza.
+}
+
+Los tres meses empiezan.
+No sabés qué viene.
+Pero sabés dónde hay un plato caliente.
+
+# FIN - "No todas las luchas son visibles"
+
+-> END
+
+=== final_despertar ===
+# ENDING:final_despertar
+
+# FINAL: DESPERTAR
+
+El lunes llega.
+Estuviste muy abajo.
+Pero subiste.
+
+* [...]
+-
+
+Hubo días que no te levantaste.
+Hubo noches que no terminaban.
+
+{inercia_maxima_alcanzada >= 8:
+    Llegaste al límite.
+    Casi te apagás.
+}
+
+* [...]
+-
+
+Pero alguien te encontró.
+O vos encontraste a alguien.
+
+{vinculo == "sofia": Sofía no te dejó solo.}
+{vinculo == "elena": Elena te buscó.}
+{vinculo == "diego": Diego insistió.}
+{vinculo == "marcos": Marcos, contra todo pronóstico, apareció.}
+
+* [...]
+-
+
+Tocaste fondo.
+Y encontraste a otros ahí.
+
+Resulta que el fondo no es el final.
+Es donde empezás a subir.
+
+{conexion >= 5:
+    No subiste solo.
+    Eso marca la diferencia.
+}
+
+Los tres meses empiezan.
+No sabés qué viene.
+Pero sabés que podés caer y levantarte.
+
+# FIN - "Tocaste fondo y encontraste a otros"
+
+-> END
+
+=== final_juan_migrante ===
+# ENDING:final_juan_migrante
+
+# FINAL: EL QUE SE VA
+
+El lunes llega.
+Juan ya no está.
+
+* [...]
+-
+
+Se fue a España. O a donde sea.
+A buscar lo que acá no encontró.
+
+{juan_se_despidio:
+    Se despidió de vos.
+    "Cuidate", dijo.
+    "Y cuidalos", agregó mirando hacia la olla.
+}
+
+* [...]
+-
+
+No lo juzgás.
+¿Cómo podrías?
+
+Algunos se van para que otros puedan quedarse.
+Algunos se quedan para que otros puedan irse.
+
+{juan_mando_apoyo:
+    Te mandó un mensaje el sábado.
+    "Fuerza, hermano. Desde acá los banco."
+    Las distancias no borran los vínculos.
+}
+
+* [...]
+-
+
+Vos te quedaste.
+No por heroísmo. Por inercia, quizás.
+O porque acá está la olla.
+O porque no tenés pasaporte europeo.
+
+Da igual.
+
+* [...]
+-
+
+Los que se van y los que se quedan
+son parte del mismo tejido.
+Hilos que se estiran pero no se cortan.
+
+{conexion >= 4:
+    El barrio sigue.
+    Con uno menos. Pero sigue.
+}
+
+Los tres meses empiezan.
+Juan empieza de cero en otro lado.
+Vos empezás de cero acá.
+
+Quizás algún día se crucen de nuevo.
+Quizás no.
+
+Pero el vínculo queda.
+
+# FIN - "Algunos se van para que otros se queden"
+
+-> END
+
 === final_represion ===
 # ENDING:final_represion
 

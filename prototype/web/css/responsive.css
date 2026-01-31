@@ -55,10 +55,10 @@
     }
 
     .notifications {
-        top: auto;
-        bottom: 20px;
+        bottom: calc(20px + env(safe-area-inset-bottom, 0px));
         right: 10px;
         left: 10px;
+        max-height: 40vh;
     }
 
     /* Preferences panel mobile */

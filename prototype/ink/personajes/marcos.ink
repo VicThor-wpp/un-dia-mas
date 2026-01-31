@@ -549,9 +549,43 @@ Marcos mira sus manos.
 
 // --- MARCOS REVELA SU SITUACION ---
 
+=== viernes_marcos_plaza ===
+// Escena clave: Encuentro en la plaza el viernes
+// Marcos revela que también lo echaron
+// Trigger: viernes, si marcos_relacion >= 1
+
+Lo ves sentado en un banco de la plaza.
+Tiene la misma cara que vos el miércoles.
+
+* [Acercarte]
+    Te sentás al lado. Silencio largo.
+
+    "A mí también me echaron" — dice sin mirarte.
+    "Hace una semana. No se lo conté a nadie."
+
+    ~ marcos_revelo_despido = true
+    ~ marcos_relacion += 2
+    ~ subir_conexion(1)
+
+    * * [Contarle que a vos también]
+        "Somos dos entonces."
+        Por primera vez, te mira.
+        ~ marcos_acepto_ayuda = true
+        ~ reducir_inercia_accion(1)
+        ->->
+    * * [Solo escuchar]
+        Asentís. A veces no hay nada que decir.
+        ~ marcos_relacion += 1
+        ->->
+
+* [Dejarlo tranquilo]
+    Parece que necesita estar solo.
+    ->->
+
 === marcos_revelar_despido ===
 
 ~ marcos_secreto = true
+~ marcos_revelo_despido = true
 
 Están hablando. De nada.
 De pronto, Marcos dice:

@@ -1062,6 +1062,25 @@ Se acuesta.
 
 ->->
 
+=== juan_mensaje_sabado ===
+// Juan manda mensaje de apoyo desde España (o antes de irse)
+// Trigger: sábado, si juan_decidio_irse
+
+{ juan_decidio_irse:
+    Te llega un mensaje de Juan.
+
+    "Che, me enteré de lo de la asamblea. Ojalá salga bien."
+    "Desde acá los banco. Fuerza."
+
+    ~ juan_mando_apoyo = true
+    ~ subir_llama(1)
+
+    No está. Pero sigue presente.
+    Las distancias no borran los vínculos.
+}
+
+->->
+
 === fragmento_juan_curriculum ===
 Juan actualiza su currículum.
 
@@ -1238,6 +1257,8 @@ Se para. Incómodo.
 === juan_despedida_cierre ===
 
 ~ juan_migra = true
+~ juan_decidio_irse = true
+~ juan_se_despidio = true
 
 Se va.
 

@@ -5,7 +5,8 @@
 // --- RECURSOS PRINCIPALES ---
 
 // ENERGÍA: Capacidad de hacer cosas hoy (3-5)
-VAR energia = 4
+// CAMBIO: Empieza en 5 (antes 4)
+VAR energia = 5
 VAR energia_max = 5
 
 // CONEXIÓN: Tu lugar en el tejido del barrio (0-10)
@@ -50,6 +51,29 @@ VAR dia_actual = 1
     ~ energia += cantidad
     { energia > energia_max:
         ~ energia = energia_max
+    }
+
+// Recuperación diaria contextual (llamar al inicio de cada día)
+=== function recuperar_energia_diaria() ===
+    ~ energia = 4
+    // Bonus por conexión alta (red de apoyo = mejor descanso)
+    { conexion >= 5:
+        ~ energia += 1
+    }
+    // Bonus por idea_tengo_tiempo
+    { idea_tengo_tiempo:
+        ~ energia += 1
+    }
+    // Penalización por inercia alta (agotamiento mental)
+    { inercia >= 7:
+        ~ energia -= 1
+    }
+    // Limitar a máximo
+    { energia > energia_max:
+        ~ energia = energia_max
+    }
+    { energia < 1:
+        ~ energia = 1
     }
 
 // Ajustar recurso sin pasarse de límites
@@ -116,7 +140,22 @@ VAR dia_actual = 1
 
 === function bajar_llama(cantidad) ===
     ~ temp llama_antes = llama
-    ~ ajustar(llama, -cantidad, 0, 10)
+    ~ temp cantidad_real = cantidad
+
+    // Protección: idea_no_es_individual limita la caída a 1 por día
+    { idea_no_es_individual && cantidad > 1:
+        ~ cantidad_real = 1
+    }
+
+    // Piso temporal: no puede bajar de 2 hasta el sábado
+    ~ temp nueva_llama = llama - cantidad_real
+    { dia_actual < 6 && nueva_llama < 2:
+        ~ llama = 2
+        # NOTIFICATION:info:La llama titila pero resiste
+    - else:
+        ~ ajustar(llama, -cantidad_real, 0, 10)
+    }
+
     // Feedback narrativo en thresholds críticos
     {
     - llama <= 2 && llama_antes > 2:
@@ -128,6 +167,10 @@ VAR dia_actual = 1
 
 === function aumentar_inercia(cantidad) ===
     ~ ajustar(inercia, cantidad, 0, 10)
+    // Trackear máxima inercia alcanzada (para final_despertar)
+    { inercia > inercia_maxima_alcanzada:
+        ~ inercia_maxima_alcanzada = inercia
+    }
     { inercia >= 8:
         # STAT_THRESHOLD:inercia,critical
     }
@@ -140,6 +183,11 @@ VAR dia_actual = 1
     { inercia <= 2:
         # STAT_THRESHOLD:inercia,low
     }
+
+// Reducir inercia por acción específica (con notificación)
+=== function reducir_inercia_accion(cantidad) ===
+    ~ disminuir_inercia(cantidad)
+    # NOTIFICATION:positive:Algo se afloja
 
 // --- CHEQUEOS DE ESTADO ---
 
@@ -171,13 +219,94 @@ VAR dia_actual = 1
 // Tunnel: llamar en momentos críticos del día con -> check_game_over ->
 
 === check_game_over ===
-{inercia >= 10:
+// Umbral de inercia: 10 normal, 12 con sinergia_agencia
+~ temp umbral_inercia = 10
+{ tiene_sinergia_agencia:
+    ~ umbral_inercia = 12
+}
+
+{inercia >= umbral_inercia:
+    // Segunda oportunidad: si el vínculo tiene buena relación, interviene
+    { vinculo == "sofia" && sofia_relacion >= 3:
+        -> intervencion_vinculo ->
+    }
+    { vinculo == "elena" && elena_relacion >= 3:
+        -> intervencion_vinculo ->
+    }
+    { vinculo == "diego" && diego_relacion >= 3:
+        -> intervencion_vinculo ->
+    }
+    { vinculo == "marcos" && marcos_relacion >= 3:
+        -> intervencion_vinculo ->
+    }
+    // Sin red de apoyo = game over
     -> final_apagado
 }
 {llama <= 0:
+    // Segunda oportunidad en domingo si ayudaste en olla
+    { dia_actual == 7 && ayude_en_olla && sofia_relacion >= 3:
+        -> chispa_emergencia ->
+    }
     -> final_sin_llama
 }
 ->->
+
+// --- INTERVENCIONES DE SEGUNDA OPORTUNIDAD ---
+
+=== intervencion_vinculo ===
+# CLEAR
+El teléfono suena.
+
+{ vinculo == "sofia":
+    Es Sofía.
+    "¿Estás bien? No te vi en la olla."
+}
+{ vinculo == "elena":
+    Es Elena.
+    "Pibe, ¿qué pasa? Hace días que no sabemos de vos."
+}
+{ vinculo == "diego":
+    Es Diego.
+    "Hermano, ¿todo bien? Me preocupé."
+}
+{ vinculo == "marcos":
+    Es Marcos.
+    "Che... sé que no hablamos mucho. Pero me acordé de vos."
+}
+
+No sabés qué decir.
+Pero la voz al otro lado espera.
+
+~ disminuir_inercia(3)
+# NOTIFICATION:positive:Alguien te encontró
+
+->->
+
+=== chispa_emergencia ===
+# CLEAR
+El teléfono suena. Es Sofía.
+
+"Te necesitamos en la olla. Hoy más que nunca."
+
+La llama casi se apagó.
+Pero alguien la está soplando.
+
+~ llama = 2
+# NOTIFICATION:positive:Una chispa resiste
+
+->->
+
+// --- EFECTOS DE DIGNIDAD ---
+
+=== function evaluar_dignidad_nocturna() ===
+    // Baja dignidad aumenta inercia (si no tiene idea protectora)
+    { dignidad <= 2 && not idea_pedir_no_debilidad:
+        ~ aumentar_inercia(1)
+    }
+    // Alta dignidad reduce inercia
+    { dignidad >= 8:
+        ~ disminuir_inercia(1)
+    }
 
 // --- EVALUACION DE FINALES ---
 
@@ -197,7 +326,66 @@ VAR dia_actual = 1
 
 === function evaluar_lucha_colectiva() ===
     // Participaste activamente en la lucha colectiva
-    { participe_asamblea && veces_que_ayude >= 3 && llama >= 7 && conexion >= 7:
+    // AJUSTADO: umbrales reducidos (antes 7/7, ahora 5/6)
+    { participe_asamblea && veces_que_ayude >= 2 && llama >= 5 && conexion >= 6:
+        ~ return true
+    }
+    ~ return false
+
+=== function evaluar_resistencia_silenciosa() ===
+    // Ayudaste sin ir a la asamblea
+    { not participe_asamblea && veces_que_ayude >= 3 && conexion >= 4:
+        ~ return true
+    }
+    ~ return false
+
+=== function evaluar_despertar() ===
+    // Te recuperaste de una espiral
+    { inercia_maxima_alcanzada >= 8 && inercia <= 4 && conexion >= 5:
+        ~ return true
+    }
+    ~ return false
+
+=== function evaluar_juan_migrante() ===
+    // Juan se fue y te despediste
+    { juan_relacion >= 4 && juan_decidio_irse && juan_se_despidio:
+        ~ return true
+    }
+    ~ return false
+
+=== function evaluar_la_llama() ===
+    // Final épico - AJUSTADO: umbrales reducidos
+    // Antes: conexion>=9, llama>=8, 4 ideas, 8 condiciones
+    // Ahora: conexion>=7, llama>=6, 3 ideas positivas, 5 condiciones
+    { conexion >= 7 && llama >= 6 && contar_ideas_positivas() >= 3 && participe_asamblea && veces_que_ayude >= 2:
+        ~ return true
+    }
+    ~ return false
+
+=== function evaluar_red() ===
+    // AJUSTADO: umbrales reducidos (antes 7/5, ahora 5/4)
+    { conexion >= 5 && llama >= 4 && ayude_en_olla:
+        ~ return true
+    }
+    ~ return false
+
+=== function evaluar_tejido() ===
+    // Final de Ixchel - AJUSTADO
+    { vinculo == "ixchel" && ixchel_relacion >= 3 && ixchel_conto_historia && ayude_en_olla:
+        ~ return true
+    }
+    ~ return false
+
+=== function evaluar_huelga() ===
+    // AJUSTADO: condiciones reducidas
+    { participe_asamblea && veces_que_ayude >= 2 && llama >= 6 && conexion >= 6 && diego_relacion >= 3:
+        ~ return true
+    }
+    ~ return false
+
+=== function evaluar_ocupacion() ===
+    // AJUSTADO: umbrales reducidos (antes 7/7/3, ahora 6/6/2)
+    { participe_asamblea && conexion >= 6 && llama >= 6 && veces_que_ayude >= 2:
         ~ return true
     }
     ~ return false

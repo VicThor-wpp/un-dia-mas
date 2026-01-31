@@ -18,6 +18,11 @@ const NotificationSystem = (function() {
             container.id = 'notifications';
             container.className = 'notifications';
 
+            // Accessibility attributes
+            container.setAttribute('role', 'log');
+            container.setAttribute('aria-live', 'polite');
+            container.setAttribute('aria-label', 'Notificaciones del juego');
+
             const game = document.getElementById('game');
             if (game) {
                 game.insertBefore(container, game.firstChild);
@@ -54,6 +59,12 @@ const NotificationSystem = (function() {
             ? SecurityValidator.sanitizeText(message)
             : message;
         notif.innerHTML = `${icon} ${safeMessage}`;
+
+        // Limit to 3 visible notifications
+        const MAX_NOTIFICATIONS = 3;
+        while (container.children.length >= MAX_NOTIFICATIONS) {
+            container.removeChild(container.firstChild);
+        }
 
         container.appendChild(notif);
 

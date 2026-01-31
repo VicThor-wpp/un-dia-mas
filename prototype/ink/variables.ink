@@ -74,14 +74,19 @@ VAR diego_viene_a_olla = false
 VAR diego_mostro_contradiccion = false
 
 // --- ESTADO DE MARCOS ---
+// Simplificado: sin marcos_estado abstracto
 
-VAR marcos_estado = "aislado"         // aislado, mirando, reconectando, ausente
 VAR marcos_relacion = 1               // 0-5
-VAR marcos_secreto = false            // Si sabemos que también lo echaron
+VAR marcos_revelo_despido = false     // Nos contó que también lo echaron (viernes plaza)
 VAR marcos_vino_a_asamblea = false
 VAR hable_con_marcos_profundo = false
 VAR marcos_era_militante = false
 VAR intente_contactar_marcos = false
+VAR marcos_acepto_ayuda = false       // Dejó que lo acompañemos
+
+// Legacy - mantener para compatibilidad
+VAR marcos_estado = "aislado"
+VAR marcos_secreto = false
 
 // === JUAN - Variables activas ===
 // Compañero de trabajo - el que comparte tu situación de unipersonal
@@ -97,13 +102,17 @@ VAR juan_estado = "normal"
 VAR almorzamos_juntos = false
 VAR fue_al_bar_con_juan = false
 VAR hable_con_juan_sobre_rumores = false
-VAR juan_migra = false              // NUEVO: Juan decide irse a España
+// Juan - Arco "El que se va"
+VAR juan_decidio_irse = false        // Decidió irse a España
+VAR juan_se_despidio = false         // Se despidió del protagonista
+VAR juan_mando_apoyo = false         // Mandó mensaje de apoyo el sábado (+1 llama)
 
-// === JUAN - Variables deprecadas (no eliminar, pueden romper compilación) ===
-VAR juan_tambien_despedido = false   // DEPRECADA: reemplazada por juan_migra
-VAR juan_ofrecio_changa = false      // DEPRECADA: arco cambiado
-VAR juan_ofrecio_contacto = false    // DEPRECADA: arco cambiado
-VAR juan_fue_a_olla = false          // DEPRECADA: Juan no va a la olla
+// === JUAN - Variables legacy (mantener para compatibilidad) ===
+VAR juan_migra = false               // Alias de juan_decidio_irse
+VAR juan_tambien_despedido = false   // No usado pero mantener
+VAR juan_ofrecio_changa = false      // No usado pero mantener
+VAR juan_ofrecio_contacto = false    // No usado pero mantener
+VAR juan_fue_a_olla = false          // No usado pero mantener
 
 // --- ESTADO DE LUCÍA (Fase 2 Completo) ---
 // Compañera de trabajo - la que politiza
@@ -199,6 +208,16 @@ VAR ideas_activas = 0
 VAR sinergia_colectiva = 0    // combo: hay_cosas_juntos + pedir_no_debilidad + red_o_nada
 VAR sinergia_individual = 0    // combo: tengo_tiempo + quien_soy
 VAR idea_momento_sintesis = false  // whether the synthesis scene has been shown
+
+// Nuevas sinergias con efectos mecánicos
+VAR tiene_sinergia_colectiva_activa = false  // Ventaja en chequeos comunitarios
+VAR tiene_sinergia_agencia = false           // Inercia game-over sube de 10 a 12
+
+// Nueva idea de Ixchel
+VAR idea_ayni = false  // "La reciprocidad es supervivencia" - ayudar recupera energía
+
+// Tracking de inercia máxima (para final_despertar)
+VAR inercia_maxima_alcanzada = 0
 
 // --- VARIABLES ADICIONALES FASE 2 ---
 VAR tiago_se_queda = false
