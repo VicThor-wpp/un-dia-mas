@@ -1182,19 +1182,18 @@ En esa crisis, la red fue todo."
 
 **Reveal Sábado**:
 ```
-"Me echaron."
-Pausa.
-"Hace dos semanas."
-Marcos mira el piso.
-"No se lo dije a nadie."
-
+    "Me echaron."
+    Pausa.
+    "Hace seis meses."
+    Marcos mira el piso.
+    "No se lo dije a nadie."
 [Opción: Decir "yo también"]
 "Lo sé. Sofía me contó."
 Pausa larga.
 "Qué jodido, ¿no?"
 
 [Charla sobre precariedad]
-"Esto es lo que hay, Diego.
+"Esto es lo que hay, pibe.
 No va a cambiar.
 No cambia nunca."
 ```

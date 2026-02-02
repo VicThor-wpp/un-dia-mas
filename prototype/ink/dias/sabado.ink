@@ -131,8 +131,6 @@ El barrio más tranquilo.
 // Encuentro en la plaza con Marcos
 -> marcos_encuentro_plaza ->
 
-"Me echaron."
-
 // Marcos revela que tambien lo echaron
 -> marcos_revelar_despido ->
 

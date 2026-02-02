@@ -35,6 +35,11 @@ Documentación completa del juego narrativo **Un Día Más**.
 
 ### 📍 [Ubicaciones](./design/locations/)
 - [La Olla Popular](./design/locations/olla.md)
+- [La Casa](./design/locations/casa.md)
+- [El Laburo](./design/locations/laburo.md)
+- [El Barrio](./design/locations/barrio.md)
+- [El Bondi](./design/locations/bondi.md)
+- [Búsqueda de Empleo](./design/locations/busqueda.md)
 
 ---
 
@@ -42,9 +47,6 @@ Documentación completa del juego narrativo **Un Día Más**.
 
 ### ⚡ [Quick Reference](./reference/quick-ref.txt)
 **Hoja de trucos ASCII** - Referencia rápida para desarrollo.
-
-### 📈 [Análisis v0.8](./reference/analysis-v0.8.md)
-**Auditoría previa** - Análisis narrativo y sugerencias (histórico).
 
 ---
 
@@ -56,6 +58,7 @@ Documentación completa del juego narrativo **Un Día Más**.
 docs/
 ├── MASTER-PLAN.md              (Estado actual y definiciones canónicas)
 ├── README.md                   (Este índice)
+├── CHANGELOG.md                (Registro de cambios narrativos y de contenido)
 ├── design/                     (Documentación de diseño detallada)
 │   ├── architecture.md         (Arquitectura técnica)
 │   ├── characters/             (Perfiles de NPCs)
@@ -64,10 +67,9 @@ docs/
 │   ├── narrative-map.md        (Mapa narrativo)
 │   └── flowcharts.md           (Diagramas de flujo)
 ├── reference/                  (Material de consulta)
-│   ├── quick-ref.txt           (Referencia rápida)
-│   └── analysis-v0.8.md        (Análisis histórico)
-├── archive/                    (Documentación obsoleta)
-└── plans/                      (Planes de implementación específicos)
+│   └── quick-ref.txt           (Referencia rápida)
+├── archive/                    (Documentación histórica y análisis)
+└── plans/                      (Planes de implementación pendientes)
 ```
 
 ---

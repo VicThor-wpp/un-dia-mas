@@ -4,10 +4,9 @@
 
 // --- RECURSOS PRINCIPALES ---
 
-// ENERGÍA: Capacidad de hacer cosas hoy (3-5)
-// CAMBIO: Empieza en 5 (antes 4)
-VAR energia = 5
-VAR energia_max = 5
+// ENERGÍA: Capacidad de hacer cosas hoy (4-6)
+VAR energia = 4
+VAR energia_max = 6
 
 // CONEXIÓN: Tu lugar en el tejido del barrio (0-10)
 // Inicial: 3 (conocés pero no pertenecés todavía)
@@ -147,14 +146,7 @@ VAR dia_actual = 1
         ~ cantidad_real = 1
     }
 
-    // Piso temporal: no puede bajar de 2 hasta el sábado
-    ~ temp nueva_llama = llama - cantidad_real
-    { dia_actual < 6 && nueva_llama < 2:
-        ~ llama = 2
-        # NOTIFICATION:info:La llama titila pero resiste
-    - else:
-        ~ ajustar(llama, -cantidad_real, 0, 10)
-    }
+    ~ ajustar(llama, -cantidad_real, 0, 10)
 
     // Feedback narrativo en thresholds críticos
     {

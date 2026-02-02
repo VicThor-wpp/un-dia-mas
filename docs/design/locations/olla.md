@@ -1,202 +1,85 @@
-# LA OLLA POPULAR DEL BARRIO
+# LA OLLA POPULAR DEL BARRIO (Documento Técnico y Narrativo)
 
 ## NOTA SOBRE LA UBICACIÓN
-Esta documentación no especifica un barrio concreto de Montevideo. La olla puede estar en cualquier barrio periférico de la capital: Cerro, La Teja, Casavalle, Manga, Piedras Blancas, Colón, etc. Lo importante es que sea un barrio de clase trabajadora con historia de organización vecinal.
+La olla se sitúa en el **Municipio A** de Montevideo (Cerro, La Teja, Nuevo París, Casabó, Paso de la Arena). Este municipio registra la mayor cantidad de iniciativas de respuesta al hambre (28% del total de la ciudad) y los niveles más altos de precariedad laboral e informalidad (22.4%).
 
 ---
 
 ## DATOS GENERALES
 
-*   **Nombre oficial:** No tiene. La gente la conoce como "la olla del barrio" o "la olla de la Chola" (aunque la Chola ya murió).
-*   **Fundación:** Años 90, por un grupo de vecinas lideradas por la Chola (madre de Sofía). Se reactivó con fuerza en 2002 (crisis) y de nuevo en 2020 (pandemia).
-*   **Coordinación actual:** Sofía Méndez, con apoyo de Elena Rivas.
-*   **Estado legal:** Registrada en el Plan ABC de la Intendencia de Montevideo desde 2020.
+*   **Nombre:** "La olla de la Chola" (histórico) / Olla autogestionada del barrio.
+*   **Tipo de Organización:** **Tipo 1 - Autogestión territorial**. Miembro de la Red de apoyo a ollas del Municipio A (Coordinadora Popular y Solidaria - CPS).
+*   **Fundación:** Raíces en los 80 (dictadura), consolidada en 2002 (crisis financiera), reactivada en marzo 2020 (pandemia).
+*   **Perfil Sociológico:** Espacio de resistencia al hambre "enraizada en la sociedad", donde el bienestar se provee desde la propia comunidad ante la insuficiencia de la respuesta estatal inicial.
 
 ---
 
-## ESPACIO FÍSICO
+## ESPACIO FÍSICO E INFRAESTRUCTURA
 
 ### El Local
-Un local pequeño, originalmente un garaje que se fue adaptando. Techo de chapa, paredes de bloque, piso de cemento. Modesto pero funcional.
+Basado en el promedio real (34.8 m²), funciona en la casa de una vecina (Elena) que cedió su garaje/cobertizo.
 
-*   **Dimensiones aproximadas:** 5 x 6 metros (30 m²).
-*   **Techo:** Chapa de zinc, con un par de goteras conocidas.
-*   **Piso:** Cemento alisado.
-*   **Paredes:** Bloques revocados, pintados de celeste claro. Una imagen de la Virgen de Guadalupe en un rincón (la puso la Chola).
-
-### Distribución Interior
-
-```
-┌─────────────────────────────┐
-│                             │
-│   ┌───────┐   ┌───────┐     │
-│   │COCINA │   │DESPEN-│     │
-│   │(1 olla│   │  SA   │     │
-│   │grande)│   │       │     │
-│   └───────┘   └───────┘     │
-│                             │
-│   ════════════════════      │  ← Mesada de servir
-│                             │
-│   ┌─────────────────┐       │
-│   │   MESA LARGA    │       │  ← Capacidad: 12-14 personas
-│   └─────────────────┘       │
-│                             │
-│   [Sillas]        [PUERTA]  │
-│                             │
-└─────────────────────────────┘
-```
-
-### Equipamiento
-
-| Elemento | Descripción |
-|----------|-------------|
-| **Olla grande** | 1 olla de 60 litros (suficiente para 50-60 porciones) |
-| **Hornallas** | Cocina de 2 hornallas a gas (garrafa de 13 kg) |
-| **Mesa** | 1 mesa larga de madera, capacidad para 12-14 personas |
-| **Sillas** | 15 sillas de plástico (donadas, disparejas) |
-| **Heladera** | Una heladera familiar vieja, funciona bien |
-| **Pileta** | Una pileta de cocina, agua fría |
-| **Estantes** | Un estante de metal con alimentos no perecederos |
-
-### Lo que falta
-*   No hay agua caliente.
-*   El baño está en la casa de Elena (a 20 metros).
-*   Espacio justo: cuando hay mucha gente, algunos comen afuera.
+*   **Tipo de espacio:** 65% de las ollas funcionan en casas de vecinos; 20% en locales comunitarios.
+*   **Servicios básicos:**
+    *   **Electricidad:** Conexión a red pública (77.5%).
+    *   **Agua:** Red pública potable (80%).
+    *   **Baño:** El 75% cuenta con servicio higiénico, pero en el 70% de los casos está alejado de la zona de preparación (en este caso, dentro de la casa de Elena).
+*   **Cocción:** Mixta. Habitualmente gas (garrafa 13kg). En crisis de insumos se recurre a la **leña** (cortada en descampados cercanos o montes), una práctica común en el 27% de las ollas para ahorrar costos de combustible ($2.749 promedio mensual en gas).
 
 ---
 
-## FUNCIONAMIENTO
+## FUNCIONAMIENTO Y LOGÍSTICA
 
-### Horario
-*   **Cena:** Lunes a viernes, de 19:00 a 20:30.
-*   No hay almuerzo ni merendero (no dan los recursos ni la gente).
-*   Los fines de semana no hay olla (descanso necesario).
+### Horario y Raciones
+*   **Servicio:** Cena (52.5% de las ollas sirven cena; 67.5% merienda).
+*   **Volumen:** 246 raciones diarias promedio (en Montevideo). Nuestra olla maneja entre 60 y 80 porciones.
+*   **Frecuencia:** 3 días a la semana (promedio nacional). En momentos de crisis extrema, se intenta estirar a 5 días.
 
-### Porciones
-*   **Promedio diario:** 40-60 porciones.
-*   **Pico pandemia (2020):** Llegaron a 100 porciones.
-*   **Porciones semanales estimadas:** 200-300.
-
-### Quiénes vienen
-*   Familias del barrio (principalmente mujeres con hijos).
-*   Personas mayores solas (jubilados con pensión mínima).
-*   Algunos jóvenes sin trabajo.
-*   Gente que "está pasando un mal momento" y después deja de venir.
-
-### La dinámica
-1. **La gente llega con táper.** Algunos comen ahí, otros se llevan.
-2. **No es una fila pasiva.** Se charla, se ayuda, se comparte.
-3. **Los que pueden, aportan** algo: $50 pesos, una cebolla, una mano.
-4. **No se pregunta por qué venís.** "Si tenés hambre, comés."
+### Gestión de Insumos
+*   **Insumos Públicos:**
+    *   **Intendencia (Plan ABC):** Aporta alimentos secos (arroz, fideo, aceite, salsa). Alta valoración por el diálogo directo.
+    *   **MIDES (Uruguay Adelante):** Entrega de "viandas secas" y pollo. Crítica recurrente por la baja calidad ("pollitos flacos", puro hueso) y la falta de variedad proteica.
+*   **Autogestión:** El 45% de las ollas no realiza compras directas; vive de donaciones y gestiones propias (ferias, comercios locales).
 
 ---
 
-## ECONOMÍA
+## GÉNERO Y ORGANIZACIÓN SOCIAL
 
-### Fuentes de insumos
-
-| Fuente | Qué aporta | Frecuencia |
-|--------|-----------|------------|
-| **Plan ABC (Intendencia)** | Insumos básicos: arroz, fideos, aceite | Mensual (irregular) |
-| **Don Rubén (almacén)** | Productos próximos a vencer | Semanal |
-| **Verdulería de los paraguayos** | Verdura: papa, cebolla, zapallo | Viernes |
-| **Vecinos** | Aportes en efectivo ($100-$500) | Permanente |
-| **Sofía** | Aporte fijo de $5.000-$8.000/mes | Mensual |
-
-### Gastos fijos
-
-| Concepto | Monto aproximado |
-|----------|------------------|
-| **Gas (garrafa 13kg)** | $800/semana |
-| **Luz** | $800/mes (medidor de Elena) |
-| **Artículos de limpieza** | $500/mes |
-
-### La caja
-*   Elena administra una caja chica con los aportes.
-*   Sofía anota todo en un cuaderno (backup en el celular).
-*   Balance informal cada fin de mes.
+### El Rol de las Mujeres
+*   **Liderazgo:** El 72.5% de las ollas tienen mayoría de mujeres en su organización.
+*   **Percepción:** Se vive como una "extensión del hogar" y el rol de cuidado tradicional. Sofía y Elena son "jefas de hogar" de la olla.
+*   **Satisfacción vs. Sacrificio:** Reportan alta satisfacción personal ("terapia", "ejemplo para los hijos"), pero con un costo emocional alto (estrés, falta de tiempo personal).
+*   **Red de Apoyo:** La olla funciona como refugio ante situaciones de violencia de género y espacio de escucha ("la parte emocional").
 
 ---
 
-## ORGANIZACIÓN
+## ECONOMÍA Y FINANZAS
 
-### El equipo (6-8 personas fijas)
+| Concepto | Monto Promedio (Pesos UYU) | Nota |
+|----------|----------------------------|------|
+| **Combustible (Gas)** | $2.749 / mes | Gasto más difícil de cubrir. |
+| **Agua** | $764 / mes | A menudo subsidiado por la vecina dueña de casa. |
+| **Electricidad** | $1.820 / mes | |
+| **Ingresos** | $0 | Casi ninguna olla recibe aportaciones en dinero de beneficiarios. |
 
-| Persona | Rol |
-|---------|-----|
-| **Sofía** | Coordinación, cuentas, contacto con instituciones |
-| **Elena** | Caja, legitimidad barrial, resolución de conflictos |
-| **Diego** | Logística: buscar donaciones, cargar cosas |
-| **Ixchel** | Cocina: pela, corta, cocina. Siempre está |
-| **2-3 vecinas rotativas** | Ayudan cuando pueden |
-
-### Comunicación
-*   **Grupo de WhatsApp:** "Olla" (8 personas).
-*   Elena no tiene WhatsApp; Sofía le cuenta.
-
-### Asambleas
-*   **Frecuencia:** Cuando hay problema (no hay rutina fija).
-*   **Lugar:** El mismo local de la olla, después de servir.
-*   **Quiénes:** Los que están, los que quieren opinar.
+*   **Mecánica de Sostenibilidad:** Rifas, ventas de ropa usada y "cuotas sociales" de los propios voluntarios (que aportan su trabajo: 95% de la contribución).
 
 ---
 
-## HISTORIA
+## LA OLLA EN EL MAPA POLÍTICO
 
-### Origen (años 90)
-La Chola empezó dando merienda a los niños en su casa. Era vecinal, de a poco.
-
-### Crisis del 2002
-La olla creció. De 15 porciones a 80. La Chola y Elena se turnaban para cocinar.
-
-### Años tranquilos (2003-2019)
-Bajó a 20-30 porciones. La Chola envejeció. Sofía estaba en España.
-
-### Pandemia (2020)
-De 30 a 100 porciones. Sofía asumió la coordinación. Se registraron en el Plan ABC.
-
-### Actualidad
-Estabilizado en 40-60 porciones. Recursos justos. A veces falta, a veces alcanza.
+1.  **CPS (Coordinadora Popular y Solidaria):** La olla está alineada con este bloque crítico, que busca autonomía y denuncia la "mercantilización" de la ayuda social a través de ONGs intermediarias (Uruguay Adelante).
+2.  **Relación con el Estado:** Tensión constante. Se valora el apoyo material pero se rechaza la burocratización y el control de listas de beneficiarios (conflicto central del juego).
+3.  **Hambre y Dignidad:** El lema "Hambre + Dignidad = Ollas Comunes" guía la narrativa. No es solo dar de comer, es "no mirar al otro como un inferior".
 
 ---
 
-## AMBIENTE
+## AMBIENTE NARRATIVO (Actualizado)
 
-### Cómo se siente
-*   **Olor:** Cebolla, guiso, humedad.
-*   **Sonido:** Olla burbujeando, charla, radio bajita.
-*   **Luz:** Un tubo fluorescente y la luz de la calle.
-*   **Temperatura:** Calor de la cocina en invierno (se agradece).
-
-### Lo que se ve
-*   Alguien pelando papas.
-*   Niños haciendo la tarea en la mesa.
-*   Gente con táper esperando.
-*   Elena con el termo observando.
-*   Sofía anotando en el cuaderno.
-*   Una imagen de la Virgen de Guadalupe en la pared.
+*   **Lo Visual:** Pilas de leña húmeda en un rincón, cajones de verdura de feria (lo que sobró), el cuaderno de Sofía con manchas de grasa, la radio informando sobre el precio del boleto.
+*   **Lo Social:** El "rincón de los deberes" donde los pibes (como Tiago a veces) se sientan a esperar que la comida esté lista. El intercambio de información sobre changas y derechos laborales.
+*   **La Tensión:** El momento en que se raspa el fondo de la olla y todavía queda gente en la fila con el táper vacío.
 
 ---
 
-## DATOS REALES DE CONTEXTO (URUGUAY)
-
-*   En 2020, surgieron ~700 ollas populares en Uruguay.
-*   El 72% de las personas que organizan ollas son mujeres.
-*   Muchas ollas son pequeñas (40-80 porciones) y funcionan con 5-10 voluntarios.
-*   El Plan ABC de la Intendencia apoya con insumos y gas.
-*   Las ollas tienen antecedentes en la crisis de 2002.
-
----
-
-## PARA EL JUEGO
-
-### La olla como espacio
-*   **Lugar de encuentro:** Todos los personajes se cruzan acá.
-*   **Espacio de decisión:** El protagonista elige si ayuda, cómo, cuánto.
-*   **Termómetro del barrio:** La olla refleja el estado del barrio.
-
-### Eventos posibles
-*   Se acaba el gas y no hay plata.
-*   Un comercio deja de donar.
-*   Llega alguien nuevo que necesita mucho.
-*   Hay que decidir algo en asamblea.
+*Datos basados en el informe Rimisp (Ignacia Fernández, 2022) y el análisis técnico del proyecto.*

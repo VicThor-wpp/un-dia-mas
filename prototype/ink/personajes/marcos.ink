@@ -1643,8 +1643,8 @@ Marcos mira sus manos.
 // REVELACIÓN DEL DESPIDO
 // ============================================
 
-=== viernes_marcos_plaza ===
-// Escena clave: Encuentro en la plaza el viernes
+=== marcos_encuentro_revelacion ===
+// Escena clave: Encuentro en la plaza (revelación del despido)
 // Marcos revela que también lo echaron
 
 Lo ves sentado en un banco de la plaza.
@@ -1654,7 +1654,7 @@ Tiene la misma cara que vos el miércoles.
     Te sentás al lado. Silencio largo.
 
     "A mí también me echaron" — dice sin mirarte.
-    "Hace una semana. No se lo conté a nadie."
+    "Hace seis meses. No se lo conté a nadie."
 
     ~ marcos_revelo_despido = true
     ~ marcos_relacion += 2
