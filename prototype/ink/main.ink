@@ -17,6 +17,7 @@ INCLUDE ubicaciones/bondi.ink
 INCLUDE ubicaciones/laburo.ink
 INCLUDE ubicaciones/barrio.ink
 INCLUDE ubicaciones/olla.ink
+INCLUDE ubicaciones/busqueda.ink
 
 // --- INCLUDES: PERSONAJES ---
 INCLUDE personajes/juan.ink

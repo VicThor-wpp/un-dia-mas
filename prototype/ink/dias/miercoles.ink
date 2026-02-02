@@ -217,8 +217,8 @@ Pasás por la plaza.
 El tipo que duerme en el banco sigue ahí.
 Lo viste mil veces. Hoy lo mirás diferente.
 
-No estás como él. Tenés tres meses.
-Pero la distancia se siente más corta.
+No estás como él. Tenés tres meses de colchón.
+Y un barrio donde caer si hace falta.
 
 * [Seguir caminando] -> miercoles_barrio
 * [Ir a casa] -> miercoles_casa
@@ -301,6 +301,9 @@ Después:
 
 "No sé."
 
+// ANTAGONISTAS: Bruno - se escucha hablar de él en la olla
+-> bruno_mencion_miercoles ->
+
 // Chequeo social: abrirte con alguien después del golpe
 ~ temp abrirse = chequeo_social(0, 3)
 { abrirse == 2:
@@ -325,7 +328,7 @@ Después:
 * [...]
 -
 
-"Mirá, la olla anda complicada, pero si querés venir a dar una mano... a veces ayuda hacer algo."
+"Mirá, si querés venir a la olla a dar una mano... a veces ayuda tener algo que hacer. Y la gente es buena."
 
 * [Decir que sí] # STAT:conexion # EFECTO:conexion+ # EFECTO:llama+
     -> miercoles_si_olla
@@ -362,6 +365,9 @@ Todo cae junto.
 Sofía medio sonríe.
 No es una sonrisa feliz.
 Es una sonrisa de "al menos algo".
+
+// ANTAGONISTA: Claudia - el aviso de la auditoría
+-> claudia_aviso_miercoles ->
 
 "Mañana a la tarde estamos. Si te da."
 
@@ -538,6 +544,14 @@ No esperabas otra cosa.
 ~ energia = 0
 
 -> check_game_over ->
+
+// ANTAGONISTAS: Bruno y Tiago - se los ve hablando
+-> bruno_y_tiago_miercoles ->
+
+// ANTAGONISTA: Cacho - encuentro casual con explicación de cripto
+{RANDOM(1,3) == 1:
+    -> cacho_explicacion_cripto ->
+}
 
 -> casa_llegada_noche ->
 

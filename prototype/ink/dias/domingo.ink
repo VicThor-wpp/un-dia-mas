@@ -37,13 +37,14 @@ Una semana.
 Hace una semana eras otra persona.
 Tenías laburo.
 Tenías rutina.
-Tenías algo.
+Tenías certezas.
 
 * [...]
 -
 
-Ahora no tenés nada. Unipersonal.
-Sin derechos. Sin colchón. Sin respuestas.
+Ahora eso se cayó. Unipersonal, te dijeron.
+Sin derechos de empleado. Pero con tres meses de colchón.
+Y un barrio que no conocías tanto como ahora.
 
 * [Levantarte] -> domingo_manana
 
@@ -74,6 +75,21 @@ Pensás.
 
 La semana que pasó.
 Lo que viene.
+
+// Reflexión sobre la búsqueda de empleo
+{rechazos >= 1 || rechazos_enviados >= 5:
+    -> busqueda_reflexion_domingo ->
+}
+
+// Chequeo de idea involuntaria si tuvo muchos rechazos
+{rechazos >= 5 && idea_no_soy_suficiente == false && RANDOM(1,2) == 1:
+    -> domingo_idea_no_soy_suficiente
+}
+
+// Chequeo de idea positiva si tiene buena conexión
+{rechazos >= 3 && conexion >= 6 && idea_el_problema_no_soy_yo == false:
+    -> busqueda_idea_el_problema_no_soy_yo ->
+}
 
 // Chequeo mental: la reflexión final del domingo
 # DADOS:CHEQUEO
@@ -299,6 +315,57 @@ Pero tampoco te llaman.
 
 -> domingo_tarde
 
+=== domingo_idea_no_soy_suficiente ===
+// Idea involuntaria que aparece por acumulación de rechazos
+
+El pensamiento viene solo.
+No lo pediste.
+No lo querés.
+Pero está ahí.
+
+* [...]
+-
+
+{rechazos} rechazos.
+{rechazos_enviados} CVs al vacío.
+{rechazos_ghosting} entrevistas que ni contestaron.
+
+Quizás el problema sos vos.
+
+# IDEA INVOLUNTARIA: "NO SOY SUFICIENTE"
+
+* [Aceptar la idea (peligroso)]
+    ~ idea_no_soy_suficiente = true
+    ~ aumentar_inercia(2)
+    
+    El mercado habló.
+    Vos escuchaste.
+    No sos suficiente.
+    
+    El pensamiento se instala.
+    Va a costar sacarlo.
+    
+    -> domingo_pensar_continua
+
+* [Resistir el pensamiento]
+    No.
+    
+    {conexion >= 4:
+        Pensás en la gente del barrio.
+        En Sofía. En Elena. En la olla.
+        Ellos no te miran así.
+    }
+    
+    No vas a dejar que el mercado te defina.
+    
+    ~ subir_dignidad(1)
+    -> domingo_pensar_continua
+
+=== domingo_pensar_continua ===
+// Continúa el flujo normal después de la idea involuntaria
+
+-> domingo_tarde
+
 === domingo_tarde ===
 
 # DOMINGO - TARDE
@@ -362,8 +429,10 @@ Las ideas que internalizaste:
 {idea_pedir_no_debilidad: - "Pedir ayuda no es debilidad."}
 {idea_hay_cosas_juntos: - "Hay cosas que se hacen juntos."}
 {idea_red_o_nada: - "La red o la nada."}
+{idea_el_problema_no_soy_yo: - "El problema no soy yo."}
 {idea_quien_soy: - "¿Quién soy sin laburo?" (involuntaria)}
 {idea_esto_es_lo_que_hay: - "Esto es lo que hay." (involuntaria)}
+{idea_no_soy_suficiente: - "No soy suficiente." (involuntaria, peligrosa)}
 
 La semana termina.
 El juego también.
@@ -416,17 +485,30 @@ Por ahora.
 // Tiago - resultado de su decisión
 -> tiago_domingo ->
 
-// Cacho - reflexión
+// ANTAGONISTA: Cacho - reflexión
 -> cacho_domingo ->
 
-// Bruno - resultado del conflicto
+// ANTAGONISTA: Bruno - resultado del conflicto
 -> bruno_domingo ->
 
-// Claudia - resultado de la auditoría
--> claudia_domingo ->
+// ANTAGONISTA: Claudia - resultado de la auditoría
+{lista_entregada:
+    -> claudia_domingo_lista_entregada ->
+- else:
+    -> claudia_domingo_sin_lista ->
+}
 
-// Redención de Cacho si aplica
+// ANTAGONISTA: Claudia - consecuencias a largo plazo de la lista
+-> claudia_consecuencias_largas ->
+
+// ANTAGONISTA: Redención de Cacho si aplica
 -> cacho_redencion ->
+
+// ANTAGONISTA: Redención extendida de Cacho
+-> cacho_redencion_extendida ->
+
+// ANTAGONISTA: Cacho - domingo redención
+-> cacho_domingo_redencion ->
 
 // Tiago en asamblea si aplica
 -> tiago_en_asamblea ->
@@ -466,29 +548,32 @@ Por ahora.
     -> final_juan_migrante
 }
 
-// FINAL REPRESIÓN - Intentaste luchar y te reprimieron
-// Requiere intento de acción radical con mala suerte
-{participe_asamblea && conexion >= 5 && llama >= 5 && inercia <= 4:
+// FINAL REPRESIÓN - Intentaste luchar pero la organización no alcanzó
+// NOTA: Requiere "buenos" estados (conexion alta, llama alta, inercia baja)
+// porque la represión es consecuencia de INVOLUCRARSE activamente.
+// La diferencia con huelga/ocupación es que acá faltó base organizativa
+// (pocas veces ayudando o sin Diego de aliado = la acción fue más vulnerable).
+{participe_asamblea && conexion >= 5 && llama >= 5 && inercia <= 4 && (veces_que_ayude < 2 || diego_relacion < 4):
     -> final_represion
 }
 
 // FINAL HUELGA - Huelga salvaje organizada desde abajo
-{participe_asamblea && veces_que_ayude >= 2 && llama >= 6 && conexion >= 6 && diego_relacion >= 4:
+{evaluar_huelga():
     -> final_huelga
 }
 
 // FINAL OCUPACIÓN - Ocupación de fábrica
-{participe_asamblea && conexion >= 7 && llama >= 7 && veces_que_ayude >= 3:
+{evaluar_ocupacion():
     -> final_ocupacion
 }
 
 // FINAL IXCHEL - Requiere vínculo con Ixchel
-{vinculo == "ixchel" && ixchel_relacion >= 4 && ixchel_conto_historia && ayude_en_olla:
+{evaluar_tejido():
     -> final_tejido
 }
 
 // FINAL OCULTO - Requiere perfección
-{conexion >= 9 && llama >= 8 && veces_que_ayude >= 3 && participe_asamblea && marcos_vino_a_asamblea && sofia_relacion >= 4 && elena_relacion >= 4 && tiene_todas_ideas():
+{evaluar_la_llama():
     -> final_la_llama
 }
 
@@ -498,7 +583,7 @@ Por ahora.
 }
 
 // FINAL RED - Comunidad como red
-{conexion >= 7 && llama >= 5 && ayude_en_olla:
+{evaluar_red():
     -> final_red
 }
 

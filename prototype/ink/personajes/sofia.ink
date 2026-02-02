@@ -56,20 +56,20 @@ Caminan juntos hacia la casa de la Chola.
 
 "¿Para cuántos cocinan hoy?"
 
-"Sesenta y pico. Cada semana son más."
+"Sesenta y pico. Viene bastante gente."
 
-Sesenta personas que dependen de esto.
-De ella.
+Sesenta personas que eligen venir.
+A comer, a estar, a ser parte.
 
-"¿Y la plata alcanza?"
+"¿Y cómo lo bancan?"
 
-Se ríe. Sin gracia.
+Sonríe.
 
-"Nunca alcanza. Pero se estira."
+"Entre todos. Cada uno pone lo que puede."
 
 {es_vegano:
     Te mira un segundo. 
-    "Espero que no seas muy mañoso con la comida, m'hijo. Acá lo que más sobra es hueso para darle sabor al agua. Lo verde es lujo de radio."
+    "Espero que no seas muy mañoso con la comida. Acá cocinamos con lo que conseguimos, que no siempre es lo ideal. Pero siempre hay verduras si preferís."
 }
 
 ->->
@@ -153,11 +153,11 @@ Sofía habla mientras revuelve.
 * [...]
 -
 
-Llegan los primeros. Viejos, niños, familias enteras.
-Caras conocidas del barrio.
+Llegan los primeros. Vecinos, familias, gente del barrio.
+Caras conocidas. Algunos vienen desde hace años.
 
 Sofía sirve. Una sonrisa para cada uno.
-Aunque esté muerta de cansancio.
+El cansancio no le quita eso.
 
 ->->
 

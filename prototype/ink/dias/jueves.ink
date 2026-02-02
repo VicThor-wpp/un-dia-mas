@@ -113,9 +113,12 @@ Sin saber qué hacer.
 {conte_a_alguien: Al menos alguien sabe. No estás completamente solo en esto.}
 {not conte_a_alguien: Nadie sabe todavía. El peso es solo tuyo.}
 
-// Encuentro aleatorio con Cacho
+// ANTAGONISTA: Encuentro aleatorio con Cacho (oferta negocio o LinkedIn)
 {RANDOM(1,3) == 1:
     -> cacho_oferta_negocio ->
+}
+{RANDOM(1,4) == 1 && cacho_encuentros >= 1:
+    -> cacho_linkedin ->
 }
 
 ¿Qué hacés hoy?
@@ -131,6 +134,18 @@ Sin saber qué hacer.
 
 ~ energia -= 1
 
+El primer día de "buscar laburo".
+Abrís la compu.
+
+* [LinkedIn primero]
+    -> busqueda_linkedin_perfil ->
+    ~ actualizo_linkedin = true
+    -> jueves_buscar_laburo_cvs
+* [Directo a los CVs]
+    -> jueves_buscar_laburo_cvs
+
+=== jueves_buscar_laburo_cvs ===
+
 Abrís las páginas de empleo.
 Hay ofertas.
 Pocas que sirvan.
@@ -145,13 +160,36 @@ Pocas que sirvan.
 * [...]
 -
 
-Mandás algunos CVs.
-No esperás respuesta.
-Pero hay que hacer algo.
+// Tunnel de enviar CVs
+-> busqueda_enviar_cvs ->
 
 ~ bajar_dignidad(1)
 
-{energia > 0: Todavía podés hacer algo más hoy.}
+{energia >= 1:
+    Todavía podés hacer algo más hoy.
+    
+    * [Optimizar el CV también] # COSTO:1
+        ~ energia -= 1
+        -> busqueda_cv_optimizar ->
+        -> jueves_post_busqueda
+    * [Salir al barrio]
+        -> jueves_barrio
+    * [Ya fue, quedarse]
+        -> jueves_noche
+- else:
+    -> jueves_post_busqueda
+}
+
+=== jueves_post_busqueda ===
+
+La pantalla te mira.
+Vos la mirás.
+
+{rechazos_enviados >= 10:
+    15 postulaciones.
+    0 respuestas.
+    Y recién es el primer día.
+}
 
 * {energia > 0} [Salir al barrio] -> jueves_barrio
 * [Ya fue, quedarse] -> jueves_noche
@@ -193,6 +231,11 @@ Salís.
 // Usar tunnel del barrio
 -> barrio_caminar_sin_rumbo ->
 
+// POST-DESPIDO: Posible cruce con ex-compañero
+{fui_despedido && RANDOM(1,3) == 1:
+    -> laburo_fantasma_cruce ->
+}
+
 // Contenido específico del día
 El tipo que duerme en la plaza sigue ahí.
 Lo viste mil veces.
@@ -202,8 +245,8 @@ Hoy lo mirás diferente.
 -
 
 No sos él.
-Tenés tres meses.
-Pero la distancia se siente más corta.
+Tenés tres meses de colchón.
+Y ahora tenés tiempo para ver lo que antes ignorabas.
 
 * [Volver a casa] -> jueves_noche
 * [Ir a la olla] -> jueves_olla
@@ -320,6 +363,9 @@ Sofía asiente.
 // Tunnel de ayudar en la cocina
 -> olla_ayudar_cocina ->
 
+// ANTAGONISTA: Claudia - la tensión crece antes de la visita
+-> claudia_tension_jueves ->
+
 // Encuentro con Ixchel en la cocina de la olla
 {ixchel_relacion == 0:
     En la cocina hay alguien que no conocés.
@@ -339,8 +385,11 @@ Sofía asiente.
 // Tiago aparece en la olla mientras ayudás
 -> tiago_primer_encuentro ->
 
-// Bruno pasa a marcar territorio
+// ANTAGONISTA: Bruno pasa a marcar territorio
 -> bruno_la_visita ->
+
+// ANTAGONISTA: Bruno presiona a Tiago (si ya lo conocemos)
+-> bruno_presion_tiago ->
 
 // Escuchar sobre la crisis
 -> olla_escuchar_crisis ->
@@ -441,6 +490,9 @@ Te sentás a su lado.
 Agarrás un cuchillo.
 Un balde de papas entre los dos.
 
+// ANTAGONISTA: Elena cuenta sobre Bruno (si tiene buena relación)
+-> elena_sobre_bruno ->
+
 Estás en la cocina de la olla.
 Elena pela papas a tu lado.
 
@@ -514,22 +566,22 @@ Elena pela papas a tu lado.
     Se ríe, pero con cariño.
     
     "Estás acá ayudando, sí. Pero te veo los ojos.
-    Tenés miedo de terminar necesitando el plato vos también."
+    Tenés miedo. De lo que viene, de lo que perdiste."
     
-    Te quedás helado. Elena ve todo.
+    Te quedás callado. Elena ve todo.
     
     "En el 2002 nos pasaba lo mismo.
-    Nos daba vergüenza caer. Como si fuera culpa nuestra."
+    Pensábamos que pedir ayuda era caer. Como si fuera culpa nuestra."
     
     Te muestra cómo pela ella.
-    Rápido. Eficiente. Memoria muscular de la crisis.
+    Rápido. Eficiente. Memoria muscular de años.
     
     "Pero escuchame bien:
-    Esto no es un pozo donde caés.
-    Es una trinchera donde nos juntamos."
+    Esto no es caridad.
+    Es un lugar donde la gente se junta a hacer algo juntos."
     
-    "El de arriba te quiere con vergüenza y solo.
-    Acá te queremos con orgullo y juntos."
+    "El sistema te quiere solo y con vergüenza.
+    Acá te queremos con orgullo y acompañado."
 
     -> elena_historia_2002 ->
 
@@ -679,6 +731,11 @@ La cuenta regresiva.
 // Juan te llama
 {vinculo == "sofia" || vinculo == "elena" || vinculo == "diego":
     -> juan_encuentro_jueves ->
+}
+
+// JUAN - Build-up migración: mensaje de que Laura consiguió algo
+{juan_considerando_irse && not juan_avanzo_migracion:
+    -> juan_mensaje_jueves ->
 }
 
 El viernes viene.

@@ -22,8 +22,8 @@
 {fui_a_olla_jueves:
     Te acordás de ayer en la olla.
     Las manos con olor a cebolla.
-    Las caras.
-    Hoy hay que volver.
+    Las caras conocidas.
+    Hoy hay que volver. Se sintió bien.
 }
 {ayude_a_diego:
     Diego te mandó un mensaje anoche: "Gracias por la mano, che."
@@ -79,17 +79,29 @@ El sostén energético más honesto: algo caliente y amargo que te hace funciona
 === viernes_buscar ===
 
 ~ energia -= 1
-~ bajar_dignidad(1)
 
 Abrís la compu.
+
+{rechazos_enviados >= 5:
+    // Hay una posibilidad de que te llamen para entrevista
+    {RANDOM(1,3) == 1:
+        -> viernes_llegada_entrevista
+    }
+}
+
+// Si no, más CVs al vacío
 Más CVs.
 Más portales.
 
-Hay una oferta que parece real.
-Mandás.
+-> busqueda_enviar_cvs ->
 
-No esperás respuesta.
-Pero hay que seguir intentando.
+~ bajar_dignidad(1)
+
+// Chequear si llegó un rechazo
+{rechazos_enviados >= 10 && RANDOM(1,2) == 1:
+    Suena el mail.
+    -> busqueda_rechazo_mail ->
+}
 
 {energia > 1:
     Todavía es temprano. Podés ir a la olla.
@@ -105,6 +117,106 @@ Pero hay que seguir intentando.
 
 * [Ir a la tarde] -> viernes_tarde
 
+=== viernes_llegada_entrevista ===
+
+Suena el celular.
+Número desconocido.
+
+"Hola, ¿es usted [tu nombre]? Lo llamamos de RRHH."
+
+El corazón salta.
+
+* [Atender con entusiasmo]
+    "¡Sí, soy yo!"
+    -> viernes_agendar_entrevista
+* [Atender con cautela]
+    "Sí, soy yo. ¿De qué empresa me hablan?"
+    -> viernes_agendar_entrevista
+
+=== viernes_agendar_entrevista ===
+
+"Vimos tu CV. Nos gustaría agendarte una entrevista."
+
+{RANDOM(1,2) == 1:
+    "Es para una startup de tecnología. ¿Podés hoy a las 3?"
+    
+    * [Aceptar]
+        "Perfecto. Te mando el link por mail."
+        ~ hizo_entrevista_startup = true
+        -> viernes_entrevista_startup
+    * [Pedir más información]
+        "¿Me podés decir un poco más del puesto?"
+        "Bueno, eso lo vemos en la entrevista. ¿Podés o no?"
+        
+        * * [Aceptar igual]
+            "Dale, puedo."
+            ~ hizo_entrevista_startup = true
+            -> viernes_entrevista_startup
+        * * [Declinar]
+            "Mejor no, gracias."
+            El tono cambia.
+            "Bueno, como quieras."
+            Corta.
+            -> viernes_olla_temprano
+- else:
+    "Es para una empresa grande. El proceso tiene varias etapas. ¿Te interesa?"
+    
+    * [Aceptar]
+        "Te mando un mail con los detalles."
+        ~ hizo_entrevista_grande = true
+        -> viernes_entrevista_grande_agendar
+    * [Preguntar cuántas etapas]
+        "¿Cuántas etapas son?"
+        "Siete."
+        
+        * * [Aceptar igual]
+            Siete. La necesidad puede más que el orgullo.
+            "Dale."
+            ~ hizo_entrevista_grande = true
+            -> viernes_entrevista_grande_agendar
+        * * [Declinar]
+            "No, gracias. Siete entrevistas es mucho."
+            "Es el proceso estándar—"
+            "Gracias igual."
+            Colgás.
+            ~ subir_dignidad(1)
+            -> viernes_olla_temprano
+}
+
+=== viernes_entrevista_startup ===
+
+~ energia -= 1
+
+A las 3, la entrevista.
+
+-> busqueda_entrevista_startup ->
+
+{energia > 0:
+    Todavía podés hacer algo más.
+    * [Ir a la olla]
+        -> viernes_olla_temprano
+    * [Ir a la tarde]
+        -> viernes_tarde
+- else:
+    -> viernes_tarde
+}
+
+=== viernes_entrevista_grande_agendar ===
+
+Te mandan el mail.
+La primera entrevista es online. Mañana.
+
+Por hoy, eso es todo.
+
+{energia > 1:
+    * [Ir a la olla]
+        -> viernes_olla_temprano
+    * [Ir a la tarde]
+        -> viernes_tarde
+- else:
+    -> viernes_tarde
+}
+
 === viernes_barrio ===
 
 Salís a caminar.
@@ -112,6 +224,11 @@ El barrio.
 
 A esta hora la gente hace sus cosas.
 Compras, trámites, vida.
+
+// POST-DESPIDO: Pasar por el edificio del laburo
+{fui_despedido && RANDOM(1,2) == 1:
+    -> laburo_fantasma_edificio ->
+}
 
 Pasás por la olla.
 Hay movimiento.
@@ -170,17 +287,17 @@ Hay movimiento.
 
 Están: Sofía, Elena, dos o tres más que no conocés bien.
 
-El problema es simple:
-Claudia cortó los insumos.
-Vienen 30 personas a comer.
-No tienen qué darles.
+El problema:
+Claudia cortó los insumos del plan.
+Hoy hay menos de lo habitual.
+Hay que ver cómo se resuelve.
 
 * [...]
 -
 
-"Las donaciones no llegaron."
-"El municipio no contesta."
-"Los comercios ya dijeron que no."
+"Las donaciones bajaron este mes."
+"El municipio anda lento."
+"Los comercios también están ajustados."
 
 Silencio.
 
@@ -245,37 +362,35 @@ Sofía lo piensa.
 
 === viernes_cancelar_olla ===
 
-"Capaz que... capaz que hoy no."
+"Capaz que... capaz que hoy achicamos."
 
 Silencio.
 
 Sofía te mira.
 
-"¿Cancelar?"
+"¿Reducir?"
 
-"No podemos dar lo que no tenemos. Mejor cerrar hoy que... que improvisar mal."
+"Si no tenemos para lo de siempre, hacemos algo más chico. Mejor eso que prometer lo que no podemos."
 
-~ bajar_llama(2)
+~ bajar_llama(1)
 ~ subir_dignidad(1)
 ~ vos_propusiste_cerrar = true
 
-Elena suspira.
-"Tiene razón. Una vez cerramos en el 2002. Fue un día. Volvimos al otro."
+Elena asiente.
+"Es razonable. Una vez lo hicimos en el 2002. Funcionó."
 
 Sofía se sienta.
-Tiene la cara de alguien que no durmió.
+Piensa.
 
 * [...]
 -
 
-"Okay. Cerramos."
+"Okay. Hacemos versión mínima hoy."
 
 ~ olla_cerro_viernes = true
 
-Diego no dice nada.
-Nadie dice nada.
-
-El silencio pesa.
+No es lo ideal.
+Pero es realista.
 
 * [Quedarte con ellos] -> viernes_quedarse_cerrado
 * [Irte] -> viernes_irte_cerrado
@@ -557,6 +672,9 @@ Pero algo falta.
 
 -> check_game_over ->
 
+// ANTAGONISTA: Cacho - quiebre de fachada (si tuvo varios encuentros)
+-> cacho_fachada_cae ->
+
 {ayude_en_olla:
     Estás destruido.
     Pero hiciste algo.
@@ -577,13 +695,18 @@ Pero algo falta.
     Quizás deberías haber ido.
 }
 
-// Escena de despedida de Juan (migración)
-{juan_relacion >= 3 && not juan_migra && fui_despedido:
+// JUAN - Build-up migración: llamada sobre pasajes
+{juan_avanzo_migracion && not juan_encuentro_despedida:
+    -> juan_llamado_viernes_pasajes ->
+}
+
+// Escena de despedida de Juan (migración) - versión original
+{juan_relacion >= 3 && not juan_migra && fui_despedido && not juan_avanzo_migracion:
     -> juan_despedida_migracion ->
 }
 
 // Hook de Juan: si tenés buena relación, te llama (solo si no migra)
-{juan_relacion >= 4 && energia >= 1 && not juan_migra:
+{juan_relacion >= 4 && energia >= 1 && not juan_migra && not juan_avanzo_migracion:
     -> juan_llamado_viernes ->
 
     Te quedás pensando en Juan.

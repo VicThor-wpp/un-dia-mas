@@ -23,10 +23,10 @@
 
 // --- Ecos del viernes ---
 {olla_cerro_viernes:
-    Ayer la olla cerró.
+    Ayer la olla cerró temprano.
     Es sábado y todavía te pesa.
-    40 personas que no comieron.
-    ¿O sí comieron? ¿Dónde?
+    La gente que esperaba se fue a sus casas.
+    No fue el fin del mundo. Pero se sintió.
 }
 {not olla_cerro_viernes && ayude_en_olla:
     Ayer la olla funcionó.
@@ -57,10 +57,19 @@ El barrio más tranquilo.
 //     -> juan_invitar_olla_sabado ->
 // }
 
-// Bruno recluta a Tiago si la olla falló
+// ANTAGONISTA: Bruno recluta a Tiago si la olla falló
 {olla_en_crisis || olla_cerro_viernes:
     -> bruno_recluta_tiago ->
 }
+
+// ANTAGONISTA: Bruno - oferta de seguridad (inercia media)
+-> bruno_oferta_seguridad ->
+
+// ANTAGONISTA: Bruno amenaza la olla directamente
+-> bruno_amenaza_olla ->
+
+// ANTAGONISTA: Bruno y Claudia se cruzan (dos formas de control)
+-> bruno_y_claudia ->
 
 // Decisión crucial de Tiago
 {tiago_confianza >= 3 && not tiago_captado_por_bruno:
@@ -71,6 +80,23 @@ El barrio más tranquilo.
 {tiago_confianza >= 2 && not tiago_captado_por_bruno:
     -> tiago_se_abre ->
 }
+
+// JUAN - Despedida emocional (si pidió encontrarse ayer)
+{juan_encuentro_despedida && not juan_se_despidio:
+    El celular vibra.
+    Mensaje de Juan: "En la plaza de Jacinto Vera? 5 de la tarde?"
+    
+    Lo prometiste.
+    
+    * [Confirmar que vas]
+        "Ahí voy."
+        -> sabado_manana_cont
+    * [Ignorar el mensaje]
+        No contestás.
+        -> sabado_manana_cont
+}
+
+= sabado_manana_cont
 
 ¿Qué hacés con la mañana?
 
@@ -207,11 +233,52 @@ Sofía te ve.
 ~ bajar_conexion(1)
 
 Te quedás en casa.
+
+// Si agendó entrevista con empresa grande, la tiene hoy
+{hizo_entrevista_grande && not hizo_entrevista_grande_completa:
+    Pero tenés la entrevista online.
+    La primera de siete.
+    
+    * [Hacerla]
+        -> busqueda_entrevista_grande ->
+        ~ hizo_entrevista_grande_completa = true
+        -> sabado_casa_post_entrevista
+    * [No presentarte]
+        No te presentás.
+        Al carajo.
+        ~ subir_dignidad(1)
+        ~ rechazos += 1
+        -> sabado_casa_post
+}
+
+-> sabado_casa_post
+
+=== sabado_casa_post_entrevista ===
+
+Terminó la entrevista.
+O mejor dicho, la primera de siete.
+
+Quedaste agotado.
+Y recién empezás.
+
+-> sabado_casa_post
+
+=== sabado_casa_post ===
+
 Tele.
 Celular.
 Nada.
 
-Las horas pasan.
+// LinkedIn scroll (daño garantizado)
+* [Scrollear LinkedIn en la cama]
+    -> busqueda_linkedin_scroll ->
+    -> sabado_opciones_tarde
+* [Evitar las redes]
+    Mejor no.
+    Las horas pasan igual.
+    -> sabado_opciones_tarde
+
+=== sabado_opciones_tarde ===
 
 * [Ir a la asamblea igual] # EFECTO:llama+
     -> sabado_asamblea
@@ -223,6 +290,29 @@ Las horas pasan.
 -> check_game_over ->
 
 La tarde.
+
+// JUAN - Despedida emocional en la plaza (si confirmó encontrarse)
+{juan_encuentro_despedida && not juan_se_despidio:
+    Son las 5. Juan te espera en la plaza de Jacinto Vera.
+    
+    * [Ir a encontrarte con Juan primero]
+        -> juan_despedida_sabado ->
+        // Después de la despedida, todavía podés ir a la asamblea
+        {energia >= 1:
+            La asamblea ya debe estar empezando.
+            * [Ir a la asamblea]
+                -> sabado_asamblea
+            * [Ir a casa]
+                -> sabado_noche_solo
+        - else:
+            -> sabado_noche_solo
+        }
+    * [Ir directo a la asamblea (faltar a Juan)]
+        Dejás a Juan plantado.
+        No contestás los mensajes.
+        ~ bajar_conexion(1)
+        -> sabado_asamblea
+}
 
 A las 5 es la asamblea.
 
@@ -250,6 +340,11 @@ No vas.
 Te quedás en casa.
 Pensás en que deberías haber ido.
 Pero no fuiste.
+
+// POST-DESPIDO: El grupo de WhatsApp del laburo
+{fui_despedido:
+    -> laburo_fantasma_grupo_whatsapp ->
+}
 
 * [...]
 -
@@ -327,15 +422,26 @@ Es todo.
 -> sabado_ver_sofia ->
 -> sabado_ver_diego ->
 
+// ANTAGONISTA: Elena confronta a Bruno (tensión acumulada)
+-> elena_confronta_bruno ->
+
 // Cacho en la fila
 {not olla_en_crisis:
     -> cacho_en_la_fila ->
+}
+
+// POST-DESPIDO: González de contabilidad en la cola
+{fui_despedido && not vio_a_gonzalez:
+    -> laburo_fantasma_gonzalez_olla ->
 }
 
 // Cacho reacciona al cierre de la olla
 {olla_cerro_viernes:
     -> cacho_sin_olla ->
 }
+
+// ANTAGONISTA: Cacho ofrece contactos reales (si tuvo momento real y hay crisis)
+-> cacho_contactos ->
 
 // Lucía aparece en la olla
 {lucia_consejo_sindical:

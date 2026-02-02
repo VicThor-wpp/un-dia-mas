@@ -1,5 +1,250 @@
 // EL APÓSTOL BRUNO - El Fascista Territorial
 // ============================================
+// Expandido: aparición temprana, conflicto con Elena, más presencia
+
+// === APARICIÓN TEMPRANA (MARTES/MIÉRCOLES) ===
+
+=== bruno_camioneta_martes ===
+// Escena Martes: Primera aparición - solo la camioneta
+
+Cuando doblás la esquina, la ves.
+Una camioneta negra. 4x4. Vidrios polarizados.
+Estacionada frente a la iglesia evangélica.
+
+No la conocés. Pero algo te eriza la nuca.
+
+{elena_relacion >= 2:
+    Elena está en el banco de siempre.
+    Mira la camioneta.
+    Su cara cambia.
+    
+    * [Preguntar.]
+        "¿De quién es?"
+        
+        Elena no te mira.
+        "De problemas."
+        
+        No dice más.
+        Pero su silencio dice todo.
+        
+        ~ sabe_de_bruno = true
+        ->->
+    
+    * [No preguntar.]
+        ->->
+- else:
+    Los pibes de la esquina miran la camioneta.
+    Uno dice: "El Apóstol."
+    Otro se ríe nervioso.
+    
+    ~ sabe_de_bruno = true
+    ->->
+}
+
+=== bruno_mencion_miercoles ===
+// Escena Miércoles: Escuchás hablar de él
+
+En la olla, mientras ayudás a pelar papas, escuchás:
+
+"El Bruno anda reclutando de nuevo."
+
+Sofía tensa la mandíbula.
+No dice nada. Pero pela más fuerte.
+
+"¿Bruno?", preguntás.
+
+* [...]
+-
+
+Diego baja la voz.
+"El 'Apóstol'. Tiene una chacra en las afueras.
+Dice que rehabilita adictos. Pero..."
+
+Se calla.
+
+Sofía habla sin mirar:
+"Pero nadie vuelve igual. Los que vuelven."
+
+* ["¿Qué les hace?"]
+    Diego mira a Sofía. Sofía sigue pelando.
+    
+    "Trabajo. Todo el día. Bloques. Leña.
+    Les da comida y techo. Les saca todo lo demás."
+    
+    ~ sabe_de_bruno = true
+    ~ unlock_idea(idea_orden_autoritario)
+    ->->
+
+* [No preguntar más.]
+    El silencio te da la respuesta.
+    
+    ~ sabe_de_bruno = true
+    ->->
+
+=== bruno_y_tiago_miercoles ===
+// Escena Miércoles tarde: Bruno se acerca a Tiago
+
+{sabe_de_bruno:
+    Ves la camioneta negra en la esquina.
+    Y a Tiago hablando con alguien por la ventanilla.
+    
+    No podés escuchar qué dicen.
+    Pero Tiago mira unas zapatillas que le muestran.
+    
+    La camioneta se va.
+    Tiago se queda mirando sus zapatillas rotas.
+    
+    ~ bruno_contacto_tiago = true
+    ->->
+- else:
+    ->->
+}
+
+// === BRUNO Y ELENA: EL PASADO ===
+
+=== elena_sobre_bruno ===
+// Escena: Elena te cuenta sobre Bruno
+// Requiere: elena_relacion >= 3 y sabe_de_bruno
+
+{elena_relacion >= 3 && sabe_de_bruno:
+    
+    "Elena, ¿qué onda con Bruno?"
+    
+    Elena deja de pelar.
+    Cosa rara.
+    
+    "Lo conozco de antes."
+    
+    * ["¿De dónde?"]
+        -> elena_historia_bruno
+    
+    * [Esperar.]
+        -> elena_historia_bruno
+- else:
+    ->->
+}
+
+=== elena_historia_bruno ===
+
+Elena mira hacia la calle.
+# PAUSA
+
+"En la dictadura había un milico joven. De los nuevos.
+No era el que torturaba. Era el que miraba.
+El que tomaba nota."
+
+* [...]
+-
+
+"Después de la democracia, muchos se reciclaron.
+Seguridad privada. Política. Religión."
+
+Te mira.
+
+"Bruno era un gurí cuando yo ya tenía arrugas.
+Pero tiene los mismos ojos que aquellos.
+Los ojos de los que miran y anotan."
+
+* ["¿Usted cree que es el mismo?"]
+    "No sé si es el mismo. Pero es del mismo palo.
+    Orden. Disciplina. Control.
+    Las palabras cambian. La mirada no."
+    
+    ~ elena_conto_bruno = true
+    ~ bruno_tension += 1
+    ->->
+
+* ["¿Por qué no lo denuncia?"]
+    Elena se ríe. Amarga.
+    
+    "¿Denunciar qué? ¿Que ayuda a los pobres?
+    Tiene fotos con diputados, m'hijo.
+    Nosotras tenemos una olla y un cucharón."
+    
+    ~ elena_conto_bruno = true
+    ->->
+
+=== elena_confronta_bruno ===
+// Escena Sábado: Elena y Bruno cara a cara
+// Requiere: bruno_tension >= 2 y elena_relacion >= 3
+
+{bruno_tension >= 2 && elena_relacion >= 3:
+    
+    Bruno entra a la olla.
+    Sin invitación. Como quien entra a su casa.
+    
+    Elena lo ve.
+    Se levanta despacio. Las rodillas le crujen.
+    
+    "Bruno."
+    
+    Bruno sonríe.
+    "Doña Elena. Cuánto tiempo."
+    
+    * [Observar.]
+        -> elena_bruno_dialogo
+    
+    * [Intervenir.]
+        "Bruno, ¿qué necesitás?"
+        
+        Bruno te mira. No le gustó la interrupción.
+        
+        "Hablaba con la doña. Cosas de antes."
+        
+        Elena: "Ya terminamos de hablar."
+        
+        ~ subir_dignidad(1)
+        ->->
+- else:
+    ->->
+}
+
+=== elena_bruno_dialogo ===
+
+Elena se para frente a Bruno.
+Él le saca dos cabezas. Pero ella no retrocede.
+
+"Todavía te acordás de mí", dice Bruno.
+
+"Me acuerdo de todos."
+
+* [...]
+-
+
+Bruno mira alrededor.
+"Lindo lugar. Pero precario. Yo podría ayudar."
+
+Elena no parpadea.
+"Tu ayuda tiene un precio. Siempre lo tuvo."
+
+Bruno se ríe.
+"Todo tiene un precio, doña. Ustedes también cobran. En dignidad."
+
+* [...]
+-
+
+Elena da un paso adelante.
+Bruno, por primera vez, retrocede.
+
+"La dignidad no se cobra, Bruno. Se construye.
+Vos no sabés de eso."
+
+Bruno achica los ojos.
+"Nos vamos a ver de nuevo, doña."
+
+"Ya lo sé. Siempre vuelven."
+
+Bruno se va.
+Elena se sienta. Las manos le tiemblan.
+Pero no de miedo.
+
+~ bruno_tension += 1
+~ subir_dignidad(2)
+~ elena_relacion += 1
+
+->->
+
+// === BRUNO: ENCUENTRO PRINCIPAL ===
 
 === bruno_primer_encuentro ===
 // Escena Jueves/Viernes: La 4x4
@@ -45,8 +290,23 @@ Con disciplina. Con orden."
     ~ unlock_idea(idea_orden_autoritario)
     ->->
 
+* {elena_conto_bruno} [Mencionarle a Elena.]
+    "Elena me contó de vos."
+    
+    Bruno deja de sonreír.
+    Por un segundo.
+    
+    "La doña tiene buena memoria. Lástima que recuerda mal."
+    
+    Se va sin despedirse.
+    
+    ~ bruno_tension += 2
+    ->->
+
+// === BRUNO Y TIAGO ===
+
 === bruno_recluta_tiago ===
-// Escena Sábado: Si la olla falló
+// Escena Sábado: Si la olla falló o Tiago está solo
 
 Ves a Bruno hablando con Tiago.
 Le muestra unas zapatillas nuevas.
@@ -61,6 +321,39 @@ Tiago mira las zapatillas. Mira la olla cerrada.
     Bruno se interpone.
     "Dejalo decidir al pibe. Él quiere futuro. Vos no tenés nada para darle."
     
+    {tiago_confianza >= 2:
+        Tiago te mira. Duda.
+        "¿Y qué me das vos?"
+        
+        * * ["Nada. Pero te doy la verdad."]
+            "La verdad no llena la panza, vecino."
+            
+            Bruno pone las zapatillas en las manos de Tiago.
+            
+            "Pensalo, pibe. Yo no te apuro."
+            
+            Se va. Tiago se queda con las zapatillas.
+            
+            ~ tiago_tentado_bruno = true
+            ->->
+        
+        * * ["Que no estés solo."]
+            Tiago baja la cabeza.
+            Le devuelve las zapatillas a Bruno.
+            
+            "Paso."
+            
+            Bruno las recibe. Sonríe igual.
+            "La oferta sigue en pie."
+            
+            Se va.
+            
+            ~ tiago_rechazo_bruno = true
+            ~ subir_conexion(1)
+            ->->
+    - else:
+        ->->
+    }
     ->->
 
 * [Dejarlo ir.]
@@ -73,6 +366,56 @@ Tiago mira las zapatillas. Mira la olla cerrada.
     ~ tiago_captado_por_bruno = true
     ~ bajar_llama(2)
     ->->
+
+=== bruno_presion_tiago ===
+// Escena Jueves: Bruno presiona a Tiago
+// Más explícita la manipulación
+
+{sabe_de_bruno:
+    
+    Lo ves desde lejos.
+    Bruno acorralando a Tiago contra una pared.
+    
+    No grita. No amenaza.
+    Peor: convence.
+    
+    "Tu vieja está internada. No tenés a nadie.
+    Yo te doy familia. Propósito. Orden."
+    
+    Tiago tiene los ojos mojados.
+    
+    * [Acercarte.]
+        Caminás hacia ellos.
+        Bruno te ve. No se inmuta.
+        
+        "Vecino. Estamos hablando."
+        
+        "Tiago, ¿estás bien?"
+        
+        Tiago asiente. Pero no te mira.
+        
+        Bruno sonríe.
+        "El pibe está bien. Mejor que nunca."
+        
+        ~ bruno_tension += 1
+        ~ tiago_confianza += 1
+        ->->
+    
+    * [No intervenir.]
+        Te quedás mirando.
+        
+        Bruno palmea a Tiago en la espalda.
+        Como un padre.
+        O como un dueño.
+        
+        ~ tiago_tentado_bruno = true
+        ~ aumentar_inercia(1)
+        ->->
+- else:
+    ->->
+}
+
+// === BRUNO MARCA TERRITORIO ===
 
 === bruno_la_visita ===
 // Escena Jueves tarde: Bruno marca territorio
@@ -102,6 +445,8 @@ Pero el mensaje quedó.
 Está mirando.
 
 ->->
+
+// === BRUNO VS SOFÍA ===
 
 === bruno_confronta_sofia ===
 // Escena Viernes: El conflicto ideológico
@@ -141,6 +486,8 @@ Se va.
 ~ bruno_tension += 2
 
 ->->
+
+// === OFERTA AL PROTAGONISTA (INERCIA ALTA) ===
 
 === bruno_oferta_protagonista ===
 // Escena Sábado/Domingo: Si inercia >= 7
@@ -199,6 +546,64 @@ Se va.
     ->->
 }
 
+=== bruno_oferta_seguridad ===
+// Escena alternativa: Oferta de "seguridad"
+// Para inercia >= 5 pero < 7
+
+{inercia >= 5 && inercia < 7:
+    Bruno te encuentra.
+    
+    "Che. Tengo una propuesta distinta."
+    
+    No sonríe esta vez. Es directo.
+    
+    "En el barrio hay cada vez más quilombo.
+    Necesito gente que cuide las cosas.
+    Seguridad. Nada raro."
+    
+    * ["¿Seguridad de qué?"]
+        "De mis cosas. Mi gente. Mi territorio."
+        
+        La palabra 'territorio' te eriza.
+        
+        "Pagás por protección. Yo protejo.
+        Es un negocio honesto."
+        
+        * * [Rechazar.]
+            "No, Bruno. Paso."
+            
+            "Lástima. Tenés cara de confiable."
+            
+            Se va.
+            
+            ~ subir_dignidad(1)
+            ->->
+        
+        * * [Pedir tiempo.]
+            "Dejame pensarlo."
+            
+            "No hay mucho tiempo, vecino.
+            Las oportunidades pasan."
+            
+            ~ aumentar_inercia(1)
+            ->->
+    
+    * [Irte sin responder.]
+        Te das vuelta.
+        Caminás.
+        
+        "Vas a volver", dice a tu espalda.
+        
+        No te das vuelta.
+        
+        ~ subir_dignidad(1)
+        ->->
+- else:
+    ->->
+}
+
+// === FRAGMENTO NOCTURNO ===
+
 === fragmento_bruno_chacra ===
 // Fragmento nocturno: Bruno en su chacra
 
@@ -221,6 +626,31 @@ Dios descansa.
 Él también.
 
 ->->
+
+=== fragmento_bruno_sermon ===
+// Fragmento: Bruno dando sermón
+
+Bruno predica.
+
+"¡La vagancia es pecado!
+¡La dependencia es esclavitud!
+¡Solo el trabajo dignifica!"
+
+Los hombres de la chacra asienten.
+Cansados. Quebrados. Pero asienten.
+
+"¡Afuera les dan pescado! ¡Acá les doy propósito!"
+
+Aplauden.
+No porque quieran.
+Porque es lo que se espera.
+
+Bruno sonríe.
+Otro día de cosecha.
+
+->->
+
+// === RESULTADO DOMINGO ===
 
 === bruno_domingo ===
 // Escena Domingo: El resultado del conflicto con Bruno
@@ -323,3 +753,37 @@ Dios descansa.
 - else:
     ->->
 }
+
+=== bruno_y_claudia ===
+// Escena potencial: Bruno y Claudia se cruzan
+// Dos formas de control
+
+{bruno_tension >= 2 && claudia_hostilidad >= 1:
+    
+    Los ves hablando.
+    Bruno y Claudia. En la esquina.
+    
+    Ella con su carpeta. Él con su cruz.
+    
+    No sabés qué dicen.
+    Pero asienten.
+    
+    Dos formas de orden.
+    Dos formas de control.
+    
+    Ninguna te incluye.
+    
+    ~ olla_en_crisis = true
+    ->->
+- else:
+    ->->
+}
+
+// === VARIABLES DE BRUNO ===
+// bruno_tension: nivel de conflicto con Bruno (0-5)
+// sabe_de_bruno: el protagonista conoce a Bruno
+// bruno_contacto_tiago: Bruno contactó a Tiago antes
+// tiago_tentado_bruno: Tiago está considerando la oferta
+// tiago_rechazo_bruno: Tiago rechazó a Bruno
+// tiago_captado_por_bruno: Bruno se llevó a Tiago
+// elena_conto_bruno: Elena contó la historia de Bruno

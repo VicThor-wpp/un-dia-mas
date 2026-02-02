@@ -223,6 +223,82 @@ VAR idea_ayni = false  // "La reciprocidad es supervivencia" - ayudar recupera e
 // Tracking de inercia máxima (para final_despertar)
 VAR inercia_maxima_alcanzada = 0
 
+// --- BÚSQUEDA DE EMPLEO ---
+VAR rechazos = 0                     // Rechazos totales recibidos
+VAR rechazos_enviados = 0            // CVs enviados (al vacío)
+VAR rechazos_ghosting = 0            // Veces que te ghostearon
+VAR hizo_entrevista_startup = false
+VAR hizo_entrevista_grande = false
+VAR hizo_entrevista_grande_completa = false
+VAR actualizo_linkedin = false
+VAR publico_en_linkedin = false
+
+// Ideas de búsqueda de empleo
+VAR idea_no_soy_suficiente = false   // Idea involuntaria: "No soy suficiente" (peligrosa)
+VAR idea_el_problema_no_soy_yo = false // Idea positiva: "El problema no soy yo"
+
 // --- VARIABLES ADICIONALES FASE 2 ---
 VAR tiago_se_queda = false
 VAR cacho_momento_real = false
+
+// Variables de tracking de personajes (agregadas por revisión de coherencia)
+VAR cacho_encuentros = 0             // Cantidad de veces que cruzaste a Cacho
+VAR sabe_de_bruno = false            // El protagonista conoce a Bruno
+VAR tension_olla = false             // Hay tensión en la olla por la auditoría
+VAR lucia_historia_conocida = false  // Lucía contó por qué dejó la carrera
+VAR tiago_historia_inau = false      // Tiago contó algo del INAU
+VAR bruno_contacto_tiago = false     // Bruno contactó a Tiago antes
+VAR tiago_tentado_bruno = false      // Tiago está considerando la oferta de Bruno
+VAR tiago_rechazo_bruno = false      // Tiago rechazó a Bruno
+VAR elena_conto_bruno = false        // Elena contó la historia de Bruno
+VAR cacho_quiebre_completo = false   // Cacho tuvo el quiebre profundo
+VAR cacho_ayudo = false              // Cacho ayudó de verdad a la olla
+
+// ============================================
+// VARIABLES AGREGADAS - GAPS NARRATIVOS CERRADOS (2026-02-02)
+// ============================================
+
+// --- MARCOS: PROGRESIÓN GRADUAL ---
+// Sistema de estados: ausente -> evitando -> respondiendo -> mirando -> reconectando
+VAR marcos_mensajes_enviados = 0      // Contador de mensajes sin respuesta
+VAR marcos_encuentros_evitados = 0    // Veces que Marcos evitó hablar
+VAR marcos_acepto_cafe = false        // Si aceptó tomar café
+VAR marcos_va_a_ayudar = false        // Si ofreció ayuda concreta
+VAR marcos_ofrecio_ayuda = false      // Si ofreció conseguir algo (fideos/arroz)
+
+// --- IXCHEL: EXPANSIÓN COMPLETA ---
+VAR ixchel_enseno_receta = false      // Enseñó a hacer pepián
+VAR ixchel_enseno_tortillas = false   // Enseñó a hacer tortillas
+VAR ixchel_conto_tomas_infancia = false  // Historia de Tomás - infancia
+VAR ixchel_conto_tomas_lider = false     // Historia de Tomás - líder
+VAR ixchel_conto_tomas_ultimo = false    // Historia de Tomás - último día
+VAR ixchel_hablo_guadalupe_profundo = false  // Conversación sobre la Virgen
+VAR ixchel_hablo_buen_vivir = false   // Explicó el Ut'z Kaslemal
+VAR vio_ixchel_hablando_kiche = false // Encontró a Ixchel hablando k'iche'
+VAR aprendio_palabra_kiche = false    // Aprendió "saqarik" (amanecer)
+VAR ixchel_fragmento_rio = false      // Vio fragmento del río
+VAR ixchel_hablo_con_elena = false    // Interacción con Elena
+VAR ixchel_hablo_elena_profundo = false  // Conversación profunda con Elena
+VAR ixchel_hablo_con_diego = false    // Interacción con Diego
+VAR ixchel_diego_hablaron_profundo = false  // Conversación profunda con Diego
+VAR ixchel_aguanto_xenofobia_juan = false   // Juan dijo algo xenófobo
+VAR juan_se_disculpo_ixchel = false   // Juan se disculpó
+VAR ixchel_participo_asamblea = false // Intervino en asamblea
+VAR ixchel_cierre_domingo = false     // Escena de cierre dominical
+
+// --- JUAN: ARCO DE MIGRACIÓN ---
+VAR juan_menciono_espana = false      // Lunes: mencionó prima en España
+VAR juan_seed_migracion = false       // La idea de irse plantada
+VAR juan_considerando_irse = false    // Martes: considerando seriamente
+VAR juan_pregunto_si_me_iria = false  // Miércoles: "¿vos te irías?"
+VAR juan_avanzo_migracion = false     // Jueves: Laura consiguió algo
+VAR juan_encuentro_despedida = false  // Viernes: pidió encontrarse sábado
+VAR juan_despedida_emotiva = false    // Si hubo abrazo en despedida
+VAR juan_mando_mensaje_espana = false // Mensaje desde España
+
+// --- LABURO POST-DESPIDO ---
+VAR vio_a_gonzalez = false            // Vio a González en la olla
+
+// --- IDEAS NUEVAS (IXCHEL) ---
+VAR idea_comida_es_memoria = false    // "LA COMIDA ES MEMORIA" - del pepián
+VAR idea_hay_otra_forma = false       // "HAY OTRA FORMA" - del Ut'z Kaslemal

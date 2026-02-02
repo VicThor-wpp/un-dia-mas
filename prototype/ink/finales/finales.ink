@@ -137,6 +137,9 @@ Pero no estás solo.
 Esto no termina.
 Es el principio de otra cosa.
 
+// Epilogo de Tiago si se quedó
+-> tiago_final_red ->
+
 {pequenas_victorias >= 8:
     No salvaste el mundo.
     No cambiaste el sistema.
@@ -200,6 +203,9 @@ Solo es gris.
 Todo gris.
 
 {idea_quien_soy: ¿Quién sos sin laburo? Todavía no sabés.}
+
+// Epilogo de Tiago si fue capturado por Bruno
+-> tiago_final_solo ->
 
 {pequenas_victorias >= 8:
     No salvaste el mundo.
@@ -583,6 +589,9 @@ Hasta que algo cambie.
 O no.
 
 {idea_esto_es_lo_que_hay: Esto es lo que hay. Por ahora.}
+
+// Epilogo de Tiago si fue capturado por Bruno
+-> tiago_final_solo ->
 
 {pequenas_victorias >= 8:
     No salvaste el mundo.

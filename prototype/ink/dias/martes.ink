@@ -129,10 +129,26 @@ En lo que probablemente sea.
 
 A las 5 te vas.
 
+// ANTAGONISTAS: Primera aparición de Bruno y Cacho
+-> martes_esquina_barrio ->
+
 * [Ir a casa] # EFECTO:conexion-
     -> martes_casa
 * {energia >= 2} [Buscar a alguien] # COSTO:1 # STAT:conexion # EFECTO:conexion+
     -> martes_buscar
+
+=== martes_esquina_barrio ===
+// El protagonista pasa por la esquina del barrio, primera aparición de antagonistas
+
+// Bruno: la camioneta negra (primera aparición silenciosa)
+-> bruno_camioneta_martes ->
+
+// Cacho: encuentro casual (probabilidad 50%)
+{RANDOM(1,2) == 1:
+    -> cacho_primer_cruce ->
+}
+
+->->
 
 === martes_buscar ===
 
@@ -259,10 +275,10 @@ No dormís bien.
 En lo que viene.
 
 // La angustia de la precariedad
-Pensás en lo que viene. Si te echan, no hay nada. 
-La "unipersonal" fue el invento perfecto: les diste tres años de tu vida y ellos no te deben ni el saludo. 
-Sin indemnización. Sin despido. Sin red.
-Solo una factura que ya no vas a emitir.
+Pensás en lo que viene. La "unipersonal" fue el invento perfecto: 
+tres años de tu vida facturando como si fueras tu propia empresa.
+Sin indemnización. Sin despido. Sin los derechos que tendrías como empleado.
+Tenés tres meses de colchón. Pero después...
 * [Intentar dormir] -> fragmento_martes
 
 === fragmento_martes ===

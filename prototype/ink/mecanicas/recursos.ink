@@ -378,7 +378,8 @@ Pero alguien la está soplando.
 
 === function evaluar_huelga() ===
     // AJUSTADO: condiciones reducidas
-    { participe_asamblea && veces_que_ayude >= 2 && llama >= 6 && conexion >= 6 && diego_relacion >= 3:
+    // NOTA: diego_relacion >= 4 para evitar solapamiento con REPRESIÓN (que usa < 4)
+    { participe_asamblea && veces_que_ayude >= 2 && llama >= 6 && conexion >= 6 && diego_relacion >= 4:
         ~ return true
     }
     ~ return false

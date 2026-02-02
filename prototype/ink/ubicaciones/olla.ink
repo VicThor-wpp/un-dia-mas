@@ -10,21 +10,20 @@
 
 # LA OLLA
 
-La olla popular del barrio.
+La olla del barrio.
 El patio de la casa de la Chola. Una lona vieja sobre postes, mesas largas, ollas enormes sobre el fuego.
 El olor a comida que se siente desde la esquina.
 
     Sofía está en el medio de todo.
     Coordinando, hablando, moviendo ollas.
-    No para.
+    No para nunca.
 
 {olla_en_crisis:
-    Hay poca gente cocinando.
-    Las ollas están casi vacías.
-    Se nota la tensión.
+    Hay menos gente de lo habitual.
+    Se nota la tensión en el aire.
 - else:
-    Hay movimiento. Gente cocinando, gente sirviendo.
-    Funciona.
+    Hay movimiento. Gente cocinando, charlando, sirviendo.
+    Es lo que siempre fue: el lugar donde el barrio se junta.
 }
 
 * [Acercarte a ayudar] # EFECTO:conexion+
@@ -46,17 +45,17 @@ Todavía no estás listo para esto.
 
 Te quedás mirando desde afuera.
 
-La gente. Viejos, familias, pibes.
-No es una fila de espera pasiva. Se habla. Se comparte.
-Vecinos. Gente que conocés de vista.
+La gente. Vecinos, familias, pibes del barrio.
+No es una fila de espera. Se habla. Se comparte.
+Gente que conocés de vista, algunos de años.
 
 {not tiene_laburo:
     Ahí está la red.
-    La que te empieza a faltar a vos.
+    La que ahora tenés tiempo de ver.
 }
 
 Una señora te mira.
-"¿Vas a comer o a mirar?"
+"¿Venís a sumarte o a mirar nomás?"
 
 * [Ofrecer ayuda] -> olla_ofrecer_ayuda
 * [Irte]
@@ -135,13 +134,13 @@ Hay una señora al lado tuyo. Es Elena, la veterana del barrio. No la habías vi
     Se te caen un par de papas. Tenés las manos torpes, desacostumbradas al trabajo manual.
     Elena las levanta sin decir nada. Las lava. Te las devuelve.
     "Despacio", dice. "Nadie nos corre."
-    Pero el hambre sí corre.
+    El ritmo de la olla es otro. Más humano.
 }
 { pelada == -1:
     El cuchillo se resbala. Te cortás el dedo. La sangre gotea sobre una papa lavada.
     "¡Trapo!"
     Elena te venda rápido. Tiene práctica.
-    "La sangre se lava. El hambre no", murmura alguien.
+    "Tranquilo, pibe. A todos nos pasó alguna vez."
     Sentís la vergüenza arder más que el corte.
     ~ aumentar_inercia(1)
 }
@@ -167,11 +166,11 @@ Platos, platos, platos.
 -
 
 {es_vegano:
-    Cada cucharón que servís te pesa. 
-    Huesos, grasa flotando, restos de un sistema que rechazás.
-    Pero la gente tiene hambre. 
-    Y el hambre no entiende de especismo.
-    Servís igual. Pero por dentro, algo se retuerce.
+    Cada cucharón que servís te incomoda. 
+    Huesos, grasa flotando.
+    Pero esto no va de vos. 
+    La olla es de todos, con lo que cada uno puede dar.
+    Servís igual. Tus convicciones siguen ahí, intactas.
 }
 
 // Chequeo comunitario: servir en la olla
@@ -192,11 +191,11 @@ Platos, platos, platos.
     Te guardás el dibujo en el bolsillo. Quema.
 }
 { servicio == 0:
-    Calculaste mal. Le diste mucho a los primeros, ahora tenés que escatimar.
-    Un viejo te mira el cucharón medio vacío.
-    "¿Eso es todo?"
-    "Hay que estirar, abuelo."
-    Te odiás por decir eso. Te odiás mucho.
+    Calculaste mal. Le diste mucho a los primeros, ahora tenés que equilibrar.
+    Un señor te mira el cucharón.
+    "¿Querés un poco más de pan?"
+    "Dale, sí."
+    Compensás como podés. El ritmo se aprende.
 }
 { servicio == -1:
     Se te vuelca el cucharón sobre la mesa.
@@ -210,9 +209,8 @@ Platos, platos, platos.
 
 {not tiene_laburo:
     Del otro lado del mesón, las caras cambian.
-    Pero los ojos son los mismos.
-    Miedo.
-    El mismo miedo que tenés vos cuando te despertás a las 4 de la mañana.
+    Pero la mayoría son trabajadores como vos. Con laburo o sin él.
+    Gente del barrio que viene a encontrarse tanto como a comer.
 }
 
 La fila se termina.
@@ -276,18 +274,18 @@ El olor a comida te sigue un rato.
 
 === olla_preguntar_crisis ===
 
-"¿Qué pasó? ¿Por qué tan vacío?"
+"¿Qué pasó? ¿Por qué está todo tan tranquilo?"
 
 Sofía suspira.
 
-"No hay donaciones. El municipio se borró. El super cerró."
+"Las donaciones bajaron. El municipio anda lento con los trámites. Lo de siempre, pero peor."
 
 * [...]
 -
 
-Mira las ollas casi vacías.
+Mira las ollas.
 
-"Hoy damos, pero mañana... no sé."
+"Hoy resolvemos, pero la semana que viene hay que ver."
 
 * [Ofrecer plata] -> olla_ofrecer_plata
 * [Ofrecer ayuda] -> olla_ofrecer_ayuda_crisis
@@ -354,42 +352,40 @@ Sofía te mira.
     ->->
 
 === olla_crisis_sin_comida ===
-// Llamar cuando la crisis es grave
+// Llamar cuando hay problemas de recursos
 
-# LA OLLA (en crisis)
+# LA OLLA (complicada)
 
 Llegás a la olla.
 Está cerrada.
 
 Un cartel en la puerta:
-"HOY NO HAY COMIDA. MAÑANA INTENTAMOS."
+"HOY ABRIMOS MÁS TARDE. ESTAMOS RESOLVIENDO."
 
 * [...]
 -
 
 ~ olla_en_crisis = true
 
-Hay gente parada afuera.
-Mirando el cartel.
-Sin saber qué hacer.
+Hay gente esperando afuera.
+Charlando. Algunos miran el celular.
 
 * [...]
 -
 
-Una señora con un nene.
-Un viejo con bastón.
-Dos pibes que no tienen más de 15.
+Vecinos del barrio.
+Gente que viene a comer, pero también a encontrarse.
+A estar un rato.
 
 {not tiene_laburo:
     Vos tenés tres meses de colchón.
-    Ellos no tienen nada.
+    Otros la reman mes a mes. Como siempre.
 }
 
 * [Quedarte un rato] -> olla_crisis_quedarse
 * [Irte]
     Te vas.
-    No hay nada que hacer.
-    O sí, pero no sabés qué.
+    Capaz más tarde volvés.
     ->->
 
 === olla_crisis_quedarse ===
@@ -451,24 +447,23 @@ Sofía está al frente.
 
 Escuchás.
 
-Una señora: "Mi marido perdió el laburo. Somos cuatro. No llegamos."
+Una señora: "En el laburo de mi marido están recortando horas. Menos plata pero las mismas cuentas."
 
-Un tipo: "El kiosco de la esquina cerró. ¿Quién nos va a donar ahora?"
+Un tipo: "El kiosco de la esquina cerró. Nos queda uno solo en el barrio."
 
-Otra señora: "La municipalidad no responde. Llamé veinte veces."
+Otra señora: "La municipalidad no responde. Llamé veinte veces por el tema del alumbrado."
 
 * [...]
 -
 
-Un pibe joven: "Hay que hacer algo. No podemos quedarnos esperando."
+Un pibe joven: "Hay que hacer algo. No podemos quedarnos esperando que las cosas mejoren solas."
 
 Sofía: "Por eso estamos acá. Para decidir qué hacemos."
 
 {not tiene_laburo:
     Pensás en tu propia situación.
-    Tres meses.
-    No es nada comparado con esto.
-    O es lo mismo, pero en cámara lenta.
+    Tres meses de colchón.
+    Estás mejor que muchos. Pero la precariedad es la misma.
 }
 
 -> olla_asamblea_propuestas
@@ -555,18 +550,18 @@ Sofía te ve.
 === olla_comer_cola ===
 
 La cola.
-Adelante tuyo, una señora con tres pibes.
-Atrás, un viejo solo.
+Adelante tuyo, una señora con sus hijos.
+Atrás, un vecino que viene siempre.
 
-Nadie habla.
+Se charla. Alguien hace un chiste.
 
 * [...]
 -
 
 {not tiene_laburo:
-    ¿Es esto tu futuro?
-    Quizás.
-    Pero si es esto, al menos no estás solo.
+    La olla es esto.
+    Gente que viene a comer, pero también a estar.
+    A ser parte de algo.
 }
 
 * [...]
@@ -584,30 +579,25 @@ Guiso.
 Papas, carne (poca), verduras.
 
 {es_vegano:
-    El olor a grasa te revuelve el estómago. 
-    Años de convicción frente a un plato caliente que no respeta tus principios.
-    Pero es lo que hay. O comés, o seguís vacío.
+    El olor te genera un conflicto interno. 
+    Años de convicción frente a un plato que no respeta tus principios.
+    Pero viniste a estar, no solo a comer.
 
-    * [Comer solo el caldo y las verduras]
+    * [Comer solo las verduras y el caldo]
         Apartás los trozos de carne con cuidado. 
-        El caldo sabe a animal, pero el hambre es más fuerte que el asco.
-        Te sentís sucio, pero un poco más lleno.
-        ~ aumentar_inercia(1)
+        No es perfecto, pero es lo que hay.
+        Sofía te ve y asiente. "La próxima hacemos algo aparte."
         -> olla_comer_sentarse
-    * [Comer todo. El hambre no tiene ética.]
+    * [Comer todo. Hoy no es el día para esto.]
         Cerrás los ojos y tragás. 
-        La carne es blanda, fibrosa. 
-        Tus principios se disuelven en el ácido gástrico.
+        Tus principios siguen ahí. Pero hoy elegís la comunidad.
         ~ aumentar_inercia(1)
-        ~ bajar_dignidad(1)
         -> olla_comer_sentarse
-    * [No comer. La ética es lo único que me queda.]
-        Dejás el plato sobre la mesa. 
-        No podés. 
-        Preferís el rugido del estómago al silencio de la conciencia.
-        ~ subir_dignidad(1)
-        ~ energia -= 1
-        -> olla_despedirse
+    * [No comer. Pero quedarte.]
+        Le pasás el plato a alguien que quiera repetir. 
+        No viniste por la comida. Viniste por esto.
+        Te quedás charlando un rato.
+        -> olla_comer_sentarse
 - else:
     Comida de verdad.
     -> olla_comer_sentarse
@@ -1142,29 +1132,29 @@ Elena y Sofía se miran.
 
 Elena habla primero.
 
-"La mamá de Sofía. Empezó en los 90, dando merienda a los gurises en su casa."
+"La mamá de Sofía. Empezó en los 90, juntando a los vecinos a merendar."
 
 Sofía asiente.
 
-"Quince porciones. Con lo que había. Nada más."
+"Quince personas al principio. Lo que empezó como juntada terminó siendo esto."
 
 * [...]
 -
 
-"En el 2002 explotó. De quince a ochenta porciones. La Chola y Elena cocinaban turnándose."
+"En el 2002 creció mucho. De quince a ochenta vecinos. La Chola y Elena cocinaban turnándose."
 
 Elena se ríe.
 
-"Terminábamos a las cuatro de la mañana. Y a las siete ya estábamos pelando de nuevo."
+"Nos turnábamos para que nadie se quemara. Terminábamos cansadas pero contentas."
 
 * [...]
 -
 
-"Después de la crisis, bajó un poco. Veinte, treinta porciones. La Chola se puso vieja. Sofía estaba en España."
+"Después de la crisis, siguió siendo punto de encuentro. La Chola se puso vieja. Sofía estaba en España."
 
 "Y después vino la pandemia", dice Sofía.
 
-"Y de treinta pasamos a cien. Y acá estamos."
+"Y se volvió más importante que nunca. El barrio se junta acá."
 
 * [...]
 -
@@ -1190,7 +1180,7 @@ La Virgen de Guadalupe. Colores vivos. Flores dibujadas alrededor.
 * [...]
 -
 
-"La trajo de un viaje a México. Decía que era la patrona de los pobres."
+"La trajo de un viaje a México. Decía que era la patrona de los que luchan."
 
 "¿Vos creés en eso?"
 
@@ -1276,11 +1266,11 @@ Sofía cuenta con los dedos.
 
 Sofía mira las ollas. Hace una cuenta mental.
 
-"Y lo que me queda del sueldo. Ocho mil, más o menos. En lugar de ahorrarlo."
+"Y lo que aporto yo de mi sueldo. Ocho mil, más o menos."
 
 No lo dice con orgullo. Lo dice como quien cuenta los días de la semana.
 
-"Si no lo pongo, no alcanza. Y si no alcanza, no hay olla."
+"Es mi forma de ser parte. Todos ponemos algo."
 
 ~ subir_conexion(1)
 

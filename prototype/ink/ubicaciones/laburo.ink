@@ -585,3 +585,625 @@ Te mira.
     ~ aumentar_inercia(1)
     ->->
 }
+
+// ============================================
+// POST-DESPIDO: FANTASMAS DEL LABURO
+// Escenas después del miércoles
+// ============================================
+
+// --- PASAR POR EL EDIFICIO ---
+
+=== laburo_fantasma_edificio ===
+// Trigger: viernes, caminando por el centro
+// Requiere: fui_despedido == true
+
+# EL EDIFICIO
+
+Caminás por el centro.
+Sin querer, tus pies te llevan por la misma cuadra de siempre.
+
+* [...]
+-
+
+Ahí está.
+
+El edificio.
+La puerta de siempre.
+El cartel de la empresa.
+
+Pero ya no es tuyo.
+
+* [Seguir caminando]
+    -> laburo_fantasma_pasar_largo
+* [Pararte un momento]
+    -> laburo_fantasma_pararte
+* [Cruzar de vereda]
+    -> laburo_fantasma_evitar
+
+=== laburo_fantasma_pasar_largo ===
+
+Seguís caminando.
+Como si nada.
+
+Pero el corazón se acelera igual.
+
+* [...]
+-
+
+Por el rabillo del ojo ves gente entrando.
+La misma puerta.
+El mismo ascensor.
+
+Solo que vos ya no.
+
+->->
+
+=== laburo_fantasma_pararte ===
+
+Te parás.
+
+Mirás el edificio desde afuera.
+Nunca lo habías visto así.
+
+* [...]
+-
+
+¿Cuántas veces entraste por esa puerta?
+¿Mil? ¿Más?
+
+Ahora es solo un edificio.
+Una puerta que ya no se abre para vos.
+
+* [...]
+-
+
+{d6() >= 4:
+    Sale alguien conocido. Martínez, de sistemas.
+    Te ve.
+    -> laburo_fantasma_martinez_ve
+- else:
+    No sale nadie que conozcas.
+    Mejor así.
+    ->->
+}
+
+=== laburo_fantasma_martinez_ve ===
+
+Martínez te ve.
+
+Por un segundo, los dos se quedan.
+
+* [Saludar]
+    Levantás la mano.
+    "Hola."
+    "Hola." 
+    Él sigue caminando. Rápido.
+    Como si el despido fuera contagioso.
+    ~ aumentar_inercia(1)
+    ->->
+* [Hacerte el boludo]
+    Mirás para otro lado.
+    Él hace lo mismo.
+    Silencio de ex-compañeros.
+    ->->
+
+=== laburo_fantasma_evitar ===
+
+Cruzás de vereda.
+
+No querés ver.
+No querés que te vean.
+
+* [...]
+-
+
+No está mal.
+A veces evitar es cuidarse.
+
+Seguís caminando por la otra vereda.
+El edificio queda atrás.
+
+->->
+
+// --- CRUCE CON EX-COMPAÑERO ---
+
+=== laburo_fantasma_cruce ===
+// Trigger: jueves, en el barrio o en el bondi
+// Requiere: fui_despedido == true
+
+# EL CRUCE
+
+{d6() >= 4:
+    En la parada del bondi.
+- else:
+    Caminando por el barrio.
+}
+
+Una cara conocida.
+
+* [...]
+-
+
+Es Fernández. Del área de ventas.
+Se sienta cerca tuyo en las reuniones.
+Se sentaba.
+
+* [Saludar]
+    -> laburo_fantasma_saludar
+* [Hacerte el distraído]
+    -> laburo_fantasma_distraido
+
+=== laburo_fantasma_saludar ===
+
+"Fernández."
+
+Te mira. Tarda un segundo en reconocerte.
+
+"Ah, hola. ¿Cómo... cómo estás?"
+
+La pregunta incómoda.
+Ambos saben la respuesta.
+
+* ["Bien."]
+    -> laburo_fantasma_charla_bien
+* ["Acá andamos."]
+    -> laburo_fantasma_charla_real
+* ["Como el orto."]
+    -> laburo_fantasma_charla_honesta
+
+=== laburo_fantasma_charla_bien ===
+
+"Bien."
+
+Mentira.
+
+"Qué bueno."
+
+Mentira también.
+
+* [...]
+-
+
+Silencio incómodo.
+
+"Bueno, me tengo que ir..."
+
+"Sí, yo también."
+
+Se van por lados opuestos.
+
+->->
+
+=== laburo_fantasma_charla_real ===
+
+"Acá andamos."
+
+Fernández asiente.
+
+"Me enteré. Lo siento, boludo."
+
+* [...]
+-
+
+"Gracias."
+
+Silencio.
+
+"En la empresa... están todos nerviosos. Dicen que van a seguir recortando."
+
+* ["¿En serio?"]
+    -> laburo_fantasma_info_empresa
+* ["No me importa ya."]
+    "Sí, bueno. Ya fue."
+    Fernández asiente.
+    "Cuidate."
+    "Vos también."
+    ->->
+
+=== laburo_fantasma_charla_honesta ===
+
+"Como el orto."
+
+Fernández no sabe qué decir.
+
+"Eh... lo lamento, che."
+
+* [...]
+-
+
+"No es tu culpa."
+
+"No, pero igual."
+
+* [...]
+-
+
+Se queda callado un momento.
+
+"Mirá... no le cuentes a nadie que te dije esto, pero..."
+
+-> laburo_fantasma_info_empresa
+
+=== laburo_fantasma_info_empresa ===
+
+Fernández mira para los lados.
+
+"Van a seguir despidiendo. Escuché que el mes que viene caen más."
+
+* [...]
+-
+
+"Gómez ya cayó. Martínez dicen que está en la lista."
+
+No sabés cómo sentirte.
+¿Alivio de no ser el único?
+¿Tristeza por los que vienen?
+
+* ["Qué cagada."]
+    "Sí. Una cagada total."
+    -> laburo_fantasma_despedida_info
+* ["Era de esperarse."]
+    "Sí, pero igual duele."
+    -> laburo_fantasma_despedida_info
+
+=== laburo_fantasma_despedida_info ===
+
+"Bueno, me tengo que ir."
+
+"Dale. Cuidate."
+
+* [...]
+-
+
+Se va.
+
+Te quedás pensando.
+No sos el único.
+Nunca lo fuiste.
+
+~ aumentar_inercia(1)
+
+->->
+
+=== laburo_fantasma_distraido ===
+
+Mirás el celular.
+Te hacés el que no lo viste.
+
+* [...]
+-
+
+Él también mira para otro lado.
+
+Silencio de ex-compañeros.
+Más cómodo que la conversación.
+
+->->
+
+// --- GONZÁLEZ EN LA OLLA (EXPANDIDO) ---
+
+=== laburo_fantasma_gonzalez_olla ===
+// Trigger: sábado en la olla, servicio expandido
+// Requiere: fui_despedido == true && vio_a_gonzalez == false
+
+~ vio_a_gonzalez = true
+
+# LA COLA
+
+Estás sirviendo.
+Cucharón, plato, cucharón, plato.
+
+* [...]
+-
+
+Y entonces lo ves.
+
+González.
+De contabilidad.
+En la cola.
+
+* [...]
+-
+
+Te ve.
+Los dos se quedan.
+
+Un segundo que dura una hora.
+
+* [Servirle normalmente]
+    -> gonzalez_servir_normal
+* [Darle un poco más]
+    -> gonzalez_servir_mas
+
+=== gonzalez_servir_normal ===
+
+Le servís.
+Lo justo.
+Como a todos.
+
+"Gracias."
+
+Apenas un murmullo.
+No te mira.
+
+* [...]
+-
+
+Se va a sentar.
+Solo.
+En un rincón.
+
+->->
+
+=== gonzalez_servir_mas ===
+
+Le servís un poco más.
+Un pedazo extra de carne.
+Quizás un poco de papa de más.
+
+* [...]
+-
+
+González mira el plato.
+Después te mira.
+
+"Gracias."
+
+Sabe que sabés.
+Sabés que sabe.
+
+* [Asentir]
+    Asentís.
+    Sigue la fila.
+    -> gonzalez_despues
+* ["¿Cómo andás?"]
+    -> gonzalez_charla
+
+=== gonzalez_charla ===
+
+"¿Cómo andás?"
+
+González se ríe. Sin gracia.
+
+"Acá. Como vos."
+
+* [...]
+-
+
+"¿Cuándo te...?"
+
+"Hace dos semanas. Antes que vos."
+
+* [...]
+-
+
+"No lo había contado. Por la vergüenza."
+
+Mirás alrededor. La cola sigue.
+
+"Después hablamos."
+
+"Dale."
+
+-> gonzalez_despues
+
+=== gonzalez_despues ===
+// Después del servicio
+
+Terminás de servir.
+González sigue ahí.
+Sentado solo.
+
+* [Acercarte]
+    -> gonzalez_charla_larga
+* [Dejarlo]
+    Lo dejás.
+    A veces la gente necesita estar sola.
+    ->->
+
+=== gonzalez_charla_larga ===
+
+Te sentás enfrente.
+
+"¿Hace mucho que venís acá?"
+
+"Primera vez."
+
+* [...]
+-
+
+González mira el plato vacío.
+
+"Nunca pensé que iba a terminar acá."
+
+* ["Yo tampoco."]
+    "Yo tampoco."
+    Silencio.
+    "Pero acá estamos."
+    -> gonzalez_cierre
+* ["No está tan mal."]
+    "No está tan mal. La comida es buena. La gente también."
+    González asiente, no muy convencido.
+    -> gonzalez_cierre
+
+=== gonzalez_cierre ===
+
+"Tengo tres pibes", dice González.
+"No les conté que me echaron. Les digo que estoy de licencia."
+
+* [...]
+-
+
+"Todos los días salgo de casa a las ocho. Camino. Voy a la plaza. Vuelvo a las seis."
+
+"Para que no sospechen."
+
+"Para que no sospechen."
+
+* [...]
+-
+
+No sabés qué decir.
+
+González se levanta.
+
+"Gracias por el plato. Y por... por no decir nada."
+
+"¿Qué voy a decir?"
+
+* [...]
+-
+
+Se va.
+
+Otro fantasma del laburo.
+Otro que camina por ahí sin que nadie sepa.
+
+~ subir_conexion(1)
+
+->->
+
+// --- MENSAJE DEL GRUPO DE TRABAJO ---
+
+=== laburo_fantasma_grupo_whatsapp ===
+// Trigger: sábado, momento de relax en casa
+// Requiere: fui_despedido == true
+
+# EL CELULAR
+
+Estás en tu pieza.
+El celular vibra.
+
+Es el grupo del laburo.
+"Equipo de Gestión".
+Todavía estás ahí.
+
+* [Mirar]
+    -> laburo_grupo_mirar
+* [Ignorar]
+    -> laburo_grupo_ignorar
+
+=== laburo_grupo_mirar ===
+
+Abrís el chat.
+
+{d6() >= 4:
+    Martínez: "Alguien sabe dónde quedó el archivo del proyecto Alfa?"
+    López: "En la carpeta compartida"
+    Martínez: "No lo encuentro"
+    López: "Pedile a sistemas"
+- else:
+    Fernández: "Feliz cumpleaños Rosita!!"
+    Varios: "🎂🎂🎂"
+    Rosa: "Gracias a todos!!"
+}
+
+* [...]
+-
+
+La vida sigue.
+Sin vos.
+
+El grupo charla como si nada.
+Como si nunca hubieras estado.
+
+* [Seguir leyendo]
+    -> laburo_grupo_leer_mas
+* [Cerrar]
+    -> laburo_grupo_cerrar
+
+=== laburo_grupo_leer_mas ===
+
+Scrolleás para arriba.
+Mensajes de los últimos días.
+
+"Reunión a las 3"
+"Confirmado"
+"Voy llegando"
+
+* [...]
+-
+
+Tu último mensaje fue hace una semana.
+Un emoji de pulgar arriba.
+Nadie contestó.
+
+* [Salir del grupo]
+    -> laburo_grupo_salir
+* [Quedarte mirando]
+    -> laburo_grupo_quedarse
+* [Cerrar]
+    -> laburo_grupo_cerrar
+
+=== laburo_grupo_salir ===
+
+¿Salir del grupo?
+
+* [Sí]
+    -> laburo_grupo_confirmar_salida
+* [No, mejor no]
+    -> laburo_grupo_quedarse
+
+=== laburo_grupo_confirmar_salida ===
+
+Tocás "Salir del grupo".
+
+"¿Estás seguro?"
+
+* [Sí]
+    Saliste.
+    
+    Nadie va a notar.
+    O quizás sí.
+    Da igual.
+    
+    ~ subir_dignidad(1)
+    ->->
+* [No]
+    -> laburo_grupo_quedarse
+
+=== laburo_grupo_quedarse ===
+
+Te quedás.
+Mirando.
+Sin escribir.
+
+* [...]
+-
+
+Un fantasma en el grupo.
+Leyendo conversaciones que ya no te incluyen.
+Reuniones a las que no vas.
+Cumpleaños que ya no festejás.
+
+* [Cerrar] -> laburo_grupo_cerrar
+
+=== laburo_grupo_cerrar ===
+
+Cerrás el chat.
+
+* [...]
+-
+
+El grupo sigue ahí.
+La notificación en silencio.
+Un recordatorio de lo que ya no sos.
+
+~ aumentar_inercia(1)
+
+->->
+
+=== laburo_grupo_ignorar ===
+
+No abrís.
+
+* [...]
+-
+
+Dejás que la notificación se acumule.
+Otro mensaje que no leés.
+Otra vida que sigue sin vos.
+
+A veces ignorar es protegerse.
+
+->->

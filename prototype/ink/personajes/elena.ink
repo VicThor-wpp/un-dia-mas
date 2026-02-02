@@ -133,7 +133,7 @@ Te mira. Ojos que vieron demasiado.
 "Entonces no está todo mal. Está jodido, pero no todo mal."
 
 {es_vegano:
-    "Y no me pongas cara con el guiso, m'hijo. Yo sé que vos tenés tus ideas, pero el estómago es un traidor que no sabe de ética cuando aprieta de verdad."
+    "Y no me pongas cara con el guiso, m'hijo. Yo sé que vos tenés tus ideas, pero acá cocinamos con lo que hay. El que quiere, come. El que no, igual se queda."
 }
 
 Tiene razón. O no.
