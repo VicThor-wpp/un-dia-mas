@@ -1,66 +1,64 @@
-/* Un Día Más - Notifications */
-/* Toast notifications for stat changes and events */
+/* Un Día Más - Notifications (Brutalist) */
 
-/* ==========================================
-   NOTIFICATIONS
-   ========================================== */
-
-.notifications {
+.notification-area {
     position: fixed;
-    bottom: 20px;
+    top: 80px; /* Debajo del HUD */
     right: 20px;
-    z-index: 1000;
+    width: 300px;
+    z-index: 2500;
     display: flex;
-    flex-direction: column-reverse;
-    gap: 8px;
-    max-height: 50vh;
-    overflow-y: auto;
-    overflow-x: hidden;
+    flex-direction: column;
+    gap: 10px;
     pointer-events: none;
 }
 
 .notification {
-    pointer-events: auto;
+    background: var(--bg);
+    color: var(--fg);
+    border: var(--border-width) solid var(--fg);
+    padding: 15px;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    box-shadow: 4px 4px 0 var(--fg); /* Sombra dura */
+    animation: slideInRight 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     display: flex;
     align-items: center;
-    gap: 8px;
-    padding: 12px 16px;
-    border-radius: 6px;
-    font-size: 14px;
-    font-weight: bold;
-    animation: notificationSlideIn 0.3s ease;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-    color: #fff;
+    gap: 10px;
+    opacity: 1;
+    transition: opacity 0.5s, transform 0.5s;
+    pointer-events: auto;
 }
 
+/* Iconos dentro de la notificación */
 .notification svg {
-    width: 18px;
-    height: 18px;
+    flex-shrink: 0;
+    stroke-width: 2.5px;
 }
 
-.notification.positive {
-    background: var(--success);
-    border-left: 4px solid #2e7d32;
+/* Tipos de Notificación */
+.notification.positive, .notification.dice-success {
+    border-color: var(--fg); /* En brutalismo, el éxito es normal */
 }
 
-.notification.negative {
-    background: var(--danger);
-    border-left: 4px solid #c62828;
+.notification.negative, .notification.error, .notification.dice-fail {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+.notification.negative svg, .notification.error svg, .notification.dice-fail svg {
+    stroke: var(--accent);
 }
 
-.notification.dice-success { background: var(--success); }
-.notification.dice-fail { background: var(--danger); }
-.notification.dice-neutral { background: #9c27b0; }
-
-.notification.fade-out {
-    animation: notificationFadeOut 0.5s ease forwards;
+.notification.info {
+    border-style: dashed;
 }
 
-@keyframes notificationSlideIn {
+/* Animaciones */
+@keyframes slideInRight {
     from { transform: translateX(100%); opacity: 0; }
     to { transform: translateX(0); opacity: 1; }
 }
 
-@keyframes notificationFadeOut {
-    to { transform: translateX(100%); opacity: 0; }
+.notification.fade-out {
+    opacity: 0;
+    transform: translateX(20px);
 }

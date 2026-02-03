@@ -1,379 +1,65 @@
-/* Un Día Más - UI Elements */
-/* Relationships, tags, portraits, thresholds, tooltips, typewriter, etc. */
+/* Un Día Más - UI Elements (Brutalist) */
 
-/* ==========================================
-   RELATIONSHIPS
-   ========================================== */
-
-.char-card {
-    padding: 12px;
-    background: rgba(255, 255, 255, 0.03);
-    border-radius: 6px;
-    margin-bottom: 10px;
+/* Badges en Opciones */
+.choice-badges {
+    margin-left: auto;
+    display: flex;
+    gap: 8px;
+    padding-left: 10px;
 }
 
-.char-card.char-vinculo {
-    border: 1px solid var(--accent);
-    background: var(--accent-dim);
-}
-
-.char-header {
+.cost-badge, .dice-badge, .effect-badge {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 2px 6px;
+    border: 1px solid var(--fg);
     display: flex;
     align-items: center;
-    gap: 8px;
-    margin-bottom: 4px;
-}
-
-.char-name {
-    font-weight: bold;
-}
-
-.char-role {
-    font-size: 13px;
-    color: var(--text-muted);
-    margin-bottom: 8px;
-}
-
-.char-relation {
-    margin-bottom: 8px;
-}
-
-.heart { font-size: 14px; }
-.heart-empty { color: var(--text-muted); opacity: 0.4; }
-
-.char-state {
-    font-size: 11px;
-    padding: 2px 8px;
-    border-radius: 3px;
-    background: rgba(255, 255, 255, 0.1);
-    display: inline-block;
-}
-
-.char-desc {
-    font-size: 12px;
-    color: var(--text-muted);
-    font-style: italic;
-    margin-top: 8px;
-}
-
-.vinculo-star { color: gold; }
-
-/* ==========================================
-   TAGS
-   ========================================== */
-
-.tag-idea {
-    display: inline-block;
-    background: var(--accent-dim);
-    color: var(--accent);
-    padding: 4px 10px;
-    margin: 5px 0;
-    font-size: 14px;
-    border-left: 3px solid var(--accent);
-}
-
-.tag-fragmento {
-    display: block;
-    background: rgba(255, 255, 255, 0.03);
-    color: var(--text-muted);
-    padding: 15px;
-    margin: 15px 0;
-    border-left: 3px solid var(--text-muted);
-    font-style: italic;
-}
-
-.tag-fragmento::before {
-    content: '// ';
-}
-
-/* ==========================================
-   PORTRAITS (if enabled)
-   ========================================== */
-
-.portrait-container {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 35vh;
-    pointer-events: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    padding: 0 20px;
-    z-index: 50;
-}
-
-.portrait-container.hidden-mobile {
-    display: none;
-}
-
-.portrait {
-    max-height: 100%;
-    transition: all 0.3s ease;
-    opacity: 0;
-    transform: translateY(20px);
-}
-
-.portrait.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.portrait.hiding {
-    opacity: 0;
-    transform: translateY(20px);
-}
-
-.portrait img {
-    max-height: 100%;
-    width: auto;
-}
-
-.portrait.position-left { margin-right: auto; }
-.portrait.position-right { margin-left: auto; }
-.portrait.position-center { margin: 0 auto; }
-
-.portrait.speaking {
-    filter: brightness(1.1);
-    transform: scale(1.02);
-}
-
-.portrait.inactive {
-    filter: brightness(0.6) grayscale(30%);
-}
-
-.portrait-name {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 14px;
-    font-weight: bold;
-    background: rgba(0, 0, 0, 0.8);
-    padding: 4px 12px;
-    border-radius: 4px;
-}
-
-/* ==========================================
-   THRESHOLD EFFECTS
-   ========================================== */
-
-/* Salud Mental Baja - Agotamiento, world feels heavy */
-body.salud-baja {
-    filter: saturate(0.6) brightness(0.92);
-    transition: filter 1s ease;
-}
-
-body.salud-baja::after {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background: radial-gradient(ellipse at center, transparent 40%, rgba(94, 84, 142, 0.15) 100%);
-    box-shadow: inset 0 0 150px rgba(0, 0, 0, 0.4);
-    pointer-events: none;
-    z-index: 9999;
-    animation: pulse-melancholy 4s ease-in-out infinite;
-}
-
-@keyframes pulse-melancholy {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.7; }
-}
-
-/* Llama Baja - Hope fading, colors drain */
-body.llama-low {
-    --accent: var(--despair);
-    --color-llama: #6b6158;
-    filter: saturate(0.75);
-    transition: all 1s ease;
-}
-
-body.llama-low::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(74, 74, 90, 0.1) 0%, transparent 50%);
-    pointer-events: none;
-    z-index: 9998;
-}
-
-/* Conexión Baja - Isolation, world feels distant */
-body.conexion-low {
-    filter: brightness(0.9) contrast(0.95);
-    transition: filter 1s ease;
-}
-
-body.conexion-low::after {
-    content: '';
-    position: fixed;
-    inset: 0;
-    box-shadow: inset 0 0 200px rgba(26, 31, 46, 0.5);
-    pointer-events: none;
-    z-index: 9997;
-}
-
-/* Trauma Alto - World closing in */
-body.trauma-high {
-    filter: saturate(0.5) brightness(0.85);
-    transition: filter 1s ease;
-}
-
-body.trauma-high::after {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background: radial-gradient(ellipse at center, transparent 20%, rgba(155, 35, 53, 0.1) 100%);
-    box-shadow: inset 0 0 200px rgba(0, 0, 0, 0.6);
-    pointer-events: none;
-    z-index: 9999;
-}
-
-/* --- POSITIVE STATE EFFECTS --- */
-
-/* High connection: the world feels warmer */
-body.conexion-high {
-    --text-main: #efe6d6;
-    --bg-surface: #2d3545;
-}
-
-body.conexion-high .story p {
-    line-height: calc(var(--line-height-base) + 0.05);
-}
-
-/* High llama: collective hope - subtle warm glow */
-body.llama-high {
-    --accent: #f48c06;
-    --accent-glow: rgba(244, 140, 6, 0.5);
-}
-
-body.llama-high .story {
-    text-shadow: 0 0 40px rgba(244, 140, 6, 0.03);
-}
-
-/* Combined crisis: multiple low stats compound */
-body.salud-baja.conexion-low {
-    filter: saturate(0.3) brightness(0.8);
-}
-
-body.salud-baja.conexion-low .story p {
-    max-width: 50ch;
-    letter-spacing: -0.02em;
-}
-
-/* ==========================================
-   TOOLTIPS FOR URUGUAYAN TERMS
-   ========================================== */
-
-.term-tooltip {
-    position: relative;
-    border-bottom: 1px dotted var(--accent);
-    cursor: help;
-}
-
-.term-tooltip::after {
-    content: attr(data-tooltip);
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--bg-light);
-    color: var(--text-main);
-    padding: 6px 10px;
-    border-radius: 4px;
-    font-size: 13px;
-    white-space: nowrap;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.2s;
-    border: 1px solid var(--accent);
-    z-index: 100;
-}
-
-.term-tooltip:hover::after {
-    opacity: 1;
-}
-
-/* ==========================================
-   DAY PROGRESS INDICATOR
-   ========================================== */
-
-.day-progress {
-    display: flex;
     gap: 4px;
-    margin-left: 10px;
+    background: var(--bg);
 }
 
-.day-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--text-muted);
-    opacity: 0.3;
-    transition: all 0.3s;
+.cost-badge {
+    border-color: var(--accent);
+    color: var(--accent);
 }
 
-.day-dot.past {
-    background: var(--success);
-    opacity: 0.6;
+.cost-insufficient {
+    background: var(--fg);
+    color: var(--bg);
+    border-color: var(--fg);
+    text-decoration: line-through;
 }
 
-.day-dot.current {
-    background: var(--accent);
-    opacity: 1;
-    box-shadow: 0 0 6px var(--accent);
+/* Efectos de Stats (+/-) */
+.effect-up {
+    color: var(--fg);
 }
 
-/* ==========================================
-   TYPEWRITER EFFECT
-   ========================================== */
-
-.typewriter-enabled .story-text {
-    animation: none;
+.effect-down {
+    color: var(--accent);
+    border-style: dashed;
 }
 
-.typewriter-cursor {
-    display: inline-block;
-    width: 2px;
-    height: 1em;
-    background: var(--accent);
-    margin-left: 2px;
-    animation: blink 0.7s infinite;
+/* Alerts Generales */
+.alert {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: var(--border-width) solid var(--fg);
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    text-align: center;
+    text-transform: uppercase;
 }
 
-@keyframes blink {
-    0%, 50% { opacity: 1; }
-    51%, 100% { opacity: 0; }
+.alert-high {
+    background: var(--fg);
+    color: var(--bg);
 }
 
-/* ==========================================
-   KEYBOARD HINTS
-   ========================================== */
-
-.keyboard-hint {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--bg-light);
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-size: 12px;
-    color: var(--text-muted);
-    opacity: 0.7;
-    pointer-events: none;
-    z-index: 50;
-}
-
-.keyboard-hint kbd {
-    background: var(--bg-dark);
-    padding: 2px 6px;
-    border-radius: 3px;
-    margin: 0 4px;
-    border: 1px solid var(--text-muted);
-}
-
-/* Hide keyboard hints on mobile */
-@media (max-width: 768px) {
-    .keyboard-hint { display: none; }
+.alert-low {
+    background: var(--bg);
+    color: var(--accent);
+    border-color: var(--accent);
 }
