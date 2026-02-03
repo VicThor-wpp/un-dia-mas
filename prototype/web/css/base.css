@@ -1,10 +1,8 @@
-/* Un Día Más - Base Styles */
-/* Reset, icons, utilities, and main container */
+/* Un Día Más - Base Styles (Brutalism) */
 
 /* ==========================================
    RESET & BASE
    ========================================== */
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -12,87 +10,59 @@
 }
 
 body {
-    background: var(--bg-dark);
-    color: var(--text-main);
-    font-family: var(--font-family, 'Courier New', Courier, monospace);
+    background-color: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-main);
     font-size: var(--font-size-base);
     line-height: var(--line-height-base);
     min-height: 100vh;
-    transition: background 0.3s, color 0.3s;
-}
-
-/* Subtle vignette for atmosphere */
-#game::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background: radial-gradient(ellipse at center, transparent 60%, rgba(0, 0, 0, 0.15) 100%);
-    pointer-events: none;
-    z-index: 9990;
-}
-
-/* ==========================================
-   LUCIDE ICONS
-   ========================================== */
-
-[data-lucide] {
-    display: inline-block;
-    vertical-align: middle;
-    stroke: currentColor;
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    fill: none;
+    transition: background-color 0.5s, color 0.5s;
+    overflow-x: hidden;
 }
 
 /* ==========================================
    MAIN CONTAINER
    ========================================== */
-
 .container {
-    max-width: min(700px, var(--max-line-width));
-    margin: 0 auto;
-    padding: 0 20px 40px;
+    max-width: 700px;
+    margin: 40px auto 100px; /* Margen inferior amplio para scroll */
+    padding: 40px;
+    background: var(--surface);
+    border: var(--border-width) var(--border-style) var(--fg);
+    box-shadow: var(--shadow-solid) var(--shadow-color);
+    position: relative;
+    transition: all 0.5s;
+}
+
+/* ==========================================
+   TYPOGRAPHY HEADERS
+   ========================================== */
+h1, h2, .story-header {
+    font-family: var(--font-header);
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--fg);
+    margin: 0 0 1.5rem 0;
+    line-height: 1.1;
+}
+
+.story-header {
+    font-size: 2.5rem;
+    border-bottom: var(--border-width) solid var(--fg);
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
 }
 
 /* ==========================================
    UTILITIES
    ========================================== */
+a { color: var(--accent); text-decoration: none; font-weight: bold; }
+a:hover { text-decoration: underline; background: var(--fg); color: var(--bg); }
 
-.error {
-    color: var(--danger);
-    text-align: center;
-    padding: 20px;
-}
+strong { font-weight: 700; color: var(--accent); }
+em { font-style: italic; font-family: var(--font-mono); font-size: 0.9em; }
 
-.loading {
-    color: var(--text-muted);
-    font-style: italic;
-}
-
-em {
-    color: var(--accent);
-    font-style: normal;
-}
-
-strong {
-    color: var(--text-main);
-}
-
-a {
-    color: var(--accent);
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-/* ==========================================
-   SCROLLBAR
-   ========================================== */
-
-::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: var(--bg-dark); }
-::-webkit-scrollbar-thumb { background: var(--text-muted); }
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--bg); border-left: 1px solid var(--fg); }
+::-webkit-scrollbar-thumb { background: var(--fg); border: 1px solid var(--bg); }
 ::-webkit-scrollbar-thumb:hover { background: var(--accent); }

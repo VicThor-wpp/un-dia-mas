@@ -21,6 +21,9 @@
 
 # JUEVES
 
+// AMBIENTE Y RADIO
+-> ambiente_amanecer ->
+
 // --- Ecos del miércoles ---
 {conte_a_alguien:
     El celular tiene un mensaje.
@@ -41,6 +44,9 @@ Te despertás.
 Por un segundo, pensás que tenés que ir a laburar.
 
 Después te acordás.
+
+// VOCES
+-> voces_reaccion ->
 
 * [...]
 -
@@ -744,6 +750,9 @@ Vos también.
 
 // Reflexión nocturna (Fase 3)
 -> reflexion_nocturna ->
+
+// DIARIO DE CONCIENCIA
+-> diario_escribir ->
 
 * [Dormir] -> fragmento_jueves
 

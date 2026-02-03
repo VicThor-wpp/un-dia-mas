@@ -5,14 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Un Día Más</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='24' font-size='24'>🔥</text></svg>">
-    <!-- OpenDyslexic font for accessibility -->
+    
+    <!-- Design System Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;900&family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@300;500;700&family=Special+Elite&display=swap" rel="stylesheet">
+    
+    <!-- OpenDyslexic font for accessibility (Legacy support) -->
     <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/opendyslexic">
-    <link rel="stylesheet" href="css/main.css">
+    
+    <!-- Stylesheets (Brutalist System) -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/story.css">
+    <link rel="stylesheet" href="css/choices.css">
+    <link rel="stylesheet" href="css/dice.css">
+    
+    <!-- Legacy Styles (Modules) -->
+    <link rel="stylesheet" href="css/start-screen.css">
+    <link rel="stylesheet" href="css/modals.css">
+    <link rel="stylesheet" href="css/notifications.css">
+    <link rel="stylesheet" href="css/ui-elements.css">
+    <link rel="stylesheet" href="css/ending-screen.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 </head>
-<body class="terminal">
-    <!-- Start Screen -->
+<body class="theme-oficina"> <!-- Default Theme -->
+
+    <!-- Start Screen (Overlay) -->
     <div id="startScreen" class="start-screen">
         <div class="start-content">
             <div class="start-flame">🔥</div>
@@ -41,18 +64,37 @@
         </div>
     </div>
 
-    <!-- Game Container (hidden initially) -->
+    <!-- HUD (New Structure) -->
+    <nav id="gameHeader" class="game-header" style="display: none;">
+        <div class="hud-info">
+            <span class="day-display" id="dayDisplay">DÍA 1 / LUNES</span>
+            <span class="location-display" id="locDisplay">MONTEVIDEO</span>
+        </div>
+        
+        <!-- Stats Container (Populated by StatsPanel.js) -->
+        <div id="statusContainer" class="stats-container">
+            <!-- JS will inject stats here -->
+        </div>
+    </nav>
+
+    <!-- Game Container -->
     <div id="game" class="container" style="display: none;">
-        <header id="statusContainer" class="status-bar"></header>
+        <!-- Decoración Contextual (Inyectada por JS según tema) -->
+        <div id="locationDeco" class="location-deco"></div>
+        
         <main id="storyContainer" class="story"></main>
         <nav id="choicesContainer" class="choices"></nav>
     </div>
+
+    <!-- Modals & Overlays -->
+    <div id="notificationArea" class="notification-area"></div>
+    <div id="modalOverlay" class="modal-overlay" style="display: none;"></div>
 
     <!-- Ink Runtime -->
     <script src="ink.js"></script>
     <script src="un_dia_mas.js"></script>
 
-    <!-- Modules (order matters) -->
+    <!-- Modules -->
     <script src="modules/security-validator.js"></script>
     <script src="modules/config-manager.js"></script>
     <script src="modules/notification-system.js"></script>

@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Un Día Más - Master Design System</title>
+    
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;900&family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@300;500;700&family=Special+Elite&display=swap" rel="stylesheet">
+
+    <style>
+        /* =========================================
+           0. RESET & LAYOUT DE DOCUMENTACIÓN
+           ========================================= */
+        :root {
+            --doc-bg: #f4f4f4;
+            --doc-text: #222;
+            --doc-accent: #000;
+        }
+        
+        * { box-sizing: border-box; }
+        
+        body {
+            margin: 0; padding: 0;
+            background: var(--doc-bg);
+            color: var(--doc-text);
+            font-family: 'Space Grotesk', sans-serif;
+            display: flex;
+        }
+
+        /* Sidebar de Navegación */
+        .doc-sidebar {
+            width: 250px;
+            background: #fff;
+            height: 100vh;
+            position: fixed;
+            padding: 30px 20px;
+            border-right: 1px solid #ddd;
+            overflow-y: auto;
+        }
+        
+        .doc-sidebar h1 { font-size: 1.2rem; text-transform: uppercase; margin-bottom: 30px; letter-spacing: 1px; }
+        .doc-nav a { display: block; text-decoration: none; color: #666; margin-bottom: 10px; font-size: 0.9rem; }
+        .doc-nav a:hover, .doc-nav a.active { color: #000; font-weight: bold; }
+        
+        /* Área Principal */
+        .doc-main {
+            margin-left: 250px;
+            padding: 40px 60px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .doc-section { margin-bottom: 60px; padding-bottom: 40px; border-bottom: 1px solid #ddd; }
+        .doc-section h2 { font-size: 2rem; margin-bottom: 20px; text-transform: uppercase; border-left: 5px solid #000; padding-left: 15px; }
+        .doc-section h3 { font-size: 1.2rem; margin-top: 30px; margin-bottom: 15px; color: #555; }
+        
+        .doc-note {
+            background: #e8f4fd;
+            padding: 15px;
+            border-left: 4px solid #2196f3;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            margin-bottom: 20px;
+        }
+
+        /* Swatches de Color */
+        .color-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 20px; }
+        .swatch {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            overflow: hidden;
+            background: #fff;
+        }
+        .swatch-color { height: 80px; width: 100%; }
+        .swatch-info { padding: 10px; font-size: 0.8rem; font-family: 'JetBrains Mono', monospace; }
+        .swatch-name { font-weight: bold; display: block; }
+        
+        /* Playground Container */
+        .playground {
+            border: 1px dashed #999;
+            padding: 40px;
+            margin: 20px 0;
+            background: #e0e0e0; /* Neutral gray for contrast */
+            display: flex;
+            justify-content: center;
+        }
+
+        /* =========================================
+           1. VARIABLES DEL SISTEMA DE JUEGO (THEME ENGINE)
+           ========================================= */
+        :root {
+            /* Estructura Maestra (Brutalismo) */
+            --border-width: 3px;
+            --shadow-solid: 6px 6px 0px;
+            --font-main: 'Space Grotesk', sans-serif;
+            --font-header: 'Archivo', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            --font-hand: 'Special Elite', cursive;
+        }
+
+        /* --- TEMA: OFICINA (TRÁMITE) --- */
+        .theme-oficina {
+            --bg: #e3dac9;       /* Beige Manila */
+            --surface: #f0eadd;  /* Papel */
+            --fg: #2b3a28;       /* Verde Tinta */
+            --accent: #cc3333;   /* Rojo Sello */
+            --muted: #a8a090;
+            --shadow-color: rgba(43, 58, 40, 0.2);
+        }
+
+        /* --- TEMA: CALLE (ALERTA) --- */
+        .theme-calle {
+            --bg: #e6e6e6;       /* Cemento Claro */
+            --surface: #d4d4d4;  /* Hormigón */
+            --fg: #111111;       /* Asfalto */
+            --accent: #ffcc00;   /* Amarillo Tráfico */
+            --muted: #777777;
+            --shadow-color: #000;
+        }
+
+        /* --- TEMA: CASA (MATE LAVADO) --- */
+        .theme-casa {
+            --bg: #f4f1ea;       /* Crema Viejo */
+            --surface: #fffdf5;  /* Enlozado */
+            --fg: #4a5d4e;       /* Verde Yerba Seco */
+            --accent: #d4a373;   /* Café */
+            --muted: #b5c4b9;
+            --shadow-color: #2c3a2f;
+        }
+
+        /* --- TEMA: OLLA (TRINCHERA) --- */
+        .theme-olla {
+            --bg: #111111;       /* Noche */
+            --surface: #1a1a1a;  /* Hierro */
+            --fg: #e0e0e0;       /* Humo */
+            --accent: #ffaa00;   /* Fuego */
+            --muted: #444444;
+            --shadow-color: #000;
+        }
+
+        /* =========================================
+           2. COMPONENTES DEL JUEGO (CSS REAL)
+           ========================================= */
+        
+        /* Game Container Wrapper (simulates body) */
+        .game-wrapper {
+            background-color: var(--bg);
+            color: var(--fg);
+            font-family: var(--font-main);
+            padding: 40px;
+            width: 100%;
+            max-width: 600px;
+            border: 1px solid #ccc; /* Just for docs visibility */
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        /* HEADER / HUD */
+        .hud-component {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: var(--border-width) solid var(--fg);
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+        .hud-meta { font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; }
+        .hud-loc { font-family: var(--font-header); font-weight: 900; font-size: 1.5rem; text-transform: uppercase; line-height: 1; }
+        
+        /* BARRAS DE ESTADO */
+        .stat-bar { width: 80px; display: flex; flex-direction: column; gap: 4px; }
+        .stat-name { font-size: 0.6rem; font-weight: bold; text-transform: uppercase; }
+        .stat-track { height: 10px; border: 2px solid var(--fg); background: var(--surface); padding: 1px; }
+        .stat-fill { height: 100%; background: var(--fg); width: 50%; }
+        .stat-fill.warn { background: var(--accent); }
+
+        /* TYPOGRAPHY */
+        .story-text { font-size: 1.1rem; line-height: 1.6; margin-bottom: 1.5rem; }
+        
+        /* GLOSA */
+        .glossary-term {
+            border-bottom: 2px dotted var(--accent);
+            cursor: help;
+            font-weight: 500;
+            position: relative;
+        }
+        .glossary-term:hover { background: var(--accent); color: var(--bg); border-bottom-style: solid; }
+
+        /* VOCES (THOUGHT CABINET) */
+        .voice-line {
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            padding: 15px;
+            margin: 2rem -10px;
+            border: var(--border-width) solid var(--fg);
+            background: var(--surface);
+            box-shadow: var(--shadow-solid) var(--shadow-color);
+            position: relative;
+        }
+        
+        .voice-inseguridad { border-style: dashed; opacity: 0.8; }
+        .voice-inseguridad::before { content: "// ERROR_LOG:"; display: block; font-size: 0.7em; opacity: 0.7; margin-bottom: 5px; }
+        
+        .voice-politica { border-color: var(--accent); color: var(--accent); font-weight: bold; }
+        .voice-politica::before { content: "★ ANÁLISIS:"; display: block; font-size: 0.7em; margin-bottom: 5px; color: var(--fg); }
+
+        /* DADOS (MECHANIC) */
+        .dice-display {
+            display: flex; gap: 15px; justify-content: center;
+            background: rgba(0,0,0,0.05); padding: 20px;
+            border: 2px dashed var(--muted); margin: 20px 0;
+        }
+        .die {
+            width: 40px; height: 40px;
+            border: 2px solid var(--fg); background: var(--bg);
+            display: flex; align-items: center; justify-content: center;
+            font-family: var(--font-hand); font-size: 1.2rem; font-weight: bold;
+            box-shadow: 3px 3px 0 var(--fg);
+        }
+        .die-result {
+            font-family: var(--font-header); font-weight: 900;
+            color: var(--accent); text-transform: uppercase;
+            border: 3px solid var(--accent); padding: 5px 10px;
+            transform: rotate(-3deg);
+        }
+
+        /* CHOICE BUTTONS */
+        .choice-btn {
+            display: block; width: 100%;
+            padding: 15px; margin-bottom: 10px;
+            background: transparent;
+            border: 1px solid var(--muted);
+            border-left: 4px solid var(--muted);
+            color: var(--fg); font-family: var(--font-main); font-size: 1rem;
+            text-align: left; cursor: pointer; transition: 0.2s;
+        }
+        .choice-btn:hover {
+            border-color: var(--fg);
+            border-left-color: var(--fg);
+            background: var(--surface);
+            transform: translateX(5px);
+        }
+        .choice-btn.risk { color: var(--accent); border-color: var(--accent); }
+        .choice-btn.risk:hover { background: var(--accent); color: var(--bg); }
+
+        /* ATMOSPHERE CLASSES */
+        .effect-inercia { filter: grayscale(100%) contrast(120%); }
+        .effect-humedad { filter: blur(0.8px); }
+
+    </style>
+</head>
+<body>
+
+    <!-- SIDEBAR -->
+    <nav class="doc-sidebar">
+        <h1>Un Día Más<br><span style="font-size:0.6em; color:#999;">Design System v1.0</span></h1>
+        <div class="doc-nav">
+            <a href="#foundations">1. Fundamentos</a>
+            <a href="#themes">2. Temas & Locaciones</a>
+            <a href="#components">3. Componentes UI</a>
+            <a href="#mechanics">4. Mecánicas</a>
+            <a href="#playground">★ Playground</a>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="doc-main">
+
+        <!-- SECCIÓN 1: FUNDAMENTOS -->
+        <section id="foundations" class="doc-section">
+            <h2>1. Fundamentos (Brutalismo)</h2>
+            <p>La estética del juego se basa en el <strong>"Brutalismo Rioplatense"</strong>: materiales honestos, tipografía pesada, bordes gruesos y sombras sólidas (block shadows). Evitamos degradados suaves y bordes redondeados excesivos.</p>
+            
+            <h3>Tipografía</h3>
+            <div style="font-family: 'Archivo'; font-weight: 900; font-size: 3rem; line-height:1;">ARCHIVO BLACK</div>
+            <p style="margin-bottom:20px;">Para encabezados y gritos. Impacto visual masivo.</p>
+            
+            <div style="font-family: 'Space Grotesk'; font-size: 1.5rem;">Space Grotesk Regular</div>
+            <p style="margin-bottom:20px;">Para cuerpo de texto. Legible pero con carácter técnico.</p>
+            
+            <div style="font-family: 'JetBrains Mono'; font-size: 1rem;">JetBrains Mono</div>
+            <p style="margin-bottom:20px;">Para datos, HUD y pensamientos lógicos.</p>
+
+            <h3>Reglas de Construcción</h3>
+            <div class="doc-note">
+                BORDER-WIDTH: 3px SOLID<br>
+                SHADOW-OFFSET: 6px 6px<br>
+                BORDER-RADIUS: 0px (Mayoritariamente)
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2: TEMAS -->
+        <section id="themes" class="doc-section">
+            <h2>2. Temas & Locaciones</h2>
+            <p>Cada locación tiene su propia paleta semántica. No son "skins", son atmósferas.</p>
+
+            <h3>A. OFICINA (TRÁMITE)</h3>
+            <p>Burocracia, papel viejo, despersonalización.</p>
+            <div class="color-grid">
+                <div class="swatch"><div class="swatch-color" style="background:#e3dac9;"></div><div class="swatch-info"><span class="swatch-name">Manila BG</span>#E3DAC9</div></div>
+                <div class="swatch"><div class="swatch-color" style="background:#2b3a28;"></div><div class="swatch-info"><span class="swatch-name">Ink Green</span>#2B3A28</div></div>
+                <div class="swatch"><div class="swatch-color" style="background:#cc3333;"></div><div class="swatch-info"><span class="swatch-name">Stamp Red</span>#CC3333</div></div>
+            </div>
+
+            <h3>B. CALLE (ALERTA)</h3>
+            <p>Cemento, obra en construcción, peligro urbano.</p>
+            <div class="color-grid">
+                <div class="swatch"><div class="swatch-color" style="background:#e6e6e6;"></div><div class="swatch-info"><span class="swatch-name">Concrete</span>#E6E6E6</div></div>
+                <div class="swatch"><div class="swatch-color" style="background:#111111;"></div><div class="swatch-info"><span class="swatch-name">Asphalt</span>#111111</div></div>
+                <div class="swatch"><div class="swatch-color" style="background:#ffcc00;"></div><div class="swatch-info"><span class="swatch-name">Warning</span>#FFCC00</div></div>
+            </div>
+
+            <h3>C. CASA (MATE LAVADO)</h3>
+            <p>Intimidad, estancamiento, melancolía doméstica.</p>
+            <div class="color-grid">
+                <div class="swatch"><div class="swatch-color" style="background:#f4f1ea;"></div><div class="swatch-info"><span class="swatch-name">Cream</span>#F4F1EA</div></div>
+                <div class="swatch"><div class="swatch-color" style="background:#4a5d4e;"></div><div class="swatch-info"><span class="swatch-name">Yerba Dry</span>#4A5D4E</div></div>
+                <div class="swatch"><div class="swatch-color" style="background:#d4a373;"></div><div class="swatch-info"><span class="swatch-name">Coffee</span>#D4A373</div></div>
+            </div>
+
+            <h3>D. OLLA (TRINCHERA)</h3>
+            <p>Noche, fuego, humo, resistencia.</p>
+            <div class="color-grid">
+                <div class="swatch"><div class="swatch-color" style="background:#111111;"></div><div class="swatch-info"><span class="swatch-name">Night</span>#111111</div></div>
+                <div class="swatch"><div class="swatch-color" style="background:#e0e0e0;"></div><div class="swatch-info"><span class="swatch-name">Smoke</span>#E0E0E0</div></div>
+                <div class="swatch"><div class="swatch-color" style="background:#ffaa00;"></div><div class="swatch-info"><span class="swatch-name">Fire</span>#FFAA00</div></div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 3: COMPONENTES -->
+        <section id="components" class="doc-section">
+            <h2>3. Componentes UI</h2>
+            
+            <h3>HUD Superior</h3>
+            <div class="playground">
+                <div class="game-wrapper theme-oficina">
+                    <div class="hud-component">
+                        <div>
+                            <div class="hud-meta">DÍA 3 / MIÉRCOLES</div>
+                            <div class="hud-loc">OFICINA</div>
+                        </div>
+                        <div style="display:flex; gap:10px;">
+                            <div class="stat-bar">
+                                <span class="stat-name">Energía</span>
+                                <div class="stat-track"><div class="stat-fill" style="width:70%"></div></div>
+                            </div>
+                            <div class="stat-bar">
+                                <span class="stat-name">Llama</span>
+                                <div class="stat-track"><div class="stat-fill warn" style="width:30%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Gabinete de Voces</h3>
+            <div class="playground">
+                <div class="game-wrapper theme-casa">
+                    <div class="voice-line voice-inseguridad">
+                        (Tu cabeza te recuerda: no tenés a dónde ir. La reunión fue un desastre.)
+                    </div>
+                    <div class="voice-line voice-politica">
+                        Mirás el recibo de sueldo. No es un error. Es robo sistemático.
+                    </div>
+                </div>
+            </div>
+
+            <h3>Glosa Contextual</h3>
+            <div class="playground">
+                <div class="game-wrapper theme-calle">
+                    <p class="story-text">
+                        Caminás por 18 de Julio. Ves gente con la <span class="glossary-term">chismosa</span> llena de aire.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 4: MECÁNICAS -->
+        <section id="mechanics" class="doc-section">
+            <h2>4. Interacción & Mecánicas</h2>
+
+            <h3>Dados & Resultados</h3>
+            <div class="playground">
+                <div class="game-wrapper theme-oficina">
+                    <div class="dice-display">
+                        <div class="die">4</div>
+                        <div class="die">2</div>
+                        <div class="die-result">ÉXITO</div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Botones de Decisión</h3>
+            <div class="playground">
+                <div class="game-wrapper theme-oficina">
+                    <button class="choice-btn">Aceptar y firmar.</button>
+                    <button class="choice-btn">Preguntar por qué.</button>
+                    <button class="choice-btn risk">Gritarles (Riesgo)</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- PLAYGROUND FINAL -->
+        <section id="playground" class="doc-section">
+            <h2>★ Live Playground</h2>
+            <p>Probá los componentes en contexto.</p>
+            
+            <div style="margin-bottom:10px;">
+                <button onclick="setTheme('theme-oficina')">Oficina</button>
+                <button onclick="setTheme('theme-casa')">Casa</button>
+                <button onclick="setTheme('theme-calle')">Calle</button>
+                <button onclick="setTheme('theme-olla')">Olla</button>
+                <span style="margin:0 10px;">|</span>
+                <button onclick="toggleFx('effect-inercia')">FX: Inercia</button>
+                <button onclick="toggleFx('effect-humedad')">FX: Humedad</button>
+            </div>
+
+            <div class="playground">
+                <div id="live-demo" class="game-wrapper theme-oficina">
+                    
+                    <div class="hud-component">
+                        <div>
+                            <div class="hud-meta">DÍA X</div>
+                            <div class="hud-loc">LOCACIÓN</div>
+                        </div>
+                        <div class="stat-bar">
+                            <span class="stat-name">Inercia</span>
+                            <div class="stat-track"><div class="stat-fill" style="width:80%"></div></div>
+                        </div>
+                    </div>
+
+                    <p class="story-text">
+                        El ambiente cambia. Sentís el peso del lugar.
+                        <span class="glossary-term">Glosario</span> activo.
+                    </p>
+
+                    <div class="voice-line voice-inseguridad">
+                        (Pensamiento intrusivo activo.)
+                    </div>
+
+                    <div class="dice-display">
+                        <div class="die">?</div>
+                        <div class="die-result">WAIT</div>
+                    </div>
+
+                    <button class="choice-btn">Opción segura</button>
+                    <button class="choice-btn risk">Opción arriesgada</button>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        function setTheme(theme) {
+            const demo = document.getElementById('live-demo');
+            demo.className = 'game-wrapper ' + theme;
+        }
+        function toggleFx(fx) {
+            const demo = document.getElementById('live-demo');
+            demo.classList.toggle(fx);
+        }
+    </script>
+
+</body>
+</html>

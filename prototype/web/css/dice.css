@@ -1,150 +1,61 @@
-/* Un Día Más - Dice Rolls */
-/* Prominent card display for dice roll results */
+/* Un Día Más - Dice Mechanic */
 
-/* ==========================================
-   DICE ROLLS - Prominent Card Display
-   ========================================== */
-
-.dice-roll-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.dice-area {
+    border: 2px dashed var(--muted);
+    padding: 20px;
+    margin: 30px 0;
+    background: rgba(0,0,0,0.02);
     text-align: center;
-    background: var(--bg-light);
-    border: 2px solid var(--accent);
-    padding: 25px 30px;
-    margin: 25px auto;
-    max-width: 320px;
-    border-radius: 12px;
-    animation: diceAppear 0.5s ease;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s;
 }
 
-.dice-roll-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+.dice-label {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    text-transform: uppercase;
     margin-bottom: 15px;
-    opacity: 0.7;
+    display: block;
+    color: var(--fg);
 }
 
-.dice-roll-title {
-    font-size: 12px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--text-muted);
+.dice-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 15px;
 }
 
-.dice-roll-result {
-    margin: 10px 0;
-}
-
-.dice-roll-box .dice-value {
-    font-size: 4em;
-    font-weight: bold;
-    line-height: 1;
-}
-
-.dice-roll-label {
-    font-size: 1.2em;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-weight: bold;
-    margin: 10px 0;
-}
-
-.dice-roll-desc {
-    font-size: 14px;
-    color: var(--text-muted);
-    margin-top: 10px;
-    line-height: 1.4;
-}
-
-/* ==========================================
-   DICE RESULT COLORS
-   ========================================== */
-
-/* Critical Success - Gold */
-.dice-roll-box.critical-success {
-    border-color: gold;
-    background: linear-gradient(180deg, rgba(255, 215, 0, 0.15), var(--bg-light));
-}
-.dice-roll-box.critical-success .dice-value,
-.dice-roll-box.critical-success .dice-roll-label { color: gold; }
-.dice-roll-box.critical-success .dice-roll-header { color: gold; }
-
-/* Success - Green */
-.dice-roll-box.success {
-    border-color: var(--success);
-    background: linear-gradient(180deg, rgba(76, 175, 80, 0.15), var(--bg-light));
-}
-.dice-roll-box.success .dice-value,
-.dice-roll-box.success .dice-roll-label { color: var(--success); }
-.dice-roll-box.success .dice-roll-header { color: var(--success); }
-
-/* Failure - Red */
-.dice-roll-box.failure {
-    border-color: var(--danger);
-    background: linear-gradient(180deg, rgba(244, 67, 54, 0.15), var(--bg-light));
-}
-.dice-roll-box.failure .dice-value,
-.dice-roll-box.failure .dice-roll-label { color: var(--danger); }
-.dice-roll-box.failure .dice-roll-header { color: var(--danger); }
-
-/* Critical Failure - Dark Red with shake */
-.dice-roll-box.critical-failure {
-    border-color: #8b0000;
-    background: linear-gradient(180deg, rgba(139, 0, 0, 0.2), var(--bg-light));
-    animation: diceAppear 0.5s ease, shake 0.5s ease;
-}
-.dice-roll-box.critical-failure .dice-value,
-.dice-roll-box.critical-failure .dice-roll-label { color: #ff4444; }
-.dice-roll-box.critical-failure .dice-roll-header { color: #ff4444; }
-
-/* ==========================================
-   DICE ANIMATIONS
-   ========================================== */
-
-@keyframes diceAppear {
-    from { opacity: 0; transform: scale(0.8); }
-    to { opacity: 1; transform: scale(1); }
-}
-
-@keyframes shake {
-    0%, 100% { transform: scale(1); }
-    10%, 30%, 50%, 70%, 90% { transform: scale(1) translateX(-3px); }
-    20%, 40%, 60%, 80% { transform: scale(1) translateX(3px); }
-}
-
-/* ==========================================
-   SIMPLE DICE ROLL (Inline)
-   ========================================== */
-
-.dice-roll-box.dice-simple {
-    background: transparent;
-    border: 1px solid var(--border);
-    padding: 10px 15px;
-    max-width: none;
-    margin: 15px 0;
-    box-shadow: none;
-}
-
-.dice-roll-inline {
+.die {
+    width: 50px;
+    height: 50px;
+    border: 2px solid var(--fg);
+    background: var(--bg);
     display: flex;
     align-items: center;
-    gap: 10px;
-}
-
-.dice-value-inline {
-    font-size: 1.5em;
+    justify-content: center;
+    font-family: var(--font-hand);
+    font-size: 1.5rem;
     font-weight: bold;
-    color: var(--accent);
-    background: rgba(255, 107, 53, 0.15);
-    padding: 5px 12px;
-    border-radius: 6px;
+    color: var(--fg);
+    box-shadow: 3px 3px 0 var(--fg);
+    transform: rotate(-3deg);
+    transition: transform 0.2s;
 }
 
-.dice-label-inline {
-    color: var(--text-muted);
-    font-size: 14px;
+.die:nth-child(even) {
+    transform: rotate(2deg);
+}
+
+.dice-result {
+    font-family: var(--font-header);
+    font-weight: 900;
+    color: var(--accent);
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    transform: rotate(-2deg);
+    display: inline-block;
+    border: 3px solid var(--accent);
+    padding: 5px 15px;
+    border-radius: 4px; /* Sello levemente gastado */
+    mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxmaWx0ZXIgaWQ9Im4iPjxmZVR1cmJ1bGVuY2UgdHlwZT0iZnJhY3RhbE5vaXNlIiBiYXNlRnJlcXVlbmN5PSIwLjUiIG51bU9jdGF2ZXM9IjEiIHN0aXRjaFRpbGVzPSJzdGl0Y2giLz48L2ZpbHRlcj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ0cmFuc3BhcmVudCIvPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiMwMDAiIG9wYWNpdHk9IjAuNiIgZmlsdGVyPSJ1cmwoI24pIi8+PC9zdmc+");
 }

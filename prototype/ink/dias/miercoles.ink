@@ -10,6 +10,9 @@
 
 # MIÉRCOLES
 
+// AMBIENTE Y RADIO
+-> ambiente_amanecer ->
+
 // Despertar - contenido específico del miércoles
 No dormiste bien.
 Hoy es la reunión con Personal.
@@ -18,6 +21,9 @@ Hoy es la reunión con Personal.
 -
 
 -> casa_despertar ->
+
+// VOCES
+-> voces_reaccion ->
 
 {energia < 4: Te levantás con menos energía que ayer. La tensión se siente en el cuerpo.}
 
@@ -581,6 +587,9 @@ La cuenta regresiva empezó.
 -> fragmento_miercoles
 
 === fragmento_miercoles ===
+
+// DIARIO DE CONCIENCIA
+-> diario_escribir ->
 
 # MIENTRAS DORMÍS (o intentás)
 

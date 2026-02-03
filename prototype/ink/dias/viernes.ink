@@ -18,6 +18,9 @@
 
 # VIERNES
 
+// AMBIENTE Y RADIO
+-> ambiente_amanecer ->
+
 // --- Ecos del jueves ---
 {fui_a_olla_jueves:
     Te acordás de ayer en la olla.
@@ -729,6 +732,9 @@ Para hablar de la olla, de la situación.
 
 // Reflexión nocturna (Fase 3)
 -> reflexion_nocturna ->
+
+// DIARIO DE CONCIENCIA
+-> diario_escribir ->
 
 // Fragmento nocturno
 -> seleccionar_fragmento_viernes ->

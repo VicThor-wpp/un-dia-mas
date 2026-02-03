@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exploración de Estilos Unificados</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* =========================================
+           SISTEMA MAESTRO (LO QUE UNIFICA)
+           ========================================= */
+        :root {
+            --border-thick: 3px;
+            --font-main: 'Space Grotesk', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            --shadow: 6px 6px 0px;
+        }
+
+        body {
+            background: #222;
+            font-family: var(--font-main);
+            padding: 40px;
+            color: #111;
+        }
+
+        h1 { color: white; text-align: center; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 40px; }
+        h2 { color: white; border-bottom: 1px solid #555; padding-bottom: 10px; margin-top: 50px; font-size: 1rem; }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        /* La "Tarjeta" base del juego (El Contenedor) */
+        .game-card {
+            border: var(--border-thick) solid #000;
+            padding: 30px;
+            position: relative;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            font-weight: 900;
+            text-transform: uppercase;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            border-bottom: 2px solid rgba(0,0,0,0.1);
+            padding-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .tag {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            padding: 2px 6px;
+            border: 1px solid currentColor;
+            height: fit-content;
+        }
+
+        .text {
+            font-size: 1rem;
+            line-height: 1.5;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .choice {
+            padding: 10px;
+            border: 1px solid rgba(0,0,0,0.3);
+            margin-bottom: 5px;
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            cursor: pointer;
+        }
+        
+        .choice:hover { background: rgba(0,0,0,0.05); }
+
+        /* =========================================
+           VARIANTES: CASA
+           ========================================= */
+
+        /* CASA A: MATE LAVADO */
+        .casa-a {
+            background-color: #f4f1ea; /* Crema */
+            color: #4a5d4e; /* Verde yerba seco */
+            box-shadow: var(--shadow) #2c3a2f;
+        }
+        .casa-a .header { border-bottom-style: dashed; color: #6b8c72; }
+        .casa-a .choice { border-radius: 4px; background: #fff; border-color: #dcd6cc; }
+
+        /* CASA B: PERSIANA BAJA */
+        .casa-b {
+            background-color: #e0e0e0;
+            color: #333;
+            box-shadow: var(--shadow) #000;
+            /* Efecto de persiana */
+            background-image: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 4px,
+                rgba(0,0,0,0.05) 4px,
+                rgba(0,0,0,0.05) 8px
+            );
+        }
+        .casa-b .tag { background: #000; color: #fff; }
+
+        /* CASA C: HORMIGÓN CÁLIDO */
+        .casa-c {
+            background-color: #d8d0c5; /* Gris piedra cálida */
+            color: #5e4b35; /* Marrón tierra */
+            border-color: #5e4b35;
+            box-shadow: var(--shadow) #3d3022;
+        }
+        .casa-c .header { border-bottom: 2px solid #5e4b35; }
+        .casa-c .text { font-weight: 500; }
+
+
+        /* =========================================
+           VARIANTES: BONDI / CALLE
+           ========================================= */
+
+        /* BONDI A: BOLETO */
+        .bondi-a {
+            background-color: #f0e6fa; /* Papel rosado pálido boleto */
+            color: #4a4a6a; /* Tinta térmica azulada */
+            border-color: #4a4a6a;
+            box-shadow: var(--shadow) #2a2a3a;
+            font-family: var(--font-mono); /* Todo monoespaciado estilo ticket */
+        }
+        .bondi-a .header { border-bottom: 1px dotted currentColor; }
+        .bondi-a .text { font-family: var(--font-main); }
+
+        /* BONDI B: METAL Y LLUVIA */
+        .bondi-b {
+            background-color: #b0c4de; /* Gris acero */
+            color: #002244; /* Azul oscuro */
+            border-color: #002244;
+            box-shadow: var(--shadow) #001122;
+        }
+        .bondi-b .tag { background: #ff4400; color: white; border: none; } /* Luz trasera */
+        .bondi-b .choice { background: rgba(255,255,255,0.3); border: 1px solid #fff; }
+
+        /* BONDI C: ALERTA URBANA */
+        .bondi-c {
+            background-color: #e6e6e6; /* Asfalto claro */
+            color: #111;
+            border-color: #111;
+            box-shadow: 10px 10px 0 #ffcc00; /* Sombra amarilla alerta */
+        }
+        .bondi-c .header { background: #111; color: #ffcc00; padding: 5px; }
+        .bondi-c .tag { display: none; }
+
+    </style>
+</head>
+<body>
+
+    <h1>Exploración: Variantes Unificadas</h1>
+    <p style="text-align:center; color:#999;">Misma estructura, distinta piel.</p>
+
+    <!-- SECCIÓN CASA -->
+    <h2>LOCACIÓN: CASA (Intimidad / Estancamiento)</h2>
+    <div class="grid">
+        
+        <!-- CASA A -->
+        <div class="game-card casa-a">
+            <div class="header">
+                Mañana
+                <span class="tag">DÍA 4</span>
+            </div>
+            <div class="text">
+                <strong>Opción A: Mate Lavado.</strong><br>
+                Paleta suave, crema y verde. Se siente como una cocina vieja pero limpia. Transmite calma y un poco de tristeza.
+                <br><br>
+                El agua tarda en calentar. Mirás la mancha en la pared.
+            </div>
+            <div class="choice">Levantarse</div>
+            <div class="choice">Seguir durmiendo</div>
+        </div>
+
+        <!-- CASA B -->
+        <div class="game-card casa-b">
+            <div class="header">
+                Mañana
+                <span class="tag">DÍA 4</span>
+            </div>
+            <div class="text">
+                <strong>Opción B: Persiana Baja.</strong><br>
+                Gris con textura de rayas. Simula la luz filtrada. Es más depresivo y cerrado.
+                <br><br>
+                No querés abrir la ventana. El mundo de afuera hace ruido.
+            </div>
+            <div class="choice">Levantarse</div>
+            <div class="choice">Seguir durmiendo</div>
+        </div>
+
+        <!-- CASA C -->
+        <div class="game-card casa-c">
+            <div class="header">
+                Mañana
+                <span class="tag">DÍA 4</span>
+            </div>
+            <div class="text">
+                <strong>Opción C: Hormigón Cálido.</strong><br>
+                Tonos tierra y gris piedra. Sólido, brutalista pero doméstico.
+                <br><br>
+                La casa es tu fortaleza y tu cárcel.
+            </div>
+            <div class="choice">Levantarse</div>
+            <div class="choice">Seguir durmiendo</div>
+        </div>
+
+    </div>
+
+
+    <!-- SECCIÓN BONDI -->
+    <h2>LOCACIÓN: BONDI / CALLE (Tránsito / Ruido)</h2>
+    <div class="grid">
+        
+        <!-- BONDI A -->
+        <div class="game-card bondi-a">
+            <div class="header">
+                103 POCITOS
+                <span class="tag">BOLETO</span>
+            </div>
+            <div class="text">
+                <strong>Opción A: Boleto.</strong><br>
+                Textura de papel y tinta azulada. Se siente efímero, como un ticket arrugado en el bolsillo.
+                <br><br>
+                El bondi frena de golpe. La gente se empuja.
+            </div>
+            <div class="choice">Mirar por la ventana</div>
+            <div class="choice">Bajar acá</div>
+        </div>
+
+        <!-- BONDI B -->
+        <div class="game-card bondi-b">
+            <div class="header">
+                103 POCITOS
+                <span class="tag">LLUVIA</span>
+            </div>
+            <div class="text">
+                <strong>Opción B: Metal y Lluvia.</strong><br>
+                Tonos fríos, acero y azul. Industrial y urbano.
+                <br><br>
+                El vidrio está empañado. Alguien escribió un nombre con el dedo.
+            </div>
+            <div class="choice">Mirar por la ventana</div>
+            <div class="choice">Bajar acá</div>
+        </div>
+
+        <!-- BONDI C -->
+        <div class="game-card bondi-c">
+            <div class="header">
+                103 POCITOS
+                <span class="tag">TRÁNSITO</span>
+            </div>
+            <div class="text">
+                <strong>Opción C: Alerta Urbana.</strong><br>
+                Gris cemento con sombra amarilla fuerte. Alto contraste, señalética.
+                <br><br>
+                Ruido de frenadas. Bocinas. La ciudad grita.
+            </div>
+            <div class="choice">Mirar por la ventana</div>
+            <div class="choice">Bajar acá</div>
+        </div>
+
+    </div>
+
+</body>
+</html>

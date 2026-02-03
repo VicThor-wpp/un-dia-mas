@@ -10,8 +10,14 @@
 
 # LUNES
 
+// AMBIENTE Y RADIO
+-> ambiente_amanecer ->
+
 // Despertar en casa (tunnel)
 -> casa_despertar ->
+
+// VOCES
+-> voces_reaccion ->
 
 // Después de despertar, continúa con la salida
 -> lunes_salir
@@ -275,6 +281,9 @@ Sofía está adentro.
 -> lunes_dormir
 
 === lunes_dormir ===
+
+// DIARIO DE CONCIENCIA
+-> diario_escribir ->
 
 // Reflexión nocturna (Fase 3)
 -> reflexion_nocturna ->

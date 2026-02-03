@@ -21,6 +21,9 @@
 
 # SÁBADO
 
+// AMBIENTE Y RADIO
+-> ambiente_amanecer ->
+
 // --- Ecos del viernes ---
 {olla_cerro_viernes:
     Ayer la olla cerró temprano.
@@ -37,6 +40,9 @@
 Sábado.
 Antes era descanso.
 Ahora todos los días son iguales.
+
+// VOCES
+-> voces_reaccion ->
 
 * [...]
 -
@@ -900,6 +906,12 @@ Pero cambia algo.
 
 // Marcos se fue de la asamblea
 -> marcos_se_fue ->
+
+// Reflexión nocturna (Fase 3)
+-> reflexion_nocturna ->
+
+// DIARIO DE CONCIENCIA
+-> diario_escribir ->
 
 // Fragmento nocturno
 -> seleccionar_fragmento_sabado ->

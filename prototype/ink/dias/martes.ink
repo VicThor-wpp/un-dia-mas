@@ -10,6 +10,9 @@
 
 # MARTES
 
+// AMBIENTE Y RADIO
+-> ambiente_amanecer ->
+
 // --- Ecos del lunes ---
 {almorzamos_juntos:
     Juan te saluda de lejos al llegar.
@@ -25,6 +28,9 @@
 // Despertar en casa
 -> casa_despertar ->
 
+// VOCES
+-> voces_reaccion ->
+
 // En el bondi, la gente habla de despidos
 -> martes_bondi_tension
 
@@ -35,7 +41,7 @@
 // Contenido específico del martes: la tensión en el aire
 Pero algo se siente diferente hoy.
 
-En el micro, la gente habla de despidos.
+En el bondi, la gente habla de despidos.
 En otras empresas, en otros lados.
 "La cosa está jodida", dice alguien.
 
@@ -566,7 +572,10 @@ Es de Personal.
 No dice más.
 Pero sabés que no es bueno.
 
-* [Intentar dormir] -> transicion_martes_miercoles
+* [Intentar dormir]
+    // DIARIO DE CONCIENCIA
+    -> diario_escribir ->
+    -> transicion_martes_miercoles
 
 === transicion_martes_miercoles ===
 // Procesamiento nocturno de ideas y recursos

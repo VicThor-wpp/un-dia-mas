@@ -18,6 +18,9 @@
 
 # DOMINGO
 
+// AMBIENTE Y RADIO
+-> ambiente_amanecer ->
+
 // --- Ecos del sábado ---
 {participe_asamblea:
     La asamblea de ayer fue... algo.
@@ -38,6 +41,9 @@ Hace una semana eras otra persona.
 Tenías laburo.
 Tenías rutina.
 Tenías certezas.
+
+// VOCES
+-> voces_reaccion ->
 
 * [...]
 -
@@ -416,6 +422,9 @@ Una semana.
 {not conte_a_alguien && not ayude_en_olla: Estuviste bastante solo esta semana.}
 
 {juan_sabe_mi_situacion: Juan sabe lo que pasó. Te bancó a su manera.}
+
+// DIARIO DE CONCIENCIA
+-> diario_escribir ->
 
 // Fragmento nocturno final
 -> seleccionar_fragmento_domingo ->
