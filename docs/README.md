@@ -105,9 +105,9 @@ Trigger final GRIS              → design/narrative-map.md
 | Días totales | 7 |
 | Escenas únicas | ~150+ |
 | NPCs con arco | 11 (6 principales + 5 Fase 2) |
-| Variables de estado | 139 |
-| Ideas desbloqueables | 14 |
-| Finales posibles | 16 |
+| Variables de estado | 140+ |
+| Ideas desbloqueables | 14+ |
+| Finales posibles | 19 |
 | PAUSA tags (pacing) | 75 |
 | Mecánica central | Inercia (0-10) |
 

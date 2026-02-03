@@ -14,7 +14,7 @@
 === viernes_amanecer ===
 
 ~ dia_actual = 5
-~ energia = 4
+~ recuperar_energia_diaria()
 
 # VIERNES
 
@@ -122,7 +122,7 @@ Más portales.
 Suena el celular.
 Número desconocido.
 
-"Hola, ¿es usted [tu nombre]? Lo llamamos de RRHH."
+"Hola, ¿es usted [tu nombre]? Lo llamamos de Personal."
 
 El corazón salta.
 
@@ -612,7 +612,7 @@ Todos ayudan.
     ~ energia -= 2
     Salís a pedir en los negocios.
     No es fácil. Pero conseguís algo.
-    ~ veces_que_ayude += 1
+    ~ registrar_ayuda()
     ~ subir_conexion(2)
     ~ subir_llama(1)
 
@@ -1029,11 +1029,16 @@ Para hablar de cómo seguir.
 * [Continuar] -> transicion_viernes_sabado
 
 === transicion_viernes_sabado ===
+// Procesamiento nocturno de ideas y recursos
+~ evaluar_ideas_involuntarias()
+~ evaluar_dignidad_nocturna()
+~ efecto_red_o_nada()
+~ efecto_noche_solitaria()
+
 // Chequeo de colapso mental antes de continuar
 {inercia >= 10:
-    -> recovery_mental_viernes
+    -> final_apagado
 }
-- (post_recovery_viernes)
 
 // Chequeo de destrucción del tejido social
 {llama <= 0:

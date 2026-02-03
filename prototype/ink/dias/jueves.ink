@@ -17,7 +17,7 @@
 === jueves_amanecer ===
 
 ~ dia_actual = 4
-~ energia = 4  // Dormiste mal, pero el cuerpo se adapta
+~ recuperar_energia_diaria()
 
 # JUEVES
 
@@ -406,7 +406,7 @@ Solo sigue cocinando.
     Te quedás a ordenar.
     Sofía te mira con gratitud.
     "Gracias. Esto ayuda más de lo que pensás."
-    ~ veces_que_ayude += 1
+    ~ registrar_ayuda()
     ~ subir_conexion(1)
     ~ subir_llama(1)
     -> jueves_olla_idea
@@ -1038,11 +1038,16 @@ Los problemas no.
 * [Dormir] -> transicion_jueves_viernes
 
 === transicion_jueves_viernes ===
+// Procesamiento nocturno de ideas y recursos
+~ evaluar_ideas_involuntarias()
+~ evaluar_dignidad_nocturna()
+~ efecto_red_o_nada()
+~ efecto_noche_solitaria()
+
 // Chequeo de colapso mental antes de continuar
 {inercia >= 10:
-    -> recovery_mental_jueves
+    -> final_apagado
 }
-- (post_recovery_jueves)
 
 // Chequeo de destrucción del tejido social
 {llama <= 0:

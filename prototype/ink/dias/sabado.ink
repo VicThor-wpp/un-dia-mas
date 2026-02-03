@@ -17,9 +17,9 @@
 === sabado_amanecer ===
 
 ~ dia_actual = 6
-~ energia = 4  // Fin de semana, dormiste un poco más
+~ recuperar_energia_diaria()
 
-# SABADO
+# SÁBADO
 
 // --- Ecos del viernes ---
 {olla_cerro_viernes:
@@ -1238,11 +1238,16 @@ Pero quizás no igual.
 * [Continuar] -> transicion_sabado_domingo
 
 === transicion_sabado_domingo ===
+// Procesamiento nocturno de ideas y recursos
+~ evaluar_ideas_involuntarias()
+~ evaluar_dignidad_nocturna()
+~ efecto_red_o_nada()
+~ efecto_noche_solitaria()
+
 // Chequeo de colapso mental antes de continuar
 {inercia >= 10:
-    -> recovery_mental_sabado
+    -> final_apagado
 }
-- (post_recovery_sabado)
 
 // Chequeo de destrucción del tejido social
 {llama <= 0:

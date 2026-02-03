@@ -6,7 +6,7 @@
 === martes_amanecer ===
 
 ~ dia_actual = 2
-~ energia = 4
+~ recuperar_energia_diaria()
 
 # MARTES
 
@@ -52,7 +52,7 @@ No pensás que te toque a vos.
 El laburo hoy está raro.
 
 El jefe no te mira.
-Los de RRHH entran y salen.
+Los de Personal entran y salen.
 Hay reuniones que no te incluyen.
 
 // Chequeo mental: aguantar la tensión del martes
@@ -65,7 +65,7 @@ Hay reuniones que no te incluyen.
     Intentás no pensar en eso. Te concentrás en la pantalla. Más o menos funciona.
 }
 { aguante == 0:
-    No podés dejar de mirar la puerta de RRHH. Cada vez que se abre, el estómago se cierra.
+    No podés dejar de mirar la puerta de Personal. Cada vez que se abre, el estómago se cierra.
 }
 { aguante == -1:
     Las manos te tiemblan. No podés concentrarte en nada. El miedo te paraliza.
@@ -559,7 +559,7 @@ Siempre es igual.
 
 El celular vibra.
 
-Es de RRHH.
+Es de Personal.
 
 "Confirmamos reunión mañana 11 AM. Sala 3."
 
@@ -569,6 +569,12 @@ Pero sabés que no es bueno.
 * [Intentar dormir] -> transicion_martes_miercoles
 
 === transicion_martes_miercoles ===
+// Procesamiento nocturno de ideas y recursos
+~ evaluar_ideas_involuntarias()
+~ evaluar_dignidad_nocturna()
+~ efecto_red_o_nada()
+~ efecto_noche_solitaria()
+
 // Chequeo de colapso mental antes de continuar
 {inercia >= 10:
     -> final_apagado

@@ -6,7 +6,7 @@
 === lunes_amanecer ===
 
 ~ dia_actual = 1
-~ energia = 4
+~ energia = 5
 
 # LUNES
 
@@ -484,6 +484,12 @@ No dice más.
 * [Dormir inquieto] -> transicion_lunes_martes
 
 === transicion_lunes_martes ===
+// Procesamiento nocturno de ideas y recursos
+~ evaluar_ideas_involuntarias()
+~ evaluar_dignidad_nocturna()
+~ efecto_red_o_nada()
+~ efecto_noche_solitaria()
+
 // Chequeo de colapso mental antes de continuar
 {inercia >= 10:
     -> final_apagado

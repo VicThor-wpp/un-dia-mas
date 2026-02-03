@@ -261,30 +261,31 @@ Pero ¿adónde? ¿Con qué?"
 
 === sofia_historia ===
 
-"El padre de los gurises se fue. De un día para otro.
-Me dejó con la ropa que teníamos puesta y deudas."
+"Matías, el padre de los gurises, ya no está. Nos separamos hace años, cuando volvimos de Barcelona."
 
 Aprieta el trapo.
 
 * [...]
 -
 
-"Llegué al barrio porque una prima me prestó una pieza.
-No conocía a nadie. No tenía trabajo."
+"Él hizo su vida en otro barrio. A veces manda una pensión, a veces no. No es mala gente, solo... eligió otro camino. Y yo me quedé acá, con la casa de mi vieja y la olla."
 
-"¿Y la olla?"
+"¿Y cómo empezaste con esto?"
 
 * [...]
 -
 
-"Elena me vio en la plaza. Yo estaba sentada, calculando cuánto me duraba la leche.
-Se acercó y me dijo: 'Si tenés manos, servís'. Me trajo acá. Me dio un cuchillo."
+"Llegué al barrio destruida. La Chola estaba enferma y yo no sabía cómo manejar todo sola. Elena me vio en la plaza un día, calculando cuánto me duraba la leche para Nico."
+
+"¿Qué hizo?"
+
+"Se acercó y me dijo: 'Si tenés manos, servís'. Me trajo acá. Me dio un cuchillo y una bolsa de papas."
 
 Pausa.
 # PAUSA
 
 "Ese día comimos. Pero lo importante fue que ese día cociné.
-Dejé de esperar y empecé a hacer."
+Dejé de esperar y empecé a hacer. La olla me salvó a mí antes que yo a ella."
 
 ~ sofia_relacion += 1
 

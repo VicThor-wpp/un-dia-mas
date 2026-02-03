@@ -89,10 +89,10 @@ Sofía habla sin mirar:
     Y a Tiago hablando con alguien por la ventanilla.
     
     No podés escuchar qué dicen.
-    Pero Tiago mira unas zapatillas que le muestran.
+    Pero Tiago mira unas championes que le muestran.
     
     La camioneta se va.
-    Tiago se queda mirando sus zapatillas rotas.
+    Tiago se queda mirando sus championes rotas.
     
     ~ bruno_contacto_tiago = true
     ->->
@@ -309,11 +309,11 @@ Con disciplina. Con orden."
 // Escena Sábado: Si la olla falló o Tiago está solo
 
 Ves a Bruno hablando con Tiago.
-Le muestra unas zapatillas nuevas.
+Le muestra unas championes nuevas.
 
 "Son talle 40. Te van bien."
 
-Tiago mira las zapatillas. Mira la olla cerrada.
+Tiago mira las championes. Mira la olla cerrada.
 
 * [Intervenir.]
     "Tiago, no agarres viaje."
@@ -328,18 +328,18 @@ Tiago mira las zapatillas. Mira la olla cerrada.
         * * ["Nada. Pero te doy la verdad."]
             "La verdad no llena la panza, vecino."
             
-            Bruno pone las zapatillas en las manos de Tiago.
+            Bruno pone las championes en las manos de Tiago.
             
             "Pensalo, pibe. Yo no te apuro."
             
-            Se va. Tiago se queda con las zapatillas.
+            Se va. Tiago se queda con las championes.
             
             ~ tiago_tentado_bruno = true
             ->->
         
         * * ["Que no estés solo."]
             Tiago baja la cabeza.
-            Le devuelve las zapatillas a Bruno.
+            Le devuelve las championes a Bruno.
             
             "Paso."
             
@@ -357,7 +357,7 @@ Tiago mira las zapatillas. Mira la olla cerrada.
     ->->
 
 * [Dejarlo ir.]
-    Tiago agarra las zapatillas.
+    Tiago agarra las championes.
     Sube a la camioneta.
 
     Perdiste.

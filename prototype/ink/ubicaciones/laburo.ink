@@ -133,7 +133,7 @@ Mails que podrían ser nada.
     Vas a destrabarla y ves un papel que quedó a medias.
     "LISTA DE REVISIÓN DE PUESTOS - CONFIDENCIAL"
     Alguien te lo arranca de la mano antes de que leas nombres.
-    "Dámelo." Es la secretaria de RRHH.
+    "Dámelo." Es la secretaria de Personal.
     ~ aumentar_inercia(1)
 
 - 3:
@@ -180,6 +180,17 @@ Mails que podrían ser nada.
 
 12:30.
 Hora de comer.
+
+{not dieta_elegida:
+    Mirás el tupper.
+    
+    * [Comés de todo.]
+        ~ es_vegano = false
+    * [Sos vegano.]
+        ~ es_vegano = true
+    
+    - ~ dieta_elegida = true
+}
 
 * [Almorzar acompañado] # DADOS # STAT:conexion # EFECTO:conexion+
     -> laburo_almuerzo_acompanado
@@ -308,7 +319,7 @@ El salón grande.
 Toda la oficina.
 30, 40 personas.
 
-El jefe y alguien de RRHH al frente.
+El jefe y alguien de Personal al frente.
 
 * [...]
 -
@@ -390,7 +401,7 @@ Nadie habla.
 
 Te llaman.
 
-"Mañana a las 11, en RRHH."
+"Mañana a las 11, en Personal."
 
 No dicen para qué.
 
@@ -420,7 +431,7 @@ O creés saber.
 
 # LA REUNIÓN
 
-La oficina de RRHH.
+La oficina de Personal.
 Dos personas que no conocés bien.
 Un papel sobre la mesa.
 
@@ -676,7 +687,7 @@ Por un segundo, los dos se quedan.
 * [Saludar]
     Levantás la mano.
     "Hola."
-    "Hola." 
+    "Hola, bo." 
     Él sigue caminando. Rápido.
     Como si el despido fuera contagioso.
     ~ aumentar_inercia(1)
@@ -739,8 +750,7 @@ Se sentaba.
 
 Te mira. Tarda un segundo en reconocerte.
 
-"Ah, hola. ¿Cómo... cómo estás?"
-
+    "Ah, hola. ¿Cómo... cómo estás, bo?"
 La pregunta incómoda.
 Ambos saben la respuesta.
 
@@ -780,7 +790,7 @@ Se van por lados opuestos.
 
 Fernández asiente.
 
-"Me enteré. Lo siento, boludo."
+"Me enteré. Lo siento, bo."
 
 * [...]
 -

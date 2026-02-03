@@ -3,6 +3,16 @@
 // Todas las variables del juego consolidadas
 // ============================================
 
+// --- RECURSOS PRINCIPALES ---
+VAR energia = 5
+VAR energia_max = 6
+VAR conexion = 3
+VAR dignidad = 5
+VAR llama = 5
+VAR inercia = 5
+VAR tiene_laburo = true
+VAR dia_actual = 1
+
 // --- IDEAS INTERNALIZADAS ---
 
 // Ideas elegidas
@@ -170,6 +180,7 @@ VAR elena_hablo_de_chola = false
 VAR elena_conto_desalojo = false
 VAR elena_conto_trueque = false
 VAR elena_conto_banco = false
+VAR elena_conto_inundacion = false
 VAR elena_hablo_politica = false
 
 // Marcos
@@ -197,10 +208,8 @@ VAR vinculo = ""      // sofia, elena, diego
 
 // --- OTROS ---
 
-VAR es_vegano = false // TODO: mover elección a gameplay (ej: primera comida en olla)
-
-// --- TRACKING DE EVENTOS ---
-
+VAR es_vegano = false
+VAR dieta_elegida = false
 VAR fui_despedido = false
 VAR conte_a_alguien = false
 VAR fui_a_olla_jueves = false

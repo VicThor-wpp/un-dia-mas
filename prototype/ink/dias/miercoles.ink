@@ -6,13 +6,13 @@
 === miercoles_amanecer ===
 
 ~ dia_actual = 3
-~ energia = 3  // La tensión te afecta
+~ recuperar_energia_diaria()
 
 # MIÉRCOLES
 
 // Despertar - contenido específico del miércoles
 No dormiste bien.
-Hoy es la reunión con RRHH.
+Hoy es la reunión con Personal.
 
 * [...]
 -
@@ -257,7 +257,7 @@ Y vos la viste ver.
 
 === miercoles_sofia ===
 
-"¿Qué hacés acá a esta hora? ¿No tenías laburo?"
+"¿Qué hacés acá a esta hora, bo? ¿No tenías laburo?"
 
 La pregunta pega.
 
@@ -293,7 +293,7 @@ Deja la frase ahí.
 Sofía no dice nada por un momento.
 Después:
 
-"Mierda."
+"Pah... qué mierda, bo."
 
 "Sí."
 
@@ -328,7 +328,7 @@ Después:
 * [...]
 -
 
-"Mirá, si querés venir a la olla a dar una mano... a veces ayuda tener algo que hacer. Y la gente es buena."
+"Mirá, si querés venir a la olla a dar una mano... a veces ayuda tener algo que hacer, bo. Y la gente es buena."
 
 * [Decir que sí] # STAT:conexion # EFECTO:conexion+ # EFECTO:llama+
     -> miercoles_si_olla
@@ -873,6 +873,12 @@ Mañana será otro día.
 * [Continuar] -> transicion_miercoles_jueves
 
 === transicion_miercoles_jueves ===
+// Procesamiento nocturno de ideas y recursos
+~ evaluar_ideas_involuntarias()
+~ evaluar_dignidad_nocturna()
+~ efecto_red_o_nada()
+~ efecto_noche_solitaria()
+
 // Chequeo de colapso mental antes de continuar
 {inercia >= 10:
     -> final_apagado

@@ -2,35 +2,6 @@
 // SISTEMA DE RECURSOS
 // ============================================
 
-// --- RECURSOS PRINCIPALES ---
-
-// ENERGÍA: Capacidad de hacer cosas hoy (4-6)
-VAR energia = 4
-VAR energia_max = 6
-
-// CONEXIÓN: Tu lugar en el tejido del barrio (0-10)
-// Inicial: 3 (conocés pero no pertenecés todavía)
-VAR conexion = 3
-
-// DIGNIDAD: Lo que el sistema te saca de a poco (0-10)
-VAR dignidad = 5
-
-// LA LLAMA: Capacidad colectiva de esperanza (0-10)
-// Inicial: 5 (frágil pero presente)
-VAR llama = 5
-
-// PESO ESTRUCTURAL: Reemplazado por INERCIA
-// INERCIA: Resistencia al cambio y automatismo (0-10)
-// 0: Despierto, agencia total
-// 10: Zombi, parálisis total
-VAR inercia = 5
-
-// --- SITUACIÓN MATERIAL ---
-// NOTA: No hay indemnización - el protagonista era unipersonal forzado
-
-VAR tiene_laburo = true
-VAR dia_actual = 1
-
 // --- FUNCIONES DE RECURSOS ---
 
 // Mostrar estado de recursos (para debug o UI)
@@ -389,6 +360,7 @@ Pero alguien la está soplando.
 
 === function registrar_ayuda() ===
     ~ veces_que_ayude += 1
+    ~ recuperar_por_ayudar()
     { veces_que_ayude == 2:
         # NOTIFICATION:positive:Segunda vez ayudando
     }

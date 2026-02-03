@@ -121,10 +121,10 @@ El protagonista no es un empleado formal despedido con indemnización. Es un **f
 
 | Final | Requisitos |
 |-------|------------|
-| final_huelga | llama >= 6, conexion >= 6, veces_que_ayude >= 2, participe_asamblea |
-| final_ocupacion | llama >= 7, conexion >= 7, veces_que_ayude >= 3, participe_asamblea |
-| final_represion | llama >= 5, conexion >= 5, participe_asamblea |
-| final_desercion | conexion >= 5, inercia <= 4 |
+| final_huelga | llama >= 6, conexion >= 6, veces_que_ayude >= 2, participe_asamblea, diego_relacion >= 4 |
+| final_ocupacion | llama >= 6, conexion >= 6, veces_que_ayude >= 2, participe_asamblea |
+| final_represion | llama >= 5, conexion >= 5, participe_asamblea, diego_relacion < 4 |
+| final_desercion | conexion >= 5, inercia <= 4, NOT tiene_laburo |
 
 ---
 
@@ -133,27 +133,30 @@ El protagonista no es un empleado formal despedido con indemnización. Es un **f
 - **Lunes:** Normalidad amenazada. Rumores.
 - **Martes:** Tensión creciente. El jefe evita miradas.
 - **Miércoles (11:00 AM):** **EL DESPIDO**. Punto de quiebre. Decisión: ¿Aislamiento o Barrio?
-- **Jueves:** Primer día sin estructura. **Decisión Crítica:** ¿Ayudar en la Olla? (Bloquea final LA RED).
+- **Jueves:** Primer día sin estructura. **Decisión Crítica:** ¿Ayudar en la Olla? (Puerta a final LA RED).
 - **Viernes:** Crisis de la Olla. Faltan recursos. Decisión moral: ¿Pedir en la calle?
 - **Sábado:** La Asamblea. Clímax político. Única chance de recuperar a Marcos.
 - **Domingo:** Resolución. Evaluación de finales según stats acumulados.
 
 ---
 
-## 4. SISTEMA DE FINALES (Implementados)
+## 4. SISTEMA DE FINALES (19 Implementados)
 
 El juego evalúa condiciones en orden de prioridad en `domingo.ink`:
 
 1.  **APAGADO** (`inercia >= 10`): Colapso de agencia. Game Over temprano posible.
 2.  **SIN LLAMA** (`llama <= 0`): Colapso del tejido social. Game Over temprano posible.
 3.  **TEJIDO** (Ruta Ixchel): Requiere relación profunda con Ixchel y valores comunitarios.
-4.  **LA LLAMA** (Oculto/Perfecto): Requiere `conexion` y `llama` muy altas + todas las Ideas desbloqueadas.
+4.  **LA LLAMA** (Oculto/Perfecto): Requiere `conexion` y `llama` altas + Ideas desbloqueadas.
 5.  **LUCHA COLECTIVA**: Participación activa en asamblea y ayuda constante.
-6.  **LA RED** (Victoria Estándar): `conexion >= 7` + Ayuda en olla.
+6.  **LA RED** (Victoria Estándar): `conexion >= 5` + Ayuda en olla.
 7.  **VULNERABILIDAD HONESTA**: Abrirse emocionalmente pese al dolor.
 8.  **SOLO** (Derrota Aislamiento): `conexion` y `llama` bajas.
 9.  **GRIS** (Derrota Depresión): `inercia` alta, conexión media-baja.
-10. **PEQUEÑO CAMBIO / QUIZÁS / INCIERTO**: Finales intermedios.
+10. **RESISTENCIA SILENCIOSA**: Ayuda constante sin exposición política.
+11. **DESPERTAR**: Recuperación tras tocar fondo.
+12. **JUAN MIGRANTE**: Arco de despedida de Juan.
+13. **Y otros finales intermedios (Incierto, Quizás, Pequeño Cambio).**
 
 ---
 

@@ -103,7 +103,7 @@ Sofía te mira de arriba abajo.
 
 ~ energia -= 1
 ~ ayude_en_olla = true
-~ veces_que_ayude += 1
+~ registrar_ayuda()
 
 Te sentás en un banquito con un balde de papas.
 Pelás.
@@ -154,7 +154,7 @@ Las papas se acaban. Tus manos huelen a tierra y almidón.
 
 ~ energia -= 1
 ~ ayude_en_olla = true
-~ veces_que_ayude += 1
+~ registrar_ayuda()
 
 Te ponés atrás de la mesa.
 Cucharón en mano.
@@ -222,7 +222,7 @@ La fila se termina.
 
 ~ energia -= 1
 ~ ayude_en_olla = true
-~ veces_que_ayude += 1
+~ registrar_ayuda()
 
 Limpiás.
 Mesas, ollas, pisos.
@@ -575,6 +575,17 @@ Guiso.
 
 === olla_comer_plato ===
 
+{not dieta_elegida:
+    Mirás el plato que te sirven.
+    
+    * [Comés de todo.]
+        ~ es_vegano = false
+    * [Sos vegano.]
+        ~ es_vegano = true
+    
+    - ~ dieta_elegida = true
+}
+
 Guiso.
 Papas, carne (poca), verduras.
 
@@ -662,7 +673,7 @@ No es difícil.
 Pero es necesario.
 
 ~ ayude_en_olla = true
-~ veces_que_ayude += 1
+~ registrar_ayuda()
 ~ subir_conexion(1)
 
 ->->

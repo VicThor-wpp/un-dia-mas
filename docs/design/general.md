@@ -60,7 +60,7 @@ NOCHE
 ENERGÍA [dados, 3-5 por día]
 ├── Se gasta en cada acción
 ├── Se recupera parcialmente al dormir
-├── Si terminás el día con 0: TRAUMA +1
+├── Si terminás el día con 0: INERCIA +1
 └── Representa: tu capacidad física y mental de hacer cosas
 
 DIGNIDAD [0-10]
@@ -69,11 +69,11 @@ DIGNIDAD [0-10]
 ├── Sube cuando: te plantás, actuás con otros, te respetan
 └── Efectos: DIGNIDAD baja cambia opciones disponibles y texto interno
 
-TRAUMA [0-10, solo sube]
-├── Se acumula, nunca baja
+INERCIA [0-10, resistencia al cambio]
+├── Se acumula por desgaste y aislamiento
 ├── Genera IDEAS involuntarias (cinismo, desesperanza)
 ├── Altera cómo ves las situaciones
-└── TRAUMA 10 = final especial (quiebre)
+└── INERCIA 10 = final especial (Apagado)
 ```
 
 ### Recursos Colectivos/Ocultos

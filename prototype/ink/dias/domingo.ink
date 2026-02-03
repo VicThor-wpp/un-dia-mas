@@ -14,7 +14,7 @@
 === domingo_amanecer ===
 
 ~ dia_actual = 7
-~ energia = 5  // Domingo, descansaste
+~ recuperar_energia_diaria()
 
 # DOMINGO
 

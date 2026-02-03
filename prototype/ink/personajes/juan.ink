@@ -45,7 +45,7 @@ Juan baja la voz.
 
 Mira para los costados.
 
-"Los de RRHH andan raros. Reuniones todo el tiempo. Algo pasa."
+"Los de Personal andan raros. Reuniones todo el tiempo. Algo pasa."
 
 ~ hable_con_juan_sobre_rumores = true
 
@@ -107,7 +107,7 @@ Los dos saben que son descartables.
 
 Juan baja la voz aún más.
 
-"Che, ¿sabés qué me dijo Martínez antes de que lo rajaran? Que vio una lista. Con nombres. En el escritorio de RRHH."
+"Che, ¿sabés qué me dijo Martínez antes de que lo rajaran? Que vio una lista. Con nombres. En el escritorio de Personal."
 
 "¿Una lista?"
 

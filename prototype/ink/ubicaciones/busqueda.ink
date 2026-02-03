@@ -263,7 +263,7 @@ Lo que fue: Trabajaste 60 horas semanales.
 * [Agregar más keywords]
     "Proactivo". "Orientado a resultados". "Team player".
     
-    Las palabras que los robots de RRHH buscan.
+    Las palabras que los robots de Personal buscan.
     Las palabras que no significan nada.
     
     ~ bajar_dignidad(1)
@@ -508,7 +508,7 @@ Simplemente, dejás de existir.
 // Tunnel: La entrevista en empresa grande
 
 La entrevista fue online.
-Con una persona de RRHH.
+Con una persona de Personal.
 Que no sabe qué hace el puesto.
 
 * [...]
@@ -551,8 +551,8 @@ El mismo teatro.
 
 Siete.
 
-1. RRHH telefónico.
-2. RRHH videollamada.
+1. Personal telefónico.
+2. Personal videollamada.
 3. Técnica 1.
 4. Técnica 2.
 5. Caso práctico (5 horas de trabajo gratis).

@@ -45,14 +45,19 @@ Te sentás a su lado.
     ->->
 
 === elena_charla_cotidiana ===
-"Ahí andamos todos."
+"Ahí andamos todos, bo."
 # PORTRAIT:elena,remembering,right
+
 Mira hacia la calle.
+
 "¿Sabés cuántas veces escuché eso? 'Ahí ando'.
-En el 2002 todo el mundo andaba 'ahí'."
+En el 2002 todo el mundo andaba 'ahí', ta."
 -> elena_menu_temas.opts
 
 === elena_menu_historia ===
++ [Sobre la inundación del 59] {not elena_conto_inundacion}
+    -> elena_inundacion_59 ->
+    -> elena_menu_historia
 + [Sobre el 2002] {not elena_conto_trueque}
     -> elena_trueque_2002 ->
     -> elena_menu_historia
@@ -130,7 +135,7 @@ Te mira. Ojos que vieron demasiado.
 
 "Sí."
 
-"Entonces no está todo mal. Está jodido, pero no todo mal."
+"Entonces no está todo mal. Está jodido, bo, pero no todo mal. Ta, tiene razón."
 
 {es_vegano:
     "Y no me pongas cara con el guiso, m'hijo. Yo sé que vos tenés tus ideas, pero acá cocinamos con lo que hay. El que quiere, come. El que no, igual se queda."
@@ -145,7 +150,7 @@ Pero su certeza ayuda.
 
 === elena_ella_como ===
 
-"Vieja. Cada día más vieja."
+"Vieja. Cada día más vieja, bo."
 
 Se ríe.
 
@@ -430,6 +435,46 @@ El trueque, las asambleas... eran formas de decir 'acá estamos y no nos vamos'.
 
 ~ elena_relacion += 1
 ~ subir_conexion(1)
+
+->->
+
+// --- LA INUNDACIÓN DEL 59 ---
+
+=== elena_inundacion_59 ===
+
+~ elena_conto_inundacion = true
+
+"¿La inundación del 59? Yo era una gurisa, m'hijo. Tenía nueve años."
+
+Elena mira el horizonte, como si pudiera ver el agua subiendo.
+
+* [...]
+-
+
+"El arroyo subió y subió. No paraba. En el barrio se nos venía el agua adentro de las casas."
+
+"¿Y el gobierno? ¿La intendencia?"
+
+Elena se ríe amargamente.
+
+"El Estado llega tarde o no llega, pibe. Eso lo aprendí ahí."
+
+* [...]
+-
+
+"Vi a mi madre, que no sabía ni leer, coordinando a todos los vecinos. Quién subía los muebles a los techos, quién sacaba a los viejos en bote, quién repartía la poca comida seca que quedaba."
+
+"¿Y los bomberos?"
+
+"Llegaron cuando ya estábamos todos arriba de los techos. Los vecinos con sogas llegaron primero."
+
+* [...]
+-
+
+"Esa imagen no se me borra más. Mi vieja gritando órdenes bajo la lluvia, con el agua a la cintura. Ahí entendí que si no nos cuidamos entre nosotros, no nos cuida nadie."
+
+~ subir_conexion(1)
+~ elena_relacion += 1
 
 ->->
 
