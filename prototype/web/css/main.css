@@ -1,34 +1,5 @@
-/* Un Día Más - Main CSS */
-/* Modular CSS entry point - imports all style modules */
-
-/* ==========================================
-   CSS MODULES - Load Order
-   ========================================== */
-
-/* 1. Variables and theme settings (must be first) */
-@import url('variables.css');
-
-/* 2. Base styles, reset, and utilities */
-@import url('base.css');
-
-/* 3. Layout components */
-@import url('header.css');
-
-/* 4. Content styles */
-@import url('story.css');
-@import url('choices.css');
-@import url('dice.css');
-
-/* 5. UI elements */
-@import url('ui-elements.css');
-@import url('notifications.css');
-
-/* 6. Modals */
-@import url('modals.css');
-
-/* 7. Screens */
-@import url('start-screen.css');
-@import url('ending-screen.css');
-
-/* 8. Responsive and accessibility (must be last) */
-@import url('responsive.css');
+/* 
+   Un Día Más - Main CSS (DEPRECATED)
+   Los estilos ahora se cargan de forma modular directamente en index.html
+   para mejorar el rendimiento y evitar duplicaciones.
+*/

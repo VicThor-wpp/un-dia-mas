@@ -3,7 +3,7 @@
 @media (max-width: 768px) {
     
     body {
-        padding-top: 110px; /* Header más alto en móvil si se stackea */
+        padding-top: 140px; /* Aumentado de 110px para acomodar el header stackeado */
     }
 
     /* Header Compacto */
@@ -11,8 +11,8 @@
         height: auto;
         flex-direction: column;
         align-items: flex-start;
-        padding: 10px 15px;
-        gap: 10px;
+        padding: 15px;
+        gap: 15px;
     }
 
     .hud-info {
@@ -20,6 +20,8 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: baseline;
+        border-bottom: 1px solid var(--muted);
+        padding-bottom: 5px;
     }
 
     .location-display {
@@ -30,12 +32,17 @@
         width: 100%;
         overflow-x: auto;
         padding-bottom: 5px;
-        gap: 10px;
+        gap: 12px;
+        justify-content: flex-start;
     }
 
     .stat-box {
-        width: 60px;
+        width: 65px; /* Ligeramente aumentado para legibilidad */
         flex-shrink: 0;
+    }
+
+    .stat-label {
+        font-size: 0.55rem;
     }
 
     /* Container */

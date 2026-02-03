@@ -77,6 +77,134 @@
 }
 
 /* ==========================================
+   INFO SECTIONS (Full Stats Modal)
+   ========================================== */
+
+.info-section {
+    margin-bottom: 30px;
+    border-bottom: 1px dashed var(--muted);
+    padding-bottom: 20px;
+}
+
+.info-section:last-child {
+    border-bottom: none;
+}
+
+.info-section h3 {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color: var(--fg);
+    margin-bottom: 15px;
+    background: var(--bg);
+    display: inline-block;
+    padding: 2px 8px;
+}
+
+.status-employed { color: var(--fg); font-weight: bold; }
+.status-unemployed { color: var(--accent); font-weight: bold; }
+
+/* Full stats display */
+.full-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.full-stat-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.full-stat-row .stat-name {
+    min-width: 100px;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+.stat-bar-bg {
+    flex: 1;
+    height: 12px;
+    border: 1px solid var(--fg);
+    background: var(--bg);
+    padding: 1px;
+}
+
+.stat-bar-fill {
+    height: 100%;
+    background: var(--fg);
+    transition: width 0.5s ease;
+}
+
+.stat-val {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    min-width: 45px;
+    text-align: right;
+}
+
+/* Ideas & Synergies */
+.ideas-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.idea-item {
+    border: 1px solid var(--fg);
+    padding: 5px 10px;
+    font-size: 0.85rem;
+    font-family: var(--font-mono);
+}
+
+.idea-elegida { background: var(--bg); }
+.idea-involuntaria { border-style: dashed; opacity: 0.8; }
+
+.ideas-synergies {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+.synergy {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    padding: 4px 8px;
+    background: var(--fg);
+    color: var(--bg);
+}
+
+/* Decision Log */
+.decision-log-container {
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid var(--muted);
+    padding: 15px;
+    background: rgba(0,0,0,0.02);
+}
+
+/* Profile list */
+.profile-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.vinculo-badge {
+    background: var(--accent);
+    color: var(--bg);
+    padding: 2px 8px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+/* ==========================================
    MANUAL (CÓMO JUGAR)
    ========================================== */
 

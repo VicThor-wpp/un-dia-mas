@@ -101,6 +101,42 @@
     margin-left: 15px;
 }
 
+/* Clases Faltantes (Identificadas en Auditoría) */
+.header-bar {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.day-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.day-progress {
+    display: flex;
+    gap: 4px;
+}
+
+.day-dot {
+    width: 8px;
+    height: 8px;
+    border: 1px solid var(--fg);
+    background: transparent;
+}
+
+.day-dot.past {
+    background: var(--fg);
+}
+
+.day-dot.current {
+    background: var(--accent);
+    border-color: var(--fg);
+    transform: scale(1.2);
+}
+
 .header-btn {
     background: transparent;
     border: 1px solid var(--fg);

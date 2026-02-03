@@ -185,6 +185,7 @@ const ChoiceParser = (function() {
         if (choice.text.trim() === '...') {
             const button = document.createElement('button');
             button.className = 'choice-btn continue-button';
+            button.innerHTML = '<span class="choice-text">CONTINUAR</span>';
             button.dataset.choiceIndex = index;
             button.addEventListener('click', onClick);
             return button;
