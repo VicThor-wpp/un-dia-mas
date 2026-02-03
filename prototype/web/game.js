@@ -304,7 +304,11 @@ const GameEngine = (function() {
             for (const item of items) {
                 const el = document.createElement(item.type === 'header' ? 'h1' : 'div');
                 el.className = item.type === 'header' ? 'story-header' : 'story-text';
-                el.innerHTML = item.content;
+                // Sanitize content if validator available
+                const safeContent = typeof SecurityValidator !== 'undefined' 
+                    ? SecurityValidator.sanitizeHTML(item.content) 
+                    : item.content;
+                el.innerHTML = safeContent;
                 storyContainer.appendChild(el);
             }
             finishBatch();

@@ -311,3 +311,25 @@ VAR vio_a_gonzalez = false            // Vio a González en la olla
 // --- IDEAS NUEVAS (IXCHEL) ---
 VAR idea_comida_es_memoria = false    // "LA COMIDA ES MEMORIA" - del pepián
 VAR idea_hay_otra_forma = false       // "HAY OTRA FORMA" - del Ut'z Kaslemal
+
+// ============================================
+// VARIABLES FASE 3: AMBIENTE Y UX (2026-02-02)
+// ============================================
+
+// --- GABINETE DEL PENSAMIENTO (VOCES) ---
+VAR voces_activas = true           // Permite silenciar el diálogo interno
+VAR probabilidad_voz = 30          // % de chance de que una idea hable
+VAR ultima_voz = ""                // Evita repetición inmediata
+
+// --- URUGUAY GRIS (AMBIENTE) ---
+VAR clima_actual = "gris"          // gris, lluvia, viento_sur, sol_frio, humedad
+VAR humedad_nivel = 0              // 0-10. Si > 7, afecta energía
+VAR noticia_del_dia = ""           // Titular de radio
+VAR escucho_radio = false          // Si escuchó la radio hoy
+
+// --- UX Y DIARIO DE CONCIENCIA ---
+VAR glosa_activada = true          // Tooltips activados
+VAR total_victorias_morales = 0    // Tracking para resumen
+VAR total_traiciones = 0           // Tracking para resumen
+VAR lista_decisiones_clave = ""    // Resumen acumulativo
+VAR diario_entradas = 0            // Cantidad de reflexiones

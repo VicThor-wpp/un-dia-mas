@@ -7,6 +7,9 @@ INCLUDE mecanicas/dados.ink
 INCLUDE mecanicas/recursos.ink
 INCLUDE mecanicas/ideas.ink
 INCLUDE mecanicas/sistema_ideas.ink
+INCLUDE mecanicas/ambiente.ink
+INCLUDE mecanicas/voces.ink
+INCLUDE mecanicas/ux.ink
 
 // --- INCLUDES: VARIABLES ---
 INCLUDE variables.ink
