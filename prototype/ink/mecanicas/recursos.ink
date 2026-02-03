@@ -358,6 +358,11 @@ Pero alguien la está soplando.
 // TRACKING DE AYUDAS
 // ============================================
 
+// Recuperar energía por ayudar (la comunidad te sostiene)
+=== function recuperar_por_ayudar() ===
+    ~ recuperar_energia(1)
+    // No es la comida. Es sentirte parte de algo.
+
 === function registrar_ayuda() ===
     ~ veces_que_ayude += 1
     ~ recuperar_por_ayudar()
