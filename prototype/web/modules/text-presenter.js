@@ -1,161 +1,118 @@
 /**
- * TextPresenter - Handles paragraph animations, dramatic pauses, and styling
- * Updated for Phase 4: Glosa and Voices
+ * TextPresenter - Handles paragraph animations with automatic flow
+ * Updated: Continuous Flow (No click-to-continue pauses)
  */
 const TextPresenter = (function() {
     'use strict';
 
     // Configuration
     const CONFIG = {
-        fadeInDuration: 450,      // ms
-        delayBetweenParagraphs: 300, // ms
-        typewriterBaseSpeed: 30,  // ms per character
-        pausePatterns: {
-            shortLine: 15,        // chars - lines <= this trigger pause
-            ellipsis: '...',
-            sceneChange: '==='
-        }
-    };
-
-    // Typewriter punctuation delays (ms)
-    const PUNCTUATION_DELAYS = {
-        ',': 100, '.': 200, '!': 150, '?': 150, ';': 120, ':': 100, '…': 400
+        baseDelay: 400,           // Minimum wait between paragraphs
+        msPerWord: 50,            // Time allowance per word
+        maxDelay: 2500,           // Maximum wait time
+        fadeInDuration: 600       // CSS animation duration reference
     };
 
     // State
     let paragraphQueue = [];
     let isPresenting = false;
-    let isPaused = false;
     let onComplete = null;
     let currentContainer = null;
+    let activeTimeout = null;
 
-    function init() {}
+    function init() {
+        // Setup global skip listener
+        document.addEventListener('click', (e) => {
+            // Ignore clicks on buttons/links
+            if (e.target.closest('button, a, input, .glossary-term')) return;
+            if (isPresenting) skipAll();
+        });
+        
+        document.addEventListener('keydown', (e) => {
+            if (e.key === ' ' || e.key === 'Enter') {
+                if (isPresenting) skipAll();
+            }
+        });
+    }
 
     function present(container, items, callback) {
         currentContainer = container;
         paragraphQueue = [...items];
         onComplete = callback;
         isPresenting = true;
-        isPaused = false;
+
+        if (activeTimeout) clearTimeout(activeTimeout);
         showNext();
     }
 
     function showNext() {
+        if (!isPresenting) return; // Stopped by skipAll
+
         if (paragraphQueue.length === 0) {
-            isPresenting = false;
-            if (onComplete) onComplete();
+            finish();
             return;
         }
 
         const item = paragraphQueue.shift();
-        const tags = item.tags || [];
+        const el = renderItem(item);
+        
+        // Calculate dynamic delay based on content length
+        // This gives the user time to read THIS paragraph before the NEXT one appears
+        const delay = calculateReadTime(item.content);
 
-        // Determine if typewriter should be used
-        // Disable typewriter for voices to avoid breaking layout
-        const isVoice = tags.some(t => t.startsWith('VOZ:'));
-        const useTypewriter = !isVoice && isTypewriterEnabled() && item.type === 'text' && !prefersReducedMotion();
-
-        if (useTypewriter) {
-            renderTypewriter(item, () => afterRender(item, tags));
-        } else {
-            renderItem(item);
-            afterRender(item, tags);
-        }
-    }
-
-    function afterRender(item, tags) {
-        if (shouldPause(item, tags)) {
-            isPaused = true;
-            setTimeout(() => showPauseIndicator(), 100);
-            return;
-        }
         if (paragraphQueue.length > 0) {
-            setTimeout(showNext, CONFIG.delayBetweenParagraphs);
+            activeTimeout = setTimeout(showNext, delay);
         } else {
-            isPresenting = false;
-            if (onComplete) onComplete();
+            // Last item, finish shortly after render
+            activeTimeout = setTimeout(finish, 500);
         }
     }
 
-    function shouldPause(item, tags) {
-        if (item.type === 'header') return false;
-        if (tags.includes('CONTINUO')) return false;
-        if (tags.includes('PAUSA')) return true;
-        if (item.type !== 'text') return false;
-
-        const text = item.content || '';
-        const strippedText = text.replace(/<[^>]*>/g, '').trim();
-
-        if (strippedText.length > 0 && strippedText.length <= CONFIG.pausePatterns.shortLine) {
-            if (!strippedText.endsWith('?') && !strippedText.startsWith(',')) return true;
-        }
-        if (strippedText.endsWith(CONFIG.pausePatterns.ellipsis)) return true;
-        return false;
+    /**
+     * Calculate read time for natural pacing
+     */
+    function calculateReadTime(text) {
+        if (!text) return CONFIG.baseDelay;
+        
+        // Strip HTML tags for word count
+        const cleanText = text.replace(/<[^>]*>/g, '');
+        const wordCount = cleanText.split(/\s+/).length;
+        
+        let time = CONFIG.baseDelay + (wordCount * CONFIG.msPerWord);
+        
+        // Cap the delay so it doesn't feel stuck
+        return Math.min(time, CONFIG.maxDelay);
     }
 
-    function showPauseIndicator() {
-        hidePauseIndicator();
-        const indicator = document.createElement('div');
-        indicator.className = 'pause-indicator';
-        indicator.innerHTML = '<span class="pause-indicator-text">CONTINUAR</span><span class="pause-indicator-symbol">▼</span>';
-        indicator.setAttribute('role', 'button');
-        indicator.setAttribute('aria-label', 'Continuar leyendo');
-        indicator.setAttribute('tabindex', '0');
-
-        indicator.addEventListener('click', handleContinueInput);
-        indicator.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                handleContinueInput();
-            }
-        });
-
-        currentContainer.appendChild(indicator);
-        setTimeout(() => {
-            document.addEventListener('click', handleDocumentClick);
-            document.addEventListener('keydown', handleKeyPress);
-        }, 100);
-        indicator.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    function finish() {
+        isPresenting = false;
+        if (onComplete) onComplete();
     }
 
-    function handleContinueInput() {
-        if (!isPaused) return;
-        document.removeEventListener('click', handleDocumentClick);
-        document.removeEventListener('keydown', handleKeyPress);
-        continue_();
-    }
-
-    function handleDocumentClick(e) {
-        if (e.target.closest('button, a, input, .modal-overlay, .glossary-term')) return;
-        handleContinueInput();
-    }
-
-    function handleKeyPress(e) {
-        if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            handleContinueInput();
-        }
-    }
-
-    function continue_() {
-        if (!isPaused) return;
-        isPaused = false;
-        hidePauseIndicator();
-        showNext();
-    }
-
-    function hidePauseIndicator() {
-        const indicator = document.querySelector('.pause-indicator');
-        if (indicator) indicator.remove();
-    }
-
+    /**
+     * Skip all animations and show everything immediately
+     */
     function skipAll() {
         if (!isPresenting) return;
-        for (const item of paragraphQueue) renderItem(item, true);
-        paragraphQueue = [];
-        isPresenting = false;
-        hidePauseIndicator();
-        if (onComplete) onComplete();
+        
+        if (activeTimeout) clearTimeout(activeTimeout);
+        
+        // Render remaining queue instantly
+        while (paragraphQueue.length > 0) {
+            const item = paragraphQueue.shift();
+            renderItem(item, true);
+        }
+        
+        // Force all existing paragraphs to visible state
+        const paragraphs = currentContainer.querySelectorAll('.tp-paragraph:not(.tp-visible)');
+        paragraphs.forEach(p => p.classList.add('tp-visible', 'tp-instant'));
+
+        finish();
+        
+        // Scroll to bottom to ensure new content is seen
+        // requestAnimationFrame(() => {
+        //     currentContainer.lastElementChild?.scrollIntoView({ behavior: 'smooth', block: 'end' });
+        // });
     }
 
     /**
@@ -186,7 +143,6 @@ const TextPresenter = (function() {
                 el.className = 'story-header tp-paragraph';
                 break;
             case 'text':
-                // Parse Glosa
                 el.innerHTML = parseGlosa(item.content);
                 el.className = voiceClass ? `${voiceClass} tp-paragraph` : 'story-text tp-paragraph';
                 break;
@@ -203,14 +159,13 @@ const TextPresenter = (function() {
                 el.className = 'tp-paragraph';
         }
 
-        // AMBIENTE tags handling could happen here, but better in GameEngine global state
-        
         currentContainer.appendChild(el);
 
         if (instant || prefersReducedMotion()) {
-            el.classList.add('tp-instant');
+            el.classList.add('tp-instant', 'tp-visible');
         } else {
-            el.offsetHeight; // Reflow
+            // Trigger reflow
+            el.offsetHeight; 
             requestAnimationFrame(() => el.classList.add('tp-visible'));
         }
 
@@ -222,61 +177,13 @@ const TextPresenter = (function() {
     }
 
     function isTypewriterEnabled() {
-        if (typeof ReadingPreferences !== 'undefined') {
-            return ReadingPreferences.getPrefs().typewriter === true;
-        }
-        return false;
-    }
-
-    function renderTypewriter(item, callback) {
-        const el = document.createElement(item.type === 'header' ? 'h1' : 'div');
-        // Typewriter implies standard text, not voice usually
-        el.className = item.type === 'header' ? 'story-header tp-paragraph tp-visible' : 'story-text tp-paragraph tp-visible';
-        
-        currentContainer.appendChild(el);
-        // Pre-parse Glosa for typewriter (strip tags for typing, insert later? complex)
-        // Simplification: Typewriter types HTML tags instantly
-        typewriteText(el, parseGlosa(item.content), callback);
-    }
-
-    function typewriteText(el, text, callback) {
-        el.innerHTML = '';
-        let i = 0;
-        const speed = CONFIG.typewriterBaseSpeed;
-
-        function typeChar() {
-            if (i >= text.length) {
-                if (callback) callback();
-                return;
-            }
-
-            if (text[i] === '<') {
-                const tagEnd = text.indexOf('>', i);
-                if (tagEnd !== -1) {
-                    el.innerHTML += text.substring(i, tagEnd + 1);
-                    i = tagEnd + 1;
-                    typeChar();
-                    return;
-                }
-            }
-
-            const char = text[i];
-            el.innerHTML += char;
-            i++;
-
-            let delay = speed;
-            if (char === '.' && text.substring(i-3, i) === '...') delay = PUNCTUATION_DELAYS['…'];
-            else if (PUNCTUATION_DELAYS[char]) delay = PUNCTUATION_DELAYS[char];
-
-            setTimeout(typeChar, delay);
-        }
-        typeChar();
+        // Disabled for now to simplify flow
+        return false; 
     }
 
     return {
         init,
         present,
-        continue: continue_,
         skipAll,
         isBusy: () => isPresenting
     };
