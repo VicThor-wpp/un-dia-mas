@@ -635,9 +635,11 @@ Estás listo 15 minutos antes.
 * [Escribirle]
     Mandás un mail:
     "Hola, estoy en la sala esperando. ¿Todo bien?"
-    
+
     Nada.
-    
+
+    - (espera_respuesta)
+
     * [Seguir esperando]
         10:20. Nada.
         10:30. Te vas.
@@ -656,7 +658,9 @@ Estás listo 15 minutos antes.
     
     Dos días después, un mail:
     "Disculpá, surgió algo. ¿Podemos reagendar?"
-    
+
+    - (decidir_reagendar)
+
     * [Reagendar]
         Reagendás.
         
@@ -767,7 +771,9 @@ Pero te quería contar de una oportunidad."
     O coaching.
     O criptomonedas.
     O las tres cosas.
-    
+
+    - (decidir_piramide)
+
     * ["No me interesa."]
         "Pero ni escuchaste la propuesta."
         
