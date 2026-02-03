@@ -1,49 +1,59 @@
 /* Un Día Más - Choices (Formulario) */
 
 .choices {
-    margin-top: 2rem;
+    margin-top: 3rem;
     border-top: var(--border-width) solid var(--fg);
-    padding-top: 1rem;
+    padding-top: 2rem;
 }
 
 .choice-btn {
     display: flex;
-    align-items: center;
+    align-items: flex-start; /* Alineación superior para textos largos */
     width: 100%;
     padding: 15px;
-    margin-bottom: 10px;
-    background: transparent;
-    border: 1px solid var(--muted);
-    border-left: 4px solid var(--muted);
+    margin-bottom: 15px;
+    background: var(--bg); /* Fondo sólido para tapar lineas */
+    border: 2px solid var(--muted); /* Borde completo */
+    border-left: 6px solid var(--muted); /* Borde izquierdo grueso */
     color: var(--fg);
     font-family: var(--font-main);
-    font-size: 1rem;
+    font-size: 1.05rem;
     text-align: left;
     cursor: pointer;
-    transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition: transform 0.1s, box-shadow 0.1s;
+    line-height: 1.4;
+    position: relative;
+    box-shadow: 4px 4px 0 rgba(0,0,0,0.1);
 }
 
 /* Checkbox simulado */
 .choice-btn::before {
     content: "";
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
     border: 2px solid var(--fg);
     margin-right: 15px;
+    margin-top: 2px; /* Ajuste óptico con el texto */
     transition: background 0.2s;
-    flex-shrink: 0;
+    flex-shrink: 0; /* Evita que se aplaste */
+    background: var(--surface);
 }
 
 .choice-btn:hover {
     border-color: var(--fg);
     border-left-color: var(--fg);
-    background: var(--surface);
-    transform: translateX(5px);
-    box-shadow: -5px 5px 0 rgba(0,0,0,0.1);
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 var(--fg); /* Sombra dura al hover */
+    z-index: 10;
 }
 
 .choice-btn:hover::before {
-    background: var(--fg);
+    background: var(--fg); /* Checkbox lleno al hover */
+}
+
+.choice-btn:active {
+    transform: translate(0, 0);
+    box-shadow: 2px 2px 0 var(--fg);
 }
 
 /* Opciones de Riesgo/Costo */
