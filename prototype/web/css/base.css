@@ -18,7 +18,7 @@ body {
     min-height: 100vh;
     transition: background-color 0.5s, color 0.5s;
     overflow-x: hidden;
-    padding-top: 100px; /* Corrección: Espacio para el HUD fijo */
+    padding-top: 100px;
 }
 
 /* ==========================================
@@ -26,13 +26,28 @@ body {
    ========================================== */
 .container {
     max-width: 700px;
-    margin: 0 auto 100px; /* Margen superior 0 porque ya lo da el body */
+    margin: 0 auto 100px;
     padding: 40px;
     background: var(--surface);
     border: var(--border-width) var(--border-style) var(--fg);
     box-shadow: var(--shadow-solid) var(--shadow-color);
     position: relative;
     transition: all 0.5s;
+}
+
+/* DECORACIÓN CONTEXTUAL (Fixed) */
+.location-deco {
+    position: absolute;
+    top: -35px; /* Subido para no pisar el borde superior */
+    left: 0;
+    background: var(--fg);
+    color: var(--bg);
+    padding: 4px 12px;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    z-index: 10;
 }
 
 /* ==========================================
@@ -67,3 +82,16 @@ em { font-style: italic; font-family: var(--font-mono); font-size: 0.9em; }
 ::-webkit-scrollbar-track { background: var(--bg); border-left: 1px solid var(--fg); }
 ::-webkit-scrollbar-thumb { background: var(--fg); border: 1px solid var(--bg); }
 ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+/* ACCESSIBILITY UTILITIES (Screen Reader Only) */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
