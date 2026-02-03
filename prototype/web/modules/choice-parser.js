@@ -184,14 +184,14 @@ const ChoiceParser = (function() {
         // Check if this is a "..." continue choice - render as continue button
         if (choice.text.trim() === '...') {
             const button = document.createElement('button');
-            button.className = 'choice-button continue-button';
+            button.className = 'choice-btn continue-button';
             button.dataset.choiceIndex = index;
             button.addEventListener('click', onClick);
             return button;
         }
 
         const button = document.createElement('button');
-        button.className = 'choice-button';
+        button.className = 'choice-btn';
 
         // Check availability
         if (!isAvailable(meta, story)) {
@@ -226,7 +226,7 @@ const ChoiceParser = (function() {
      */
     function buildContinueButton(type = 'normal', onClick) {
         const button = document.createElement('button');
-        button.className = 'choice-button continue-button';
+        button.className = 'choice-btn continue-button';
 
         if (type === 'espera') {
             button.classList.add('continue-espera');
