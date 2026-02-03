@@ -56,7 +56,7 @@ const StatsPanel = (function() {
      */
     function getStatChange(statId) {
         const current = getStatValue(statId);
-        const previous = previousStats[statId] ?? current;
+        const previous = previousStats[statId] !== undefined ? previousStats[statId] : current;
         return current - previous;
     }
 

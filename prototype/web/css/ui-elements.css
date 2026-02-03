@@ -42,6 +42,12 @@
     border-style: dashed;
 }
 
+.effect-uncertain {
+    color: var(--muted);
+    border-style: dotted;
+    opacity: 0.8;
+}
+
 /* Alerts Generales */
 .alert {
     padding: 10px;

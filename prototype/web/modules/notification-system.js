@@ -11,12 +11,12 @@ const NotificationSystem = (function() {
      */
     function init() {
         // Create container if it doesn't exist
-        container = document.getElementById('notifications');
+        container = document.getElementById('notificationArea');
 
         if (!container) {
             container = document.createElement('div');
-            container.id = 'notifications';
-            container.className = 'notifications';
+            container.id = 'notificationArea';
+            container.className = 'notification-area';
 
             // Accessibility attributes
             container.setAttribute('role', 'log');

@@ -63,4 +63,9 @@
     .manual-nav {
         flex-wrap: wrap;
     }
+
+    /* Utility: Hide on mobile */
+    .hidden-mobile {
+        display: none !important;
+    }
 }
