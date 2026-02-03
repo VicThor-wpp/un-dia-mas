@@ -26,11 +26,11 @@ El despertador.
 
 * [Levantarte de una] # EFECTO:dignidad+
     -> casa_levantarse_rapido
-* [Cinco minutos más] # COSTO:1 # EFECTO:dignidad?
+* [Cinco minutos más]
     -> casa_cinco_mas
-* {tiene_laburo} [Apagar el despertador y quedarte] # COSTO:1 # EFECTO:dignidad-
+* {tiene_laburo} [Apagar el despertador y quedarte] # EFECTO:dignidad-
     -> casa_quedarse
-* {not tiene_laburo} [Quedarte en la cama] # COSTO:1 # EFECTO:conexion-
+* {not tiene_laburo} [Quedarte en la cama]
     -> casa_quedarse_sin_laburo
 
 === casa_levantarse_rapido ===
@@ -69,8 +69,6 @@ La luz que entra.
 Los cinco minutos se estiran.
 Son diez.
 
-~ energia -= 1
-
 {tiene_laburo:
     Mierda. Vas a llegar tarde.
     * [Levantarte apurado] -> casa_mate_apurado
@@ -96,8 +94,6 @@ No. Hay que ir.
 Hay cuentas que pagar.
 Hay un sistema que te necesita funcionando.
 
-~ energia -= 1
-
 Te levantás. Tarde.
 
 * [Apurarte] -> casa_mate_apurado
@@ -106,8 +102,6 @@ Te levantás. Tarde.
 
 Te quedás en la cama.
 No hay apuro.
-
-~ energia -= 1
 
 El techo.
 El silencio.
@@ -230,8 +224,10 @@ El café se termina.
 No hay tiempo para café.
 Un vaso de agua y listo.
 
+~ energia -= 1
+
 El día empieza mal.
-Pero empieza.
+Sin cafeína en el cuerpo, todo cuesta más.
 
 ->->
 
