@@ -1085,4 +1085,4 @@ Pero algo te sostiene. Un recuerdo. Una cara. Algo.
 
 No estás bien. Pero seguís.
 
--> transicion_jueves_viernes.post_recovery_jueves
+-> viernes_amanecer

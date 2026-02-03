@@ -183,16 +183,20 @@ Mails que podrían ser nada.
 12:30.
 Hora de comer.
 
-{not dieta_elegida:
+{ not dieta_elegida:
     Mirás el tupper.
-    
+
     * [Comés de todo.]
         ~ es_vegano = false
+        ~ dieta_elegida = true
+        -> laburo_almuerzo_post_dieta
     * [Sos vegano.]
         ~ es_vegano = true
-    
-    - ~ dieta_elegida = true
+        ~ dieta_elegida = true
+        -> laburo_almuerzo_post_dieta
 }
+
+= laburo_almuerzo_post_dieta
 
 * [Almorzar acompañado] # DADOS # STAT:conexion # EFECTO:conexion+
     -> laburo_almuerzo_acompanado

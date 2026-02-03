@@ -2358,7 +2358,7 @@ Pero dejó semilla.
 
 // --- CIERRE DOMINICAL ---
 
-=== ixchel_cierre_domingo ===
+=== ixchel_cierre_domingo_escena ===
 // Escena de cierre en domingo
 
 ~ ixchel_cierre_domingo = true

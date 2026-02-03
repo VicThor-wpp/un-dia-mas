@@ -1290,4 +1290,4 @@ La oscuridad viene de nuevo. Más fuerte.
 
 Mañana es domingo. Último día. Algo tiene que pasar.
 
--> transicion_sabado_domingo.post_recovery_sabado
+-> domingo_amanecer

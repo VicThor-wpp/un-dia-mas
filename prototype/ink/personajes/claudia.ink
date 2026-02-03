@@ -459,20 +459,18 @@ Hoy prefiere no pensar.
     La doña del fondo, la que traía a los nietos.
     Ya no viene.
     "No voy a firmar nada. Después te caen."
-    
+
     * [...]
-    -
-    
-    Elena te mira.
-    No dice nada.
-    No hace falta.
+        Elena te mira.
+        No dice nada.
+        No hace falta.
 
-    La olla sobrevive.
-    Pero algo se rompió.
+        La olla sobrevive.
+        Pero algo se rompió.
 
-    ~ bajar_llama(1)
-    ~ bajar_conexion(1)
-    ->->
+        ~ bajar_llama(1)
+        ~ bajar_conexion(1)
+        ->->
 - else:
     ->->
 }

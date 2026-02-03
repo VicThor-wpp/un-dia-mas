@@ -553,23 +553,21 @@ Porque si no me lo creo... no sé qué hacer."
     Te mira. Sonríe. Distinto.
     
     "Capaz que esto es mejor negocio."
-    
+
     * [...]
-    -
-    
-    "No pagan. Pero al menos sé que sirve de algo."
-    
-    Sigue cortando.
-    
-    Elena lo mira desde la otra punta.
-    Asiente.
-    
-    Hay redenciones silenciosas.
-    A veces son las únicas que duran.
-    
-    ~ subir_conexion(1)
-    ~ subir_llama(1)
-    ->->
+        "No pagan. Pero al menos sé que sirve de algo."
+
+        Sigue cortando.
+
+        Elena lo mira desde la otra punta.
+        Asiente.
+
+        Hay redenciones silenciosas.
+        A veces son las únicas que duran.
+
+        ~ subir_conexion(1)
+        ~ subir_llama(1)
+        ->->
 - else:
     ->->
 }

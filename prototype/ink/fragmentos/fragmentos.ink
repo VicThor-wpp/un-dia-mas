@@ -1209,27 +1209,6 @@ Solo malas y peores.
 
 ->->
 
-=== tiago_domingo ===
-// Tiago - la decisión
-
-Tiago toma una decisión.
-No va a hacer lo que Bruno quiere.
-
-No sabe cómo va a pagar los remedios.
-No sabe cómo va a explicar.
-No sabe nada.
-
-Pero sabe quién es.
-O quién quiere ser.
-
-"Hay cosas que no se hacen."
-La voz de la madre. La que ya no está.
-
-Hay cosas que no se hacen.
-Aunque cueste todo.
-
-->->
-
 === tiago_generico ===
 // Fallback para Tiago
 

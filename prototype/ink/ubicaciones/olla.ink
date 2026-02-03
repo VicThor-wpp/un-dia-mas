@@ -577,16 +577,20 @@ Guiso.
 
 === olla_comer_plato ===
 
-{not dieta_elegida:
+{ not dieta_elegida:
     Mirás el plato que te sirven.
-    
+
     * [Comés de todo.]
         ~ es_vegano = false
+        ~ dieta_elegida = true
+        -> olla_post_dieta
     * [Sos vegano.]
         ~ es_vegano = true
-    
-    - ~ dieta_elegida = true
+        ~ dieta_elegida = true
+        -> olla_post_dieta
 }
+
+= olla_post_dieta
 
 Guiso.
 Papas, carne (poca), verduras.

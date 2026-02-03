@@ -333,3 +333,17 @@ VAR total_victorias_morales = 0    // Tracking para resumen
 VAR total_traiciones = 0           // Tracking para resumen
 VAR lista_decisiones_clave = ""    // Resumen acumulativo
 VAR diario_entradas = 0            // Cantidad de reflexiones
+
+// ============================================
+// VARIABLES FRAGMENTOS Y CLAUDIA (2026-02-03)
+// ============================================
+
+// --- FRAGMENTOS: ESTADOS DE PERSONAJES ---
+VAR bruno_presiono_tiago = false   // Bruno presionó a Tiago
+VAR juan_sabe_despido = false      // Juan sabe del despido
+VAR marcos_abrio_corazon = false   // Marcos se abrió emocionalmente
+VAR sofia_confio = false           // Sofía confió algo personal
+VAR elena_hablo_pasado = false     // Elena habló del pasado
+
+// --- CLAUDIA: AUDITORÍA ---
+VAR sabe_de_claudia = false        // El protagonista sabe de la auditoría

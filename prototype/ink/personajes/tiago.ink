@@ -371,7 +371,7 @@ No puedo."
     ~ tiago_confianza += 1
     ->->
 
-=== tiago_historia_inau ===
+=== tiago_historia_inau_escena ===
 // Escena: Tiago cuenta algo del INAU (si tiago_confianza >= 4)
 
 {tiago_confianza < 4:

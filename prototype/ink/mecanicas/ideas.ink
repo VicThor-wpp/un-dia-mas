@@ -247,18 +247,17 @@
     }
     ~ return 0
 
-// Recuperación extra al ayudar (idea_hay_cosas_juntos + idea_ayni)
+// Recuperación al ayudar: base 1 + bonus por ideas
+// La comunidad te sostiene. No es la comida. Es sentirte parte de algo.
 === function recuperar_por_ayudar() ===
-    ~ temp recuperado = 0
+    ~ temp recuperado = 1  // Base: siempre recuperás algo
     { idea_hay_cosas_juntos:
         ~ recuperado += 1
     }
     { idea_ayni:
         ~ recuperado += 1
     }
-    { recuperado > 0:
-        ~ recuperar_energia(recuperado)
-    }
+    ~ recuperar_energia(recuperado)
 
 // Reducción automática de inercia al final del día (idea_red_o_nada)
 === function efecto_red_o_nada() ===
