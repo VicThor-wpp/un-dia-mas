@@ -8,6 +8,7 @@
 === casa_despertar ===
 // Llamar al inicio de cada día
 
+# LOC:casa
 # AUDIO:sfx_despertador
 
 El despertador.
@@ -249,6 +250,7 @@ Un vaso de agua y a la calle.
 === casa_salir ===
 // Momento de salir, encuentros en el barrio
 
+# LOC:calle
 # LA SALIDA
 
 El barrio temprano.
@@ -287,6 +289,7 @@ El kiosco de la esquina abriendo.
 === casa_llegada_noche ===
 // Cuando llegás a casa de noche
 
+# LOC:casa
 # NOCHE
 
 Llegás a casa.

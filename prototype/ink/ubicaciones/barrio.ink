@@ -9,6 +9,7 @@
 // Tunnel para caminar por el barrio
 // Llamar: -> barrio_caminar ->
 
+# LOC:calle
 # EL BARRIO
 
 Caminás por el barrio.
@@ -135,6 +136,7 @@ Una vecina te saluda.
 // Tunnel para ir a la plaza
 // Llamar: -> barrio_plaza ->
 
+# LOC:calle
 # LA PLAZA
 
 La plaza del barrio.

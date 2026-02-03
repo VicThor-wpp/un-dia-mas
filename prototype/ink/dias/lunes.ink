@@ -162,6 +162,8 @@ El bondi llega al barrio.
 
 === lunes_kiosco ===
 
+# LOC:calle
+
 ~ energia -= 1
 
 Pasás por el kiosco.
@@ -256,6 +258,8 @@ No responde.
 
 === lunes_olla ===
 
+# LOC:olla
+
 ~ energia -= 1
 
 Pasás por la olla.
@@ -292,6 +296,7 @@ Sofía está adentro.
 
 === lunes_fragmentos ===
 
+# LOC:casa
 # MIENTRAS DORMÍS
 
 -> juan_fragmento_noche ->

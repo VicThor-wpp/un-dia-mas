@@ -8,6 +8,8 @@
 === bondi_esperar_parada ===
 // Llamar desde el día: -> bondi_esperar_parada
 
+# LOC:calle
+
 La parada del bondi.
 Hay gente esperando.
 Cada uno en su mundo.
@@ -175,6 +177,7 @@ Pero llegás.
 
 === bondi_subir ===
 
+# LOC:calle
 # EN EL BONDI
 
 El bondi lleno.
@@ -296,6 +299,8 @@ Tarde.
 
 === bondi_vuelta ===
 // Llamar cuando volvés del laburo
+
+# LOC:calle
 
 El bondi de vuelta.
 Menos lleno que a la mañana.

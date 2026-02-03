@@ -7,6 +7,7 @@
 
 === laburo_llegada ===
 
+# LOC:oficina
 # EL LABURO
 
 Llegás.
@@ -31,6 +32,7 @@ Nadie pregunta si lo es.
 
 === laburo_llegada_tarde ===
 
+# LOC:oficina
 # EL LABURO
 
 Llegás.
@@ -506,6 +508,7 @@ El escritorio se vacía rápido.
 
 === laburo_salida ===
 
+# LOC:calle
 # LA SALIDA
 
 5 de la tarde.
@@ -520,6 +523,7 @@ La cabeza {d6() >= 4: cansada también|peor}.
 
 === laburo_salida_despedido ===
 
+# LOC:calle
 # LA CALLE
 
 Salís con tu caja.

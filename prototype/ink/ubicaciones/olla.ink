@@ -8,6 +8,7 @@
 === olla_llegada ===
 // Llamar cuando el protagonista va a la olla
 
+# LOC:olla
 # LA OLLA
 
 La olla del barrio.
@@ -81,6 +82,7 @@ Sofía te mira de arriba abajo.
 
 === olla_ayudar_menu ===
 
+# LOC:olla
 # AYUDANDO EN LA OLLA
 
 // Evento Tiago (Fase 2)
