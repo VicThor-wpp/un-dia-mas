@@ -100,7 +100,7 @@
     border-bottom-style: solid;
 }
 
-/* Tooltip nativo (se inyectará vía JS, pero estilamos aquí) */
+/* Tooltip nativo */
 .glossary-tooltip {
     position: absolute;
     bottom: 120%;
@@ -123,4 +123,51 @@
 
 .glossary-term:hover .glossary-tooltip {
     opacity: 1;
+}
+
+/* ==========================================
+   INDICADOR DE PAUSA (CONTINUAR)
+   ========================================== */
+.pause-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem auto;
+    padding: 15px;
+    width: 100%;
+    max-width: 200px;
+    border: 2px solid var(--fg);
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-mono);
+    font-weight: bold;
+    font-size: 0.9rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: blink-border 2s infinite;
+    transition: all 0.2s;
+}
+
+.pause-indicator:hover {
+    background: var(--fg);
+    color: var(--bg);
+    transform: translateY(2px);
+}
+
+.pause-indicator-symbol {
+    font-size: 1.2rem;
+    margin-top: 5px;
+    animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(5px); }
+}
+
+@keyframes blink-border {
+    0%, 100% { border-color: var(--fg); box-shadow: 4px 4px 0 var(--fg); }
+    50% { border-color: var(--accent); box-shadow: 4px 4px 0 var(--accent); }
 }

@@ -97,7 +97,7 @@ const TextPresenter = (function() {
         hidePauseIndicator();
         const indicator = document.createElement('div');
         indicator.className = 'pause-indicator';
-        indicator.innerHTML = '<span class="pause-indicator-symbol">▼</span>';
+        indicator.innerHTML = '<span class="pause-indicator-text">CONTINUAR</span><span class="pause-indicator-symbol">▼</span>';
         indicator.setAttribute('role', 'button');
         indicator.setAttribute('aria-label', 'Continuar leyendo');
         indicator.setAttribute('tabindex', '0');
