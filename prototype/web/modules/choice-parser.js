@@ -234,8 +234,8 @@ const ChoiceParser = (function() {
             button.classList.add('continue-tension');
         }
 
-        // Text content handled by CSS ::before
-        button.textContent = '';
+        // Text content explicit for robustness
+        button.innerHTML = '<span class="choice-text">CONTINUAR</span>';
 
         button.addEventListener('click', onClick);
 
