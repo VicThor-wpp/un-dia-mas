@@ -117,3 +117,116 @@
     background: var(--fg);
     color: var(--bg);
 }
+
+/* ==========================================
+   HEADER BAR (Stats Panel interno)
+   ========================================== */
+
+.header-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    gap: 15px;
+    flex-wrap: wrap;
+    border-bottom: 2px solid var(--muted);
+}
+
+.phase-label {
+    font-family: var(--font-mono);
+    color: var(--muted);
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+.day-section {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.day-name {
+    font-family: var(--font-header);
+    color: var(--accent);
+    font-weight: 900;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.stats-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    cursor: help;
+}
+
+.stat-item svg {
+    opacity: 0.8;
+    stroke-width: 2.5px;
+}
+
+.stat-item.stat-llama {
+    color: var(--accent);
+}
+
+.stat-item.stat-inercia {
+    color: var(--muted);
+}
+
+.stat-num {
+    font-weight: bold;
+    min-width: 35px;
+    text-align: center;
+}
+
+/* ==========================================
+   DAY PROGRESS INDICATOR (7 días)
+   ========================================== */
+
+.day-progress {
+    display: flex;
+    gap: 4px;
+    margin-left: 10px;
+}
+
+.day-dot {
+    width: 10px;
+    height: 10px;
+    border: 2px solid var(--muted);
+    background: transparent;
+    transition: all 0.3s;
+}
+
+.day-dot.past {
+    background: var(--fg);
+    border-color: var(--fg);
+}
+
+.day-dot.current {
+    background: var(--accent);
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--accent);
+}
+
+/* ==========================================
+   ALERTS (Threshold warnings)
+   ========================================== */
+
+.alerts {
+    display: flex;
+    gap: 10px;
+    padding: 8px 15px;
+    flex-wrap: wrap;
+    border-top: 1px dashed var(--muted);
+}

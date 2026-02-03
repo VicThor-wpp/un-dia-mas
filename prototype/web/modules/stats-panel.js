@@ -265,7 +265,7 @@ const StatsPanel = (function() {
      * Show full info modal
      */
     function showFullInfo() {
-        const tieneLauro = story?.variablesState['tiene_laburo'] ?? true;
+        const tieneLaburo = story?.variablesState['tiene_laburo'] ?? true;
         const perdida = story?.variablesState['perdida'] || '';
         const atadura = story?.variablesState['atadura'] || '';
         const posicion = story?.variablesState['posicion'] || '';
@@ -282,8 +282,8 @@ const StatsPanel = (function() {
                 <div class="modal-body">
                     <section class="info-section">
                         <h3>Situación Laboral</h3>
-                        <p class="${tieneLauro ? 'status-employed' : 'status-unemployed'}">
-                            ${tieneLauro ? '💼 Empleado' : '⚠️ Sin trabajo'}
+                        <p class="${tieneLaburo ? 'status-employed' : 'status-unemployed'}">
+                            ${tieneLaburo ? '💼 Empleado' : '⚠️ Sin trabajo'}
                         </p>
                     </section>
 

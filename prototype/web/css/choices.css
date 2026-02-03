@@ -72,3 +72,82 @@
     background: var(--bg);
     border-color: var(--bg);
 }
+
+/* ==========================================
+   CONTINUE BUTTON
+   ========================================== */
+
+.continue-button {
+    justify-content: center;
+    text-align: center;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--muted);
+    border: 2px dashed var(--muted);
+    border-left-width: 2px;
+    background: transparent;
+}
+
+.continue-button::before {
+    display: none; /* Ocultar checkbox */
+}
+
+.continue-button::after {
+    content: 'Continuar \2192'; /* Flecha unicode */
+}
+
+.continue-button:hover {
+    color: var(--fg);
+    border-color: var(--fg);
+    border-style: solid;
+    background: var(--surface);
+}
+
+.continue-button:hover::after {
+    content: 'Continuar \2192';
+}
+
+/* Variantes de continue */
+.continue-button.continue-espera {
+    animation: pulse-border 2s infinite;
+}
+
+.continue-button.continue-tension {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.continue-button.continue-tension::after {
+    content: '\2026'; /* Ellipsis */
+}
+
+@keyframes pulse-border {
+    0%, 100% { border-color: var(--muted); }
+    50% { border-color: var(--fg); }
+}
+
+/* ==========================================
+   CHOICE STATES
+   ========================================== */
+
+.choice-unavailable {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.choice-unavailable::before {
+    background: var(--muted);
+    border-color: var(--muted);
+}
+
+.choice-falsa {
+    border-style: dashed;
+    opacity: 0.7;
+}
+
+.choice-falsa::before {
+    border-style: dashed;
+}

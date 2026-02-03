@@ -346,3 +346,289 @@
     color: var(--bg);
     box-shadow: 3px 3px 0 var(--fg);
 }
+
+/* ==========================================
+   INFO SECTIONS (Estado Actual Modal)
+   ========================================== */
+
+.info-section {
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed var(--muted);
+}
+
+.info-section:last-child {
+    margin-bottom: 0;
+    border-bottom: none;
+}
+
+.info-section h3 {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--fg);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.status-employed {
+    color: var(--fg);
+    font-weight: bold;
+}
+
+.status-unemployed {
+    color: var(--accent);
+    font-weight: bold;
+}
+
+/* ==========================================
+   FULL STATS (Barras en modal)
+   ========================================== */
+
+.full-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.full-stat-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+}
+
+.full-stat-row .stat-icon {
+    flex-shrink: 0;
+}
+
+.full-stat-row .stat-name {
+    min-width: 80px;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+}
+
+.stat-bar-bg {
+    flex: 1;
+    height: 12px;
+    background: var(--surface);
+    border: 2px solid var(--fg);
+    overflow: hidden;
+}
+
+.stat-bar-fill {
+    height: 100%;
+    transition: width 0.3s;
+}
+
+.stat-val {
+    color: var(--muted);
+    font-size: 0.75rem;
+    min-width: 45px;
+    text-align: right;
+    font-weight: bold;
+}
+
+/* ==========================================
+   PROFILE LIST (Historia personal)
+   ========================================== */
+
+.profile-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 0.9rem;
+}
+
+.profile-list strong {
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+}
+
+.vinculo-badge {
+    display: inline-block;
+    background: var(--fg);
+    color: var(--bg);
+    padding: 3px 10px;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* ==========================================
+   IDEAS LIST (Ideas internalizadas)
+   ========================================== */
+
+.ideas-container {
+    padding: 10px 0;
+}
+
+.no-ideas {
+    color: var(--muted);
+    font-style: italic;
+    text-align: center;
+    padding: 20px;
+    border: 1px dashed var(--muted);
+}
+
+.ideas-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.idea-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    border: 2px solid var(--fg);
+    background: var(--surface);
+    font-family: var(--font-main);
+    font-size: 0.9rem;
+}
+
+.idea-item.idea-elegida {
+    border-left-width: 6px;
+}
+
+.idea-item.idea-involuntaria {
+    border-style: dashed;
+    color: var(--muted);
+}
+
+.ideas-synergies {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.synergy {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    background: var(--fg);
+    color: var(--bg);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.synergy.synergy-colectiva {
+    background: var(--accent);
+}
+
+/* ==========================================
+   DECISION LOG (Registro de eventos)
+   ========================================== */
+
+.decision-log-container {
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: 10px;
+    border: 2px solid var(--muted);
+    background: var(--surface);
+}
+
+.decision-log {
+    display: flex;
+    flex-direction: column;
+}
+
+.log-day {
+    padding: 15px;
+    border-bottom: 1px solid var(--muted);
+}
+
+.log-day:last-child {
+    border-bottom: none;
+}
+
+.log-day h4 {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px dashed var(--muted);
+}
+
+.log-entry {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px;
+    margin-bottom: 6px;
+    background: var(--bg);
+    border-left: 4px solid var(--muted);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+}
+
+.log-entry:last-child {
+    margin-bottom: 0;
+}
+
+.log-entry.log-success,
+.log-entry.log-positive {
+    border-left-color: var(--fg);
+}
+
+.log-entry.log-fail,
+.log-entry.log-negative {
+    border-left-color: var(--accent);
+}
+
+.log-entry.log-neutral {
+    border-left-color: var(--muted);
+}
+
+.log-entry.log-choice {
+    border-left-color: var(--fg);
+    border-left-style: dashed;
+}
+
+.log-dice .log-value {
+    font-weight: bold;
+    font-size: 1rem;
+    min-width: 20px;
+}
+
+.log-stat .log-change {
+    font-weight: bold;
+}
+
+.log-stat .log-values {
+    color: var(--muted);
+    font-size: 0.7rem;
+}
+
+.log-choice .log-text {
+    font-style: italic;
+    color: var(--muted);
+}
+
+.log-empty {
+    color: var(--muted);
+    font-style: italic;
+    text-align: center;
+    padding: 30px;
+}
