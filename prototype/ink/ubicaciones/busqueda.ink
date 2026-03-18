@@ -262,11 +262,34 @@ Lo que fue: Trabajaste 60 horas semanales.
 
 * [Agregar más keywords]
     "Proactivo". "Orientado a resultados". "Team player".
-    
+
     Las palabras que los robots de Personal buscan.
     Las palabras que no significan nada.
-    
+
     ~ bajar_dignidad(1)
+
+    // The real CV — the one nobody reads
+    Parás un segundo.
+
+    Sacás una hoja en blanco.
+
+    No para LinkedIn. No para el algoritmo.
+    Para vos.
+
+    "Sé hacer planillas. Sé coordinar equipos chicos.
+    Sé resolver quilombos a las 6 de la tarde un viernes.
+    Sé escuchar cuando alguien tiene un problema.
+    Sé hacer café para veinte personas."
+
+    {ayude_en_olla:
+        "Sé pelar papas para sesenta."
+    }
+
+    Esas cosas no entran en un CV.
+    Pero son reales.
+
+    ~ subir_dignidad(1)
+    # NOTIFICATION:positive:Sabés cosas que importan
     ->->
 
 * [Dejarlo simple]
@@ -418,6 +441,28 @@ Siempre silencio.
     Pequeño gesto. Grande.
 }
 
+// The realization (appears after 2nd round of CVs)
+{rechazos_enviados >= 20:
+    Parás.
+
+    Quince más. Cero respuestas. Otra vez.
+
+    Pero esta vez algo es distinto.
+    No es que te duele menos.
+    Es que empezás a ver el patrón.
+
+    Trescientas personas peleando por un puesto que paga menos que el anterior.
+    El mismo algoritmo filtrando los mismos CVs.
+    El mismo "agradecemos tu interés" automático.
+
+    No es que no seas suficiente.
+    Es que el sistema no necesita que seas suficiente.
+    Necesita que sigas mandando CVs.
+
+    # NOTIFICATION:info:Algo se aclara
+    ~ subir_dignidad(1)
+}
+
 ->->
 
 === busqueda_buscar_realista ===
@@ -550,6 +595,39 @@ Pero al menos dijiste la verdad.
 ->->
 
 === busqueda_startup_fin_ambiguo ===
+
+// Moment of accidental validation
+El entrevistador revisa tus respuestas.
+
+"Mirá, te voy a ser honesto. Estás sobrecalificado."
+
+* [...]
+-
+
+"El puesto es para alguien con menos experiencia. Así les pagamos menos."
+
+Te lo dice como si fuera un favor.
+Como si ser bueno en lo que hacés fuera un problema.
+
+"Pero tu perfil nos sirve para otra cosa. ¿Te molesta si te pasamos a la base de datos?"
+
+La base de datos. Donde van los CVs a morir.
+
+{dignidad >= 4:
+    "No. Gracias."
+
+    Te levantás. Le das la mano.
+    No necesitás su base de datos.
+
+    ~ subir_dignidad(1)
+    # NOTIFICATION:positive:Dijiste que no
+}
+{dignidad < 4:
+    "Sí, claro."
+
+    Otra mentira. Otra sonrisa.
+    Otra base de datos.
+}
 
 "Bueno, quedamos en contacto."
 
@@ -1044,6 +1122,23 @@ Alguien te mira.
     A empresas que no sabés si existen.
     A puestos que no sabés si son reales.
     Al vacío.
+}
+
+// What the búsqueda taught you
+{rechazos_enviados >= 10:
+    Una semana buscando laburo te enseñó algo.
+
+    No lo que esperabas.
+
+    No aprendiste a "venderte mejor" ni a "optimizar tu marca personal".
+
+    Aprendiste que el sistema no te necesita.
+    Y que eso no dice nada sobre tu valor.
+
+    {ayude_en_olla:
+        En la olla sí te necesitan.
+        No por tu CV. Por tus manos.
+    }
 }
 
 La semana que viene, más de lo mismo.

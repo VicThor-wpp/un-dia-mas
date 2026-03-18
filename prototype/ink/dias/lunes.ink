@@ -343,10 +343,24 @@ Sofía está adentro.
 // FRAGMENTO NORMAL
 Sofía tampoco duerme bien.
 
+Está sentada en la cocina del local, con un cuaderno.
+Anota lo que falta: aceite, harina, papas, frazadas.
+La lista siempre crece. Nunca se achica.
+
+Afuera pasa un bondi vacío. Las tres de la mañana.
+El motor suena como algo que se arrastra.
+
 Los números de la olla no cierran.
 Hace tres meses que no cierran.
+Pero la gente sigue viniendo.
 
-Mañana hay que seguir.
+Cierra el cuaderno. Se hace un té con la misma bolsita de ayer.
+
+"Mañana hablo con la feria", piensa.
+"A ver si dan la verdura que no venden."
+
+Siempre hay un mañana.
+Siempre hay algo que intentar.
 
 * [Continuar] -> lunes_cliffhanger
 
@@ -387,10 +401,23 @@ Mañana hay que seguir.
 // FRAGMENTO NORMAL
 Elena no puede dormir.
 
-La radio dice cosas.
-"Antes nos cuidábamos más", piensa.
+La radio suena bajito. CX 30. Las noticias de siempre.
+"Ajuste fiscal." "Reforma laboral." "Despidos."
 
-Apaga la radio.
+Ella está sentada en la cama, con las piernas tapadas.
+El acolchado huele a lavanda. Lo lava cada lunes.
+Es el ritual que le queda de cuando Raúl vivía.
+
+"Antes nos cuidábamos más", piensa.
+"Antes el barrio era otra cosa."
+
+El vecino del 3 tosió toda la noche.
+Mañana le va a llevar un té con miel.
+
+Apaga la radio. Pero deja la luz del pasillo prendida.
+Por si alguien necesita golpear la puerta.
+
+Siempre deja la luz prendida.
 
 * [Continuar] -> lunes_cliffhanger
 
@@ -434,9 +461,26 @@ Apaga la radio.
 // FRAGMENTO NORMAL
 Diego está despierto.
 
-Piensa en su madre.
-En Venezuela.
-En todo lo que dejó.
+La pieza huele a humedad. El techo tiene una mancha
+que crece cada vez que llueve.
+Le recuerda al mapa de Venezuela. Si entrecierra los ojos.
+
+Agarra el celular. Tres fotos de su madre en el WhatsApp.
+El patio de la casa. El mango cargado. El perro nuevo.
+
+"Acá todo sigue igual, m'hijo."
+
+Igual. Allá todo sigue igual.
+Acá todo cambia y nada cambia.
+
+Pone a cargar el celular. Mañana hay que buscar changa.
+El depósito paga tarde, pero paga.
+
+Se acuesta mirando la mancha del techo.
+Venezuela de humedad y cal.
+
+Lo último que piensa antes de dormir:
+mañana le escribe a la vieja. Sin mentir.
 
 * [Continuar] -> lunes_cliffhanger
 
@@ -477,11 +521,27 @@ En todo lo que dejó.
 }
 
 // FRAGMENTO NORMAL
-Marcos está solo.
-Como siempre.
+Marcos está solo en el departamento.
+
+La tele encendida sin sonido. Los subtítulos pasan.
+Un noticiero. Números. Gráficas. Cosas que antes entendía.
+
+Sobre la mesa, un vaso de whisky a medio tomar.
+La regla: uno solo. Nunca más de uno.
+La regla que lo separa del abismo.
+
+Agarra un lápiz. Dibuja en el reverso de una factura.
+Líneas. Ángulos. Un techo que no existe.
+Las manos todavía saben. La cabeza todavía diseña.
+
+El cuerpo es el que no puede.
+
+Lava el vaso. Lo seca. Lo guarda.
+La cocina queda limpia. El departamento, ordenado.
 
 No es felicidad.
-Es funcionar.
+Es disciplina.
+Es lo único que le queda.
 
 * [Continuar] -> lunes_cliffhanger
 

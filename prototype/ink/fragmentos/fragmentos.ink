@@ -242,12 +242,31 @@ Por ahora, tiene que alcanzar.
 === sofia_generico ===
 // Fallback para Sofía
 
-Sofía revisa la lista de la semana.
-Siempre hay algo que falta.
-Siempre hay alguien que necesita.
+Sofía está en la cocina de la olla.
 
-Pero también siempre hay alguien que da.
-Eso la sostiene.
+La luz del tubo parpadea. Hay que cambiarlo.
+Una cosa más para la lista.
+
+Limpia la mesada con un trapo húmedo.
+El olor a cebolla le quedó en las manos. Siempre le queda.
+
+Revisa la lista de la semana. Faltan cosas.
+Siempre faltan cosas.
+Pero hoy hubo para todos. Eso cuenta.
+
+{ayude_en_olla:
+    Alguien vino a ayudar. Eso cuenta más.
+    Un par de manos cambian todo.
+}
+
+Sofía se sienta un minuto. Solo uno.
+Se permite cerrar los ojos.
+
+Afuera un perro ladra. Los grillos.
+El barrio respira aunque no lo sepa.
+
+Mañana otra vez. Pero no sola.
+Nunca del todo sola.
 
 ->->
 
@@ -417,12 +436,27 @@ La memoria enseña.
 // Fallback para Elena
 
 Elena escucha la radio.
-Las mismas noticias de siempre.
-Crisis. Despidos. Ajuste.
 
-Apaga la radio.
-Las noticias no cambian nada.
+CX 30. Las mismas noticias de siempre.
+Crisis. Despidos. Ajuste.
+Las palabras cambian de año, pero el tono es el mismo.
+
+Teje mientras escucha. Una bufanda para nadie en particular.
+Las agujas suenan: tac, tac, tac.
+El ritmo del que sabe esperar.
+
+{conte_a_alguien:
+    Hoy alguien le confió algo.
+    Un peso compartido pesa menos.
+    Ella sabe. Lo aprendió con Raúl.
+}
+
+Apaga la radio. Las noticias no cambian nada.
 Las manos sí.
+
+Mira la bufanda a medio hacer.
+Mañana la sigue. El frío no se apura.
+Y ella tampoco.
 
 ->->
 
@@ -581,9 +615,27 @@ Pero lo dice igual.
 === diego_generico ===
 // Fallback para Diego
 
-Diego camina por el barrio.
-Su barrio. El único que conoce.
-El que lo hizo y lo puede destruir.
+Diego cocina.
+
+Arepa con lo que hay. Harina, sal, agua.
+La receta de su madre. La única que le sale igual.
+
+El olor le trae Venezuela. El patio. Las voces.
+El perro echado bajo el mango.
+
+{ayude_en_olla:
+    Hoy vio algo en la olla que le movió.
+    Gente organizándose sin jefe. Repartiéndose lo poco.
+    Le recordó a los vecinos de Petare.
+    Acá también se puede.
+}
+
+Come solo. Pero no triste.
+Solo porque así le tocó hoy.
+Mañana capaz que no.
+
+Lava el plato. Guarda la harina.
+Mañana hay otra arepa.
 
 ->->
 
@@ -757,12 +809,28 @@ Y por un rato, no está solo.
 === marcos_generico ===
 // Fallback para Marcos
 
-Marcos dibuja en una servilleta.
-Un edificio imposible.
-Un sueño arquitectónico.
+Marcos abre una botella de vino.
+Medio vaso. Nunca más de medio.
 
-Capaz que algún día.
-Capaz.
+Esa es la regla. Una de las pocas que le quedan.
+
+Pone un vinilo. Zitarrosa. "Adagio en mi país."
+La música de cuando creía en todo.
+
+Dibuja en una servilleta. Un edificio imposible.
+Curvas que ningún ingeniero aceptaría.
+Pero las líneas son suyas. Eso nadie se lo saca.
+
+{participe_asamblea:
+    Hoy hubo asamblea. No fue.
+    O fue, y se quedó afuera fumando.
+    Da igual. Supo que pasó.
+}
+
+El vino se acaba. No abre otra botella.
+La regla. Medio vaso.
+
+Algo tiene que sostenerlo.
 
 ->->
 
@@ -944,13 +1012,32 @@ Es lo que hace.
 === juan_generico ===
 // Fallback para Juan
 
-Juan mira el celular.
-Notificaciones del laburo.
-Un domingo.
+Juan está en la cama con el celular.
 
-Suspira.
-Contesta.
-Es lo que hay.
+La pantalla le ilumina la cara en la oscuridad.
+Notificaciones del laburo. Un mail de recursos humanos.
+Otro de su jefe. "Para mañana sin falta."
+
+Suspira. Contesta. Es lo que hay.
+
+El viejo tose en la pieza de al lado.
+La vieja le lleva agua. Pasos suaves en el pasillo.
+
+{fui_despedido:
+    Piensa en tu escritorio vacío.
+    En cómo nadie dijo nada.
+    En que mañana podría ser el suyo.
+}
+
+Googlea "derechos laborales Uruguay".
+Lee dos párrafos. Cierra la pestaña.
+No quiere saber.
+
+Deja el celular boca abajo.
+La pantalla deja de brillar.
+El cuarto queda oscuro.
+
+Pero él sigue despierto.
 
 ->->
 
@@ -1142,10 +1229,28 @@ Nunca.
 === ixchel_generico ===
 // Fallback para Ixchel
 
-Ixchel mira la luna.
-Es la misma luna que ve su abuela.
-Eso la conecta.
-Eso la sostiene.
+Ixchel mira la luna por la ventana del cuarto.
+
+Es la misma luna que ve su abuela en Quetzaltenango.
+El mismo brillo sobre otro río.
+Otro cielo, pero la misma luz.
+
+Teje un rato. Los colores de allá en las manos de acá.
+Rojo, amarillo, negro. Los hilos no preguntan de papeles.
+
+{ayude_en_olla:
+    Hoy comió con gente. No le preguntaron de dónde era.
+    Le preguntaron si quería repetir.
+    Algo tan simple. Tan enorme.
+}
+
+"Maltiox", susurra. Gracias.
+
+A los ancestros. A la luna. Al hilo que no se corta.
+
+Se acuesta. El cuarto es chico y frío.
+Pero los ancestros viajan con ella.
+Siempre viajan con ella.
 
 ->->
 
@@ -1213,9 +1318,24 @@ Solo malas y peores.
 // Fallback para Tiago
 
 Tiago mira el celular.
-Mensajes de Bruno.
-Los ignora.
 
+Siete mensajes de Bruno. Los ve llegar uno a uno.
+Cada vibración es una piedra en el estómago.
+
+Sale al balcón. Prende un cigarro.
+El humo se pierde sobre los techos de chapa.
+Un gato cruza la calle vacía.
+
+Su hermana duerme en la pieza de al lado.
+Los remedios cuestan lo que él gana en una semana.
+Sin Bruno no hay remedios. Sin remedios no hay hermana.
+
+La ecuación es simple. Y es una trampa.
+
+Apaga el cigarro. Vuelve adentro.
+Los mensajes siguen ahí. No se borran solos.
+
+Los ignora.
 Por ahora.
 
 ->->

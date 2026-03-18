@@ -821,15 +821,30 @@ Vos también.
 
 Marcos tampoco duerme.
 
-El departamento vacío.
-La tele encendida sin sonido.
-Los mensajes sin responder.
+El departamento vacío. La heladera zumba.
+Sobre la mesa, los planos viejos que sacó hoy.
+No sabe por qué los sacó. Los miró una hora.
 
-Pensó en ir a la asamblea.
-No fue.
-Es más fácil no ir.
+Líneas que dibujó cuando todavía creía
+que las cosas se construyen de abajo para arriba.
 
-Mañana es otro día igual.
+{conte_a_alguien:
+    Hoy alguien le contó algo. Un despido.
+    Le sonó conocido. Demasiado conocido.
+    "Al final es a todos", piensa.
+}
+
+Se sirve un dedo de whisky.
+Lo mira un rato largo antes de tomarlo.
+Medio vaso. La regla.
+
+Desde el balcón se escucha una cumbia lejana.
+Alguien festeja algo en el barrio.
+La vida sigue aunque uno no quiera.
+
+Lava el vaso. Se acuesta.
+Mañana capaz que contesta los mensajes.
+Capaz.
 
 ->->
 

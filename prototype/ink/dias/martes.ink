@@ -255,13 +255,39 @@ La precariedad.
 === martes_buscar_marcos ===
 
 Llamás a Marcos.
-No contesta.
+Suena. Suena. Suena.
 
-Mandás mensaje.
-"Visto" pero no responde.
+Corta.
 
-Así es Marcos ahora.
-Presente pero ausente.
+Mandás mensaje: "Che, ¿cómo andás?"
+
+Tilde azul. Lo leyó.
+
+Esperás.
+
+Nada.
+
+Diez minutos. Nada.
+
+Estás por guardar el celular cuando aparece:
+
+"..."
+
+Tres puntos. Está escribiendo.
+
+Esperás.
+
+Los tres puntos desaparecen.
+
+No mandó nada.
+
+Pero estuvo a punto.
+
+{vinculo == "marcos":
+    Algo en esos tres puntos te mueve.
+    Quiso decir algo. No pudo.
+    Todavía no.
+}
 
 -> martes_casa
 

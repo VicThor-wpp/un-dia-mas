@@ -1251,14 +1251,29 @@ Después sigue la lucha.
 
 Elena sueña con Raúl.
 
-Están en el barrio.
-Hace calor.
-Él sonríe.
+Están en el barrio. Hace calor. Enero.
+Él tiene la camisa remangada y el mate en la mano.
+Los pibes juegan en la calle con una pelota de trapo.
 
-"¿Viste? Siempre salimos."
+"¿Viste? Siempre salimos", dice él.
+Y ella le cree. En el sueño siempre le cree.
 
-Se despierta.
-Es un buen sueño.
+Se despierta. La cama está fría de su lado.
+Tres años. Todavía deja espacio.
+
+{participe_asamblea:
+    Hoy en la asamblea escuchó voces que le recordaron a él.
+    Gente con bronca pero con ganas.
+    Gente que todavía cree que se puede.
+}
+
+Se levanta. Prende una vela.
+No es religiosa. Pero la luz ayuda.
+
+"Mañana es domingo", dice en voz alta.
+Para nadie. Para él. Para ella.
+
+Es un buen sueño. Los buenos hay que cuidarlos.
 
 * [Continuar] -> transicion_sabado_domingo
 

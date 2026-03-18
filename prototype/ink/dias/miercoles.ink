@@ -535,11 +535,17 @@ No estás solo en eso.
 
 === miercoles_llamar_marcos ===
 
-Marcos no contesta.
-El teléfono suena y suena.
+Llamás a Marcos.
+No contesta.
 
-Bueno.
-No esperabas otra cosa.
+El teléfono suena cinco veces y va a buzón.
+La voz grabada dice algo sobre dejar mensaje.
+Cortás.
+
+No dejás mensaje. ¿Qué le ibas a decir?
+"Me echaron. Como a vos."
+
+No. Todavía no.
 
 * [Ir a la noche] -> miercoles_noche
 
@@ -583,8 +589,57 @@ La cuenta regresiva empezó.
 {conte_a_alguien: Al menos alguien sabe. No estás completamente solo.}
 {not conte_a_alguien: No le contaste a nadie. El peso es solo tuyo.}
 
+// Marcos manda un mensaje tarde a la noche
+{miercoles_llamar_marcos: -> miercoles_noche_marcos_texto}
+
 // Fragmento nocturno
 -> fragmento_miercoles
+
+=== miercoles_noche_marcos_texto ===
+
+// Tarde a la noche, Marcos manda un mensaje
+
+Son las 2 de la mañana.
+Suena el celular.
+
+Marcos.
+
+"Me enteré."
+
+Dos palabras.
+Las primeras en semanas.
+
+* [Contestar: "¿Cómo te enteraste?"]
+    "Juan me dijo."
+
+    Pausa larga.
+
+    "Es una mierda. Lo sé."
+
+    No dice más. Pero no hace falta.
+
+    ~ marcos_relacion += 1
+    -> fragmento_miercoles
+
+* [Contestar: "Sí."]
+    Nada más.
+
+    Tres puntos aparecen.
+
+    "Si necesitás algo..."
+
+    No termina la frase. Pero la empezó.
+
+    ~ marcos_relacion += 1
+    -> fragmento_miercoles
+
+* [No contestar]
+    Dejás el celular boca abajo.
+
+    Pero lo leíste.
+    Y él sabe que lo leíste.
+
+    -> fragmento_miercoles
 
 === fragmento_miercoles ===
 

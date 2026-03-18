@@ -378,11 +378,48 @@ Tiago mira las championes. Mira la olla cerrada.
     
     No grita. No amenaza.
     Peor: convence.
-    
+
     "Tu vieja está internada. No tenés a nadie.
     Yo te doy familia. Propósito. Orden."
-    
+
     Tiago tiene los ojos mojados.
+
+    Bruno baja la voz.
+
+    "Vos tenés potencial, pibe. Yo lo veo. Los otros no lo ven."
+
+    Le pone la mano en el hombro. No como un policía esta vez.
+    Como un padre. O lo que Tiago imagina que es un padre.
+
+    "En la chacra hay pibes como vos. Pibes que nadie quiso.
+    Pibes que el INAU dejó tirados.
+    Yo les di estructura. Reglas. Un lugar."
+
+    {tiago_historia_inau:
+        Tiago no dice nada. Pero algo se mueve en su cara.
+        "Estructura" es exactamente lo que nunca tuvo.
+    }
+
+    "Nadie te va a mover de ahí. Nadie te va a cambiar de hogar cada seis meses.
+    Es tuyo. Si lo querés."
+
+    No dice "si me obedecés."
+    Pero está implícito.
+
+    "Yo no te voy a mentir. Afuera te mienten. Te dicen 'todo va a estar bien'.
+    Yo te digo: va a ser duro. Pero va a ser claro.
+    Sabés qué se espera. Sabés qué ganás."
+
+    Le muestra el teléfono. Fotos de la chacra.
+    Pibes laburando. Comiendo. Durmiendo en camas de verdad.
+
+    "Preguntales a ellos. Preguntales si quieren volver."
+
+    Guarda el teléfono.
+
+    "Nadie los obliga. Pero ninguno se va."
+
+    Eso último suena menos a libertad de lo que pretende.
     
     * [Acercarte.]
         Caminás hacia ellos.

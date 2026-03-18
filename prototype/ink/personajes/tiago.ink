@@ -473,6 +473,178 @@ Es lo más parecido a un hogar que tuvo.
 
 ->->
 
+=== tiago_recuerdo_fernanda ===
+// Escena: Tiago cuenta un recuerdo específico del INAU
+// Requiere: tiago_historia_inau == true
+
+{not tiago_historia_inau:
+    ->->
+}
+
+Están sentados afuera. Hace frío pero Tiago no quiere entrar.
+
+"Había una educadora. Fernanda. En el hogar de Colón."
+
+* [Escuchar.]
+-
+
+"Era la única que se quedaba después de hora.
+Las otras fichaban y se iban. Fernanda no."
+
+# PAUSA
+
+"Me enseñó a leer. Con paciencia. Todos los días.
+Yo tenía once y no sabía leer una oración completa.
+Y ella no me hacía sentir un pelotudo por eso."
+
+Prende un pucho. Las manos le tiemblan un poco.
+
+"Un día no vino más. Me dijeron que la trasladaron."
+
+Silencio.
+
+"Ni se despidió. O capaz que no la dejaron. No sé."
+
+* [...]
+-
+
+"Después de eso dejé de esperar que la gente se quede."
+
+Tira el pucho. Lo pisa despacio.
+
+"Por eso cuando alguien dice 'yo me quedo'... no les creo.
+Todos se van.
+Fernanda se fue. Mi vieja se fue a otro lado. Las educadoras rotan.
+Los hogares cambian. Nadie se queda."
+
+# PAUSA
+
+"Ni siquiera los que te quieren. Porque capaz que te quieren, pero el sistema los mueve igual."
+
+{vinculo == "sofia" || sofia_relacion >= 3:
+    Sofía está escuchando desde la cocina.
+    No dice nada. Pero se queda.
+    Hace diez minutos que podría haberse ido.
+    Se queda.
+}
+
+->->
+
+// ============================================
+// PRUEBA DE LEALTAD - TIAGO TESTEA
+// ============================================
+
+=== tiago_prueba_lealtad ===
+// Escena Viernes/Sábado: Tiago testea si la olla lo va a echar
+// Requiere: tiago_confianza >= 3
+
+{tiago_confianza < 3:
+    ->->
+}
+
+Tiago está raro hoy.
+Callado. Más que de costumbre.
+
+Está acomodando baldes. Los apila. Los desapila. Los vuelve a apilar.
+
+De golpe tira uno. Fuerte. Contra la pared.
+
+"¡Esto es una mierda! ¡La olla es una mierda! ¡No sirve para nada!"
+
+Todos se quedan helados.
+Sofía levanta la vista del guiso.
+Elena deja de pelar.
+
+El balde rueda por el piso.
+Nadie habla.
+
+Tiago te mira.
+No está enojado con la olla. Lo ves en los ojos.
+Está probando.
+"¿Ahora me echan? ¿Ahora me dicen que me vaya?"
+
+Tiene el cuerpo tenso. Listo para salir corriendo.
+Como un animal que muerde para ver si lo abandonan.
+
+* [Quedarte callado. No irte.]
+    No te vas.
+
+    Sofía tampoco se va.
+
+    Elena, desde su silla: "Levantá el balde, pibe."
+
+    Lo dice sin bronca. Como si fuera lo más normal del mundo.
+    Como si los pibes tiraran baldes todos los días.
+
+    Tiago la mira. Buscando el enojo. La decepción.
+    No encuentra nada de eso.
+
+    Levanta el balde.
+    Lo pone donde estaba.
+
+    Nadie le dijo que se fuera.
+    Nadie le gritó. Nadie lo amenazó con llamar a nadie.
+
+    Elena: "¿Terminaste?"
+
+    Tiago asiente.
+
+    "Bueno. Andá a buscar las cebollas que están en la bolsa del fondo."
+
+    Tiago va.
+
+    Más tarde, cuando todos se fueron, te busca.
+    No te mira. Pero se para al lado tuyo.
+
+    "Grité y no me echaron."
+
+    Lo dice bajito. Como un descubrimiento.
+
+    ~ tiago_confianza += 1
+
+    ->->
+
+* [Decirle que se calme.]
+    "Está bien. Tranquilo."
+
+    "¡No me digas tranquilo! ¡No sabés nada!"
+
+    Se le quiebra la voz en la segunda frase.
+
+    Pero se queda. Y vos te quedás.
+    Y Sofía sigue revolviendo el guiso.
+    Y Elena sigue pelando papas.
+
+    Nadie se va.
+
+    La olla absorbe el grito como absorbe todo.
+    El hambre. El cansancio. La bronca.
+
+    Después, más tarde, muy bajito: "Perdón."
+
+    "No tenés que pedir perdón."
+
+    "Sí tengo. Porque vos no me gritaste."
+
+    ~ tiago_confianza += 1
+
+    ->->
+
+* [Decirle que se vaya a calmar afuera.]
+    "Tiago, andá afuera un rato. Enfriá la cabeza."
+
+    Tiago te mira.
+    Ahí está. Eso es lo que esperaba.
+
+    "Sí. Ya sé. Siempre afuera."
+
+    Se va.
+    No vuelve esa tarde.
+
+    Le diste exactamente lo que predijo.
+
+    ->->
+
 // ============================================
 // RELACIÓN CON BRUNO - PRESIÓN
 // ============================================
@@ -620,8 +792,33 @@ Nunca cumplieron."
 === tiago_decision_final ===
 // La encrucijada: quedarse o irse con Bruno
 
-Tiago piensa.
-Largo rato.
+Tiago se sienta en el piso. Abraza las rodillas.
+
+"Vos no entendés. Bruno es un hijo de puta. Yo lo sé.
+Pero es un hijo de puta que no se va."
+
+# PAUSA
+
+"La olla puede cerrar mañana. Claudia puede venir con la policía.
+Sofía puede cansarse. Vos podés desaparecer."
+
+"Bruno no desaparece. Ese es el tema."
+
+* [...]
+-
+
+"Yo no necesito que me quieran. Necesito saber dónde voy a dormir."
+
+Silencio.
+
+"¿Podés garantizarme eso?"
+
+Te mira. De frente.
+Por primera vez te mira sin desafío y sin defensa.
+Pura necesidad.
+
+No podés garantizarle nada.
+Y él lo sabe.
 
 * [Decirle que se quede.]
     "Quedate, Tiago.

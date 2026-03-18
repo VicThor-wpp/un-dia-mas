@@ -823,6 +823,27 @@ Pero algo falta.
     Quizás deberías haber ido.
 }
 
+// Marcos mirando desde la otra vereda
+{marcos_relacion >= 2 && ayude_en_olla:
+    De reojo, ves una figura al otro lado de la calle.
+    Campera oscura. Manos en los bolsillos.
+
+    Marcos.
+
+    No cruza. Solo mira.
+
+    {vinculo == "marcos":
+        Por un segundo, sus ojos se cruzan con los tuyos.
+        Levanta la mano. Apenas. Un gesto mínimo.
+        Y se va.
+    }
+    {vinculo != "marcos":
+        Lo ves irse antes de que puedas reaccionar.
+    }
+
+    Pero vino a mirar. Eso es algo.
+}
+
 // JUAN - Build-up migración: llamada sobre pasajes
 {juan_avanzo_migracion && not juan_encuentro_despedida:
     -> juan_llamado_viernes_pasajes ->
@@ -995,13 +1016,29 @@ De cómo seguir.
 
 Elena piensa en Raúl.
 
-En el 2002, él tampoco dormía.
-Pero salieron.
-Juntos, salieron.
+Está en el sillón con la foto vieja en la falda.
+La que sacaron en la rambla. Él con el termo, ella riendo.
+El viento les volaba el pelo a los dos.
 
+En el 2002, él tampoco dormía.
+Se levantaba a las cuatro y caminaba por el barrio.
+Solo. Sin hablar. Procesando.
+
+Pero salieron. Juntos, salieron.
+Porque había gente. Porque se juntaron.
+
+{ayude_en_olla:
+    Hoy vio algo en la olla que le recordó a eso.
+    Gente que aparece. Que pone el hombro.
+    Como antes.
+}
+
+Guarda la foto. Prende la pava.
 Mañana hay asamblea.
-Ella va a ir.
-Tiene cosas que decir.
+Ella va a ir. Tiene cosas que decir.
+Cosas que aprendió de la crisis anterior.
+
+Raúl le enseñó una: nunca quedarse callada.
 
 * [Continuar] -> transicion_viernes_sabado
 
@@ -1135,17 +1172,31 @@ Mañana sigue.
 // FRAGMENTO NORMAL
 # MARCOS
 
-Marcos vio la asamblea desde lejos.
+Marcos abre una botella de vino.
+Medio vaso. Nunca más de medio.
+Esa es la regla. Una de las pocas que le quedan.
 
-No entró.
-No quiso.
-O no pudo.
+Pone un vinilo. Zitarrosa. "Adagio en mi país."
+La púa raspa y la voz sale gastada, como todo lo demás.
 
-La gente hace cosas.
-Él solo mira.
+Desde el balcón vio la asamblea.
+La gente entrando al local. Las voces.
+No entró. No quiso. O no pudo.
 
-Quizás mañana.
-Siempre quizás mañana.
+{participe_asamblea:
+    Pero supo que pasó algo.
+    Que hubo gente. Que se habló.
+    Algo vibra en el barrio que no vibraba antes.
+}
+
+El vino se acaba. No abre otra botella.
+La regla. Medio vaso.
+
+Levanta el vinilo. Lo guarda en la funda con cuidado.
+Zitarrosa merece eso.
+
+Algo tiene que sostenerlo.
+La música. La regla. El medio vaso.
 
 * [Continuar] -> transicion_viernes_sabado
 
