@@ -62,3 +62,10 @@
     opacity: 0;
     transform: translateX(20px);
 }
+
+@media (prefers-reduced-motion: reduce) {
+    .notification {
+        transition: none !important;
+        animation: none !important;
+    }
+}

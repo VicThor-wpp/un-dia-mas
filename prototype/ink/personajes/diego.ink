@@ -8,6 +8,9 @@
 
 === diego_encuentro_casual ===
 
+{ vinculo == "diego":
+    Lo ves pasar y sentís algo. Reconocimiento. Como mirarse en un espejo roto.
+}
 Diego camina rápido.
 Siempre camina rápido.
 

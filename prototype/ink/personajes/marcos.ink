@@ -17,6 +17,9 @@
 
 === marcos_encuentro_casual ===
 
+{ vinculo == "marcos":
+    Marcos. Algo te une a ese tipo. Algo que no sabés nombrar todavía.
+}
 Marcos cruza la calle.
 Rápido. Cabeza gacha.
 Como si no quisiera que lo vean.

@@ -47,6 +47,9 @@ const EndingScreen = (function() {
         // Unlock this ending
         unlockEnding(endingName);
 
+        // Check achievements
+        checkAchievements(endingName, storyVariables);
+
         const endingData = endingsConfig.endings[endingName];
         if (!endingData) {
             console.warn('EndingScreen: Unknown ending:', endingName);
@@ -99,6 +102,28 @@ const EndingScreen = (function() {
         // Libro de Finales
         const bookSection = buildEndingsBook(endingName);
         card.appendChild(bookSection);
+
+        // Achievements section
+        if (typeof Achievements !== 'undefined') {
+            const allAch = Achievements.getAll();
+            const unlockedAch = Achievements.getUnlocked();
+            if (Object.keys(allAch).length > 0) {
+                const achSection = document.createElement('div');
+                achSection.className = 'achievements-section';
+                achSection.innerHTML = '<h3>Logros</h3>';
+                const achGrid = document.createElement('div');
+                achGrid.className = 'achievements-grid';
+                Object.entries(allAch).forEach(([id, ach]) => {
+                    const isUnlocked = unlockedAch.includes(id);
+                    const achCard = document.createElement('div');
+                    achCard.className = 'achievement ' + (isUnlocked ? 'unlocked' : 'locked');
+                    achCard.innerHTML = '<span class="ach-title">' + (isUnlocked ? ach.title : '???') + '</span>';
+                    achGrid.appendChild(achCard);
+                });
+                achSection.appendChild(achGrid);
+                card.appendChild(achSection);
+            }
+        }
 
         // Replay button
         const replayBtn = document.createElement('button');
@@ -294,6 +319,17 @@ const EndingScreen = (function() {
             } catch (e) {
                 console.warn('EndingScreen: Could not save to localStorage:', e);
             }
+        }
+    }
+
+    /**
+     * Check achievements after ending is unlocked
+     * @param {string} endingName - The ending identifier
+     * @param {object} storyVariables - Story variables for context
+     */
+    function checkAchievements(endingName, storyVariables) {
+        if (typeof Achievements !== 'undefined') {
+            Achievements.check(endingName, storyVariables);
         }
     }
 

@@ -132,10 +132,40 @@ const SecurityValidator = (function() {
         }
     }
 
+    /**
+     * Escape string for safe use in HTML attributes
+     * @param {string} str - Raw string
+     * @returns {string} Escaped string safe for attribute values
+     */
+    function escapeAttr(str) {
+        if (typeof str !== 'string') return '';
+        return str
+            .replace(/&/g, '&amp;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;');
+    }
+
+    /**
+     * Escape string for safe use as HTML text content
+     * @param {string} str - Raw string
+     * @returns {string} Escaped string safe for text content
+     */
+    function escapeHTML(str) {
+        if (typeof str !== 'string') return '';
+        return str
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;');
+    }
+
     // Public API
     return {
         sanitizeHTML,
         sanitizeText,
+        escapeAttr,
+        escapeHTML,
         validateSaveData,
         checkStorageQuota,
         safeJSONParse

@@ -149,9 +149,10 @@ const AudioSystem = (function() {
         // Crossfade to new track
         fadeOut(() => {
             currentBGM = track;
-            // Note: actual audio files not included yet
-            // bgmElement.src = `assets/audio/${track}.mp3`;
-            // bgmElement.play().catch(e => {});
+            bgmElement.src = `assets/audio/${track}.mp3`;
+            bgmElement.play().catch(e => {
+                console.log('[AudioSystem] BGM autoplay blocked - waiting for user interaction');
+            });
             console.log(`[AudioSystem] BGM: ${track} (${dayConfig.mood})`);
         });
     }
@@ -166,9 +167,10 @@ const AudioSystem = (function() {
         const track = config.sfx?.[sfxName];
         if (!track) return;
 
-        // Note: actual audio files not included yet
-        // sfxElement.src = `assets/audio/${track}.mp3`;
-        // sfxElement.play().catch(e => {});
+        sfxElement.src = `assets/audio/${track}.mp3`;
+        sfxElement.play().catch(e => {
+            console.log('[AudioSystem] SFX autoplay blocked - waiting for user interaction');
+        });
         console.log(`[AudioSystem] SFX: ${track}`);
     }
 

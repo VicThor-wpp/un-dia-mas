@@ -75,6 +75,92 @@
       },
       "portrait": "assets/portraits/juan",
       "expressions": ["neutral", "friendly", "worried", "distant"]
+    },
+    "ixchel": {
+      "name": "Ixchel",
+      "role": "La que teje",
+      "description": "Maya-K'iche'. Sabe cosas que olvidamos.",
+      "color": "#c49b6a",
+      "relationVar": "ixchel_relacion",
+      "stateVar": "ixchel_estado",
+      "states": {
+        "observando": { "label": "Observando", "color": "#2196f3" },
+        "enseñando": { "label": "Enseñando", "color": "#4caf50" },
+        "recordando": { "label": "Recordando", "color": "#9c27b0" }
+      },
+      "portrait": "assets/portraits/ixchel",
+      "expressions": ["neutral", "teaching", "remembering", "warm"]
+    },
+    "lucia": {
+      "name": "Lucía",
+      "role": "La delegada",
+      "description": "Sindicalista. Sigue peleando.",
+      "color": "#d45d5d",
+      "relationVar": "lucia_relacion",
+      "stateVar": "lucia_estado",
+      "states": {
+        "activa": { "label": "Activa", "color": "#4caf50" },
+        "luchando": { "label": "Luchando", "color": "#f44336" }
+      },
+      "portrait": "assets/portraits/lucia",
+      "expressions": ["neutral", "determined", "worried"]
+    },
+    "tiago": {
+      "name": "Tiago",
+      "role": "El pibe",
+      "description": "Calle. Desconfianza. Futuro incierto.",
+      "color": "#8bc34a",
+      "relationVar": "tiago_confianza",
+      "stateVar": "tiago_estado",
+      "states": {
+        "desconfiado": { "label": "Desconfiado", "color": "#ff9800" },
+        "abierto": { "label": "Abierto", "color": "#4caf50" },
+        "captado": { "label": "En riesgo", "color": "#f44336" }
+      },
+      "portrait": "assets/portraits/tiago",
+      "expressions": ["neutral", "guarded", "scared"]
+    },
+    "cacho": {
+      "name": "Cacho",
+      "role": "El iluso",
+      "description": "Cripto, LinkedIn, changas. Siempre tiene un plan.",
+      "color": "#ffb74d",
+      "relationVar": "cacho_relacion",
+      "stateVar": "cacho_estado",
+      "states": {
+        "negociando": { "label": "Negociando", "color": "#ff9800" },
+        "vulnerable": { "label": "Vulnerable", "color": "#9e9e9e" }
+      },
+      "portrait": "assets/portraits/cacho",
+      "expressions": ["neutral", "scheming", "vulnerable"]
+    },
+    "bruno": {
+      "name": "Bruno",
+      "role": "El apóstol",
+      "description": "Orden. Control. Su chacra, sus reglas.",
+      "color": "#795548",
+      "relationVar": "bruno_tension",
+      "stateVar": "bruno_estado",
+      "states": {
+        "acechando": { "label": "Acechando", "color": "#f44336" },
+        "presionando": { "label": "Presionando", "color": "#9b2335" }
+      },
+      "portrait": "assets/portraits/bruno",
+      "expressions": ["neutral", "threatening"]
+    },
+    "claudia": {
+      "name": "Claudia",
+      "role": "La auditora",
+      "description": "Formularios. Plazos. Un Excel con tu nombre.",
+      "color": "#78909c",
+      "relationVar": "claudia_hostilidad",
+      "stateVar": "claudia_estado",
+      "states": {
+        "auditando": { "label": "Auditando", "color": "#ff9800" },
+        "presionando": { "label": "Presionando", "color": "#f44336" }
+      },
+      "portrait": "assets/portraits/claudia",
+      "expressions": ["neutral", "cold"]
     }
   },
   "display": {

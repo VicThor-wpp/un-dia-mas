@@ -1,0 +1,52 @@
+{
+  "achievements": {
+    "primer_final": {
+      "title": "Un dia mas",
+      "description": "Completaste tu primera semana",
+      "icon": "sunrise",
+      "condition": "any_ending"
+    },
+    "todos_colectivos": {
+      "title": "Fuego colectivo",
+      "description": "Descubriste todos los finales colectivos",
+      "icon": "flame",
+      "condition": "all_category_colectivo"
+    },
+    "todos_finales": {
+      "title": "Todas las vidas",
+      "description": "Descubriste los 12 finales",
+      "icon": "book-open",
+      "condition": "all_endings"
+    },
+    "la_llama": {
+      "title": "La llama vive",
+      "description": "Encontraste el final epico",
+      "icon": "flame",
+      "condition": "ending_final_la_llama"
+    },
+    "solo": {
+      "title": "Soledad",
+      "description": "Terminaste completamente solo",
+      "icon": "cloud",
+      "condition": "ending_final_solo"
+    },
+    "tejido": {
+      "title": "El tejido",
+      "description": "Ixchel te enseno a tejer comunidad",
+      "icon": "heart",
+      "condition": "ending_final_tejido"
+    },
+    "tres_vinculos": {
+      "title": "Tres caminos",
+      "description": "Jugaste con tres vinculos diferentes",
+      "icon": "git-branch",
+      "condition": "three_different_vinculos"
+    },
+    "huelga": {
+      "title": "Paro",
+      "description": "Organizaste la huelga",
+      "icon": "shield",
+      "condition": "ending_final_huelga"
+    }
+  }
+}

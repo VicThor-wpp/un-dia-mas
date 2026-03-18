@@ -204,7 +204,7 @@ VAR escuche_historia_olla = false
 VAR perdida = ""      // familiar, relacion, futuro, vacio
 VAR atadura = ""      // responsabilidad, barrio, inercia, algo
 VAR posicion = ""     // ajeno, quemado, esperanzado, ambiguo
-VAR vinculo = ""      // sofia, elena, diego
+VAR vinculo = ""      // sofia, elena, diego, marcos, ixchel, juan
 
 // --- OTROS ---
 

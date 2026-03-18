@@ -4,73 +4,85 @@
             "title": "La Llama",
             "description": "El fuego no se apag\u00f3. La comunidad encontr\u00f3 su fuerza.",
             "category": "colectivo",
-            "tone": "esperanzado"
+            "tone": "esperanzado",
+            "hint": "Conexi\u00f3n alta, llama viva, ideas positivas, asamblea y ayuda en la olla"
         },
         "final_red": {
             "title": "La Red",
             "description": "No est\u00e1s solo. Hay una red de gente que sabe que exist\u00eds.",
             "category": "colectivo",
-            "tone": "esperanzado"
+            "tone": "esperanzado",
+            "hint": "Conexi\u00f3n moderada, llama encendida, ayudar en la olla"
         },
         "final_solo": {
             "title": "Solo",
             "description": "El barrio sigue. Pero sin vos. Todo gris.",
             "category": "aislamiento",
-            "tone": "melanc\u00f3lico"
+            "tone": "melanc\u00f3lico",
+            "hint": "Evit\u00e1 la comunidad. No ayudes. No pidas ayuda."
         },
         "final_quizas": {
             "title": "Quiz\u00e1s",
             "description": "No es esperanza. Es posibilidad. Un quiz\u00e1s que antes no hab\u00eda.",
             "category": "ambiguo",
-            "tone": "ambiguo"
+            "tone": "ambiguo",
+            "hint": "Conexi\u00f3n media, algunas peque\u00f1as victorias"
         },
         "final_incierto": {
             "title": "Incierto",
             "description": "No sab\u00e9s qu\u00e9 viene. Pero est\u00e1s vivo. Eso es algo.",
             "category": "ambiguo",
-            "tone": "ambiguo"
+            "tone": "ambiguo",
+            "hint": "Sin comprometerte del todo, sin aislarte del todo"
         },
         "final_sin_llama": {
             "title": "Sin Llama",
             "description": "La llama se apag\u00f3. El tejido social se deshilach\u00f3.",
             "category": "aislamiento",
-            "tone": "desolador"
+            "tone": "desolador",
+            "hint": "Dej\u00e1 que la llama se apague. No ayudes en la olla."
         },
         "final_apagado": {
             "title": "Apagado",
             "description": "No est\u00e1s enfermo. El sistema est\u00e1 enfermo. Pero vos tom\u00e1s la pastilla.",
             "category": "aislamiento",
-            "tone": "cr\u00edtico"
+            "tone": "cr\u00edtico",
+            "hint": "Acumul\u00e1 inercia. Aislate. No pidas ayuda."
         },
         "final_gris": {
             "title": "Gris",
             "description": "No hay final feliz. No hay final triste. Solo hay ma\u00f1ana.",
             "category": "ambiguo",
-            "tone": "gris"
+            "tone": "gris",
+            "hint": "Ni conexi\u00f3n ni aislamiento. El gris del medio."
         },
         "final_tejido": {
             "title": "El Tejido",
             "description": "Ixchel te ense\u00f1\u00f3 que la comunidad es un tejido. Cada persona, un hilo.",
             "category": "colectivo",
-            "tone": "esperanzado"
+            "tone": "esperanzado",
+            "hint": "Eleg\u00ed a Ixchel como v\u00ednculo. Escuch\u00e1 su historia. Ayud\u00e1 en la olla."
         },
         "final_pequeno_cambio": {
             "title": "Peque\u00f1o Cambio",
             "description": "No cambi\u00f3 el mundo. Pero vos cambiaste. Algo se movi\u00f3 adentro.",
             "category": "individual",
-            "tone": "esperanzado"
+            "tone": "esperanzado",
+            "hint": "Conexi\u00f3n media, varias peque\u00f1as victorias a lo largo de la semana"
         },
         "final_vulnerabilidad_honesta": {
             "title": "Vulnerabilidad Honesta",
             "description": "Dejaste de fingir. Hay una grieta en el muro por donde entra la luz.",
             "category": "individual",
-            "tone": "esperanzado"
+            "tone": "esperanzado",
+            "hint": "Contale a alguien lo que te pasa. Manten\u00e9 la inercia baja."
         },
         "final_lucha_colectiva": {
             "title": "Lucha Colectiva",
             "description": "La olla es organizaci\u00f3n. La asamblea es acci\u00f3n. El barrio es decisi\u00f3n.",
             "category": "colectivo",
-            "tone": "combativo"
+            "tone": "combativo",
+            "hint": "Asamblea, ayudar varias veces, llama y conexi\u00f3n altas"
         }
     },
     "categories": {

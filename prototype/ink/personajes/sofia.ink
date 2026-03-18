@@ -8,6 +8,9 @@
 
 === sofia_encuentro_casual ===
 
+{ vinculo == "sofia":
+    La ves y algo se mueve. Como si la conocieras de antes. De otra vida, quizás.
+}
 Sofía sale del almacén con dos bolsas pesadas.
 Madre soltera. Dos hijos: Nico y Lupe.
 Organiza la olla popular desde hace dos años.

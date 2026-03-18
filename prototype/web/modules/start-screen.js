@@ -22,6 +22,27 @@ const StartScreen = (function() {
 
         // Check if there are saved games to show/hide continue button
         updateContinueButton();
+
+        // Returning player detection
+        try {
+            const endings = JSON.parse(localStorage.getItem('undm_unlocked_endings') || '[]');
+            if (endings.length > 0) {
+                const returnText = document.createElement('p');
+                returnText.className = 'return-player-text';
+                returnText.textContent = endings.length === 1
+                    ? 'Ya viviste un dia. Otro mas?'
+                    : endings.length + ' finales descubiertos. Cuantos quedan?';
+                const startContent = startScreen ? startScreen.querySelector('.start-content') : null;
+                if (startContent) {
+                    const credits = startContent.querySelector('.start-credits');
+                    if (credits) {
+                        startContent.insertBefore(returnText, credits);
+                    } else {
+                        startContent.appendChild(returnText);
+                    }
+                }
+            }
+        } catch(e) {}
     }
 
     /**

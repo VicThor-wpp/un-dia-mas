@@ -20,17 +20,46 @@ const TextPresenter = (function() {
     let currentContainer = null;
     let activeTimeout = null;
 
+    /**
+     * Get current pacing mode from ReadingPreferences
+     * @returns {'auto'|'click'|'fast'}
+     */
+    function getPacingMode() {
+        if (typeof ReadingPreferences !== 'undefined' && ReadingPreferences.get) {
+            return ReadingPreferences.get('pacing') || 'auto';
+        }
+        return 'auto';
+    }
+
     function init() {
         // Setup global skip listener
         document.addEventListener('click', (e) => {
             // Ignore clicks on buttons/links
             if (e.target.closest('button, a, input, .glossary-term')) return;
-            if (isPresenting) skipAll();
+            if (isPresenting) {
+                const pacingMode = getPacingMode();
+                if (pacingMode === 'click' && paragraphQueue.length > 0) {
+                    // In click mode, advance one paragraph instead of skipping all
+                    if (activeTimeout) clearTimeout(activeTimeout);
+                    showNext();
+                } else {
+                    skipAll();
+                }
+            }
         });
-        
+
         document.addEventListener('keydown', (e) => {
             if (e.key === ' ' || e.key === 'Enter') {
-                if (isPresenting) skipAll();
+                if (isPresenting) {
+                    const pacingMode = getPacingMode();
+                    if (pacingMode === 'click' && paragraphQueue.length > 0) {
+                        e.preventDefault();
+                        if (activeTimeout) clearTimeout(activeTimeout);
+                        showNext();
+                    } else {
+                        skipAll();
+                    }
+                }
             }
         });
     }
@@ -60,10 +89,21 @@ const TextPresenter = (function() {
         // This gives the user time to read THIS paragraph before the NEXT one appears
         const delay = calculateReadTime(item.content);
 
+        const pacingMode = getPacingMode();
+
         if (paragraphQueue.length > 0) {
-            activeTimeout = setTimeout(showNext, delay);
+            switch (pacingMode) {
+                case 'click':
+                    // Don't auto-advance; wait for click/Space/Enter
+                    // The existing skip listeners handle advancement
+                    break;
+                case 'fast':
+                    activeTimeout = setTimeout(showNext, Math.floor(calculateReadTime(item.content) / 2));
+                    break;
+                default: // 'auto'
+                    activeTimeout = setTimeout(showNext, delay);
+            }
         } else {
-            // Last item, finish shortly after render
             activeTimeout = setTimeout(finish, 500);
         }
     }
@@ -120,8 +160,19 @@ const TextPresenter = (function() {
      */
     function parseGlosa(text) {
         if (!text) return '';
-        return text.replace(/\[(.*?)\|(.*?)\]/g, (match, term, def) => {
-            return `<span class="glossary-term" tabindex="0" aria-label="${def}">${term}<span class="glossary-tooltip">${def}</span></span>`;
+        // Sanitize the base text first
+        const safeText = typeof SecurityValidator !== 'undefined'
+            ? SecurityValidator.sanitizeHTML(text)
+            : text;
+        // Then process glossary markup with escaped values
+        return safeText.replace(/\[(.*?)\|(.*?)\]/g, (match, term, def) => {
+            const safeTerm = typeof SecurityValidator !== 'undefined'
+                ? SecurityValidator.escapeHTML(term) : term;
+            const safeDef = typeof SecurityValidator !== 'undefined'
+                ? SecurityValidator.escapeAttr(def) : def;
+            const safeDefHTML = typeof SecurityValidator !== 'undefined'
+                ? SecurityValidator.escapeHTML(def) : def;
+            return `<span class="glossary-term" tabindex="0" aria-label="${safeDef}">${safeTerm}<span class="glossary-tooltip">${safeDefHTML}</span></span>`;
         });
     }
 

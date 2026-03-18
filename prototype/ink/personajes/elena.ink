@@ -12,6 +12,9 @@
 
 # PORTRAIT:elena,neutral,right
 
+{ vinculo == "elena" && elena_relacion == 0:
+    Hay algo en esa vieja. Algo que te atrae sin saber por qué.
+}
 Elena está sentada en el banco de la plaza.
 Siempre el mismo banco. Siempre la misma hora.
 

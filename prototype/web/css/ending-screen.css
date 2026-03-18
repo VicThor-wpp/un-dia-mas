@@ -88,3 +88,54 @@
     from { opacity: 0; transform: scale(0.98); }
     to { opacity: 1; transform: scale(1); }
 }
+
+@media (prefers-reduced-motion: reduce) {
+    .ending-card {
+        animation: none !important;
+    }
+    .stat-bar-fill {
+        transition: none !important;
+    }
+}
+
+/* Achievements */
+.achievements-section {
+    margin-top: 30px;
+    border-top: 1px dashed var(--fg, #ccc);
+    padding-top: 20px;
+}
+.achievements-section h3 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 15px;
+    opacity: 0.8;
+}
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 10px;
+}
+.achievement {
+    padding: 10px;
+    border: 1px dashed var(--fg, #ccc);
+    opacity: 0.4;
+    text-align: center;
+    font-size: 0.8rem;
+}
+.achievement.unlocked {
+    opacity: 1;
+    border-style: solid;
+}
+.ending-hint {
+    font-size: 0.75rem;
+    font-style: italic;
+    opacity: 0.6;
+    margin-top: 4px;
+}
+.ending-hint-locked {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.3;
+}

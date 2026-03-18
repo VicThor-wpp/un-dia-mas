@@ -10,6 +10,9 @@
 
 === ixchel_encuentro_casual ===
 
+{ vinculo == "ixchel":
+    Algo en sus manos te detiene. Como si tejieran algo que necesitás ver.
+}
 Ves a una mujer acomodando tejidos sobre un paño en la vereda.
 Es Ixchel. Vende bordados y, cuando la dejan, tamales.
 Un día bueno saca mil pesos. Un día malo, vuelve con la canasta llena.

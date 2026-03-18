@@ -1015,6 +1015,8 @@ O vos encontraste a alguien.
 {vinculo == "elena": Elena te buscó.}
 {vinculo == "diego": Diego insistió.}
 {vinculo == "marcos": Marcos, contra todo pronóstico, apareció.}
+{vinculo == "juan": Juan no se olvidó. Desde España, mandó un mensaje.}
+{vinculo == "ixchel": Ixchel te trajo comida. Sin decir nada. Se sentó a tu lado.}
 
 * [...]
 -

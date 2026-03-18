@@ -68,6 +68,15 @@ const NotificationSystem = (function() {
 
         container.appendChild(notif);
 
+        // Audio feedback
+        if (typeof AudioSystem !== 'undefined' && AudioSystem.isEnabled()) {
+            if (type === 'positive' || type === 'success' || type === 'dice-success') {
+                AudioSystem.playSFX('stat_up');
+            } else if (type === 'negative' || type === 'error' || type === 'dice-fail') {
+                AudioSystem.playSFX('stat_down');
+            }
+        }
+
         // Refresh icons
         if (typeof lucide !== 'undefined') {
             lucide.createIcons({ root: notif });

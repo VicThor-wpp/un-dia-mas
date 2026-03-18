@@ -87,10 +87,31 @@
     }
 
 === function subir_dignidad(cantidad) ===
+    ~ temp dignidad_antes = dignidad
     ~ ajustar(dignidad, cantidad, 0, 10)
+    // Feedback narrativo en thresholds
+    {
+    - dignidad >= 8 && dignidad_antes < 8:
+        # STAT_THRESHOLD
+        Algo vuelve.
+        No es orgullo. Es algo más tranquilo.
+        Te reconocés.
+    - dignidad >= 5 && dignidad_antes < 5:
+        # STAT_THRESHOLD
+        Todavía estás acá.
+        Eso ya es algo.
+    }
 
 === function bajar_dignidad(cantidad) ===
+    ~ temp dignidad_antes = dignidad
     ~ ajustar(dignidad, -cantidad, 0, 10)
+    // Feedback narrativo en thresholds críticos
+    {
+    - dignidad <= 2 && dignidad_antes > 2:
+        # STAT_THRESHOLD
+        Algo se rompe adentro.
+        No es que no valés. Es que empezás a creerlo.
+    }
 
 === function subir_llama(cantidad) ===
     ~ temp llama_antes = llama
@@ -202,6 +223,12 @@
     { vinculo == "marcos" && marcos_relacion >= 3:
         -> intervencion_vinculo ->
     }
+    { vinculo == "juan" && juan_relacion >= 3:
+        -> intervencion_vinculo ->
+    }
+    { vinculo == "ixchel" && ixchel_relacion >= 3:
+        -> intervencion_vinculo ->
+    }
     // Sin red de apoyo = game over
     -> final_apagado
 }
@@ -236,6 +263,14 @@ El teléfono suena.
     Es Marcos.
     "Che... sé que no hablamos mucho. Pero me acordé de vos."
 }
+{ vinculo == "juan":
+    Es Juan.
+    "Che, ¿estás bien? Me llegó que andabas mal."
+}
+{ vinculo == "ixchel":
+    Es Ixchel.
+    "Hermano, te estuve buscando. Vine a verte."
+}
 
 No sabés qué decir.
 Pero la voz al otro lado espera.
@@ -265,10 +300,12 @@ Pero alguien la está soplando.
     // Baja dignidad aumenta inercia (si no tiene idea protectora)
     { dignidad <= 2 && not idea_pedir_no_debilidad:
         ~ aumentar_inercia(1)
+        # NOTIFICATION:negative:La vergüenza pesa
     }
     // Alta dignidad reduce inercia
     { dignidad >= 8:
         ~ disminuir_inercia(1)
+        # NOTIFICATION:positive:Dormís más tranquilo
     }
 
 // --- EVALUACION DE FINALES ---

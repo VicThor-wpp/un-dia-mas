@@ -121,6 +121,15 @@
     stroke-width: 3px;
 }
 
+/* Returning player text */
+.return-player-text {
+    font-style: italic;
+    opacity: 0.7;
+    font-size: 0.9rem;
+    margin-top: 10px;
+    text-align: center;
+}
+
 /* Créditos */
 .start-credits {
     color: var(--fg);

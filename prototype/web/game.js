@@ -23,6 +23,7 @@ const GameEngine = (function() {
 
     // Constants
     const DIAS = ['', 'LUNES', 'MARTES', 'MIÉRCOLES', 'JUEVES', 'VIERNES', 'SÁBADO', 'DOMINGO'];
+    const MAX_WORDS_PER_BATCH = 300;
 
     async function init() {
         storyContainer = document.getElementById('storyContainer');
@@ -178,6 +179,7 @@ const GameEngine = (function() {
         contentQueue = [];
         const maxParagraphs = ConfigManager.get('ui.layout.maxParagraphsBeforePause', 4);
         let paragraphCount = 0;
+        let batchWordCount = 0;
         let currentBatch = [];
 
         while (story.canContinue) {
@@ -212,6 +214,7 @@ const GameEngine = (function() {
                         contentQueue.push([...currentBatch]);
                         currentBatch = [];
                         paragraphCount = 0;
+                        batchWordCount = 0;
                     }
                     currentBatch.push({ type: 'header', content: tag });
                     gameStarted = true;
@@ -237,6 +240,7 @@ const GameEngine = (function() {
                             contentQueue.push([...currentBatch]);
                             currentBatch = [];
                             paragraphCount = 0;
+                            batchWordCount = 0;
                         }
                         currentBatch.push({ type: 'header', content: tag });
                     }
@@ -248,10 +252,16 @@ const GameEngine = (function() {
                 currentBatch.push({ type: 'text', content: text, tags: tags });
                 paragraphCount++;
 
-                if (ConfigManager.isFeatureEnabled('contentBatching') && paragraphCount >= maxParagraphs && !hasHeader) {
+                // Count words in this paragraph (strip HTML tags)
+                const cleanText = text.replace(/<[^>]*>/g, '');
+                batchWordCount += cleanText.split(/\s+/).filter(w => w.length > 0).length;
+
+                if (ConfigManager.isFeatureEnabled('contentBatching') && !hasHeader &&
+                    (paragraphCount >= maxParagraphs || batchWordCount >= MAX_WORDS_PER_BATCH)) {
                     contentQueue.push([...currentBatch]);
                     currentBatch = [];
                     paragraphCount = 0;
+                    batchWordCount = 0;
                 }
             }
         }
@@ -305,9 +315,9 @@ const GameEngine = (function() {
                 const el = document.createElement(item.type === 'header' ? 'h1' : 'div');
                 el.className = item.type === 'header' ? 'story-header' : 'story-text';
                 // Sanitize content if validator available
-                const safeContent = typeof SecurityValidator !== 'undefined' 
-                    ? SecurityValidator.sanitizeHTML(item.content) 
-                    : item.content;
+                const safeContent = typeof SecurityValidator !== 'undefined'
+                    ? SecurityValidator.sanitizeHTML(item.content)
+                    : item.content.replace(/</g, '&lt;').replace(/>/g, '&gt;');
                 el.innerHTML = safeContent;
                 storyContainer.appendChild(el);
             }

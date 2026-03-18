@@ -142,3 +142,11 @@
     transform: none;
     transition: none;
 }
+
+@media (prefers-reduced-motion: reduce) {
+    .tp-paragraph {
+        transition: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}

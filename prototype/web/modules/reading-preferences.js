@@ -12,6 +12,7 @@ const ReadingPreferences = (function() {
         fontSize: 'medium',      // small, medium, large, xlarge
         fontFamily: 'mono',      // mono, serif, sans, dyslexic
         lineHeight: 'normal',    // compact, normal, relaxed
+        pacing: 'auto',          // auto, click, fast
         typewriter: false,       // typewriter effect
         typewriterSpeed: 30      // ms per character
     };
@@ -182,6 +183,22 @@ const ReadingPreferences = (function() {
                         </div>
                     </div>
 
+                    <!-- Pacing Mode -->
+                    <div class="pref-group">
+                        <label class="pref-label">Ritmo de lectura</label>
+                        <div class="pref-options">
+                            <button class="pref-btn ${prefs.pacing === 'auto' ? 'active' : ''}" data-pacing="auto">
+                                <i data-lucide="play"></i> Auto
+                            </button>
+                            <button class="pref-btn ${prefs.pacing === 'click' ? 'active' : ''}" data-pacing="click">
+                                <i data-lucide="mouse-pointer-click"></i> Click
+                            </button>
+                            <button class="pref-btn ${prefs.pacing === 'fast' ? 'active' : ''}" data-pacing="fast">
+                                <i data-lucide="fast-forward"></i> Rápido
+                            </button>
+                        </div>
+                    </div>
+
                     <!-- Typewriter Effect -->
                     <div class="pref-group">
                         <label class="pref-label">Efecto máquina de escribir</label>
@@ -230,6 +247,9 @@ const ReadingPreferences = (function() {
         });
         panel.querySelectorAll('[data-lineheight]').forEach(btn => {
             btn.onclick = () => setPref('lineHeight', btn.dataset.lineheight);
+        });
+        panel.querySelectorAll('[data-pacing]').forEach(btn => {
+            btn.onclick = () => setPref('pacing', btn.dataset.pacing);
         });
         panel.querySelectorAll('[data-typewriter]').forEach(btn => {
             btn.onclick = () => setPref('typewriter', btn.dataset.typewriter === 'true');
@@ -407,6 +427,15 @@ const ReadingPreferences = (function() {
         return { ...prefs };
     }
 
+    /**
+     * Get a specific preference value by key
+     * @param {string} key - The preference key
+     * @returns {*} The preference value, or undefined if not found
+     */
+    function get(key) {
+        return prefs[key];
+    }
+
     // Public API
     return {
         init,
@@ -416,6 +445,7 @@ const ReadingPreferences = (function() {
         resetPrefs,
         typewrite,
         getPrefs,
+        get,
         setPref
     };
 })();
