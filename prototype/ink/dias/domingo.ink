@@ -82,6 +82,124 @@ Pensás.
 La semana que pasó.
 Lo que viene.
 
+* [...]
+-
+
+// --- Flashbacks de la semana ---
+{fui_despedido:
+    El miércoles.
+    La oficina. El papel. "Tu puesto fue afectado."
+    Cuatro días. Parece un mes.
+}
+
+{ayude_en_olla:
+    La olla. El vapor. Las manos pelando papas.
+    Gente que no conocías hace una semana.
+    Gente que ahora sabe tu nombre.
+}
+
+{participe_asamblea:
+    La asamblea del sábado.
+    Hablaste. O escuchaste. O las dos cosas.
+    Fue raro. Pero fue real.
+}
+
+{conte_a_alguien:
+    Le contaste a alguien.
+    Dijiste en voz alta lo que te pasó.
+    No se arregló nada. Pero pesó menos.
+}
+
+{not conte_a_alguien:
+    No le contaste a nadie.
+    Todavía cargás eso solo.
+    Pesa.
+}
+
+* [...]
+-
+
+// --- Sensaciones físicas según estado ---
+{inercia >= 7:
+    El cuerpo no responde bien.
+    Las piernas pesan. La cabeza zumba.
+    Una semana así y ya sentís que no podés más.
+}
+{inercia <= 3:
+    Estás cansado pero entero.
+    Una semana difícil. Pero estás acá.
+}
+
+{conexion >= 6:
+    El teléfono suena a veces.
+    Gente que pregunta cómo estás.
+    No es que tenés todo resuelto.
+    Pero no estás solo.
+}
+{conexion <= 3:
+    El teléfono no suena.
+    Nadie pregunta.
+    El domingo es el peor día para estar solo.
+}
+
+* [...]
+-
+
+// --- Memorias de NPCs según relación ---
+{sofia_relacion >= 3:
+    Pensás en Sofía. En las ojeras. En cómo sostiene todo.
+    Ojalá alguien la sostenga a ella.
+}
+{elena_relacion >= 3:
+    Pensás en Elena. En el 2002. En que ella ya pasó por esto.
+    Y sigue acá.
+}
+{diego_relacion >= 3:
+    Pensás en Diego. En Venezuela. En el depósito.
+    En que él también tiene miedo pero no para.
+}
+{marcos_relacion >= 3:
+    Pensás en Marcos. En el silencio. En la plaza.
+    En que a veces volver es más difícil que irse.
+}
+
+// --- Momento profundo con vínculo ---
+{vinculo == "sofia":
+    Sofía.
+    La primera vez que la viste con las bolsas.
+    Algo cambió ahí. No sabés qué.
+    Pero cambió.
+}
+{vinculo == "elena":
+    Elena.
+    Sentada en el banco de la plaza.
+    Como si supiera que ibas a venir.
+    Como si siempre supiera.
+}
+{vinculo == "diego":
+    Diego.
+    Caminando rápido. Siempre rápido.
+    Pero esa vez se paró. Te miró.
+    Y vos sentiste que alguien te veía.
+}
+{vinculo == "marcos":
+    Marcos.
+    El teléfono que no contesta.
+    La plaza. La caja. Los hijos en Europa.
+    ¿Estará pensando en vos también?
+}
+{vinculo == "ixchel":
+    Ixchel.
+    Las manos tejiendo. El olor a pepián.
+    Algo antiguo en sus ojos.
+    Como si supiera cosas que se olvidaron.
+}
+
+# PAUSA
+
+* [...]
+-
+
 // Reflexión sobre la búsqueda de empleo
 {rechazos >= 1 || rechazos_enviados >= 5:
     -> busqueda_reflexion_domingo ->
@@ -104,6 +222,8 @@ Lo que viene.
     La cabeza se aquieta. Por primera vez en días.
 
     Algo se acomoda. No es una respuesta. Es una calma.
+    Por primera vez en días, respirás hondo y el aire entra. Todo.
+    El pecho se abre. Los hombros bajan.
 
     Una semana atrás eras otro. Tenías laburo y nada más.
     Ahora no tenés laburo. Pero tenés algo que antes no tenías.
@@ -122,6 +242,10 @@ Lo que viene.
         ¿Qué viene?
     }
 
+    Ponés la pava. Te hacés un café.
+    Te sentás al lado de la ventana.
+    Afuera la calle está quieta. Domingo.
+
     {conexion >= 6:
         Pero no estás solo.
         Esta semana conociste gente.
@@ -139,6 +263,9 @@ Lo que viene.
     La cabeza da vueltas.
     No llegás a ningún lado.
 
+    ¿Cuánto queda del colchón? ¿Cuánto antes de no poder pagar el alquiler?
+    Las cuentas no cierran. Las cuentas nunca cierran.
+
     {conexion >= 4: Al menos hay gente. Eso debería alcanzar. Pero hoy no alcanza.}
     {conexion < 4: Estás solo. Y el domingo es el peor día para estar solo.}
 
@@ -149,6 +276,10 @@ Lo que viene.
 
     Todo se mezcla. El laburo. La plata. La olla. Las caras.
     ¿Qué sentido tiene? ¿Para qué?
+
+    Te mirás las manos. No parecen tuyas.
+    El cuerpo está acá pero vos estás en otro lado.
+    En ningún lado.
 
     El domingo es un espejo. Y no te gusta lo que ves.
 
@@ -381,6 +512,21 @@ El sol baja.
 
 Mañana es lunes.
 Pero no hay laburo al que ir.
+
+// --- Mensajes de NPCs ---
+{sofia_relacion >= 3 && ayude_en_olla:
+    Suena el teléfono. Sofía: "Hoy hacemos olla de domingo. Quedan todos invitados."
+}
+{elena_relacion >= 3 && not ayude_en_olla:
+    Elena te mandó un mensaje: "Pasá cuando quieras. El banco te espera."
+}
+{diego_relacion >= 3 && sofia_relacion < 3 && elena_relacion < 3:
+    Diego te manda un audio: "Che, si querés mañana caemos temprano al depósito. Hay laburo."
+}
+{marcos_relacion >= 3 && sofia_relacion < 3 && elena_relacion < 3 && diego_relacion < 3:
+    Un mensaje de Marcos. Sin texto. Solo un emoji del sol.
+    Es raro. Pero es algo.
+}
 
 * [...]
 -

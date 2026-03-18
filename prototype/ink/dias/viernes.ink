@@ -288,23 +288,125 @@ Hay movimiento.
 
 # LA REUNION DE LA OLLA
 
-Están: Sofía, Elena, dos o tres más que no conocés bien.
+Entrás a la olla y algo está mal.
 
-El problema:
-Claudia cortó los insumos del plan.
-Hoy hay menos de lo habitual.
-Hay que ver cómo se resuelve.
+No huele como siempre. No hay vapor subiendo de las ollas grandes. No hay cebolla dorándose, no hay ajo reventando en aceite.
+
+Las ollas están a medias. Hay una sola encendida, chica, con agua y poco más.
+
+# PAUSA
+
+Sofía está sentada.
+
+Es la primera vez que la ves sentada. Siempre está parada, moviéndose, resolviendo. Hoy tiene las manos sobre la mesa y los ojos clavados en un punto fijo.
+
+Elena pela papas despacio. Muy despacio. Como si cada papa fuera la última.
+
+Diego cuenta bolsas de fideos en un rincón. Mueve los labios sin hablar. Cuenta con los dedos. Vuelve a contar.
+
+Hay dos o tres más que no conocés bien. Parados contra la pared, con cara de no saber si quedarse o irse.
 
 * [...]
 -
 
-"Las donaciones bajaron este mes."
-"El municipio anda lento."
-"Los comercios también están ajustados."
+// Saludo específico del vínculo
+{vinculo == "sofia":
+    Sofía levanta la vista cuando entrás.
+    Tiene los ojos rojos. No de llorar. De no dormir.
+    Te mira con un agotamiento que no le conocías.
+    "Sentate", dice. Nada más.
+}
+{vinculo == "elena":
+    Elena te ve llegar.
+    "Viniste", dice. Y hay alivio en esa sola palabra.
+    Como si hubiera estado esperando que alguien más apareciera.
+}
+{vinculo == "diego":
+    Diego se te acerca. Te agarra del brazo.
+    "Quedate cerca", te susurra. "Se viene feo."
+}
 
-Silencio.
+* [...]
+-
 
-¿Qué se puede hacer?
+# PAUSA
+
+Sofía se para. Le cuesta.
+
+"Bueno", dice. "Hay que hablar."
+
+Se frota la cara con las dos manos.
+
+"Claudia nos cortó los insumos secos. Siempre faltaba un formulario. Después otro. Ahora directamente dijo que no hay partida."
+
+Pausa.
+
+"Las donaciones bajaron. El almacén de Don Tito cerró la semana pasada. No hay más fiado."
+
+Diego levanta la vista de sus bolsas.
+
+"Conté todo. Tres paquetes de fideos, un kilo de arroz, medio de lentejas. Cebollas y papas, lo que trajo Elena."
+
+Hace una pausa.
+
+"Alcanza para hoy. Justo. No sobra un plato."
+
+* [...]
+-
+
+Silencio. El tipo de silencio que pesa.
+
+Elena deja el pelador sobre la mesa.
+
+"En el 2002, cuando cerró el frigorífico, pasó lo mismo." Su voz es firme. La voz de alguien que ya estuvo acá. "No había nada. Literal. Las góndolas vacías. El Estado no existía."
+
+Mira a todos.
+
+"Salíamos puerta a puerta. Golpeábamos. 'Doña Marta, ¿tiene algo?' Y doña Marta siempre tenía algo. Aunque fuera poco. La gente siempre tiene algo cuando alguien le pide mirándola a los ojos."
+
+{diego_conto_cecosesola:
+    Diego asiente. "En Venezuela hacíamos trueque. Yo te doy lo que tengo, vos me das lo que tenés. Sin plata. Sin intermediarios. CECOSESOLA funcionaba así. Años."
+- else:
+    Diego: "En Venezuela cuando se puso jodido la gente se organizaba. Sin esperar que nadie viniera a salvarlos."
+}
+
+* [...]
+-
+
+# PAUSA
+
+Sofía se sienta de nuevo. Se le quiebra algo.
+
+"Yo..." Empieza. Se frena. "No sé si puedo hacer esto otra semana."
+
+Nadie habla.
+
+"Llevo meses. Peleando con Claudia. Peleando con el municipio. Inventando comida de la nada. Y cada vez alcanza menos y viene más gente."
+
+Se le humedecen los ojos pero no llora. No se permite.
+
+"No me quejo. Pero necesito que alguien más piense. Que alguien más empuje."
+
+{vinculo == "sofia":
+    Te mira. Solo a vos.
+    "No sé cuánto más aguanto", dice bajito. Para que solo vos escuches.
+    Y en esas cinco palabras hay más verdad que en todo lo que dijo antes.
+}
+
+Elena le pone la mano en el hombro. No dice nada. No hace falta.
+
+Diego cruza los brazos. Mira el piso. Después te mira a vos.
+
+* [...]
+-
+
+El silencio se estira.
+
+Alguien tiene que decir algo.
+
+"Necesitamos decidir", dice Sofía. "Ahora. Para hoy."
+
+¿Qué hacemos?
 
 * [Proponer una colecta rápida] # EFECTO:dignidad+ # EFECTO:llama+
     -> viernes_colecta
@@ -331,17 +433,27 @@ Ideas van y vienen.
 
 "¿Y si hacemos una colecta? Rápida. Hoy."
 
-Te miran.
+Te miran. El silencio se parte.
 
-"¿Cómo?"
+"¿Cómo?", pregunta uno de los que está contra la pared.
 
-"No sé. Golpear puertas. Pedir en la calle. Algo."
+"No sé. Golpear puertas. Pedir en la calle. Lo que sea. Pero movernos. Ahora."
 
-Sofía lo piensa.
-"Es arriesgado. Pero no hay mucho más."
+Diego se para de golpe. "Yo voy con vos."
 
-Elena:
-"En el 2002 hacíamos eso. Funcionaba."
+Lo dice sin dudarlo. Como si hubiera estado esperando que alguien dijera algo.
+
+Elena asiente despacio. "En el 2002 hacíamos eso. Funcionaba." Hace una pausa. "Pero hay que saber pedir. No es llegar y estirar la mano. Hay que mirar a la gente. Que te vean. Que sepan para qué es."
+
+Sofía lo piensa. Se frota las manos.
+
+"Es arriesgado. Si no juntamos nada, perdemos tiempo y energía."
+
+Pero algo le cambia en la cara. Alivio. Pequeño, pero real. Alguien más está empujando.
+
+"Dale", dice. "Háganlo."
+
+{marcos_relacion >= 3: Pensás en Marcos. ¿Podría ayudar? No. Probablemente no. Marcos mira de lejos. Siempre de lejos.}
 
 ~ idea_hay_cosas_juntos = true
 
@@ -349,15 +461,28 @@ Elena:
 
 === viernes_vecinos ===
 
-"¿Y los vecinos? ¿Los que no vienen a la olla pero conocen?"
+"¿Y los vecinos? Los que no vienen a la olla pero conocen. Los que cruzan por la vereda y ven el humo."
 
-"Ya les pedimos."
+"Ya les pedimos", dice alguien.
 "Algunos dieron. No alcanza."
 
-"¿Y si pedimos distinto? No plata. Comida directa. Lo que tengan."
+"¿Y si pedimos distinto? No plata. Comida directa. Lo que tengan. Una cebolla. Un paquete de arroz. Lo que sobre en la alacena."
 
-Sofía lo piensa.
-"Puede ser. Es más fácil dar una papa que cien pesos."
+Elena se levanta. "Yo voy con vos."
+
+Lo dice con la autoridad de alguien que conoce cada puerta del barrio.
+
+"Yo conozco a todos en seis cuadras. Sé quién puede dar y quién no puede. Sé a qué hora están. Sé cómo pedirles."
+
+Diego agarra un papel y una lapicera. "Hagamos lista. Quién puede dar qué. No vamos a ciegas. Así no perdemos tiempo."
+
+Empieza a escribir nombres. Elena le dicta. Se arma algo. Un plan. Precario, pero un plan.
+
+Sofía los mira. A Elena con la lista. A Diego anotando. A vos que tiraste la idea.
+
+"Gracias", dice. Bajito. "Necesitaba que alguien más piense."
+
+No es una rendición. Es un respiro. Pequeño, pero necesario.
 
 ~ idea_hay_cosas_juntos = true
 

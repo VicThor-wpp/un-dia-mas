@@ -361,6 +361,13 @@ Eso lo aprendí allá: el que come solo, muere solo."
 * [...]
 -
 
+{sofia_relacion >= 2:
+    "Sofía es fuerte. Pero nadie aguanta solo. Yo lo vi en Venezuela."
+}
+{marcos_relacion >= 1:
+    "Ese Marcos... tiene pinta de que sabe cosas. ¿Por qué no viene?"
+}
+
 Pausa.
 
 "Aunque a veces... a veces me pregunto si vine

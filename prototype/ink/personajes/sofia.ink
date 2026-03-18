@@ -224,6 +224,16 @@ pasar lo que pasé yo."
 ~ sofia_relacion += 1
 ~ subir_conexion(1)
 
+{diego_relacion >= 2:
+    "Diego ayuda mucho. Sin él no sé cómo descargamos."
+}
+{elena_relacion >= 3:
+    "Elena... Elena es la que nos mantiene cuerdos. Sabe cosas."
+}
+{marcos_relacion >= 2:
+    "Marcos... lo vi el otro día. Está mal. ¿Vos hablás con él?"
+}
+
 * ["Sos muy fuerte."] -> sofia_respuesta_fuerte
 * ["¿No te cansás?"] -> sofia_respuesta_cansancio
 * ["¿Qué pasó cuando llegaste?"] -> sofia_historia

@@ -739,6 +739,16 @@ Hace una pausa.
 
 "Los hombres hablan y miden quién la tiene más larga. Nosotras paramos la olla para que los gurises no se mueran. Esa es mi política."
 
+{sofia_relacion >= 2:
+    "Sofía me recuerda a las pibas del frigorífico. Las que aguantaban todo."
+}
+{diego_relacion >= 2:
+    "El venezolano sabe. Lo vi. Tiene cabeza para organizar."
+}
+{marcos_relacion >= 1:
+    "Marcos era de los buenos. Algo lo rompió. Ojalá vuelva."
+}
+
 ~ subir_conexion(1)
 ~ elena_relacion += 1
 

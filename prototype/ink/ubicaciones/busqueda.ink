@@ -313,6 +313,17 @@ Los mismos requisitos imposibles.
 "Se requiere: 5 años de experiencia en tecnología que existe hace 3."
 "Excluyente: Inglés C2, Portugués avanzado, Excel nivel dios."
 "Deseable: Que no tengas vida."
+"Beneficios: Fruta en la oficina."
+
+{fui_despedido:
+    Seguís scrolleando y se te para el corazón.
+
+    Ahí está. Tu puesto. Publicado ayer.
+    El mismo puesto. La misma descripción.
+    La mitad del sueldo.
+
+    Te reemplazaron antes de que llegaras a tu casa.
+}
 
 * [Aplicar igual]
     -> busqueda_aplicar_masivo
@@ -321,30 +332,91 @@ Los mismos requisitos imposibles.
 
 === busqueda_aplicar_masivo ===
 
-Aplicás a todo.
-15 postulaciones.
-Copy-paste de la carta de presentación.
+Son las dos de la tarde.
+Estás en calzoncillos.
+El café al lado se enfrió hace horas.
 
-"Estimados, me dirijo a ustedes..."
-
-Mentira.
-No te dirigís a nadie.
-Le hablás a un algoritmo.
+La pantalla te ilumina la cara.
+El cursor parpadea en el campo de "Carta de presentación".
 
 * [...]
 -
 
-Mandás.
-Mandás.
-Mandás.
+"Estimados, me dirijo a ustedes..."
+
+La mentira más grande que vas a decir hoy.
+No te dirigís a nadie.
+Le hablás a un formulario que alimenta un algoritmo
+que decide si existís o no.
+
+Copy-paste. Adjuntar CV. Enviar.
+
+* [...]
+-
+
+LinkedIn te sugiere: "Personas como vos también aplicaron a..."
+
+847 postulantes.
+847 personas que también están en calzoncillos a las dos de la tarde
+mirando la misma pantalla.
+
+Te preguntás si alguien lee estas cosas.
+O si un algoritmo decide por vos.
+Si una máquina mira tu CV dos segundos y dice "no"
+antes de que ningún ser humano sepa que existís.
+
+* [...]
+-
+
+Aplicás a otra.
+Y a otra.
+Cambiás el nombre de la empresa en la carta.
+A veces te olvidás de cambiarlo.
+
+"Estimados responsables de [EMPRESA ANTERIOR]:"
+
+Mierda.
+
+* [...]
+-
+
+Empezás a customizar.
+"Soy proactivo."
+"Orientado a resultados."
+"Trabajo bien bajo presión."
+"Work hard, play hard."
+
+Con cada buzzword te odiás un poco más.
+Con cada "sinergia" se te muere algo adentro.
+Te convertís en un producto que se vende solo.
+
+* [...]
+-
+
+15 postulaciones.
+15 veces "Estimados".
+15 veces la misma mentira con distinto logo.
 
 ~ rechazos_enviados += 15
 ~ bajar_dignidad(1)
+
+Mandás.
+Mandás.
+Mandás.
 
 El contador de "postulaciones enviadas" sube.
 La respuesta: silencio.
 
 Siempre silencio.
+
+{vinculo == "diego" && diego_relacion >= 2:
+    Diego te mandó un mensaje: "¿Cómo va la búsqueda?"
+    No le contestás. No sabés qué decir.
+}
+{vinculo == "sofia" && sofia_relacion >= 2:
+    Sofía: "Si necesitás usar internet, en la olla hay wifi."
+    Pequeño gesto. Grande.
+}
 
 ->->
 

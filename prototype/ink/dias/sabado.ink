@@ -474,6 +474,54 @@ Es todo.
 // Marcos en la asamblea (si vino)
 -> marcos_en_asamblea ->
 
+// --- NPCs se cruzan, se reconocen ---
+
+// Elena y Sofia intercambian mirada cuando mencionan la auditoría de Claudia
+{claudia_hostilidad >= 1:
+    Alguien menciona la auditoría de Claudia.
+    Elena y Sofía se miran.
+    No dicen nada. Pero las dos saben.
+    Es una mirada de trinchera.
+}
+
+// Diego habló con la red de ollas
+{conoce_red_ollas:
+    Diego pide la palabra.
+    "Hablé con la gente de la red de ollas. Están igual que nosotros."
+    "Pero quieren coordinar. Hacer algo juntos."
+    Elena asiente. "Hace falta."
+}
+
+// Marcos está presente (silencioso pero presente)
+{marcos_vino_a_asamblea:
+    Marcos está en el fondo. No habla. Pero está.
+    Elena lo ve y asiente.
+    Es suficiente.
+}
+
+// Tiago merodea la asamblea
+{tiago_confianza >= 2:
+    Tiago mira todo desde la puerta.
+    Como midiendo si es seguro.
+    Como decidiendo si entra o se va.
+}
+
+// Bruno mencionado (el aire cambia)
+{bruno_tension >= 2:
+    Alguien menciona a Bruno.
+    El aire se pone denso.
+    Sofía aprieta los labios. Elena mira al piso.
+    El nombre queda flotando. Nadie dice más.
+}
+
+// Diego guarda su secreto
+{diego_perdio_laburo:
+    Diego no dice que perdió el laburo.
+    Pero vos sabés.
+    Y cada vez que alguien habla de plata, de crisis, de no llegar,
+    lo ves apretar la mandíbula.
+}
+
 // Ixchel en la asamblea - su intervención desde la experiencia
 {ixchel_relacion >= 2:
     Ixchel está al fondo.
@@ -600,11 +648,55 @@ Te miran.
 * [...]
 -
 
-Sofía asiente.
-Elena sonríe.
+# PAUSA
 
-"Eso es lo que necesitamos. Gente."
+Sofía asiente despacio. Como diciendo: sí, eso.
 
+Elena, desde su silla: "Bien dicho."
+
+Diego aplaude una vez. Seca. Firme.
+
+* [...]
+-
+
+Alguien que no conocés, del fondo:
+"¿Y vos quién sos?"
+
+El aire se tensa un segundo.
+
+Sofía no duda:
+"Es de acá. Ayudó esta semana."
+
+{veces_que_ayude >= 2:
+    "Ayudó varias veces", aclara Sofía.
+    La gente asiente.
+}
+
+* [...]
+-
+
+{vinculo == "sofia":
+    Sofía te sonríe por primera vez en días.
+    Una sonrisa cansada. Pero real.
+}
+{vinculo == "elena":
+    Elena desde el fondo: "Eso. Justo eso."
+    Te señala con el dedo. Como subrayando.
+}
+{vinculo == "diego":
+    Diego: "¿Ves? Lo que te dije. Acá se habla."
+    Te guiña un ojo.
+}
+
+No resolviste nada.
+No dijiste nada brillante.
+
+Pero te escucharon.
+
+Y eso, que parece poco,
+es más de lo que tuviste en toda la semana.
+
+~ subir_conexion(1)
 ~ subir_dignidad(1)
 -> sabado_asamblea_fin
 
@@ -614,11 +706,38 @@ Te miran.
 * [...]
 -
 
-Algunos asienten. Otros miran para otro lado.
-No es un discurso brillante. Pero es honesto.
+Las palabras salen mal.
+Empezás una frase y la dejás por la mitad.
+Te repetís. Te enredás.
+
+Alguien tose.
+Alguien mira el celular.
+
+* [...]
+-
+
+Pero Elena te busca con los ojos.
+Asiente. Despacio.
+
+"Seguí."
+
+No terminás. No decís lo que querías decir.
+Las ideas se te escapan como agua entre los dedos.
+
+Pero lo intentaste.
+Y eso queda.
+
+{vinculo == "elena":
+    Después, Elena se acerca. En voz baja:
+    "La próxima va a salir. Creeme."
+}
 
 Sofía dice: "Gracias."
 Y sigue la reunión.
+
+No hubo aplausos. No hubo nada.
+Solo el intento.
+Y una vieja que te dijo seguí.
 
 ~ subir_dignidad(1)
 -> sabado_asamblea_fin
@@ -629,15 +748,46 @@ Te miran.
 * [...]
 -
 
-Se te corta la voz. Te trabás.
+Abrís la boca.
 
-"Bueno... eso."
+Nada.
 
-Te sentás. Rojo.
-Nadie dice nada. Lo que es peor que si dijeran algo.
+No sale nada.
 
-Sofía pasa a otro tema. Con suavidad.
-Pero el silencio te quema.
+# PAUSA
+
+El silencio es terrible.
+Sentís las caras. Los ojos. El peso de toda esa gente esperando.
+
+"Yo..."
+
+Nada.
+
+* [...]
+-
+
+Alguien dice: "¿Alguien más?"
+
+Te sentás. Las orejas te arden.
+Querés desaparecer.
+
+Sofía pone la mano en tu hombro.
+No dice nada.
+No hace falta.
+
+~ aumentar_inercia(1)
+
+{conexion >= 5:
+    Después, afuera, Diego:
+    "Che, a mí me pasó la primera vez. Normal."
+
+    Te palmea la espalda.
+    No ayuda mucho. Pero un poco sí.
+}
+
+La vergüenza se queda.
+Se queda mucho rato.
+
 -> sabado_asamblea_fin
 
 // DEPRECATED: Replaced by sabado_asamblea_proponer (dice-based version)
@@ -837,18 +987,45 @@ No necesitás permiso para cuidarte entre ustedes.
 -> sabado_asamblea_fin
 
 === asamblea_exito ===
-// Stub: Consecuencias de éxito en propuesta
+// Consecuencias de éxito en propuesta
 
 La asamblea continúa.
 Tu idea se suma a las demás.
 
+* [...]
+-
+
+Sofía anota en un cuaderno.
+Elena dice: "Eso se puede hacer. Hay que organizarlo nomás."
+
+{vinculo == "diego":
+    Diego te mira: "Buena, loco."
+}
+{vinculo == "sofia":
+    Sofía te busca con los ojos y asiente.
+}
+
+No es la revolución.
+Es un punto más en una lista escrita a mano en un cuaderno de tapas blandas.
+Pero es tuyo.
+
 -> sabado_asamblea_fin
 
 === asamblea_continua ===
-// Stub: La asamblea sigue sin mayor impacto de tu intervención
+// La asamblea sigue sin mayor impacto de tu intervención
 
 La asamblea sigue.
 Otras voces hablan.
+
+Te quedás sentado. Escuchando.
+No es tu momento. Pero estás.
+
+{vinculo == "elena":
+    Elena habla de los precios. De la canasta. De lo que no alcanza.
+    Sabés que tiene razón. No necesitás agregar nada.
+}
+
+A veces alcanza con estar.
 
 -> sabado_asamblea_fin
 
@@ -900,6 +1077,40 @@ Pero hoy estuviste en una asamblea.
 Hoy fuiste parte de algo.
 
 # PAUSA
+
+// --- Momento del vínculo al salir de la asamblea ---
+
+{vinculo == "sofia":
+    Sofía te agarra del brazo al salir.
+
+    "Gracias por quedarte. Necesitaba que alguien se quedara."
+
+    No dice más. No hace falta.
+    Te suelta el brazo y se queda ordenando las sillas.
+}
+{vinculo == "elena":
+    Elena camina con vos hasta la esquina.
+
+    "Hace mucho que no venía alguien nuevo a la asamblea. Me alegra."
+
+    Se despide con un gesto. Dobla por Vilardebó.
+    Te quedás parado un rato más.
+}
+{vinculo == "diego":
+    Diego: "Che, ¿querés un mate? Tengo yerba."
+
+    Es la primera vez que te invita algo.
+    Tomás mate en el cordón de la vereda.
+    No dicen mucho. Pero está bien.
+}
+{vinculo == "marcos":
+    Marcos ya se fue.
+    Pero te llega un mensaje:
+    "Estuve. No me animé. Capaz la próxima."
+
+    Capaz la próxima.
+    Es más de lo que esperabas.
+}
 
 No resuelve nada.
 Pero cambia algo.

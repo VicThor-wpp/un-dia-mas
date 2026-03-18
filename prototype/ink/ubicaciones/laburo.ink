@@ -405,29 +405,91 @@ Nadie habla.
 
 === laburo_citacion_rrhh ===
 
-Te llaman.
+Un mail.
+Asunto: "Reunión".
+De: Personal.
 
-"Mañana a las 11, en Personal."
+"Mañana a las 11, en Personal. Por favor, confirmá asistencia."
 
-No dicen para qué.
+Se te cae el estómago.
 
-* [Preguntar para qué]
-    "¿Para qué?"
+* [...]
+-
+
+Te levantás.
+Caminás al baño.
+Las piernas te llevan solas porque la cabeza ya no está acá.
+
+El pasillo es el mismo de siempre.
+Pero hoy es más largo.
+Cada paso suena más fuerte.
+
+* [...]
+-
+
+En el baño, te mojás la cara.
+Las manos frías.
+El agua fría.
+Todo frío.
+
+Te mirás en el espejo.
+La cara de alguien que ya sabe.
+
+Volvés al escritorio.
+Abrís el mail otra vez.
+"Reunión de rutina", dice abajo en chiquito.
+
+Reunión de rutina.
+Nadie se la cree.
+Vos menos que nadie.
+
+* [Responder preguntando para qué]
+    Escribís: "Hola, ¿podrían indicarme el motivo de la reunión?"
+    Responden en tres minutos.
     "Es una reunión de rutina."
-    No suena a rutina.
-    -> laburo_citacion_fin
-* [Asentir]
-    Asentís.
+    Rutina.
+    Claro.
+    -> laburo_citacion_vuelta
+* [Confirmar asistencia]
+    Escribís: "Confirmo. Gracias."
     No preguntás.
     A veces es mejor no saber.
-    -> laburo_citacion_fin
+    Aunque ya sabés.
+    -> laburo_citacion_vuelta
+
+=== laburo_citacion_vuelta ===
+
+Cerrás el mail.
+
+{vinculo == "juan": Juan te mira desde su escritorio. "¿Qué pasó?" No le contestás.}
+{juan_relacion >= 2: Juan: "Eh, ¿estás bien?" Mentís: "Sí, todo bien."}
+
+* [...]
+-
+
+La tarde se hace eterna.
+
+Cada mail nuevo te congela un segundo.
+Cada vez que alguien camina cerca, apretás los dientes.
+
+El reloj no avanza.
+O avanza demasiado.
+Las dos cosas a la vez.
+
+* [...]
+-
+
+-> laburo_citacion_fin
 
 === laburo_citacion_fin ===
 
 ~ aumentar_inercia(1)
 
-Aunque ya sabés.
-O creés saber.
+A las cinco salís.
+Mañana a las once.
+Mañana se define todo.
+
+O quizás ya está definido y mañana es solo el trámite.
 
 ->->
 
@@ -438,21 +500,38 @@ O creés saber.
 # LA REUNIÓN
 
 La oficina de Personal.
+La luz fluorescente zumba. Un zumbido fino, constante, como un mosquito que no podés matar.
+
 Dos personas que no conocés bien.
-Un papel sobre la mesa.
-
-"La empresa está reestructurando."
-
-Ah.
+Una mujer de traje gris. Un tipo con carpeta.
+Un vaso de agua que nadie te ofreció.
+Un papel sobre la mesa. Ya está firmado. Del lado de ellos.
 
 * [...]
 -
 
-"Tu puesto fue afectado."
+La mujer lee. No te mira. Lee de un papel.
+
+"La empresa está atravesando un proceso de reestructuración y optimización de recursos."
+
+Optimización de recursos. Vos sos el recurso.
+
+* [...]
+-
+
+"Tu puesto fue afectado por este proceso."
 
 Así que era eso.
+Lo sabías. Desde ayer. Desde el mail. Desde antes, quizás.
+Pero saberlo no te prepara.
 
-"Dejamos de necesitar tus servicios. Gracias por tu colaboración."
+"Lamentamos informarte que dejamos de necesitar tus servicios. Agradecemos tu colaboración durante este período."
+
+Escuchás las palabras pero no las sentís.
+Como si le hablaran a otro.
+Como si estuvieras mirando la escena desde arriba, flotando cerca del fluorescente que zumba.
+
+{juan_relacion >= 2: Pensás en Juan. ¿Lo sabe? ¿A él también?}
 
 * [Escuchar] # FALSA
     No hay liquidación. No hay indemnización.
@@ -469,9 +548,13 @@ Así que era eso.
 
 "¿Por qué yo?"
 
-Se miran entre ellos.
+Te sale la voz más chica de lo que querías.
 
-"No es personal. Es reestructuración."
+Se miran entre ellos. La mujer busca algo en el papel. El tipo cierra la carpeta.
+
+"No es personal. Es una decisión estratégica de reestructuración."
+
+Estratégica.
 
 // Confrontar sube dignidad (aunque no cambie el resultado)
 ~ subir_dignidad(1)
@@ -481,9 +564,27 @@ Se miran entre ellos.
 * [...]
 -
 
+Tres años.
+Tres años facturando a esta empresa.
+Tres navidades con el aguinaldo que nunca fue porque sos "independiente".
+Tres años llegando temprano, quedándote tarde, comiendo del tupper en ese comedor de mierda.
+
+La mujer te mira por primera vez.
+
 "Trabajás con nosotros. Facturás. Es diferente."
 
+* [...]
+-
+
 Claro. Siempre fue diferente cuando les convenía.
+Cuando había que quedarse hasta las diez, eras del equipo.
+Cuando hay que pagar indemnización, sos externo.
+
+Querés gritar.
+Pero no gritás.
+Porque sos profesional.
+Porque te enseñaron a ser profesional mientras te robaban.
+
 Nunca es personal.
 Es el sistema funcionando como fue diseñado.
 
@@ -494,13 +595,51 @@ Es el sistema funcionando como fue diseñado.
 No hay nada que firmar.
 Sos unipersonal. Simplemente dejás de facturar.
 
-Te dan una caja para tus cosas.
-No tenés muchas cosas.
+"Podés retirar tus pertenencias personales."
+
+Te dan una caja. Cartón marrón. Genérica.
+La misma caja que le habrán dado a Gómez. Y al que vino antes.
 
 * [...]
 -
 
-El escritorio se vacía rápido.
+Vas al escritorio.
+El escritorio que fue tuyo mil mañanas.
+
+Abrís el cajón.
+Una taza. La que dice "Mejor Empleado" que te regalaron en una fiesta de fin de año.
+Una foto de... ya ni importa.
+Un cable USB que no es tuyo. Lo dejás.
+Un paquete de galletitas abierto. Lo dejás también.
+
+* [...]
+-
+
+La caja pesa nada.
+Tres años caben en una caja que pesa nada.
+
+{juan_relacion >= 1: Juan está en su escritorio. Levanta la vista. Ve la caja. No dice nada. Los ojos dicen todo.}
+{vinculo == "juan": Juan se para. "Esperá." No sabés qué más dice porque ya estás caminando al ascensor.}
+
+* [...]
+-
+
+El ascensor baja.
+No mirás para atrás.
+
+Las puertas se abren. La planta baja. La recepción.
+La recepcionista te mira. Ya sabe. Todos saben.
+
+"Chau."
+"Chau."
+
+La puerta.
+La calle.
+
+El sol.
+Hace buen día.
+No debería hacer buen día.
+No tiene derecho a hacer buen día.
 
 ~ fui_despedido = true
 ~ tiene_laburo = false
