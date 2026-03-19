@@ -55,6 +55,7 @@ const GameEngine = (function() {
         if (typeof EndingScreen !== 'undefined') await EndingScreen.loadConfig();
         if (typeof AccessibilityManager !== 'undefined') AccessibilityManager.init();
         if (typeof AudioSystem !== 'undefined') AudioSystem.init();
+        if (typeof Achievements !== 'undefined') Achievements.init();
         if (typeof TextPresenter !== 'undefined') TextPresenter.init();
 
         saveCurrentState();

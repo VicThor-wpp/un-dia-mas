@@ -300,11 +300,13 @@ const EndingScreen = (function() {
                     '<div class="ending-book-title" style="color:' + (category ? category.color : '#e8a838') + '">' +
                         ending.title +
                     '</div>' +
-                    '<div class="ending-book-cat">' + (category ? category.label : '') + '</div>';
+                    '<div class="ending-book-cat">' + (category ? category.label : '') + '</div>' +
+                    (ending.hint ? '<div class="ending-hint">' + ending.hint + '</div>' : '');
             } else {
                 item.innerHTML =
                     '<div class="ending-book-title ending-book-hidden">???</div>' +
-                    '<div class="ending-book-cat">Sin descubrir</div>';
+                    '<div class="ending-book-cat">Sin descubrir</div>' +
+                    '<div class="ending-hint-locked">' + (ending.category || '') + '</div>';
             }
 
             grid.appendChild(item);

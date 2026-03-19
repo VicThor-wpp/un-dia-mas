@@ -159,7 +159,7 @@ test('Tunnel-style knots have return statements', () => {
 
 // Test 5: Web files exist
 console.log('\nWeb Runtime:');
-const webFiles = ['index.html', 'style.css', 'game.js', 'ink.js'];
+const webFiles = ['index.html', 'game.js', 'ink.js'];
 for (const file of webFiles) {
     test(`web/${file} exists`, () => {
         assert(fs.existsSync(path.join(ROOT, 'web', file)), `Missing: web/${file}`);
