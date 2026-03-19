@@ -9,6 +9,16 @@
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+/* Text selection color */
+::selection {
+    background: var(--accent, #e85d04);
+    color: var(--bg, #111);
+}
+
 body {
     background-color: var(--bg);
     color: var(--fg);
@@ -33,6 +43,17 @@ body {
     box-shadow: var(--shadow-solid) var(--shadow-color);
     position: relative;
     transition: all 0.5s;
+}
+
+/* Paper/grain texture overlay */
+.container::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.015;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
 }
 
 /* DECORACIÓN CONTEXTUAL (Fixed) */
@@ -78,10 +99,22 @@ a:hover { text-decoration: underline; background: var(--fg); color: var(--bg); }
 strong { font-weight: 700; color: var(--accent); }
 em { font-style: italic; font-family: var(--font-mono); font-size: 0.9em; }
 
-::-webkit-scrollbar { width: 10px; }
-::-webkit-scrollbar-track { background: var(--bg); border-left: 1px solid var(--fg); }
-::-webkit-scrollbar-thumb { background: var(--fg); border: 1px solid var(--bg); }
-::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg, #111); }
+::-webkit-scrollbar-thumb { background: var(--muted, #444); border-radius: 0; /* Keep brutalist */ }
+::-webkit-scrollbar-thumb:hover { background: var(--accent, #e85d04); }
+
+/* Focus-visible styles for keyboard navigation */
+:focus-visible {
+    outline: 2px solid var(--accent, #e85d04);
+    outline-offset: 2px;
+}
+
+button:focus-visible, .choice-btn:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px rgba(232, 93, 4, 0.2);
+}
 
 /* ACCESSIBILITY UTILITIES (Screen Reader Only) */
 .sr-only {
@@ -94,4 +127,13 @@ em { font-style: italic; font-family: var(--font-mono); font-size: 0.9em; }
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
     border-width: 0;
+}
+
+/* ==========================================
+   REDUCED MOTION
+   ========================================== */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
 }

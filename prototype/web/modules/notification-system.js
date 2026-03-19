@@ -52,7 +52,8 @@ const NotificationSystem = (function() {
         const fadeOutDuration = ConfigManager.get('ui.notifications.fadeOutDuration', 500);
 
         const notif = document.createElement('div');
-        notif.className = `notification ${type}`;
+        const isStatChange = (type === 'positive' || type === 'negative');
+        notif.className = `notification ${type}` + (isStatChange ? ' stat-change' : '');
 
         const icon = iconName ? iconHTML(iconName, 16) : '';
         const safeMessage = typeof SecurityValidator !== 'undefined'

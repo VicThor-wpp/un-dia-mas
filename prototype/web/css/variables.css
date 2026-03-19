@@ -71,8 +71,20 @@ body.theme-olla {
 /* ==========================================
    EFECTOS (Sin Blur)
    ========================================== */
+
+/* Progressive visual effects driven by CSS custom properties set from JS.
+   - inercia: squared curve so low values have minimal effect, high values are dramatic
+   - llama: boosts saturation as hope grows */
+body {
+    filter: grayscale(calc(var(--inercia-pct, 0) * var(--inercia-pct, 0) * 100%))
+            contrast(calc(100% + var(--inercia-pct, 0) * var(--inercia-pct, 0) * 20%))
+            saturate(calc(0.5 + var(--llama-pct, 0.5) * 0.8));
+    transition: filter 1.2s ease-out;
+}
+
+/* Fallback: binary effect when JS hasn't set custom properties */
 body.effect-inercia {
-    filter: grayscale(100%) contrast(120%); /* Solo desaturación y contraste */
+    filter: grayscale(100%) contrast(120%);
 }
 
 /* Humedad: Solo un tinte sutil, sin desenfoque */

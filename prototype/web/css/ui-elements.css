@@ -2,22 +2,25 @@
 
 /* Badges en Opciones */
 .choice-badges {
-    margin-left: auto;
     display: flex;
-    gap: 8px;
+    gap: 6px;
+    margin-top: 6px;
+    margin-left: auto;
     padding-left: 10px;
+    font-size: 0.75rem;
 }
 
 .cost-badge, .dice-badge, .effect-badge {
-    font-family: var(--font-mono);
+    font-family: var(--font-mono, monospace);
     font-size: 0.75rem;
-    font-weight: bold;
-    padding: 2px 6px;
-    border: 1px solid var(--fg);
+    font-weight: 700;
+    padding: 2px 8px;
+    border: 1px solid currentColor;
     display: flex;
     align-items: center;
     gap: 4px;
     background: var(--bg);
+    letter-spacing: 0.05em;
 }
 
 .cost-badge {
@@ -25,10 +28,17 @@
     color: var(--accent);
 }
 
+.cost-badge.insufficient {
+    background: var(--accent, #cc3333);
+    color: var(--bg, white);
+    border-color: var(--accent);
+}
+
+/* Keep legacy class name */
 .cost-insufficient {
-    background: var(--fg);
-    color: var(--bg);
-    border-color: var(--fg);
+    background: var(--accent, #cc3333);
+    color: var(--bg, white);
+    border-color: var(--accent);
     text-decoration: line-through;
 }
 

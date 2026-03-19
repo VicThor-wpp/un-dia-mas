@@ -13,6 +13,16 @@
     overflow-y: auto;
 }
 
+/* Paper texture noise overlay */
+.start-screen::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: -1;
+}
+
 /* Contenedor central sólido */
 .start-content {
     text-align: center;
@@ -31,14 +41,15 @@
     font-size: 4rem;
     margin-bottom: 1rem;
     filter: drop-shadow(4px 4px 0px rgba(0,0,0,0.2));
-    /* Animación más dura/tensa */
-    animation: pulse-hard 2s infinite steps(2);
+    /* Heartbeat-style pulse */
+    animation: pulseFlame 2s ease-in-out infinite;
 }
 
-@keyframes pulse-hard {
-    0% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(1.05); opacity: 0.8; }
-    100% { transform: scale(1); opacity: 1; }
+@keyframes pulseFlame {
+    0%, 100% { transform: scale(1); opacity: 0.9; }
+    15% { transform: scale(1.15); opacity: 1; }
+    30% { transform: scale(1); opacity: 0.9; }
+    45% { transform: scale(1.1); opacity: 1; }
 }
 
 /* Título */
@@ -47,11 +58,12 @@
     font-size: 3rem;
     color: var(--fg);
     margin-bottom: 0.5rem;
-    letter-spacing: -2px;
+    letter-spacing: -0.02em;
     text-transform: uppercase;
     line-height: 0.9;
     border-bottom: var(--border-width) solid var(--fg);
     padding-bottom: 20px;
+    transform: rotate(-1deg);
 }
 
 /* Subtítulo */
@@ -123,10 +135,12 @@
 
 /* Returning player text */
 .return-player-text {
+    font-size: 1rem;
+    opacity: 0.9;
+    margin-top: 15px;
+    padding: 10px 15px;
+    border: 1px dashed var(--muted, #666);
     font-style: italic;
-    opacity: 0.7;
-    font-size: 0.9rem;
-    margin-top: 10px;
     text-align: center;
 }
 
@@ -139,4 +153,16 @@
     margin-top: 20px;
     border-top: 1px solid var(--fg);
     padding-top: 10px;
+}
+
+/* ==========================================
+   REDUCED MOTION
+   ========================================== */
+@media (prefers-reduced-motion: reduce) {
+    .start-flame {
+        animation: none;
+    }
+    .start-title {
+        transform: none;
+    }
 }

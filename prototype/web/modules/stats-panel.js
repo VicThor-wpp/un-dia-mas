@@ -97,7 +97,7 @@ const StatsPanel = (function() {
      * Apply threshold effects to body
      */
     function applyThresholdEffects() {
-        document.body.classList.remove('inercia-high', 'inercia-low', 'llama-low', 'conexion-low', 'conexion-high', 'llama-high');
+        document.body.classList.remove('inercia-high', 'inercia-low', 'llama-low', 'conexion-low', 'conexion-high', 'llama-high', 'energia-critical');
         getActiveIndicators().forEach(ind => {
             if (ind.class) document.body.classList.add(ind.class);
         });
@@ -195,6 +195,21 @@ const StatsPanel = (function() {
         const dignidad = getStatValue('dignidad');
         const dignidadMax = ConfigManager.getStat('dignidad')?.max || 10;
         const inercia = getStatValue('inercia');
+        const inerciaMax = 10;
+
+        // Set CSS custom properties for progressive visual effects
+        const llamaPct = llama / llamaMax;
+        const inerciaPct = inercia / inerciaMax;
+        document.documentElement.style.setProperty('--llama-pct', llamaPct.toFixed(2));
+        document.documentElement.style.setProperty('--inercia-pct', inerciaPct.toFixed(2));
+        document.documentElement.style.setProperty('--energia-pct', (energia / energiaMax).toFixed(2));
+
+        // Energy critical state
+        if (energia <= 1) {
+            document.body.classList.add('energia-critical');
+        } else {
+            document.body.classList.remove('energia-critical');
+        }
 
         // Get thresholds
         const indicators = getActiveIndicators();

@@ -266,3 +266,59 @@
     flex-wrap: wrap;
     border-top: 1px dashed var(--muted);
 }
+
+/* ==========================================
+   LA LLAMA DYNAMIC GLOW
+   ========================================== */
+
+.stat-item.stat-llama svg {
+    filter: drop-shadow(0 0 calc(1px + 4px * var(--llama-pct, 0)) rgba(255, 170, 0, calc(0.2 + 0.5 * var(--llama-pct, 0))));
+    transition: filter 0.6s ease-out;
+}
+
+.stat-item.stat-llama .stat-num {
+    text-shadow: 0 0 calc(2px + 6px * var(--llama-pct, 0)) rgba(255, 107, 53, calc(0.1 + 0.4 * var(--llama-pct, 0)));
+    transition: text-shadow 0.6s ease-out;
+}
+
+/* High llama: subtle warm pulse on the icon */
+body.llama-high .stat-item.stat-llama svg {
+    animation: flamePulse 2s ease-in-out infinite;
+}
+
+@keyframes flamePulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+}
+
+/* ==========================================
+   ENERGY DECAY VISUAL
+   ========================================== */
+
+@keyframes statFlicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+}
+
+@keyframes headerShake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(1px); }
+    75% { transform: translateX(-1px); }
+}
+
+body.energia-critical .stat-item[title*="Energía"] .stat-num {
+    animation: statFlicker 0.8s infinite;
+}
+
+body.energia-critical .stat-item[title*="Energía"] svg {
+    animation: statFlicker 0.8s infinite;
+}
+
+body.energia-critical .game-header {
+    animation: headerShake 4s infinite;
+}
+
+/* Modal stat bar fill - llama glow */
+.full-stat-row .stat-bar-fill {
+    transition: width 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}

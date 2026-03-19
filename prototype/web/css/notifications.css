@@ -58,6 +58,24 @@
     to { transform: translateX(0); opacity: 1; }
 }
 
+@keyframes notifPop {
+    0% { transform: translateX(100%) scale(0.8); opacity: 0; }
+    60% { transform: translateX(0) scale(1.05); }
+    100% { transform: translateX(0) scale(1); opacity: 1; }
+}
+
+.notification.stat-change {
+    animation: notifPop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.notification.positive {
+    border-left: 4px solid #7cb518;
+}
+
+.notification.negative {
+    border-left: 4px solid #cc3333;
+}
+
 .notification.fade-out {
     opacity: 0;
     transform: translateX(20px);

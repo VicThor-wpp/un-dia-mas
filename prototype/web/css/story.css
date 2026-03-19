@@ -1,6 +1,15 @@
 /* Un Día Más - Story Elements */
 
 /* ==========================================
+   STORY CONTAINER
+   ========================================== */
+.story {
+    border-left: 2px solid var(--muted, #444);
+    padding-left: 20px;
+    transition: border-color 0.5s ease;
+}
+
+/* ==========================================
    TEXTO NARRATIVO
    ========================================== */
 .story-text {

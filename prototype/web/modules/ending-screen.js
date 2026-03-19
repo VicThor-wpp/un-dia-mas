@@ -171,7 +171,7 @@ const EndingScreen = (function() {
             { key: 'inercia', label: 'Inercia', max: 10, color: '#607d8b' },
         ];
 
-        for (const stat of statDefs) {
+        statDefs.forEach(function(stat, index) {
             const val = vars[stat.key] ?? 0;
             const pct = Math.round((val / stat.max) * 100);
 
@@ -181,12 +181,19 @@ const EndingScreen = (function() {
             item.innerHTML =
                 '<div class="ending-stat-label">' + stat.label + '</div>' +
                 '<div class="ending-stat-bar-bg">' +
-                    '<div class="ending-stat-bar-fill" style="width:' + pct + '%;background:' + stat.color + '"></div>' +
+                    '<div class="ending-stat-bar-fill" style="background:' + stat.color + '"></div>' +
                 '</div>' +
                 '<div class="ending-stat-value">' + val + '/' + stat.max + '</div>';
 
+            // Set CSS variable for animated fill width and stagger the delay
+            const barFill = item.querySelector('.ending-stat-bar-fill');
+            if (barFill) {
+                barFill.style.setProperty('--fill-width', pct + '%');
+                barFill.style.animationDelay = (index * 0.15) + 's';
+            }
+
             grid.appendChild(item);
-        }
+        });
 
         section.appendChild(grid);
         return section;
@@ -286,6 +293,7 @@ const EndingScreen = (function() {
             item.className = 'ending-book-item' +
                 (isUnlocked ? ' ending-book-unlocked' : ' ending-book-locked') +
                 (isCurrent ? ' ending-book-current' : '');
+            item.setAttribute('data-category', ending.category || '');
 
             if (isUnlocked) {
                 item.innerHTML =
