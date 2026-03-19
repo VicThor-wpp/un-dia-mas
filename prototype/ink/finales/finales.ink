@@ -260,6 +260,16 @@ Todo gris.
 // Epilogo de Tiago si fue capturado por Bruno
 -> tiago_final_solo ->
 
+{sofia_relacion >= 2:
+    Sofía te buscó. Dos veces. Dejaste de contestar.
+}
+{elena_relacion >= 2:
+    Elena le dijo a alguien: "Otro que se perdió."
+}
+{marcos_relacion >= 2:
+    Marcos entiende. Él también eligió eso. O creyó elegirlo.
+}
+
 {pequenas_victorias >= 8:
     No salvaste el mundo.
     No cambiaste el sistema.
@@ -319,6 +329,17 @@ Es posibilidad.
     Y eso, a veces, alcanza.
 }
 
+{ayude_en_olla:
+    La olla sigue. Capaz que volvés algún día.
+    Capaz que no. Pero sigue.
+}
+{vinculo == "sofia" && sofia_relacion >= 3:
+    Sofía te manda mensajes a veces. Fotos de la olla. Sin texto.
+}
+{vinculo == "elena" && elena_relacion >= 3:
+    Elena dice que te espera en el banco. No hay apuro.
+}
+
 {pequenas_victorias >= 8:
     No salvaste el mundo.
     No cambiaste el sistema.
@@ -370,6 +391,14 @@ No sabés nada.
 Pero estás vivo.
 Eso es algo.
 ¿No?
+
+{conexion >= 4:
+    Hay gente que sabe que existís.
+    No es mucho. Pero es más de lo que tenías el lunes.
+}
+{juan_decidio_irse:
+    Juan se fue. Te mandó la dirección. "Por si algún día."
+}
 
 {pequenas_victorias >= 8:
     No salvaste el mundo.
@@ -639,6 +668,14 @@ Mañana hay comunidad.
 No lo arregla. No lo soluciona.
 Pero lo sostiene.
 
+{sofia_relacion >= 2:
+    Sofía aprende a hacer tortillas. Le salen mal. Ixchel se ríe.
+}
+{elena_relacion >= 2:
+    Elena y la abuela de Ixchel hubieran sido amigas.
+    Ixchel lo sabe. Elena también.
+}
+
 # FIN - "El tejido que conecta"
 
 -> END
@@ -770,6 +807,15 @@ Adentro. Donde importa.
     Eso, a veces, es el cambio.
 }
 
+{ayude_en_olla:
+    En la olla te saludan por tu nombre.
+    No te salva. Pero te nombra.
+}
+{conte_a_alguien:
+    Le contaste a alguien. Y esa persona no se fue.
+    A veces eso es todo el cambio que se necesita.
+}
+
 # FIN - "Algo se movió"
 
 -> END
@@ -825,6 +871,19 @@ No es esperanza. Es aire.
     Pedir ayuda no es debilidad.
     Lo aprendiste esta semana.
     Duele. Pero funciona.
+}
+
+{vinculo == "sofia" && sofia_relacion >= 3:
+    Sofía también se abrió. Te contó de Nico, de las noches sin dormir.
+    Ser vulnerable no es debilidad. Es puente.
+}
+{vinculo == "elena" && elena_relacion >= 3:
+    Elena te contó de Raúl. De la noche que lloró en la fábrica.
+    "Nunca se lo conté a nadie", dijo. Ahora sí.
+}
+{vinculo == "diego" && diego_relacion >= 3:
+    Diego te mostró la foto de su madre.
+    "Es la única que tengo." Te la mostró a vos.
 }
 
 # FIN - "La grieta por donde entra la luz"
@@ -893,6 +952,16 @@ Pero esta vez no son solo tuyos.
 Mañana hay asamblea de nuevo.
 Y vos vas a estar.
 
+{diego_relacion >= 3:
+    Diego coordina la logística ahora. "Alguien tiene que contar los fideos."
+}
+{sofia_relacion >= 3:
+    Sofía por fin acepta ayuda. "No puedo sola", dijo. Y no fue debilidad.
+}
+{marcos_vino_a_asamblea:
+    Marcos trae arroz los domingos. No dice nada. Solo trae arroz.
+}
+
 # FIN - "La organización es esperanza"
 
 -> END
@@ -956,6 +1025,12 @@ Existe solo si ellos van a trabajar.
     Es el calor que se necesita para forjar algo nuevo.
 }
 
+{idea_sabotaje_legitimo:
+    Alguien propuso romper las máquinas.
+    Otro dijo que no. Que las máquinas son nuestras.
+    "Rompemos las reglas, no las herramientas."
+}
+
 # FIN - "Nuestro trabajo vale más que nuestro sueldo"
 
 -> END
@@ -1003,6 +1078,19 @@ Por donde entra luz.
     En la asamblea aprendiste algo:
     El poder no se pide. Se construye.
     Ladrillo a ladrillo. Día a día.
+}
+
+{diego_relacion >= 4:
+    Diego organiza la producción. Sesenta años de CECOSESOLA en la sangre.
+    "Sin patrón se puede", dice. "Siempre se pudo."
+}
+{lucia_consejo_sindical:
+    Lucía maneja la parte legal. "Ocupación es ilegal. Hambre también debería serlo."
+}
+{idea_sabotaje_legitimo:
+    Cambiaron las cerraduras. Pusieron candados nuevos.
+    "Propiedad privada", decía el cartel.
+    Lo arrancaron. Pusieron otro: "Propiedad social."
 }
 
 # FIN - "La fábrica es nuestra"
@@ -1054,6 +1142,20 @@ Pero estás vivo. Y eso, hoy, es victoria.
     Y construir otra cosa.
 }
 
+{ayude_en_olla:
+    La olla te enseñó algo: se puede vivir de otra manera.
+    No más fácil. Pero más honesta.
+}
+{idea_autonomia_posible:
+    No necesitás un patrón para trabajar.
+    No necesitás el Estado para comer.
+    Necesitás gente. Y la tenés.
+}
+{idea_sabotaje_legitimo:
+    No rompiste nada. Solo dejaste de obedecer.
+    A veces, la desobediencia más radical es dejar de ir.
+}
+
 # FIN - "Fuera del circuito"
 
 -> END
@@ -1103,6 +1205,15 @@ que cualquier discurso.
 Los tres meses empiezan.
 No sabés qué viene.
 Pero sabés dónde hay un plato caliente.
+
+{sofia_relacion >= 2:
+    Sofía sabe que ayudaste. No dice nada. Pero sabe.
+}
+{veces_que_ayude >= 3:
+    Tres veces ayudaste. Sin asamblea. Sin discurso.
+    Solo manos. Solo presencia.
+    A veces eso es la resistencia.
+}
 
 # FIN - "No todas las luchas son visibles"
 
