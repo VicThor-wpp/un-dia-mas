@@ -309,33 +309,51 @@
    SAVE/LOAD SLOTS
    ========================================== */
 .save-slot {
-    border: 2px solid var(--fg);
+    border: 2px solid var(--muted, #444);
     padding: 15px;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
     background: var(--bg);
-    transition: transform 0.1s;
+    transition: border-color 0.2s;
 }
 
 .save-slot:hover {
-    transform: translate(-2px, -2px);
-    box-shadow: 4px 4px 0 var(--fg);
+    border-color: var(--fg, #eee);
 }
 
-.slot-header {
+.save-slot .slot-header {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid var(--fg);
-    padding-bottom: 5px;
-    margin-bottom: 10px;
-    font-family: var(--font-mono);
-    text-transform: uppercase;
+    align-items: center;
+    margin-bottom: 8px;
+    font-family: var(--font-mono, monospace);
     font-size: 0.8rem;
 }
 
-.slot-actions {
+.save-slot .slot-preview {
+    font-size: 0.85rem;
+    opacity: 0.7;
+}
+
+.save-slot .slot-actions {
     display: flex;
-    gap: 10px;
-    margin-top: 15px;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.save-slot .slot-actions button {
+    padding: 4px 12px;
+    border: 1px solid var(--muted, #444);
+    background: transparent;
+    color: var(--fg, #eee);
+    font-family: var(--font-mono, monospace);
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.save-slot .slot-actions button:hover {
+    border-color: var(--accent, #e85d04);
+    color: var(--accent);
 }
 
 /* ==========================================
@@ -491,18 +509,20 @@
     border-bottom: none;
 }
 
-.info-section h3 {
-    font-family: var(--font-mono);
+.info-section h3,
+.info-section-title {
+    font-family: var(--font-mono, monospace);
     font-size: 0.75rem;
     color: var(--muted);
     text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 15px;
-    padding-bottom: 8px;
-    border-bottom: 2px solid var(--fg);
+    letter-spacing: 0.15em;
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--muted, #444);
     display: flex;
     align-items: center;
     gap: 8px;
+    opacity: 0.6;
 }
 
 .status-employed {
@@ -529,8 +549,14 @@
     display: flex;
     align-items: center;
     gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px dotted rgba(128,128,128,0.2);
     font-family: var(--font-mono);
     font-size: 0.85rem;
+}
+
+.full-stat-row:last-child {
+    border-bottom: none;
 }
 
 .full-stat-row .stat-icon {
@@ -539,22 +565,24 @@
 
 .full-stat-row .stat-name {
     min-width: 80px;
+    font-family: var(--font-mono, monospace);
+    font-size: 0.75rem;
     text-transform: uppercase;
-    font-size: 0.7rem;
-    letter-spacing: 1px;
+    letter-spacing: 0.05em;
 }
 
 .stat-bar-bg {
     flex: 1;
-    height: 12px;
-    background: var(--surface);
-    border: 2px solid var(--fg);
+    height: 10px;
+    border: 1px solid var(--muted, #444);
+    background: transparent;
+    position: relative;
     overflow: hidden;
 }
 
 .stat-bar-fill {
     height: 100%;
-    transition: width 0.3s;
+    transition: width 0.5s ease;
 }
 
 .stat-val {
@@ -624,19 +652,25 @@
     align-items: center;
     gap: 10px;
     padding: 10px 15px;
-    border: 2px solid var(--fg);
+    margin-bottom: 8px;
+    border: 1px solid var(--muted, #444);
     background: var(--surface);
     font-family: var(--font-main);
     font-size: 0.9rem;
+    transition: border-color 0.3s;
+}
+
+.idea-item:hover {
+    border-color: var(--accent, #e85d04);
 }
 
 .idea-item.idea-elegida {
-    border-left-width: 6px;
+    border-left: 4px solid var(--accent, #e85d04);
 }
 
 .idea-item.idea-involuntaria {
-    border-style: dashed;
-    color: var(--muted);
+    border-left: 4px dashed var(--muted, #666);
+    opacity: 0.7;
 }
 
 .ideas-synergies {
@@ -647,20 +681,22 @@
 }
 
 .synergy {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    padding: 8px 12px;
-    background: var(--fg);
-    color: var(--bg);
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
+    display: inline-block;
+    padding: 2px 8px;
+    font-size: 0.65rem;
+    font-family: var(--font-mono, monospace);
     text-transform: uppercase;
-    font-weight: bold;
+    letter-spacing: 0.1em;
+    border: 1px solid var(--accent, #e85d04);
+    color: var(--accent);
+    background: transparent;
+    margin-left: 8px;
 }
 
 .synergy.synergy-colectiva {
     background: var(--accent);
+    color: var(--bg);
+    border-color: var(--accent);
 }
 
 /* ==========================================
@@ -681,6 +717,7 @@
 }
 
 .log-day {
+    margin-bottom: 20px;
     padding: 15px;
     border-bottom: 1px solid var(--muted);
 }
@@ -689,27 +726,28 @@
     border-bottom: none;
 }
 
-.log-day h4 {
-    font-family: var(--font-mono);
-    font-size: 0.7rem;
+.log-day h4,
+.log-day-header {
+    font-family: var(--font-header, 'Archivo');
+    font-size: 1rem;
+    font-weight: 700;
     color: var(--accent);
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 0.05em;
     margin-bottom: 10px;
-    padding-bottom: 5px;
-    border-bottom: 1px dashed var(--muted);
+    padding-bottom: 6px;
+    border-bottom: 2px solid var(--fg, #eee);
 }
 
 .log-entry {
     display: flex;
     align-items: center;
     gap: 10px;
-    padding: 8px 12px;
-    margin-bottom: 6px;
+    padding: 6px 12px;
+    margin-bottom: 4px;
     background: var(--bg);
-    border-left: 4px solid var(--muted);
-    font-family: var(--font-mono);
-    font-size: 0.8rem;
+    border-left: 3px solid transparent;
+    font-size: 0.85rem;
 }
 
 .log-entry:last-child {
@@ -718,12 +756,12 @@
 
 .log-entry.log-success,
 .log-entry.log-positive {
-    border-left-color: var(--fg);
+    border-left-color: #7cb518;
 }
 
 .log-entry.log-fail,
 .log-entry.log-negative {
-    border-left-color: var(--accent);
+    border-left-color: #cc3333;
 }
 
 .log-entry.log-neutral {
@@ -731,8 +769,12 @@
 }
 
 .log-entry.log-choice {
-    border-left-color: var(--fg);
-    border-left-style: dashed;
+    border-left-color: var(--muted, #666);
+}
+
+.log-entry.log-dice {
+    font-family: var(--font-mono, monospace);
+    font-size: 0.8rem;
 }
 
 .log-dice .log-value {

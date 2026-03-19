@@ -35,103 +35,137 @@
 
 /* Voz: Inseguridad (Error de sistema) */
 .voice-inseguridad {
-    border-style: dashed;
-    color: var(--muted);
+    position: relative;
+    border: 1px dashed var(--muted);
+    padding: 15px 20px;
+    margin: 15px 0;
+    font-size: 0.95em;
+    opacity: 0.85;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0,0,0,0.02) 2px,
+        rgba(0,0,0,0.02) 4px
+    );
 }
 .voice-inseguridad::before {
-    content: "// ERROR_LOG: INSEGURIDAD";
+    content: '// ERROR_LOG: INSEGURIDAD';
     display: block;
-    font-size: 0.7em;
-    font-weight: bold;
-    margin-bottom: 5px;
-    opacity: 0.7;
+    font-family: var(--font-mono, monospace);
+    font-size: 0.65rem;
+    opacity: 0.4;
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+    text-transform: uppercase;
 }
 
 /* Voz: Política (Análisis) */
 .voice-politica {
-    border-color: var(--accent);
-    color: var(--accent);
-    font-weight: bold;
+    border-left: 4px solid var(--accent);
+    padding: 15px 20px;
+    margin: 15px 0;
+    font-weight: 500;
+    background: linear-gradient(90deg, rgba(232,93,4,0.05) 0%, transparent 100%);
 }
 .voice-politica::before {
-    content: "★ ANÁLISIS ESTRUCTURAL";
+    content: '★ ANÁLISIS ESTRUCTURAL';
     display: block;
-    font-size: 0.7em;
-    margin-bottom: 5px;
-    color: var(--fg);
+    font-family: var(--font-mono, monospace);
+    font-size: 0.65rem;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+    margin-bottom: 8px;
+    font-weight: 700;
 }
 
 /* Voz: Bruno (Advertencia) */
 .voice-bruno {
+    text-align: center;
+    font-weight: 700;
+    padding: 20px;
+    margin: 15px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border: 2px solid var(--accent);
     background: repeating-linear-gradient(
         45deg,
-        var(--bg),
-        var(--bg) 10px,
-        var(--muted) 10px,
-        var(--muted) 20px
+        transparent,
+        transparent 10px,
+        rgba(204,51,51,0.03) 10px,
+        rgba(204,51,51,0.03) 20px
     );
-    color: var(--fg);
-    text-align: center;
-    font-weight: 900;
-    text-transform: uppercase;
 }
-.voice-bruno span {
-    background: var(--surface);
-    padding: 5px 10px;
-    border: 2px solid var(--fg);
+.voice-bruno::before {
+    content: '⚠ ALERTA';
+    display: block;
+    font-family: var(--font-mono, monospace);
+    font-size: 0.65rem;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    margin-bottom: 10px;
 }
 
 /* Voz: Elena (Memoria) */
 .voice-elena {
-    font-family: var(--font-hand);
-    font-size: 1.1rem;
-    border: none;
-    border-left: 4px solid var(--accent);
-    background: transparent;
-    box-shadow: none;
+    font-family: var(--font-hand, 'Special Elite'), cursive;
     font-style: italic;
+    padding: 15px 20px 15px 25px;
+    margin: 15px 0;
+    border-left: 3px solid var(--muted);
+    opacity: 0.9;
+    line-height: 1.8;
+    position: relative;
+}
+.voice-elena::before {
+    content: '✦ MEMORIA';
+    display: block;
+    font-family: var(--font-mono, monospace);
+    font-size: 0.6rem;
+    font-style: normal;
+    opacity: 0.4;
+    letter-spacing: 0.15em;
+    margin-bottom: 8px;
 }
 
 /* ==========================================
    GLOSA (Tooltips)
    ========================================== */
 .glossary-term {
-    border-bottom: 2px dotted var(--accent);
+    border-bottom: 1px dotted var(--muted, #666);
     cursor: help;
     font-weight: 500;
     position: relative;
-    transition: all 0.2s;
+    transition: color 0.2s;
 }
 
 .glossary-term:hover {
-    background: var(--accent);
-    color: var(--bg);
-    border-bottom-style: solid;
+    color: var(--accent, #e85d04);
 }
 
-/* Tooltip nativo */
+/* Tooltip */
 .glossary-tooltip {
+    display: none;
     position: absolute;
-    bottom: 120%;
+    bottom: 100%;
     left: 50%;
     transform: translateX(-50%);
-    width: 250px;
-    background: var(--fg);
-    color: var(--bg);
-    padding: 10px;
-    font-family: var(--font-mono);
+    padding: 6px 12px;
+    background: var(--fg, #111);
+    color: var(--bg, #eee);
     font-size: 0.8rem;
+    font-family: var(--font-mono, monospace);
     font-weight: normal;
-    border: 2px solid var(--accent);
+    white-space: nowrap;
+    border: 1px solid var(--muted);
+    box-shadow: 3px 3px 0 rgba(0,0,0,0.3);
     z-index: 1000;
-    box-shadow: 5px 5px 0 rgba(0,0,0,0.5);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.2s;
+    margin-bottom: 5px;
 }
 
-.glossary-term:hover .glossary-tooltip {
-    opacity: 1;
+.glossary-term:hover .glossary-tooltip,
+.glossary-term:focus .glossary-tooltip {
+    display: block;
 }
 
 /* Animaciones de Texto (TextPresenter) */
@@ -157,5 +191,65 @@
         transition: none !important;
         opacity: 1 !important;
         transform: none !important;
+    }
+}
+
+/* ==========================================
+   DAY TRANSITION OVERLAY
+   ========================================== */
+.day-transition-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 5000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg, #111);
+    color: var(--fg, #eee);
+    pointer-events: none;
+    animation: dayTransition 2s ease-in-out forwards;
+}
+
+.day-transition-overlay .day-name {
+    font-family: var(--font-header, 'Archivo');
+    font-size: 4rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0;
+    animation: dayNameReveal 2s ease-in-out forwards;
+}
+
+.day-transition-overlay .day-number {
+    font-family: var(--font-mono, monospace);
+    font-size: 1rem;
+    opacity: 0;
+    margin-top: 10px;
+    letter-spacing: 0.3em;
+    animation: dayNameReveal 2s ease-in-out 0.2s forwards;
+}
+
+@keyframes dayTransition {
+    0% { opacity: 1; }
+    60% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@keyframes dayNameReveal {
+    0% { opacity: 0; transform: translateY(10px); }
+    20% { opacity: 1; transform: translateY(0); }
+    70% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .day-transition-overlay {
+        animation-duration: 0.5s;
+    }
+    .day-transition-overlay .day-name,
+    .day-transition-overlay .day-number {
+        animation: none;
+        opacity: 1;
     }
 }

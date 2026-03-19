@@ -1,5 +1,32 @@
 /* Un Día Más - Dice Mechanic */
 
+/* ==========================================
+   ROLL ANIMATIONS
+   ========================================== */
+@keyframes diceRoll {
+    0% { transform: rotate(0deg) scale(0.5); opacity: 0; }
+    30% { transform: rotate(180deg) scale(1.1); opacity: 1; }
+    50% { transform: rotate(360deg) scale(1); }
+    70% { transform: rotate(540deg) scale(1.05); }
+    100% { transform: rotate(720deg) scale(1); opacity: 1; }
+}
+
+@keyframes diceReveal {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes diceShake {
+    0%, 100% { transform: translateX(0); }
+    20% { transform: translateX(-5px); }
+    40% { transform: translateX(5px); }
+    60% { transform: translateX(-3px); }
+    80% { transform: translateX(3px); }
+}
+
+/* ==========================================
+   DICE AREA
+   ========================================== */
 .dice-area {
     border: 2px dashed var(--muted);
     padding: 20px;
@@ -38,13 +65,8 @@
     font-weight: bold;
     color: var(--fg);
     box-shadow: 3px 3px 0 var(--fg);
-    transform: rotate(-3deg);
-    transition: transform 0.2s;
     border-radius: 0; /* Brutalist fix */
-}
-
-.die:nth-child(even) {
-    transform: rotate(2deg);
+    animation: diceRoll 0.6s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
 }
 
 .dice-result {
@@ -58,8 +80,44 @@
     border: 3px solid var(--accent);
     padding: 5px 15px;
     border-radius: 0; /* Brutalist fix */
-    
+    animation: diceReveal 0.3s ease-out 0.7s both;
+
     /* Cross-browser mask support */
     -webkit-mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxmaWx0ZXIgaWQ9Im4iPjxmZVR1cmJ1bGVuY2UgdHlwZT0iZnJhY3RhbE5vaXNlIiBiYXNlRnJlcXVlbmN5PSIwLjUiIG51bU9jdGF2ZXM9IjEiIHN0aXRjaFRpbGVzPSJzdGl0Y2giLz48L2ZpbHRlcj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ0cmFuc3BhcmVudCIvPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiMwMDAiIG9wYWNpdHk9IjAuNiIgZmlsdGVyPSJ1cmwoI24pIi8+PC9zdmc+");
     mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxmaWx0ZXIgaWQ9Im4iPjxmZVR1cmJ1bGVuY2UgdHlwZT0iZnJhY3RhbE5vaXNlIiBiYXNlRnJlcXVlbmN5PSIwLjUiIG51bU9jdGF2ZXM9IjEiIHN0aXRjaFRpbGVzPSJzdGl0Y2giLz48L2ZpbHRlcj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ0cmFuc3BhcmVudCIvPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiMwMDAiIG9wYWNpdHk9IjAuNiIgZmlsdGVyPSJ1cmwoI24pIi8+PC9zdmc+");
+}
+
+/* ==========================================
+   RESULT-SPECIFIC STYLING
+   ========================================== */
+.dice-result.critico {
+    border-color: #7cb518;
+    color: #7cb518;
+    text-shadow: 0 0 10px rgba(124, 181, 24, 0.5);
+}
+
+.dice-result.exito {
+    border-color: var(--fg);
+}
+
+.dice-result.fallo {
+    border-color: var(--accent, #cc3333);
+    color: var(--accent);
+}
+
+.dice-result.fumble {
+    border-color: #cc3333;
+    color: #cc3333;
+    animation: diceReveal 0.3s ease-out 0.7s both, diceShake 0.5s ease-out 1s;
+}
+
+/* ==========================================
+   REDUCED MOTION
+   ========================================== */
+@media (prefers-reduced-motion: reduce) {
+    .die, .dice-result, .dice-result.fumble {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
 }

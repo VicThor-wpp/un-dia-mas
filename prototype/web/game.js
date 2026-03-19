@@ -94,9 +94,13 @@ const GameEngine = (function() {
     function createDiceElement(roll, result, context) {
         const rollDiv = document.createElement('div');
         rollDiv.className = 'dice-area'; // New CSS class
-        
+
         const resultInfo = ConfigManager.getDiceResult(result); // Legacy helper, might need mapping
-        
+
+        // Map result code to CSS class: 2=critico, 1=exito, 0=fallo, -1=fumble
+        const resultClassMap = { 2: 'critico', 1: 'exito', 0: 'fallo', '-1': 'fumble' };
+        const resultClass = resultClassMap[result] || 'fallo';
+
         // Context Text
         let contextText = "";
         if (context === 'ventaja') contextText = " (CON VENTAJA)";
@@ -111,7 +115,7 @@ const GameEngine = (function() {
         `;
 
         if (result !== 0) {
-            diceHtml += `<div class="dice-result">${resultInfo.label}</div>`;
+            diceHtml += `<div class="dice-result ${resultClass}">${resultInfo.label}</div>`;
         }
 
         rollDiv.innerHTML = diceHtml;
@@ -137,18 +141,31 @@ const GameEngine = (function() {
      * Update visual theme based on location tag
      */
     function updateTheme(locTag) {
-        const loc = locTag.toLowerCase();
+        const loc = locTag.toLowerCase().trim();
         currentLoc = loc;
-        
-        // Remove old theme classes
-        document.body.classList.remove('theme-oficina', 'theme-calle', 'theme-casa', 'theme-olla');
-        
-        // Add new theme class
-        document.body.classList.add(`theme-${loc}`);
-        
+
+        // Brief crossfade on location change
+        const container = document.querySelector('.container') || document.querySelector('#storyContainer');
+        if (container) {
+            container.style.transition = 'opacity 0.3s ease';
+            container.style.opacity = '0.7';
+
+            setTimeout(() => {
+                // Remove old theme classes
+                document.body.classList.remove('theme-oficina', 'theme-calle', 'theme-casa', 'theme-olla');
+                // Add new theme class
+                document.body.classList.add(`theme-${loc}`);
+                container.style.opacity = '1';
+            }, 150);
+        } else {
+            // Fallback: no container yet (initial load)
+            document.body.classList.remove('theme-oficina', 'theme-calle', 'theme-casa', 'theme-olla');
+            document.body.classList.add(`theme-${loc}`);
+        }
+
         // Update HUD Text
         if (locDisplay) locDisplay.innerText = loc.toUpperCase();
-        
+
         // Update Decoration (Optional)
         if (locationDeco) {
             let decoText = "";
@@ -172,6 +189,24 @@ const GameEngine = (function() {
         if (effect === 'humedad') document.body.classList.add('effect-humedad');
         if (effect === 'inercia') document.body.classList.add('effect-inercia');
         if (effect === 'clear') { /* Cleared above */ }
+    }
+
+    /**
+     * Show full-screen day transition overlay
+     */
+    function showDayTransition(dayName, dayNumber) {
+        const overlay = document.createElement('div');
+        overlay.className = 'day-transition-overlay';
+        overlay.innerHTML = `
+            <div class="day-number">DÍA ${dayNumber}</div>
+            <div class="day-name">${dayName}</div>
+        `;
+        document.body.appendChild(overlay);
+
+        // Remove after animation completes
+        setTimeout(() => {
+            if (overlay.parentNode) overlay.parentNode.removeChild(overlay);
+        }, 2200);
     }
 
     function continueStory() {
@@ -222,6 +257,9 @@ const GameEngine = (function() {
                     
                     // Update Day Display
                     if (dayDisplay) dayDisplay.innerText = `DÍA ${story.variablesState['dia_actual']} / ${tag}`;
+
+                    // Day transition ceremony
+                    showDayTransition(tag, story.variablesState['dia_actual'] || 1);
 
                     if (typeof AudioSystem !== 'undefined') AudioSystem.setDayBGM(tag.toLowerCase());
                 } else if (tag.startsWith('ENDING:')) {
