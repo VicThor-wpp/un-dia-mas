@@ -492,60 +492,221 @@ Te quedás pensando.
 
 Te llega un mensaje de Juan.
 
-"Che. Laura consiguió algo."
+"Che. ¿Podemos vernos? Necesito hablar."
 
-* [Responder "¿Qué?"]
-    -> juan_mensaje_jueves_cont
-* [Responder "¿En España?"]
-    -> juan_mensaje_jueves_cont
+* [Responder "¿Está todo bien?"]
+    "Sí. No. No sé. ¿Podemos vernos?"
+    -> juan_mensaje_jueves_encuentro
+* [Responder "Dale. ¿Dónde?"]
+    -> juan_mensaje_jueves_encuentro
 * [No responder]
     El mensaje queda ahí. Vibrando.
+    Una hora después llega otro: "Laura consiguió algo. Me voy. Te cuento después."
     ~ juan_avanzo_migracion = true
     ->->
 
-=== juan_mensaje_jueves_cont ===
+=== juan_mensaje_jueves_encuentro ===
 
-Juan escribe. Los tres puntitos.
-
-"Sí. En la clínica de la prima. Le hacen los papeles."
-
-Pausa.
-
-"Todavía no es seguro. Pero es algo."
-
-* ["¿Y vos?"]
-    -> juan_jueves_respuesta
-* ["Felicitaciones."]
-    -> juan_jueves_respuesta
-* ["¿Cuándo sería?"]
-    -> juan_jueves_respuesta
-
-=== juan_jueves_respuesta ===
-
-"No sé. Estamos viendo. Pero si sale..."
+"¿Conocés el boliche de Requena y Rivera? Nos vemos ahí a las siete."
 
 * [...]
 -
 
-"Creo que me voy con ella."
+// --- EL SETTING ---
 
-Pausa larga.
+El boliche de Requena y Rivera.
+Uno de esos bares que no tienen nombre en el cartel, solo "BAR" en letras verdes.
+Olor a grasa, café viejo y humedad. Una tele prendida que nadie mira.
 
-"No sé cómo decirlo. Pero te quería contar a vos primero."
+Juan está en la mesa del fondo. La de siempre.
+Dos cervezas. Una ya empezada.
 
-* ["Gracias por contarme."]
-    "Vos sos de los pocos que entiende."
-    ~ juan_avanzo_migracion = true
+Te sentás. Agarrás la otra.
+
+"Gracias por venir."
+
+"Tranqui."
+
+* [...]
+-
+
+// --- LA CONFESIÓN ---
+
+Juan agarra el vaso. Lo gira entre las manos. No toma.
+
+"Che... tengo que contarte algo."
+
+* [...]
+-
+
+Toma del vaso. No te mira.
+
+Afuera pasa un bondi. El 180. Los mismos de siempre volviendo a sus casas.
+
+"¿Te acordás de la prima de Laura? La de Valencia."
+
+"Sí."
+
+"Bueno. Habló con la clínica. Le hacen los papeles a Laura. Laburo seguro."
+
+* [...]
+-
+
+Pausa larga. La tele pasa un partido de la B. Nadie mira.
+
+"Y tiene un contacto en un restaurante. Para mí."
+
+* [...]
+-
+
+"Lavar platos en un restaurante español. Esa es la gran oportunidad."
+
+Se ríe. Sin ganas.
+
+"Es una mierda, ya sé. Pero es plata. Euros. Y allá los euros alcanzan."
+
+* [...]
+-
+
+"Allá con lo que gano lavando platos me pago el alquiler. Acá con lo que gano en la oficina no me alcanza ni para eso."
+
+Silencio. Los dos toman.
+
+"¿Te vas?"
+
+No contesta enseguida. Mira la mesa. El vaso. La espuma que baja.
+
+"No sé. Capaz. Probablemente."
+
+* [...]
+-
+
+Otro silencio. De esos que pesan.
+
+"Laura ya decidió. Yo... estoy ahí."
+
+"¿Ahí dónde?"
+
+"En la mitad. Entre ir y quedarme. Y cada día la mitad se corre un poco más para el lado de ir."
+
+* [...]
+-
+
+// --- LA REACCIÓN ---
+
+* ["No te vayas."]
+    Juan te mira. Por primera vez desde que llegaste.
+
+    "¿Y qué hago? ¿Espero? ¿A qué?"
+
+    No tenés respuesta para eso.
+
+    "Vos también te quedaste sin laburo. ¿Cuánto te va a durar el colchón? ¿Tres meses? Yo no tengo ni eso."
+
+    * * [...]
+    - -
+
+    "No te digo que esté bien. Te digo que no veo otra."
+
     ~ juan_relacion += 1
-    ->->
-* ["Es una noticia grande."]
-    "Sí. Todavía no caigo."
-    ~ juan_avanzo_migracion = true
-    ->->
-* ["¿Estás seguro?"]
-    "No. Pero ¿cuándo estuve seguro de algo?"
-    ~ juan_avanzo_migracion = true
-    ->->
+    -> juan_jueves_momento_politico
+
+* ["Te entiendo."]
+    "¿De verdad?"
+
+    "Sí."
+
+    Silencio. El mozo pasa con un plato de papas fritas para otra mesa.
+
+    "Gracias. Porque en casa me miran como si los traicionara."
+
+    * * [...]
+    - -
+
+    "Mi vieja no me habla. Mi hermano me dijo cobarde. Laura es la única que me banca."
+
+    "Y vos."
+
+    ~ juan_relacion += 1
+    -> juan_jueves_momento_politico
+
+* ["Allá también es difícil."]
+    "Ya sé. Pero allá soy un extranjero pobre. Acá soy un fracasado local."
+
+    * * [...]
+    - -
+
+    "Prefiero ser pobre lejos."
+
+    Eso duele porque es honesto. Porque los dos saben que en este país eso tiene sentido.
+
+    -> juan_jueves_momento_politico
+
+=== juan_jueves_momento_politico ===
+
+Juan toma un trago largo. Deja el vaso. Lo mira.
+
+{idea_no_es_individual:
+    "¿Sabés qué es lo peor? Que me convencieron de que es mi culpa. Que si me esforzaba más, me iba mejor."
+
+    * [...]
+    -
+
+    "Pero me esforcé. Hice todo lo que me dijeron. Estudié. Laburé. Facturé. Pagué. Y acá estoy. Sacando pasaje."
+
+    Pausa. La tele cambia de canal sola. Ahora pasan noticias.
+
+    "No es mi culpa. Pero igual me voy."
+}
+
+{not idea_no_es_individual:
+    "A veces pienso que hice algo mal. Que tendría que haber estudiado otra cosa, ahorrado más, no sé."
+
+    * [...]
+    -
+
+    "Pero después miro alrededor y veo que estamos todos igual. Así que capaz no es eso."
+
+    Toma otro trago.
+}
+
+* [...]
+-
+
+// --- LA DESPEDIDA ---
+
+Pasan los minutos. Las cervezas se vacían. Afuera ya está oscuro.
+
+Juan deja plata en la mesa. Más de lo que le toca.
+
+"Dejá, yo pago."
+
+"No, dejá vos."
+
+* [...]
+-
+
+Se para. Agarra la campera del respaldo de la silla.
+
+Te mira un segundo. Te abraza. Rápido. Fuerte. Sin aviso.
+
+"Cuidate."
+
+"Vos también."
+
+* [...]
+-
+
+Se va caminando por Requena. Las manos en los bolsillos. No mira para atrás.
+
+Igual que vos cuando saliste de la oficina con la caja.
+
+Te quedás un rato más. Pedís otra cerveza. No la tomás.
+
+~ juan_avanzo_migracion = true
+~ juan_relacion += 1
+
+->->
 
 // ============================================
 // BUILD-UP DE MIGRACIÓN - VIERNES

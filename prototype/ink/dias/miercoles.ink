@@ -730,6 +730,22 @@ No es que se alegre de que te echaron.
 Pero hay algo en que no estés solo.
 En que quizás vengas mañana.
 
+{fui_despedido:
+    Se enteró.
+    No sabe cómo, pero se enteró.
+    En el barrio las noticias malas viajan rápido. Más rápido que las buenas.
+
+    Mañana va a cocinar de más. Por las dudas.
+    Por si venís.
+
+    Le dice al hijo más chico que no haga ruido.
+    Se queda un rato mirando la olla fría sobre la hornalla.
+
+    Un despido más en el barrio.
+    Otro cuerpo que el sistema escupe.
+    Pero este cuerpo tiene manos. Y mañana las va a necesitar.
+}
+
 Apaga la luz.
 Mañana hay que seguir.
 
@@ -806,6 +822,20 @@ No sabe qué hacer.
 Quiere ayudarte pero no sabe cómo.
 Quiere ayudarse pero no sabe cómo.
 
+{fui_despedido:
+    Piensa en su padre, que perdió todo dos veces.
+    En Caracas primero. Después en Maracaibo.
+
+    "Otra vez", piensa. "Pero esta vez no solo."
+
+    Se lo repite como si fuera verdad.
+    Todavía no sabe si lo es.
+
+    Pero el teléfono está ahí.
+    Y tu número está guardado.
+    Y mañana va a marcar.
+}
+
 Mañana te va a buscar.
 No sabe para qué. Pero te va a buscar.
 
@@ -868,6 +898,23 @@ Piensa en vos.
 En lo que le contaste.
 En la voz que tenías.
 
+{fui_despedido:
+    Vio gente salir con cajas antes.
+    En el 2002, en el 78, en el 69.
+    Siempre las mismas cajas.
+    Siempre las mismas caras.
+
+    Tu cara hoy era igual.
+    La misma incredulidad. El mismo desamparo.
+
+    Ella sabe lo que viene después.
+    La vergüenza. El insomnio. La cuenta que no cierra.
+
+    Pero también sabe lo que puede venir si no te dejás caer solo.
+    Porque a Raúl lo sostuvo el barrio.
+    Y el barrio sigue acá.
+}
+
 Mañana te va a llamar.
 Va a ver cómo estás.
 Es lo que se hace.
@@ -919,17 +966,31 @@ Algo de compañía en la oscuridad.
 }
 
 // FRAGMENTO NORMAL
-Marcos mira la tele. 
-Programas de política que ya no le dicen nada. 
+Marcos mira la tele.
+Programas de política que ya no le dicen nada.
 Gente de traje hablando de "macroeconomía" mientras el barrio se cae a pedazos.
 
-Piensa en vos. 
-En que te echaron. 
+Piensa en vos.
+En que te echaron.
 En que ahora sabés lo que se siente.
 
-"Cagaste, uruguayo", murmura para el cuarto vacío. 
+{fui_despedido:
+    Sabe.
+    Alguien le contó. O lo adivinó.
+    Tiene un olfato para el desastre. De tanto vivirlo.
 
-Pero hay algo en su mirada. 
+    Agarra el celular. Escribe "Me enteré."
+    Se queda mirando el mensaje un rato largo.
+    Lo manda a las 2 AM.
+
+    No espera respuesta.
+    Pero lo mandó.
+    Y eso, viniendo de Marcos, es casi un abrazo.
+}
+
+"Cagaste, uruguayo", murmura para el cuarto vacío.
+
+Pero hay algo en su mirada.
 Un resto de bronca que todavía no se convirtió en ceniza.
 
 Mañana será otro día.

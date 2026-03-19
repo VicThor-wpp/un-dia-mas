@@ -39,6 +39,37 @@ Diego ya no se siente tan solo.
     Capaz.
 }
 
+{tiago_se_queda:
+    Tiago limpia las mesas después de cada olla.
+    Ya no mira la puerta. Ya no espera irse.
+}
+{tiago_captado_por_bruno:
+    De Tiago no se habla.
+    Alguien lo vio en la camioneta de Bruno. Nadie pudo hacer nada.
+}
+
+{juan_decidio_irse:
+    Juan mandó una foto desde Barcelona. Está lavando platos.
+    "Pero estoy bien", escribe. "Acá también hay ollas."
+}
+
+{cacho_ayudo:
+    Cacho viene los sábados. Trae verdura del mercado.
+    No habla de cripto. Habla de precios.
+    Algo cambió.
+}
+
+{diego_perdio_laburo:
+    Diego también se quedó sin laburo. Pero no se fue.
+    "Acá tengo asamblea", dijo. "Allá tenía silencio."
+}
+
+{lucia_consejo_sindical:
+    Lucía sigue peleando en el sindicato.
+    Ahora tiene una propuesta para incluir unipersonales.
+    Nadie la lee todavía. Pero la escribió.
+}
+
 Y hay una llama.
 
 No es esperanza ingenua.
@@ -141,6 +172,23 @@ Pero no estás solo.
 
 Esto no termina.
 Es el principio de otra cosa.
+
+{sofia_relacion >= 3:
+    Sofía duerme un poco mejor.
+    No mucho. Pero un poco.
+    Alguien más carga la olla ahora.
+}
+
+{elena_relacion >= 3:
+    Elena sigue en el banco de la plaza.
+    Pero ahora tiene a quién contarle las historias.
+}
+
+{marcos_vino_a_asamblea:
+    Marcos vino una vez más. Y otra. Y otra.
+    No habla mucho. Pero pela papas.
+    Elena dice que es suficiente.
+}
 
 // Epilogo de Tiago si se quedó
 -> tiago_final_red ->
@@ -412,6 +460,26 @@ Generaciones.
     Pero la elegiste.
 }
 
+{tiago_captado_por_bruno:
+    Una semana después, Tiago aparece en las noticias.
+    "Menor detenido en operativo antidrogas."
+    Dieciséis años. Historial INAU.
+    El sistema cumplió su profecía.
+}
+
+{juan_decidio_irse:
+    Juan se fue. No mandó mensaje.
+    Capaz que está bien. Capaz que no.
+    Otro que se fue sin despedirse.
+}
+
+{sofia_relacion >= 2:
+    Sofía cerró la olla un martes.
+    Sin aviso. Sin ceremonia.
+    Apagó la hornalla y se fue.
+    Nadie la culpa. Todos entienden.
+}
+
 La llama se apagó.
 
 # FIN - "El tejido social se destruyó"
@@ -489,6 +557,16 @@ Es el primer paso.
 
 * [...]
 -
+
+{sofia_relacion >= 3:
+    Sofía te llama a veces.
+    No contestás. Pero llama.
+}
+
+{vinculo == "elena" && elena_relacion >= 3:
+    Elena dejó una bolsa en tu puerta.
+    Yerba, azúcar, un papelito: "Cuando quieras hablar."
+}
 
 {idea_quien_soy:
     ¿Quién sos sin laburo?
@@ -610,6 +688,18 @@ Hasta que algo cambie.
 O no.
 
 {idea_esto_es_lo_que_hay: Esto es lo que hay. Por ahora.}
+
+{ayude_en_olla:
+    La olla sigue. Sin vos.
+    Sofía preguntó por vos una vez.
+    Después dejó de preguntar.
+}
+
+{marcos_relacion >= 2:
+    Marcos te mandó un mensaje.
+    "Estoy igual."
+    Dos palabras que dicen todo.
+}
 
 // Epilogo de Tiago si fue capturado por Bruno
 -> tiago_final_solo ->
@@ -837,6 +927,18 @@ Algunos se rajaron. Otros se mantuvieron.
 {conexion >= 7:
     La olla sostuvo a las familias.
     Sofía organizó turnos. Nadie pasó hambre.
+}
+
+{diego_relacion >= 4:
+    Diego habla en la asamblea de huelga.
+    Cuenta lo de CECOSESOLA. Lo del camión quemado.
+    "Esto no es nuevo", dice. "Y ellos no son invencibles."
+}
+
+{lucia_consejo_sindical:
+    Lucía conecta la huelga con el sindicato formal.
+    "Ellos ponen la legalidad, nosotros ponemos los cuerpos."
+    Por primera vez, los unipersonales están en la mesa.
 }
 
 * [...]
@@ -1166,6 +1268,12 @@ Pero hay algo.
 -
 
 Dignidad. Memoria. Gente.
+
+{tiago_se_queda:
+    Tiago no fue a la huelga. Pero trajo agua para los que volvieron.
+    Dieciséis años y ya sabe lo que es la represión.
+    "En el INAU era peor", dijo. Nadie supo qué contestar.
+}
 
 La lucha no siempre gana.
 A veces te rompen.

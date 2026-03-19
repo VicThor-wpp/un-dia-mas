@@ -797,24 +797,71 @@ Otro día de cosecha.
 }
 
 === bruno_y_claudia ===
-// Escena potencial: Bruno y Claudia se cruzan
-// Dos formas de control
+// Escena potencial: Bruno y Claudia se cruzan en la olla
+// Dos formas de control que se reconocen
 
 {bruno_tension >= 2 && claudia_hostilidad >= 1:
-    
-    Los ves hablando.
-    Bruno y Claudia. En la esquina.
-    
-    Ella con su carpeta. Él con su cruz.
-    
-    No sabés qué dicen.
-    Pero asienten.
-    
-    Dos formas de orden.
-    Dos formas de control.
-    
-    Ninguna te incluye.
-    
+
+    Los ves al mismo tiempo.
+    Bruno entra por la puerta de la calle.
+    Claudia sale del fondo con su carpeta.
+
+    Se miran.
+    No se saludan. No hace falta.
+    Se reconocen.
+
+    * [...]
+    -
+
+    Ella con el formulario. Él con la cruz.
+    El traje y el uniforme. Dos disfraces distintos del mismo animal.
+
+    Bruno se acerca. Claudia no retrocede.
+
+    "Usted es la inspectora."
+    "Y usted el pastor."
+
+    Asienten. Como dos jugadores de ajedrez
+    que se encuentran en el mismo tablero.
+
+    {elena_relacion >= 2:
+        Elena te toca el brazo.
+        "Mirá. Los dos juntos. El uniforme y el traje."
+        Hace una pausa.
+        "Dos caras de la misma moneda."
+    }
+
+    * [...]
+    -
+
+    Bruno habla primero. Bajito. Solo para ella.
+    Pero vos estás cerca.
+
+    "Si necesita datos de los que vienen, yo puedo facilitar."
+    Claudia lo mira. La carpeta contra el pecho como un escudo.
+    "No necesito sus datos. Tengo los míos."
+
+    Pero algo cambia en sus ojos.
+    Un cálculo rápido. Una alianza posible.
+
+    Bruno ofrece orden desde afuera. Disciplina. Mano dura.
+    Claudia ofrece obediencia desde adentro. Normas. Formularios.
+    Los dos quieren lo mismo: que no te organices solo.
+
+    Uno controla con miedo. La otra con burocracia.
+    Pero los dos necesitan que la olla dependa de alguien.
+    De él. De ella. De cualquiera menos de ustedes.
+
+    Se dan la mano.
+    Formal. Breve. Como quien firma un pacto sin testigos.
+
+    Claudia se va primero.
+    Bruno se queda mirando la olla un momento más.
+
+    Después se sube a la camioneta.
+    El motor arranca.
+    El barrio tiembla un poco.
+
     ~ olla_en_crisis = true
     ->->
 - else:

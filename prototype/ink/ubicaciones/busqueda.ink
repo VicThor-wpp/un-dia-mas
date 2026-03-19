@@ -499,144 +499,241 @@ Sin derechos. Sin aportes. Sin nada.
 === busqueda_entrevista_startup ===
 // Tunnel: La entrevista en la startup tóxica
 
-La oficina tiene futbolito.
-Y cerveza en la heladera.
-Y un slogan en la pared: "Work hard, play hard."
+El ascensor abre en un piso sin paredes.
+Espacio abierto. Piso de cemento alisado. Cañerías a la vista.
+Diseño que imita pobreza costando una fortuna.
+
+Un neón fucsia en la pared dice "HUSTLE".
+Otro, más chico, dice "DREAM BIG."
+Hay un futbolito que nadie usa.
+Una heladera de vidrio llena de cerveza artesanal.
+Plantas que alguien riega. Una hamaca paraguaya en un rincón.
+
+Todos tienen menos de treinta.
+Remeras negras. Zapatillas caras. MacBooks.
+Te miran cuando pasás. Sonríen.
+Te sentís como un padre que entró al boliche equivocado.
 
 * [...]
 -
 
-El entrevistador tiene 26 años.
-Se presenta como "Head of People".
+Una piba con pelo azul se acerca.
+Descalza. En la oficina.
 
-"¿Qué te motivó a aplicar?"
+"¡Hola! Soy Martina, People Lead."
 
-* ["Vi la oferta y me pareció interesante."]
-    "¿Qué te pareció interesante específicamente?"
-    
-    Nada. Necesitás laburo.
-    Pero eso no se dice.
-    
-    "La... la cultura de la empresa."
-    
-    Te mira. No te cree.
-    Pero sigue.
-    -> busqueda_startup_cultura
+No Personal. No Recursos Humanos. People Lead.
+La misma mierda con tipografía sans-serif.
 
-* ["Necesito trabajo."]
-    Silencio.
-    
-    "Bueno, acá buscamos gente que venga por la misión, no solo por el sueldo."
-    
-    ¿La misión de una app de delivery?
-    ¿Cambiar el mundo llevando hamburguesas?
-    
-    ~ subir_dignidad(1)
-    -> busqueda_startup_fin_mal
+"¿Querés agua?"
 
-=== busqueda_startup_cultura ===
+Te da una botella de aluminio que dice "HYDRATE OR DIE."
 
-"Te cuento un poco de nosotros."
+"Acá somos re informales," dice. Te tutea.
+"No me digas usted, por favor, me hace sentir vieja."
+
+Tiene veinticinco.
 
 * [...]
 -
 
-"Somos una familia."
+Se sientan en unos sillones que parecen bolsas de dormir.
+No hay escritorio. No hay mesa.
+Vos tenés las rodillas más altas que la cadera.
+Te sentís ridículo.
 
-Alerta roja.
+"Bueno, antes de hablar del puesto, quiero conocerte a vos."
 
-"Acá no hay jefes, hay líderes."
-"No hay horarios, hay objetivos."
-"No hay sueldo fijo, hay equity."
+Sonríe. Esperás.
+
+"¿Qué animal serías?"
+
+* ["¿Perdón?"]
+    "Qué animal serías. Si fueras un animal."
+
+    Pensás: un burro. Porque acá me están tomando para la joda.
+
+    "Un... ¿perro?"
+
+    "¡Copado! ¿Por qué?"
+
+    "Porque es leal."
+
+    "Amamos la lealtad acá."
+
+    -> busqueda_startup_preguntas
+
+* [Seguirle el juego]
+    "Un gato."
+
+    "¿Por qué?"
+
+    "Porque es independiente."
+
+    Se le congela la sonrisa un segundo.
+    Acá no quieren independientes.
+
+    -> busqueda_startup_preguntas
+
+=== busqueda_startup_preguntas ===
+
+"¿Y cuál dirías que es tu superpoder?"
+
+Superpoder.
+Tenés cuarenta y pico, te echaron hace cuatro días,
+y esta piba te pregunta por tu superpoder.
+
+"Soy... organizado."
+
+"Ah, re. ¿Y cuál es tu debilidad?"
+
+"Soy demasiado honesto."
+
+Ni ella se lo cree. Ni vos.
+Pero el protocolo sigue.
 
 * [...]
 -
 
-Traducción:
-- "Familia" = vas a trabajar gratis fines de semana.
-- "Líderes" = el fundador es un tirano con buena prensa.
-- "Objetivos" = disponibilidad 24/7.
-- "Equity" = papelitos que no valen nada.
+"Contame de un fracaso y cómo lo convertiste en aprendizaje."
+
+Un fracaso.
+Te echaron hace cuatro días. ¿Cuenta?
+
+Llevaste quince años a un lugar que te sacó por mail.
+¿Eso es un fracaso o es una lección?
+¿Es aprendizaje o es que te cagaron?
+
+"En mi trabajo anterior hubo una reestructura..."
+
+Reestructura. La palabra linda para decir que te rajaron.
+
+"...y lo tomé como una oportunidad para replantearme."
+
+Mentís. No te replanteaste nada.
+Estás acá sentado en una bolsa de dormir
+contestando qué animal serías.
+
+Martina asiente. Toma notas en un iPad.
+
+* [...]
+-
+
+"Bueno, te cuento de nosotros."
+
+"Acá somos una familia."
+
+La frase. La red flag nuclear.
+
+"No hay jefes, hay líderes.
+No hay horarios, hay ownership.
+No hay empleados, hay co-creadores."
+
+Mirás alrededor.
+Los co-creadores tienen ojeras.
+Uno come una barrita de cereal sobre el teclado.
+Son las siete de la tarde.
+
+"Ah, y los viernes tenemos happy hour y pizza."
+
+La pizza. El soborno más viejo de la startup.
 
 * [Preguntar por el sueldo]
-    "¿Y el salario?"
-    
-    Se pone incómodo.
-    
-    "Mirá, acá no pensamos en salario. Pensamos en compensación total.
-    Tenés la heladera con snacks, el gym, el happy hour del viernes..."
-    
-    "¿Pero en pesos, cuánto?"
-    
-    Silencio largo.
-    
-    "Está en el rango de mercado."
-    
-    No te va a decir.
-    
-    -> busqueda_startup_fin_ambiguo
+    -> busqueda_startup_sueldo
 
 * [Seguir escuchando]
-    -> busqueda_startup_fin_ambiguo
+    -> busqueda_startup_sueldo
 
-=== busqueda_startup_fin_mal ===
+=== busqueda_startup_sueldo ===
 
-"Bueno, te agradecemos por venir."
+"¿Y la remuneración?"
 
-Sonrisa forzada.
+Se acomoda en el sillón-bolsa.
 
-"Te mantenemos al tanto."
+"Mirá, nosotros pensamos en compensación total.
+Tenés el snack bar, el gym, la heladera con birra,
+días de wellness, retiros de equipo en Rocha..."
 
-No te van a llamar.
-Lo sabés.
-Pero al menos dijiste la verdad.
+"Pero en plata."
 
-~ rechazos += 1
-->->
+"Estamos en el rango de mercado para el cargo."
 
-=== busqueda_startup_fin_ambiguo ===
+"¿Cuánto?"
 
-// Moment of accidental validation
-El entrevistador revisa tus respuestas.
+Silencio.
 
-"Mirá, te voy a ser honesto. Estás sobrecalificado."
+Martina se mira las uñas, pintadas de negro.
+
+Te dice un número.
 
 * [...]
 -
 
-"El puesto es para alguien con menos experiencia. Así les pagamos menos."
+Es cuarenta por ciento menos que tu último sueldo.
+Cuarenta por ciento menos. Por un trabajo que dice "senior" en el título.
 
-Te lo dice como si fuera un favor.
-Como si ser bueno en lo que hacés fuera un problema.
+"Pero tenemos equity," agrega rápido.
 
-"Pero tu perfil nos sirve para otra cosa. ¿Te molesta si te pasamos a la base de datos?"
+Equity. Acciones.
+De una startup que vende... algo.
+En la entrevista entera no entendiste bien qué vende.
+¿Software? ¿Una plataforma? ¿Vibraciones positivas?
 
-La base de datos. Donde van los CVs a morir.
+"Es una oportunidad de crecimiento re grosa."
 
-{dignidad >= 4:
-    "No. Gracias."
+Crecimiento para ellos. Pobreza para vos.
 
-    Te levantás. Le das la mano.
-    No necesitás su base de datos.
+* [...]
+-
+
+Martina se para. La entrevista terminó.
+
+"Fue un placer re grande conocerte."
+
+Te da la mano. Agarre suave.
+Te acompaña al ascensor.
+
+"Te vamos a estar contactando."
+
+No te van a contactar.
+Lo sabés. Ella lo sabe.
+Pero los dos sonríen.
+El protocolo del rechazo disfrazado de esperanza.
+
+El ascensor baja.
+Tu reflejo en la puerta de acero inoxidable.
+La botella de HYDRATE OR DIE todavía en tu mano.
+
+* [Irte con dignidad]
+    El ascensor se abre.
+
+    Te das vuelta.
+
+    "Martina."
+
+    Se da vuelta, sorprendida.
+
+    "Gracias, pero no es lo que busco."
+
+    La cara del People Lead. No esperaba un no.
+    Nadie dice que no. Todos necesitan laburo.
+
+    Pero vos dijiste que no.
 
     ~ subir_dignidad(1)
-    # NOTIFICATION:positive:Dijiste que no
-}
-{dignidad < 4:
-    "Sí, claro."
+    -> busqueda_startup_despues
 
-    Otra mentira. Otra sonrisa.
-    Otra base de datos.
-}
+* [Irte sonriendo]
+    "Dale, genial, esperamos tu llamado."
 
-"Bueno, quedamos en contacto."
+    Mentís. Mienten. Todos mienten.
+    La sonrisa te dura hasta la planta baja.
 
-"¿Cuándo me avisan?"
+    Después se te cae la cara.
 
-"En una semana, máximo dos."
+    -> busqueda_startup_despues
 
-* [...]
--
+=== busqueda_startup_despues ===
 
 Pasan tres semanas.
 Nada.
@@ -644,9 +741,11 @@ Nada.
 ~ rechazos_ghosting += 1
 ~ rechazos += 1
 
+Ni un mail. Ni un mensaje.
 El ghosting empresarial.
-Ni siquiera un mail de rechazo.
 Simplemente, dejás de existir.
+
+La botella de HYDRATE OR DIE termina en la basura.
 
 ->->
 
@@ -657,76 +756,144 @@ Simplemente, dejás de existir.
 === busqueda_entrevista_grande ===
 // Tunnel: La entrevista en empresa grande
 
-La entrevista fue online.
-Con una persona de Personal.
-Que no sabe qué hace el puesto.
+El edificio es de vidrio y acero.
+Logo corporativo enorme en la entrada.
+Seguridad, torniquetes, credencial de visitante.
+Te cuelgan del cuello una tarjeta que dice "INVITADO" en rojo.
+Como si necesitaras un cartel que diga que no pertenecés.
 
 * [...]
 -
 
-"¿Podés contarme de vos?"
+La sala de espera tiene sillas de plástico duro.
+Y una mesa ratona con revistas de 2019.
 
-La misma pregunta.
-La misma respuesta ensayada.
-El mismo teatro.
+Hay otros seis candidatos.
+Todos con la misma cara de "necesito esto."
+Todos evitando mirarse entre sí.
+
+Uno mueve la pierna sin parar.
+Otra revisa el celular, scrollea sin leer.
+Un pibe de traje prestado se mira los zapatos.
+Nadie habla.
+
+La solidaridad entre desempleados no existe acá.
+Acá son competencia.
+Cada uno de ellos es el enemigo.
+Aunque todos están en la misma mierda.
+
+Esperás cuarenta y cinco minutos.
+Nadie se disculpa.
+
+* [...]
+-
+
+Te llaman.
+
+Una sala con mesa larga, luces frías.
+Tres personas del otro lado.
+Vos solo de este.
+
+La del medio pregunta. Pelo tirante, traje gris.
+La de la izquierda toma notas. No levanta la vista.
+El de la derecha te mira. Solo te mira.
+No anotó nada. No preguntó nada.
+Está ahí para ponerte nervioso, y funciona.
+
+"¿Por qué querés trabajar acá?"
+
+Porque necesito comer, pensás.
+Porque el alquiler no se paga con motivación.
+Porque si no consigo algo me voy a la mierda.
+
+"Siempre admiré la trayectoria de la empresa," decís.
+
+La del medio asiente. La de la izquierda anota.
+El de la derecha parpadea.
 
 * [El discurso ensayado]
-    "Soy un profesional con X años de experiencia, bla bla bla..."
-    
-    La escuchaste mil veces.
-    En tu boca suena a mentira.
-    Porque es mentira.
+    "Soy un profesional con amplia experiencia en..."
+
+    Las palabras salen solas. Las dijiste tantas veces
+    que ya no significan nada.
+
+    Son un ruido que hacés con la boca
+    mientras tres desconocidos deciden si merecés comer.
     -> busqueda_grande_proceso
 
 * [Algo más real]
-    "Trabajo en esto hace varios años. Me echaron hace poco. Necesito laburo."
-    
-    Silencio.
-    
-    "Está bien la honestidad, pero... ¿podés enfocarte más en tus logros?"
-    
+    "Mire, trabajo en esto hace años. Me despidieron hace poco. Necesito laburo."
+
+    La de las notas levanta la vista por primera vez.
+    La del medio se acomoda en la silla.
+    El de la derecha no se inmuta.
+
+    "Valoramos la honestidad, pero ¿podés enfocarte más en tus competencias?"
+
+    Tus competencias. No tu hambre. Tus competencias.
+
     ~ subir_dignidad(1)
     -> busqueda_grande_proceso
 
 === busqueda_grande_proceso ===
 
-"Este es solo el primer paso del proceso."
+La del medio junta las manos.
 
-"¿Cuántos pasos hay?"
+"Bueno, te explico el proceso."
 
-"Siete."
+"Este es el primer paso."
 
 * [...]
 -
 
-Siete.
+"Después viene la prueba técnica."
 
-1. Personal telefónico.
-2. Personal videollamada.
-3. Técnica 1.
-4. Técnica 2.
-5. Caso práctico (5 horas de trabajo gratis).
-6. Panel con el equipo.
-7. Cultural fit con el CEO.
+"Después la evaluación psicológica."
 
-Para un puesto de $ 60.000 al mes.
+"Después entrevista con el gerente de área."
+
+"Después entrevista grupal con otros candidatos."
+
+"Después un período de prueba de tres meses. Sin contrato formal."
+
+"Y después, si todo sale bien, vemos."
+
+Siete etapas.
+Siete veces vestirte bien, ponerte nervioso, esperar, sonreír.
+Siete chances de que te digan que no.
+Para un trabajo que paga lo mínimo.
+
+"¿El período de prueba es remunerado?"
+
+Silencio.
+
+"Es un período de observación mutua."
+
+Observación mutua. Tres meses de laburo gratis
+con nombre de psicología.
 
 * ["Perfecto, cuando quieran."]
+    "Contá conmigo."
+
     La necesidad te hace flexible.
     Demasiado flexible.
-    
+
     ~ bajar_dignidad(1)
     -> busqueda_grande_espera
 
-* ["¿Siete entrevistas para esto?"]
+* ["¿Siete etapas para esto?"]
     "Es el proceso estándar de la industria."
-    
-    Estándar de explotación de candidatos.
-    
+
+    "¿La industria de qué? ¿De perder el tiempo de la gente?"
+
+    Se miran entre ellos.
+    El de la derecha sonríe por primera vez.
+
     "Gracias, pero no me interesa."
-    
-    Colgás.
-    
+
+    Te levantás.
+    Dejás la credencial de INVITADO en la mesa.
+
     ~ subir_dignidad(1)
     ~ rechazos += 1
     ->->
@@ -735,23 +902,45 @@ Para un puesto de $ 60.000 al mes.
 
 Pasás la primera.
 Pasás la segunda.
-Hacés el caso práctico (un fin de semana entero).
+La prueba psicológica te pregunta si preferís trabajar solo o en equipo.
+Marcás "en equipo" porque sabés que eso quieren leer.
+
+Hacés el caso práctico. Un fin de semana entero.
+Diez horas de trabajo gratis que llaman "evaluación."
 
 * [...]
 -
 
-Mail después del quinto paso:
+Después: nada.
 
-"Gracias por tu tiempo e interés.
-Lamentablemente, hemos decidido avanzar con otros candidatos
-que se ajustan mejor al perfil requerido."
+Un lunes. Un martes. Una semana.
+
+El jueves, un mail.
+
+"Estimado/a,
+
+Agradecemos su interés en formar parte de nuestra organización.
+Tras una evaluación exhaustiva de los perfiles recibidos,
+hemos decidido continuar el proceso con otros candidatos
+cuyo perfil se ajusta mejor a los requerimientos actuales del cargo.
+
+Le deseamos éxito en su búsqueda profesional.
+
+Atentamente,
+Dirección de Capital Humano"
 
 * [...]
 -
 
-15 horas de tu vida.
-5 etapas.
-Para un mail genérico.
+Capital Humano.
+No te llamaron por tu nombre.
+Porque no saben tu nombre.
+Lo generó un algoritmo que cruza una base de datos
+con un template de rechazo.
+
+Quince horas de tu vida.
+Cinco etapas.
+Para un mail automático.
 
 ~ rechazos += 1
 ~ aumentar_inercia(1)
@@ -759,6 +948,11 @@ Para un mail genérico.
 No sabés qué hiciste mal.
 Nunca sabés.
 Porque no te dicen.
+Porque probablemente ni ellos saben.
+Probablemente el puntaje de un Excel decidió por ellos.
+
+La credencial de INVITADO la tiraste a la basura al salir.
+Pero el olor a oficina corporativa te quedó en la ropa.
 
 ->->
 

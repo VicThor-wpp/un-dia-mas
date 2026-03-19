@@ -754,7 +754,21 @@ Vos también.
 // DIARIO DE CONCIENCIA
 -> diario_escribir ->
 
-* [Dormir] -> fragmento_jueves
+* [Dormir]
+    {not tiene_laburo:
+        No ponés alarma.
+        Primera vez en tres años.
+        La libertad se parece demasiado al vacío.
+
+        El celular queda mudo en la mesa de luz.
+        Sin la cuenta regresiva de las 6:15.
+        Sin razón para que suene.
+
+        Te acostás del lado de siempre.
+        Pero la cama se siente más grande. Más fría.
+        Como si el laburo ocupara un lugar físico que ahora está vacío.
+    }
+    -> fragmento_jueves
 
 === fragmento_jueves ===
 
@@ -834,6 +848,22 @@ que las cosas se construyen de abajo para arriba.
     "Al final es a todos", piensa.
 }
 
+{not tiene_laburo:
+    Marcos piensa en su primer lunes sin laburo.
+    En cómo el silencio del despertador que no suena
+    se parece al silencio de un velorio.
+
+    Él ya pasó por eso. Sabe lo que viene.
+    La vergüenza de ir al súper a las 10 de la mañana.
+    Las miradas que imaginás. Las preguntas que evitás.
+
+    "El primer mes pensás que es temporal", murmura.
+    "El segundo te acostumbrás. El tercero ya no buscás."
+
+    No quiere eso para vos.
+    Pero no sabe cómo decirlo sin sonar roto.
+}
+
 Se sirve un dedo de whisky.
 Lo mira un rato largo antes de tomarlo.
 Medio vaso. La regla.
@@ -906,6 +936,25 @@ Capaz.
 // Sofia pensando
 -> sofia_fragmento_pensar ->
 
+{not tiene_laburo:
+    Sofía se acuesta pero no apaga la luz.
+
+    Piensa en vos. En tu cara hoy.
+    En esa mirada de animal acorralado que tiene la gente
+    cuando el mundo se les achica de golpe.
+
+    Ella conoce esa mirada.
+    La vio en el espejo cuando el padre de sus hijos se fue.
+    La vio en cada persona que llegó a la olla sin saber por qué.
+
+    "Mañana va a venir", piensa.
+    "Tiene que venir."
+
+    Porque la olla no es solo comida.
+    Es el lugar donde la gente descubre
+    que todavía puede hacer algo con las manos.
+}
+
 Mañana hay que buscar soluciones.
 
 ->->
@@ -966,6 +1015,25 @@ Mañana hay que buscar soluciones.
 // Fragmento nocturno de Elena
 -> elena_fragmento_noche ->
 
+{not tiene_laburo:
+    Elena apaga la radio.
+
+    En el silencio piensa en todas las noches
+    que Raúl se quedó mirando el techo.
+    Sin laburo. Sin saber qué decirle a los hijos.
+
+    Ella le agarraba la mano en la oscuridad.
+    No decía nada. No hacía falta.
+
+    Ahora piensa en vos.
+    En que esta es tu primera noche sin alarma.
+    En que nadie te agarra la mano.
+
+    "Mañana lo llamo temprano", decide.
+    No para decir nada útil.
+    Para que sepas que alguien se acuerda.
+}
+
 ->->
 
 === fragmento_diego_jueves ===
@@ -1025,6 +1093,27 @@ Mañana hay que buscar soluciones.
 
 // Fragmento nocturno de Diego
 -> diego_fragmento_noche ->
+
+{not tiene_laburo:
+    Diego se da vuelta en la cama.
+    El compañero de cuarto ronca.
+
+    Piensa en vos.
+    En que hoy fue tu primer día sin laburo.
+    En que mañana va a ser el segundo.
+
+    Cuando él llegó a Uruguay no tenía laburo.
+    Tres meses buscando. Tres meses de nada.
+    Sabe lo que se siente despertarse sin razón para levantarse.
+
+    "A mí me salvó la olla", piensa.
+    "Alguien me pasó un plato sin preguntar nada."
+
+    Mañana te va a buscar.
+    No para darte un consejo. No tiene ninguno.
+    Para que no estés solo en esto.
+    Porque nadie debería estar solo en esto.
+}
 
 ->->
 
