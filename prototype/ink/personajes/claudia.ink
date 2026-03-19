@@ -240,6 +240,9 @@ irregularidades en la distribución."
 
 El hambre convertido en infracción administrativa.
 La solidaridad, en delito contable.
+El Estado no falla en ayudar. El Estado controla quién ayuda.
+Porque una olla que funciona sin el Estado demuestra que el Estado no es necesario.
+Y eso no puede ser.
 
 ->->
 
@@ -402,11 +405,19 @@ En las ollas que la mantuvieron viva.
 
 Pero la imagen no se va.
 
+Sabe lo que hace.
+Sabe que el protocolo que aplica es el mismo que hubiera cerrado la olla de su abuela.
+Pero el protocolo no es suyo. Es del ministerio. Del sistema.
+Ella solo aplica.
+
+Eso es lo que se dice.
+
 Prende el auto.
 Se va.
 
-Mañana tiene que decidir.
-Hoy prefiere no pensar.
+El problema no es Claudia.
+El problema es que el Estado necesita Claudias.
+Gente que sabe y aplica igual.
 
 ->->
 

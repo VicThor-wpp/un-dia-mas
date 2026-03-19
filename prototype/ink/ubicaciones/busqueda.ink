@@ -1141,6 +1141,29 @@ Alguien te mira.
     }
 }
 
+{rechazos_enviados >= 15 && not idea_no_es_individual:
+
+    Quince postulaciones. Cero respuestas.
+
+    Pero esta vez no te sentís inútil.
+    Te sentís estafado.
+
+    Porque viste los números.
+    847 postulantes para un puesto.
+    La mitad del sueldo que pagaban antes.
+    "Beneficios: fruta en la oficina."
+
+    No es que no valés.
+    Es que el mercado necesita que creas que no valés.
+    Así aceptás cualquier cosa.
+    Así bajás el precio de tu laburo.
+    Así la ganancia de alguien sube.
+
+    ~ activar_no_es_individual()
+    # IDEA DESBLOQUEADA: "NO ES SOLO MI PROBLEMA"
+    # NOTIFICATION:info:Lo viste solo. Sin que nadie te lo diga.
+}
+
 La semana que viene, más de lo mismo.
 O capaz que no.
 Capaz que alguien contesta.

@@ -77,6 +77,34 @@ La cabeza no.
         ->->
 }
 
+// --- REFLEXIÓN SABOTAJE LEGÍTIMO (derivada de Claudia) ---
+{idea_antagonismo_clase && claudia_hostilidad >= 2 && lista_entregada == false && not idea_sabotaje_legitimo:
+
+    Pensás en Claudia. En la planilla. En el protocolo.
+
+    Lo "legal" es que te pidan cédula para comer.
+    Lo "ilegal" es darle comida a alguien sin papeles.
+
+    Si la ley dice que el hambre es legal y la solidaridad es delito...
+
+    * [Pensar: "La ley está mal."]
+        La ley no está mal. La ley funciona perfecto.
+        Protege la propiedad. No a las personas.
+        Siempre fue así.
+
+        A veces, desobedecer la ley es lo más digno que podés hacer.
+
+        ~ activar_sabotaje_legitimo()
+        # IDEA DESBLOQUEADA: "A VECES HAY QUE ROMPER PARA CONSTRUIR"
+        # NOTIFICATION:info:Una idea peligrosa pero honesta
+        ->->
+
+    * [Dejarlo pasar]
+        No es el momento.
+        Quizás nunca.
+        ->->
+}
+
 // --- REFLEXIÓN BRUNO (Viernes/Sábado) ---
 {bruno_tension > 0:
     La camioneta negra.

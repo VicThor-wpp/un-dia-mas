@@ -147,7 +147,8 @@ Los ojos de los que miran y anotan."
 
 * ["¿Usted cree que es el mismo?"]
     "No sé si es el mismo. Pero es del mismo palo.
-    Orden. Disciplina. Control.
+    Orden. Disciplina. Control. Fascismo, m'hijo. Se llama fascismo.
+    No importa si usa uniforme o camisa. Si te pide obediencia a cambio de seguridad, es fascismo.
     Las palabras cambian. La mirada no."
     
     ~ elena_conto_bruno = true
@@ -226,8 +227,9 @@ Bruno se ríe.
 Elena da un paso adelante.
 Bruno, por primera vez, retrocede.
 
-"La dignidad no se cobra, Bruno. Se construye.
-Vos no sabés de eso."
+"La dignidad no se cobra, Bruno. Se construye. Entre todos.
+Vos lo que hacés es comprar obediencia con comida. Eso tiene nombre.
+Y los que lo hicieron antes terminaron mal."
 
 Bruno achica los ojos.
 "Nos vamos a ver de nuevo, doña."
@@ -420,6 +422,9 @@ Tiago mira las championes. Mira la olla cerrada.
     "Nadie los obliga. Pero ninguno se va."
 
     Eso último suena menos a libertad de lo que pretende.
+
+    El fascismo siempre empieza así. No con tanques.
+    Con alguien que le ofrece orden a los que no tienen nada.
     
     * [Acercarte.]
         Caminás hacia ellos.

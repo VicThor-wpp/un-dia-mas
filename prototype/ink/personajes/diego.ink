@@ -454,7 +454,27 @@ Diego se pone serio.
 
 "El Estado quería que dependiéramos de él. Créditos estatales, contratos oficiales, consejos comunales alineados al partido. Nosotros dijimos que no. CECOSESOLA nunca aceptó plata del gobierno. Preferíamos ser pobres y libres."
 
-* [...]
+* ["¿Pero por qué funciona sin jefe?"]
+
+    Diego sonríe. Como si le hubieran hecho la pregunta correcta.
+
+    "Porque el jefe se queda con la diferencia.
+    Vos producís cien, el jefe te paga treinta, se queda setenta.
+    Eso es una empresa."
+
+    * [...]
+    -
+
+    "En la cooperativa, producís cien, te quedás cien.
+    No hay nadie arriba sacando tajada."
+
+    "Así de simple."
+
+    "Así de simple. Por eso nos combaten. No porque no funcione.
+    Porque funciona demasiado bien."
+
+* [Asentir]
+
 -
 
 "Y eso nos hizo enemigos."
@@ -612,7 +632,9 @@ Marcos se queda callado.
 
 Diego sigue:
 
-"Sin la asamblea, sos solo otro tipo con libros y buenas intenciones. Y eso no alcanza."
+"Sin la asamblea, sos solo otro tipo con libros y buenas intenciones. Y eso no alcanza.
+La asamblea no es democracia de juguete. Es el único lugar donde el que trabaja decide.
+En la empresa decide el dueño. En el Estado decide el funcionario. En la asamblea decidís vos."
 
 Silencio incómodo.
 

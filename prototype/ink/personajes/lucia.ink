@@ -679,7 +679,11 @@ Lucía suspira.
 
 Lucía toma mate.
 
-"El sistema está armado así. Las empresas tercerizan, contratan unipersonales, y se ahorran el treinta por ciento de aportes. Vos ponés el cuerpo, ellos ponen las reglas."
+"El sistema está armado así. Las empresas tercerizan, contratan unipersonales, y se ahorran el treinta por ciento de aportes. Vos ponés el cuerpo, ellos ponen las reglas.
+
+¿Y sabés lo peor? No es un error. Es una ley. La escribieron así a propósito. Las cámaras empresariales la pidieron. Los legisladores la votaron. Y los sindicatos no pudieron frenarla porque los unipersonales no somos 'trabajadores' ante la ley.
+
+Somos 'empresas'. De una sola persona. Sin capital. Sin empleados. Sin nada. Pero somos 'empresas'."
 
 # PAUSA
 
@@ -693,7 +697,7 @@ Lucía toma mate.
 
 === lucia_cierre_institucional ===
 
-"Mirá, yo no te voy a mentir. El Estado no te va a salvar. El sindicato tampoco, porque legalmente no sos de los nuestros."
+"Mirá, yo no te voy a mentir. El Estado no te va a salvar. El Estado es el que firmó la ley que te deja afuera. El sindicato tampoco puede, porque legalmente no sos de los nuestros. Sos una 'empresa' que le factura a otra empresa. Dos empresas haciendo negocios. ¿Ves la trampa?"
 
 # PAUSA
 

@@ -55,9 +55,14 @@ De que juntos, hay algo.
 
 El sistema no cambió.
 No va a cambiar mañana.
-Quizás nunca.
 
-Pero ustedes sí cambiaron.
+Pero en esta cuadra, en esta olla, con esta gente,
+hay un pedazo de mundo que funciona sin patrón.
+Sin permiso. Sin Estado.
+
+Eso ya es cambio.
+Pequeño. Frágil. Pero real.
+Y los cambios reales siempre empiezan así.
 
 * [...]
 -
@@ -465,6 +470,22 @@ Pero ellos te venden la pastilla.
 Y vos te la tomás.
 
 Porque mañana hay que levantarse igual.
+
+* [...]
+-
+
+Pero hay algo que la pastilla no borra.
+
+Sabés.
+
+Sabés que el problema no sos vos.
+Sabés que el alquiler está caro porque alguien se enriquece con tu necesidad.
+Sabés que "flexibilidad" es la palabra que usan para no darte derechos.
+Sabés que hay otros que saben lo mismo.
+
+No es consuelo. Pero es el principio de algo.
+La rabia lúcida no es enfermedad.
+Es el primer paso.
 
 * [...]
 -

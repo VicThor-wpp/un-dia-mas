@@ -222,7 +222,8 @@ Sigue pelando. No mira.
 -
 
 "No teníamos nada. Pero teníamos bronca y teníamos manos.
-Cocinábamos en la calle para que nos vieran. Para que supieran que no nos íbamos a morir en silencio."
+Cuando cerraron el frigorífico del Cerro, setecientas familias se quedaron en la calle.
+Cocinábamos en la vereda para que nos vieran. Para que supieran que no nos íbamos a morir en silencio."
 
 "¿Cuántos venían?"
 
@@ -422,7 +423,9 @@ Los bancos cerrados. Todo cerrado."
 "¿Cómo sobrevivieron?"
 
 "Organizándonos. No esperando.
-Entendiendo que la vergüenza es de ellos, no nuestra."
+Entendiendo que la vergüenza es de ellos, no nuestra.
+El capitalismo necesita que te dé vergüenza ser pobre.
+Así no pedís lo que te corresponde."
 
 * [...]
 -
@@ -434,7 +437,7 @@ El trueque, las asambleas... eran formas de decir 'acá estamos y no nos vamos'.
 
 "¿Y después?"
 
-"Después volvió todo. El país se acomodó para los que siempre están bien. Los políticos se votaron sus propios aumentos y nos dijeron que la 'crisis había pasado'. Pero la crisis no pasa para el que perdió la casa o el que se le rompió la familia. Nosotros nos quedamos acá, sosteniendo los pedazos que ellos tiraron por la ventana."
+"Después volvió todo. El capital se reacomodó. Los de siempre volvieron a ganar. Los políticos se votaron sus propios aumentos y nos dijeron que la 'crisis había pasado'. Pero la crisis no pasa. La crisis es el sistema. Lo que pasa es que a veces se nota más."
 
 ~ elena_relacion += 1
 ~ subir_conexion(1)
@@ -716,7 +719,7 @@ Se ríe con ganas.
 
 "Pero..."
 
-"Pero aprendí que el de arriba siempre caga al de abajo. No importa el color de la bandera."
+"Pero aprendí que el de arriba siempre caga al de abajo. No importa el color de la bandera. Capitalismo, socialismo de Estado, lo que sea. Si hay un arriba y un abajo, el de arriba te caga."
 
 * [...]
 -

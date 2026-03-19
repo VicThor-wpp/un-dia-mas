@@ -234,6 +234,33 @@ pasar lo que pasé yo."
     "Marcos... lo vi el otro día. Está mal. ¿Vos hablás con él?"
 }
 
+{participe_asamblea && veces_que_ayude >= 2:
+
+    Sofia se queda mirando la olla.
+
+    "¿Sabés qué me dijo Elena el otro día?"
+
+    * [...]
+    -
+
+    "Que esto no es caridad. Que esto es política."
+
+    "Y yo le dije que no, que esto es cocinar."
+
+    "Pero después lo pensé. Y tiene razón."
+
+    * [...]
+    -
+
+    "Nadie nos mandó a hacer esto. Nadie nos paga.
+    Nadie nos dio permiso.
+    Lo hacemos porque se necesita.
+    Y funciona."
+
+    "Eso es poder, ¿no? Poder real.
+    No el poder de mandar. El poder de hacer."
+}
+
 * ["Sos muy fuerte."] -> sofia_respuesta_fuerte
 * ["¿No te cansás?"] -> sofia_respuesta_cansancio
 * ["¿Qué pasó cuando llegaste?"] -> sofia_historia

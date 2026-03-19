@@ -28,6 +28,10 @@ El ascensor de siempre.
 Todos dicen buen día.
 Nadie pregunta si lo es.
 
+Afuera el bondi pasó lleno. Adentro el café cuesta ochenta pesos.
+La empresa factura en dólares. Vos facturás en pesos.
+La diferencia es el negocio de alguien.
+
 ->->
 
 === laburo_llegada_tarde ===
@@ -79,6 +83,11 @@ Lo de siempre.
     Cometés un error estúpido. Un mail al cliente equivocado.
     El jefe se da cuenta. "Prestá atención."
     ~ aumentar_inercia(1)
+}
+
+{d6() >= 5:
+    Por la ventana se ve el puerto. Las grúas. Los contenedores que van y vienen.
+    La riqueza del país pasando de largo.
 }
 
 ->->
@@ -515,6 +524,8 @@ La mujer lee. No te mira. Lee de un papel.
 "La empresa está atravesando un proceso de reestructuración y optimización de recursos."
 
 Optimización de recursos. Vos sos el recurso.
+Lo que significa: tu laburo generaba plata. Pero no la suficiente.
+No para vos. Para ellos. Siempre para ellos.
 
 * [...]
 -
@@ -586,7 +597,10 @@ Porque sos profesional.
 Porque te enseñaron a ser profesional mientras te robaban.
 
 Nunca es personal.
-Es el sistema funcionando como fue diseñado.
+Es el capitalismo funcionando como fue diseñado.
+Tu laburo vale más de lo que te pagan. Siempre valió más.
+La diferencia se la quedó la empresa. Tres años de diferencia.
+Y ahora te dan una caja de cartón.
 
 * [Irte] -> laburo_despido_firmar
 

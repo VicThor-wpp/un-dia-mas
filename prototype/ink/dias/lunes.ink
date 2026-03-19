@@ -13,6 +13,12 @@
 // AMBIENTE Y RADIO
 -> ambiente_amanecer ->
 
+{escucho_radio:
+    La CX 30 habla de despidos en la zona franca.
+    Trescientos. "Reestructuración", dicen.
+    Siempre dicen reestructuración.
+}
+
 // Despertar en casa (tunnel)
 -> casa_despertar ->
 
