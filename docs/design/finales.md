@@ -7,6 +7,33 @@
 
 El juego tiene **19 finales** organizados en 6 categorías según su tono y dificultad. Los finales se evalúan en orden de prioridad al final del domingo, y el primero que cumpla sus condiciones es el que se muestra.
 
+### Distribución medida (2026-08-02)
+
+Medida sobre 1.000 partidas con decisiones al azar, después del rebalanceo de
+inercia. El jugador aleatorio es el piso, no el jugador real: sirve para ver si
+el sistema deja lugar a algo más que un solo desenlace.
+
+| Final | % aleatorio |
+|-------|-------------|
+| APAGADO | 53% |
+| JUAN MIGRANTE | 14% |
+| RESISTENCIA SILENCIOSA | 6% |
+| QUIZÁS | 6% |
+| LA RED | 5% |
+| OCUPACIÓN | 5% |
+| DESPERTAR | 5% |
+| GRIS | 2% |
+| resto (7 finales) | <1% cada uno |
+
+Un jugador que decide a conciencia da vuelta el cuadro: simulando uno que elige
+siempre la opción que menos inercia suma, APAGADO cae a **2%**. Antes del
+rebalanceo ese mismo jugador moría el 64% de las veces, y el aleatorio el 93%.
+
+Cuatro finales (SOLO, INCIERTO, TEJIDO, LA LLAMA y los radicales más exigentes)
+siguen apareciendo poco o nada en juego aleatorio: son rutas que piden
+intención sostenida, no un problema de balance en sí, pero conviene verificarlas
+a mano antes de darlas por alcanzables.
+
 ---
 
 ## Variables Clave

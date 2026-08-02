@@ -230,20 +230,22 @@ const dayFiles = [
 for (const { file, transitionKnot } of dayFiles) {
     const content = readFile(path.join('dias', file));
     if (content) {
-        // Check for final_apagado reference
-        const hasApagado = content.includes('final_apagado');
+        // El game over se decide en un solo lugar: check_game_over aplica el
+        // umbral de inercia, el período de gracia de los primeros días y la
+        // intervención del vínculo. Cada transición nocturna debe tunelarlo,
+        // no repetir el chequeo por su cuenta (repetirlo salteaba las tres
+        // cosas).
+        const transitionBody = content.split(`=== ${transitionKnot} ===`)[1] || '';
+        const scope = transitionBody.split(/^=== /m)[0];
         test(
-            `${file}: checks for final_apagado (mental collapse)`,
-            hasApagado,
-            `No reference to final_apagado found in ${file}`
+            `${file}: la transición nocturna tunela check_game_over`,
+            /-> *check_game_over *->/.test(scope),
+            `${transitionKnot} no llama a check_game_over`
         );
-
-        // Check for final_sin_llama reference
-        const hasSinLlama = content.includes('final_sin_llama');
         test(
-            `${file}: checks for final_sin_llama (social collapse)`,
-            hasSinLlama,
-            `No reference to final_sin_llama found in ${file}`
+            `${file}: la transición no duplica el chequeo de game over`,
+            !/-> *final_apagado/.test(scope) && !/-> *final_sin_llama/.test(scope),
+            `${transitionKnot} divierte directo a un final en vez de usar check_game_over`
         );
 
         // Verify the transition knot exists

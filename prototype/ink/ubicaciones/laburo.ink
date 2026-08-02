@@ -119,7 +119,7 @@ Mails que podrían ser nada.
             Sigue.
 
             ¿Qué mierda fue eso?
-            ~ aumentar_inercia(1)
+            ~ desgaste_rutina()
         }
     }
 }
@@ -137,7 +137,7 @@ Mails que podrían ser nada.
     Tratás de no hacer ruido.
     Te lavás las manos rápido y salís.
     El sonido del llanto te sigue hasta el escritorio.
-    ~ aumentar_inercia(1)
+    ~ desgaste_rutina()
 
 - 2:
     La impresora se traba.
@@ -145,7 +145,7 @@ Mails que podrían ser nada.
     "LISTA DE REVISIÓN DE PUESTOS - CONFIDENCIAL"
     Alguien te lo arranca de la mano antes de que leas nombres.
     "Dámelo." Es la secretaria de Personal.
-    ~ aumentar_inercia(1)
+    ~ desgaste_rutina()
 
 - 3:
     Reunión de equipo.

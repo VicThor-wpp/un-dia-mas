@@ -1455,15 +1455,10 @@ Pero quizás no igual.
 ~ efecto_red_o_nada()
 ~ efecto_noche_solitaria()
 
-// Chequeo de colapso mental antes de continuar
-{inercia >= 10:
-    -> final_apagado
-}
-
-// Chequeo de destrucción del tejido social
-{llama <= 0:
-    -> final_sin_llama
-}
+// Un solo lugar decide el game over: check_game_over aplica el umbral, el
+// período de gracia de los primeros días y la intervención del vínculo.
+// Duplicar el chequeo acá lo salteaba por completo.
+-> check_game_over ->
 
 -> domingo_amanecer
 

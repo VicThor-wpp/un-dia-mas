@@ -191,6 +191,10 @@ El kiosquero te conoce de vista.
     "No te cobro ese. Cara de que lo necesitás."
     Le agradecés. A veces la gente te sorprende.
     ~ subir_conexion(1)
+    // Días 1-3: que alguien te alcance afloja la inercia. Es la misma regla que
+    // rige del jueves en adelante; antes no estaba cableada y el medidor solo
+    // podía subir durante media semana.
+    ~ disminuir_inercia(1)
 }
 { kiosco_charla == 1:
     "Son todos largos." Se queda un rato. "Pero se bancan."
@@ -239,6 +243,7 @@ Levanta la vista. No sonríe, pero tampoco es frío.
     Para que uno se acostumbre a la idea antes de que pase."
     Acomoda un bordado.
     "Ojalá acá sea distinto."
+    ~ disminuir_inercia(1)
     -> lunes_ir_casa
 * ["Todo bien."] # EFECTO:conexion-
     Ella asiente. No insiste.
@@ -256,6 +261,7 @@ Está en la puerta, los pibes adentro.
     ~ subir_conexion(1)
     Le contás. Los rumores. La reunión.
     "En la olla estamos peor", dice. "Pero entiendo."
+    ~ disminuir_inercia(1)
     -> lunes_ir_casa
 * ["Sí, todo bien."] # EFECTO:conexion-
     "Si necesitás algo..."
@@ -276,6 +282,7 @@ Hablan un rato.
 Diego también tiene miedo.
 
 ~ subir_conexion(1)
+~ disminuir_inercia(1)
 
 -> lunes_ir_casa
 
@@ -307,6 +314,7 @@ Sofía está adentro.
     ~ subir_conexion(1)
     ~ subir_llama(1)
     ~ energia -= 1
+    ~ disminuir_inercia(1)
     Te ponen a ordenar cosas.
     No es mucho. Pero es algo.
     -> lunes_ir_casa
@@ -597,14 +605,9 @@ No dice más.
 ~ efecto_red_o_nada()
 ~ efecto_noche_solitaria()
 
-// Chequeo de colapso mental antes de continuar
-{inercia >= 10:
-    -> final_apagado
-}
-
-// Chequeo de destrucción del tejido social
-{llama <= 0:
-    -> final_sin_llama
-}
+// Un solo lugar decide el game over: check_game_over aplica el umbral, el
+// período de gracia de los primeros días y la intervención del vínculo.
+// Duplicar el chequeo acá lo salteaba por completo.
+-> check_game_over ->
 
 -> martes_amanecer

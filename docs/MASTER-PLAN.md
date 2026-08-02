@@ -28,6 +28,45 @@ La lucha del jugador no es por "ser feliz", sino por mantener la **agencia** (ca
 - **8-9 (Parálisis):** Opciones bloqueadas. Riesgo de Final Gris.
 - **10 (Apagado):** El personaje se convierte en autómata. Fin del juego.
 
+#### Fases: por qué el colapso empieza el jueves
+La olla, la asamblea y los vínculos recién abren el día 4. Durante los días
+1-3 el juego no ofrece ninguna forma de bajar la inercia, así que dejarla
+matar en esa ventana era matar al jugador antes de darle con qué defenderse
+—y contradecía la tesis del juego, que la salida es colectiva.
+
+Dos reglas resuelven esto, ambas en `mecanicas/recursos.ink`:
+
+- **Techo por fase** (`aumentar_inercia`): antes del día 4 la inercia no pasa
+  de **8**. La semana previa al despido te lleva al borde; el colapso pertenece
+  a lo que viene después.
+- **Período de gracia** (`check_game_over`): antes del día 4 el umbral de game
+  over queda suspendido. La inercia se sigue acumulando; lo que no puede pasar
+  es que termine la partida.
+
+Además, los días 1-3 sí tienen formas de bajarla: buscar a alguien y que te
+encuentre (el kiosquero, la señora del bondi, tu vínculo, contarlo en la olla)
+resta 1. Es la misma regla que ya regía del jueves en adelante.
+
+#### Desgaste de rutina
+`desgaste_rutina()` es el desgaste de fondo del laburo —el jefe que pasa sin
+decir nada, el evento menor de tensión—. Se dispara todos los días laborales,
+así que solo suma las **dos primeras veces**: la primera pega, la tercera ya
+es la misma nota repetida. Los golpes con causa (la reunión, la citación, la
+firma) suman siempre.
+
+#### Segundas oportunidades
+Cada una se usa **una sola vez por partida**:
+- `vinculo_intervino`: si tu vínculo tiene relación ≥3, aparece cuando cruzás
+  el umbral y te baja 3 de inercia.
+- `chispa_usada`: si ayudaste en la olla y Sofía te tiene ley, el domingo
+  reaviva la llama en 0.
+
+#### Un solo lugar decide
+El game over se evalúa **solo** en `check_game_over`, tunelado desde cada
+transición nocturna. Duplicar el chequeo en los archivos de día salteaba el
+techo, la gracia y la intervención del vínculo. `scripts/test-endings.js`
+verifica que ninguna transición divierta directo a un final.
+
 ---
 
 ## 2. NARRATIVA CANÓNICA
@@ -144,8 +183,8 @@ El protagonista no es un empleado formal despedido con indemnización. Es un **f
 
 El juego evalúa condiciones en orden de prioridad en `domingo.ink`:
 
-1.  **APAGADO** (`inercia >= 10`): Colapso de agencia. Game Over temprano posible.
-2.  **SIN LLAMA** (`llama <= 0`): Colapso del tejido social. Game Over temprano posible.
+1.  **APAGADO** (`inercia >= 10`): Colapso de agencia. Game Over posible desde el día 4.
+2.  **SIN LLAMA** (`llama <= 0`): Colapso del tejido social. Game Over posible desde el día 4.
 3.  **TEJIDO** (Ruta Ixchel): Requiere relación profunda con Ixchel y valores comunitarios.
 4.  **LA LLAMA** (Oculto/Perfecto): Requiere `conexion` y `llama` altas + Ideas desbloqueadas.
 5.  **LUCHA COLECTIVA**: Participación activa en asamblea y ayuda constante.

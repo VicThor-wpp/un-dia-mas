@@ -32,7 +32,7 @@ Los brazos son pura fibra y nervio.
 Te ve mirando.
 "¿Qué mirás? ¿Ayudás o estorbás?"
 
-* [Ofrecer ayuda.]
++ [Ofrecer ayuda.]
     "Vengo a dar una mano."
     
     Te mira de arriba abajo.
@@ -46,7 +46,7 @@ Te ve mirando.
     ~ tiago_confianza = 1
     ->->
 
-* [Preguntar quién es.]
++ [Preguntar quién es.]
     "¿Y vos quién sos?"
     
     "Soy el que mueve las cosas para que coman."
@@ -56,7 +56,7 @@ Te ve mirando.
     ~ tiago_confianza = 0
     ->->
 
-* [Quedarte mirando.]
++ [Quedarte mirando.]
     Seguís mirando.
     
     "Bo, ¿sos de la tele o qué? Dejá de mirar y hacé algo."

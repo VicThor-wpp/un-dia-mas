@@ -1162,15 +1162,10 @@ Los problemas no.
 ~ efecto_red_o_nada()
 ~ efecto_noche_solitaria()
 
-// Chequeo de colapso mental antes de continuar
-{inercia >= 10:
-    -> final_apagado
-}
-
-// Chequeo de destrucción del tejido social
-{llama <= 0:
-    -> final_sin_llama
-}
+// Un solo lugar decide el game over: check_game_over aplica el umbral, el
+// período de gracia de los primeros días y la intervención del vínculo.
+// Duplicar el chequeo acá lo salteaba por completo.
+-> check_game_over ->
 
 -> viernes_amanecer
 
@@ -1190,7 +1185,9 @@ Todo se pone oscuro. La cabeza no funciona.
 
 Pero algo te sostiene. Un recuerdo. Una cara. Algo.
 
-~ inercia = 9
+// Dejarte en 9 hacía que el rescate no significara nada: cualquier subida
+// posterior te mataba igual. En 7 seguís mal, pero el que te sostuvo sirvió.
+~ inercia = 7
 
 No estás bien. Pero seguís.
 

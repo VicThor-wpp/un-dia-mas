@@ -232,6 +232,13 @@ VAR idea_ayni = false  // "La reciprocidad es supervivencia" - ayudar recupera e
 // Tracking de inercia máxima (para final_despertar)
 VAR inercia_maxima_alcanzada = 0
 
+// Desgaste de fondo del laburo (ver desgaste_rutina() en recursos.ink)
+VAR desgaste_rutina_acumulado = 0
+
+// Segundas oportunidades: cada una se puede usar una sola vez por partida
+VAR vinculo_intervino = false        // El vínculo te sacó del borde de la inercia
+VAR chispa_usada = false             // Sofía reavivó la llama cuando estaba en cero
+
 // --- BÚSQUEDA DE EMPLEO ---
 VAR rechazos = 0                     // Rechazos totales recibidos
 VAR rechazos_enviados = 0            // CVs enviados (al vacío)

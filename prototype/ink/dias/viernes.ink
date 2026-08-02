@@ -1222,15 +1222,10 @@ Para hablar de cómo seguir.
 ~ efecto_red_o_nada()
 ~ efecto_noche_solitaria()
 
-// Chequeo de colapso mental antes de continuar
-{inercia >= 10:
-    -> final_apagado
-}
-
-// Chequeo de destrucción del tejido social
-{llama <= 0:
-    -> final_sin_llama
-}
+// Un solo lugar decide el game over: check_game_over aplica el umbral, el
+// período de gracia de los primeros días y la intervención del vínculo.
+// Duplicar el chequeo acá lo salteaba por completo.
+-> check_game_over ->
 
 -> sabado_amanecer
 
@@ -1249,7 +1244,8 @@ Todo se pone oscuro. Otra vez. Peor.
 
 Pero algo queda. Alguien dijo tu nombre hoy. Alguien te vio.
 
-~ inercia = 9
+// Ver el comentario equivalente en jueves.ink.
+~ inercia = 7
 
 No estás bien. Pero todavía estás.
 

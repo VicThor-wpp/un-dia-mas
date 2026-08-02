@@ -217,7 +217,12 @@ with an explicit `-> nombre_del_stitch`.
 - `dignidad` (0-10, starts 5): What the system chips away at
 - `llama` (0-10, starts 5): Collective hope ("la llama" - the flame)
 - `inercia` (0-10, starts 5): **Central mechanic.** Resistance to change; at 10
-  the game ends in final APAGADO
+  the game ends in final APAGADO. Two phase rules live in
+  `mecanicas/recursos.ink` and exist because the community mechanics (olla,
+  asamblea, vínculos) only open on day 4: before then `aumentar_inercia` caps
+  at 8, and `check_game_over` suspends the threshold entirely. Reaching the
+  edge in the pre-despido week is intended; dying there is not.
+  See [docs/MASTER-PLAN.md](docs/MASTER-PLAN.md) for the full rationale.
 - `vinculo`: Chosen during character creation in `main.ink` — one of `"sofia"`,
   `"elena"`, `"diego"`, `"marcos"`, `"ixchel"`
 
@@ -255,8 +260,13 @@ Use helper functions instead of direct manipulation:
 State queries: `esta_agotado()`, `esta_cansado()`, `esta_conectado()`,
 `esta_aislado()`, `inercia_alta()`, `llama_viva()`, `llama_apagandose()`.
 
-Ending evaluation lives in `evaluar_*()` functions in `mecanicas/recursos.ink`;
-`check_game_over` is tunneled at the end of each day.
+Ending evaluation lives in `evaluar_*()` functions in `mecanicas/recursos.ink`.
+
+**`check_game_over` is the only place that ends a run early.** Every night
+transition tunnels it (`-> check_game_over ->`); none of them may divert
+straight to `final_apagado` / `final_sin_llama`. Duplicating the check bypasses
+the phase ceiling, the grace period and the one-shot vínculo intervention —
+`npm run test:endings` asserts this.
 
 ## Common Patterns
 

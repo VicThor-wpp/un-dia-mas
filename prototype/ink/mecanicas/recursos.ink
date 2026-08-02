@@ -150,7 +150,15 @@
     }
 
 === function aumentar_inercia(cantidad) ===
-    ~ ajustar(inercia, cantidad, 0, 10)
+    // Techo por fase. Antes del despido la semana te desgasta hasta el borde,
+    // pero el colapso pertenece a lo que viene después: sin este techo la
+    // inercia llegaba a 10 el miércoles y el jueves solo servía para morirse
+    // el primer día en que el juego te daba con qué defenderte.
+    ~ temp techo_inercia = 10
+    { dia_actual < 4:
+        ~ techo_inercia = 8
+    }
+    ~ ajustar(inercia, cantidad, 0, techo_inercia)
     // Trackear máxima inercia alcanzada (para final_despertar)
     { inercia > inercia_maxima_alcanzada:
         ~ inercia_maxima_alcanzada = inercia
@@ -166,6 +174,17 @@
     ~ ajustar(inercia, -cantidad, 0, 10)
     { inercia <= 2:
         # STAT_THRESHOLD:inercia,low
+    }
+
+// Desgaste de fondo del laburo: el jefe que pasa sin decir nada, el evento
+// menor de tensión. Se dispara todos los días laborales, así que como suma
+// fija era una cuenta regresiva. La primera vez pega; para la tercera ya es
+// la misma nota repetida y el cuerpo se acostumbra. Los golpes con causa
+// —la reunión, la citación, la firma— siguen sumando siempre.
+=== function desgaste_rutina() ===
+    ~ desgaste_rutina_acumulado += 1
+    { desgaste_rutina_acumulado <= 2:
+        ~ aumentar_inercia(1)
     }
 
 // Reducir inercia por acción específica (con notificación)
@@ -209,37 +228,59 @@
     ~ umbral_inercia = 12
 }
 
+// El juego no puede matarte antes del jueves. La olla, la asamblea y los
+// vínculos recién abren el día 4: hasta entonces no hay ninguna herramienta
+// para bajar la inercia, y morir sin haber podido elegir entre encerrarse y
+// salir contradice aquello de lo que trata el juego. La inercia se sigue
+// acumulando; lo que queda en suspenso es el colapso.
+{ dia_actual < 4:
+    ~ umbral_inercia = 99
+}
+
 {inercia >= umbral_inercia:
-    // Segunda oportunidad: si el vínculo tiene buena relación, interviene
-    { vinculo == "sofia" && sofia_relacion >= 3:
+    // Segunda oportunidad, una sola vez por partida: el vínculo aparece y te
+    // saca del borde. Antes esto hacía el túnel y caía en final_apagado igual,
+    // así que la escena existía pero no salvaba a nadie.
+    { not vinculo_intervino && vinculo_esta_cerca():
+        ~ vinculo_intervino = true
         -> intervencion_vinculo ->
-    }
-    { vinculo == "elena" && elena_relacion >= 3:
-        -> intervencion_vinculo ->
-    }
-    { vinculo == "diego" && diego_relacion >= 3:
-        -> intervencion_vinculo ->
-    }
-    { vinculo == "marcos" && marcos_relacion >= 3:
-        -> intervencion_vinculo ->
-    }
-    { vinculo == "juan" && juan_relacion >= 3:
-        -> intervencion_vinculo ->
-    }
-    { vinculo == "ixchel" && ixchel_relacion >= 3:
-        -> intervencion_vinculo ->
+        ->->
     }
     // Sin red de apoyo = game over
     -> final_apagado
 }
 {llama <= 0:
     // Segunda oportunidad en domingo si ayudaste en olla
-    { dia_actual == 7 && ayude_en_olla && sofia_relacion >= 3:
+    { not chispa_usada && dia_actual == 7 && ayude_en_olla && sofia_relacion >= 3:
+        ~ chispa_usada = true
         -> chispa_emergencia ->
+        ->->
     }
     -> final_sin_llama
 }
 ->->
+
+// ¿Tu vínculo tiene relación suficiente como para aparecer cuando te caés?
+=== function vinculo_esta_cerca() ===
+    { vinculo == "sofia":
+        ~ return sofia_relacion >= 3
+    }
+    { vinculo == "elena":
+        ~ return elena_relacion >= 3
+    }
+    { vinculo == "diego":
+        ~ return diego_relacion >= 3
+    }
+    { vinculo == "marcos":
+        ~ return marcos_relacion >= 3
+    }
+    { vinculo == "juan":
+        ~ return juan_relacion >= 3
+    }
+    { vinculo == "ixchel":
+        ~ return ixchel_relacion >= 3
+    }
+    ~ return false
 
 // --- INTERVENCIONES DE SEGUNDA OPORTUNIDAD ---
 

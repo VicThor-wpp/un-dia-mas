@@ -1,5 +1,70 @@
 # CHANGELOG - Un Día Más Implementation
 
+## Session: 2026-08-02 (b)
+
+### BALANCE: la inercia mataba antes de que el juego diera con qué defenderse
+
+Medición previa sobre 1.000 partidas aleatorias: **93% terminaban en APAGADO**,
+la mediana de inercia llegaba a 8 el martes y 9 el miércoles, y 15 de los 19
+finales no aparecían nunca. Un jugador simulado que elige siempre la opción que
+menos inercia suma **igual moría el 64% de las veces**, así que no era un
+problema de cómo se jugaba.
+
+Diagnóstico: la olla, la asamblea y los vínculos abren el día 4, pero el
+medidor que mata se llenaba durante los días 1-3, donde no había ninguna forma
+de bajarlo (88 lugares subían inercia contra 24 que la bajaban, y esos 24
+estaban casi todos del jueves en adelante).
+
+#### Cambios
+
+- **Techo por fase** (`aumentar_inercia`): antes del día 4 la inercia no pasa
+  de 8. La semana previa al despido lleva al borde; el colapso pertenece a
+  después.
+- **Período de gracia** (`check_game_over`): antes del día 4 el umbral queda
+  suspendido. La inercia se acumula igual.
+- **Un solo lugar decide el game over.** Las seis transiciones nocturnas
+  duplicaban el chequeo (`{inercia >= 10: -> final_apagado}`) y por eso
+  salteaban el techo, la gracia y la intervención del vínculo. Ahora todas
+  tunelan `check_game_over`. `test-endings.js` verifica el invariante.
+- **La segunda oportunidad del vínculo ahora salva.** Hacía el túnel a
+  `intervencion_vinculo` y caía en `final_apagado` igual: la escena existía y
+  no servía de nada. Se usa una vez por partida (`vinculo_intervino`), igual
+  que la chispa de Sofía (`chispa_usada`).
+- **Los rescates de jueves y viernes dejan la inercia en 7, no en 9.** En 9
+  cualquier subida posterior mataba y el rescate no significaba nada.
+- **`desgaste_rutina()`**: el desgaste de fondo del laburo (el jefe que pasa
+  sin decir nada, el evento menor de tensión) se dispara todos los días
+  laborales. Ahora suma solo las dos primeras veces. Los golpes con causa
+  —reunión, citación, firma— siguen sumando siempre.
+- **Los días 1-3 ahora tienen cómo bajar la inercia**, cableando escenas que ya
+  existían: la señora del bondi, el kiosquero, la visita al vínculo el lunes,
+  buscarlo el martes, contarlo en la olla el miércoles, llamar a Elena o a
+  Diego. Ninguna escena nueva salvo las de Ixchel; solo se conectó a la
+  mecánica lo que la narrativa ya decía. Marcos no baja inercia a propósito:
+  en esos días no contesta.
+
+#### Dos crashes más que el fuzz largo destapó
+
+Al llegar más partidas al día 4+, aparecieron dos knots con el mismo patrón de
+siempre (opciones once-only en escenas que se repiten):
+- `diario_escribir`: la salida `* [Cerrar el diario]` se consumía la primera
+  noche; la segunda noche en que ninguna entrada condicional aplicaba, el knot
+  se quedaba sin opciones.
+- `tiago_primer_encuentro`: se dispara desde el menú de la olla, que se repite.
+
+#### Resultado
+
+| | antes | después |
+|---|---|---|
+| Jugador aleatorio en APAGADO | 93% | 53% |
+| Jugador deliberado en APAGADO | 64% | 2% |
+| Finales distintos alcanzados (1.000 partidas) | 10 | 15 |
+| Día en que muere | pared el 2 y el 3 | repartido entre 4 y 6 |
+
+La distribución medida quedó documentada en `docs/design/finales.md` y las
+reglas de fase en `docs/MASTER-PLAN.md`.
+
+
 ## Session: 2026-08-02
 
 ### FIX: el juego no llegaba al martes + build roto en silencio

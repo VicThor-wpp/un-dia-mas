@@ -32,7 +32,9 @@ La birome apenas tiene tinta.
     -> entrada_inercia
 }
 
-* [Cerrar el diario]
+// Sticky: el diario se abre todas las noches. Once-only, la segunda noche en
+// que ninguna entrada condicional aplica el knot se queda sin salida.
++ [Cerrar el diario]
     Cerrás el cuaderno.
     Mañana será otro día.
     ->->

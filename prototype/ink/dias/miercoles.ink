@@ -291,6 +291,8 @@ Deja la frase ahí.
 
 ~ conte_a_alguien = true
 ~ subir_conexion(1)
+// Decirlo en voz alta el mismo día es lo más difícil de la semana.
+~ disminuir_inercia(1)
 
 "Me echaron."
 
@@ -365,6 +367,7 @@ Todo cae junto.
 
 ~ subir_conexion(1)
 ~ subir_llama(1)
+~ disminuir_inercia(1)
 
 "Puedo venir. Ahora tengo tiempo."
 
@@ -475,6 +478,8 @@ Es una idea heredada. De Elena. De Raúl. De los que estuvieron antes.
 Cortás.
 Te sentís un poco menos solo.
 
+~ disminuir_inercia(1)
+
 * [Ir a la noche] -> miercoles_noche
 
 === miercoles_llamar_sofia ===
@@ -530,6 +535,8 @@ No estás solo en eso.
 "Si necesitás algo, avisá. No tengo mucho pero..."
 
 "Gracias, Diego."
+
+~ disminuir_inercia(1)
 
 * [Ir a la noche] -> miercoles_noche
 
@@ -1004,14 +1011,9 @@ Mañana será otro día.
 ~ efecto_red_o_nada()
 ~ efecto_noche_solitaria()
 
-// Chequeo de colapso mental antes de continuar
-{inercia >= 10:
-    -> final_apagado
-}
-
-// Chequeo de destrucción del tejido social
-{llama <= 0:
-    -> final_sin_llama
-}
+// Un solo lugar decide el game over: check_game_over aplica el umbral, el
+// período de gracia de los primeros días y la intervención del vínculo.
+// Duplicar el chequeo acá lo salteaba por completo.
+-> check_game_over ->
 
 -> jueves_amanecer

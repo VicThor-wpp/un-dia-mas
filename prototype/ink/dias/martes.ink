@@ -212,6 +212,7 @@ Lo dice sin dramatismo. Como quien informa el clima.
 Te da un tamal envuelto en hoja. No te pregunta si querés.
 
 ~ subir_conexion(1)
+~ disminuir_inercia(1)
 
 -> martes_casa
 
@@ -235,6 +236,8 @@ No decís más.
 No hay más que decir.
 
 ~ subir_conexion(1)
+// Ver la nota en lunes.ink: buscar a alguien los días 1-3 afloja la inercia.
+~ disminuir_inercia(1)
 
 -> martes_casa
 
@@ -259,6 +262,7 @@ No dice que todo va a estar bien.
 Solo está.
 
 ~ subir_conexion(1)
+~ disminuir_inercia(1)
 
 -> martes_casa
 
@@ -279,6 +283,7 @@ La precariedad.
 "Dale."
 
 ~ subir_conexion(1)
+~ disminuir_inercia(1)
 
 -> martes_casa
 
@@ -640,14 +645,9 @@ Pero sabés que no es bueno.
 ~ efecto_red_o_nada()
 ~ efecto_noche_solitaria()
 
-// Chequeo de colapso mental antes de continuar
-{inercia >= 10:
-    -> final_apagado
-}
-
-// Chequeo de destrucción del tejido social
-{llama <= 0:
-    -> final_sin_llama
-}
+// Un solo lugar decide el game over: check_game_over aplica el umbral, el
+// período de gracia de los primeros días y la intervención del vínculo.
+// Duplicar el chequeo acá lo salteaba por completo.
+-> check_game_over ->
 
 -> miercoles_amanecer

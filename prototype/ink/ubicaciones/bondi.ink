@@ -101,6 +101,8 @@ Nunca hablaste con ella.
     No es una conversación feliz.
     Pero es una conversación.
     ~ subir_conexion(1)
+    // Que alguien te hable en la parada afloja algo. Ver la nota en lunes.ink.
+    ~ disminuir_inercia(1)
 }
 
 El bondi llega.
