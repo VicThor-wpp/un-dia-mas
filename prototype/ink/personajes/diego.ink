@@ -183,7 +183,7 @@ Primer mes en ocho que no mando."
 
 ~ diego_familia_en_venezuela = true
 
-* [...]
++ [...]
 -
 
 Su mamá. Su hermana. Allá.
@@ -337,7 +337,7 @@ Diego mira el cigarrillo.
 
 Fuma.
 
-* [...]
++ [...]
 -
 
 "Pero ustedes no saben lo que es jodido de verdad.
@@ -358,7 +358,7 @@ No por el plato. Yo sé hacerme el mío.
 Sino porque acá el hambre se combate con asamblea, no con silencio.
 Eso lo aprendí allá: el que come solo, muere solo."
 
-* [...]
++ [...]
 -
 
 {sofia_relacion >= 2:
@@ -406,7 +406,7 @@ Están sentados en la plaza del barrio.
 
 "Organizaba ferias. Ferias de verdad."
 
-* [...]
++ [...]
 -
 
 "Mi familia estaba en CECOSESOLA. Central Cooperativa de Servicios Sociales de Lara. Suena a burocracia, pero era todo lo contrario."
@@ -415,7 +415,7 @@ Están sentados en la plaza del barrio.
 
 "La red cooperativa más vieja del país. Fundada en el 67, antes de Chávez, antes de todo. Mi abuelo fue de los primeros. Mi padre también. Yo nací en eso."
 
-* [...]
++ [...]
 -
 
 Diego mira al cielo. Sonríe por primera vez en mucho tiempo.
@@ -436,14 +436,14 @@ Diego mira al cielo. Sonríe por primera vez en mucho tiempo.
 
 === diego_cecosesola_cont ===
 
-* [...]
++ [...]
 -
 
 "También teníamos un centro de salud. Propio. Con quirófanos. Lo construimos nosotros. No esperamos que el gobierno nos lo diera."
 
 "La puta madre."
 
-* [...]
++ [...]
 -
 
 Diego se pone serio.
@@ -462,7 +462,7 @@ Diego se pone serio.
     Vos producís cien, el jefe te paga treinta, se queda setenta.
     Eso es una empresa."
 
-    * [...]
+    + [...]
     -
 
     "En la cooperativa, producís cien, te quedás cien.
@@ -497,7 +497,7 @@ Diego baja la voz.
 
 "No. Bueno, también. Pero hubo algo más."
 
-* [...]
++ [...]
 -
 
 "Cuando el gobierno empezó a presionar a CECOSESOLA, nos negamos a alinearnos. No queríamos distribuir las cajas CLAP."
@@ -506,21 +506,21 @@ Diego baja la voz.
 
 "Paquetes de comida que controlaba el partido. Si estabas con ellos, comías. Si no, te jodías. Era control político, no ayuda."
 
-* [...]
++ [...]
 -
 
 "Un funcionario le dijo a mi viejo: 'O entran al sistema o los vamos a asfixiar'. Empezaron a negarnos permisos. A demorarnos los insumos."
 
 "Hijos de puta."
 
-* [...]
++ [...]
 -
 
 Diego mira sus manos.
 
 "Una noche quemaron un camión de la cooperativa. Lleno de verduras para la feria del sábado. Nadie investigó. El mensaje era claro."
 
-* [...]
++ [...]
 -
 
 # PAUSA
@@ -563,7 +563,7 @@ Diego sonríe.
     
     "¿Qué es esto?"
     
-    * [...]
+    + [...]
     -
     
     "Semillas de mi tierra. Las que aprendí a sembrar con mi abuelo."
@@ -572,7 +572,7 @@ Diego sonríe.
     
     "Ninguna crece igual acá. El clima es distinto. La tierra es distinta."
 
-    * [...]
+    + [...]
     -
 
     # PAUSA
@@ -609,7 +609,7 @@ Marcos se frena.
 
 "¿Quién decidía quién subía y quién bajaba? ¿Quién manejaba la plata? ¿Había asambleas o había jefes?"
 
-* [...]
++ [...]
 -
 
 Marcos no sabe qué decir.
@@ -618,14 +618,14 @@ Marcos no sabe qué decir.
 
 "O sea, jefes."
 
-* [...]
++ [...]
 -
 
 Diego no lo dice con bronca. Lo dice con tristeza.
 
 "Yo vi el cooperativismo de verdad ser aplastado por el cooperativismo del Estado. El problema no era la idea. Era que alguien arriba se creía con derecho a decidir por todos."
 
-* [...]
++ [...]
 -
 
 Marcos se queda callado.
@@ -685,7 +685,7 @@ Medio día. Debería estar trabajando.
 
 Corto. Seco.
 
-* [...]
++ [...]
 -
 
 "¿Cuándo?"
@@ -694,7 +694,7 @@ Corto. Seco.
 
 Mira el piso.
 
-* [...]
++ [...]
 -
 
 # PAUSA

@@ -194,7 +194,7 @@ prototype/ink/
 │   └── dados.ink               (Sistema de azar)
 ├── dias/                       (Flujo temporal Lunes-Domingo)
 ├── personajes/                 (Contenido específico de NPCs)
-└── finales/                    (Texto de los 16 finales)
+└── finales/                    (Texto de los 19 finales)
 ```
 
 ---

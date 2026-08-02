@@ -471,7 +471,7 @@ Gente que sabe y aplica igual.
     Ya no viene.
     "No voy a firmar nada. Después te caen."
 
-    * [...]
+    + [...]
         Elena te mira.
         No dice nada.
         No hace falta.

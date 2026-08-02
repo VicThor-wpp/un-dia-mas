@@ -12,7 +12,7 @@ El lunes llega.
 No tenés laburo.
 Pero tenés algo que pocos tienen.
 
-* [...]
++ [...]
 -
 
 La olla no solo sobrevivió.
@@ -21,7 +21,7 @@ Creció.
 La asamblea no fue solo un evento.
 Fue el principio.
 
-* [...]
++ [...]
 -
 
 Sofía te mira diferente ahora.
@@ -75,13 +75,13 @@ Y hay una llama.
 No es esperanza ingenua.
 No es ilusión.
 
-* [...]
++ [...]
 -
 
 Es conocimiento.
 De que juntos, hay algo.
 
-* [...]
++ [...]
 -
 
 El sistema no cambió.
@@ -95,7 +95,7 @@ Eso ya es cambio.
 Pequeño. Frágil. Pero real.
 Y los cambios reales siempre empiezan así.
 
-* [...]
++ [...]
 -
 
 Y la llama no se apaga.
@@ -129,21 +129,21 @@ El lunes llega.
 No tenés laburo.
 Pero tenés algo.
 
-* [...]
++ [...]
 -
 
 La olla te espera.
 Sofía te espera.
 El barrio te espera.
 
-* [...]
++ [...]
 -
 
 No es solución.
 No hay trabajo mágico.
 No hay plata que aparece.
 
-* [...]
++ [...]
 -
 
 Pero hay una red.
@@ -151,7 +151,7 @@ Gente que te conoce.
 Gente que sabe que existís.
 Gente con la que hacés cosas.
 
-* [...]
++ [...]
 -
 
 Los tres meses van a pasar.
@@ -218,7 +218,7 @@ El lunes llega.
 No tenés laburo.
 No tenés mucho.
 
-* [...]
++ [...]
 -
 
 La semana pasó.
@@ -226,14 +226,14 @@ No conectaste.
 No ayudaste.
 No estuviste.
 
-* [...]
++ [...]
 -
 
 El barrio sigue.
 La olla sigue.
 Pero sin vos.
 
-* [...]
++ [...]
 -
 
 Los tres meses van a pasar.
@@ -241,14 +241,14 @@ Vas a buscar laburo.
 Quizás consigas.
 Quizás no.
 
-* [...]
++ [...]
 -
 
 Pero vas a estar solo.
 Como antes.
 Como siempre.
 
-* [...]
++ [...]
 -
 
 No es el fin del mundo.
@@ -295,27 +295,27 @@ El lunes llega.
 No tenés laburo.
 Pero pasaron cosas.
 
-* [...]
++ [...]
 -
 
 Conociste gente.
 O reconectaste.
 Algo se movió.
 
-* [...]
++ [...]
 -
 
 No es suficiente todavía.
 Pero es algo.
 
-* [...]
++ [...]
 -
 
 Los tres meses van a pasar.
 No sabés qué viene.
 Pero hay un "quizás" que antes no había.
 
-* [...]
++ [...]
 -
 
 Quizás la olla.
@@ -365,27 +365,27 @@ El lunes llega.
 No tenés laburo.
 No sabés qué tenés.
 
-* [...]
++ [...]
 -
 
 La semana fue rara.
 Pasaron cosas.
 No pasó nada.
 
-* [...]
++ [...]
 -
 
 Los tres meses empiezan a correr.
 La cuenta regresiva.
 
-* [...]
++ [...]
 -
 
 No sabés qué viene.
 No sabés quién sos.
 No sabés nada.
 
-* [...]
++ [...]
 -
 
 Pero estás vivo.
@@ -426,14 +426,14 @@ El barrio está en silencio.
 No el silencio de la noche.
 El silencio de la rendición.
 
-* [...]
++ [...]
 -
 
 La olla cerró.
 No por falta de ganas.
 Por falta de gente que crea.
 
-* [...]
++ [...]
 -
 
 Sofía se rindió.
@@ -446,14 +446,14 @@ Ahora solo dice: "Era otra época."
 Diego dejó de buscar.
 "No hay nada que hacer."
 
-* [...]
++ [...]
 -
 
 Marcos tenía razón desde el principio.
 No hay llama.
 Nunca la hubo.
 
-* [...]
++ [...]
 -
 
 El tejido social no se rompe de golpe.
@@ -461,7 +461,7 @@ Se deshilacha.
 Persona por persona.
 Día por día.
 
-* [...]
++ [...]
 -
 
 Hasta que no queda nada.
@@ -472,7 +472,7 @@ No semanas.
 
 Generaciones.
 
-* [...]
++ [...]
 -
 
 {idea_hay_cosas_juntos:
@@ -524,14 +524,14 @@ La pantalla del teléfono te ilumina la cara en la oscuridad.
 
 3:47 AM.
 
-* [...]
++ [...]
 -
 
 Mañana tenés turno con la psiquiatra.
 O pasado.
 No te acordás.
 
-* [...]
++ [...]
 -
 
 El antidepresivo está en el cajón.
@@ -541,7 +541,7 @@ No comiste nada desde... ayer? anteayer?
 
 Da igual.
 
-* [...]
++ [...]
 -
 
 Lo que no te dicen es que el problema no está en tu cabeza.
@@ -552,14 +552,14 @@ El problema está en que "flexibilidad laboral" significa que no sabés si comé
 
 El problema está en que "resiliencia" es la palabra que usan cuando quieren que aguantes lo inaguantable.
 
-* [...]
++ [...]
 -
 
 No estás enfermo.
 
 El sistema está enfermo.
 
-* [...]
++ [...]
 -
 
 Pero ellos te venden la pastilla.
@@ -568,7 +568,7 @@ Y vos te la tomás.
 
 Porque mañana hay que levantarse igual.
 
-* [...]
++ [...]
 -
 
 Pero hay algo que la pastilla no borra.
@@ -584,7 +584,7 @@ No es consuelo. Pero es el principio de algo.
 La rabia lúcida no es enfermedad.
 Es el primer paso.
 
-* [...]
++ [...]
 -
 
 {sofia_relacion >= 3:
@@ -625,7 +625,7 @@ El lunes llega.
 No tenés laburo.
 Pero tenés hilos.
 
-* [...]
++ [...]
 -
 
 Ixchel te enseñó algo que no tiene nombre en castellano.
@@ -634,7 +634,7 @@ Que la comunidad es un tejido.
 Que cada persona es un hilo.
 Que cuando uno se rompe, los demás sostienen.
 
-* [...]
++ [...]
 -
 
 No es la olla. No es la asamblea.
@@ -643,7 +643,7 @@ Es algo más antiguo.
 Un saber que cruzó océanos y fronteras.
 Que sobrevivió a todo lo que quisieron matarlo.
 
-* [...]
++ [...]
 -
 
 "Ri qa tzij, ri qa k'aslemal", dice Ixchel.
@@ -658,7 +658,7 @@ Pero entendés el gesto.
     Lo que sobrevive.
 }
 
-* [...]
++ [...]
 -
 
 Mañana hay olla.
@@ -692,7 +692,7 @@ El cuerpo.
 La cabeza.
 Todo.
 
-* [...]
++ [...]
 -
 
 {inercia >= 8:
@@ -708,7 +708,7 @@ Los tres meses están ahí.
 Pero no los sentís como colchón.
 Los sentís como cuenta regresiva.
 
-* [...]
++ [...]
 -
 
 No hay final feliz.
@@ -717,7 +717,7 @@ Solo hay mañana.
 Y pasado.
 Y el otro día.
 
-* [...]
++ [...]
 -
 
 Uno atrás del otro.
@@ -766,7 +766,7 @@ El lunes llega.
 No tenés laburo.
 Pero algo es distinto.
 
-* [...]
++ [...]
 -
 
 No es grande. No es histórico.
@@ -774,7 +774,7 @@ No cambia el mundo.
 
 Pero vos cambiaste.
 
-* [...]
++ [...]
 -
 
 Un poco. Apenas.
@@ -790,7 +790,7 @@ Como cuando girás la cabeza y ves algo que siempre estuvo ahí.
     No es revolución. Es presencia.
 }
 
-* [...]
++ [...]
 -
 
 Los tres meses empiezan.
@@ -829,13 +829,13 @@ El lunes llega.
 No tenés laburo.
 Pero dejaste de fingir.
 
-* [...]
++ [...]
 -
 
 Le dijiste a alguien que estabas mal.
 No es heroísmo. Es honestidad.
 
-* [...]
++ [...]
 -
 
 {conte_a_alguien:
@@ -856,7 +856,7 @@ No es heroísmo. Es honestidad.
     No las arregla. Las cambia.
 }
 
-* [...]
++ [...]
 -
 
 Los tres meses empiezan.
@@ -899,14 +899,14 @@ El lunes llega.
 No tenés laburo.
 Pero tenés un plan.
 
-* [...]
++ [...]
 -
 
 La asamblea no fue solo hablar.
 Salieron cosas.
 Propuestas. Ideas. Gente que se comprometió.
 
-* [...]
++ [...]
 -
 
 {participe_asamblea:
@@ -922,7 +922,7 @@ Propuestas. Ideas. Gente que se comprometió.
     Sos parte.
 }
 
-* [...]
++ [...]
 -
 
 La olla no es caridad.
@@ -934,7 +934,7 @@ Es acción.
 El barrio no es geografía.
 Es decisión.
 
-* [...]
++ [...]
 -
 
 Los tres meses empiezan.
@@ -973,13 +973,13 @@ Y vos vas a estar.
 
 El lunes, nadie fue.
 
-* [...]
++ [...]
 -
 
 No fue planeado por el sindicato.
 Fue planeado en el almuerzo, en el bondi, en la calle.
 
-* [...]
++ [...]
 -
 
 Lucía lo dijo primero:
@@ -987,7 +987,7 @@ Lucía lo dijo primero:
 
 Y todos dijeron que sí.
 
-* [...]
++ [...]
 -
 
 La patronal amenazó. La policía vino.
@@ -1010,7 +1010,7 @@ Algunos se rajaron. Otros se mantuvieron.
     Por primera vez, los unipersonales están en la mesa.
 }
 
-* [...]
++ [...]
 -
 
 No ganaron todo. Capaz no ganaron nada.
@@ -1044,7 +1044,7 @@ La fábrica cerró hace dos semanas.
 "Problemas financieros", dijeron los dueños.
 Mientras tanto, maquinaria nueva, sin usar.
 
-* [...]
++ [...]
 -
 
 La asamblea decidió.
@@ -1067,7 +1067,7 @@ Esta noche entran.
     Breve. Frágil. Pero posible.
 }
 
-* [...]
++ [...]
 -
 
 No es el mundo nuevo.
@@ -1104,7 +1104,7 @@ Por donde entra luz.
 
 Renunciaste. O te rajaron. Ya no importa.
 
-* [...]
++ [...]
 -
 
 Pero decidiste algo:
@@ -1114,7 +1114,7 @@ No más CV.
 No más entrevistas donde te humillan.
 No más "adaptabilidad al cambio" y "trabajo en equipo".
 
-* [...]
++ [...]
 -
 
 {conexion >= 6:
@@ -1128,7 +1128,7 @@ Los tres meses se terminan.
 No conseguiste laburo.
 Pero tampoco lo buscaste.
 
-* [...]
++ [...]
 -
 
 ¿Es rendirse? ¿Es desertar?
@@ -1169,13 +1169,13 @@ El lunes llega.
 No fuiste a la asamblea.
 Pero estuviste.
 
-* [...]
++ [...]
 -
 
 No todas las luchas son visibles.
 No todas las resistencias tienen pancartas.
 
-* [...]
++ [...]
 -
 
 Pelaste papas. Serviste guiso.
@@ -1187,7 +1187,7 @@ Escuchaste historias. Contaste las tuyas.
     Pero el barrio sí.
 }
 
-* [...]
++ [...]
 -
 
 No sos activista. No sos militante.
@@ -1228,7 +1228,7 @@ El lunes llega.
 Estuviste muy abajo.
 Pero subiste.
 
-* [...]
++ [...]
 -
 
 Hubo días que no te levantaste.
@@ -1239,7 +1239,7 @@ Hubo noches que no terminaban.
     Casi te apagás.
 }
 
-* [...]
++ [...]
 -
 
 Pero alguien te encontró.
@@ -1252,7 +1252,7 @@ O vos encontraste a alguien.
 {vinculo == "juan": Juan no se olvidó. Desde España, mandó un mensaje.}
 {vinculo == "ixchel": Ixchel te trajo comida. Sin decir nada. Se sentó a tu lado.}
 
-* [...]
++ [...]
 -
 
 Tocaste fondo.
@@ -1282,7 +1282,7 @@ Pero sabés que podés caer y levantarte.
 El lunes llega.
 Juan ya no está.
 
-* [...]
++ [...]
 -
 
 Se fue a España. O a donde sea.
@@ -1294,7 +1294,7 @@ A buscar lo que acá no encontró.
     "Y cuidalos", agregó mirando hacia la olla.
 }
 
-* [...]
++ [...]
 -
 
 No lo juzgás.
@@ -1309,7 +1309,7 @@ Algunos se quedan para que otros puedan irse.
     Las distancias no borran los vínculos.
 }
 
-* [...]
++ [...]
 -
 
 Vos te quedaste.
@@ -1319,7 +1319,7 @@ O porque no tenés pasaporte europeo.
 
 Da igual.
 
-* [...]
++ [...]
 -
 
 Los que se van y los que se quedan
@@ -1352,7 +1352,7 @@ Pero el vínculo queda.
 La huelga duró tres días.
 La policía entró al cuarto día.
 
-* [...]
++ [...]
 -
 
 Te agarraron a vos, a Juan, a cinco más.
@@ -1362,7 +1362,7 @@ Salís una semana después.
 Marcado. Nadie te va a dar laburo.
 Tu cara está en la lista.
 
-* [...]
++ [...]
 -
 
 {conexion >= 7:
@@ -1375,7 +1375,7 @@ Tu cara está en la lista.
 No es victoria. Es derrota.
 Pero hay algo.
 
-* [...]
++ [...]
 -
 
 Dignidad. Memoria. Gente.

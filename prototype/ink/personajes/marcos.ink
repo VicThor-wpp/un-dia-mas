@@ -354,7 +354,7 @@ Frío, por el tiempo que lleva esperando.
 
 "Te dije que venía."
 
-* [...]
++ [...]
 -
 
 Se sienta.
@@ -370,7 +370,7 @@ Como quien dice que llueve.
 
 "¿Qué pasó?"
 
-* [...]
++ [...]
 -
 
 "Nada pasó. Ese es el problema. Nada pasa. Los días son iguales. Me levanto, como algo, miro noticias, me indigno, no hago nada, me acuesto. Repeat."
@@ -462,7 +462,7 @@ De pronto, Marcos dice:
 
 "Martín me mandó foto del departamento nuevo. En Madrid."
 
-* [...]
++ [...]
 -
 
 "Chiquito pero lindo. Tiene balcón."
@@ -497,7 +497,7 @@ El orgullo y el fracaso mezclados.
 
 "Que tenían razón en algunas cosas. La orga. El análisis de clase, la necesidad de organización, todo eso. Tenían razón."
 
-* [...]
++ [...]
 -
 
 "Pero la cagaron. La cagamos. Nos convertimos en lo que criticábamos. Burócratas con discurso revolucionario."
@@ -608,7 +608,7 @@ Lo mira directo.
 
 "Define funciona."
 
-* [...]
++ [...]
 -
 
 Marcos no esperaba eso.
@@ -621,7 +621,7 @@ Diego sigue pelando.
 
 Marcos se queda callado.
 
-* [...]
++ [...]
 -
 
 "Vos hablás de 'la orga' y de 'la estructura' y del 'sistema'", sigue Diego. "Yo hablo de papas. De ajo. De que mañana hay que conseguir más arroz."
@@ -634,7 +634,7 @@ Pausa.
 
 "Que las papas se comen. Las teorías no."
 
-* [...]
++ [...]
 -
 
 Marcos no responde.
@@ -698,7 +698,7 @@ Diego lo interrumpe.
 
 "Fideos. Para la olla del domingo. ¿Cuántos kilos calculás?"
 
-* [...]
++ [...]
 -
 
 Marcos parpadea.
@@ -714,7 +714,7 @@ Silencio.
 
 "Bueno. Eso es lo que hay que resolver. No la correlación de fuerzas. Los fideos."
 
-* [...]
++ [...]
 -
 
 Marcos se queda callado.
@@ -752,7 +752,7 @@ Marcos está mirando.
 
 "Pensando. Qué lujo."
 
-* [...]
++ [...]
 -
 
 Elena deja la cuchara.
@@ -796,7 +796,7 @@ Elena ordena.
 
 "En el 2002 no teníamos tiempo de analizar. Veíamos un pibe con hambre y le dábamos de comer. Después pensábamos."
 
-* [...]
++ [...]
 -
 
 Marcos sigue revolviendo.
@@ -810,7 +810,7 @@ Pausa larga.
 
 "Por eso no me banco los discursos. Porque yo estuve acá. Con las manos en la olla. Y vos estabas analizando."
 
-* [...]
++ [...]
 -
 
 Marcos deja la cuchara.
@@ -821,7 +821,7 @@ Elena lo mira. Sorprendida.
 
 "En algo tenés razón. Yo hablaba. Ustedes hacían. Y capaz por eso ustedes siguen acá y yo estoy... donde estoy."
 
-* [...]
++ [...]
 -
 
 Elena se ablanda. Un poco.
@@ -864,7 +864,7 @@ Lo mira. Sorprendida.
 
 "Gracias."
 
-* [...]
++ [...]
 -
 
 Se sientan. En silencio.
@@ -958,7 +958,7 @@ Sonríen. Él también.
 
 ¿Cuándo dejó de sonreír?
 
-* [...]
++ [...]
 -
 
 Abre WhatsApp.
@@ -1253,7 +1253,7 @@ Barba de días.
 
 "Te dije que venía."
 
-* [...]
++ [...]
 -
 
 Se sientan.
@@ -1278,7 +1278,7 @@ Te mira. Ojos cansados.
 "Mal. No duermo. El seguro de paro se me termina el mes que viene.
 Y a mi edad, encontrar algo fijo es un chiste. Me estoy comiendo los ahorros."
 
-* [...]
++ [...]
 -
 
 Pausa.
@@ -1463,7 +1463,7 @@ Silencio largo.
 
 "Lejos."
 
-* [...]
++ [...]
 -
 
 "Lucía está en Barcelona. Se fue en 2019. Trabaja en comunicación, algo de redes sociales. Volvió una vez, hace dos años."
@@ -1472,7 +1472,7 @@ Silencio largo.
 
 "Martín está en Madrid. Se fue detrás de la hermana en 2021. Estudia algo de tecnología. No entiendo bien qué hace."
 
-* [...]
++ [...]
 -
 
 Pausa.
@@ -1489,7 +1489,7 @@ Pausa.
 
 === marcos_hijos_cont ===
 
-* [...]
++ [...]
 -
 
 "¿Sabés qué pienso a veces?"
@@ -1498,7 +1498,7 @@ Pausa.
 
 "Les dejamos un país del que se tienen que ir. Toda mi vida militando para construir algo mejor, y mis hijos se tienen que ir a Europa a lavar platos o programar boludeces."
 
-* [...]
++ [...]
 -
 
 Su voz se quiebra un poco.
@@ -1506,7 +1506,7 @@ Su voz se quiebra un poco.
 
 "Cuando era joven, la política era todo. No aprendí a ser padre fuera de eso. Y ahora están lejos y no sé cómo hablarles."
 
-* [...]
++ [...]
 -
 
 "A veces los veo en videollamada. Sonriendo. Felices. Lejos."
@@ -1535,19 +1535,19 @@ Pausa.
 
 "El que cuestiona la historia oficial. El que dice lo que nadie quiere decir."
 
-* [...]
++ [...]
 -
 
 "Leí una entrevista suya. De las que da cada tanto. Y sentí que alguien decía en voz alta lo que yo pensaba en silencio."
 
 "¿Qué pensás?"
 
-* [...]
++ [...]
 -
 
 "Que la revolución se la comió la burocracia. Que los que empezaron peleando contra el sistema terminaron siendo el sistema. Que los que dormían en pensiones ahora viven en barrios privados."
 
-* [...]
++ [...]
 -
 
 "Zabalza sigue hablando. Sigue poniendo el dedo en la llaga. Yo me callé."
@@ -1572,14 +1572,14 @@ Pausa.
 
 "Las internas del Frente. Cuando eligieron a Mujica."
 
-* [...]
++ [...]
 -
 
 "Estuve en el festejo. En la sede. Era euforia. La gente saltando, gritando. El triunfo."
 
 "¿Y?"
 
-* [...]
++ [...]
 -
 
 "Y mientras la militancia de base festejaba, vi a los dirigentes en un rincón. Repartiéndose cargos. Hablando de quién iba a qué ministerio, quién se quedaba con qué secretaría."
@@ -1588,7 +1588,7 @@ Pausa.
 
 "Exacto. Botín."
 
-* [...]
++ [...]
 -
 
 Marcos mira sus manos.
@@ -1599,7 +1599,7 @@ Marcos mira sus manos.
 
 "Nada. Me quedé mirando. Y al otro día seguí militando. Tardé años en animarme a irme."
 
-* [...]
++ [...]
 -
 
 "Ese fue el principio del fin. Solo que no lo supe hasta mucho después."
@@ -1620,7 +1620,7 @@ Marcos mira sus manos.
 
 "Voté en blanco."
 
-* [...]
++ [...]
 -
 
 "Después de treinta años votando a la izquierda. Después de todo lo que militía. Fui al cuarto oscuro y no pude poner la cruz."
@@ -1629,7 +1629,7 @@ Marcos mira sus manos.
 
 "Porque no podía votar a los que me traicionaron. Pero tampoco podía votar a la derecha. Entonces nada."
 
-* [...]
++ [...]
 -
 
 "Me sentí sucio una semana entera. Como si hubiera traicionado a los compañeros muertos. A los que se jugaron la vida."
@@ -1695,7 +1695,7 @@ De pronto, Marcos dice:
 
 "Hace seis meses. No se lo conté a nadie."
 
-* [...]
++ [...]
 -
 
 Ah.
@@ -1704,7 +1704,7 @@ Por eso se aisló.
 
 "¿Por qué no dijiste nada?"
 
-* [...]
++ [...]
 -
 
 "Vergüenza. Orgullo. No sé.

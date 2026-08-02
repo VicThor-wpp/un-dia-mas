@@ -184,6 +184,36 @@ O solo estar con alguien.
 {vinculo == "elena": -> martes_buscar_elena}
 {vinculo == "diego": -> martes_buscar_diego}
 {vinculo == "marcos": -> martes_buscar_marcos}
+{vinculo == "ixchel": -> martes_buscar_ixchel}
+
+// Red de seguridad: un vínculo sin escena propia no puede cortar el día.
+-> martes_casa
+
+=== martes_buscar_ixchel ===
+
+La encontrás juntando el puesto.
+Dobla los tejidos despacio, uno por uno, como si cada uno importara.
+
+"Hoy salió temprano."
+
+"Mañana tengo una reunión."
+
+Ixchel deja de doblar.
+No pregunta qué reunión.
+
+"Cuando avisan con tiempo, ya decidieron."
+
+Lo dice sin dramatismo. Como quien informa el clima.
+
+"¿Y qué se hace?"
+
+"Se come. Se duerme. Y al otro día se ve."
+
+Te da un tamal envuelto en hoja. No te pregunta si querés.
+
+~ subir_conexion(1)
+
+-> martes_casa
 
 === martes_buscar_sofia ===
 
@@ -301,7 +331,7 @@ La noche es larga.
 
 No dormís bien.
 
-* [...]
++ [...]
 -
 
 En lo que viene.
@@ -331,14 +361,14 @@ La noche pasa despacio.
 El barrio duerme.
 Vos no.
 
-* [...]
++ [...]
 -
 
 Pensás en el laburo.
 En lo que significa.
 En lo que sos sin él.
 
-* [...]
++ [...]
 -
 
 ¿Quién sos sin eso?
@@ -391,14 +421,14 @@ La olla necesita cosas.
 Siempre necesita cosas.
 Y cada vez hay menos.
 
-* [...]
++ [...]
 -
 
 Piensa en mañana.
 En la comida que hay que conseguir.
 En la gente que viene.
 
-* [...]
++ [...]
 -
 
 El barrio la necesita.

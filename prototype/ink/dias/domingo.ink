@@ -45,7 +45,7 @@ Tenías certezas.
 // VOCES
 -> voces_reaccion ->
 
-* [...]
++ [...]
 -
 
 Ahora eso se cayó. Unipersonal, te dijeron.
@@ -82,7 +82,7 @@ Pensás.
 La semana que pasó.
 Lo que viene.
 
-* [...]
++ [...]
 -
 
 // --- Flashbacks de la semana ---
@@ -116,7 +116,7 @@ Lo que viene.
     Pesa.
 }
 
-* [...]
++ [...]
 -
 
 // --- Sensaciones físicas según estado ---
@@ -142,7 +142,7 @@ Lo que viene.
     El domingo es el peor día para estar solo.
 }
 
-* [...]
++ [...]
 -
 
 // --- Memorias de NPCs según relación ---
@@ -197,7 +197,7 @@ Lo que viene.
 
 # PAUSA
 
-* [...]
++ [...]
 -
 
 // Reflexión sobre la búsqueda de empleo
@@ -309,7 +309,7 @@ Salís.
 Pasás por la olla.
 No hay reunión hoy. Pero hay gente.
 
-* [...]
++ [...]
 -
 
 {participe_asamblea && ayude_en_olla:
@@ -351,7 +351,7 @@ Sofía te pasa un mate.
 Elena te hace lugar en el banco.
 Diego asiente.
 
-* [...]
++ [...]
 -
 
 {marcos_vino_a_asamblea:
@@ -361,7 +361,7 @@ Diego asiente.
     Pero es algo.
 }
 
-* [...]
++ [...]
 -
 
 Nadie dice nada importante.
@@ -460,7 +460,7 @@ No lo pediste.
 No lo querés.
 Pero está ahí.
 
-* [...]
++ [...]
 -
 
 {rechazos} rechazos.
@@ -528,7 +528,7 @@ Pero no hay laburo al que ir.
     Es raro. Pero es algo.
 }
 
-* [...]
++ [...]
 -
 
 La semana que viene:
@@ -553,7 +553,7 @@ El final de la semana.
 Te sentás.
 Pensás en todo.
 
-* [...]
++ [...]
 -
 
 Una semana.
@@ -562,7 +562,7 @@ Una semana.
 {participe_asamblea: Fuiste a una asamblea.}
 {conte_a_alguien: Le contaste a alguien.}
 
-* [...]
++ [...]
 -
 
 {not conte_a_alguien && not ayude_en_olla: Estuviste bastante solo esta semana.}

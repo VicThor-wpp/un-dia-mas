@@ -53,7 +53,7 @@ No dice nada. Pero pela más fuerte.
 
 "¿Bruno?", preguntás.
 
-* [...]
++ [...]
 -
 
 Diego baja la voz.
@@ -133,7 +133,7 @@ Elena mira hacia la calle.
 No era el que torturaba. Era el que miraba.
 El que tomaba nota."
 
-* [...]
++ [...]
 -
 
 "Después de la democracia, muchos se reciclaron.
@@ -209,7 +209,7 @@ Elena se para frente a Bruno.
 
 "Me acuerdo de todos."
 
-* [...]
++ [...]
 -
 
 Bruno mira alrededor.
@@ -221,7 +221,7 @@ Elena no parpadea.
 Bruno se ríe.
 "Todo tiene un precio, doña. Ustedes también cobran. En dignidad."
 
-* [...]
++ [...]
 -
 
 Elena da un paso adelante.
@@ -801,72 +801,75 @@ Otro día de cosecha.
 // Dos formas de control que se reconocen
 
 {bruno_tension >= 2 && claudia_hostilidad >= 1:
-
-    Los ves al mismo tiempo.
-    Bruno entra por la puerta de la calle.
-    Claudia sale del fondo con su carpeta.
-
-    Se miran.
-    No se saludan. No hace falta.
-    Se reconocen.
-
-    * [...]
-    -
-
-    Ella con el formulario. Él con la cruz.
-    El traje y el uniforme. Dos disfraces distintos del mismo animal.
-
-    Bruno se acerca. Claudia no retrocede.
-
-    "Usted es la inspectora."
-    "Y usted el pastor."
-
-    Asienten. Como dos jugadores de ajedrez
-    que se encuentran en el mismo tablero.
-
-    {elena_relacion >= 2:
-        Elena te toca el brazo.
-        "Mirá. Los dos juntos. El uniforme y el traje."
-        Hace una pausa.
-        "Dos caras de la misma moneda."
-    }
-
-    * [...]
-    -
-
-    Bruno habla primero. Bajito. Solo para ella.
-    Pero vos estás cerca.
-
-    "Si necesita datos de los que vienen, yo puedo facilitar."
-    Claudia lo mira. La carpeta contra el pecho como un escudo.
-    "No necesito sus datos. Tengo los míos."
-
-    Pero algo cambia en sus ojos.
-    Un cálculo rápido. Una alianza posible.
-
-    Bruno ofrece orden desde afuera. Disciplina. Mano dura.
-    Claudia ofrece obediencia desde adentro. Normas. Formularios.
-    Los dos quieren lo mismo: que no te organices solo.
-
-    Uno controla con miedo. La otra con burocracia.
-    Pero los dos necesitan que la olla dependa de alguien.
-    De él. De ella. De cualquiera menos de ustedes.
-
-    Se dan la mano.
-    Formal. Breve. Como quien firma un pacto sin testigos.
-
-    Claudia se va primero.
-    Bruno se queda mirando la olla un momento más.
-
-    Después se sube a la camioneta.
-    El motor arranca.
-    El barrio tiembla un poco.
-
-    ~ olla_en_crisis = true
-    ->->
+    -> el_pacto
 - else:
     ->->
 }
+
+= el_pacto
+
+Los ves al mismo tiempo.
+Bruno entra por la puerta de la calle.
+Claudia sale del fondo con su carpeta.
+
+Se miran.
+No se saludan. No hace falta.
+Se reconocen.
+
++ [...]
+-
+
+Ella con el formulario. Él con la cruz.
+El traje y el uniforme. Dos disfraces distintos del mismo animal.
+
+Bruno se acerca. Claudia no retrocede.
+
+"Usted es la inspectora."
+"Y usted el pastor."
+
+Asienten. Como dos jugadores de ajedrez
+que se encuentran en el mismo tablero.
+
+{elena_relacion >= 2:
+    Elena te toca el brazo.
+    "Mirá. Los dos juntos. El uniforme y el traje."
+    Hace una pausa.
+    "Dos caras de la misma moneda."
+}
+
++ [...]
+-
+
+Bruno habla primero. Bajito. Solo para ella.
+Pero vos estás cerca.
+
+"Si necesita datos de los que vienen, yo puedo facilitar."
+Claudia lo mira. La carpeta contra el pecho como un escudo.
+"No necesito sus datos. Tengo los míos."
+
+Pero algo cambia en sus ojos.
+Un cálculo rápido. Una alianza posible.
+
+Bruno ofrece orden desde afuera. Disciplina. Mano dura.
+Claudia ofrece obediencia desde adentro. Normas. Formularios.
+Los dos quieren lo mismo: que no te organices solo.
+
+Uno controla con miedo. La otra con burocracia.
+Pero los dos necesitan que la olla dependa de alguien.
+De él. De ella. De cualquiera menos de ustedes.
+
+Se dan la mano.
+Formal. Breve. Como quien firma un pacto sin testigos.
+
+Claudia se va primero.
+Bruno se queda mirando la olla un momento más.
+
+Después se sube a la camioneta.
+El motor arranca.
+El barrio tiembla un poco.
+
+~ olla_en_crisis = true
+->->
 
 // === VARIABLES DE BRUNO ===
 // bruno_tension: nivel de conflicto con Bruno (0-5)

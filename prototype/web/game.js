@@ -46,6 +46,13 @@ const GameEngine = (function() {
 
         story = new inkjs.Story(storyContent);
 
+        // Without a handler, an Ink runtime error throws out of continueStory()
+        // and the game just stops mid-scene with no explanation.
+        story.onError = (message, type) => {
+            console.error(`[ink:${type}] ${message}`);
+            if (type === 'error') showStoryError(message);
+        };
+
         NotificationSystem.init();
         StatsPanel.init(story, statusContainer); // Note: StatsPanel might need CSS adjustments
         RelationshipsPanel.init(story);
@@ -208,6 +215,21 @@ const GameEngine = (function() {
         setTimeout(() => {
             if (overlay.parentNode) overlay.parentNode.removeChild(overlay);
         }, 2200);
+    }
+
+    function showStoryError(message) {
+        const box = document.createElement('div');
+        box.className = 'error';
+        box.setAttribute('role', 'alert');
+        box.innerHTML = `
+            <p><strong>La historia se cortó acá.</strong></p>
+            <p>Es un error del guion, no algo que hayas hecho mal.
+            Podés cargar una partida guardada para seguir.</p>
+            <p><code>${message}</code></p>
+        `;
+        storyContainer.appendChild(box);
+        choicesContainer.innerHTML = '';
+        box.scrollIntoView({ behavior: 'smooth', block: 'end' });
     }
 
     function continueStory() {

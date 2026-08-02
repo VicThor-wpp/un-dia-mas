@@ -139,7 +139,7 @@ Un ritmo.
     Te tiemblan las manos. El cuerpo no da más.
 }
 
-* [...]
++ [...]
 -
 
 Sofía habla mientras revuelve.
@@ -153,7 +153,7 @@ Sofía habla mientras revuelve.
 ~ subir_conexion(1)
 ~ activar_hay_cosas_juntos()
 
-* [...]
++ [...]
 -
 
 Llegan los primeros. Vecinos, familias, gente del barrio.
@@ -191,7 +191,7 @@ Sofía limpia. Sola.
 
 "Ya casi termino."
 
-* [...]
++ [...]
 -
 
 Pero aceptás un trapo igual.
@@ -213,7 +213,7 @@ Silencio.
 "Cuando llegué al barrio, no tenía nada. Un bolso y los gurises.
 Pero acá no me dieron limosna. Me dieron un lugar."
 
-* [...]
++ [...]
 -
 
 "¿Y ahora vos salvás a otros?"
@@ -235,31 +235,40 @@ pasar lo que pasé yo."
 }
 
 {participe_asamblea && veces_que_ayude >= 2:
-
-    Sofia se queda mirando la olla.
-
-    "¿Sabés qué me dijo Elena el otro día?"
-
-    * [...]
-    -
-
-    "Que esto no es caridad. Que esto es política."
-
-    "Y yo le dije que no, que esto es cocinar."
-
-    "Pero después lo pensé. Y tiene razón."
-
-    * [...]
-    -
-
-    "Nadie nos mandó a hacer esto. Nadie nos paga.
-    Nadie nos dio permiso.
-    Lo hacemos porque se necesita.
-    Y funciona."
-
-    "Eso es poder, ¿no? Poder real.
-    No el poder de mandar. El poder de hacer."
+    -> el_poder_de_hacer
+- else:
+    -> preguntas_a_sofia
 }
+
+= el_poder_de_hacer
+
+Sofia se queda mirando la olla.
+
+"¿Sabés qué me dijo Elena el otro día?"
+
++ [...]
+-
+
+"Que esto no es caridad. Que esto es política."
+
+"Y yo le dije que no, que esto es cocinar."
+
+"Pero después lo pensé. Y tiene razón."
+
++ [...]
+-
+
+"Nadie nos mandó a hacer esto. Nadie nos paga.
+Nadie nos dio permiso.
+Lo hacemos porque se necesita.
+Y funciona."
+
+"Eso es poder, ¿no? Poder real.
+No el poder de mandar. El poder de hacer."
+
+-> preguntas_a_sofia
+
+= preguntas_a_sofia
 
 * ["Sos muy fuerte."] -> sofia_respuesta_fuerte
 * ["¿No te cansás?"] -> sofia_respuesta_cansancio
@@ -270,7 +279,7 @@ pasar lo que pasé yo."
 "No soy fuerte. Estoy cansada todo el tiempo.
 Pero no tengo opción."
 
-* [...]
++ [...]
 -
 
 Sigue secando.
@@ -305,14 +314,14 @@ Pero ¿adónde? ¿Con qué?"
 
 Aprieta el trapo.
 
-* [...]
++ [...]
 -
 
 "Él hizo su vida en otro barrio. A veces manda una pensión, a veces no. No es mala gente, solo... eligió otro camino. Y yo me quedé acá, con la casa de mi vieja y la olla."
 
 "¿Y cómo empezaste con esto?"
 
-* [...]
++ [...]
 -
 
 "Llegué al barrio destruida. La Chola estaba enferma y yo no sabía cómo manejar todo sola. Elena me vio en la plaza un día, calculando cuánto me duraba la leche para Nico."
@@ -343,7 +352,7 @@ Sofía mira la imagen de la Virgen de Guadalupe en la pared.
 
 "La puso mi vieja. La Chola."
 
-* [...]
++ [...]
 -
 
 "Ella empezó todo esto. En los 90. Dando merienda a los gurises en su casa. De a poco fue creciendo."
@@ -352,7 +361,7 @@ Sofía mira la imagen de la Virgen de Guadalupe en la pared.
 
 "Yo me fui. Conseguí beca, estudié afuera. Era la 'chica brillante' del barrio. La que 'salió'."
 
-* [...]
++ [...]
 -
 
 Pausa. Sofía mira la imagen de la Virgen.
@@ -361,7 +370,7 @@ Pausa. Sofía mira la imagen de la Virgen.
 
 "¿Por qué?"
 
-* [...]
++ [...]
 -
 
 "Porque ella me tomó la mano en el hospital y me dijo: 'La olla no se apaga'. Y después me dijo otra cosa."
@@ -370,7 +379,7 @@ Pausa. Sofía mira la imagen de la Virgen.
 
 "'No seas boluda, Sofía. La olla sos vos ahora. Pero no sola. Nunca sola'."
 
-* [...]
++ [...]
 -
 
 Se le humedecen los ojos. No llora. Ya no llora por esto.
@@ -394,7 +403,7 @@ Se le humedecen los ojos. No llora. Ya no llora por esto.
 
 "Un mail de mi ex director de tesis. Una beca postdoctoral en Heidelberg. Alemania. Condiciones excelentes."
 
-* [...]
++ [...]
 -
 
 "¿En serio? ¿Y qué hiciste?"
@@ -403,14 +412,14 @@ Se le humedecen los ojos. No llora. Ya no llora por esto.
 
 "¿Por qué?"
 
-* [...]
++ [...]
 -
 
 Sofía se ríe. Pero no es una risa alegre.
 
 "Porque si me iba ahora, mi vieja me tiraba el mate desde el cielo."
 
-* [...]
++ [...]
 -
 
 Pausa.
@@ -422,7 +431,7 @@ Pausa.
 
 "Sí. Pero después me acuerdo de la risa de los gurises cuando hay postre en la olla. Y se me pasa."
 
-* [...]
++ [...]
 -
 
 Hace una pausa más larga.
@@ -446,7 +455,7 @@ Hace una pausa más larga.
 
 "Un compañero del laboratorio. Especialista en química de alimentos."
 
-* [...]
++ [...]
 -
 
 "Un invierno vino a la olla. 'A ver de qué se trata', dijo."
@@ -455,21 +464,21 @@ Hace una pausa más larga.
 
 "Terminó pelando papas tres horas. Torpemente. Se manchó el jean entero."
 
-* [...]
++ [...]
 -
 
 Sofía se ríe. Esta vez de verdad.
 
 "En un momento dijo: 'Esto es más difícil que una cromatografía'. Y yo me reí por primera vez en semanas."
 
-* [...]
++ [...]
 -
 
 "Ahora viene una vez por mes, cuando puede. No es mucho, pero ayuda."
 
 "¿Y en la universidad no te miran raro por la olla?"
 
-* [...]
++ [...]
 -
 
 "Al principio sí. '¿Olla popular? ¿Como en 2002?'. Pero con el tiempo varios entendieron."
@@ -492,7 +501,7 @@ Notás la estampita de la Virgen de Guadalupe en el delantal de Sofía.
 
 "Sí. Como la Chola. No soy de ir a misa todos los domingos, pero rezo a veces."
 
-* [...]
++ [...]
 -
 
 "Por eso les puse esos nombres a mis hijos. Nicolás y Guadalupe. Por ella."
@@ -501,7 +510,7 @@ Señala la imagen en la pared.
 
 "Mi vieja la trajo de México cuando era joven. Decía que la Virgen de Guadalupe entiende a los pobres porque se apareció morena, hablándole a un indio."
 
-* [...]
++ [...]
 -
 
 "No es una fe de discurso. Es una base silenciosa. Cuando no sé qué hacer, rezo. Y después sigo haciendo."
@@ -524,7 +533,7 @@ Viejo, manchado, remendado.
 
 "Era de mi vieja."
 
-* [...]
++ [...]
 -
 
 "No lo lavo. Bueno, lo lavo un poco. Pero no le saco las manchas viejas."
@@ -533,7 +542,7 @@ Viejo, manchado, remendado.
 
 "Porque son sus manchas. Sus horas de cocina. Su trabajo."
 
-* [...]
++ [...]
 -
 
 Se lo toca.
@@ -561,7 +570,7 @@ Sofía te busca. Cosa rara.
 
 "¿Qué pasa?"
 
-* [...]
++ [...]
 -
 
 "La olla. No nos da. Tenemos deudas con el almacén.
@@ -571,7 +580,7 @@ Si no pagamos, no nos fían más."
 
 "Dieciocho mil pesos. Para ayer."
 
-* [...]
++ [...]
 -
 
 Dieciocho mil pesos.
@@ -631,7 +640,7 @@ No son dieciocho mil. Pero es algo.
 
 "Aceptalo. Después veo cómo hago."
 
-* [...]
++ [...]
 -
 
 ~ sofia_relacion += 2
@@ -915,7 +924,7 @@ Lo dijo.
 
 "La Chola me dejó esto. Me dijo 'la olla sos vos ahora'. Y yo dije que sí porque no podía decir que no."
 
-* [...]
++ [...]
 -
 
 "Pero yo no soy ella. Ella tenía... no sé. Fe. Yo solo tengo miedo."
@@ -937,7 +946,7 @@ Se frota la cara.
 
 "Hay días que llego a casa y no tengo ilusión de nada. Nada."
 
-* [...]
++ [...]
 -
 
 "Los gurises me hablan y yo estoy pensando en los números. En si mañana hay para cocinar. En si alguien va a venir a ayudar."
@@ -969,7 +978,7 @@ Pausa.
 
 "Y yo a veces pienso: ¿para qué?"
 
-* [...]
++ [...]
 -
 
 -> sofia_cierre_quiebre
@@ -1014,7 +1023,7 @@ Después de un rato, dice:
 * ["Capaz que no. Pero estamos."]
     Sofía asiente.
     -> sofia_cierre_final
-* [...]
++ [...]
     -> sofia_cierre_final
 
 === sofia_cierre_final ===

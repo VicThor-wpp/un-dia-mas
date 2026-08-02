@@ -8,7 +8,8 @@
   },
   "scripts": {
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js",
+    "test": "node scripts/test.js && node scripts/test-endings.js && node scripts/test-narrative.js",
+    "test:structure": "node scripts/test.js",
     "test:narrative": "node scripts/test-narrative.js",
     "lint": "node scripts/lint-ink.js",
     "dev": "node scripts/build.js --watch",

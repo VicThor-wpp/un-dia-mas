@@ -265,11 +265,15 @@ Usamos tags para:
 
 ## Testing
 
-Para probar cambios:
+Para probar cambios, desde `prototype/`:
 
-1. Compilar: `inklecate -o test.json ink/main.ink`
-2. Verificar errores de compilación
-3. Probar flujo en Inky o web
+1. `npm run build` — compila y **falla con exit 1** si hay errores de Ink
+2. `npm run lint` — chequeos estáticos sobre los `.ink`
+3. `npm test` — estructura + finales + 200 partidas reales
+4. Probar el flujo en el navegador
+
+Cuando `npm run test:narrative` reporta una semilla que falla, reproducila con
+`TRACE_SEED=<n> npm run test:narrative` para ver la transcripción exacta.
 
 ### Errores Comunes
 
@@ -277,7 +281,9 @@ Para probar cambios:
 |-------|-------|----------|
 | `Variable already declared` | VAR duplicado | Mover a variables.ink |
 | `not found: knot_name` | Tunnel faltante | Crear en módulo correspondiente |
-| `Expected ->->` | Tunnel sin retorno | Agregar `->->` al final |
+| `Expected an '- else:' clause here` | Choice + gather `-` adentro de un `{cond: ...}` | Sacar la rama a un stitch propio y divertir |
+| `unexpectedly reached end of content` | Choice point sin opciones disponibles (once-only agotado, o todas condicionales) | Usar `+` sticky y dejar siempre una opción sin condición |
+| `ran out of content` | El cuerpo de un knot cae en el vacío antes de su primer stitch | Cerrar con un `-> stitch` explícito |
 
 ## Extensión
 

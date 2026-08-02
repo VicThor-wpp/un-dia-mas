@@ -17,7 +17,7 @@
 No dormiste bien.
 Hoy es la reunión con Personal.
 
-* [...]
++ [...]
 -
 
 -> casa_despertar ->
@@ -27,7 +27,7 @@ Hoy es la reunión con Personal.
 
 {energia < 4: Te levantás con menos energía que ayer. La tensión se siente en el cuerpo.}
 
-* [...]
++ [...]
 -
 
 El café no calienta igual, o vos no sentís el calor igual.
@@ -47,7 +47,7 @@ Llegás. Todo parece normal.
 Los compañeros hacen lo de siempre.
 Pero hay algo en el aire.
 
-* [...]
++ [...]
 -
 
 El jefe no te mira. Eso es raro.
@@ -134,7 +134,7 @@ Salís del edificio.
 El sol pega.
 Es mediodía.
 
-* [...]
++ [...]
 -
 
 {perdida == "familiar":
@@ -187,7 +187,7 @@ Llegás a casa.
 La casa vacía a las 12 del mediodía.
 Nunca la viste así a esta hora.
 
-* [...]
++ [...]
 -
 
 Te sentás.
@@ -209,7 +209,7 @@ Caminás.
 No sabés bien a dónde.
 Las calles de siempre pero distintas.
 
-* [...]
++ [...]
 -
 
 Porque ahora tenés tiempo.
@@ -217,7 +217,7 @@ Demasiado tiempo.
 
 Pasás por la plaza.
 
-* [...]
++ [...]
 -
 
 El tipo que duerme en el banco sigue ahí.
@@ -237,7 +237,7 @@ Tu barrio.
 A esta hora hay gente.
 Gente que no ves normalmente porque estás laburando.
 
-* [...]
++ [...]
 -
 
 Sofía está saliendo de su casa.
@@ -331,7 +331,7 @@ Después:
     ~ aumentar_inercia(1)
 }
 
-* [...]
++ [...]
 -
 
 "Mirá, si querés venir a la olla a dar una mano... a veces ayuda tener algo que hacer, bo. Y la gente es buena."
@@ -421,14 +421,14 @@ Cuando terminás, hay silencio.
 
 # PAUSA
 
-* [...]
++ [...]
 -
 
 "En el 2002 cerraron el frigorífico donde laburaba Raúl."
 
 Raúl era su marido.
 
-* [...]
++ [...]
 -
 
 "Tres meses estuvo sin laburo. Yo trabajaba limpiando. Los pibes eran chicos. La olla del barrio nos salvó ese invierno."
@@ -576,7 +576,7 @@ La cabeza no para.
 
 # PAUSA
 
-* [...]
++ [...]
 -
 
 La tarjeta. El alquiler. La obra social.
@@ -716,14 +716,14 @@ Está en la cocina, con la calculadora.
 Los números de la olla no cierran.
 Nunca cierran.
 
-* [...]
++ [...]
 -
 
 Piensa en vos.
 Otro que cayó.
 Pero también: otra persona que puede ayudar.
 
-* [...]
++ [...]
 -
 
 No es que se alegre de que te echaron.
@@ -805,7 +805,7 @@ Piensa en vos.
 En lo que le contaste.
 En que podría ser él mañana.
 
-* [...]
++ [...]
 -
 
 Llama a su madre.
@@ -815,7 +815,7 @@ Miente.
 Cuelga.
 Mira el techo.
 
-* [...]
++ [...]
 -
 
 No sabe qué hacer.

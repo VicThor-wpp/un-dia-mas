@@ -14,11 +14,13 @@ La parada del bondi.
 Hay gente esperando.
 Cada uno en su mundo.
 
-* [Esperar tranquilo] # DADOS
+// Sticky: esta escena se repite todos los días laborales. Con opciones
+// once-only, el segundo día la parada se queda sin salidas y el flujo muere.
++ [Esperar tranquilo] # DADOS
     -> bondi_esperar_tranquilo
-* [Mirar el celular] # DADOS # EFECTO:dignidad?
++ [Mirar el celular] # DADOS # EFECTO:dignidad?
     -> bondi_esperar_celular
-* {energia >= 3 || dia_actual == 1} [Hablar con alguien] # COSTO:1 # DADOS:conexion # EFECTO:conexion+
++ {energia >= 3 || dia_actual == 1} [Hablar con alguien] # COSTO:1 # DADOS:conexion # EFECTO:conexion+
     -> bondi_esperar_hablar
 
 === bondi_esperar_tranquilo ===
@@ -78,7 +80,7 @@ Nunca hablaste con ella.
 
 "Buen día."
 
-* [...]
++ [...]
 -
 
 "Buen día." Te mira sorprendida. "¿Todo bien?"
@@ -87,7 +89,7 @@ Nunca hablaste con ella.
 
 "Como todos."
 
-* [...]
++ [...]
 -
 
 ~ ultima_tirada = d6()
@@ -184,7 +186,7 @@ El bondi lleno.
 Cuerpos apretados.
 Olor a cuerpos, a sudor de madrugada, a cansancio acumulado.
 
-* [...]
++ [...]
 -
 
 Conseguís un lugar donde agarrarte.
@@ -193,9 +195,9 @@ Conseguís un lugar donde agarrarte.
 
 === bondi_continuar_viaje ===
 
-* [Mirar por la ventana] -> bondi_ventana
-* [Cerrar los ojos] -> bondi_ojos_cerrados
-* [Escuchar conversaciones] -> bondi_escuchar
++ [Mirar por la ventana] -> bondi_ventana
++ [Cerrar los ojos] -> bondi_ojos_cerrados
++ [Escuchar conversaciones] -> bondi_escuchar
 
 === bondi_subir_tarde ===
 
@@ -216,7 +218,7 @@ La ciudad pasa.
 Los edificios.
 La gente en las veredas.
 
-* [...]
++ [...]
 -
 
 Los carteles de "Se alquila", "Se vende", "Cerrado".
@@ -232,14 +234,14 @@ Cerrás los ojos.
 El ruido del bondi.
 El movimiento.
 
-* [...]
++ [...]
 -
 
 Por un segundo, casi te dormís.
 
 ...
 
-* [...]
++ [...]
 -
 
 {d6() >= 4:
@@ -307,7 +309,7 @@ Menos lleno que a la mañana.
 
 Te sentás.
 
-* [...]
++ [...]
 -
 
 Mirás por la ventana.
@@ -322,9 +324,9 @@ La ciudad de tarde.
     Vos no sabés bien hacia dónde vas.
 }
 
-* [Pensar en el día] -> bondi_vuelta_pensar
-* [Desconectar] -> bondi_vuelta_desconectar
-* [Mirar a la gente] -> bondi_vuelta_gente
++ [Pensar en el día] -> bondi_vuelta_pensar
++ [Desconectar] -> bondi_vuelta_desconectar
++ [Mirar a la gente] -> bondi_vuelta_gente
 
 === bondi_vuelta_pensar ===
 
@@ -336,7 +338,7 @@ Pensás en el día.
     En la reunión.
 }
 
-* [...]
++ [...]
 -
 
 {not tiene_laburo:
@@ -355,7 +357,7 @@ Desconectás.
 Música en los auriculares.
 O nada.
 
-* [...]
++ [...]
 -
 
 Solo el ruido del bondi.
@@ -374,7 +376,7 @@ Un viejo con bolsas.
 Una mina con uniforme de trabajo.
 Un pibe con la mochila del colegio.
 
-* [...]
++ [...]
 -
 
 Todos volviendo a algún lado.

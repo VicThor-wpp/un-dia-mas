@@ -505,7 +505,7 @@ Silencio.
 
 "Ni se despidió. O capaz que no la dejaron. No sé."
 
-* [...]
++ [...]
 -
 
 "Después de eso dejé de esperar que la gente se quede."
@@ -804,7 +804,7 @@ Sofía puede cansarse. Vos podés desaparecer."
 
 "Bruno no desaparece. Ese es el tema."
 
-* [...]
++ [...]
 -
 
 "Yo no necesito que me quieran. Necesito saber dónde voy a dormir."

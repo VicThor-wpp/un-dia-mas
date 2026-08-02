@@ -143,7 +143,7 @@ La plaza del barrio.
 
 Un par de bancos, algunos árboles, los juegos oxidados.
 
-* [...]
++ [...]
 -
 
 Pibes jugando a la pelota.
@@ -177,7 +177,7 @@ El sol.
 El ruido de los pibes.
 El viento.
 
-* [...]
++ [...]
 -
 
 Por un rato, no pensás en nada.
@@ -258,7 +258,7 @@ El kiosco de la esquina.
 
 Esas viejas, caramelos, cigarrillos.
 
-* [...]
++ [...]
 -
 
 Revistas que nadie compra.
@@ -343,7 +343,7 @@ El tipo que duerme en el banco.
 Siempre está ahí.
 Con sus bolsas, sus cartones, su mundo.
 
-* [...]
++ [...]
 -
 
 {not hable_con_el_del_banco:
@@ -352,7 +352,7 @@ Con sus bolsas, sus cartones, su mundo.
     Pasa la gente y no lo mira.
 }
 
-* [...]
++ [...]
 -
 
 {not tiene_laburo:
@@ -375,7 +375,7 @@ Te acercás.
 Está despierto.
 Te mira.
 
-* [...]
++ [...]
 -
 
 Ojos cansados.
@@ -453,7 +453,7 @@ Le traés un café del kiosco.
 
 Toma.
 
-* [...]
++ [...]
 -
 
 {d6() >= 4:
@@ -647,7 +647,7 @@ No hay gente.
 No hay autos.
 No hay nada.
 
-* [...]
++ [...]
 -
 
 Solo vos y el barrio.
@@ -657,7 +657,7 @@ Solo vos y el barrio.
     ¿Caminar por el barrio sin rumbo?
 }
 
-* [...]
++ [...]
 -
 
 El momento pasa.
@@ -679,12 +679,12 @@ El barrio de noche.
 Pocas luces.
 Perros ladrando.
 
-* [...]
++ [...]
 -
 
 La televisión prendida en las casas.
 
-* [...]
++ [...]
 -
 
 {d6() <= 2:
@@ -714,13 +714,13 @@ La televisión prendida en las casas.
 Domingo.
 El barrio más tranquilo que nunca.
 
-* [...]
++ [...]
 -
 
 Los negocios cerrados.
 Poca gente en la calle.
 
-* [...]
++ [...]
 -
 
 Alguien pasea un perro.
@@ -746,7 +746,7 @@ Sofía, Elena, otros.
 Hablando en la vereda.
 Tomando café.
 
-* [...]
++ [...]
 -
 
 "¿Todo bien?", te preguntan.
@@ -770,13 +770,13 @@ Caminás sin rumbo.
 No hay a donde ir.
 No hay a donde volver.
 
-* [...]
++ [...]
 -
 
 El barrio te conoce.
 Pero hoy te siente distinto.
 
-* [...]
++ [...]
 -
 
 {not tiene_laburo:
@@ -785,7 +785,7 @@ Pero hoy te siente distinto.
     Ahora son solo calles.
 }
 
-* [...]
++ [...]
 -
 
 Las horas pasan.
@@ -805,7 +805,7 @@ Pensando.
 Sábado.
 El barrio más relajado.
 
-* [...]
++ [...]
 -
 
 La gente hace compras.
@@ -832,7 +832,7 @@ La tarde en el barrio.
 El sol bajando.
 Las sombras largas.
 
-* [...]
++ [...]
 -
 
 Gente volviendo de trabajar.
@@ -858,7 +858,7 @@ La mañana en el barrio.
 El sol recién saliendo.
 El rocío en los autos.
 
-* [...]
++ [...]
 -
 
 Gente yendo a trabajar.

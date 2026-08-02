@@ -253,3 +253,31 @@
         opacity: 1;
     }
 }
+/* --- Error de runtime de Ink ---------------------------------------------
+   Se muestra cuando la historia se queda sin contenido, en vez de dejar la
+   pantalla congelada sin explicación. */
+
+#storyContainer .error {
+    margin: 2rem 0;
+    padding: 1rem 1.25rem;
+    border-left: 3px solid var(--color-danger, #c0392b);
+    background: rgba(192, 57, 43, 0.08);
+    border-radius: 4px;
+}
+
+#storyContainer .error p {
+    margin: 0 0 0.5rem;
+}
+
+#storyContainer .error p:last-child {
+    margin-bottom: 0;
+}
+
+#storyContainer .error code {
+    display: block;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    font-size: 0.85em;
+    opacity: 0.75;
+    word-break: break-word;
+}

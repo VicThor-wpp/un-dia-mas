@@ -48,7 +48,7 @@ Después te acordás.
 // VOCES
 -> voces_reaccion ->
 
-* [...]
++ [...]
 -
 
 Ya no tenés laburo.
@@ -92,7 +92,7 @@ Moler.
 Agua caliente.
 Prensa francesa.
 
-* [...]
++ [...]
 -
 
 El único mecanismo de supervivencia que hoy parece confiable.
@@ -100,7 +100,7 @@ El único mecanismo de supervivencia que hoy parece confiable.
 Antes el café era apurado, entre ducharte y salir.
 Ahora tenés todo el tiempo del mundo.
 
-* [...]
++ [...]
 -
 
 Demasiado tiempo.
@@ -156,14 +156,14 @@ Abrís las páginas de empleo.
 Hay ofertas.
 Pocas que sirvan.
 
-* [...]
++ [...]
 -
 
 "Se busca. Experiencia mínima 5 años."
 "Se busca. Hasta 25 años."
 "Se busca. Disponibilidad full time. Pago por productividad."
 
-* [...]
++ [...]
 -
 
 // Tunnel de enviar CVs
@@ -247,7 +247,7 @@ El tipo que duerme en la plaza sigue ahí.
 Lo viste mil veces.
 Hoy lo mirás diferente.
 
-* [...]
++ [...]
 -
 
 No sos él.
@@ -464,6 +464,11 @@ Son las 3 de la tarde.
 {vinculo == "elena": -> jueves_elena}
 {vinculo == "diego": -> jueves_diego}
 {vinculo == "marcos": -> jueves_marcos}
+// Ixchel labura en la olla: buscarla es ir para allá.
+{vinculo == "ixchel": -> jueves_olla}
+
+// Red de seguridad: un vínculo sin escena propia no puede cortar el día.
+-> jueves_olla
 
 === jueves_elena ===
 
@@ -502,7 +507,7 @@ Un balde de papas entre los dos.
 Estás en la cocina de la olla.
 Elena pela papas a tu lado.
 
-* [...]
++ [...]
 -
 
 // Preparar el chequeo de dados
@@ -698,7 +703,7 @@ Primer día completo sin laburo.
 Te acostás temprano.
 ¿Para qué quedarse despierto?
 
-* [...]
++ [...]
 -
 
 La cabeza sigue dando vueltas.
@@ -1172,7 +1177,7 @@ Los problemas no.
 === recovery_mental_jueves ===
 Todo se pone oscuro. La cabeza no funciona.
 
-* [...]
++ [...]
 -
 
 {conexion <= 1 && llama <= 1:

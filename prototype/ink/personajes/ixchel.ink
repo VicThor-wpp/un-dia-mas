@@ -54,7 +54,7 @@ Barrés juntos un rato. El sonido de la paja contra el cemento es hipnótico.
 
 "Guatemala vive en mi ombligo, joven. Mi familia cuidaba los cerros, defendiendo la tierra de los que venían con máquinas y papeles a decirnos que el agua tenía dueño."
 
-* [...]
++ [...]
 -
 
 "Me vine hace cinco años, cuando los líderes empezaron a no volver a casa."
@@ -194,7 +194,7 @@ Te pone delante de una tabla de cortar.
 
 "Primero el tomate. Se asa. No se hierve. El fuego le saca el alma."
 
-* [...]
++ [...]
 -
 
 Te muestra cómo poner el tomate directamente sobre la hornalla.
@@ -202,7 +202,7 @@ La piel se chamusca. El olor es increíble.
 
 "En Guatemala usamos comal. Acá hay que improvisar."
 
-* [...]
++ [...]
 -
 
 "Ahora la pepitoria. Semilla de calabaza. Se tuesta en seco."
@@ -212,7 +212,7 @@ El crepitar llena la cocina.
 
 "Mi abuela me enseñó esto cuando tenía seis años. Yo quería jugar afuera. Ella me dijo: 'La cocina también es juego. Solo que después te lo comés'."
 
-* [...]
++ [...]
 -
 
 "¿Y el secreto del pepián?"
@@ -221,7 +221,7 @@ Ixchel sonríe.
 
 "El secreto es tiempo. En Guatemala dejamos que hierva horas. Acá no tenemos horas. Pero le ponemos intención. Y la intención cocina más que el fuego."
 
-* [...]
++ [...]
 -
 
 Te pasa la cuchara.
@@ -269,7 +269,7 @@ Te pasa la cuchara.
     "Empezamos de nuevo. En la cocina siempre se puede empezar de nuevo."
 }
 
-* [...]
++ [...]
 -
 
 "¿Sabés qué es lo mejor del pepián?"
@@ -301,7 +301,7 @@ Es memoria del cuerpo.
 
 "En mi comunidad, las mujeres cocinan juntas. Cada una trae algo. Nadie cocina sola."
 
-* [...]
++ [...]
 -
 
 "Acá es distinto. Cada casa es una isla. Cada cocina es un secreto."
@@ -327,7 +327,7 @@ Ixchel niega con la cabeza. Casi ofendida.
 
 "Eso no es tortilla. Le voy a enseñar."
 
-* [...]
++ [...]
 -
 
 Saca un paquete de harina de maíz. "No es nixtamal de verdad, pero se puede."
@@ -336,7 +336,7 @@ Te enseña a amasar. A formar bolitas. A aplastarlas con la palma.
 
 "En Guatemala usamos prensa. Acá, las manos. Las manos siempre sirven."
 
-* [...]
++ [...]
 -
 
 La primera te queda deforme.
@@ -349,7 +349,7 @@ Pone tu tortilla en el comal.
 
 "Ahora espere. Cuando se infle, está."
 
-* [...]
++ [...]
 -
 
 La tortilla se infla. Un globito de maíz.
@@ -388,7 +388,7 @@ El silencio es cómodo hasta que ella lo rompe.
 
 "Tenía un hermano. Tomás."
 
-* [...]
++ [...]
 -
 
 "Era catequista, pero no solo de fe. Organizaba a la comunidad. Era vocero del Consejo de Pueblos K'iche'."
@@ -397,7 +397,7 @@ El silencio es cómodo hasta que ella lo rompe.
 
 "Los que defendíamos la tierra de las mineras. Goldcorp, una empresa canadiense, vino a sacarnos el oro. Pero el oro estaba debajo de nuestras casas, de nuestros ríos."
 
-* [...]
++ [...]
 -
 
 Sus manos siguen lavando, pero más lento.
@@ -406,7 +406,7 @@ Sus manos siguen lavando, pero más lento.
 
 "¿Y qué pasó?"
 
-* [...]
++ [...]
 -
 
 # PAUSA
@@ -459,7 +459,7 @@ El silencio dice lo que la boca no puede.
 
 "Tres años mayor. Pero parecía de otra generación."
 
-* [...]
++ [...]
 -
 
 "Cuando éramos niños, él me llevaba al cerro. A ver amanecer."
@@ -468,7 +468,7 @@ Ixchel sonríe. Un recuerdo dulce entre tanto dolor.
 
 "Yo me quejaba del frío. Y él me decía: 'El frío es el abrazo de la montaña. No te resistas'."
 
-* [...]
++ [...]
 -
 
 "Era así con todo. Sabía ver lo sagrado en lo que otros veían como molestia."
@@ -481,7 +481,7 @@ Ixchel sonríe. Un recuerdo dulce entre tanto dolor.
 
 "Pero eso ya se lo conté. Hoy le cuento de cuando éramos felices."
 
-* [...]
++ [...]
 -
 
 "Una vez robamos mangos del árbol del vecino. Nos descubrieron. Mi papá quería pegarnos. Tomás dijo que había sido solo él. Que yo no sabía nada."
@@ -510,7 +510,7 @@ Ixchel piensa.
 
 "No hubo un día. Fue como el río. Empezó con gotitas."
 
-* [...]
++ [...]
 -
 
 "Primero ayudaba en la iglesia. Catequesis para los niños. Después empezó a hablar con los ancianos. A preguntar."
@@ -519,14 +519,14 @@ Ixchel piensa.
 
 "Por qué el agua del río estaba cambiando de color. Por qué había gente enferma. Por qué las casas se agrietaban con las explosiones de la mina."
 
-* [...]
++ [...]
 -
 
 "Después empezó a leer. Leía todo. Derecho, historia, el Convenio 169... Decía que teníamos que saber nuestros derechos para defenderlos."
 
 "¿Y la comunidad lo siguió?"
 
-* [...]
++ [...]
 -
 
 "Al principio dudaban. 'No te metás con los poderosos', le decían. Pero Tomás respondía: 'Si no nos metemos, ellos se meten solos'."
@@ -558,7 +558,7 @@ Ixchel está mirando por la ventana. Como buscando algo en la distancia.
 
 "¿En qué pensás?"
 
-* [...]
++ [...]
 -
 
 Silencio largo.
@@ -568,7 +568,7 @@ Silencio largo.
 
 No hace falta preguntar a quién.
 
-* [...]
++ [...]
 -
 
 "Era martes. Iba a una reunión del Consejo en Huehuetenango."
@@ -577,14 +577,14 @@ No hace falta preguntar a quién.
 
 "Tres horas en bus. Pero él siempre volvía."
 
-* [...]
++ [...]
 -
 
 "Se puso su mejor camisa. La celeste. Yo le dije que estaba arrugada. Él se rio y dijo 'los arrugas son las arrugas de la lucha, hermanita'."
 
 Sonríe. Pero los ojos se le humedecen.
 
-* [...]
++ [...]
 -
 
 "Antes de salir se dio vuelta y me dijo: 'Cuídate'."
@@ -617,7 +617,7 @@ Las lágrimas caen ahora. No las detiene.
 
 "Tenía la camisa celeste. Rota. Manchada."
 
-* [...]
++ [...]
 -
 
 "Después de eso empezaron las amenazas. Notas debajo de la puerta. Llamadas donde nadie hablaba."
@@ -656,7 +656,7 @@ No esperás la pregunta.
 
 "Es cuando le arrancan la piel a la montaña. Usan cianuro para sacar el oro. El cianuro envenena el agua."
 
-* [...]
++ [...]
 -
 
 "Mi comunidad, San Miguel Ixtahuacán, está sobre oro. Por eso vinieron. La empresa se llamaba Goldcorp. Canadiense."
@@ -665,7 +665,7 @@ No esperás la pregunta.
 
 "Sí. Los de lejos vienen a sacar lo de acá. Siempre fue así."
 
-* [...]
++ [...]
 -
 
 "El agua empezó a enfermar a la gente. Las explosiones agrietaban las casas. Pero el gobierno decía que era progreso."
@@ -699,14 +699,14 @@ Ixchel sonríe, pero sin alegría.
 
 "No lo elegí yo. Lo eligió un formulario."
 
-* [...]
++ [...]
 -
 
 "Después de lo de Tomás, empecé a recibir amenazas. Notas debajo de la puerta. Llamadas donde nadie hablaba."
 
 "La puta madre."
 
-* [...]
++ [...]
 -
 
 "Una organización, SERPAJ, me contactó. Dijeron que podían sacarme del país por ACNUR. Refugiada."
@@ -715,7 +715,7 @@ Ixchel sonríe, pero sin alegría.
 
 "'Uruguay' era un nombre en un papel. No sabía ni dónde quedaba. Solo sabía que era lejos."
 
-* [...]
++ [...]
 -
 
 Hace una pausa.
@@ -745,14 +745,14 @@ Ixchel sonríe.
 
 "Es mi huipil. La ropa de mi pueblo. Este diseño es de San Miguel Ixtahuacán. Las líneas rojas son el maíz. Las verdes, la montaña."
 
-* [...]
++ [...]
 -
 
 "Lo uso debajo del uniforme de trabajo. Nadie lo ve."
 
 "¿Por qué lo usás si nadie lo ve?"
 
-* [...]
++ [...]
 -
 
 "Porque yo sé que está ahí."
@@ -762,7 +762,7 @@ Se toca el pecho, donde el bordado queda oculto.
 
 "Cuando limpio oficinas, soy invisible. Pero debajo del delantal soy Ixchel Batz Ixcoy, maya-k'iche', hija de la montaña."
 
-* [...]
++ [...]
 -
 
 "Ellos ven una empleada. Yo sé quién soy."
@@ -789,7 +789,7 @@ Te mira fijo.
 
 "Ustedes los uruguayos a veces tienen miedo de ser nosotros. Pero en el hambre, todos tenemos la misma cara."
 
-* [...]
++ [...]
 -
 
 "Además..."
@@ -832,12 +832,12 @@ Ixchel está pelando papas. Murmura algo en un idioma que no entendés.
 
 "Mi abuela decía: 'El maíz no crece para nosotros. Crece con nosotros. Somos parientes'."
 
-* [...]
++ [...]
 -
 
 "Por eso cuando cocino, no estoy solo trabajando. Estoy... ¿cómo se dice? Honrando."
 
-* [...]
++ [...]
 -
 
 "Acá, en la olla, hacemos lo mismo. Convertimos comida en comunidad. Eso es sagrado."
@@ -859,7 +859,7 @@ Ixchel tiene una estampita de la Virgen de Guadalupe en su delantal.
 
     "El Señor es grande. Tiene muchos nombres. Los españoles trajeron a María, pero ella se apareció morena, en el cerro del Tepeyac, hablando náhuatl."
     
-    * [...]
+    + [...]
     -
     
     "Guadalupe no es solo de ellos. Es de nosotros también. Es la madre tierra con otro vestido."
@@ -896,7 +896,7 @@ Lo hace con reverencia, como si tocara algo vivo.
 
 "¿Por qué Guadalupe? Porque ella es como nosotros."
 
-* [...]
++ [...]
 -
 
 "Mirela bien. Es morena. Tiene el cinto de las embarazadas. El manto lleno de estrellas. El sol atrás. La luna abajo."
@@ -905,7 +905,7 @@ Lo hace con reverencia, como si tocara algo vivo.
 
 "Que está parada sobre la luna. Más poderosa que los dioses aztecas. Pero al mismo tiempo, es humilde. Se le apareció a Juan Diego, un indio pobre."
 
-* [...]
++ [...]
 -
 
 "Los españoles trajeron sus Vírgenes blancas, de pelo rubio. Pero Guadalupe se hizo morena. Habló en náhuatl. Se puso del lado de los de abajo."
@@ -923,7 +923,7 @@ Acaricia la estampita.
 
 "Esta estampita me la dio mi mamá cuando me fui."
 
-* [...]
++ [...]
 -
 
 "Ella tenía dos. Una para ella, una para mí. Me dijo: 'Cuando te sientas sola, hablale. Ella entiende a las madres y a las hijas'."
@@ -932,7 +932,7 @@ Acaricia la estampita.
 
 "Todas las noches. Le cuento del día. De lo que me pasó. De lo que extraño."
 
-* [...]
++ [...]
 -
 
 "A veces le pido por mi mamá. Que esté bien allá. Que no se enferme."
@@ -958,7 +958,7 @@ Ixchel piensa.
 
 "No sé si me escucha como usted me escucha. Pero cuando le hablo, algo cambia adentro mío."
 
-* [...]
++ [...]
 -
 
 "Es como cuando uno le habla a los muertos. ¿Escuchan? No sé. Pero uno necesita hablarles."
@@ -967,7 +967,7 @@ Ixchel piensa.
 
 "Todas las noches. A él y a ella."
 
-* [...]
++ [...]
 -
 
 "Mi abuela decía que los santos son como teléfonos. Uno marca el número, pero quien contesta es Dios."
@@ -991,7 +991,7 @@ Se ríe bajito.
 
 "Es... difícil de traducir. Algunos dicen 'buen vivir'. Pero es más que eso."
 
-* [...]
++ [...]
 -
 
 "Es vivir en armonía. Con la comunidad. Con la tierra. Con los ancestros. Con uno mismo."
@@ -1000,7 +1000,7 @@ Se ríe bajito.
 
 "No es utopía. Es cómo vivíamos antes de que vinieran a decirnos que había que 'progresar'."
 
-* [...]
++ [...]
 -
 
 "El progreso de ellos es sacar, sacar, sacar. Oro, agua, madera. Dejar la tierra pelada y decir 'miren cuánto avanzamos'."
@@ -1049,7 +1049,7 @@ Las palabras fluyen como agua de montaña.
 
 "Ri uk'aslem... ri qa nan... ri loq'alaj..."
 
-* [...]
++ [...]
 -
 
 No sabés qué dice, pero entendés algo.
@@ -1099,7 +1099,7 @@ Se limpia los ojos. ¿Estaba llorando?
 
 === ixchel_kiche_explicar ===
 
-* [...]
++ [...]
 -
 
 "Acá no hablo k'iche' con nadie. No hay nadie que entienda."
@@ -1108,7 +1108,7 @@ Se limpia los ojos. ¿Estaba llorando?
 
 "Es como tener la mitad de la lengua atada. Puedo pensar, pero no puedo hablar."
 
-* [...]
++ [...]
 -
 
 "Por eso hablo sola. Para no olvidar."
@@ -1119,7 +1119,7 @@ Se limpia los ojos. ¿Estaba llorando?
 
 "Todos los días olvido algo. Una palabra. Un sonido. Una forma de decir las cosas que no existe en español."
 
-* [...]
++ [...]
 -
 
 "Mi abuela decía que cuando muere una lengua, muere una forma de ver el mundo. Yo no quiero que muera conmigo."
@@ -1150,7 +1150,7 @@ Intentás de nuevo. Y otra vez.
 
 "¡Eso! Muy bien."
 
-* [...]
++ [...]
 -
 
 "Ahora sabe una palabra. Cuando la diga, piense en mí. Y en mi pueblo."
@@ -1251,7 +1251,7 @@ Frente a la vela hay una estampita de la Virgen de Guadalupe.
 Al lado, una foto vieja de un hombre joven con camisa blanca.
 Tomás.
 
-* [...]
++ [...]
 -
 
 Reza en voz baja.
@@ -1263,7 +1263,7 @@ Las palabras se mezclan, como se mezclaron siempre.
     "Cada plato que sirvo es para vos también."
 }
 
-* [...]
++ [...]
 -
 
 {ixchel_estado == "ayudando":
@@ -1274,7 +1274,7 @@ Las palabras se mezclan, como se mezclaron siempre.
     "Tal vez hay esperanza, Tomás."
 }
 
-* [...]
++ [...]
 -
 
 Mira la foto de las montañas en la pared.
@@ -1283,7 +1283,7 @@ Los volcanes de su tierra. El lago Atitlán al fondo.
 "Un día más lejos de la montaña", murmura.
 "Pero un día más cerca de Su voluntad y de la comunidad."
 
-* [...]
++ [...]
 -
 
 Se envuelve en su rebozo.
@@ -1313,7 +1313,7 @@ Lo trajo de Guatemala. Lo único que no vendió.
 
 Los hilos de colores brillan bajo la luz amarilla del foco.
 
-* [...]
++ [...]
 -
 
 Empieza a tejer.
@@ -1324,7 +1324,7 @@ Montañas que están a miles de kilómetros.
 El ritmo es hipnótico.
 Adelante. Atrás. Apretar. Soltar.
 
-* [...]
++ [...]
 -
 
 {ixchel_relacion >= 2:
@@ -1336,7 +1336,7 @@ Adelante. Atrás. Apretar. Soltar.
 
 "Abuela", murmura mientras teje, "todavía me acuerdo. No me olvidé."
 
-* [...]
++ [...]
 -
 
 Teje hasta que se le cierran los ojos.
@@ -1362,7 +1362,7 @@ Sale de la pensión. Camina hasta el arroyo Pantanoso.
 No es el río de su tierra. Ese era cristalino, frío, vivo.
 Este huele a basura. Pero igual la llama.
 
-* [...]
++ [...]
 -
 
 Se sienta en una piedra.
@@ -1371,7 +1371,7 @@ Mira el agua oscura moverse.
 "Allá el río cantaba", dice en voz alta. A nadie. A todos.
 "Este río susurra. Pero algo dice."
 
-* [...]
++ [...]
 -
 
 Cierra los ojos.
@@ -1382,7 +1382,7 @@ Solo queda el agua.
 
 "Tomás. ¿Estás ahí?"
 
-* [...]
++ [...]
 -
 
 No hay respuesta. Nunca hay respuesta.
@@ -1391,7 +1391,7 @@ Pero el agua sigue fluyendo.
 "El agua tiene memoria", le decía su abuela.
 "Todo lo que tocó sigue en ella."
 
-* [...]
++ [...]
 -
 
 Ixchel mete la mano en el agua.
@@ -1400,7 +1400,7 @@ Fría. Sucia. Pero viva.
 "Aunque haya veneno", piensa, "sigue fluyendo."
 "Como yo."
 
-* [...]
++ [...]
 -
 
 {ixchel_me_conto_de_tomas:
@@ -1425,7 +1425,7 @@ Llena el cuarto de olor a montaña.
 
 Frente a ella: la Virgen. La foto de Tomás. Una mazorca seca.
 
-* [...]
++ [...]
 -
 
 "Ave María, llena de gracia..."
@@ -1438,7 +1438,7 @@ Pero después las palabras cambian. Se vuelven k'iche'.
 
 "Ri Ajaw kuk'ulaj chi awäch..."
 
-* [...]
++ [...]
 -
 
 Termina el rezo. Abre los ojos.
@@ -1446,7 +1446,7 @@ Mira la foto de Tomás.
 
 "Hermanito. Hoy pasó algo bueno."
 
-* [...]
++ [...]
 -
 
 "Cociné pepián. ¿Te acordás del pepián de mamá? No quedó igual, pero se acercó."
@@ -1455,7 +1455,7 @@ Pausa.
 
 "Hay un joven que me ayuda. No sé por qué, pero me escucha. No me mira como bicho raro."
 
-* [...]
++ [...]
 -
 
 {ixchel_relacion >= 3:
@@ -1463,7 +1463,7 @@ Pausa.
     "Capaz que vos tenías razón. Capaz que la comunidad no es un lugar. Es cómo nos tratamos."
 }
 
-* [...]
++ [...]
 -
 
 "Te extraño. Todos los días te extraño."
@@ -1539,7 +1539,7 @@ El de su mamá. El que sabe de memoria.
 
 Mentira. Pero qué va a decir.
 
-* [...]
++ [...]
 -
 
 Hablan quince minutos.
@@ -1553,7 +1553,7 @@ Igual significa que sigue difícil.
 Que la mina sigue funcionando.
 Que nadie ha pagado por lo de Tomás.
 
-* [...]
++ [...]
 -
 
 "Te quiero, mamá."
@@ -1589,7 +1589,7 @@ Elena la mira.
 
 "Usted también, doña."
 
-* [...]
++ [...]
 -
 
 Se miran.
@@ -1621,7 +1621,7 @@ Pelan papas en silencio.
 
 "Treinta y cinco. A tu edad yo ya había enterrado a mi padre y parido dos hijos."
 
-* [...]
++ [...]
 -
 
 "¿Y usted cuántos tiene?"
@@ -1632,7 +1632,7 @@ Ixchel sonríe.
 
 "En mi pueblo decimos que las arrugas son los ríos del alma. Cuantos más ríos, más sabia el alma."
 
-* [...]
++ [...]
 -
 
 Elena la mira. Diferente.
@@ -1645,7 +1645,7 @@ Elena se ríe. Ronco. Genuino.
 
 "Me gusta eso. Ríos del alma."
 
-* [...]
++ [...]
 -
 
 Silencio.
@@ -1656,7 +1656,7 @@ Silencio.
 
 "Yo perdí a mi marido. Y a compañeros. Muchos compañeros."
 
-* [...]
++ [...]
 -
 
 Elena deja de pelar. Mira a Ixchel.
@@ -1691,7 +1691,7 @@ Los dos saben lo que dejaron atrás.
 
 "Yo también extraño Guatemala. Todos los días."
 
-* [...]
++ [...]
 -
 
 Silencio.
@@ -1720,7 +1720,7 @@ Diego la mira.
 
 "¿Por qué te fuiste de Guatemala?"
 
-* [...]
++ [...]
 -
 
 Se ríen los dos. Amargo pero cómplice.
@@ -1729,7 +1729,7 @@ Se ríen los dos. Amargo pero cómplice.
 
 "No. Pero a veces ayuda."
 
-* [...]
++ [...]
 -
 
 Silencio.
@@ -1741,7 +1741,7 @@ Silencio.
 No hay competencia. No hay comparación.
 Solo dos heridas que se reconocen.
 
-* [...]
++ [...]
 -
 
 "Los uruguayos no entienden", dice Diego.
@@ -1750,7 +1750,7 @@ Solo dos heridas que se reconocen.
 
 "¿Y si no quieren?"
 
-* [...]
++ [...]
 -
 
 "Entonces seguimos sin ellos. Pero mejor con ellos."
@@ -1781,7 +1781,7 @@ Diego e Ixchel lavan platos juntos.
 
 "Que nadie te pregunte cómo estás de verdad."
 
-* [...]
++ [...]
 -
 
 Ixchel asiente.
@@ -1790,7 +1790,7 @@ Ixchel asiente.
 
 "Exacto. Quieren que digas 'bien'. Que sigas caminando."
 
-* [...]
++ [...]
 -
 
 "En mi pueblo, cuando alguien vuelve de lejos, lo sientan. Le dan de comer. Le preguntan todo. Todo."
@@ -1799,7 +1799,7 @@ Ixchel asiente.
 
 "Acá la gente tiene prisa. No hay tiempo para escuchar."
 
-* [...]
++ [...]
 -
 
 Diego la mira.
@@ -1838,7 +1838,7 @@ No con enojo. Con paciencia.
 
 "Existimos, sí. Millones. Y seguimos hablando nuestra lengua, tejiendo nuestra ropa, sembrando nuestro maíz."
 
-* [...]
++ [...]
 -
 
 Juan se pone un poco incómodo.
@@ -1865,7 +1865,7 @@ Están en la olla. Juan habla con otros.
 Se da cuenta de que Ixchel está escuchando.
 Se calla.
 
-* [...]
++ [...]
 -
 
 Silencio incómodo.
@@ -1878,7 +1878,7 @@ Ixchel sigue pelando papas. Como si nada.
 
 "Sé lo que decía, joven."
 
-* [...]
++ [...]
 -
 
 Ahora sí lo mira.
@@ -1889,7 +1889,7 @@ Ahora sí lo mira.
 
 "No. No sabe. Pero puede aprender."
 
-* [...]
++ [...]
 -
 
 Juan se calla.
@@ -1901,7 +1901,7 @@ Ixchel vuelve a las papas.
 
 "Y después conocí gente. Y aprendí que la gente es gente. No importa de dónde venga."
 
-* [...]
++ [...]
 -
 
 Juan no dice nada.
@@ -1927,7 +1927,7 @@ Juan se acerca a Ixchel. Incómodo.
 
 "Estuvo mal. Perdón."
 
-* [...]
++ [...]
 -
 
 Ixchel lo mira. Evalúa.
@@ -1938,7 +1938,7 @@ Ixchel lo mira. Evalúa.
 
 "El perdón no se pide. Se gana."
 
-* [...]
++ [...]
 -
 
 Juan no sabe qué decir.
@@ -1947,7 +1947,7 @@ Juan no sabe qué decir.
 
 "Tratando a todos como me trata a mí. No como 'distinta'. Como persona."
 
-* [...]
++ [...]
 -
 
 Juan asiente. Serio.
@@ -1982,21 +1982,21 @@ Alguien trajo un libro de la facultad.
 
 Ixchel mira el libro. Se ríe bajito.
 
-* [...]
++ [...]
 -
 
 "¿Qué pasa?", preguntás.
 
 "Nada. Es que ustedes le ponen nombres nuevos a todo."
 
-* [...]
++ [...]
 -
 
 "'Economía solidaria'. En mi comunidad se llama ayni. Se llama mink'a.
 Lo venimos haciendo hace quinientos años.
 Pero claro, si no tiene paper académico, no cuenta."
 
-* [...]
++ [...]
 -
 
 Se cruza de brazos.
@@ -2009,7 +2009,7 @@ Tres semanas nos filmó, preguntó, anotó.
 
 "¿Qué?"
 
-* [...]
++ [...]
 -
 
 "Publicó un libro. El libro costaba más de lo que ganamos en un mes.
@@ -2017,7 +2017,7 @@ Nosotros ni lo pudimos leer."
 
 Silencio incómodo.
 
-* [...]
++ [...]
 -
 
 "No digo que la solidaridad esté mal, joven.
@@ -2057,7 +2057,7 @@ Significa: 'Yo te doy, vos me das'.
 No es trueque. No es préstamo.
 Es ciclo. Como la luna. Como el agua."
 
-* [...]
++ [...]
 -
 
 "Cuando cocinamos acá, no es caridad.
@@ -2066,7 +2066,7 @@ Los que tienen manos traen manos.
 Los que tienen hambre traen hambre.
 Todo sirve."
 
-* [...]
++ [...]
 -
 
 "El capitalismo dice: 'Dame primero, después te doy'.
@@ -2281,7 +2281,7 @@ Pero cuando hay un silencio, habla.
 
 Todos se dan vuelta.
 
-* [...]
++ [...]
 -
 
 "En mi comunidad, cuando hay asamblea, primero se escucha a los ancianos. Después a los jóvenes. Después se decide."
@@ -2290,7 +2290,7 @@ Todos se dan vuelta.
 
 "Y acá todos hablan al mismo tiempo. Nadie escucha."
 
-* [...]
++ [...]
 -
 
 Silencio incómodo.
@@ -2299,7 +2299,7 @@ Elena asiente.
 
 "La guatemalteca tiene razón. A ver. De a uno."
 
-* [...]
++ [...]
 -
 
 La asamblea se reordena.
@@ -2325,7 +2325,7 @@ Las opiniones están divididas.
 
 Ixchel levanta la mano. Cosa rara.
 
-* [...]
++ [...]
 -
 
 "En Guatemala, las mineras también ofrecían 'ayuda'. Escuelas. Hospitales. Caminos."
@@ -2334,7 +2334,7 @@ Ixchel levanta la mano. Cosa rara.
 
 "Y después nos cobraban la ayuda. 'Ya les dimos tanto, ahora dejen que saquemos el agua'."
 
-* [...]
++ [...]
 -
 
 Pausa.
@@ -2345,7 +2345,7 @@ Sofía asiente.
 
 "Tiene razón. Hay que leer la letra chica."
 
-* [...]
++ [...]
 -
 
 La asamblea sigue. Pero con otro tono.
@@ -2375,7 +2375,7 @@ Mira el cielo.
 
 Te sentás a su lado.
 
-* [...]
++ [...]
 -
 
 "¿En qué pensás?"
@@ -2386,7 +2386,7 @@ Te sentás a su lado.
 
 "Sí. Y qué triste. Porque yo no estoy ahí para comerlos."
 
-* [...]
++ [...]
 -
 
 Silencio.
@@ -2397,7 +2397,7 @@ Silencio.
 
 "'Ixchel, nunca te olvides de dónde venís. Pero tampoco te olvides de adónde vas'."
 
-* [...]
++ [...]
 -
 
 "Creo que recién ahora entiendo."
@@ -2407,7 +2407,7 @@ Silencio.
 "Que de dónde vengo está acá." Se toca el corazón.
 "Y adónde voy... es con ustedes."
 
-* [...]
++ [...]
 -
 
 Te mira.

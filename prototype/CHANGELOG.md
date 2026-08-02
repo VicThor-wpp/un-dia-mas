@@ -1,5 +1,72 @@
 # CHANGELOG - Un Día Más Implementation
 
+## Session: 2026-08-02
+
+### FIX: el juego no llegaba al martes + build roto en silencio
+
+Diagnóstico hecho jugando la historia headless con inkjs (300+ partidas
+aleatorias). Antes de este cambio: **92% de las partidas cortaban con error de
+runtime y ninguna pasaba del martes**, así que los 19 finales eran
+inalcanzables.
+
+#### Compilación
+
+- El Ink no compilaba desde `95018f5`: 4 errores de *"Expected an '- else:'
+  clause here"* en `juan.ink`, `sofia.ink` y `bruno.ink`, todos por un gather
+  `-` adentro de un bloque `{condicion: ...}`. Las ramas pasaron a stitches
+  propios.
+- `scripts/build.js` reportaba `OK` igual: usaba el paquete npm `inklecate`
+  (un `.exe` de Windows, `EACCES` en Linux) y, al fallar, dejaba el JSON viejo
+  en su lugar. Ahora usa el binario nativo de `bin/`, borra la salida anterior
+  antes de compilar y sale con código 1 ante cualquier `ERROR:`.
+- El `un_dia_mas.json` publicado estaba desactualizado respecto del fuente.
+
+#### Flujo narrativo
+
+- 659 beats de continuar `* [...]` pasaron a `+ [...]` (sticky). Once-only, se
+  consumían en la primera visita y mataban toda escena que se repite entre días.
+- Listas de opciones sticky en escenas recurrentes: parada y viaje del bondi,
+  la casa de noche, la conversación de Elena sobre la Chola.
+- `vinculo == "ixchel"` no estaba contemplado en los dispatch de lunes, martes
+  y jueves: elegir a Ixchel en la creación de personaje rompía la partida.
+  Se agregaron sus ramas y un divert de fallback en cada tabla.
+- `sabado_manana` se quedaba sin contenido cuando no había mensaje de Juan (el
+  cuerpo de un knot no cae solo en su primer stitch).
+- `olla_ayudar_menu` no tenía salida incondicional: hacer las tres tareas
+  dejaba el menú sin opciones.
+- `viernes_olla_tarde` tenía una única opción condicionada a energía y sin
+  gather.
+
+#### Tests
+
+- `scripts/test-narrative.js` estaba muerto: cargaba `ink.js` en un sandbox
+  `vm` y leía la propiedad equivocada, así que siempre hacía `SKIPPED`. Ahora
+  hace `require()` directo, juega 3 recorridos fijos + 200 partidas aleatorias
+  con semilla fija (choices **y** RNG de Ink) y falla ante cualquier error.
+  `TRACE_SEED=<n>` imprime la transcripción de una partida.
+- `npm test` ahora corre estructura + finales + partidas reales.
+
+#### Runtime web
+
+- `game.js` registra `story.onError` y muestra un cartel en pantalla; antes el
+  error tiraba fuera del loop y el juego quedaba congelado sin explicación.
+
+#### Documentación
+
+- `CLAUDE.md`: rutas de docs actualizadas (`docs/design/...`), comandos de build
+  por npm, variables de estado reales (incluida `inercia`), lista completa de
+  módulos y una sección nueva de *Ink Pitfalls* con los 4 errores que causaron
+  todo lo de arriba.
+- `prototype/README.md`: 19 finales (decía 6), 11 NPCs (decía 5), recursos
+  reales (documentaba `salud_mental` y `acumulacion`, que ya no existen),
+  árboles de `ink/` y `web/` al día, 21 ideas, ~33.000 líneas (decía ~3.000).
+- `docs/`: conteo de finales unificado en 19, tabla de estadísticas corregida y
+  sección de testing de `architecture.md` reescrita.
+
+Resultado: **3.000 partidas aleatorias sin un solo error de runtime**, y el
+domingo es alcanzable.
+
+
 ## Session: 2026-01-19
 
 ### MAJOR REFACTOR: Modular Architecture (COMPLETED)

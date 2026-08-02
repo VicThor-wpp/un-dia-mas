@@ -44,7 +44,7 @@ Ahora todos los días son iguales.
 // VOCES
 -> voces_reaccion ->
 
-* [...]
++ [...]
 -
 
 {ayude_en_olla: Hoy es la asamblea. A las 5 en la olla.}
@@ -101,6 +101,10 @@ El barrio más tranquilo.
         No contestás.
         -> sabado_manana_cont
 }
+
+// Sin el mensaje de Juan el knot se quedaba sin contenido: el cuerpo de un
+// knot no cae solo dentro de su primer stitch.
+-> sabado_manana_cont
 
 = sabado_manana_cont
 
@@ -177,7 +181,7 @@ Llamás a tu familia.
 Hablás.
 De todo y de nada.
 
-* [...]
++ [...]
 -
 
 No le contás lo del laburo.
@@ -350,7 +354,7 @@ Pero no fuiste.
     -> laburo_fantasma_grupo_whatsapp ->
 }
 
-* [...]
++ [...]
 -
 
 La asamblea pasa sin vos.
@@ -368,7 +372,7 @@ El aire está raro.
 Ayer la olla cerró.
 Primera vez en meses.
 
-* [...]
++ [...]
 -
 
 Sofía está callada.
@@ -376,7 +380,7 @@ Elena tiene cara de preocupación.
 
 "Bueno... tenemos que hablar de lo de ayer."
 
-* [...]
++ [...]
 -
 
 Sofía suspira.
@@ -623,7 +627,7 @@ Te miran.
 
 # PAUSA
 
-* [...]
++ [...]
 -
 
 Silencio. Y después algo inesperado: aplausos. Pocos, pero sinceros.
@@ -645,7 +649,7 @@ Tu voz encontró algo. Un nervio. Un lugar real.
 = sabado_hablar_exito
 Te miran.
 
-* [...]
++ [...]
 -
 
 # PAUSA
@@ -656,7 +660,7 @@ Elena, desde su silla: "Bien dicho."
 
 Diego aplaude una vez. Seca. Firme.
 
-* [...]
++ [...]
 -
 
 Alguien que no conocés, del fondo:
@@ -672,7 +676,7 @@ Sofía no duda:
     La gente asiente.
 }
 
-* [...]
++ [...]
 -
 
 {vinculo == "sofia":
@@ -703,7 +707,7 @@ es más de lo que tuviste en toda la semana.
 = sabado_hablar_fallo
 Te miran.
 
-* [...]
++ [...]
 -
 
 Las palabras salen mal.
@@ -713,7 +717,7 @@ Te repetís. Te enredás.
 Alguien tose.
 Alguien mira el celular.
 
-* [...]
++ [...]
 -
 
 Pero Elena te busca con los ojos.
@@ -745,7 +749,7 @@ Y una vieja que te dijo seguí.
 = sabado_hablar_crit_fallo
 Te miran.
 
-* [...]
++ [...]
 -
 
 Abrís la boca.
@@ -763,7 +767,7 @@ Sentís las caras. Los ojos. El peso de toda esa gente esperando.
 
 Nada.
 
-* [...]
++ [...]
 -
 
 Alguien dice: "¿Alguien más?"
@@ -789,37 +793,6 @@ La vergüenza se queda.
 Se queda mucho rato.
 
 -> sabado_asamblea_fin
-
-// DEPRECATED: Replaced by sabado_asamblea_proponer (dice-based version)
-// This knot is no longer called and kept only for reference
-/*
-=== sabado_proponer ===
-
-~ subir_dignidad(1)
-~ subir_llama(1)
-
-"¿Y si hacemos algo más grande? Una jornada. Invitamos a todo el barrio. Mostramos lo que hace la olla. Pedimos ayuda abiertamente."
-
-Silencio.
-
-"Es mucho laburo."
-"Pero puede funcionar."
-"Hay que organizarlo."
-
-Sofía:
-"¿Vos te animás a ayudar con eso?"
-
-* ["Sí."] # STAT:conexion # EFECTO:conexion+
-    ~ subir_conexion(1)
-    "Sí. Ahora tengo tiempo."
-    Risas nerviosas.
-    Pero es real.
-    Ahora tenés tiempo.
-    -> sabado_asamblea_fin
-* ["No sé si puedo."] # EFECTO:conexion-
-    "Bueno. La idea queda."
-    -> sabado_asamblea_fin
-*/
 
 === sabado_asamblea_proponer ===
 Te levantás.
@@ -907,7 +880,7 @@ Todos te miran.
 El resto de la asamblea fluye diferente.
 Tu intervención cambió algo.
 
-* [...]
++ [...]
 -
 
 Elena pide la palabra.
@@ -927,7 +900,7 @@ Que el mercado había decidido."
 Los dueños decidieron.
 Se llevaron la plata y nos dejaron afuera."
 
-* [...]
++ [...]
 -
 
 # PAUSA
@@ -943,7 +916,7 @@ Nunca fuiste vos."
 La precariedad no es falla personal.
 Es diseño.
 
-* [...]
++ [...]
 -
 
 Diego suma:
@@ -966,7 +939,7 @@ no hay empresa."
 No es que "todos estamos en el mismo barco".
 Unos reman. Otros pasean.
 
-* [...]
++ [...]
 -
 
 Sofía cierra:
@@ -992,7 +965,7 @@ No necesitás permiso para cuidarte entre ustedes.
 La asamblea continúa.
 Tu idea se suma a las demás.
 
-* [...]
++ [...]
 -
 
 Sofía anota en un cuaderno.
@@ -1070,7 +1043,7 @@ Cuatro días sin laburo.
 Tres meses de colchón.
 La cuenta regresiva sigue.
 
-* [...]
++ [...]
 -
 
 Pero hoy estuviste en una asamblea.
@@ -1497,7 +1470,7 @@ Pero quizás no igual.
 === recovery_mental_sabado ===
 La oscuridad viene de nuevo. Más fuerte.
 
-* [...]
++ [...]
 -
 
 {conexion <= 1 && llama <= 1:

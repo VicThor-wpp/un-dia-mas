@@ -3,6 +3,12 @@
 !package.json
 !prototype/web/config/*.json
 
+# La salida compilada SÍ se versiona: Netlify publica prototype/web/ como
+# sitio estático, sin build step, así que el juego que se sirve es este
+# archivo. Después de tocar los .ink hay que correr `npm run build` y
+# commitear el resultado.
+!prototype/web/un_dia_mas.json
+
 # Ink editor files
 *.ink.bak
 
@@ -39,7 +45,5 @@ atrament-analysis/
 *.zip
 design-system.html
 
-# Compiled story output
-prototype/web/un_dia_mas.js
-prototype/web/un_dia_mas.json
+# Salida intermedia del compilador (la de web/ se versiona, ver arriba)
 prototype/ink/main.ink.json

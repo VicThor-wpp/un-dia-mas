@@ -2014,7 +2014,7 @@ prototype/ink/
 │   └── fragmentos.ink     # NPC perspectives
 │
 └── finales/               # Endings
-    └── finales.ink       # 6 finales + evaluación
+    └── finales.ink       # 19 finales + evaluación
 ```
 
 ---
@@ -2208,7 +2208,7 @@ Resultado: No cumple criterios otros finales
 | Variable | Tipo | Crítico? | Razón |
 |----------|------|----------|-------|
 | `ayude_en_olla` | bool | ⚠️ SÍ | Bloquea final LA RED si false |
-| `conexion` | int | ⚠️ SÍ | Determina 4 de 6 finales |
+| `conexion` | int | ⚠️ SÍ | Interviene en la mayoría de los finales |
 | `llama` | int | ⚠️ SÍ | Determina tono + acceso LA RED |
 | `inercia` | int | ⚠️ SÍ | Trigger final GRIS y APAGADO |
 | `conte_a_alguien` | bool | ⚠️ SÍ | Afecta toda semana |

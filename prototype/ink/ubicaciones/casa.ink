@@ -171,7 +171,7 @@ El agua fría te despeja un poco.
 El café de especialidad en la prensa francesa.
 El ritual que te despierta y te sostiene.
 
-* [...]
++ [...]
 -
 
 Agua caliente. Molienda. Cuatro minutos.
@@ -190,7 +190,7 @@ Un vaso térmico para llevarte el resto.
     Ahora es para no pensar.
 }
 
-* [...]
++ [...]
 -
 
 No es gusto.
@@ -294,13 +294,15 @@ Llegás a casa.
 {energia == 2: Estás cansado. Pero se puede.}
 {energia >= 3: Todavía tenés algo de energía.}
 
-* {energia >= 2} [Cocinar algo decente] # COSTO:1 # EFECTO:dignidad+
+// Sticky: se llega a casa todas las noches de la semana. Con opciones
+// once-only, para la tercera noche no queda ninguna disponible.
++ {energia >= 2} [Cocinar algo decente] # COSTO:1 # EFECTO:dignidad+
     -> casa_cocinar
-* [Comer cualquier cosa] # EFECTO:dignidad-
++ [Comer cualquier cosa] # EFECTO:dignidad-
     -> casa_comer_rapido
-* {energia >= 2} [Llamar a alguien] # COSTO:1 # STAT:conexion # EFECTO:conexion+
++ {energia >= 2} [Llamar a alguien] # COSTO:1 # STAT:conexion # EFECTO:conexion+
     -> casa_llamar_noche
-* [Tele y a dormir] # EFECTO:conexion-
++ [Tele y a dormir] # EFECTO:conexion-
     -> casa_tele
 
 === casa_cocinar ===
@@ -375,7 +377,7 @@ Prendés la tele.
 Canales.
 Noticias.
 
-* [...]
++ [...]
 -
 
 "La situación económica..."

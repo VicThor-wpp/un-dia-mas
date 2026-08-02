@@ -177,7 +177,7 @@ Comprás algo. Un alfajor. Una coca.
 
 El kiosquero te conoce de vista.
 
-* [...]
++ [...]
 -
 
 "¿Qué tal? Cara de cansado hoy."
@@ -217,6 +217,33 @@ El kiosquero te conoce de vista.
 {vinculo == "elena": -> lunes_visita_elena}
 {vinculo == "diego": -> lunes_visita_diego}
 {vinculo == "marcos": -> lunes_visita_marcos}
+{vinculo == "ixchel": -> lunes_visita_ixchel}
+
+// Red de seguridad: un vínculo sin escena propia no puede cortar el día.
+-> lunes_ir_casa
+
+=== lunes_visita_ixchel ===
+
+Pasás por donde Ixchel arma su puesto.
+Los tejidos ya guardados. La canasta casi llena.
+
+"Buenas."
+
+Levanta la vista. No sonríe, pero tampoco es frío.
+
+* [Contarle de los rumores] # STAT:conexion # EFECTO:conexion+
+    ~ subir_conexion(1)
+    Le contás. La reunión. Lo que se dice en los pasillos.
+    Ixchel escucha sin interrumpir. Cuando terminás, tarda en hablar.
+    "En mi pueblo, cuando la empresa iba a echar gente, primero mandaba el rumor.
+    Para que uno se acostumbre a la idea antes de que pase."
+    Acomoda un bordado.
+    "Ojalá acá sea distinto."
+    -> lunes_ir_casa
+* ["Todo bien."] # EFECTO:conexion-
+    Ella asiente. No insiste.
+    "Que la prisa no le quite el camino."
+    -> lunes_ir_casa
 
 === lunes_visita_sofia ===
 

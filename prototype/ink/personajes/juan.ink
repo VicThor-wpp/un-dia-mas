@@ -40,7 +40,7 @@ Juan baja la voz.
 
 "Reestructuración, dijeron. Pero mirá..."
 
-* [...]
++ [...]
 -
 
 Mira para los costados.
@@ -99,7 +99,7 @@ El alquiler ya nos come la mitad. Después la luz, internet, el préstamo de la 
 -> juan_preocupacion_crit_fallo
 
 = juan_preocupacion_critico
-* [...]
++ [...]
 -
 
 Un momento de honestidad. Raro en la oficina.
@@ -123,7 +123,7 @@ Pero la confianza de Juan sí lo es.
 ->->
 
 = juan_preocupacion_exito
-* [...]
++ [...]
 -
 
 Un momento de honestidad.
@@ -137,7 +137,7 @@ Todos lo somos.
 ->->
 
 = juan_preocupacion_fallo
-* [...]
++ [...]
 -
 
 Juan mira para los costados. Nervioso.
@@ -151,7 +151,7 @@ La conversación se cortó. Pero el miedo quedó.
 ->->
 
 = juan_preocupacion_crit_fallo
-* [...]
++ [...]
 -
 
 Juan se pone pálido.
@@ -221,7 +221,7 @@ Juan habla de su novia, de las vacaciones que quieren hacer, del partido del dom
 Cosas normales.
 Cosas de gente normal.
 
-* [...]
++ [...]
 -
 
 Por un rato, te olvidás de los rumores.
@@ -270,7 +270,7 @@ Juan pincha la milanesa sin ganas.
 
 "Laura anoche estuvo hablando con ella. Por videollamada."
 
-* [...]
++ [...]
 -
 
 "Me mostró fotos del departamento. Dos cuartos. Balcón. En el centro."
@@ -323,7 +323,7 @@ Juan está raro hoy.
 
 "Laura anoche me dijo algo."
 
-* [...]
++ [...]
 -
 
 "Que la prima le puede conseguir algo. En la clínica. No es seguro, pero..."
@@ -383,7 +383,7 @@ Se te queda mirando.
     -> juan_miercoles_charla
 * ["Es lo que es."]
     -> juan_miercoles_charla
-* [...]
++ [...]
     -> juan_miercoles_charla
 
 === juan_miercoles_charla ===
@@ -394,7 +394,7 @@ Se te queda mirando.
 
 "Reestructuración mis huevos."
 
-* [...]
++ [...]
 -
 
 Silencio. Juan toma un trago.
@@ -403,7 +403,7 @@ Silencio. Juan toma un trago.
 
 "¿Qué?"
 
-* [...]
++ [...]
 -
 
 "Que acá no hay nada. Que te pueden cagar en cualquier momento y no podés hacer nada."
@@ -427,7 +427,7 @@ Juan te mira.
 
 "Y yo estuve pensando..."
 
-* [...]
++ [...]
 -
 
 Larga pausa.
@@ -436,7 +436,7 @@ Larga pausa.
 
 "¿Qué me queda a mí?"
 
-* [...]
++ [...]
 -
 
 Te mira fijo.
@@ -463,7 +463,7 @@ Terminan las cervezas en silencio.
 
 "Bueno. Voy a casa. Laura está esperando."
 
-* [...]
++ [...]
 -
 
 Se para. Te mira.
@@ -509,7 +509,7 @@ Te llega un mensaje de Juan.
 
 "¿Conocés el boliche de Requena y Rivera? Nos vemos ahí a las siete."
 
-* [...]
++ [...]
 -
 
 // --- EL SETTING ---
@@ -527,7 +527,7 @@ Te sentás. Agarrás la otra.
 
 "Tranqui."
 
-* [...]
++ [...]
 -
 
 // --- LA CONFESIÓN ---
@@ -536,7 +536,7 @@ Juan agarra el vaso. Lo gira entre las manos. No toma.
 
 "Che... tengo que contarte algo."
 
-* [...]
++ [...]
 -
 
 Toma del vaso. No te mira.
@@ -549,14 +549,14 @@ Afuera pasa un bondi. El 180. Los mismos de siempre volviendo a sus casas.
 
 "Bueno. Habló con la clínica. Le hacen los papeles a Laura. Laburo seguro."
 
-* [...]
++ [...]
 -
 
 Pausa larga. La tele pasa un partido de la B. Nadie mira.
 
 "Y tiene un contacto en un restaurante. Para mí."
 
-* [...]
++ [...]
 -
 
 "Lavar platos en un restaurante español. Esa es la gran oportunidad."
@@ -565,7 +565,7 @@ Se ríe. Sin ganas.
 
 "Es una mierda, ya sé. Pero es plata. Euros. Y allá los euros alcanzan."
 
-* [...]
++ [...]
 -
 
 "Allá con lo que gano lavando platos me pago el alquiler. Acá con lo que gano en la oficina no me alcanza ni para eso."
@@ -578,7 +578,7 @@ No contesta enseguida. Mira la mesa. El vaso. La espuma que baja.
 
 "No sé. Capaz. Probablemente."
 
-* [...]
++ [...]
 -
 
 Otro silencio. De esos que pesan.
@@ -589,7 +589,7 @@ Otro silencio. De esos que pesan.
 
 "En la mitad. Entre ir y quedarme. Y cada día la mitad se corre un poco más para el lado de ir."
 
-* [...]
++ [...]
 -
 
 // --- LA REACCIÓN ---
@@ -647,30 +647,42 @@ Otro silencio. De esos que pesan.
 Juan toma un trago largo. Deja el vaso. Lo mira.
 
 {idea_no_es_individual:
-    "¿Sabés qué es lo peor? Que me convencieron de que es mi culpa. Que si me esforzaba más, me iba mejor."
-
-    * [...]
-    -
-
-    "Pero me esforcé. Hice todo lo que me dijeron. Estudié. Laburé. Facturé. Pagué. Y acá estoy. Sacando pasaje."
-
-    Pausa. La tele cambia de canal sola. Ahora pasan noticias.
-
-    "No es mi culpa. Pero igual me voy."
+    -> culpa_del_sistema
+- else:
+    -> culpa_propia
 }
 
-{not idea_no_es_individual:
-    "A veces pienso que hice algo mal. Que tendría que haber estudiado otra cosa, ahorrado más, no sé."
+= culpa_del_sistema
 
-    * [...]
-    -
+"¿Sabés qué es lo peor? Que me convencieron de que es mi culpa. Que si me esforzaba más, me iba mejor."
 
-    "Pero después miro alrededor y veo que estamos todos igual. Así que capaz no es eso."
++ [...]
+-
 
-    Toma otro trago.
-}
+"Pero me esforcé. Hice todo lo que me dijeron. Estudié. Laburé. Facturé. Pagué. Y acá estoy. Sacando pasaje."
 
-* [...]
+Pausa. La tele cambia de canal sola. Ahora pasan noticias.
+
+"No es mi culpa. Pero igual me voy."
+
+-> la_despedida
+
+= culpa_propia
+
+"A veces pienso que hice algo mal. Que tendría que haber estudiado otra cosa, ahorrado más, no sé."
+
++ [...]
+-
+
+"Pero después miro alrededor y veo que estamos todos igual. Así que capaz no es eso."
+
+Toma otro trago.
+
+-> la_despedida
+
+= la_despedida
+
++ [...]
 -
 
 // --- LA DESPEDIDA ---
@@ -683,7 +695,7 @@ Juan deja plata en la mesa. Más de lo que le toca.
 
 "No, dejá vos."
 
-* [...]
++ [...]
 -
 
 Se para. Agarra la campera del respaldo de la silla.
@@ -694,7 +706,7 @@ Te mira un segundo. Te abraza. Rápido. Fuerte. Sin aviso.
 
 "Vos también."
 
-* [...]
++ [...]
 -
 
 Se va caminando por Requena. Las manos en los bolsillos. No mira para atrás.
@@ -732,7 +744,7 @@ La voz de Juan suena rara. Temblorosa.
 
 "Estuvimos mirando pasajes."
 
-* [...]
++ [...]
 -
 
 "Hay uno para el sábado que viene. Barato. Bueno, barato para lo que sale."
@@ -756,7 +768,7 @@ Escuchás que respira hondo.
 
 "Una parte de mí quiere salir corriendo. Otra parte quiere quedarse. Y no sé cuál tiene razón."
 
-* [...]
++ [...]
 -
 
 "¿Podemos vernos mañana? Antes de decidir. Necesito... no sé. Hablar con alguien que no sea Laura."
@@ -794,7 +806,7 @@ Te ve llegar. Se para.
     -> juan_despedida_inicio
 * [Sentarte a su lado]
     -> juan_despedida_inicio
-* [...]
++ [...]
     -> juan_despedida_inicio
 
 === juan_despedida_inicio ===
@@ -805,7 +817,7 @@ Juan está callado. Mirando la plaza.
 
 "¿Sabés qué? Crecí a tres cuadras de acá."
 
-* [...]
++ [...]
 -
 
 "Esa panadería de la esquina. Iba con mi viejo los domingos. Bizcochos y café con leche."
@@ -831,7 +843,7 @@ Juan se frota la cara. Respira hondo.
 
 "Te voy a decir algo que no le dije a nadie."
 
-* [...]
++ [...]
 -
 
 "Tengo miedo de quedarme."
@@ -840,7 +852,7 @@ Pausa.
 
 "Y tengo miedo de irme."
 
-* [...]
++ [...]
 -
 
 "Tengo miedo de todo, boludo. Toda mi vida tuve miedo."
@@ -864,7 +876,7 @@ Juan mira a unos gurises que juegan a la pelota.
 
 "¿Sabés qué me hace pensar en Diego?"
 
-* [...]
++ [...]
 -
 
 "Él vino huyendo. De la crisis, de los milicos, de todo. No tuvo opción."
@@ -873,7 +885,7 @@ Pausa.
 
 "Ixchel igual. La mina vio cosas que yo ni imagino. Y vino acá. Sin nada."
 
-* [...]
++ [...]
 -
 
 "Y yo... yo me voy buscando. Con pasaporte europeo. Con laburo esperando. Con todo armado."
@@ -896,7 +908,7 @@ Se ríe. Amargo.
 
 "¿Sabés qué es lo irónico?"
 
-* [...]
++ [...]
 -
 
 "Yo toda la vida repitiendo 'vienen a sacarnos el laburo'. Y resulta que el que se va soy yo."
@@ -920,7 +932,7 @@ Juan te mira. Los ojos húmedos.
 
 "Che. Gracias por bancármela todos estos años."
 
-* [...]
++ [...]
 -
 
 "Y perdón por las boludeces que dije. Lo de 'acá falta autoridad', lo de 'los que vienen de afuera'..."
@@ -967,7 +979,7 @@ Juan te aprieta fuerte.
 
 "Vos también."
 
-* [...]
++ [...]
 -
 
 Se separan. Juan tiene los ojos rojos.
@@ -997,7 +1009,7 @@ Juan la toma. Te mira.
 
 "Vos también."
 
-* [...]
++ [...]
 -
 
 Por un segundo parece que quiere decir algo más.
@@ -1017,7 +1029,7 @@ Juan te mira.
 
 "Chau."
 
-* [...]
++ [...]
 -
 
 Se va.
@@ -1036,7 +1048,7 @@ Pasa al lado de los gurises que juegan a la pelota.
 Dobla en la esquina.
 Desaparece.
 
-* [...]
++ [...]
 -
 
 Te quedás un rato más.
@@ -1045,7 +1057,7 @@ Pensás en Diego, que vino huyendo y se quedó.
 En Ixchel, que cruzó el continente y eligió este lugar.
 En Juan, que nació acá y se va.
 
-* [...]
++ [...]
 -
 
 La plaza sigue igual.
@@ -1071,7 +1083,7 @@ Laura ya duerme. Él mira el techo.
 
 Se levanta despacio. Va a la cocina. Enciende la luz.
 
-* [...]
++ [...]
 -
 
 Abre la notebook. Planilla de Excel.
@@ -1085,7 +1097,7 @@ Hace la suma.
 La hace de vuelta.
 El mismo número.
 
-* [...]
++ [...]
 -
 
 Lo tienen. Justo. Pero lo tienen.
@@ -1093,7 +1105,7 @@ Lo tienen. Justo. Pero lo tienen.
 Años de ahorrar para vacaciones que nunca llegaron.
 Ahora sirven para otra cosa.
 
-* [...]
++ [...]
 -
 
 Cierra la planilla. Abre fotos.
@@ -1103,7 +1115,7 @@ El bar de la esquina.
 La cancha donde jugaba de gurí.
 Sus viejos en el último cumpleaños.
 
-* [...]
++ [...]
 -
 
 Traga saliva.
@@ -1114,7 +1126,7 @@ Laura. En la puerta. Medio dormida.
 
 "Nada. Mirando cosas."
 
-* [...]
++ [...]
 -
 
 Laura se acerca. Ve las fotos.
@@ -1123,7 +1135,7 @@ Laura se acerca. Ve las fotos.
 
 "Sí. No. No sé."
 
-* [...]
++ [...]
 -
 
 Laura se sienta a su lado.
@@ -1134,7 +1146,7 @@ Juan la mira.
 
 "No. Vamos. Es solo que..."
 
-* [...]
++ [...]
 -
 
 "Es solo que me cuesta."
@@ -1145,7 +1157,7 @@ Laura le agarra la mano.
 
 Se quedan así. En silencio. Mirando fotos del barrio.
 
-* [...]
++ [...]
 -
 
 Después cierran todo.
@@ -1166,7 +1178,7 @@ Dos valijas. Toda una vida en dos valijas.
 Laura ya terminó la suya. Duerme.
 Él no puede.
 
-* [...]
++ [...]
 -
 
 Mira el departamento.
@@ -1177,7 +1189,7 @@ La ventana que da al patio del vecino.
 
 Se van a quedar. Todo se va a quedar.
 
-* [...]
++ [...]
 -
 
 Saca el celular. Abre el chat con su viejo.
@@ -1187,14 +1199,14 @@ El último mensaje es de hace tres días:
 
 Mentira. Pero una mentira de amor.
 
-* [...]
++ [...]
 -
 
 Piensa en escribir algo.
 No sabe qué.
 Guarda el celular.
 
-* [...]
++ [...]
 -
 
 Se sienta en el sillón. Por última vez.
@@ -1204,7 +1216,7 @@ En todo lo que busca.
 En que capaz que no encuentra nada.
 En que capaz que no vuelve nunca.
 
-* [...]
++ [...]
 -
 
 Se duerme ahí.
@@ -1225,7 +1237,7 @@ Mañana empieza otra cosa.
 
 Juan se va.
 
-* [...]
++ [...]
 -
 
 Pensás en eso mientras volvés a casa.
@@ -1234,7 +1246,7 @@ Tres años trabajando juntos.
 Almuerzos. Cervezas. Quejas del laburo.
 Un amigo. O algo parecido a un amigo.
 
-* [...]
++ [...]
 -
 
 Y ahora se va.
@@ -1255,7 +1267,7 @@ Como medio Uruguay.
 
 ¿Me iría?
 
-* [...]
++ [...]
 -
 
 No tenés pasaporte europeo.
@@ -1264,7 +1276,7 @@ No tenés ahorros para un pasaje.
 
 Pero aunque tuvieras...
 
-* [...]
++ [...]
 -
 
 Pensás en la olla. En Elena. En Diego. En Ixchel.
@@ -1273,7 +1285,7 @@ En la señora que te guarda el pan.
 
 En todo lo que te ata a este lugar.
 
-* [...]
++ [...]
 -
 
 ¿Atar? ¿O sostener?
@@ -1288,7 +1300,7 @@ Pasás por la panadería del barrio.
 Por la plaza donde juegan los gurises.
 Por la casa de Elena.
 
-* [...]
++ [...]
 -
 
 Todo esto.
@@ -1297,7 +1309,7 @@ Todo esto que Juan deja.
 Todo esto que Diego vino a buscar.
 Todo esto que Ixchel encontró sin esperar.
 
-* [...]
++ [...]
 -
 
 Todo esto que vos tenés.
@@ -1308,7 +1320,7 @@ Todo esto que vos tenés.
 
 Llegás a la esquina de tu casa.
 
-* [...]
++ [...]
 -
 
 Juan se va buscando algo mejor.
@@ -1317,7 +1329,7 @@ Ixchel cruzó un continente para llegar acá.
 
 Y vos estás acá. Siempre estuviste acá.
 
-* [...]
++ [...]
 -
 
 ¿Qué significa quedarse?
@@ -1337,14 +1349,14 @@ No porque sea heroico.
 No porque sea fácil.
 Sino porque alguien tiene que estar.
 
-* [...]
++ [...]
 -
 
 Alguien tiene que seguir abriendo la olla.
 Alguien tiene que seguir cuidando el barrio.
 Alguien tiene que seguir acá cuando todos se van.
 
-* [...]
++ [...]
 -
 
 Capaz que sos vos.
@@ -1364,7 +1376,7 @@ No elegiste nacer acá.
 No elegiste ser pobre.
 No elegiste que te echaran.
 
-* [...]
++ [...]
 -
 
 Pero acá estás.
@@ -1382,14 +1394,14 @@ Quedarse es una elección.
 Podrías irte. Juntar plata. Buscar un pasaporte. Inventar algo.
 Pero elegís quedarte.
 
-* [...]
++ [...]
 -
 
 No porque sea mejor.
 No porque sea más fácil.
 Sino porque acá está lo tuyo.
 
-* [...]
++ [...]
 -
 
 La gente. El barrio. La olla.
@@ -1426,7 +1438,7 @@ Número español.
 
 "Bien. Acá hace frío pero bueno. Diferente."
 
-* [...]
++ [...]
 -
 
 "Laura ya arrancó en la clínica. Yo ando viendo cosas. Hay laburo."
@@ -1449,7 +1461,7 @@ Pausa.
 
 "Foto: Valencia de noche. Luces. Gente en la calle."
 
-* [...]
++ [...]
 -
 
 "Segunda foto: Juan y Laura sonriendo. Cansados pero sonriendo."
@@ -1465,7 +1477,7 @@ Parecen lejos.
 
 "Vos también."
 
-* [...]
++ [...]
 -
 
 Guardás el teléfono.
@@ -1711,7 +1723,7 @@ De pronto dice:
 
 "¿Qué marchas?"
 
-* [...]
++ [...]
 -
 
 "Del PIT-CNT. Cuando era chico. Cinco, seis años. Me ponía arriba de los hombros para que viera."
@@ -1720,7 +1732,7 @@ De pronto dice:
 
 "No lo cuento nunca."
 
-* [...]
++ [...]
 -
 
 Pausa larga.
@@ -1729,7 +1741,7 @@ Pausa larga.
 
 "¿Y por qué dejaste de ir?"
 
-* [...]
++ [...]
 -
 
 "No sé. Crecí. Empecé a laburar. El viejo se jubiló, se volvió amargo. Ya no hablamos de política."
@@ -1738,7 +1750,7 @@ Pausa larga.
 
 "Yo... no sé. Supongo que me dio miedo terminar como él. Toda la vida peleando y al final solo, en un monoambiente, viendo las noticias para putearse."
 
-* [...]
++ [...]
 -
 
 Silencio.
@@ -1761,7 +1773,7 @@ Juan suspira.
 
 "Bien. Ella siempre está bien. Es más tranquila que yo."
 
-* [...]
++ [...]
 -
 
 "A veces me dice: 'Dejá de ver tantas noticias que te hacés mala sangre'. Tiene razón. Pero no puedo parar."
@@ -1770,7 +1782,7 @@ Juan suspira.
 
 "Porque si no miro, siento que algo me va a agarrar desprevenido. Que me van a cagar y no me voy a dar cuenta."
 
-* [...]
++ [...]
 -
 
 "Ella quiere tener hijos. Yo le digo que 'todavía no estamos listos económicamente'. Pero la verdad es que tengo miedo."
@@ -1779,7 +1791,7 @@ Juan suspira.
 
 "De traer un guri a este quilombo. De no poder darle nada. De terminar como mi viejo: prometiendo cosas que no podés cumplir."
 
-* [...]
++ [...]
 -
 
 Pausa.
@@ -1807,7 +1819,7 @@ Diego se encoge de hombros.
 
 "Es mi vida, no más."
 
-* [...]
++ [...]
 -
 
 Después, cuando Diego se va, Juan te dice:
@@ -1816,7 +1828,7 @@ Después, cuando Diego se va, Juan te dice:
 
 "¿Te parece?"
 
-* [...]
++ [...]
 -
 
 "A mí nunca me pasó nada. Nunca tuve que huir de nada. Nunca arriesgué nada."
@@ -1825,7 +1837,7 @@ Después, cuando Diego se va, Juan te dice:
 
 "No sé. A veces siento que mi vida es... gris. Chica. Sin épica."
 
-* [...]
++ [...]
 -
 
 Pausa.
@@ -1859,21 +1871,21 @@ Juan te manda un mensaje.
     
     "¿Qué cosa?"
     
-    * [...]
+    + [...]
     -
     
     "Eso de que el problema no es el inmigrante, es el empresario que nos explota a los dos."
     
     "¿Y qué pensás?"
     
-    * [...]
+    + [...]
     -
     
     Juan toma café. Piensa.
     
     "Creo que tiene razón. O sea... yo siempre repetía lo que escuchaba en las noticias. 'Vienen a sacarnos el laburo'. Pero Diego labura el doble que yo y le pagan la mitad."
     
-    * [...]
+    + [...]
     -
     
     "Y el que nos paga poco a los dos es el mismo. No es Diego. Es el patrón."
@@ -1907,7 +1919,7 @@ Juan te manda un mensaje.
 
 "Que tengo miedo de todo. De perder el laburo, de que me roben, de que las cosas se vayan al carajo. Y el miedo me hace decir cosas que después me arrepiento."
 
-* [...]
++ [...]
 -
 
 "Como lo del 'acá falta autoridad'. O lo de 'los que vienen de afuera'. Cosas que repito sin pensar."
@@ -1931,7 +1943,7 @@ Juan te manda un mensaje.
 -> juan_miedo_crit_fallo
 
 = juan_miedo_critico
-* [...]
++ [...]
 -
 
 Silencio.
@@ -1953,7 +1965,7 @@ Juan te mira. Y por primera vez, dice algo que no esperabas:
 ->->
 
 = juan_miedo_exito
-* [...]
++ [...]
 -
 
 Silencio.
@@ -1969,7 +1981,7 @@ Silencio.
 ->->
 
 = juan_miedo_fallo
-* [...]
++ [...]
 -
 
 Juan se queda callado.
@@ -1988,7 +2000,7 @@ No resuelve nada. Pero alivia.
 ->->
 
 = juan_miedo_crit_fallo
-* [...]
++ [...]
 -
 
 Juan se pone más nervioso.
@@ -2054,7 +2066,7 @@ Juan respira.
 
 Toma un trago.
 
-* [...]
++ [...]
 -
 
 "Mi cuñado tiene un taller. Arregla electrodomésticos, esas cosas."
@@ -2063,7 +2075,7 @@ Toma un trago.
 
 "Necesita alguien. No es fijo, son changas. Pero paga."
 
-* [...]
++ [...]
 -
 
 Te mira.
@@ -2113,7 +2125,7 @@ Toma un trago largo.
 
 Silencio.
 
-* [...]
++ [...]
 -
 
 "¿Cuándo?"
@@ -2124,7 +2136,7 @@ Unipersonal también.
 Sin nada.
 Como vos.
 
-* [...]
++ [...]
 -
 
 "La puta madre, Juan."
@@ -2382,7 +2394,7 @@ Pide dos cervezas. No espera a que lleguen.
     -> juan_explica_migracion
 * ["¿A dónde?"]
     -> juan_explica_migracion
-* [...]
++ [...]
     -> juan_explica_migracion
 
 === juan_explica_migracion ===
@@ -2434,7 +2446,7 @@ Juan mira la cerveza.
 
 "Y pienso en Diego. En lo que tuvo que dejar. En que él no eligió irse."
 
-* [...]
++ [...]
 -
 
 "Yo elijo. Y no sé si eso me hace libre o cobarde."
@@ -2469,7 +2481,7 @@ Silencio.
 
 "Mi viejo se quedó toda la vida. Fue a las marchas, peleó, y al final... monoambiente y soledad."
 
-* [...]
++ [...]
 -
 
 "Yo no quiero eso. Pero tampoco quiero ser el que se fue y nunca volvió."
@@ -2544,14 +2556,14 @@ Es viernes. Juan te llama aparte.
 
 "Sí. Mirá..."
 
-* [...]
++ [...]
 -
 
 Juan mira para los costados.
 
 "La verdad, no sé si me conviene."
 
-* [...]
++ [...]
 -
 
 "Si se enteran de que andamos juntando gente... sabés cómo son.
@@ -2591,7 +2603,7 @@ Te mira. Vergüenza.
 
 "Dale. Te aviso."
 
-* [...]
++ [...]
 -
 
 Juan vuelve a su escritorio.

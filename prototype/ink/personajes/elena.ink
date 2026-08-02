@@ -117,7 +117,7 @@ Mira hacia la calle.
 En el 2002 todo el mundo andaba 'ahí'.
 Pero seguíamos."
 
-* [...]
++ [...]
 -
 
 ~ elena_relacion += 1
@@ -218,7 +218,7 @@ Ella habla cuando quiere. Nunca antes.
 
 Sigue pelando. No mira.
 
-* [...]
++ [...]
 -
 
 "No teníamos nada. Pero teníamos bronca y teníamos manos.
@@ -227,7 +227,7 @@ Cocinábamos en la vereda para que nos vieran. Para que supieran que no nos íba
 
 "¿Cuántos venían?"
 
-* [...]
++ [...]
 -
 
 "Al principio, veinte. Después cien. Después doscientos."
@@ -263,7 +263,7 @@ Fotos en las paredes. Gente que ya no está.
 
 "Sentate. Voy a hacer café en la prensa francesa."
 
-* [...]
++ [...]
 -
 
 No aceptás un no.
@@ -300,7 +300,7 @@ Cuando terminás, toma café. Piensa.
 -> elena_escucha_crit_fallo
 
 = elena_escucha_critico
-* [...]
++ [...]
 -
 
 Elena deja la taza. Te mira con ojos que vieron demasiado.
@@ -312,7 +312,7 @@ Elena deja la taza. Te mira con ojos que vieron demasiado.
 "Que nadie se salva solo. Lo aprendí a los golpes.
 Cuando el barco se hunde, o armamos una balsa entre todos o nos ahogamos por separado."
 
-* [...]
++ [...]
 -
 
 Hace una pausa larga. Algo se abre en ella.
@@ -333,7 +333,7 @@ Hace una pausa larga. Algo se abre en ella.
 ->->
 
 = elena_escucha_exito
-* [...]
++ [...]
 -
 
 "¿Sabés qué aprendí en setenta años?"
@@ -343,7 +343,7 @@ Hace una pausa larga. Algo se abre en ella.
 "Que nadie se salva solo. Lo aprendí a los golpes.
 Cuando el barco se hunde, o armamos una balsa entre todos o nos ahogamos por separado."
 
-* [...]
++ [...]
 -
 
 "¿Y qué hago?"
@@ -360,7 +360,7 @@ No pensés en mañana. Pensá en hoy."
 ->->
 
 = elena_escucha_fallo
-* [...]
++ [...]
 -
 
 Elena asiente. Despacio.
@@ -378,7 +378,7 @@ No se abrió del todo. Pero la puerta quedó entreabierta.
 ->->
 
 = elena_escucha_crit_fallo
-* [...]
++ [...]
 -
 
 Elena se queda callada. Demasiado callada.
@@ -413,7 +413,7 @@ A veces la compañía alcanza.
 
 Suspira. Los ojos se van lejos.
 
-* [...]
++ [...]
 -
 
 "Fue peor que esto. Mucho peor.
@@ -427,7 +427,7 @@ Entendiendo que la vergüenza es de ellos, no nuestra.
 El capitalismo necesita que te dé vergüenza ser pobre.
 Así no pedís lo que te corresponde."
 
-* [...]
++ [...]
 -
 
 Toma café.
@@ -454,7 +454,7 @@ El trueque, las asambleas... eran formas de decir 'acá estamos y no nos vamos'.
 
 Elena mira el horizonte, como si pudiera ver el agua subiendo.
 
-* [...]
++ [...]
 -
 
 "El arroyo subió y subió. No paraba. En el barrio se nos venía el agua adentro de las casas."
@@ -465,7 +465,7 @@ Elena se ríe amargamente.
 
 "El Estado llega tarde o no llega, pibe. Eso lo aprendí ahí."
 
-* [...]
++ [...]
 -
 
 "Vi a mi madre, que no sabía ni leer, coordinando a todos los vecinos. Quién subía los muebles a los techos, quién sacaba a los viejos en bote, quién repartía la poca comida seca que quedaba."
@@ -474,7 +474,7 @@ Elena se ríe amargamente.
 
 "Llegaron cuando ya estábamos todos arriba de los techos. Los vecinos con sogas llegaron primero."
 
-* [...]
++ [...]
 -
 
 "Esa imagen no se me borra más. Mi vieja gritando órdenes bajo la lluvia, con el agua a la cintura. Ahí entendí que si no nos cuidamos entre nosotros, no nos cuida nadie."
@@ -496,7 +496,7 @@ Elena sonríe. Es la primera vez que la ves sonreír así.
 
 "La Chola era mi hermana. No de sangre. De vida."
 
-* [...]
++ [...]
 -
 
 "Nos conocimos en la fábrica textil del Cerro. Año 75. Yo tenía veinticinco, ella veintitrés. Turnos de diez horas cosiendo zapatos."
@@ -505,27 +505,28 @@ Elena sonríe. Es la primera vez que la ves sonreír así.
 
 "Y nada. Trabajábamos, tomábamos mate, puteábamos al encargado. Pero cuando vino la dictadura, nos juntamos de verdad."
 
-* [...]
++ [...]
 -
 
 "Éramos compañeras de fábrica, de huelga, de mate y de velorio."
 
-* ["¿De velorio?"]
+// Sticky: se puede volver a hablar con Elena en días distintos.
++ ["¿De velorio?"]
     "Enterramos a mucha gente juntas. Compañeros que se llevaron. Algunos que aparecieron. Otros que no."
-    
+
     Silencio largo.
     # PAUSA
 
     "Pero seguíamos. Siempre seguíamos."
     -> elena_chola_cont
 
-* ["¿Cuarenta años juntas?"]
++ ["¿Cuarenta años juntas?"]
     "Más. Nos vimos envejecer. Nos vimos enterrar maridos. Nos vimos criar hijos. Y cuando ella se enfermó..."
     -> elena_chola_cont
 
 === elena_chola_cont ===
 
-* [...]
++ [...]
 -
 
 "Cuando la Chola se enfermó, estuve con ella hasta el final. En el hospital, tomándole la mano."
@@ -534,7 +535,7 @@ Elena sonríe. Es la primera vez que la ves sonreír así.
 
 "Que iba a cuidar la olla. Y que iba a cuidar a Sofía."
 
-* [...]
++ [...]
 -
 
 Pausa larga.
@@ -562,7 +563,7 @@ Se ríe bajito.
 
 "Ya no están. Pero casi los sacan antes de tiempo."
 
-* [...]
++ [...]
 -
 
 "Fue en el 98, creo. O 97. La mujer se había quedado sin laburo, el marido estaba enfermo. Debían tres meses de alquiler."
@@ -571,7 +572,7 @@ Se ríe bajito.
 
 "Vino la policía con el acta. A sacarlos a la calle. Con los gurises."
 
-* [...]
++ [...]
 -
 
 Elena se toma el mate.
@@ -580,7 +581,7 @@ Elena se toma el mate.
 
 "¿Y qué hicieron?"
 
-* [...]
++ [...]
 -
 
 "Nos paramos en la puerta. Yo adelante, con el mate en la mano y la mirada de alguien que no tiene nada que perder."
@@ -589,7 +590,7 @@ Elena se toma el mate.
 
 "El oficial me dijo: 'Señora, apártese o la llevamos'. Yo le dije: 'Llevame entonces. Pero vas a tener que llevar a todas'."
 
-* [...]
++ [...]
 -
 
 Sonríe. Una sonrisa feroz.
@@ -600,7 +601,7 @@ Sonríe. Una sonrisa feroz.
 
 "El milico llamó por radio. No sé qué le dijeron. Pero se fueron. Los García se quedaron tres meses más, hasta que consiguieron otro lugar."
 
-* [...]
++ [...]
 -
 
 Pausa.
@@ -624,14 +625,14 @@ Pausa.
 
 "Cambiar lo que tenés por lo que necesitás. Sin plata. Porque la plata no servía para nada."
 
-* [...]
++ [...]
 -
 
 "En el 2002, once intendencias aceptaron trueque. Hasta pagaban impuestos con carne. ¿Te imaginás? Yendo a la intendencia con un pedazo de carne para pagar la patente."
 
 "No me lo imagino."
 
-* [...]
++ [...]
 -
 
 "Nosotras organizamos trueque acá en el barrio. En el gimnasio de la parroquia."
@@ -640,7 +641,7 @@ Pausa.
 
 "Cada uno llevaba lo que tenía. Ropa vieja, herramientas, comida casera, verduras del fondo. Y cambiaba por lo que necesitaba."
 
-* [...]
++ [...]
 -
 
 Elena mira hacia la pared. La foto de su marido.
@@ -648,7 +649,7 @@ Elena mira hacia la pared. La foto de su marido.
 "Yo cambié la ropa de mi marido muerto por leche en polvo para los nietos de una vecina."
 # PAUSA
 
-* [...]
++ [...]
 -
 
 "Recuerdo el olor de ese gimnasio. Humedad, desesperación... y solidaridad. Todo mezclado."
@@ -673,14 +674,14 @@ Elena mira hacia la pared. La foto de su marido.
 
 "Me dijeron que no había efectivo. 'Vuelva mañana'. Volví al otro día. Lo mismo. 'Vuelva la semana que viene'."
 
-* [...]
++ [...]
 -
 
 "Un viernes volví con la Chola y otras diez vecinas. No llevábamos martillos, pero sí la mirada de quien no tiene nada que perder."
 
 "¿Y qué hicieron?"
 
-* [...]
++ [...]
 -
 
 "Nos plantamos en el hall. No gritamos. No rompimos nada. Solo nos sentamos y nos quedamos mirando."
@@ -689,7 +690,7 @@ Elena mira hacia la pared. La foto de su marido.
 
 "El gerente llamó a un teléfono. Media hora después apareció el efectivo."
 
-* [...]
++ [...]
 -
 
 Sonríe con satisfacción.
@@ -712,7 +713,7 @@ Se ríe con ganas.
 
 "¿Partido? M'hijo, yo estuve en todos y en ninguno."
 
-* [...]
++ [...]
 -
 
 "En los 70 estuve cerca del sindicato. Después de lo de la fábrica, me junté con los de la barriada. Después de la dictadura, voté al Frente algunas veces."
@@ -721,7 +722,7 @@ Se ríe con ganas.
 
 "Pero aprendí que el de arriba siempre caga al de abajo. No importa el color de la bandera. Capitalismo, socialismo de Estado, lo que sea. Si hay un arriba y un abajo, el de arriba te caga."
 
-* [...]
++ [...]
 -
 
 Te mira fijo.
@@ -730,12 +731,12 @@ Te mira fijo.
 
 "¿Entonces?"
 
-* [...]
++ [...]
 -
 
 "Entonces la única defensa real es el compañero de al lado. No el partido. No el sindicato. No el Estado. El compañero."
 
-* [...]
++ [...]
 -
 
 Hace una pausa.
@@ -782,7 +783,7 @@ Ella nunca busca a nadie.
 
 "¿Qué pasa?"
 
-* [...]
++ [...]
 -
 
 "La olla. Sofía está quemada.
@@ -876,7 +877,7 @@ Carpintero. Hizo la mitad de los muebles del barrio."
 
 "¿Qué le pasó?"
 
-* [...]
++ [...]
 -
 
 "Se murió en el 2003. El corazón.
@@ -884,7 +885,7 @@ La crisis lo mató. Como a muchos."
 
 Señala otra casa.
 
-* [...]
++ [...]
 -
 
 "Ahí vivían los Fernández. Cinco hijos.
@@ -1092,7 +1093,7 @@ Elena sigue pelando.
 
 No terminás la frase.
 
-* [...]
++ [...]
 -
 
 Silencio.
@@ -1109,7 +1110,7 @@ Elena termina una papa. Agarra otra.
 
 "El laburo, los ahorros, casi la casa. Raúl estaba enfermo. Los gurises chicos."
 
-* [...]
++ [...]
 -
 
 "¿Sabés qué hice? Vine acá. A esta misma olla. Que en ese momento era un fogón en la calle."

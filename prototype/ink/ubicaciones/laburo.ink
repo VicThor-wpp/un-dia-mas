@@ -18,7 +18,7 @@ El edificio de siempre.
 La puerta de siempre.
 El ascensor de siempre.
 
-* [...]
++ [...]
 -
 
 "Buen día."
@@ -99,7 +99,7 @@ Las horas pasan.
 Mails.
 Planillas.
 
-* [...]
++ [...]
 -
 
 Reuniones que podrían ser mails.
@@ -267,7 +267,7 @@ A veces está bien.
 El silencio.
 No tener que hablar.
 
-* [...]
++ [...]
 -
 
 Mirás a los demás.
@@ -289,7 +289,7 @@ El estómago protesta pero la cabeza dice que hay que demostrar compromiso.
 Que te vean.
 Que sepan que sos valioso.
 
-* [...]
++ [...]
 -
 
 ...
@@ -336,7 +336,7 @@ Toda la oficina.
 
 El jefe y alguien de Personal al frente.
 
-* [...]
++ [...]
 -
 
 "Buenas tardes. Queríamos informarles..."
@@ -347,7 +347,7 @@ El aire se tensa.
 
 Ahí está.
 
-* [...]
++ [...]
 -
 
 "No podemos dar detalles todavía, pero habrá cambios en las próximas semanas. Les pedimos paciencia y compromiso."
@@ -422,7 +422,7 @@ De: Personal.
 
 Se te cae el estómago.
 
-* [...]
++ [...]
 -
 
 Te levantás.
@@ -433,7 +433,7 @@ El pasillo es el mismo de siempre.
 Pero hoy es más largo.
 Cada paso suena más fuerte.
 
-* [...]
++ [...]
 -
 
 En el baño, te mojás la cara.
@@ -473,7 +473,7 @@ Cerrás el mail.
 {vinculo == "juan": Juan te mira desde su escritorio. "¿Qué pasó?" No le contestás.}
 {juan_relacion >= 2: Juan: "Eh, ¿estás bien?" Mentís: "Sí, todo bien."}
 
-* [...]
++ [...]
 -
 
 La tarde se hace eterna.
@@ -485,7 +485,7 @@ El reloj no avanza.
 O avanza demasiado.
 Las dos cosas a la vez.
 
-* [...]
++ [...]
 -
 
 -> laburo_citacion_fin
@@ -516,7 +516,7 @@ Una mujer de traje gris. Un tipo con carpeta.
 Un vaso de agua que nadie te ofreció.
 Un papel sobre la mesa. Ya está firmado. Del lado de ellos.
 
-* [...]
++ [...]
 -
 
 La mujer lee. No te mira. Lee de un papel.
@@ -527,7 +527,7 @@ Optimización de recursos. Vos sos el recurso.
 Lo que significa: tu laburo generaba plata. Pero no la suficiente.
 No para vos. Para ellos. Siempre para ellos.
 
-* [...]
++ [...]
 -
 
 "Tu puesto fue afectado por este proceso."
@@ -572,7 +572,7 @@ Estratégica.
 
 "Pero trabajo acá hace tres años."
 
-* [...]
++ [...]
 -
 
 Tres años.
@@ -584,7 +584,7 @@ La mujer te mira por primera vez.
 
 "Trabajás con nosotros. Facturás. Es diferente."
 
-* [...]
++ [...]
 -
 
 Claro. Siempre fue diferente cuando les convenía.
@@ -614,7 +614,7 @@ Sos unipersonal. Simplemente dejás de facturar.
 Te dan una caja. Cartón marrón. Genérica.
 La misma caja que le habrán dado a Gómez. Y al que vino antes.
 
-* [...]
++ [...]
 -
 
 Vas al escritorio.
@@ -626,7 +626,7 @@ Una foto de... ya ni importa.
 Un cable USB que no es tuyo. Lo dejás.
 Un paquete de galletitas abierto. Lo dejás también.
 
-* [...]
++ [...]
 -
 
 La caja pesa nada.
@@ -635,7 +635,7 @@ Tres años caben en una caja que pesa nada.
 {juan_relacion >= 1: Juan está en su escritorio. Levanta la vista. Ve la caja. No dice nada. Los ojos dicen todo.}
 {vinculo == "juan": Juan se para. "Esperá." No sabés qué más dice porque ya estás caminando al ascensor.}
 
-* [...]
++ [...]
 -
 
 El ascensor baja.
@@ -694,7 +694,7 @@ La gente camina como si nada.
     A las 11:30 de la mañana de un miércoles.
     Sin laburo.
 
-* [...]
++ [...]
 -
 
 Tenés tres meses de colchón.
@@ -703,7 +703,7 @@ Pero algo murió.
 
 ¿Quién sos ahora que no tenés laburo?
 
-* [...]
++ [...]
 -
 
 ~ idea_quien_soy = true
@@ -774,7 +774,7 @@ Te mira.
 Caminás por el centro.
 Sin querer, tus pies te llevan por la misma cuadra de siempre.
 
-* [...]
++ [...]
 -
 
 Ahí está.
@@ -799,7 +799,7 @@ Como si nada.
 
 Pero el corazón se acelera igual.
 
-* [...]
++ [...]
 -
 
 Por el rabillo del ojo ves gente entrando.
@@ -817,7 +817,7 @@ Te parás.
 Mirás el edificio desde afuera.
 Nunca lo habías visto así.
 
-* [...]
++ [...]
 -
 
 ¿Cuántas veces entraste por esa puerta?
@@ -826,7 +826,7 @@ Nunca lo habías visto así.
 Ahora es solo un edificio.
 Una puerta que ya no se abre para vos.
 
-* [...]
++ [...]
 -
 
 {d6() >= 4:
@@ -866,7 +866,7 @@ Cruzás de vereda.
 No querés ver.
 No querés que te vean.
 
-* [...]
++ [...]
 -
 
 No está mal.
@@ -893,7 +893,7 @@ El edificio queda atrás.
 
 Una cara conocida.
 
-* [...]
++ [...]
 -
 
 Es Fernández. Del área de ventas.
@@ -932,7 +932,7 @@ Mentira.
 
 Mentira también.
 
-* [...]
++ [...]
 -
 
 Silencio incómodo.
@@ -953,7 +953,7 @@ Fernández asiente.
 
 "Me enteré. Lo siento, bo."
 
-* [...]
++ [...]
 -
 
 "Gracias."
@@ -979,14 +979,14 @@ Fernández no sabe qué decir.
 
 "Eh... lo lamento, che."
 
-* [...]
++ [...]
 -
 
 "No es tu culpa."
 
 "No, pero igual."
 
-* [...]
++ [...]
 -
 
 Se queda callado un momento.
@@ -1001,7 +1001,7 @@ Fernández mira para los lados.
 
 "Van a seguir despidiendo. Escuché que el mes que viene caen más."
 
-* [...]
++ [...]
 -
 
 "Gómez ya cayó. Martínez dicen que está en la lista."
@@ -1023,7 +1023,7 @@ No sabés cómo sentirte.
 
 "Dale. Cuidate."
 
-* [...]
++ [...]
 -
 
 Se va.
@@ -1041,7 +1041,7 @@ Nunca lo fuiste.
 Mirás el celular.
 Te hacés el que no lo viste.
 
-* [...]
++ [...]
 -
 
 Él también mira para otro lado.
@@ -1064,7 +1064,7 @@ Más cómodo que la conversación.
 Estás sirviendo.
 Cucharón, plato, cucharón, plato.
 
-* [...]
++ [...]
 -
 
 Y entonces lo ves.
@@ -1073,7 +1073,7 @@ González.
 De contabilidad.
 En la cola.
 
-* [...]
++ [...]
 -
 
 Te ve.
@@ -1097,7 +1097,7 @@ Como a todos.
 Apenas un murmullo.
 No te mira.
 
-* [...]
++ [...]
 -
 
 Se va a sentar.
@@ -1112,7 +1112,7 @@ Le servís un poco más.
 Un pedazo extra de carne.
 Quizás un poco de papa de más.
 
-* [...]
++ [...]
 -
 
 González mira el plato.
@@ -1138,14 +1138,14 @@ González se ríe. Sin gracia.
 
 "Acá. Como vos."
 
-* [...]
++ [...]
 -
 
 "¿Cuándo te...?"
 
 "Hace dos semanas. Antes que vos."
 
-* [...]
++ [...]
 -
 
 "No lo había contado. Por la vergüenza."
@@ -1180,7 +1180,7 @@ Te sentás enfrente.
 
 "Primera vez."
 
-* [...]
++ [...]
 -
 
 González mira el plato vacío.
@@ -1202,7 +1202,7 @@ González mira el plato vacío.
 "Tengo tres pibes", dice González.
 "No les conté que me echaron. Les digo que estoy de licencia."
 
-* [...]
++ [...]
 -
 
 "Todos los días salgo de casa a las ocho. Camino. Voy a la plaza. Vuelvo a las seis."
@@ -1211,7 +1211,7 @@ González mira el plato vacío.
 
 "Para que no sospechen."
 
-* [...]
++ [...]
 -
 
 No sabés qué decir.
@@ -1222,7 +1222,7 @@ González se levanta.
 
 "¿Qué voy a decir?"
 
-* [...]
++ [...]
 -
 
 Se va.
@@ -1269,7 +1269,7 @@ Abrís el chat.
     Rosa: "Gracias a todos!!"
 }
 
-* [...]
++ [...]
 -
 
 La vida sigue.
@@ -1292,7 +1292,7 @@ Mensajes de los últimos días.
 "Confirmado"
 "Voy llegando"
 
-* [...]
++ [...]
 -
 
 Tu último mensaje fue hace una semana.
@@ -1339,7 +1339,7 @@ Te quedás.
 Mirando.
 Sin escribir.
 
-* [...]
++ [...]
 -
 
 Un fantasma en el grupo.
@@ -1353,7 +1353,7 @@ Cumpleaños que ya no festejás.
 
 Cerrás el chat.
 
-* [...]
++ [...]
 -
 
 El grupo sigue ahí.
@@ -1368,7 +1368,7 @@ Un recordatorio de lo que ya no sos.
 
 No abrís.
 
-* [...]
++ [...]
 -
 
 Dejás que la notificación se acumule.

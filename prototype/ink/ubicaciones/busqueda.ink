@@ -28,7 +28,7 @@ Tu perfil te mira.
 La foto de hace dos años.
 El título que ya no aplica.
 
-* [...]
++ [...]
 -
 
 "Profesional con experiencia en..."
@@ -131,7 +131,7 @@ Más posts.
 Más "éxitos".
 Más gente que "la tiene clara".
 
-* [...]
++ [...]
 -
 
 Un post de un recruiter:
@@ -142,7 +142,7 @@ Ofrecemos: Excelente ambiente laboral."
 No dice el sueldo.
 Nunca dicen el sueldo.
 
-* [...]
++ [...]
 -
 
 ~ bajar_dignidad(1)
@@ -246,7 +246,7 @@ Abrís el CV.
 El documento que resume tu vida laboral.
 O la versión de tu vida que vendés.
 
-* [...]
++ [...]
 -
 
 "Experiencia profesional"
@@ -322,7 +322,7 @@ Lo que fue: Trabajaste 60 horas semanales.
 
 Abrís las páginas de empleo.
 
-* [...]
++ [...]
 -
 
 BuscoJobs. CompuTrabajo. LinkedIn Jobs.
@@ -330,7 +330,7 @@ El mismo puesto repetido en tres sitios.
 El mismo sueldo que no dice.
 Los mismos requisitos imposibles.
 
-* [...]
++ [...]
 -
 
 "Se requiere: 5 años de experiencia en tecnología que existe hace 3."
@@ -362,7 +362,7 @@ El café al lado se enfrió hace horas.
 La pantalla te ilumina la cara.
 El cursor parpadea en el campo de "Carta de presentación".
 
-* [...]
++ [...]
 -
 
 "Estimados, me dirijo a ustedes..."
@@ -374,7 +374,7 @@ que decide si existís o no.
 
 Copy-paste. Adjuntar CV. Enviar.
 
-* [...]
++ [...]
 -
 
 LinkedIn te sugiere: "Personas como vos también aplicaron a..."
@@ -388,7 +388,7 @@ O si un algoritmo decide por vos.
 Si una máquina mira tu CV dos segundos y dice "no"
 antes de que ningún ser humano sepa que existís.
 
-* [...]
++ [...]
 -
 
 Aplicás a otra.
@@ -400,7 +400,7 @@ A veces te olvidás de cambiarlo.
 
 Mierda.
 
-* [...]
++ [...]
 -
 
 Empezás a customizar.
@@ -413,7 +413,7 @@ Con cada buzzword te odiás un poco más.
 Con cada "sinergia" se te muere algo adentro.
 Te convertís en un producto que se vende solo.
 
-* [...]
++ [...]
 -
 
 15 postulaciones.
@@ -469,7 +469,7 @@ Siempre silencio.
 
 Buscás algo que coincida de verdad.
 
-* [...]
++ [...]
 -
 
 Encontrás uno.
@@ -514,7 +514,7 @@ Remeras negras. Zapatillas caras. MacBooks.
 Te miran cuando pasás. Sonríen.
 Te sentís como un padre que entró al boliche equivocado.
 
-* [...]
++ [...]
 -
 
 Una piba con pelo azul se acerca.
@@ -534,7 +534,7 @@ Te da una botella de aluminio que dice "HYDRATE OR DIE."
 
 Tiene veinticinco.
 
-* [...]
++ [...]
 -
 
 Se sientan en unos sillones que parecen bolsas de dormir.
@@ -592,7 +592,7 @@ y esta piba te pregunta por tu superpoder.
 Ni ella se lo cree. Ni vos.
 Pero el protocolo sigue.
 
-* [...]
++ [...]
 -
 
 "Contame de un fracaso y cómo lo convertiste en aprendizaje."
@@ -616,7 +616,7 @@ contestando qué animal serías.
 
 Martina asiente. Toma notas en un iPad.
 
-* [...]
++ [...]
 -
 
 "Bueno, te cuento de nosotros."
@@ -666,7 +666,7 @@ Martina se mira las uñas, pintadas de negro.
 
 Te dice un número.
 
-* [...]
++ [...]
 -
 
 Es cuarenta por ciento menos que tu último sueldo.
@@ -683,7 +683,7 @@ En la entrevista entera no entendiste bien qué vende.
 
 Crecimiento para ellos. Pobreza para vos.
 
-* [...]
++ [...]
 -
 
 Martina se para. La entrevista terminó.
@@ -762,7 +762,7 @@ Seguridad, torniquetes, credencial de visitante.
 Te cuelgan del cuello una tarjeta que dice "INVITADO" en rojo.
 Como si necesitaras un cartel que diga que no pertenecés.
 
-* [...]
++ [...]
 -
 
 La sala de espera tiene sillas de plástico duro.
@@ -785,7 +785,7 @@ Aunque todos están en la misma mierda.
 Esperás cuarenta y cinco minutos.
 Nadie se disculpa.
 
-* [...]
++ [...]
 -
 
 Te llaman.
@@ -843,7 +843,7 @@ La del medio junta las manos.
 
 "Este es el primer paso."
 
-* [...]
++ [...]
 -
 
 "Después viene la prueba técnica."
@@ -908,7 +908,7 @@ Marcás "en equipo" porque sabés que eso quieren leer.
 Hacés el caso práctico. Un fin de semana entero.
 Diez horas de trabajo gratis que llaman "evaluación."
 
-* [...]
++ [...]
 -
 
 Después: nada.
@@ -929,7 +929,7 @@ Le deseamos éxito en su búsqueda profesional.
 Atentamente,
 Dirección de Capital Humano"
 
-* [...]
++ [...]
 -
 
 Capital Humano.
@@ -1051,7 +1051,7 @@ Te deseamos mucho éxito en tu búsqueda laboral.
 Saludos cordiales,
 Equipo de Talento Humano"
 
-* [...]
++ [...]
 -
 
 ~ rechazos += 1
@@ -1100,7 +1100,7 @@ Llegás.
 Él ya está.
 Sonrisa de vendedor.
 
-* [...]
++ [...]
 -
 
 "Mirá, laburo no tengo para ofrecerte ahora mismo.
@@ -1154,7 +1154,7 @@ Esta vez presencial.
 El entrevistador te mira.
 Algo en su cara cambia.
 
-* [...]
++ [...]
 -
 
 "¿Cuántos años de experiencia tenés?"
@@ -1163,7 +1163,7 @@ Algo en su cara cambia.
 
 "Ah."
 
-* [...]
++ [...]
 -
 
 El resto de la entrevista es un trámite.
@@ -1180,7 +1180,7 @@ Silencio.
 
 "Bueno, junior en términos de... adaptabilidad."
 
-* [...]
++ [...]
 -
 
 ~ rechazos += 1
@@ -1260,7 +1260,7 @@ Alguien te mira.
     "En mi país, los patrones también decían que era culpa nuestra. Nunca lo fue."
 }
 
-* [...]
++ [...]
 -
 
 "El problema no sos vos. Nunca fuiste vos."

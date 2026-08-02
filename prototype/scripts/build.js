@@ -8,17 +8,32 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..');
+const REPO_ROOT = path.resolve(ROOT, '..');
 const INK_ENTRY = path.join(ROOT, 'ink', 'main.ink');
 const JSON_OUT = path.join(ROOT, 'web', 'un_dia_mas.json');
 const JS_OUT = path.join(ROOT, 'web', 'un_dia_mas.js');
 
+function isExecutable(file) {
+    try {
+        fs.accessSync(file, fs.constants.X_OK);
+        return true;
+    } catch (e) {
+        return false;
+    }
+}
+
 function findInklecate() {
-    // Try local node_modules first
+    // Native binary bundled with the repo — the only one guaranteed to run
+    // on this platform. The npm package ships a Windows .exe that fails with
+    // EACCES on Linux/macOS, so it is a last resort, not the first choice.
+    const bundled = path.join(REPO_ROOT, 'bin', 'inklecate');
+    if (isExecutable(bundled)) {
+        return bundled;
+    }
     const localBin = path.join(ROOT, 'node_modules', '.bin', 'inklecate');
-    if (fs.existsSync(localBin) || fs.existsSync(localBin + '.cmd')) {
+    if (isExecutable(localBin) || fs.existsSync(localBin + '.cmd')) {
         return localBin;
     }
-    // Try npx
     return 'npx inklecate';
 }
 
@@ -28,6 +43,12 @@ function build() {
     console.log(`[build] Entry: ${INK_ENTRY}`);
 
     const inklecate = findInklecate();
+    console.log(`[build] Compiler: ${inklecate}`);
+
+    // Remove any previous output first. Otherwise a compiler that never ran
+    // (missing binary, wrong platform) leaves a stale JSON behind and the
+    // build reports success while shipping last week's story.
+    try { fs.unlinkSync(JSON_OUT); } catch (e) {}
 
     try {
         // Compile Ink to JSON
@@ -37,7 +58,8 @@ function build() {
         try {
             output = execSync(cmd, { encoding: 'utf8', cwd: ROOT, stdio: 'pipe', shell: true });
         } catch (execErr) {
-            // inklecate exits non-zero on warnings — check if JSON was still produced
+            // inklecate exits non-zero on warnings too, so only bail out when
+            // it actually reported errors or failed to produce the JSON.
             warnings = (execErr.stderr || '').toString();
             output = (execErr.stdout || '').toString();
             const hasErrors = /^ERROR:/m.test(warnings) || /^ERROR:/m.test(output);
@@ -46,8 +68,17 @@ function build() {
             }
         }
 
-        // Print warnings (non-fatal)
+        // Compilation errors are reported on stdout with a zero exit code in
+        // some inklecate builds — check the output regardless of exit status.
         const allOutput = (warnings + '\n' + output).trim();
+        const errorLines = allOutput.split('\n').filter(l => /^ERROR:/.test(l.trim()));
+        if (errorLines.length > 0) {
+            console.error(`[build] COMPILATION ERROR: ${errorLines.length} error(s)`);
+            errorLines.forEach(l => console.error('  ' + l.trim()));
+            process.exit(1);
+        }
+
+        // Print warnings (non-fatal)
         const warningLines = allOutput.split('\n').filter(l => /^WARNING:/.test(l.trim()));
         if (warningLines.length > 0) {
             console.log(`[build] ${warningLines.length} warnings (non-fatal)`);

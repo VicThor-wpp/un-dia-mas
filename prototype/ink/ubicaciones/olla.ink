@@ -98,7 +98,9 @@ Sofía te mira de arriba abajo.
     -> olla_servir
 * [Limpiar] # COSTO:1 # DADOS # STAT:conexion # EFECTO:conexion+
     -> olla_limpiar
-* {energia <= 1} [Decir que te vas]
+// Sticky y sin condición: es un menú al que se vuelve después de cada tarea.
+// Si irse dependía de la energía, hacer las tres tareas dejaba sin salida.
++ [Decir que te vas]
     -> olla_despedirse
 
 === olla_pelar_papas ===
@@ -112,7 +114,7 @@ Pelás.
 
 Hay una señora al lado tuyo. Es Elena, la veterana del barrio. No la habías visto en esta tarea antes, o quizás sí y no te dabas cuenta.
 
-* [...]
++ [...]
 -
 
 // Chequeo comunitario: pelar papas en la olla
@@ -164,7 +166,7 @@ Cucharón en mano.
 La gente avanza.
 Platos, platos, platos.
 
-* [...]
++ [...]
 -
 
 {es_vegano:
@@ -233,7 +235,7 @@ El trabajo físico te vacía la cabeza.
 Por un rato no pensás en nada.
 Solo en la mugre y en sacarla.
 
-* [...]
++ [...]
 -
 
 {d6() >= 5:
@@ -282,7 +284,7 @@ Sofía suspira.
 
 "Las donaciones bajaron. El municipio anda lento con los trámites. Lo de siempre, pero peor."
 
-* [...]
++ [...]
 -
 
 Mira las ollas.
@@ -364,7 +366,7 @@ Está cerrada.
 Un cartel en la puerta:
 "HOY ABRIMOS MÁS TARDE. ESTAMOS RESOLVIENDO."
 
-* [...]
++ [...]
 -
 
 ~ olla_en_crisis = true
@@ -372,7 +374,7 @@ Un cartel en la puerta:
 Hay gente esperando afuera.
 Charlando. Algunos miran el celular.
 
-* [...]
++ [...]
 -
 
 Vecinos del barrio.
@@ -398,7 +400,7 @@ No sabés para qué.
 Sofía sale de la casa.
 Tiene los ojos rojos.
 
-* [...]
++ [...]
 -
 
 "Mañana capaz que conseguimos algo. Hoy no hay."
@@ -406,7 +408,7 @@ Tiene los ojos rojos.
 La gente se va de a poco.
 Vos te quedás.
 
-* [...]
++ [...]
 -
 
 "¿Querés ayudar de verdad?"
@@ -431,7 +433,7 @@ No solo los que ayudan.
 Vecinos.
 Gente del barrio que nunca viste.
 
-* [...]
++ [...]
 -
 
 Sofía está al frente.
@@ -455,7 +457,7 @@ Un tipo: "El kiosco de la esquina cerró. Nos queda uno solo en el barrio."
 
 Otra señora: "La municipalidad no responde. Llamé veinte veces por el tema del alumbrado."
 
-* [...]
++ [...]
 -
 
 Un pibe joven: "Hay que hacer algo. No podemos quedarnos esperando que las cosas mejoren solas."
@@ -478,7 +480,7 @@ Levantás la mano.
 
 "Yo... hace poco perdí el laburo. No estoy en la misma que ustedes, todavía. Pero quiero ayudar."
 
-* [...]
++ [...]
 -
 
 La gente te mira.
@@ -500,7 +502,7 @@ Se discuten propuestas.
 "Hay que hablar con los comercios que quedan."
 "Hay que organizarse mejor."
 
-* [...]
++ [...]
 -
 
 {d6() >= 4:
@@ -557,7 +559,7 @@ Atrás, un vecino que viene siempre.
 
 Se charla. Alguien hace un chiste.
 
-* [...]
++ [...]
 -
 
 {not tiene_laburo:
@@ -566,7 +568,7 @@ Se charla. Alguien hace un chiste.
     A ser parte de algo.
 }
 
-* [...]
++ [...]
 -
 
 Te toca.
@@ -625,7 +627,7 @@ Papas, carne (poca), verduras.
 Te sentás en una mesa larga.
 Comés.
 
-* [...]
++ [...]
 -
 
 {d6() >= 4:
@@ -672,7 +674,7 @@ Pelás papas.
 Cortás verduras.
 Revolvés la olla.
 
-* [...]
++ [...]
 -
 
 No es difícil.
@@ -695,7 +697,7 @@ Pero es necesario.
 Sofía lo dice bajito.
 Pero todos escuchan.
 
-* [...]
++ [...]
 -
 
 "Las donaciones no llegan."
@@ -704,7 +706,7 @@ Pero todos escuchan.
 
 ~ olla_en_crisis = true
 
-* [...]
++ [...]
 -
 
 Silencio.
@@ -749,7 +751,7 @@ Pararte en una esquina.
 Explicar.
 Pedir.
 
-* [...]
++ [...]
 -
 
 ~ energia -= 1
@@ -760,7 +762,7 @@ Pero lo hacés.
 No bajás la cabeza. Mirás a los ojos.
 Esto es trabajo digno. Es sostener.
 
-* [...]
++ [...]
 -
 
 Algunos dan.
@@ -859,7 +861,7 @@ Sofía abre.
 "Bueno. Estamos todos los que estamos."
 "Gracias por venir."
 
-* [...]
++ [...]
 -
 
 Elena ceba mate. La ronda empieza.
@@ -883,7 +885,7 @@ Ideas van y vienen:
 - "Ir al municipio de vuelta."
 - "Organizar una feria."
 
-* [...]
++ [...]
 -
 
 Nadie tiene la respuesta.
@@ -905,7 +907,7 @@ Mira alrededor. A las caras cansadas. A los números que no cierran.
 
 "Tenemos que decidir."
 
-* [...]
++ [...]
 -
 
 Silencio.
@@ -941,7 +943,7 @@ Risas nerviosas.
 
 "Pero estamos."
 
-* [...]
++ [...]
 -
 
 "Yo no sé qué va a pasar mañana. No sé si Claudia nos cierra, si conseguimos la plata, si esto se sostiene."
@@ -970,7 +972,7 @@ Sofía asiente.
     "En mi país destruyeron algo que tardó sesenta años en construirse. No voy a dejar que pase acá."
 }
 
-* [...]
++ [...]
 -
 
 Sofía mira alrededor.
@@ -1075,7 +1077,7 @@ No hay solución mágica.
 Pero hay un plan.
 Más o menos.
 
-* [...]
++ [...]
 -
 
 La gente se va yendo.
@@ -1099,7 +1101,7 @@ Las ollas vacías.
 Las mesas limpias.
 Las luces se apagan.
 
-* [...]
++ [...]
 -
 
 Sofía es la última en irse.
@@ -1144,7 +1146,7 @@ Elena y Sofía se miran.
 
 "La Chola", dicen las dos al mismo tiempo.
 
-* [...]
++ [...]
 -
 
 Elena habla primero.
@@ -1155,7 +1157,7 @@ Sofía asiente.
 
 "Quince personas al principio. Lo que empezó como juntada terminó siendo esto."
 
-* [...]
++ [...]
 -
 
 "En el 2002 creció mucho. De quince a ochenta vecinos. La Chola y Elena cocinaban turnándose."
@@ -1164,7 +1166,7 @@ Elena se ríe.
 
 "Nos turnábamos para que nadie se quemara. Terminábamos cansadas pero contentas."
 
-* [...]
++ [...]
 -
 
 "Después de la crisis, siguió siendo punto de encuentro. La Chola se puso vieja. Sofía estaba en España."
@@ -1173,7 +1175,7 @@ Elena se ríe.
 
 "Y se volvió más importante que nunca. El barrio se junta acá."
 
-* [...]
++ [...]
 -
 
 Mirás el patio. La lona remendada, las mesas que vieron de todo.
@@ -1194,21 +1196,21 @@ La Virgen de Guadalupe. Colores vivos. Flores dibujadas alrededor.
 
 "La puso la Chola", dice Sofía sin que preguntes.
 
-* [...]
++ [...]
 -
 
 "La trajo de un viaje a México. Decía que era la patrona de los que luchan."
 
 "¿Vos creés en eso?"
 
-* [...]
++ [...]
 -
 
 Sofía se encoge de hombros.
 
 "Creo en lo que funciona. Y esa imagen lleva ahí veinte años. La gente la mira cuando entra. Algunos rezan. Otros no. Pero todos la ven."
 
-* [...]
++ [...]
 -
 
 Mirás la imagen.
@@ -1235,14 +1237,14 @@ El celular de Sofía no para de sonar.
 
 "Ocho. Los que siempre estamos."
 
-* [...]
++ [...]
 -
 
 "Diego avisa cuando consigue donaciones. Yo anoto quién trae qué. Las vecinas confirman si pueden venir."
 
 "¿Y Elena?"
 
-* [...]
++ [...]
 -
 
 Sofía se ríe.
@@ -1266,19 +1268,19 @@ Sofía cuenta con los dedos.
 
 "El Plan ABC de la Intendencia. Insumos básicos: arroz, fideos, aceite. Pero llega irregular."
 
-* [...]
++ [...]
 -
 
 "Don Rubén, del almacén de la esquina. Nos da lo que está por vencer. Y a veces algo más."
 
 "La verdulería de los paraguayos. Dejan cajones los viernes."
 
-* [...]
++ [...]
 -
 
 "Vecinos que aportan. Desde cien pesos hasta dos mil. Todo va a una caja que administra Elena."
 
-* [...]
++ [...]
 -
 
 Sofía mira las ollas. Hace una cuenta mental.
@@ -1302,7 +1304,7 @@ Llega un hombre mayor cargando bolsas.
 
 "De nada, m'hija. Esto iba a la basura pero todavía está bueno."
 
-* [...]
++ [...]
 -
 
 Don Rubén se va.
@@ -1311,7 +1313,7 @@ Don Rubén se va.
 
 "¿Por qué?"
 
-* [...]
++ [...]
 -
 
 "Dice que él también estuvo en la cola cuando era chico. En otra olla, en otro barrio. Ahora le toca dar."
@@ -1330,14 +1332,14 @@ Llegan cajones de verdura.
 
 "De la verdulería de los paraguayos", explica Diego. "Siempre los viernes."
 
-* [...]
++ [...]
 -
 
 "¿Por qué ayudan?"
 
 "Porque son de acá también. Aunque algunos no los vean así."
 
-* [...]
++ [...]
 -
 
 Diego baja la voz.
@@ -1361,14 +1363,14 @@ Sofía revisa unas cajas.
 
 "¿Qué es?"
 
-* [...]
++ [...]
 -
 
 "El plan de la Intendencia de Montevideo. Nos dan insumos: arroz, fideos, aceite. A veces lentejas."
 
 "¿Y alcanza?"
 
-* [...]
++ [...]
 -
 
 Sofía se ríe sin gracia.
@@ -1377,7 +1379,7 @@ Sofía se ríe sin gracia.
 
 "¿Cómo que cuando llega?"
 
-* [...]
++ [...]
 -
 
 "A veces se demoran. A veces falta algo. Una vez nos mandaron arroz para tres meses pero nada de aceite. ¿Qué hacés con arroz sin aceite?"
@@ -1397,14 +1399,14 @@ Elena saca una caja de lata de debajo de la mesa.
 
 "¿Qué tiene?"
 
-* [...]
++ [...]
 -
 
 "Los aportes de los vecinos. Los que pueden, ponen algo. Cien pesos, quinientos, lo que tengan."
 
 Abre la caja. Billetes doblados, monedas, un papelito con anotaciones.
 
-* [...]
++ [...]
 -
 
 "Todo se anota. Yo llevo la cuenta acá, Sofía tiene un backup en el celular."
@@ -1415,7 +1417,7 @@ Elena cuenta.
 
 "Mil trescientos. Alcanza para una garrafa y algo de verdura."
 
-* [...]
++ [...]
 -
 
 Cierra la caja.
@@ -1443,7 +1445,7 @@ Sofía saca el celular. Muestra un grupo de WhatsApp con muchos mensajes.
 
 "Mirá: nosotras abrimos lunes, miércoles y viernes. La olla del Marconi abre martes y jueves. La de Casabó, sábados."
 
-* [...]
++ [...]
 -
 
 "Así nadie se queda sin comer ningún día. Nos pasamos información, insumos cuando sobra, gente cuando falta."
@@ -1455,7 +1457,7 @@ Sofía saca el celular. Muestra un grupo de WhatsApp con muchos mensajes.
 
 "¿Y quién coordina todo eso?"
 
-* [...]
++ [...]
 -
 
 "La Coordinadora. La CPS, le dicen. Pero al final somos todas viejas con celular y mala señal."
@@ -1487,7 +1489,7 @@ La comida alcanzó exacta. La cola no fue larga. Los gurises jugaron en el patio
 
 Nadie se quejó. Nadie se fue con hambre.
 
-* [...]
++ [...]
 -
 
 Sofía se sienta un momento en el escalón de la casa. Cosa rara.
@@ -1506,14 +1508,14 @@ Te mira.
 
 "Un día donde todo sale. La cantidad justa de gente, la comida que querías hacer, nadie peleó en la cola."
 
-* [...]
++ [...]
 -
 
 Elena pasa con un balde vacío. Sonríe.
 
 "Los días buenos", dice. "Hay que acordarse de estos."
 
-* [...]
++ [...]
 -
 
 Sofía asiente.
@@ -1524,7 +1526,7 @@ Se queda mirando el patio. La lona, las mesas, las ollas enfriándose.
 
 "Hoy fue un día bueno."
 
-* [...]
++ [...]
 -
 
 Por un rato, nadie habla de plata, ni de donaciones, ni de Claudia, ni de crisis.
@@ -1566,7 +1568,7 @@ Ramón asiente. No sonríe mucho. Tiene cara de cansado.
 
 "Igualmente."
 
-* [...]
++ [...]
 -
 
 Bajan los cajones. Zapallo, papa, cebolla. Todo un poco golpeado pero bueno.
@@ -1588,7 +1590,7 @@ Sofía aparece. Le da un abrazo a Ramón.
 
 "Como siempre."
 
-* [...]
++ [...]
 -
 
 Ramón se va a la camioneta. Diego te habla bajito:
@@ -1597,14 +1599,14 @@ Ramón se va a la camioneta. Diego te habla bajito:
 
 "¿Por qué ayuda?"
 
-* [...]
++ [...]
 -
 
 Diego mira hacia la camioneta.
 
 "Una vez le pregunté. Me dijo: 'Porque allá pasamos hambre también. Y acá me dieron de comer cuando llegué'."
 
-* [...]
++ [...]
 -
 
 "Hay gente que lo putea en la calle. Le dicen cosas. 'Paragua de mierda', esas cosas."
@@ -1627,7 +1629,7 @@ Ramón vuelve del camión con un último cajón. Más chico.
 
 Sofía se queda mirando el cajón. No dice nada.
 
-* [...]
++ [...]
 -
 
 Ramón se sube a la camioneta. Saluda con la mano y se va.

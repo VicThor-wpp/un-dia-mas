@@ -303,7 +303,7 @@ Vos ponés los horarios. Vos sos el jefe."
 
 "¿Y qué pasó?"
 
-* [...]
++ [...]
 -
 
 "Choqué el auto."
@@ -483,7 +483,7 @@ Los decodificadores. Los perfumes. Las cripto."
 "Me los creía yo para no pensar.
 Para no ver que no sirvo para nada."
 
-* [...]
++ [...]
 -
 
 Silencio largo.
@@ -554,7 +554,7 @@ Porque si no me lo creo... no sé qué hacer."
     
     "Capaz que esto es mejor negocio."
 
-    * [...]
+    + [...]
         "No pagan. Pero al menos sé que sirve de algo."
 
         Sigue cortando.
@@ -612,7 +612,7 @@ Siempre le sobra mercadería."
 "Le pregunté si podía donar.
 Dijo que sí. Pero hay que ir a buscar."
 
-* [...]
++ [...]
 -
 
 "Yo no tengo auto. Pero capaz que Diego..."

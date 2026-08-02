@@ -38,7 +38,7 @@ Se siente más largo.
 El viernes antes era el mejor día.
 Fin de semana, descanso, algo de plata.
 
-* [...]
++ [...]
 -
 
 Ahora es solo otro día.
@@ -306,7 +306,7 @@ Diego cuenta bolsas de fideos en un rincón. Mueve los labios sin hablar. Cuenta
 
 Hay dos o tres más que no conocés bien. Parados contra la pared, con cara de no saber si quedarse o irse.
 
-* [...]
++ [...]
 -
 
 // Saludo específico del vínculo
@@ -326,7 +326,7 @@ Hay dos o tres más que no conocés bien. Parados contra la pared, con cara de n
     "Quedate cerca", te susurra. "Se viene feo."
 }
 
-* [...]
++ [...]
 -
 
 # PAUSA
@@ -351,7 +351,7 @@ Hace una pausa.
 
 "Alcanza para hoy. Justo. No sobra un plato."
 
-* [...]
++ [...]
 -
 
 Silencio. El tipo de silencio que pesa.
@@ -370,7 +370,7 @@ Mira a todos.
     Diego: "En Venezuela cuando se puso jodido la gente se organizaba. Sin esperar que nadie viniera a salvarlos."
 }
 
-* [...]
++ [...]
 -
 
 # PAUSA
@@ -397,7 +397,7 @@ Elena le pone la mano en el hombro. No dice nada. No hace falta.
 
 Diego cruza los brazos. Mira el piso. Después te mira a vos.
 
-* [...]
++ [...]
 -
 
 El silencio se estira.
@@ -510,7 +510,7 @@ Elena asiente.
 Sofía se sienta.
 Piensa.
 
-* [...]
++ [...]
 -
 
 "Okay. Hacemos versión mínima hoy."
@@ -533,7 +533,7 @@ Sofía ceba mate en silencio.
 Elena mira por la ventana.
 Diego ordena sillas vacías.
 
-* [...]
++ [...]
 -
 
 Es raro estar acá cuando no hay comida.
@@ -568,7 +568,7 @@ Deciden hacer las dos cosas:
 - Pedir comida directa a vecinos
 - Colecta rápida en la zona
 
-* [...]
++ [...]
 -
 
 Se dividen.
@@ -736,13 +736,18 @@ Todos ayudan.
     ~ subir_conexion(1)
 }
 
-* {energia >= 2} [Ofrecerte para la colecta] # COSTO:2 # EFECTO:conexion++ # EFECTO:llama+
+// La opción de la colecta pedía energía y era la única del weave: sin energía
+// no quedaba ninguna, y sin gather el flujo tampoco volvía después de elegirla.
++ {energia >= 2} [Ofrecerte para la colecta] # COSTO:2 # EFECTO:conexion++ # EFECTO:llama+
     ~ energia -= 2
     Salís a pedir en los negocios.
     No es fácil. Pero conseguís algo.
     ~ registrar_ayuda()
     ~ subir_conexion(2)
     ~ subir_llama(1)
++ [Quedarte en la cocina]
+    Te quedás adentro. Alguien tiene que sostener la olla.
+-
 
 // Lucía aparece si la relación es buena
 {lucia_relacion >= 2:
@@ -1232,7 +1237,7 @@ Para hablar de cómo seguir.
 === recovery_mental_viernes ===
 Todo se pone oscuro. Otra vez. Peor.
 
-* [...]
++ [...]
 -
 
 {conexion <= 1 && llama <= 1:
