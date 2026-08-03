@@ -18,6 +18,12 @@
     
     --font-size-base: 18px;
     --line-height-base: 1.6;
+
+    /* --- SEMÁNTICA --- */
+    /* Estado crítico: inercia al borde, energía en cero, error de runtime.
+       Es el mismo rojo en todos los temas a propósito: la alarma no debería
+       cambiar de idioma según la locación. */
+    --color-danger: #c0392b;
 }
 
 /* ==========================================

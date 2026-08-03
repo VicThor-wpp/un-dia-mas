@@ -3,7 +3,7 @@
 @media (max-width: 768px) {
 
     body {
-        padding-top: 140px; /* Aumentado de 110px para acomodar el header stackeado */
+        padding-top: 104px; /* El header ya no se apila en tres filas */
     }
 
     /* Header Compacto */
@@ -64,11 +64,98 @@
         font-size: 0.55rem;
     }
 
+    /* HUD compacto en celular.
+       Antes el header se comía 229px de 844 (27% de la pantalla): "LUNES"
+       aparecía dos veces, los cinco números se partían en dos filas y los
+       botones quedaban en una tercera. Ahora es una sola fila que scrollea
+       horizontal si hace falta. */
+    .header-bar {
+        flex-wrap: nowrap;
+        padding: 6px 10px;
+        gap: 10px;
+        border-bottom: none;
+    }
+
+    /* Los puntitos de la semana duplican lo que ya dice "DÍA 1 / LUNES". */
+    .day-section {
+        display: none;
+    }
+
+    .stats-section {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scrollbar-width: none;
+        gap: 14px;
+        flex: 1;
+    }
+
+    .stats-section::-webkit-scrollbar {
+        display: none;
+    }
+
+    .stat-item {
+        flex-shrink: 0;
+    }
+
+    /* En celular las cinco stats con etiqueta no entran en el ancho y la
+       inercia —la que termina la partida— quedaba fuera de pantalla. Se
+       ocultan las etiquetas: los iconos alcanzan para distinguirlas y el
+       title sigue estando para quien lo necesite. */
+    .stat-item .stat-label {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        white-space: nowrap;
+    }
+
+    .stat-item {
+        grid-template-columns: auto;
+        justify-items: center;
+        row-gap: 1px;
+    }
+
+    .stat-item .stat-num {
+        font-size: 0.9rem;
+    }
+
+    .stat-item .stat-bar {
+        width: 100%;
+        min-width: 34px;
+    }
+
+    /* Las cinco stats más los tres botones tienen que entrar en 390px sin que
+       la inercia quede cortada contra el borde. */
+    .stats-section {
+        gap: 8px;
+    }
+
+    .stat-item {
+        min-width: 42px;
+    }
+
+    .actions-section {
+        gap: 4px;
+    }
+
+    .actions-section .header-btn {
+        width: 34px;
+        height: 34px;
+        padding: 0;
+    }
+
+    .actions-section {
+        flex-shrink: 0;
+    }
+
     /* Container */
     .container {
         padding: 20px;
-        margin-bottom: 80px;
+        margin-bottom: 40px;
         width: 95%;
+        /* El header en celular es más alto que en desktop. */
+        min-height: calc(100vh - 109px - 60px);
     }
 
     .story-header {

@@ -185,7 +185,7 @@ const ChoiceParser = (function() {
         if (choice.text.trim() === '...') {
             const button = document.createElement('button');
             button.className = 'choice-btn continue-button';
-            button.innerHTML = '<span class="choice-text">CONTINUAR</span>';
+            button.innerHTML = continueLabel();
             button.dataset.choiceIndex = index;
             button.addEventListener('click', onClick);
             return button;
@@ -210,13 +210,35 @@ const ChoiceParser = (function() {
         }
 
         // Build label
-        button.innerHTML = buildLabel(choice.text, meta, story);
+        button.innerHTML = shortcutBadge(index) + buildLabel(choice.text, meta, story);
         button.dataset.choiceIndex = index;
 
         // Add click handler
         button.addEventListener('click', onClick);
 
         return button;
+    }
+
+    /**
+     * Etiqueta del botón de continuar.
+     *
+     * El texto vive en el DOM (lectores de pantalla, selección) y la flecha la
+     * pone el CSS. Antes estaban las dos cosas: el span decía CONTINUAR y el
+     * ::after agregaba "Continuar →", así que el botón se leía
+     * "CONTINUARCONTINUAR →".
+     */
+    function continueLabel() {
+        return '<span class="choice-text">Continuar</span>' +
+               '<kbd class="choice-kbd" aria-hidden="true">espacio</kbd>';
+    }
+
+    /**
+     * Número de atajo de cada opción. Las teclas 1-9 ya funcionaban desde
+     * reading-preferences.js pero no había forma de enterarse.
+     */
+    function shortcutBadge(index) {
+        if (index > 8) return '';
+        return `<kbd class="choice-kbd choice-kbd-num" aria-hidden="true">${index + 1}</kbd>`;
     }
 
     /**
@@ -235,8 +257,7 @@ const ChoiceParser = (function() {
             button.classList.add('continue-tension');
         }
 
-        // Text content explicit for robustness
-        button.innerHTML = '<span class="choice-text">CONTINUAR</span>';
+        button.innerHTML = continueLabel();
 
         button.addEventListener('click', onClick);
 

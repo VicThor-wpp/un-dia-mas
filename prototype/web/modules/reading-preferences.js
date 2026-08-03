@@ -331,6 +331,12 @@ const ReadingPreferences = (function() {
             // Ignore if typing in input
             if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
 
+            // Mientras el texto se está revelando manda TextPresenter: su propio
+            // handler de Espacio/Enter adelanta el párrafo. Sin esta guarda los
+            // dos listeners respondían a la misma tecla y el turno podía
+            // avanzar de a dos.
+            if (typeof TextPresenter !== 'undefined' && TextPresenter.isBusy()) return;
+
             // Space or Enter to continue
             if (e.code === 'Space' || e.code === 'Enter') {
                 const continueBtn = document.querySelector('.continue-button');

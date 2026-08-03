@@ -35,14 +35,31 @@ body {
    MAIN CONTAINER
    ========================================== */
 .container {
-    max-width: 700px;
-    margin: 0 auto 100px;
+    max-width: 760px;
+    margin: 0 auto 60px;
     padding: 40px;
     background: var(--surface);
     border: var(--border-width) var(--border-style) var(--fg);
     box-shadow: var(--shadow-solid) var(--shadow-color);
     position: relative;
-    transition: all 0.5s;
+    transition: background 0.5s, border-color 0.5s;
+
+    /* Alto estable y opciones abajo.
+       Antes la caja crecía y se encogía con cada turno: los botones cambiaban
+       de lugar todo el tiempo y abajo quedaba medio viewport vacío. Con un
+       alto mínimo el marco deja de saltar y la vista descansa siempre en el
+       mismo lugar. */
+    min-height: calc(100vh - var(--header-h, 70px) - 100px);
+    display: flex;
+    flex-direction: column;
+}
+
+.container > #storyContainer {
+    flex: 1 1 auto;
+}
+
+.container > #choicesContainer {
+    flex: 0 0 auto;
 }
 
 /* Paper/grain texture overlay */

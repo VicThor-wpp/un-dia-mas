@@ -1,5 +1,60 @@
 # CHANGELOG - Un Día Más Implementation
 
+## Session: 2026-08-02 (c)
+
+### UI: HUD legible, atajos visibles y layout que deja de saltar
+
+Todo verificado jugando en Chromium (desktop 1100x800 y celular 390x844), no
+leyendo el código.
+
+#### El HUD no comunicaba
+
+- Las cinco stats se mostraban como `5/5 3/10 5/10 5/10 5/10`, sin etiquetas.
+  Ahora cada una lleva icono, nombre y barra.
+- **La inercia se veía igual que el resto**, siendo la única donde subir es
+  malo y la que termina la partida. Ahora tiene semántica invertida: color de
+  peligro y pulso del icono a partir de 8, y en el modal de estado dice
+  explícitamente "(subir es peor)".
+- Los iconos venían de un CDN (`unpkg.com/lucide`). Si no cargaba, los botones
+  del header quedaban como cuadraditos vacíos sin texto de respaldo. Se
+  reemplazó por `modules/icons.js`: 39 iconos SVG inline, mismo contrato que
+  Lucide (`[data-lucide]`, `lucide.createIcons`). Se sacó `unpkg` del CSP.
+- En celular el header ocupaba 229px de 844 (27% de la pantalla): "LUNES"
+  aparecía dos veces, los números se partían en dos filas y los botones caían
+  en una tercera. Ahora son **109px** en una sola fila, con las cinco stats
+  visibles incluida la inercia.
+
+#### Los atajos existían y eran invisibles
+
+Espacio para continuar y 1-9 para elegir ya funcionaban desde
+`reading-preferences.js`, sin ningún cartel que lo dijera — con cientos de
+beats de "continuar" por partida.
+
+- Número visible en cada opción y `kbd` de "espacio" en el botón de continuar.
+  En pantallas táctiles se ocultan (no aplican).
+- **Bug: el botón decía "CONTINUARCONTINUAR →"**. El texto estaba en el DOM y
+  el CSS lo repetía con `::after`. Ahora el `::after` es solo la flecha.
+- `text-presenter.js` y `reading-preferences.js` escuchaban los dos Espacio y
+  Enter. Ahora mientras el texto se revela manda TextPresenter, así el turno no
+  puede avanzar de a dos.
+
+#### Layout
+
+- Las opciones caían abajo del fold y había que scrollear a mano cada turno.
+  `revelarOpciones()` las deja a la vista al cerrar el turno, y no toca la
+  pantalla si ya se veían enteras.
+- La caja de la historia crecía y se encogía en cada turno, moviendo los
+  botones de lugar. Ahora tiene alto mínimo y las opciones quedan abajo: el
+  marco deja de saltar. Ancho de lectura de 700 a 760px.
+- Medido después: en ambos viewports las opciones entran en pantalla y el
+  scroll total es 0.
+
+#### Pendiente, no tocado
+
+`assets/audio/bgm_rutina.mp3` da 404 — el sistema de audio referencia archivos
+que no están en el repo. Es previo a estos cambios.
+
+
 ## Session: 2026-08-02 (b)
 
 ### BALANCE: la inercia mataba antes de que el juego diera con qué defenderse

@@ -123,14 +123,38 @@ const StatsPanel = (function() {
      * Create icon HTML
      */
     function iconHTML(name, size = 16) {
+        if (typeof Icons !== 'undefined') return Icons.svg(name, size);
         return `<i data-lucide="${name}" style="width:${size}px;height:${size}px;"></i>`;
     }
 
     /**
-     * Create stat display with number
+     * Una stat del HUD: icono + etiqueta + valor.
+     *
+     * La etiqueta no es decorativa. Antes el header mostraba cinco pares de
+     * números pelados ("5/5 3/10 5/10 5/10 5/10") y no había forma de saber
+     * cuál era cuál.
+     *
+     * `invertida` marca las stats donde subir es malo — hoy solo la inercia,
+     * que es la que termina la partida. Sin eso se leía igual que las demás.
      */
-    function createStatDisplay(value, max, color) {
-        return `<span class="stat-num" style="color:${color}">${value}/${max}</span>`;
+    function createStat(key, label, icon, value, max, opts) {
+        const o = opts || {};
+        const pct = max ? value / max : 0;
+        const invertida = !!o.invertida;
+        const nivel = invertida
+            ? (pct >= 0.8 ? 'peligro' : pct >= 0.5 ? 'aviso' : 'ok')
+            : (pct <= 0.2 ? 'peligro' : pct <= 0.4 ? 'aviso' : 'ok');
+
+        return `
+            <div class="stat-item stat-${key} nivel-${nivel}${invertida ? ' stat-invertida' : ''}"
+                 title="${o.title || label}">
+                <span class="stat-icon">${iconHTML(icon, 14)}</span>
+                <span class="stat-label">${label}</span>
+                <span class="stat-num">${value}<span class="stat-max">/${max}</span></span>
+                <span class="stat-bar" aria-hidden="true">
+                    <span class="stat-bar-fill" style="width:${Math.round(pct * 100)}%"></span>
+                </span>
+            </div>`;
     }
 
     /**
@@ -222,31 +246,21 @@ const StatsPanel = (function() {
         container.innerHTML = `
             <div class="header-bar">
                 <div class="day-section">
-                    <span class="day-name">${diaNombre}</span>
                     ${createDayProgress(diaActual)}
                 </div>
 
                 <div class="stats-section">
-                    <div class="stat-item" title="Energía: acciones disponibles hoy">
-                        ${iconHTML('zap', 14)}
-                        ${createStatDisplay(energia, energiaMax, '#ffc107')}
-                    </div>
-                    <div class="stat-item" title="Conexión: lazos con el barrio">
-                        ${iconHTML('users', 14)}
-                        ${createStatDisplay(conexion, conexionMax, '#4caf50')}
-                    </div>
-                    <div class="stat-item stat-llama" title="La Llama: esperanza colectiva">
-                        ${iconHTML('flame', 14)}
-                        ${createStatDisplay(llama, llamaMax, '#ff6b35')}
-                    </div>
-                    <div class="stat-item" title="Dignidad: respeto propio">
-                        ${iconHTML('shield', 14)}
-                        ${createStatDisplay(dignidad, dignidadMax, '#2196f3')}
-                    </div>
-                    <div class="stat-item stat-inercia" title="Inercia: resistencia al cambio">
-                        ${iconHTML('anchor', 14)}
-                        ${createStatDisplay(inercia, 10, '#607d8b')}
-                    </div>
+                    ${createStat('energia', 'Energía', 'zap', energia, energiaMax,
+                        { title: 'Energía: acciones que te quedan hoy' })}
+                    ${createStat('conexion', 'Conexión', 'users', conexion, conexionMax,
+                        { title: 'Conexión: tu lugar en el tejido del barrio' })}
+                    ${createStat('llama', 'La Llama', 'flame', llama, llamaMax,
+                        { title: 'La Llama: esperanza colectiva. Si llega a 0, se apaga el barrio' })}
+                    ${createStat('dignidad', 'Dignidad', 'shield', dignidad, dignidadMax,
+                        { title: 'Dignidad: lo que el sistema te saca de a poco' })}
+                    ${createStat('inercia', 'Inercia', 'anchor', inercia, inerciaMax,
+                        { invertida: true,
+                          title: 'Inercia: resistencia al cambio. Acá subir es malo — si llega a 10 se termina la partida' })}
                 </div>
 
                 <div class="actions-section">
@@ -436,12 +450,17 @@ const StatsPanel = (function() {
         const max = stat.max || 10;
         const percent = (value / max) * 100;
 
+        // La inercia va al revés que el resto: la barra llena es mala noticia.
+        // Sin decirlo, un 5/10 con media barra se lee como "vas bien".
+        const invertida = statId === 'inercia';
+        const color = invertida && percent >= 80 ? 'var(--color-danger, #c0392b)' : stat.color;
+
         return `
-            <div class="full-stat-row">
-                <span class="stat-icon" style="color:${stat.color}">${iconHTML(stat.icon, 16)}</span>
-                <span class="stat-name">${stat.label}</span>
+            <div class="full-stat-row${invertida ? ' full-stat-invertida' : ''}">
+                <span class="stat-icon" style="color:${color}">${iconHTML(stat.icon, 16)}</span>
+                <span class="stat-name">${stat.label}${invertida ? ' <em class="stat-sentido">(subir es peor)</em>' : ''}</span>
                 <div class="stat-bar-bg">
-                    <div class="stat-bar-fill" style="width:${percent}%;background:${stat.color}"></div>
+                    <div class="stat-bar-fill" style="width:${percent}%;background:${color}"></div>
                 </div>
                 <span class="stat-val">${value}/${max}</span>
             </div>

@@ -72,6 +72,10 @@ The game uses a custom modular framework built on top of Ink's official runtime:
   - `ending-screen.css` - Game over and book of endings
   - `responsive.css` - Mobile styles and accessibility
 - `modules/` - Custom subsystems:
+  - `icons.js` - Inline SVG icon set. **There is no icon CDN**: the UI used to
+    depend on unpkg serving Lucide, and rendered empty squares when it didn't.
+    Keeps Lucide's contract (`[data-lucide]` + `lucide.createIcons`), so adding
+    an icon means adding its path here.
   - `config-manager.js` - Configuration loading and access
   - `notification-system.js` - Visual notifications and feedback
   - `decision-log.js` - Player decision history

@@ -402,6 +402,7 @@ const GameEngine = (function() {
             storyContainer.lastElementChild?.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
         choicesContainer.appendChild(button);
+        revelarOpciones();
     }
 
     function extractStoryVariables() {
@@ -431,6 +432,29 @@ const GameEngine = (function() {
         
         if (typeof AccessibilityManager !== 'undefined') AccessibilityManager.enhanceChoices(choicesContainer);
         refreshIcons(choicesContainer);
+        revelarOpciones();
+    }
+
+    /**
+     * Deja las opciones a la vista al final del turno.
+     *
+     * Con textos largos las opciones caían abajo del fold y había que
+     * scrollear a mano en cada turno para encontrar los botones. Se scrollea
+     * lo mínimo: si ya se ven enteras, no se toca nada (mover la pantalla
+     * cuando el jugador no lo pidió también molesta).
+     */
+    function revelarOpciones() {
+        if (!choicesContainer || !choicesContainer.children.length) return;
+        requestAnimationFrame(() => {
+            const r = choicesContainer.getBoundingClientRect();
+            const alto = window.innerHeight;
+            if (r.bottom <= alto - 8) return;
+            const suave = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            choicesContainer.scrollIntoView({
+                behavior: suave ? 'smooth' : 'auto',
+                block: 'end'
+            });
+        });
     }
 
     function onChoiceClick(event) {

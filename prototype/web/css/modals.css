@@ -803,3 +803,14 @@
     text-align: center;
     padding: 30px;
 }
+
+/* La inercia es la única stat donde subir es malo. En el modal se aclara,
+   porque una barra a medio llenar se lee espontáneamente como "vas bien". */
+.stat-sentido {
+    font-style: normal;
+    font-size: 0.7em;
+    letter-spacing: 0.5px;
+    text-transform: none;
+    opacity: 0.65;
+    margin-left: 6px;
+}

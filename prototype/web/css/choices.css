@@ -115,7 +115,8 @@
 }
 
 .continue-button::after {
-    content: 'Continuar \2192'; /* Flecha unicode */
+    content: '\2192'; /* Solo la flecha: el texto ya está en el DOM */
+    margin-left: 10px;
 }
 
 .continue-button:hover {
@@ -123,10 +124,6 @@
     border-color: var(--fg);
     border-style: solid;
     background: var(--surface);
-}
-
-.continue-button:hover::after {
-    content: 'Continuar \2192';
 }
 
 /* Variantes de continue */
@@ -190,5 +187,57 @@
     }
     .choice-btn:active {
         transition: none;
+    }
+}
+
+/* ==========================================
+   ATAJOS DE TECLADO VISIBLES
+   ==========================================
+   Los atajos (1-9 para elegir, espacio para continuar) ya existían en
+   reading-preferences.js pero no se anunciaban en ningún lado. En una partida
+   hay cientos de beats de "continuar": la diferencia entre saberlo y no
+   saberlo es cientos de clicks. */
+
+.choice-kbd {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--muted);
+    border: 1px solid var(--muted);
+    border-radius: 3px;
+    padding: 1px 5px;
+    line-height: 1.4;
+    flex-shrink: 0;
+    opacity: 0.7;
+    transition: opacity 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.choice-kbd-num {
+    margin-right: 12px;
+    min-width: 1.7em;
+    text-align: center;
+    /* El botón alinea arriba para que los textos largos queden prolijos;
+       el número tiene que acompañar a la primera línea, no flotar sobre ella. */
+    margin-top: 3px;
+    align-self: flex-start;
+}
+
+.continue-button .choice-kbd {
+    margin-left: 12px;
+}
+
+.choice-btn:hover .choice-kbd,
+.choice-btn:focus-visible .choice-kbd {
+    opacity: 1;
+    color: var(--fg);
+    border-color: var(--fg);
+}
+
+/* En pantallas táctiles el atajo no aplica: se ocultan los números para no
+   ocupar lugar con información que no sirve. */
+@media (hover: none) and (pointer: coarse) {
+    .choice-kbd {
+        display: none;
     }
 }
